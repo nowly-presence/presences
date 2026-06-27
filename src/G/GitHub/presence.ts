@@ -1,4 +1,4 @@
-import { PresenceType } from "@nowly/presence"
+import { PresenceType } from "@nowly/sdk"
 import { handleGitHub } from "./utils/activity"
 import { handleBlog } from "./utils/blog"
 import { handleGist } from "./utils/gists"

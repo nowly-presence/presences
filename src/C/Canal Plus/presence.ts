@@ -1,4 +1,4 @@
-import { createMediaTimestamps, PresenceType } from "@nowly/presence"
+import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { handleBrowsingActivity } from "./utils/browsing"
 import { findVideo, getPageMetadata, isLivePath } from "./utils/player"
 

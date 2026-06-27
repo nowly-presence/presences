@@ -1,4 +1,4 @@
-import { PresenceType, type PresenceInstance } from "@nowly/presence"
+import { PresenceType, type PresenceInstance } from "@nowly/sdk"
 import { createButton, getTitle } from "./dom"
 import { getAvatarImage, getMetaImage, toDiscordImage } from "./images"
 

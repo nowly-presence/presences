@@ -40,10 +40,5 @@
       "Soporte para portadas de álbum",
       "Soporte de actividad de navegación"
     ]
-  },
-  "assets": {
-    "logo": "logo.png",
-    "icon": "icon.png",
-    "thumbnail": "thumbnail.jpg"
   }
 }

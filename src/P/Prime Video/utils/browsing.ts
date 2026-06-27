@@ -1,5 +1,5 @@
-import type { PresenceInstance } from "@nowly/presence"
-import { PresenceType } from "@nowly/presence"
+import type { PresenceInstance } from "@nowly/sdk"
+import { PresenceType } from "@nowly/sdk"
 import { findSearchQuery } from "./player"
 
 export const handleBrowsingActivity = async (

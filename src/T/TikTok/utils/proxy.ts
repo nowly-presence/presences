@@ -1,4 +1,4 @@
-import { createCachedImageProxyUrl, createImageProxyUrl } from "@nowly/presence"
+import { createCachedImageProxyUrl, createImageProxyUrl } from "@nowly/sdk"
 
 const DISCORD_IMAGE_KEY_MAX_LENGTH = 300
 const isTikTokCdnImage = (imageUrl: string): boolean => {

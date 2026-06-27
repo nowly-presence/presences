@@ -1,4 +1,4 @@
-import { createMediaTimestamps, PresenceType, type PresenceData, type PresenceInstance, type UpdateDataContext } from "@nowly/presence"
+import { createMediaTimestamps, PresenceType, type PresenceData, type PresenceInstance, type UpdateDataContext } from "@nowly/sdk"
 import { extractLiveCategoryImage, extractLiveCategoryName, extractLiveCategoryPath } from "./category"
 import { findPlayingVideo, getVideo, getVideoState } from "./media"
 import { extractProfileAvatar, extractProfileInfo } from "./profile"

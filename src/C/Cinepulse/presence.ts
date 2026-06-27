@@ -1,4 +1,4 @@
-import { createMediaTimestamps, PresenceType } from "@nowly/presence"
+import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 
 const settings = Presence.Settings({
   showBrowsing: {

@@ -1,7 +1,5 @@
-import type { PresenceInstance } from "@nowly/presence"
-import { PresenceType } from "@nowly/presence"
+import { PresenceType, type PresenceInstance } from "@nowly/sdk"
 import { Category } from "./categories"
-import { $, text } from "./dom"
 import { getChannelAvatar, getChannelName, getChannelSubscribers } from "./channel"
 
 type YouTubeBrowsingSettings = {

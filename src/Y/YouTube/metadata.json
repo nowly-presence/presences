@@ -42,10 +42,5 @@
       "Compatibilidad con directos y estrenos",
       "Miniatura del vídeo"
     ]
-  },
-  "assets": {
-    "logo": "logo.png",
-    "icon": "icon.png",
-    "thumbnail": "thumbnail.jpg"
   }
 }

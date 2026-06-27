@@ -1,4 +1,4 @@
-import { PresenceType, type PresenceInstance } from "@nowly/presence"
+import { PresenceType, type PresenceInstance } from "@nowly/sdk"
 import { getTitle } from "./dom"
 
 const ProductAssets = Presence.Assets({

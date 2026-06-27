@@ -1,8 +1,8 @@
-import { createMediaTimestamps, PresenceType } from "@nowly/presence"
-import { Category } from "./utils/categories"
-import { $, text, findVideo } from "./utils/dom"
-import { findTitle, findUploader } from "./utils/channel"
+import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { handleBrowsingActivity } from "./utils/browsing"
+import { Category } from "./utils/categories"
+import { findTitle, findUploader } from "./utils/channel"
+import { $, findVideo, text } from "./utils/dom"
 
 const settings = Presence.Settings({
   showBrowsing: {

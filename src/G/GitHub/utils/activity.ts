@@ -1,4 +1,4 @@
-import { PresenceType, type PresenceInstance } from "@nowly/presence"
+import { PresenceType, type PresenceInstance } from "@nowly/sdk"
 import { getPathSegments } from "./dom"
 import { handleDashboardPage } from "./dashboards"
 import { handleDiscoveryPage } from "./discovery"

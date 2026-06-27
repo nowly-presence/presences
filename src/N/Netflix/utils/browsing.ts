@@ -1,5 +1,5 @@
-import type { PresenceInstance } from "@nowly/presence"
-import { PresenceType } from "@nowly/presence"
+import type { PresenceInstance } from "@nowly/sdk"
+import { PresenceType } from "@nowly/sdk"
 
 const findSearchQuery = (): string | undefined => {
   const fromUrl = new URLSearchParams(document.location.search).get("q")

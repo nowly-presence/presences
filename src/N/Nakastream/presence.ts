@@ -1,4 +1,4 @@
-import { createMediaTimestamps, PresenceType } from "@nowly/presence"
+import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { formatEpisodeState, getNakastreamInfo } from "./utils/info"
 import {
   cacheVisiblePosters,

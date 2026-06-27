@@ -9,8 +9,7 @@
     "description",
     "url",
     "color",
-    "category",
-    "assets"
+    "category"
   ],
   "properties": {
     "slug": {
@@ -105,25 +104,6 @@
       },
       "propertyNames": {
         "pattern": "^[a-z]{2}-[A-Z]{2}$"
-      }
-    },
-    "assets": {
-      "type": "object",
-      "description": "Asset filenames for the marketplace",
-      "required": ["logo", "icon", "thumbnail"],
-      "properties": {
-        "logo": {
-          "type": "string",
-          "description": "Logo image (e.g. logo.png)"
-        },
-        "icon": {
-          "type": "string",
-          "description": "Transparent icon for colored backgrounds (e.g. icon.png)"
-        },
-        "thumbnail": {
-          "type": "string",
-          "description": "Thumbnail image for the detail page (e.g. thumbnail.jpg)"
-        }
       }
     }
   }

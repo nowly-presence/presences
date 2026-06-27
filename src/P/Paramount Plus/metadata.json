@@ -40,10 +40,5 @@
       "Seguimiento del estado de reproducción",
       "Actividad de visualización en tiempo real"
     ]
-  },
-  "assets": {
-    "logo": "logo.png",
-    "icon": "icon.png",
-    "thumbnail": "thumbnail.jpg"
   }
 }

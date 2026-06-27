@@ -1,4 +1,4 @@
-import { createMediaTimestamps, PresenceType } from "@nowly/presence"
+import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { getDisneyPlayerData, installDisneyBridge } from "./utils/bridge"
 import { createDisneyImageUrl, findEntityTitle, findVideo, isEpisodeSubtitle, parseEpisodeState } from "./utils/dom"
 

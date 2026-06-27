@@ -107,7 +107,7 @@ const validatePresence = async (dir: string, slugName: string): Promise<Presence
   }
 
   // Check thumbnail
-  const thumbMeta: string = meta.assets?.thumbnail || "thumbnail.jpg";
+  const thumbMeta: string = "thumbnail.jpg";
   const thumbPath = join(assetsDir, thumbMeta);
   const thumbEntry: AssetEntry = { filename: thumbMeta, exists: existsSync(thumbPath), status: "missing", expected: "1920×1080" };
 
@@ -149,7 +149,6 @@ const validatePresence = async (dir: string, slugName: string): Promise<Presence
   // Check for extra files in assets/
   if (existsSync(assetsDir)) {
     const allowed = new Set(["logo.png", "icon.png", "thumbnail.png", "thumbnail.jpg", "thumbnail.jpeg"]);
-    if (meta.assets?.thumbnail) allowed.add(meta.assets.thumbnail);
 
     for (const file of readdirSync(assetsDir, { withFileTypes: true })) {
       if (file.isDirectory()) continue;

@@ -1,4 +1,4 @@
-import { createMediaTimestamps, PresenceType } from "@nowly/presence"
+import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { $, findVideo, hasPlayerTabs, text } from "./utils/dom"
 import { getPageDescription, getPageTitle, getThumbnail, parseSubtitle } from "./utils/metadata"
 

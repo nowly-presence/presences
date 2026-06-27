@@ -1,4 +1,4 @@
-import { createImageProxyUrl } from "@nowly/presence"
+import { createImageProxyUrl } from "@nowly/sdk"
 
 const MAX_IMAGE_KEY_LENGTH = 300
 

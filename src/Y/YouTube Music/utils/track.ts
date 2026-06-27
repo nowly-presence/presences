@@ -1,4 +1,4 @@
-import type { PresenceData } from "@nowly/presence"
+import type { PresenceData } from "@nowly/sdk"
 import { findArtwork } from "./artwork"
 import { attr, cleanArtist, cleanTrackTitle, text } from "./text"
 
@@ -95,7 +95,7 @@ const findTrackUrl = (playerBar: Element | null): string =>
 export const createProgressTimestamps = (
   video: HTMLVideoElement | null,
   track: TrackInfo,
-): Pick<PresenceData, "startTimestamp" | "endTimestamp"> => {
+): Partial<Pick<PresenceData, "startTimestamp" | "endTimestamp">> => {
   if (!track.playing) return {}
 
   const currentTime = Number.isFinite(video?.currentTime)

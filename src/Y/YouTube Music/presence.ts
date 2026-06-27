@@ -1,4 +1,4 @@
-import { PresenceType, type PresenceData } from "@nowly/presence"
+import { PresenceType, type PresenceData } from "@nowly/sdk"
 import { toDiscordImage } from "./utils/proxy"
 import { createProgressTimestamps, findPlayerBar, findVideo, getCurrentTrack } from "./utils/track"
 

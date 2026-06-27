@@ -40,10 +40,5 @@
       "Barra de progreso cuando la duración del contenido está disponible",
       "Actividad de navegación opcional"
     ]
-  },
-  "assets": {
-    "logo": "logo.png",
-    "icon": "icon.png",
-    "thumbnail": "thumbnail.jpg"
   }
 }

@@ -46,10 +46,5 @@
       "Soporte opcional para Gist, GitHub Blog y GitHub Next",
       "Soporte para la página del evento GitHub Universe"
     ]
-  },
-  "assets": {
-    "logo": "logo.png",
-    "icon": "icon.png",
-    "thumbnail": "thumbnail.jpg"
   }
 }
