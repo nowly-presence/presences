@@ -4,9 +4,7 @@ on:
   pull_request_target:
     types: [opened, synchronize, labeled]
 
-permissions:
-  pull-requests: write
-  contents: read
+permissions: {}
 
 jobs:
   preview:
@@ -17,8 +15,16 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      - name: Generate token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
       - uses: actions/github-script@v7
         with:
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const fs = require("fs");
             const path = require("path");
@@ -157,21 +163,6 @@ jobs:
 
               if (p.features) {
                 body += `| **Features** | ${p.features.slice(0, 4).join(" · ")}${p.features.length > 4 ? ` … (+${p.features.length - 4} more)` : ""} |\n`;
-              }
-
-              if (p.missingAssets.length > 0) {
-                body += `| **:warning: Missing assets** | ${p.missingAssets.map(a => `\`${a}\``).join(", ")} |\n`;
-              }
-
-              const assetKeys = Object.keys(p.assets);
-              if (assetKeys.length > 0) {
-                body += `| **Assets** |`;
-                for (const key of assetKeys) {
-                  const filename = p.assets[key];
-                  const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${prefix}${p.slug}/assets/${filename}`;
-                  body += ` [![${key}](${rawUrl} =64x36)](${rawUrl})`;
-                }
-                body += ` |\n`;
               }
 
               body += `\n---\n\n`;

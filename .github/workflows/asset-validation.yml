@@ -1,0 +1,164 @@
+name: Nolo Asset Validation
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+permissions: {}
+
+jobs:
+  validate:
+    name: Asset validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          token: ${{ steps.app-token.outputs.token }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install sharp tsx
+
+      - name: Get changed presence dirs
+        id: changes
+        run: |
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          DIRS=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" -- src/ \
+            | sed -n 's|^src/[^/]*/\([^/]*\)/.*|\1|p' \
+            | sort -u \
+            | tr '\n' ',' \
+            | sed 's/,$//')
+          echo "dirs=$DIRS" >> "$GITHUB_OUTPUT"
+          echo "Changed presence dirs: $DIRS"
+
+      - name: Run asset validation
+        env:
+          CHANGED_DIRS: ${{ steps.changes.outputs.dirs }}
+        run: |
+          npx tsx scripts/validate-assets.ts "${{ github.workspace }}" > /tmp/validation-result.json
+
+      - name: Skip status if no changes
+        id: check
+        run: |
+          COUNT=$(node -e "const d=require('fs').readFileSync('/tmp/validation-result.json','utf-8'); const j=JSON.parse(d); console.log(j.summary.total)")
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: Create commit status
+        if: steps.check.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          RESULT=$(cat /tmp/validation-result.json)
+          STATE=$(echo "$RESULT" | node -e "const d=require('fs').readFileSync('/dev/stdin','utf-8'); const j=JSON.parse(d); process.stdout.write(j.overall==='success'?'success':'failure')")
+          DESC=$(echo "$RESULT" | node -e "const d=require('fs').readFileSync('/dev/stdin','utf-8'); const j=JSON.parse(d); const s=j.summary; process.stdout.write(s.failed > 0 ? s.errors.slice(0,3).join(' · ') + (s.errors.length > 3 ? \` (+ \${s.errors.length-3} more)\` : '') : \`\${s.passed} presence(s) valid\`)")
+
+          gh api \
+            --method POST \
+            "/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }}" \
+            -f "state=$STATE" \
+            -f "target_url=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            -f "description=$DESC" \
+            -f "context=Nolo Asset Validation"
+
+      - name: Post comment
+        uses: actions/github-script@v7
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const fs = require("fs");
+            const result = JSON.parse(fs.readFileSync("/tmp/validation-result.json", "utf-8"));
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const headRef = process.env.HEAD_REF;
+            const headRepo = process.env.HEAD_REPO;
+
+            if (result.results.length === 0) {
+              console.log("No presences to validate");
+              return;
+            }
+
+            let body = "## 🖼️ Activity asset preview\n\n";
+            body += "*Fresh pixels, hot off the branch — I lined them all up for inspection. 👀*\n\n";
+
+            for (const p of result.results) {
+              const icon = p.status === "success" ? "✅" : "❌";
+              body += `### ${p.name} (\`${p.slug}\`) — ${icon} ${p.status === "success" ? "All good" : p.errors.length + " issue(s)"}\n\n`;
+
+              body += "| Preview | Source | URL |\n";
+              body += "|---|---|---|\n";
+
+              for (const [key, asset] of Object.entries(p.assets)) {
+                const rawUrl = `https://raw.githubusercontent.com/${headRepo}/${headRef}/src/${p.slug}/assets/${asset.filename}`;
+
+                let statusIcon = "";
+                if (asset.status === "valid") statusIcon = "✅";
+                else if (asset.status === "missing") statusIcon = "❌";
+                else if (asset.status === "wrong_size") statusIcon = "⚠️";
+                else statusIcon = "❌";
+
+                const label = asset.status === "valid"
+                  ? `\`${key}\` (${asset.width}×${asset.height})`
+                  : `\`${key}\` — ${asset.status === "missing" ? "missing" : asset.status === "wrong_size" ? `${asset.width || "?"}×${asset.height || "?"} (expected ${asset.expected})` : "unreadable"}`;
+
+                const preview = asset.exists
+                  ? `[![${key}](${rawUrl}=64x36)](${rawUrl})`
+                  : "—";
+
+                const url = asset.exists ? rawUrl : "—";
+
+                body += `| ${preview} ${statusIcon} | ${label} | ${url} |\n`;
+              }
+
+              if (p.extraFiles.length > 0) {
+                body += "\n**Extra files detected:**\n\n";
+                body += "| Preview | File |\n";
+                body += "|---|---|\n";
+                for (const file of p.extraFiles) {
+                  const fileUrl = `https://raw.githubusercontent.com/${headRepo}/${headRef}/src/${p.slug}/assets/${file}`;
+                  body += `| [![${file}](${fileUrl}=64x36)](${fileUrl}) | \`${file}\` |\n`;
+                }
+              }
+
+              body += "\n---\n\n";
+            }
+
+            body += "*Beep boop — I refresh this comment on every push, so no need to scroll. 🤖*";
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner, repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === "Bot" && c.body?.includes("Activity asset preview")
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner, repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner, repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
