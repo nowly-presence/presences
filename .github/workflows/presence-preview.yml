@@ -1,0 +1,226 @@
+name: Presence Preview
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  preview:
+    name: Post presence preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const path = require("path");
+
+            const base = context.payload.pull_request.base.sha;
+            const head = context.payload.pull_request.head.sha;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const ref = context.payload.pull_request.head.ref;
+
+            const { data: files } = await github.rest.repos.compareCommits({
+              owner, repo, base, head,
+            });
+
+            const prefix = "src/";
+            const presenceSlugs = new Set();
+            const fileActions = { added: [], modified: [], removed: [] };
+
+            for (const file of files.files) {
+              if (!file.filename.startsWith(prefix)) continue;
+              const parts = file.filename.slice(prefix.length).split("/");
+              if (parts.length < 2) continue;
+
+              const slug = parts[0];
+              presenceSlugs.add(slug);
+
+              if (file.status === "added") fileActions.added.push(file.filename);
+              else if (file.status === "removed") fileActions.removed.push(file.filename);
+              else fileActions.modified.push(file.filename);
+            }
+
+            if (presenceSlugs.size === 0) {
+              console.log("No presence changes detected");
+              return;
+            }
+
+            const workspace = process.env.GITHUB_WORKSPACE;
+            const changes = [];
+            const errors = [];
+
+            for (const slug of presenceSlugs) {
+              const dir = path.join(workspace, prefix, slug);
+              const metaPath = path.join(dir, "metadata.json");
+
+              if (!fs.existsSync(metaPath)) {
+                errors.push(`\`${slug}\` — \`metadata.json\` not found`);
+                continue;
+              }
+
+              let meta;
+              try {
+                meta = JSON.parse(fs.readFileSync(metaPath, "utf-8"));
+              } catch {
+                errors.push(`\`${slug}\` — invalid JSON in \`metadata.json\``);
+                continue;
+              }
+
+              const assets = meta.assets || {};
+              const missingAssets = [];
+
+              for (const key of ["logo", "icon", "thumbnail"]) {
+                if (assets[key] && !fs.existsSync(path.join(dir, "assets", assets[key]))) {
+                  missingAssets.push(key);
+                }
+              }
+
+              changes.push({
+                slug,
+                name: meta.name || slug,
+                author: meta.author?.name || "Unknown",
+                authorGithub: meta.author?.github || null,
+                description: meta.description?.["en-US"] || null,
+                longDescription: meta.longDescription?.["en-US"] || null,
+                category: meta.category || null,
+                color: meta.color || null,
+                urls: meta.url || [],
+                world: meta.world || "isolated",
+                runAt: meta.runAt || "document_idle",
+                features: meta.features?.["en-US"] || null,
+                assets,
+                missingAssets,
+              });
+            }
+
+            if (changes.length === 0 && errors.length === 0) {
+              console.log("No valid presences to preview");
+              return;
+            }
+
+            let body = "";
+
+            body += `# Presence Preview\n\n`;
+            body += `> **Pull request** #${context.issue.number}`;
+            if (changes.length > 0) body += ` — ${changes.length} presence(s) affected`;
+            body += `\n\n---\n\n`;
+
+            if (errors.length > 0) {
+              body += `### ⚠️ Issues\n\n`;
+              for (const err of errors) body += `- ${err}\n`;
+              body += `\n---\n\n`;
+            }
+
+            for (const p of changes) {
+              const isNew = fileActions.added.some(f => f.startsWith(`${prefix}${p.slug}/`));
+              const isRemoved = fileActions.removed.some(f => f.startsWith(`${prefix}${p.slug}/`));
+              const badge = isNew ? "**:rocket: New**" : isRemoved ? "**:wastebasket: Removed**" : "**:pencil: Updated**";
+
+              body += `## ${p.name}\n\n`;
+
+              body += `| | |\n|---|---|\n`;
+              body += `| **Status** | ${badge} — \`${p.slug}\` |\n`;
+
+              if (p.author) {
+                body += `| **Author** | ${p.author}${p.authorGithub ? ` ([@${p.authorGithub}](https://github.com/${p.authorGithub}))` : ""} |\n`;
+              }
+
+              if (p.description) {
+                body += `| **Description** | ${p.description} |\n`;
+              }
+
+              if (p.category || p.color) {
+                let info = "";
+                if (p.color) info += `\`${p.color}\``;
+                if (p.category) {
+                  if (info) info += " · ";
+                  info += `\`${p.category}\``;
+                }
+                body += `| **Info** | ${info} |\n`;
+              }
+
+              if (p.urls.length > 0) {
+                body += `| **Matches** | \`${p.urls.join("` · `")}\` |\n`;
+              }
+
+              body += `| **Runtime** | \`${p.world}\` · \`${p.runAt}\` |\n`;
+
+              if (p.features) {
+                body += `| **Features** | ${p.features.slice(0, 4).join(" · ")}${p.features.length > 4 ? ` … (+${p.features.length - 4} more)` : ""} |\n`;
+              }
+
+              if (p.missingAssets.length > 0) {
+                body += `| **:warning: Missing assets** | ${p.missingAssets.map(a => `\`${a}\``).join(", ")} |\n`;
+              }
+
+              const assetKeys = Object.keys(p.assets);
+              if (assetKeys.length > 0) {
+                body += `| **Assets** |`;
+                for (const key of assetKeys) {
+                  const filename = p.assets[key];
+                  const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${prefix}${p.slug}/assets/${filename}`;
+                  body += ` [![${key}](${rawUrl} =64x36)](${rawUrl})`;
+                }
+                body += ` |\n`;
+              }
+
+              body += `\n---\n\n`;
+            }
+
+            body += `<details>\n<summary>📁 Changed files</summary>\n\n`;
+            body += `| File | Status |\n|---|---|\n`;
+            for (const file of files.files) {
+              if (!file.filename.startsWith(prefix)) continue;
+              const icon = file.status === "added" ? ":new:" : file.status === "removed" ? ":wastebasket:" : ":pencil:";
+              body += `| \`${file.filename}\` | ${icon} ${file.status} |\n`;
+            }
+            body += `\n</details>\n\n---\n\n`;
+
+            body += `*I automatically refresh this comment when new commits are pushed.*`;
+
+            const existingLabels = context.payload.pull_request.labels.map(l => l.name);
+
+            const labelToAdd = changes.some(c => fileActions.added.some(f => f.startsWith(`${prefix}${c.slug}/`)))
+              ? "new presence"
+              : "presence update";
+
+            if (!existingLabels.includes(labelToAdd)) {
+              await github.rest.issues.addLabels({
+                owner, repo,
+                issue_number: context.issue.number,
+                labels: [labelToAdd],
+              });
+            }
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner, repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === "Bot" && c.body?.includes("Presence Preview")
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner, repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner, repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
