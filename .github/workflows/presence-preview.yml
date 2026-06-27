@@ -2,7 +2,7 @@ name: Presence Preview
 
 on:
   pull_request_target:
-    types: [opened, synchronize]
+    types: [opened, synchronize, labeled]
 
 permissions:
   pull-requests: write
@@ -191,8 +191,10 @@ jobs:
             const existingLabels = context.payload.pull_request.labels.map(l => l.name);
 
             const labelToAdd = changes.some(c => fileActions.added.some(f => f.startsWith(`${prefix}${c.slug}/`)))
-              ? "new presence"
-              : "presence update";
+              ? "new"
+              : changes.some(c => fileActions.removed.some(f => f.startsWith(`${prefix}${c.slug}/`)))
+                ? "delete"
+                : "update";
 
             if (!existingLabels.includes(labelToAdd)) {
               await github.rest.issues.addLabels({
