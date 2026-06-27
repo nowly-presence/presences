@@ -17,11 +17,11 @@ top to bottom.
 
 ## What a presence is
 
-A presence lives in `packages/presences/src/{LETTER}/{Service Name}/`. The Nowly CLI
-(`@nowly/cli`, at `packages/cli`) bundles its `presence.ts` with esbuild, and the
-browser extension injects the bundle into matching pages. On a timer, the extension
-fires an `UpdateData` event; your handler reads the DOM and calls `setActivity(...)`,
-which is forwarded to the Go native host and on to Discord over IPC.
+A presence lives in `src/{LETTER}/{Service Name}/`. The Nowly CLI (`@nowly/cli`)
+bundles its `presence.ts` with esbuild, and the browser extension injects the bundle
+into matching pages. On a timer, the extension fires an `UpdateData` event; your
+handler reads the DOM and calls `setActivity(...)`, which is forwarded to the Go
+native host and on to Discord over IPC.
 
 ```
 website DOM  ──read──▶  presence.on("UpdateData")  ──setActivity()──▶  extension  ──▶  native host  ──▶  Discord
@@ -29,26 +29,16 @@ website DOM  ──read──▶  presence.on("UpdateData")  ──setActivity()
 
 ## Before you start
 
-1. Read `CLAUDE.md` at the repo root.
-2. Skim the official docs in `apps/web/content/docs/2-presence-development/`
-   (`creating-your-first-presence`, `presence-structure`, `metadata`, `presence-api`, `assets`, `settings`).
-3. Open **two existing presences as references** — pick the ones closest to your
+1. Read the official presence docs at https://nowly.me/docs (Creating your first
+   presence, Presence structure, Metadata, Presence API, Assets, Settings).
+2. Open **two existing presences as references** — pick the ones closest to your
    target site (see "Pick a strategy" below). Match their structure, naming, and
    tone exactly.
-
-## Repository layout
-
-```
-packages/
-  sdk/            # @nowly/sdk — SDK types published on npm (submodule, branch stable)
-  cli/            # @nowly/cli — CLI published on npm (submodule, branch stable)
-  presences/      # @nowly/presences — all presence definitions (submodule, branch stable)
-```
 
 ## Folder anatomy
 
 ```
-packages/presences/src/{LETTER}/{Service Name}/
+src/{LETTER}/{Service Name}/
   metadata.json        # required — marketplace + matching metadata
   presence.ts          # required — the script (entry point bundled by esbuild)
   utils/               # optional but recommended — helpers (DOM, parsing, API, bridge)
@@ -60,65 +50,49 @@ packages/presences/src/{LETTER}/{Service Name}/
     thumbnail.jpg
 ```
 
-**Naming rules** (see `packages/cli/src/discover.ts`):
+**Naming rules:**
 - `{LETTER}` = first character of the name, uppercased.
 - `{Service Name}` = human folder name with spaces.
 - `slug` is derived automatically: lowercase, spaces → hyphens.
 - **Do not** put `slug` in `metadata.json`.
 
+## Setting up
+
+```bash
+# Install the CLI globally:
+pnpm i -g @nowly/cli
+
+# Install this repo's dependencies:
+pnpm install
+```
+
+> On Node 24+, the global install may require `--config.minimumReleaseAge=0` if the
+> package was recently published.
+
 ## Workflow
 
-1. **Scaffold.** Either run the CLI init command or create the folder/files by hand.
+1. **Scaffold.** Either run `nowly init "Service Name"` or create the folder/files
+   by hand, copying an existing presence.
 2. **Write `metadata.json`** (see reference below). Include `longDescription` and
    `features` in `en-US`, `fr-FR`, `es-ES`.
 3. **Inspect the target site's DOM** with the snippets in "DOM inspection".
 4. **Write `presence.ts` + `utils/`** following the SDK reference and conventions.
-5. **Build:** `nowly build <slug>` (from `packages/presences/`).
-6. **Validate:** `nowly validate <slug>`.
-7. **Type-check:** from `packages/presences/`, `npx tsc --noEmit -p tsconfig.json`.
+5. **Build:** `nowly build <slug>` — must succeed.
+6. **Validate:** `nowly validate <slug>` — must report `✓`.
+7. **Type-check:** `npx tsc --noEmit -p tsconfig.json` — must be clean.
 8. Hand off assets + manual E2E verification.
 
-## Using the CLI
+## CLI commands
 
-The Nowly CLI is published on npm as `@nowly/cli`. Install it globally:
-
-```bash
-pnpm i -g @nowly/cli
-```
-
-> On Node 24+, the global install may require `--config.minimumReleaseAge=0` if the
-> package was recently published. If the `nowly` command fails, use the monorepo
-> shorthand instead (see below).
-
-Once installed, run all commands from `packages/presences/`:
+Run all commands from the repo root:
 
 ```bash
-# Interactive init:
-nowly
-
-# Non-interactive:
-nowly init "Service Name" --category streaming --color "#RRGGBB" --urls "example.com"
-
-# Build:
-nowly build <slug>
-
-# Validate:
-nowly validate <slug>
-
-# List:
-nowly list
+nowly                          # Interactive init
+nowly init "Service Name"      # Non-interactive init (add --category, --color, etc.)
+nowly build <slug>             # Build a presence
+nowly validate <slug>          # Validate metadata
+nowly list                     # List all presences
 ```
-
-### Monorepo fallback (no global install)
-
-If you don't have the CLI installed globally, use `pnpm` directly from the monorepo root:
-
-```bash
-# From the monorepo root:
-pnpm --filter @nowly/cli exec tsx src/index.ts build <slug>
-```
-
-But always prefer the global `nowly` command — it's simpler and works anywhere.
 
 ## `metadata.json` reference
 
@@ -141,8 +115,8 @@ Locale keys: `^[a-z]{2}-[A-Z]{2}$`. Standard: `en-US`, `fr-FR`, `es-ES`.
 
 ## `presence.ts` — the SDK
 
-The SDK types are in `packages/sdk/src/index.ts` (published as `@nowly/sdk` on npm).
-`Presence` and `Assets` are **injected globals** — do not import them.
+The SDK is published on npm as `@nowly/sdk`. `Presence` and `Assets` are **injected
+globals** — do not import them.
 
 ```ts
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
@@ -239,19 +213,14 @@ a human. Build and validate pass without them, but they are required before publ
 ## Build & type-check
 
 ```bash
-# Build (from packages/presences/):
 nowly build <slug>
-
-# Validate:
 nowly validate <slug>
-
-# Type-check (esbuild skips this — always run!):
-npx tsc --noEmit -p tsconfig.json
+npx tsc --noEmit -p tsconfig.json   # esbuild does NOT type-check — always run this!
 ```
 
 ## Reference presences
 
-All at `packages/presences/src/{LETTER}/{Service Name}/`:
+All at `src/{LETTER}/{Service Name}/`:
 
 - **Prime Video** — streaming, pure DOM
 - **Netflix** — streaming, same-origin API (`world: main`)
