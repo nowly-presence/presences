@@ -59,7 +59,7 @@ const generateTable = (presences: Presence[]): string => {
     rows.push(`  <tr>\n${cells}\n  </tr>`);
   }
 
-  return `<table>\n${rows.join("\n")}\n</table>`;
+  return `<table width="100%">\n${rows.join("\n")}\n</table>`;
 };
 
 const presences = loadPresences();

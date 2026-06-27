@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.nowly.me/brand/nowly-logo-light.svg">
-    <img alt="Nowly" src="https://cdn.nowly.me/brand/nowly-logo-dark.svg" width="200">
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.nowly.me/assets/app_title.png">
+    <img alt="Nowly" title="Nowly" src="https://cdn.nowly.me/assets/app_title_dark.png" width="200">
   </picture>
 </p>
 
@@ -12,7 +12,7 @@
 ## Presences
 
 <!-- TABLE_START -->
-<table>
+<table width="100%">
   <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/apple-tv-plus/assets/logo.png" width="48" height="48" alt="Apple TV+"><br>
