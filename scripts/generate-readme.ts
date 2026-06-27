@@ -42,7 +42,7 @@ const cell = (presence: Presence | null): string => {
 
   return [
     '    <td align="center">',
-    `      <img src="https://cdn.nowly.me/presences/${presence.slug}/logo.png" width="48" height="48" alt="${presence.name}"><br>`,
+    `      <img src="https://cdn.nowly.me/presences/${presence.slug}/assets/logo.png" width="48" height="48" alt="${presence.name}"><br>`,
     `      <b>${presence.name}</b>`,
     "    </td>",
   ].join("\n");
