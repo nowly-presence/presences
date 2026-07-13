@@ -184,7 +184,7 @@ jobs:
               const ext = path.extname(file.filename).toLowerCase();
               if (IMAGE_EXTENSIONS.has(ext)) {
                 const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${head}/${file.filename}`;
-                return `<a href="${rawUrl}"><img src="${rawUrl}" width="64" height="36" alt=""></a>`;
+                return `<a href="${rawUrl}"><img src="${rawUrl}" height="36" alt=""></a>`;
               }
 
               const filePath = path.join(workspace, file.filename);
