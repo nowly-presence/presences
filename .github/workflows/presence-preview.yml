@@ -184,7 +184,7 @@ jobs:
               const ext = path.extname(file.filename).toLowerCase();
               if (IMAGE_EXTENSIONS.has(ext)) {
                 const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${head}/${file.filename}`;
-                return `[![](${rawUrl}=64x36)](${rawUrl})`;
+                return `<a href="${rawUrl}"><img src="${rawUrl}" width="64" height="36" alt=""></a>`;
               }
 
               const filePath = path.join(workspace, file.filename);
@@ -231,15 +231,14 @@ jobs:
             );
 
             if (botComment) {
-              await github.rest.issues.updateComment({
+              await github.rest.issues.deleteComment({
                 owner, repo,
                 comment_id: botComment.id,
-                body,
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner, repo,
-                issue_number: context.issue.number,
-                body,
               });
             }
+
+            await github.rest.issues.createComment({
+              owner, repo,
+              issue_number: context.issue.number,
+              body,
+            });

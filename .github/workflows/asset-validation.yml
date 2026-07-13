@@ -4,6 +4,10 @@ on:
   pull_request_target:
     types: [opened, synchronize]
 
+concurrency:
+  group: asset-validation-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
 permissions: {}
 
 jobs:
@@ -22,6 +26,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           token: ${{ steps.app-token.outputs.token }}
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -104,7 +109,7 @@ jobs:
               body += "|---|---|---|\n";
 
               for (const [key, asset] of Object.entries(p.assets)) {
-                const rawUrl = `https://raw.githubusercontent.com/${headRepo}/${headRef}/src/${p.slug}/assets/${asset.filename}`;
+                const rawUrl = `https://raw.githubusercontent.com/${headRepo}/${headRef}/src/${p.path}/assets/${asset.filename}`;
 
                 let statusIcon = "";
                 if (asset.status === "valid") statusIcon = "✅";
@@ -117,7 +122,7 @@ jobs:
                   : `\`${key}\` — ${asset.status === "missing" ? "missing" : asset.status === "wrong_size" ? `${asset.width || "?"}×${asset.height || "?"} (expected ${asset.expected})` : "unreadable"}`;
 
                 const preview = asset.exists
-                  ? `[![${key}](${rawUrl}=64x36)](${rawUrl})`
+                  ? `<a href="${rawUrl}"><img src="${rawUrl}" width="64" height="36" alt="${key}"></a>`
                   : "—";
 
                 const url = asset.exists ? rawUrl : "—";
@@ -130,8 +135,8 @@ jobs:
                 body += "| Preview | File |\n";
                 body += "|---|---|\n";
                 for (const file of p.extraFiles) {
-                  const fileUrl = `https://raw.githubusercontent.com/${headRepo}/${headRef}/src/${p.slug}/assets/${file}`;
-                  body += `| [![${file}](${fileUrl}=64x36)](${fileUrl}) | \`${file}\` |\n`;
+                  const fileUrl = `https://raw.githubusercontent.com/${headRepo}/${headRef}/src/${p.path}/assets/${file}`;
+                  body += `| <a href="${fileUrl}"><img src="${fileUrl}" width="64" height="36" alt="${file}"></a> | \`${file}\` |\n`;
                 }
               }
 
@@ -150,15 +155,14 @@ jobs:
             );
 
             if (botComment) {
-              await github.rest.issues.updateComment({
+              await github.rest.issues.deleteComment({
                 owner, repo,
                 comment_id: botComment.id,
-                body,
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner, repo,
-                issue_number: context.issue.number,
-                body,
               });
             }
+
+            await github.rest.issues.createComment({
+              owner, repo,
+              issue_number: context.issue.number,
+              body,
+            });
