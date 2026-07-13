@@ -3,6 +3,12 @@ name: Presence Preview
 on:
   pull_request_target:
     types: [opened, synchronize, labeled]
+    paths:
+      - "src/**"
+
+concurrency:
+  group: presence-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
 
 permissions: {}
 
@@ -46,10 +52,10 @@ jobs:
             for (const file of files.files) {
               if (!file.filename.startsWith(prefix)) continue;
               const parts = file.filename.slice(prefix.length).split("/");
-              if (parts.length < 2) continue;
+              if (parts.length < 3) continue;
 
-              const slug = parts[0];
-              presenceSlugs.add(slug);
+              const presencePath = `${parts[0]}/${parts[1]}`;
+              presenceSlugs.add(presencePath);
 
               if (file.status === "added") fileActions.added.push(file.filename);
               else if (file.status === "removed") fileActions.removed.push(file.filename);
@@ -65,8 +71,9 @@ jobs:
             const changes = [];
             const errors = [];
 
-            for (const slug of presenceSlugs) {
-              const dir = path.join(workspace, prefix, slug);
+            for (const presencePath of presenceSlugs) {
+              const [letter, slug] = presencePath.split("/");
+              const dir = path.join(workspace, prefix, letter, slug);
               const metaPath = path.join(dir, "metadata.json");
 
               if (!fs.existsSync(metaPath)) {
@@ -93,6 +100,7 @@ jobs:
 
               changes.push({
                 slug,
+                presencePath,
                 name: meta.name || slug,
                 author: meta.author?.name || "Unknown",
                 authorGithub: meta.author?.github || null,
@@ -128,8 +136,8 @@ jobs:
             }
 
             for (const p of changes) {
-              const isNew = fileActions.added.some(f => f.startsWith(`${prefix}${p.slug}/`));
-              const isRemoved = fileActions.removed.some(f => f.startsWith(`${prefix}${p.slug}/`));
+              const isNew = fileActions.added.some(f => f.startsWith(`${prefix}${p.presencePath}/`));
+              const isRemoved = fileActions.removed.some(f => f.startsWith(`${prefix}${p.presencePath}/`));
               const badge = isNew ? "**:rocket: New**" : isRemoved ? "**:wastebasket: Removed**" : "**:pencil: Updated**";
 
               body += `## ${p.name}\n\n`;
@@ -168,12 +176,30 @@ jobs:
               body += `\n---\n\n`;
             }
 
+            const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"]);
+
+            const filePreview = (file) => {
+              if (file.status === "removed") return "—";
+
+              const ext = path.extname(file.filename).toLowerCase();
+              if (IMAGE_EXTENSIONS.has(ext)) {
+                const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${head}/${file.filename}`;
+                return `<a href="${rawUrl}"><img src="${rawUrl}" width="64" height="36" alt=""></a>`;
+              }
+
+              const filePath = path.join(workspace, file.filename);
+              if (!fs.existsSync(filePath)) return "—";
+
+              const lines = fs.readFileSync(filePath, "utf-8").split("\n").length;
+              return `${lines} lines`;
+            };
+
             body += `<details>\n<summary>📁 Changed files</summary>\n\n`;
-            body += `| File | Status |\n|---|---|\n`;
+            body += `| Preview | File | Status |\n|---|---|---|\n`;
             for (const file of files.files) {
               if (!file.filename.startsWith(prefix)) continue;
               const icon = file.status === "added" ? ":new:" : file.status === "removed" ? ":wastebasket:" : ":pencil:";
-              body += `| \`${file.filename}\` | ${icon} ${file.status} |\n`;
+              body += `| ${filePreview(file)} | \`${file.filename}\` | ${icon} ${file.status} |\n`;
             }
             body += `\n</details>\n\n---\n\n`;
 
@@ -181,9 +207,9 @@ jobs:
 
             const existingLabels = context.payload.pull_request.labels.map(l => l.name);
 
-            const labelToAdd = changes.some(c => fileActions.added.some(f => f.startsWith(`${prefix}${c.slug}/`)))
+            const labelToAdd = changes.some(c => fileActions.added.some(f => f.startsWith(`${prefix}${c.presencePath}/`)))
               ? "new"
-              : changes.some(c => fileActions.removed.some(f => f.startsWith(`${prefix}${c.slug}/`)))
+              : changes.some(c => fileActions.removed.some(f => f.startsWith(`${prefix}${c.presencePath}/`)))
                 ? "delete"
                 : "update";
 
@@ -205,15 +231,14 @@ jobs:
             );
 
             if (botComment) {
-              await github.rest.issues.updateComment({
+              await github.rest.issues.deleteComment({
                 owner, repo,
                 comment_id: botComment.id,
-                body,
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner, repo,
-                issue_number: context.issue.number,
-                body,
               });
             }
+
+            await github.rest.issues.createComment({
+              owner, repo,
+              issue_number: context.issue.number,
+              body,
+            });

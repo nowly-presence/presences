@@ -29,6 +29,7 @@ type AssetEntry = {
 
 type PresenceResult = {
   slug: string
+  path: string
   name: string
   status: "success" | "failure"
   assets: Record<string, AssetEntry>
@@ -58,7 +59,7 @@ const getImageInfo = async (filepath: string): Promise<{ width: number; height: 
   }
 };
 
-const validatePresence = async (dir: string, slugName: string): Promise<PresenceResult | null> => {
+const validatePresence = async (dir: string, slugName: string, presencePath: string): Promise<PresenceResult | null> => {
   const metaPath = join(dir, "metadata.json");
   if (!existsSync(metaPath)) return null;
 
@@ -67,6 +68,7 @@ const validatePresence = async (dir: string, slugName: string): Promise<Presence
 
   const result: PresenceResult = {
     slug: slugName,
+    path: presencePath,
     name: meta.name || slugName,
     status: "success",
     assets: {},
@@ -166,7 +168,7 @@ const validatePresence = async (dir: string, slugName: string): Promise<Presence
 
 const main = async (): Promise<void> => {
   const srcDir = join(BASE_DIR, "src");
-  type PresenceInfo = { dir: string; slug: string; dirName: string };
+  type PresenceInfo = { dir: string; slug: string; dirName: string; path: string };
 
   const presences: PresenceInfo[] = [];
 
@@ -177,7 +179,7 @@ const main = async (): Promise<void> => {
       if (!sub.isDirectory()) continue;
       const metaPath = join(letterDir, sub.name, "metadata.json");
       if (!existsSync(metaPath)) continue;
-      presences.push({ dir: join(letterDir, sub.name), slug: slug(sub.name), dirName: sub.name });
+      presences.push({ dir: join(letterDir, sub.name), slug: slug(sub.name), dirName: sub.name, path: `${entry.name}/${sub.name}` });
     }
   }
 
@@ -188,7 +190,7 @@ const main = async (): Promise<void> => {
   const results: PresenceResult[] = [];
   for (const p of presences) {
     if (!changedDirs.includes(p.dirName)) continue;
-    const r = await validatePresence(p.dir, p.slug);
+    const r = await validatePresence(p.dir, p.slug, p.path);
     if (r) results.push(r);
   }
 
