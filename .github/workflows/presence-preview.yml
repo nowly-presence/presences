@@ -3,6 +3,8 @@ name: Presence Preview
 on:
   pull_request_target:
     types: [opened, synchronize, labeled]
+    paths:
+      - "src/**"
 
 concurrency:
   group: presence-preview-${{ github.event.pull_request.number }}
