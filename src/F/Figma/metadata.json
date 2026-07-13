@@ -2,6 +2,7 @@
   "name": "Figma",
   "author": { "name": "Gaëtan H", "github": "steellgold" },
   "url": ["figma.com", "www.figma.com"],
+  "regExp": "^https?://(www\\.)?figma\\.com/",
   "color": "#0ACF83",
   "category": "tools",
   "description": {
