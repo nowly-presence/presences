@@ -29,7 +29,7 @@ const ModeAssets = Presence.Assets({
   Sites: "modes/sites.png",
 })
 
-type FileMode = "design" | "figjam" | "slides" | "make" | "buzz" | "sites"
+type FileMode = "design" | "figjam" | "slides" | "make" | "buzz" | "sites" | "proto"
 
 const MODE_DETAILS: Record<FileMode, string> = {
   design: "Designing on Figma",
@@ -38,6 +38,7 @@ const MODE_DETAILS: Record<FileMode, string> = {
   make: "Building on Figma Make",
   buzz: "Creating on Figma Buzz",
   sites: "Building on Figma Sites",
+  proto: "Presenting a prototype on Figma",
 }
 
 const MODE_LARGE_IMAGE: Record<FileMode, string> = {
@@ -47,6 +48,7 @@ const MODE_LARGE_IMAGE: Record<FileMode, string> = {
   make: ModeAssets.Make,
   buzz: ModeAssets.Buzz,
   sites: ModeAssets.Sites,
+  proto: ModeAssets.Design,
 }
 
 presence.on("UpdateData", async (ctx) => {

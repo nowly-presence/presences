@@ -1,4 +1,4 @@
-export type FigmaMode = "design" | "figjam" | "slides" | "make" | "buzz" | "sites" | "home" | "other"
+export type FigmaMode = "design" | "figjam" | "slides" | "make" | "buzz" | "sites" | "proto" | "home" | "other"
 
 const MODE_BY_SEGMENT: Record<string, FigmaMode> = {
   design: "design",
@@ -8,6 +8,7 @@ const MODE_BY_SEGMENT: Record<string, FigmaMode> = {
   make: "make",
   buzz: "buzz",
   sites: "sites",
+  proto: "proto",
 }
 
 export const getFigmaMode = (pathname: string): FigmaMode => {
