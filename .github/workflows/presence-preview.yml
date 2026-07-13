@@ -4,6 +4,10 @@ on:
   pull_request_target:
     types: [opened, synchronize, labeled]
 
+concurrency:
+  group: presence-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
 permissions: {}
 
 jobs:
@@ -46,10 +50,10 @@ jobs:
             for (const file of files.files) {
               if (!file.filename.startsWith(prefix)) continue;
               const parts = file.filename.slice(prefix.length).split("/");
-              if (parts.length < 2) continue;
+              if (parts.length < 3) continue;
 
-              const slug = parts[0];
-              presenceSlugs.add(slug);
+              const presencePath = `${parts[0]}/${parts[1]}`;
+              presenceSlugs.add(presencePath);
 
               if (file.status === "added") fileActions.added.push(file.filename);
               else if (file.status === "removed") fileActions.removed.push(file.filename);
@@ -65,8 +69,9 @@ jobs:
             const changes = [];
             const errors = [];
 
-            for (const slug of presenceSlugs) {
-              const dir = path.join(workspace, prefix, slug);
+            for (const presencePath of presenceSlugs) {
+              const [letter, slug] = presencePath.split("/");
+              const dir = path.join(workspace, prefix, letter, slug);
               const metaPath = path.join(dir, "metadata.json");
 
               if (!fs.existsSync(metaPath)) {
@@ -93,6 +98,7 @@ jobs:
 
               changes.push({
                 slug,
+                presencePath,
                 name: meta.name || slug,
                 author: meta.author?.name || "Unknown",
                 authorGithub: meta.author?.github || null,
@@ -128,8 +134,8 @@ jobs:
             }
 
             for (const p of changes) {
-              const isNew = fileActions.added.some(f => f.startsWith(`${prefix}${p.slug}/`));
-              const isRemoved = fileActions.removed.some(f => f.startsWith(`${prefix}${p.slug}/`));
+              const isNew = fileActions.added.some(f => f.startsWith(`${prefix}${p.presencePath}/`));
+              const isRemoved = fileActions.removed.some(f => f.startsWith(`${prefix}${p.presencePath}/`));
               const badge = isNew ? "**:rocket: New**" : isRemoved ? "**:wastebasket: Removed**" : "**:pencil: Updated**";
 
               body += `## ${p.name}\n\n`;
@@ -181,9 +187,9 @@ jobs:
 
             const existingLabels = context.payload.pull_request.labels.map(l => l.name);
 
-            const labelToAdd = changes.some(c => fileActions.added.some(f => f.startsWith(`${prefix}${c.slug}/`)))
+            const labelToAdd = changes.some(c => fileActions.added.some(f => f.startsWith(`${prefix}${c.presencePath}/`)))
               ? "new"
-              : changes.some(c => fileActions.removed.some(f => f.startsWith(`${prefix}${c.slug}/`)))
+              : changes.some(c => fileActions.removed.some(f => f.startsWith(`${prefix}${c.presencePath}/`)))
                 ? "delete"
                 : "update";
 
