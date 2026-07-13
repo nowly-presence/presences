@@ -122,7 +122,7 @@ jobs:
                   : `\`${key}\` — ${asset.status === "missing" ? "missing" : asset.status === "wrong_size" ? `${asset.width || "?"}×${asset.height || "?"} (expected ${asset.expected})` : "unreadable"}`;
 
                 const preview = asset.exists
-                  ? `<a href="${rawUrl}"><img src="${rawUrl}" width="64" height="36" alt="${key}"></a>`
+                  ? `<a href="${rawUrl}"><img src="${rawUrl}" height="36" alt="${key}"></a>`
                   : "—";
 
                 const url = asset.exists ? rawUrl : "—";
@@ -136,7 +136,7 @@ jobs:
                 body += "|---|---|\n";
                 for (const file of p.extraFiles) {
                   const fileUrl = `https://raw.githubusercontent.com/${headRepo}/${headRef}/src/${p.path}/assets/${file}`;
-                  body += `| <a href="${fileUrl}"><img src="${fileUrl}" width="64" height="36" alt="${file}"></a> | \`${file}\` |\n`;
+                  body += `| <a href="${fileUrl}"><img src="${fileUrl}" height="36" alt="${file}"></a> | \`${file}\` |\n`;
                 }
               }
 
