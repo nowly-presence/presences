@@ -87,7 +87,7 @@ jobs:
           while IFS= read -r slug; do
             [ -z "$slug" ] && continue
             echo "Pushing $slug..."
-            "$GITHUB_WORKSPACE/.internal-cli/node_modules/.bin/tsx" "$GITHUB_WORKSPACE/.internal-cli/index.ts" push "$slug" \
+            "$GITHUB_WORKSPACE/.internal-cli/node_modules/.bin/tsx" --tsconfig "$GITHUB_WORKSPACE/.internal-cli/tsconfig.json" "$GITHUB_WORKSPACE/.internal-cli/index.ts" push "$slug" \
               --patch \
               --ai \
               --source pr \
