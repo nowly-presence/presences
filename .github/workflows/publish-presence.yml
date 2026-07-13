@@ -1,0 +1,99 @@
+name: Publish Presence
+
+on:
+  pull_request_target:
+    types: [closed]
+    paths:
+      - "src/**"
+
+concurrency:
+  group: publish-presence-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  publish:
+    if: >
+      github.event.pull_request.merged == true
+      && (contains(github.event.pull_request.labels.*.name, 'new') || contains(github.event.pull_request.labels.*.name, 'update'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          repositories: internal-cli
+
+      - uses: actions/checkout@v4
+        with:
+          ref: stable
+          fetch-depth: 0
+
+      - uses: actions/checkout@v4
+        with:
+          repository: nowly-presence/internal-cli
+          token: ${{ steps.app-token.outputs.token }}
+          path: .internal-cli
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install internal-cli dependencies
+        working-directory: .internal-cli
+        run: npm install
+
+      - name: Detect changed presence slugs
+        id: changed
+        run: |
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD="${{ github.event.pull_request.head.sha }}"
+
+          SLUGS=$(git diff --name-only --diff-filter=AMR "$BASE"..."$HEAD" -- src/ \
+            | sed -n 's|^src/[^/]*/\([^/]*\)/.*|\1|p' \
+            | tr '[:upper:]' '[:lower:]' \
+            | tr ' ' '-' \
+            | sort -u)
+
+          echo "Changed slugs:"
+          echo "$SLUGS"
+
+          {
+            echo "slugs<<EOF"
+            printf '%s\n' "$SLUGS"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Push changed presences to API and CDN
+        if: steps.changed.outputs.slugs != ''
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          while IFS= read -r slug; do
+            [ -z "$slug" ] && continue
+            echo "Pushing $slug..."
+            "$GITHUB_WORKSPACE/.internal-cli/node_modules/.bin/tsx" "$GITHUB_WORKSPACE/.internal-cli/index.ts" push "$slug" \
+              --patch \
+              --ai \
+              --source pr \
+              --base "$BASE_SHA" \
+              --head "$HEAD_SHA" \
+              --pr "#${{ github.event.pull_request.number }}" \
+              --pr-title "${{ github.event.pull_request.title }}" \
+              --author "$PR_AUTHOR"
+          done <<< "${{ steps.changed.outputs.slugs }}"
