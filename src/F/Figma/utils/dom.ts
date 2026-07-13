@@ -2,6 +2,7 @@ export type FigmaMode = "design" | "figjam" | "slides" | "make" | "buzz" | "site
 
 const MODE_BY_SEGMENT: Record<string, FigmaMode> = {
   design: "design",
+  file: "design",
   board: "figjam",
   slides: "slides",
   make: "make",
