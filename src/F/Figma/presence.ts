@@ -40,7 +40,7 @@ const MODE_DETAILS: Record<FileMode, string> = {
   sites: "Building on Figma Sites",
 }
 
-const MODE_SMALL_IMAGE: Record<FileMode, string> = {
+const MODE_LARGE_IMAGE: Record<FileMode, string> = {
   design: ModeAssets.Design,
   figjam: ModeAssets.FigJam,
   slides: ModeAssets.Slides,
@@ -69,10 +69,10 @@ presence.on("UpdateData", async (ctx) => {
   await presence.setActivity({
     details: MODE_DETAILS[mode],
     state: fileName,
-    largeImageKey: Assets.Logo,
-    largeImageText: "Figma",
-    smallImageKey: MODE_SMALL_IMAGE[mode],
-    smallImageText: MODE_DETAILS[mode],
+    largeImageKey: MODE_LARGE_IMAGE[mode],
+    largeImageText: MODE_DETAILS[mode],
+    smallImageKey: Assets.Logo,
+    smallImageText: "Figma",
     type: PresenceType.Watching,
   })
 })
