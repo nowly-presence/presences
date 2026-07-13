@@ -29,6 +29,7 @@ type AssetEntry = {
 
 type PresenceResult = {
   slug: string
+  path: string
   name: string
   status: "success" | "failure"
   assets: Record<string, AssetEntry>
@@ -58,7 +59,7 @@ const getImageInfo = async (filepath: string): Promise<{ width: number; height: 
   }
 };
 
-const validatePresence = async (dir: string, slugName: string): Promise<PresenceResult | null> => {
+const validatePresence = async (dir: string, slugName: string, presencePath: string): Promise<PresenceResult | null> => {
   const metaPath = join(dir, "metadata.json");
   if (!existsSync(metaPath)) return null;
 
@@ -67,6 +68,7 @@ const validatePresence = async (dir: string, slugName: string): Promise<Presence
 
   const result: PresenceResult = {
     slug: slugName,
+    path: presencePath,
     name: meta.name || slugName,
     status: "success",
     assets: {},
