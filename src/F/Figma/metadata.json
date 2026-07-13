@@ -1,0 +1,38 @@
+{
+  "name": "Figma",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["figma.com", "www.figma.com"],
+  "regExp": "^https?://(www\\.)?figma\\.com/",
+  "color": "#0ACF83",
+  "category": "tools",
+  "description": {
+    "en-US": "Show what you're designing, whiteboarding, or building on Figma.",
+    "fr-FR": "Affiche ce que tu es en train de designer, whiteboarder ou construire sur Figma.",
+    "es-ES": "Muestra lo que estás diseñando, pizarreando o construyendo en Figma."
+  },
+  "longDescription": {
+    "en-US": "Figma is the collaborative interface design platform behind Design, FigJam, Slides, Make, Buzz and Sites. This presence detects which of these you're currently using from the URL and shows it on Discord, with an optional toggle to display the name of the file or project you have open.",
+    "fr-FR": "Figma est la plateforme collaborative de design d'interface derrière Design, FigJam, Slides, Make, Buzz et Sites. Cette présence détecte lequel de ces produits tu utilises via l'URL et l'affiche sur Discord, avec une option pour afficher le nom du fichier ou du projet ouvert.",
+    "es-ES": "Figma es la plataforma colaborativa de diseño de interfaces detrás de Design, FigJam, Slides, Make, Buzz y Sites. Esta presencia detecta cuál de estos productos estás usando a partir de la URL y lo muestra en Discord, con una opción para mostrar el nombre del archivo o proyecto abierto."
+  },
+  "features": {
+    "en-US": [
+      "Detects Design, FigJam, Slides, Make, Buzz and Sites modes",
+      "Shows the file or project name currently open",
+      "Privacy toggle to hide the file name",
+      "Mode-specific icon badges"
+    ],
+    "fr-FR": [
+      "Détecte les modes Design, FigJam, Slides, Make, Buzz et Sites",
+      "Affiche le nom du fichier ou du projet ouvert",
+      "Option de confidentialité pour masquer le nom du fichier",
+      "Icônes de badge spécifiques à chaque mode"
+    ],
+    "es-ES": [
+      "Detecta los modos Design, FigJam, Slides, Make, Buzz y Sites",
+      "Muestra el nombre del archivo o proyecto abierto",
+      "Opción de privacidad para ocultar el nombre del archivo",
+      "Insignias de icono específicas para cada modo"
+    ]
+  }
+}
