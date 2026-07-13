@@ -168,7 +168,7 @@ const validatePresence = async (dir: string, slugName: string, presencePath: str
 
 const main = async (): Promise<void> => {
   const srcDir = join(BASE_DIR, "src");
-  type PresenceInfo = { dir: string; slug: string; dirName: string };
+  type PresenceInfo = { dir: string; slug: string; dirName: string; path: string };
 
   const presences: PresenceInfo[] = [];
 
@@ -179,7 +179,7 @@ const main = async (): Promise<void> => {
       if (!sub.isDirectory()) continue;
       const metaPath = join(letterDir, sub.name, "metadata.json");
       if (!existsSync(metaPath)) continue;
-      presences.push({ dir: join(letterDir, sub.name), slug: slug(sub.name), dirName: sub.name });
+      presences.push({ dir: join(letterDir, sub.name), slug: slug(sub.name), dirName: sub.name, path: `${entry.name}/${sub.name}` });
     }
   }
 
@@ -190,7 +190,7 @@ const main = async (): Promise<void> => {
   const results: PresenceResult[] = [];
   for (const p of presences) {
     if (!changedDirs.includes(p.dirName)) continue;
-    const r = await validatePresence(p.dir, p.slug);
+    const r = await validatePresence(p.dir, p.slug, p.path);
     if (r) results.push(r);
   }
 
