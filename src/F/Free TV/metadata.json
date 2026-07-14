@@ -3,7 +3,7 @@
   "author": { "name": "Gaëtan H", "github": "steellgold" },
   "url": ["tv.free.fr"],
   "regExp": "^https?://(www\\.)?tv\\.free\\.fr/",
-  "color": "#CE0500",
+  "color": "#CE0000",
   "category": "streaming",
   "description": {
     "en-US": "Watch live French TV channels on Free TV.",
