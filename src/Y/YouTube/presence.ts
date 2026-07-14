@@ -3,6 +3,7 @@ import { handleBrowsingActivity } from "./utils/browsing"
 import { Category } from "./utils/categories"
 import { findTitle, findUploader } from "./utils/channel"
 import { $, findVideo, text } from "./utils/dom"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showBrowsing: {
@@ -39,6 +40,7 @@ const presence = new Presence(settings)
 let prevPath = ""
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
   const { pathname, href, search } = document.location
 
   if (pathname !== prevPath) {
@@ -60,10 +62,10 @@ presence.on("UpdateData", async (ctx) => {
       largeImageKey: videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : undefined,
       largeImageText: title,
       smallImageKey: isPlaying ? "play" : "pause",
-      smallImageText: isPlaying ? "Playing" : "Paused",
+      smallImageText: isPlaying ? strings.playing : strings.paused,
       ...createMediaTimestamps(video),
       type: PresenceType.Watching,
-      buttons: [{ label: "Watch Video", url: href.split("&")[0] }],
+      buttons: [{ label: strings.watchVideo, url: href.split("&")[0] }],
     })
     return
   }
@@ -75,13 +77,13 @@ presence.on("UpdateData", async (ctx) => {
       || document.querySelector<HTMLElement>(".miniAppSplashScreenViewModelBackgroundBlur")?.style.backgroundImage?.match(/url\("([^"]+)"\)/)?.[1]
 
     await presence.setActivity({
-      details: gameName || "Playing a game",
+      details: gameName || strings.playingGame,
       state: findUploader(),
       largeImageKey: gameIcon || Category.Playables,
-      largeImageText: gameName || "YouTube Playables",
+      largeImageText: gameName || strings.youtubePlayables,
       startTimestamp: Math.floor(Date.now() / 1000),
       type: PresenceType.Watching,
-      buttons: [{ label: "Play Game", url: href.split("?")[0] }],
+      buttons: [{ label: strings.playGame, url: href.split("?")[0] }],
     })
     return
   }

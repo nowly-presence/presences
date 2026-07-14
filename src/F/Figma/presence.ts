@@ -1,5 +1,6 @@
 import { PresenceType } from "@nowly/sdk"
 import { getFigmaMode, getFileName } from "./utils/dom"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showFileName: {
@@ -31,16 +32,6 @@ const ModeAssets = Presence.Assets({
 
 type FileMode = "design" | "figjam" | "slides" | "make" | "buzz" | "sites" | "proto"
 
-const MODE_DETAILS: Record<FileMode, string> = {
-  design: "Designing on Figma",
-  figjam: "Whiteboarding on FigJam",
-  slides: "Presenting on Figma Slides",
-  make: "Building on Figma Make",
-  buzz: "Creating on Figma Buzz",
-  sites: "Building on Figma Sites",
-  proto: "Presenting a prototype on Figma",
-}
-
 const MODE_LARGE_IMAGE: Record<FileMode, string> = {
   design: ModeAssets.Design,
   figjam: ModeAssets.FigJam,
@@ -52,12 +43,22 @@ const MODE_LARGE_IMAGE: Record<FileMode, string> = {
 }
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
+  const modeDetails: Record<FileMode, string> = {
+    design: strings.designing,
+    figjam: strings.whiteboarding,
+    slides: strings.presentingSlides,
+    make: strings.buildingMake,
+    buzz: strings.creatingBuzz,
+    sites: strings.buildingSites,
+    proto: strings.presentingPrototype,
+  }
   const { pathname } = document.location
   const mode = getFigmaMode(pathname)
 
   if (mode === "home" || mode === "other") {
     await presence.setActivity({
-      details: mode === "home" ? "Browsing homepage" : "Browsing Figma",
+      details: mode === "home" ? strings.browsingHomepage : strings.browsingFigma,
       largeImageKey: Assets.Logo,
       largeImageText: "Figma",
       smallImageKey: Assets.Icon,
@@ -69,10 +70,10 @@ presence.on("UpdateData", async (ctx) => {
   const fileName = ctx.settings.showFileName ? getFileName(pathname, document.title) : undefined
 
   await presence.setActivity({
-    details: MODE_DETAILS[mode],
+    details: modeDetails[mode],
     state: fileName,
     largeImageKey: MODE_LARGE_IMAGE[mode],
-    largeImageText: MODE_DETAILS[mode],
+    largeImageText: modeDetails[mode],
     smallImageKey: Assets.Logo,
     smallImageText: "Figma",
     type: PresenceType.Watching,

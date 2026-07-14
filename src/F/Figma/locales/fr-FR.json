@@ -1,0 +1,16 @@
+{
+  "browsing": "Navigation",
+  "searching": "Recherche",
+  "watching": "Regarde",
+  "playing": "Lecture en cours",
+  "paused": "En pause",
+  "browsingHomepage": "Parcourt l’accueil",
+  "browsingFigma": "Parcourt Figma",
+  "designing": "Conçoit sur Figma",
+  "whiteboarding": "Travaille sur un tableau FigJam",
+  "presentingSlides": "Présente avec Figma Slides",
+  "buildingMake": "Crée avec Figma Make",
+  "creatingBuzz": "Crée avec Figma Buzz",
+  "buildingSites": "Conçoit un site avec Figma Sites",
+  "presentingPrototype": "Présente un prototype Figma"
+}
