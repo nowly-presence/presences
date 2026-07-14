@@ -1,5 +1,11 @@
 {
   "watchingLive": "Watching live TV",
   "watchingVod": "Watching a movie or show",
-  "browsing": "Browsing Free TV"
+  "liveState": "{channel} · {program}",
+  "browsingHome": "Browsing Free TV",
+  "browsingChannels": "Browsing channels",
+  "browsingVodHub": "Browsing movies & shows",
+  "browsingTvGuide": "Browsing the TV guide",
+  "browsingMyList": "Browsing their list",
+  "viewingDetail": "Viewing details"
 }

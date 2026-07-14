@@ -1,6 +1,9 @@
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
+import { getLatestFreeTvEvent, installFreeTvBridge } from "./utils/bridge"
 import { findVideo, getMode, getTitle, isVideoPlaying } from "./utils/dom"
 import type enUS from "./locales/en-US.json"
+
+installFreeTvBridge()
 
 const settings = Presence.Settings({
   showBrowsing: {
@@ -32,12 +35,20 @@ presence.on("UpdateData", async (ctx) => {
   const strings = await presence.getStrings<typeof enUS>()
 
   if (mode === "live" || mode === "vod") {
+    const event = getLatestFreeTvEvent()
+    const fallbackTitle = getTitle()
+
+    const state = mode === "live"
+      ? (event.channelName && event.programName
+        ? presence.formatString(strings.liveState, { channel: event.channelName, program: event.programName })
+        : event.channelName || event.programName || fallbackTitle)
+      : (event.programName || fallbackTitle)
+
     const video = findVideo()
-    const title = getTitle()
 
     await presence.setActivity({
       details: mode === "live" ? strings.watchingLive : strings.watchingVod,
-      state: title,
+      state,
       largeImageKey: Assets.Logo,
       largeImageText: "Free TV",
       smallImageKey: Assets.Icon,
@@ -52,8 +63,17 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
+  const browsingDetails: Record<string, string> = {
+    home: strings.browsingHome,
+    channels: strings.browsingChannels,
+    vodHub: strings.browsingVodHub,
+    tvGuide: strings.browsingTvGuide,
+    myList: strings.browsingMyList,
+    detail: strings.viewingDetail,
+  }
+
   await presence.setActivity({
-    details: strings.browsing,
+    details: browsingDetails[mode] ?? strings.browsingHome,
     largeImageKey: Assets.Logo,
     largeImageText: "Free TV",
     smallImageKey: Assets.Icon,
