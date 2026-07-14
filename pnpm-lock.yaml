@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nowly/sdk':
-        specifier: ^0.99.3
-        version: 0.99.3
+        specifier: ^1.3.0
+        version: 1.3.0
     devDependencies:
       '@types/node':
         specifier: ^26.0.1
@@ -392,8 +392,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@nowly/sdk@0.99.3':
-    resolution: {integrity: sha512-axJuda8bvkCZSKEzwUXpq1U3sP0pE+si7KzFYoUEp6V6yq/kEmhCDmW3WFbAt/N688t8y5rUD0fivgJsDDYHcw==}
+  '@nowly/sdk@1.3.0':
+    resolution: {integrity: sha512-gSqtyd9OdVaWlWY4a/X+XPntXVHTjyA7+8i2mIJe+G83caUjVwN36VNku9fKEfl0W0RK4rGKvatHKg7wK0awBQ==}
 
   '@types/esrecurse@4.3.1':
     resolution: {integrity: sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw==}
@@ -889,7 +889,7 @@ snapshots:
   '@img/sharp-win32-x64@0.34.5':
     optional: true
 
-  '@nowly/sdk@0.99.3': {}
+  '@nowly/sdk@1.3.0': {}
 
   '@types/esrecurse@4.3.1': {}
 
