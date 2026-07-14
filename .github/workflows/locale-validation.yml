@@ -1,0 +1,151 @@
+name: Nolo Locale Validation
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+    paths:
+      - "src/**"
+
+concurrency:
+  group: locale-validation-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  validate:
+    name: Locale validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          token: ${{ steps.app-token.outputs.token }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install tsx
+
+      - name: Get changed presence dirs
+        id: changes
+        run: |
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          DIRS=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" -- src/ \
+            | sed -n 's|^src/[^/]*/\([^/]*\)/.*|\1|p' \
+            | sort -u \
+            | tr '\n' ',' \
+            | sed 's/,$//')
+          echo "dirs=$DIRS" >> "$GITHUB_OUTPUT"
+          echo "Changed presence dirs: $DIRS"
+
+      - name: Run locale validation
+        env:
+          CHANGED_DIRS: ${{ steps.changes.outputs.dirs }}
+        run: |
+          npx tsx scripts/validate-locales.ts "${{ github.workspace }}" > /tmp/validation-result.json
+
+      - name: Skip status if no changes
+        id: check
+        run: |
+          COUNT=$(node -e "const d=require('fs').readFileSync('/tmp/validation-result.json','utf-8'); const j=JSON.parse(d); console.log(j.summary.total)")
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: Create commit status
+        if: steps.check.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          RESULT=$(cat /tmp/validation-result.json)
+          STATE=$(echo "$RESULT" | node -e "const d=require('fs').readFileSync('/dev/stdin','utf-8'); const j=JSON.parse(d); process.stdout.write(j.overall==='success'?'success':'failure')")
+          DESC=$(echo "$RESULT" | node -e "const d=require('fs').readFileSync('/dev/stdin','utf-8'); const j=JSON.parse(d); const s=j.summary; process.stdout.write(s.failed > 0 ? s.errors.slice(0,3).join(' · ') + (s.errors.length > 3 ? \` (+ \${s.errors.length-3} more)\` : '') : \`\${s.passed} presence(s) valid\`)")
+
+          gh api \
+            --method POST \
+            "/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }}" \
+            -f "state=$STATE" \
+            -f "target_url=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            -f "description=$DESC" \
+            -f "context=Nolo Locale Validation"
+
+      - name: Post comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const fs = require("fs");
+            const result = JSON.parse(fs.readFileSync("/tmp/validation-result.json", "utf-8"));
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            if (result.results.length === 0) {
+              console.log("No presences to validate");
+              return;
+            }
+
+            let body = "## 🌐 Locale validation\n\n";
+            body += "*Checking every `getStrings()` key against `locales/*.json` — no silent `undefined` allowed. 🕵️*\n\n";
+
+            for (const p of result.results) {
+              const icon = p.status === "success" ? "✅" : "❌";
+              body += `### ${p.name} (\`${p.slug}\`) — ${icon} ${p.status === "success" ? "All good" : p.errors.length + " issue(s)"}\n\n`;
+
+              if (p.usedKeysMissingFromBase.length > 0) {
+                body += `- ❌ **Used in code but missing from \`en-US.json\`:** ${p.usedKeysMissingFromBase.map(k => `\`${k}\``).join(", ")}\n`;
+              }
+
+              for (const report of p.localeReports) {
+                if (report.missingKeys.length > 0) {
+                  body += `- ❌ **\`${report.locale}.json\` missing key(s):** ${report.missingKeys.map(k => `\`${k}\``).join(", ")}\n`;
+                }
+                if (report.extraKeys.length > 0) {
+                  body += `- ⚠️ **\`${report.locale}.json\` has extra key(s) not in \`en-US\`:** ${report.extraKeys.map(k => `\`${k}\``).join(", ")}\n`;
+                }
+              }
+
+              if (p.unusedBaseKeys.length > 0) {
+                body += `- ⚠️ **Defined but never used:** ${p.unusedBaseKeys.map(k => `\`${k}\``).join(", ")}\n`;
+              }
+
+              if (p.status === "success" && p.unusedBaseKeys.length === 0) {
+                body += "- Every locale key is used, and all languages match.\n";
+              }
+
+              body += "\n---\n\n";
+            }
+
+            body += "*Beep boop — I refresh this comment on every push, so no need to scroll. 🤖*";
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner, repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === "Bot" && c.body?.includes("Locale validation")
+            );
+
+            if (botComment) {
+              await github.rest.issues.deleteComment({
+                owner, repo,
+                comment_id: botComment.id,
+              });
+            }
+
+            await github.rest.issues.createComment({
+              owner, repo,
+              issue_number: context.issue.number,
+              body,
+            });
