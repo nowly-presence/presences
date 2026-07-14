@@ -1,6 +1,7 @@
 import { PresenceType, type PresenceData } from "@nowly/sdk"
 import { toDiscordImage } from "./utils/proxy"
 import { createProgressTimestamps, findPlayerBar, findVideo, getCurrentTrack } from "./utils/track"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   privacy: {
@@ -51,9 +52,9 @@ const presence = new Presence(settings)
 
 const isEnabled = (value: unknown): boolean => value === true || value === "true"
 
-const browsingDetails = (pathname: string): string => {
+const browsingDetails = (pathname: string, strings: typeof enUS): string => {
   if (pathname === "/" || pathname === "/browse") return "Browsing home"
-  if (pathname.startsWith("/search")) return "Searching"
+  if (pathname.startsWith("/search")) return strings.searching
   if (pathname.startsWith("/playlist")) return "Viewing a playlist"
   if (pathname.startsWith("/channel") || pathname.startsWith("/artist")) return "Viewing an artist"
   if (pathname.startsWith("/library")) return "Browsing library"
@@ -63,6 +64,7 @@ const browsingDetails = (pathname: string): string => {
 
 presence.on("UpdateData", async (ctx) => {
   try {
+    const strings = await presence.getStrings<typeof enUS>()
     const privacy = isEnabled(ctx.settings.privacy)
     const showButtons = !("showButtons" in ctx.settings) || isEnabled(ctx.settings.showButtons)
     const showBrowsing = isEnabled(ctx.settings.showBrowsing)
@@ -77,7 +79,7 @@ presence.on("UpdateData", async (ctx) => {
         largeImageKey: Assets.Logo,
         largeImageText: privacy ? "YouTube Music" : track.title,
         smallImageKey: track.playing ? "play" : "pause",
-        smallImageText: track.playing ? "Playing" : "Paused",
+        smallImageText: track.playing ? strings.playing : strings.paused,
         type: PresenceType.Listening,
         ...createProgressTimestamps(video, track),
       }
@@ -100,7 +102,7 @@ presence.on("UpdateData", async (ctx) => {
     }
 
     await presence.setActivity({
-      details: browsingDetails(document.location.pathname),
+      details: browsingDetails(document.location.pathname, strings),
       state: document.location.pathname.startsWith("/search")
         ? new URLSearchParams(document.location.search).get("q") ?? undefined
         : undefined,

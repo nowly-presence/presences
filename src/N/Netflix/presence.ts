@@ -8,6 +8,7 @@ import {
   getVideoId,
 } from "./utils/metadata"
 import { findVideo } from "./utils/player"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showBrowsing: {
@@ -29,6 +30,7 @@ const settings = Presence.Settings({
 const presence = new Presence(settings)
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
   const { pathname } = document.location
   const href = window.location.href
   const id = getVideoId(href)
@@ -55,7 +57,7 @@ presence.on("UpdateData", async (ctx) => {
       }
 
       const data: Parameters<typeof presence.setActivity>[0] = {
-        details: v?.title || "Watching",
+        details: v?.title || strings.watching,
         state,
         largeImageKey: getBoxart(v) || Assets.Logo,
         largeImageText: v?.title || "Netflix",
@@ -68,10 +70,10 @@ presence.on("UpdateData", async (ctx) => {
 
       if (video.paused) {
         data.smallImageKey = "pause"
-        data.smallImageText = "Paused"
+        data.smallImageText = strings.paused
       } else {
         data.smallImageKey = "play"
-        data.smallImageText = "Playing"
+        data.smallImageText = strings.playing
         Object.assign(data, createMediaTimestamps(video))
       }
 
@@ -92,7 +94,7 @@ presence.on("UpdateData", async (ctx) => {
     const v = meta?.video
 
     await presence.setActivity({
-      details: v?.title || "Viewing a title",
+      details: v?.title || strings.watching,
       state: v?.synopsis?.slice(0, 128),
       largeImageKey: getBoxart(v) || Assets.Logo,
       largeImageText: v?.title || "Netflix",

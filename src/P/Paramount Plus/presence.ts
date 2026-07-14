@@ -1,6 +1,7 @@
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { handleBrowsingActivity } from "./utils/browsing"
 import { findVideo, getPlayerMetadata, getPoster } from "./utils/player"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showBrowsing: {
@@ -22,6 +23,7 @@ const settings = Presence.Settings({
 const presence = new Presence(settings)
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
   const { pathname, href } = document.location
   const video = findVideo()
   const isLive = pathname.includes("/live-tv/")
@@ -48,10 +50,10 @@ presence.on("UpdateData", async (ctx) => {
 
     if (video.paused) {
       data.smallImageKey = "pause"
-      data.smallImageText = "Paused"
+      data.smallImageText = strings.paused
     } else {
       data.smallImageKey = "play"
-      data.smallImageText = "Playing"
+      data.smallImageText = strings.playing
       if (!isLive) Object.assign(data, createMediaTimestamps(video))
     }
 

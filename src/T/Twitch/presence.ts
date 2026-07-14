@@ -9,6 +9,7 @@ import {
 } from "./utils/dom"
 import { findGame, findStreamerAvatar, findStreamerName, findStreamTitle } from "./utils/streamer"
 import { getClipInfo, getVodTitle } from "./utils/vod"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showVods: {
@@ -44,6 +45,7 @@ const settings = Presence.Settings({
 const presence = new Presence(settings)
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
   const video = findVideo()
   const { pathname } = document.location
 
@@ -107,7 +109,7 @@ presence.on("UpdateData", async (ctx) => {
       largeImageKey: avatar || Assets.Logo,
       largeImageText: streamer || "Twitch",
       smallImageKey: video?.paused ? "pause" : "play",
-      smallImageText: video?.paused ? "Paused" : "Playing",
+      smallImageText: video?.paused ? strings.paused : strings.playing,
       type: PresenceType.Watching,
       buttons: [{ label: "Watch Video", url: window.location.href.split("?")[0] }],
     }
@@ -133,7 +135,7 @@ presence.on("UpdateData", async (ctx) => {
       largeImageKey: avatar || Assets.Logo,
       largeImageText: creator || "Twitch Clip",
       smallImageKey: video?.paused ? "pause" : "play",
-      smallImageText: video?.paused ? "Paused" : "Playing",
+      smallImageText: video?.paused ? strings.paused : strings.playing,
       type: PresenceType.Watching,
       buttons: [{ label: "Watch Clip", url: window.location.href }],
     }
