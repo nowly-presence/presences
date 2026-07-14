@@ -1,6 +1,7 @@
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { $, findVideo, hasPlayerTabs, text } from "./utils/dom"
 import { getPageDescription, getPageTitle, getThumbnail, parseSubtitle } from "./utils/metadata"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showBrowsing: {
@@ -22,6 +23,7 @@ const settings = Presence.Settings({
 const presence = new Presence(settings)
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
   const { pathname, href } = document.location
   const video = findVideo()
   const playing = video && hasPlayerTabs()
@@ -56,10 +58,10 @@ presence.on("UpdateData", async (ctx) => {
 
     if (isPaused) {
       data.smallImageKey = "pause"
-      data.smallImageText = "Paused"
+      data.smallImageText = strings.paused
     } else {
       data.smallImageKey = "play"
-      data.smallImageText = "Playing"
+      data.smallImageText = strings.playing
       Object.assign(data, createMediaTimestamps(video))
     }
 
@@ -84,7 +86,7 @@ presence.on("UpdateData", async (ctx) => {
   if (pathname.startsWith("/search")) {
     const query = new URLSearchParams(document.location.search).get("q")
     await presence.setActivity({
-      details: "Searching",
+      details: strings.searching,
       state: query ? `"${query}"` : undefined,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
@@ -113,7 +115,7 @@ presence.on("UpdateData", async (ctx) => {
   }
 
   await presence.setActivity({
-    details: "Browsing",
+    details: strings.browsing,
     largeImageKey: Assets.Logo,
     type: PresenceType.Watching,
   })

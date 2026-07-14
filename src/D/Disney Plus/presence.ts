@@ -1,6 +1,7 @@
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { getDisneyPlayerData, installDisneyBridge } from "./utils/bridge"
 import { createDisneyImageUrl, findEntityTitle, findVideo, isEpisodeSubtitle, parseEpisodeState } from "./utils/dom"
+import type enUS from "./locales/en-US.json"
 
 installDisneyBridge()
 
@@ -24,6 +25,7 @@ const settings = Presence.Settings({
 const presence = new Presence(settings)
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
   const { pathname } = document.location
   const video = findVideo()
   const { imageId, title, subtitle } = getDisneyPlayerData()
@@ -46,10 +48,10 @@ presence.on("UpdateData", async (ctx) => {
 
     if (video.paused) {
       data.smallImageKey = "pause"
-      data.smallImageText = "Paused"
+      data.smallImageText = strings.paused
     } else {
       data.smallImageKey = "play"
-      data.smallImageText = "Playing"
+      data.smallImageText = strings.playing
       Object.assign(data, createMediaTimestamps(video))
     }
 

@@ -1,4 +1,5 @@
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showBrowsing: {
@@ -37,6 +38,7 @@ const getEpisodeSpan = (): HTMLSpanElement | null => {
 }
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
   const { pathname } = location
 
   // Player page (/play/{token})
@@ -61,7 +63,7 @@ presence.on("UpdateData", async (ctx) => {
       largeImageKey: poster || Assets.Logo,
       largeImageText: title,
       smallImageKey: isPlaying ? "play" : "pause",
-      smallImageText: isPlaying ? "Playing" : "Paused",
+      smallImageText: isPlaying ? strings.playing : strings.paused,
       type: PresenceType.Watching,
     }
 

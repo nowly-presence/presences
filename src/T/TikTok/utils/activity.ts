@@ -12,6 +12,7 @@ import {
   extractVideoId,
   extractVideoPagePath,
 } from "./video"
+import type enUS from "../locales/en-US.json"
 
 type TikTokSettings = {
   privacy?: unknown
@@ -33,6 +34,7 @@ export const handleUpdate = async (
   ctx: UpdateDataContext<TikTokSettings>,
 ): Promise<void> => {
   try {
+    const strings = await presence.getStrings<typeof enUS>()
     const { pathname, href } = document.location
     const lang = document.querySelector("html")?.getAttribute("lang")
     const privacy = isEnabled(ctx.settings.privacy)
@@ -55,7 +57,7 @@ export const handleUpdate = async (
       const data: PresenceData = {
         largeImageKey: poster ?? Assets.Logo,
         smallImageKey: paused ? "pause" : "play",
-        smallImageText: paused ? "Paused" : "Playing",
+        smallImageText: paused ? strings.paused : strings.playing,
         type: PresenceType.Watching,
       }
 
@@ -104,7 +106,7 @@ export const handleUpdate = async (
       const data: PresenceData = {
         largeImageKey: poster ?? Assets.Logo,
         smallImageKey: vidEl?.paused ? "pause" : "play",
-        smallImageText: vidEl?.paused ? "Paused" : "Playing",
+        smallImageText: vidEl?.paused ? strings.paused : strings.playing,
         type: PresenceType.Watching,
       }
 

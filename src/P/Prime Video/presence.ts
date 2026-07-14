@@ -8,6 +8,7 @@ import {
   findTitleText,
   findVideo,
 } from "./utils/player"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showBrowsing: {
@@ -29,6 +30,7 @@ const settings = Presence.Settings({
 const presence = new Presence(settings)
 
 presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
   const { pathname } = document.location
   const isOnDetailPage = pathname.includes("/detail/")
 
@@ -64,10 +66,10 @@ presence.on("UpdateData", async (ctx) => {
 
       if (video.paused) {
         data.smallImageKey = "pause"
-        data.smallImageText = "Paused"
+        data.smallImageText = strings.paused
       } else {
         data.smallImageKey = "play"
-        data.smallImageText = "Playing"
+        data.smallImageText = strings.playing
         Object.assign(data, createMediaTimestamps(video))
       }
 
