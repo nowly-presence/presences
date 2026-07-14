@@ -4,8 +4,8 @@
     "name": "KiMi",
     "github": "q-kimi"
   },
-  "url": ["cinepulse.ws", "www.cinepulse.ws"],
-  "regExp": "^https?://(?:www\\.)?cinepulse\\.ws",
+  "url": ["cinepulse.mx", "www.cinepulse.mx"],
+  "regExp": "^https?://(?:www\\.)?cinepulse\\.mx",
   "color": "#EF7A7A",
   "category": "streaming",
   "description": {
