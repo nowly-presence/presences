@@ -9,7 +9,8 @@
     "skipLibCheck": true,
     "types": ["node"],
     "paths": {
-      "#/*": ["../sdk/src/*"]
+      "#/*": ["../sdk/src/*"],
+      "@nowly/sdk": ["../sdk/src/index.ts"]
     }
   },
   "include": ["scripts/**/*.ts", "src/**/*.ts"]
