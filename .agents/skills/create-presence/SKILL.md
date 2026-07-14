@@ -44,6 +44,10 @@ src/{LETTER}/{Service Name}/
   utils/               # optional but recommended — helpers (DOM, parsing, API, bridge)
     player.ts
     browsing.ts
+  locales/             # required — runtime activity strings shown on Discord
+    en-US.json
+    fr-FR.json
+    es-ES.json
   assets/              # required for publishing — binary images
     logo.png
     icon.png
@@ -71,16 +75,21 @@ pnpm install
 
 ## Workflow
 
-1. **Scaffold.** Either run `nowly init "Service Name"` or create the folder/files
-   by hand, copying an existing presence.
+1. **Scaffold.** Either run `nowly init "Service Name"` (also creates a starter
+   `locales/{en-US,fr-FR,es-ES}.json` with a generic browsing string) or create the
+   folder/files by hand, copying an existing presence.
 2. **Write `metadata.json`** (see reference below). Include `longDescription` and
    `features` in `en-US`, `fr-FR`, `es-ES`.
-3. **Inspect the target site's DOM** with the snippets in "DOM inspection".
-4. **Write `presence.ts` + `utils/`** following the SDK reference and conventions.
-5. **Build:** `nowly build <slug>` — must succeed.
-6. **Validate:** `nowly validate <slug>` — must report `✓`.
-7. **Type-check:** `npx tsc --noEmit -p tsconfig.json` — must be clean.
-8. Hand off assets + manual E2E verification.
+3. **Write `locales/en-US.json`, `fr-FR.json`, `es-ES.json`** — the runtime strings
+   your `presence.ts` will show as `details`/`state` (see "Locales" below). Write
+   `en-US.json` first, then translate the same keys into the other two.
+4. **Inspect the target site's DOM** with the snippets in "DOM inspection".
+5. **Write `presence.ts` + `utils/`** following the SDK reference and conventions —
+   call `presence.getStrings()` for activity text instead of hardcoding English.
+6. **Build:** `nowly build <slug>` — must succeed.
+7. **Validate:** `nowly validate <slug>` — must report `✓`.
+8. **Type-check:** `npx tsc --noEmit -p tsconfig.json` — must be clean.
+9. Hand off assets + manual E2E verification.
 
 ## CLI commands
 
@@ -130,7 +139,8 @@ presence.on("UpdateData", async (ctx) => {
 
 await presence.setActivity(data)   // push to Discord
 presence.clearActivity()           // show nothing
-await presence.getStrings(dict)    // locale-aware strings
+await presence.getStrings()        // this presence's locale/{lang}.json content
+presence.formatString(tpl, params) // "{name} on Foo" + {name: "x"} -> "x on Foo"
 presence.info("msg")
 presence.error("msg")
 ```
@@ -174,6 +184,39 @@ const settings = Presence.Settings({
 })
 ```
 
+### Locales
+
+`locales/*.json` files hold the strings your `presence.ts` shows on Discord
+(`details`, `state`, mode labels, etc.) — **separate from** `metadata.json`'s own
+per-locale fields (`description`, `longDescription`, `features`, setting
+`label`/`description`), which stay inline objects and are untouched by this.
+
+```json
+// locales/en-US.json
+{
+  "browsingHomepage": "Browsing homepage",
+  "watching": "Watching {title}"
+}
+```
+
+```ts
+import type enUS from "./locales/en-US.json"
+
+presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
+
+  await presence.setActivity({
+    details: strings.browsingHomepage,
+    state: presence.formatString(strings.watching, { title }),
+    // ...
+  })
+})
+```
+
+Keep the exact same key set across all three locale files. Fallback to `en-US` only
+happens when the *entire* locale file is missing — there is no per-key fallback, so
+a key present in `en-US.json` but forgotten in `fr-FR.json` renders as `undefined`.
+
 ### Assets
 
 ```ts
@@ -202,7 +245,9 @@ from `@nowly/sdk`.
 - **Small images.** Only `"play"`, `"pause"`, `"search"`.
 - **Buttons.** At most 2; strip query strings.
 - **`world`.** Stay isolated by default.
-- **Localization.** `en-US`, `fr-FR`, `es-ES` for all user-facing strings.
+- **Localization.** `en-US`, `fr-FR`, `es-ES` everywhere: inline objects in
+  `metadata.json` for marketplace/settings text, `locales/*.json` + `getStrings()`
+  for anything rendered inside `setActivity()`. Never hardcode English activity text.
 - **Code style.** No semicolons, double quotes, 2-space indent.
 
 ## Assets
@@ -230,3 +275,4 @@ All at `src/{LETTER}/{Service Name}/`:
 - **Twitch** — live/VOD/clips with browsing
 - **TikTok / YouTube** — social/video, image proxy
 - **Cinepulse** — single-file (no utils)
+- **Figma / YouTube** — reference for `locales/*.json` + `getStrings()`/`formatString()`
