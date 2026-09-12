@@ -41,10 +41,6 @@
       <b>GitHub</b>
     </td>
     <td align="center">
-      <img src="https://cdn.nowly.me/presences/nakastream/assets/logo.png" width="48" height="48" alt="Nakastream"><br>
-      <b>Nakastream</b>
-    </td>
-    <td align="center">
       <img src="https://cdn.nowly.me/presences/netflix/assets/logo.png" width="48" height="48" alt="Netflix"><br>
       <b>Netflix</b>
     </td>
@@ -56,12 +52,12 @@
       <img src="https://cdn.nowly.me/presences/prime-video/assets/logo.png" width="48" height="48" alt="Prime Video"><br>
       <b>Prime Video</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/tiktok/assets/logo.png" width="48" height="48" alt="TikTok"><br>
       <b>TikTok</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/twitch/assets/logo.png" width="48" height="48" alt="Twitch"><br>
       <b>Twitch</b>
