@@ -37,6 +37,10 @@
   </tr>
   <tr>
     <td align="center">
+      <img src="https://cdn.nowly.me/presences/free-tv/assets/logo.png" width="48" height="48" alt="Free TV"><br>
+      <b>Free TV</b>
+    </td>
+    <td align="center">
       <img src="https://cdn.nowly.me/presences/github/assets/logo.png" width="48" height="48" alt="GitHub"><br>
       <b>GitHub</b>
     </td>
@@ -52,12 +56,12 @@
       <img src="https://cdn.nowly.me/presences/prime-video/assets/logo.png" width="48" height="48" alt="Prime Video"><br>
       <b>Prime Video</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/tiktok/assets/logo.png" width="48" height="48" alt="TikTok"><br>
       <b>TikTok</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/twitch/assets/logo.png" width="48" height="48" alt="Twitch"><br>
       <b>Twitch</b>
