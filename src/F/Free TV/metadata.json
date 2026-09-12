@@ -1,0 +1,32 @@
+{
+  "name": "Free TV",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["tv.free.fr"],
+  "regExp": "^https?://(www\\.)?tv\\.free\\.fr/",
+  "color": "#CE0000",
+  "category": "streaming",
+  "description": {
+    "en-US": "Watch live French TV channels on Free TV.",
+    "fr-FR": "Regarde les chaînes de télévision françaises en direct sur Free TV.",
+    "es-ES": "Mira canales de televisión franceses en directo en Free TV."
+  },
+  "longDescription": {
+    "en-US": "Free TV is the web live TV player from French ISP Free, letting Freebox subscribers stream French TV channels live from their browser. This presence shows the channel you're currently watching on Discord.",
+    "fr-FR": "Free TV est le lecteur de télévision en direct du fournisseur d'accès Free, permettant aux abonnés Freebox de regarder les chaînes françaises en direct depuis leur navigateur. Cette présence affiche la chaîne que tu regardes sur Discord.",
+    "es-ES": "Free TV es el reproductor de televisión en directo del proveedor de internet francés Free, que permite a los abonados de Freebox ver canales franceses en directo desde su navegador. Esta presencia muestra el canal que estás viendo en Discord."
+  },
+  "features": {
+    "en-US": [
+      "Shows the live channel you're currently watching",
+      "Optional browsing activity when not watching a channel"
+    ],
+    "fr-FR": [
+      "Affiche la chaîne en direct que tu regardes",
+      "Activité de navigation optionnelle en dehors d'une chaîne"
+    ],
+    "es-ES": [
+      "Muestra el canal en directo que estás viendo",
+      "Actividad de navegación opcional fuera de un canal"
+    ]
+  }
+}
