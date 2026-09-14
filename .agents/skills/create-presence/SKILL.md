@@ -87,9 +87,10 @@ pnpm install
 5. **Write `presence.ts` + `utils/`** following the SDK reference and conventions —
    call `presence.getStrings()` for activity text instead of hardcoding English.
 6. **Build:** `nowly build <slug>` — must succeed.
-7. **Validate:** `nowly validate <slug>` — must report `✓`.
-8. **Type-check:** `npx tsc --noEmit -p tsconfig.json` — must be clean.
-9. Hand off assets + manual E2E verification.
+7. **Load locally:** `nowly extension <slug>` (first time) or `nowly pack <slug>` and drop the zip in the extension Debug panel.
+8. **Validate:** `nowly validate <slug>` — must report `✓`.
+9. **Type-check:** `npx tsc --noEmit -p tsconfig.json` — must be clean.
+10. Hand off assets + manual E2E verification.
 
 ## CLI commands
 
@@ -99,6 +100,8 @@ Run all commands from the repo root:
 nowly                          # Interactive init
 nowly init "Service Name"      # Non-interactive init (add --category, --color, etc.)
 nowly build <slug>             # Build a presence
+nowly pack <slug>              # Zip a built presence for drop-install
+nowly extension <slug...>      # Bake presences into a ready-to-load Chrome dev extension
 nowly validate <slug>          # Validate metadata
 nowly list                     # List all presences
 ```
