@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.nowly.me/assets/app_title.png">
-    <img alt="Nowly" title="Nowly" src="https://cdn.nowly.me/assets/app_title_dark.png" width="200">
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.nowly.me/brand/lockup/blue.svg">
+    <img alt="Nowly" title="Nowly" src="https://cdn.nowly.me/brand/lockup/dark.svg" width="200">
   </picture>
 </p>
 
