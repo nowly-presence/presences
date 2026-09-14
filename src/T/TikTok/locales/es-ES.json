@@ -3,5 +3,22 @@
   "searching": "Buscando",
   "watching": "Viendo",
   "playing": "Reproduciendo",
-  "paused": "En pausa"
+  "paused": "En pausa",
+  "browsingFeed": "Explorando el feed",
+  "watchingVideo": "Viendo un vídeo",
+  "watchingLive": "Viendo un directo",
+  "watchingLiveNamed": "Viendo en directo — {name}",
+  "browsingLiveCategories": "Explorando categorías en directo",
+  "browsingNamed": "Explorando {name}",
+  "browsingLiveCategory": "Explorando una categoría en directo",
+  "viewingProfile": "Viendo un perfil",
+  "browsingExplore": "Explorando",
+  "exploring": "Explorando",
+  "browsingMessages": "Explorando mensajes",
+  "readingMessages": "Leyendo mensajes",
+  "tiktok": "TikTok",
+  "viewTikTok": "Ver en TikTok",
+  "viewProfile": "Ver perfil",
+  "viewCategory": "Ver categoría",
+  "watchStream": "Ver directo"
 }

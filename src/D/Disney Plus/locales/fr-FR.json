@@ -1,7 +1,16 @@
 {
-  "browsing": "Navigation",
+  "browsing": "Parcourt",
   "searching": "Recherche",
-  "watching": "Regarde",
-  "playing": "Lecture en cours",
-  "paused": "En pause"
+  "watching": "En lecture",
+  "playing": "En lecture",
+  "paused": "En pause",
+  "viewingSeries": "Consulte une série",
+  "viewingMovie": "Consulte un film",
+  "browsingHome": "Parcourt l'accueil",
+  "searchingFor": "Recherche :",
+  "browsingWatchlist": "Parcourt la liste de lecture",
+  "browsingSeries": "Parcourt les séries",
+  "browsingMovies": "Parcourt les films",
+  "watchEpisode": "Voir l'épisode",
+  "watchMovie": "Voir le film"
 }

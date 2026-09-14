@@ -9,36 +9,36 @@
   "color": "#FF0000",
   "category": "music",
   "description": {
-    "en-US": "Listen to songs, albums, playlists, and music videos on YouTube Music.",
-    "fr-FR": "Écoutez des titres, albums, playlists et clips sur YouTube Music.",
-    "es-ES": "Escucha canciones, álbumes, playlists y videoclips en YouTube Music."
+    "en-US": "Show the track you're listening to on YouTube Music.",
+    "fr-FR": "Affichez le titre que vous écoutez sur YouTube Music.",
+    "es-ES": "Muestra la canción que estás escuchando en YouTube Music."
   },
   "longDescription": {
-    "en-US": "YouTube Music is Google's music streaming service. Automatically display the track you are listening to, including title, artist, playback state, listening time, and cover artwork when available.",
-    "fr-FR": "YouTube Music est le service de streaming musical de Google. Affichez automatiquement le titre que vous écoutez, avec le nom du morceau, l'artiste, l'état de lecture, le temps d'écoute et la pochette quand elle est disponible.",
-    "es-ES": "YouTube Music es el servicio de streaming musical de Google. Muestra automáticamente la canción que estás escuchando, incluyendo título, artista, estado de reproducción, tiempo de escucha y portada cuando esté disponible."
+    "en-US": "YouTube Music is Google's music streaming service. This presence shows the track you're listening to — title, artist, playback state, progress, and artwork when available.",
+    "fr-FR": "YouTube Music est le service de streaming musical de Google. Cette présence affiche le titre que vous écoutez — morceau, artiste, état de lecture, progression et pochette lorsqu'elle est disponible.",
+    "es-ES": "YouTube Music es el servicio de streaming musical de Google. Esta presencia muestra la canción que estás escuchando: título, artista, estado de reproducción, progreso y portada cuando esté disponible."
   },
   "features": {
     "en-US": [
-      "Automatic track detection",
-      "Display title and artist",
-      "Real-time listening progress",
-      "Album artwork support",
-      "Browsing activity support"
+      "Detects the current track",
+      "Shows title and artist",
+      "Tracks listening progress",
+      "Displays album artwork",
+      "Optional browsing activity"
     ],
     "fr-FR": [
-      "Détection automatique des titres",
-      "Affichage du titre et de l'artiste",
-      "Progression d'écoute en temps réel",
-      "Support des pochettes d'album",
-      "Support de l'activité de navigation"
+      "Détecte le titre en cours",
+      "Affiche le morceau et l'artiste",
+      "Suit la progression d'écoute",
+      "Affiche la pochette d'album",
+      "Activité de navigation optionnelle"
     ],
     "es-ES": [
-      "Detección automática de canciones",
-      "Visualización del título y artista",
-      "Progreso de escucha en tiempo real",
-      "Soporte para portadas de álbum",
-      "Soporte de actividad de navegación"
+      "Detecta la canción actual",
+      "Muestra título y artista",
+      "Sigue el progreso de escucha",
+      "Muestra la portada del álbum",
+      "Actividad de navegación opcional"
     ]
   }
 }

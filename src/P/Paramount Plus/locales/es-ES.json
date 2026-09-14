@@ -3,5 +3,17 @@
   "searching": "Buscando",
   "watching": "Viendo",
   "playing": "Reproduciendo",
-  "paused": "En pausa"
+  "paused": "En pausa",
+  "liveTv": "TV en directo",
+  "watchEpisode": "Ver episodio",
+  "watchNow": "Ver ahora",
+  "browsingHome": "Explorando el inicio",
+  "searchingFor": "Buscando:",
+  "browsingMyList": "Explorando Mi lista",
+  "viewingShow": "Viendo una serie",
+  "viewingMovie": "Viendo una película",
+  "viewingCollection": "Viendo una colección",
+  "browsingLiveTv": "Explorando TV en directo",
+  "browsingNamed": "Explorando {name}",
+  "browsingBrands": "Explorando marcas"
 }

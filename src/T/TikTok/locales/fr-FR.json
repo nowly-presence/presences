@@ -1,7 +1,24 @@
 {
-  "browsing": "Navigation",
+  "browsing": "Parcourt",
   "searching": "Recherche",
-  "watching": "Regarde",
-  "playing": "Lecture en cours",
-  "paused": "En pause"
+  "watching": "En lecture",
+  "playing": "En lecture",
+  "paused": "En pause",
+  "browsingFeed": "Parcourt le fil",
+  "watchingVideo": "En lecture",
+  "watchingLive": "En direct",
+  "watchingLiveNamed": "En direct — {name}",
+  "browsingLiveCategories": "Parcourt les catégories live",
+  "browsingNamed": "Parcourt {name}",
+  "browsingLiveCategory": "Parcourt une catégorie live",
+  "viewingProfile": "Consulte un profil",
+  "browsingExplore": "Parcourt Explorer",
+  "exploring": "Explore",
+  "browsingMessages": "Parcourt les messages",
+  "readingMessages": "Lit des messages",
+  "tiktok": "TikTok",
+  "viewTikTok": "Voir sur TikTok",
+  "viewProfile": "Voir le profil",
+  "viewCategory": "Voir la catégorie",
+  "watchStream": "Voir le live"
 }

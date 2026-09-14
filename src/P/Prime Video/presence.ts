@@ -20,9 +20,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your presence will also show when browsing Prime Video (home, search, categories, etc.), not just when watching a video.",
-      "fr-FR": "Quand activé, votre présence s'affichera aussi lorsque vous naviguez sur Prime Video (accueil, recherche, catégories, etc.), pas seulement quand vous regardez une vidéo.",
-      "es-ES": "Cuando está activado, tu presencia también se mostrará al navegar por Prime Video (inicio, búsqueda, categorías, etc.), no solo al ver un vídeo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Prime Video (home, search, categories) — not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Prime Video (accueil, recherche, catégories) — pas seulement pendant la lecture.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Prime Video (inicio, búsqueda, categorías), no solo al reproducir contenido.",
     },
   },
 })
@@ -80,7 +80,7 @@ presence.on("UpdateData", async (ctx) => {
     if (titleText) {
       const bannerImg = findBanner()
       await presence.setActivity({
-        details: "Viewing details",
+        details: strings.viewingDetails,
         state: titleText,
         largeImageKey: bannerImg || Assets.Logo,
         largeImageText: titleText,

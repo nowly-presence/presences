@@ -27,9 +27,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "Show activity while browsing YouTube Music without a detected track.",
-      "fr-FR": "Affiche l'activité lorsque vous naviguez sur YouTube Music sans titre détecté.",
-      "es-ES": "Muestra actividad al navegar por YouTube Music sin una canción detectada.",
+      "en-US": "Show activity while you browse YouTube Music with no track detected.",
+      "fr-FR": "Affiche l'activité lorsque vous parcourez YouTube Music sans titre détecté.",
+      "es-ES": "Muestra actividad al explorar YouTube Music sin una canción detectada.",
     },
   },
   showButtons: {
@@ -53,13 +53,13 @@ const presence = new Presence(settings)
 const isEnabled = (value: unknown): boolean => value === true || value === "true"
 
 const browsingDetails = (pathname: string, strings: typeof enUS): string => {
-  if (pathname === "/" || pathname === "/browse") return "Browsing home"
+  if (pathname === "/" || pathname === "/browse") return strings.browsingHome
   if (pathname.startsWith("/search")) return strings.searching
-  if (pathname.startsWith("/playlist")) return "Viewing a playlist"
-  if (pathname.startsWith("/channel") || pathname.startsWith("/artist")) return "Viewing an artist"
-  if (pathname.startsWith("/library")) return "Browsing library"
-  if (pathname.startsWith("/explore")) return "Exploring music"
-  return "Browsing YouTube Music"
+  if (pathname.startsWith("/playlist")) return strings.viewingPlaylist
+  if (pathname.startsWith("/channel") || pathname.startsWith("/artist")) return strings.viewingArtist
+  if (pathname.startsWith("/library")) return strings.browsingLibrary
+  if (pathname.startsWith("/explore")) return strings.exploringMusic
+  return strings.browsingYouTubeMusic
 }
 
 presence.on("UpdateData", async (ctx) => {
@@ -74,7 +74,7 @@ presence.on("UpdateData", async (ctx) => {
 
     if (track) {
       const data: PresenceData = {
-        details: privacy ? "Listening to music" : track.title,
+        details: privacy ? strings.listeningToMusic : track.title,
         state: privacy ? undefined : track.artist,
         largeImageKey: Assets.Logo,
         largeImageText: privacy ? "YouTube Music" : track.title,
@@ -89,7 +89,7 @@ presence.on("UpdateData", async (ctx) => {
       }
 
       if (!privacy && showButtons) {
-        data.buttons = [{ label: "Listen", url: track.url }]
+        data.buttons = [{ label: strings.listen, url: track.url }]
       }
 
       await presence.setActivity(data)

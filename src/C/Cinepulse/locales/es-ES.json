@@ -3,5 +3,10 @@
   "searching": "Buscando",
   "watching": "Viendo",
   "playing": "Reproduciendo",
-  "paused": "En pausa"
+  "paused": "En pausa",
+  "viewingMovie": "Viendo una película",
+  "viewingTvShow": "Viendo una serie",
+  "browsingCinepulse": "Explorando Cinepulse",
+  "viewMovie": "Ver película",
+  "viewTvShow": "Ver serie"
 }

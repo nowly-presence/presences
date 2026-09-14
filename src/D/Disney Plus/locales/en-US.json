@@ -3,5 +3,14 @@
   "searching": "Searching",
   "watching": "Watching",
   "playing": "Playing",
-  "paused": "Paused"
+  "paused": "Paused",
+  "viewingSeries": "Viewing a series",
+  "viewingMovie": "Viewing a movie",
+  "browsingHome": "Browsing home",
+  "searchingFor": "Searching for:",
+  "browsingWatchlist": "Browsing Watchlist",
+  "browsingSeries": "Browsing series",
+  "browsingMovies": "Browsing movies",
+  "watchEpisode": "Watch Episode",
+  "watchMovie": "Watch Movie"
 }

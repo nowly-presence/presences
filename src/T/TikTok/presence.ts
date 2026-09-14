@@ -6,13 +6,13 @@ const settings = Presence.Settings({
     default: false,
     label: {
       "en-US": "Privacy mode",
-      "fr-FR": "Mode privÃ©",
+      "fr-FR": "Mode privé",
       "es-ES": "Modo privado",
     },
     description: {
-      "en-US": "Hide all details about the content you're watching.",
-      "fr-FR": "Cache tous les dÃ©tails du contenu que vous regardez.",
-      "es-ES": "Oculta todos los detalles del contenido que estÃ¡s viendo.",
+      "en-US": "Hide every detail about the content you're watching.",
+      "fr-FR": "Masque tous les détails du contenu que vous regardez.",
+      "es-ES": "Oculta todos los detalles del contenido que estás viendo.",
     },
   },
   showButtons: {
@@ -24,9 +24,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar botones",
     },
     description: {
-      "en-US": "Show action buttons (view video, view profile) in your presence.",
-      "fr-FR": "Affiche les boutons d'action (voir la vidÃ©o, voir le profil) dans votre prÃ©sence.",
-      "es-ES": "Muestra botones de acciÃ³n (ver video, ver perfil) en tu presencia.",
+      "en-US": "Show action buttons (view video, view profile) on your Discord presence.",
+      "fr-FR": "Affiche les boutons d'action (voir la vidéo, voir le profil) sur votre présence Discord.",
+      "es-ES": "Muestra botones de acción (ver vídeo, ver perfil) en tu presencia de Discord.",
     },
   },
   showProfileUsernames: {
@@ -35,12 +35,12 @@ const settings = Presence.Settings({
     label: {
       "en-US": "Show profile info",
       "fr-FR": "Afficher les infos du profil",
-      "es-ES": "Mostrar informaciÃ³n del perfil",
+      "es-ES": "Mostrar información del perfil",
     },
     description: {
-      "en-US": "Show profile usernames when browsing profiles.",
-      "fr-FR": "Affiche les noms d'utilisateur lors de la navigation sur les profils.",
-      "es-ES": "Muestra los nombres de usuario al navegar por los perfiles.",
+      "en-US": "Show usernames when you browse profiles.",
+      "fr-FR": "Affiche les identifiants lorsque vous consultez des profils.",
+      "es-ES": "Muestra los nombres de usuario al explorar perfiles.",
     },
   },
 })

@@ -4,6 +4,7 @@ import { handleBlog } from "./utils/blog"
 import { handleGist } from "./utils/gists"
 import { handleGitHubNext } from "./utils/next"
 import { handleGitHubUniverse } from "./utils/universe"
+import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
   showPrivateRepositories: {
@@ -11,13 +12,13 @@ const settings = Presence.Settings({
     default: false,
     label: {
       "en-US": "Show private repositories",
-      "fr-FR": "Afficher les repositories privés",
+      "fr-FR": "Afficher les dépôts privés",
       "es-ES": "Mostrar repositorios privados",
     },
     description: {
-      "en-US": "When enabled, private repository pages can appear in your presence, but no repository button will be shown.",
-      "fr-FR": "Quand ce paramètre est activé, les pages de repositories privés peuvent apparaître dans votre présence, mais aucun bouton vers le repository ne sera affiché.",
-      "es-ES": "Cuando este ajuste está activado, las páginas de repositorios privados pueden aparecer en tu presencia, pero no se mostrará ningún botón al repositorio.",
+      "en-US": "When enabled, private repository pages can appear on your Discord presence. No repository button is shown.",
+      "fr-FR": "Lorsque cette option est activée, les pages de dépôts privés peuvent apparaître sur votre présence Discord. Aucun bouton vers le dépôt n'est affiché.",
+      "es-ES": "Si está activada, las páginas de repositorios privados pueden aparecer en tu presencia de Discord. No se muestra ningún botón al repositorio.",
     },
   },
   showGists: {
@@ -29,9 +30,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de Gist",
     },
     description: {
-      "en-US": "Show activity when browsing gist.github.com.",
-      "fr-FR": "Affiche votre activité lorsque vous naviguez sur gist.github.com.",
-      "es-ES": "Muestra actividad cuando navegas por gist.github.com.",
+      "en-US": "Show activity when you browse gist.github.com.",
+      "fr-FR": "Affiche votre activité lorsque vous parcourez gist.github.com.",
+      "es-ES": "Muestra actividad cuando exploras gist.github.com.",
     },
   },
   showBlog: {
@@ -43,7 +44,7 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de GitHub Blog",
     },
     description: {
-      "en-US": "Show activity when reading GitHub Blog.",
+      "en-US": "Show activity when you read GitHub Blog.",
       "fr-FR": "Affiche votre activité lorsque vous lisez GitHub Blog.",
       "es-ES": "Muestra actividad cuando lees GitHub Blog.",
     },
@@ -57,9 +58,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de GitHub Next",
     },
     description: {
-      "en-US": "Show activity when browsing githubnext.com.",
-      "fr-FR": "Affiche votre activité lorsque vous naviguez sur githubnext.com.",
-      "es-ES": "Muestra actividad cuando navegas por githubnext.com.",
+      "en-US": "Show activity when you browse githubnext.com.",
+      "fr-FR": "Affiche votre activité lorsque vous parcourez githubnext.com.",
+      "es-ES": "Muestra actividad cuando exploras githubnext.com.",
     },
   },
 })
@@ -113,8 +114,9 @@ presence.on("UpdateData", async (ctx) => {
     await handleGitHub(presence, pathname, search, href, ctx.settings.showPrivateRepositories)
   } catch (error) {
     presence.error(`GitHub presence error: ${error}`)
+    const strings = await presence.getStrings<typeof enUS>()
     await presence.setActivity({
-      details: "Browsing GitHub",
+      details: strings.browsingGitHub,
       largeImageKey: Assets.Logo,
       largeImageText: "GitHub",
       type: PresenceType.Watching,

@@ -13,9 +13,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your presence will also show when browsing Paramount+ (home, search, shows, etc.), not just when watching a video.",
-      "fr-FR": "Quand activé, votre présence s'affichera aussi lorsque vous naviguez sur Paramount+ (accueil, recherche, séries, etc.), pas seulement quand vous regardez une vidéo.",
-      "es-ES": "Cuando está activado, tu presencia también se mostrará al navegar por Paramount+ (inicio, búsqueda, series, etc.), no solo al ver un vídeo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Paramount+ (home, search, shows) — not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Paramount+ (accueil, recherche, séries) — pas seulement pendant la lecture.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Paramount+ (inicio, búsqueda, series), no solo al reproducir contenido.",
     },
   },
 })
@@ -38,12 +38,12 @@ presence.on("UpdateData", async (ctx) => {
 
     const data: Parameters<typeof presence.setActivity>[0] = {
       details: title || "Paramount+",
-      state: isLive ? "Live TV" : episode,
+      state: isLive ? strings.liveTv : episode,
       largeImageKey: poster || Assets.Logo,
       largeImageText: title || "Paramount+",
       type: PresenceType.Watching,
       buttons: [{
-        label: episode ? "Watch Episode" : "Watch Now",
+        label: episode ? strings.watchEpisode : strings.watchNow,
         url: href.split("?")[0] || href,
       }],
     }
