@@ -1,0 +1,41 @@
+{
+  "name": "Tidal",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["tidal.com", "listen.tidal.com"],
+  "regExp": "^https?://(listen\\.)?tidal\\.com/",
+  "color": "#000000",
+  "category": "music",
+  "description": {
+    "en-US": "Show the track you're listening to on Tidal.",
+    "fr-FR": "Affichez le titre que vous écoutez sur Tidal.",
+    "es-ES": "Muestra la canción que estás escuchando en Tidal."
+  },
+  "longDescription": {
+    "en-US": "Tidal is a hi-fi music streaming service. This presence shows the track you're listening to — title, artist, playback state, and artwork when available.",
+    "fr-FR": "Tidal est un service de streaming musical hi-fi. Cette présence affiche le titre que vous écoutez — morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
+    "es-ES": "Tidal es un servicio de streaming musical hi-fi. Esta presencia muestra la canción que escuchas: título, artista, estado de reproducción y portada cuando esté disponible."
+  },
+  "features": {
+    "en-US": [
+      "Detects the current track",
+      "Shows title and artist",
+      "Tracks listening progress",
+      "Displays album artwork",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte le titre en cours",
+      "Affiche le morceau et l'artiste",
+      "Suit la progression d'écoute",
+      "Affiche la pochette d'album",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta la canción actual",
+      "Muestra título y artista",
+      "Sigue el progreso de escucha",
+      "Muestra la portada del álbum",
+      "Actividad de navegación opcional"
+    ]
+  }
+}
