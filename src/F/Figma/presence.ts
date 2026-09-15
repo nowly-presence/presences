@@ -12,9 +12,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar el nombre del archivo/proyecto",
     },
     description: {
-      "en-US": "When enabled, your presence will show the name of the file or project you have open.",
-      "fr-FR": "Si activé, ta présence affichera le nom du fichier ou du projet ouvert.",
-      "es-ES": "Si está activado, tu presencia mostrará el nombre del archivo o proyecto abierto.",
+      "en-US": "When enabled, your Discord presence shows the name of the open file or project.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord affiche le nom du fichier ou du projet ouvert.",
+      "es-ES": "Si está activada, tu presencia de Discord muestra el nombre del archivo o proyecto abierto.",
     },
   },
 })

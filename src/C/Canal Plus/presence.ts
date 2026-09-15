@@ -13,9 +13,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your presence will also show when browsing CANAL+ (home, search, cinema, series, etc.), not just when watching a video.",
-      "fr-FR": "Quand activé, votre présence s'affichera aussi lorsque vous naviguez sur CANAL+ (accueil, recherche, cinéma, séries, etc.), pas seulement quand vous regardez une vidéo.",
-      "es-ES": "Cuando está activado, tu presencia también se mostrará al navegar por CANAL+ (inicio, búsqueda, cine, series, etc.), no solo al ver un vídeo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse CANAL+ (home, search, cinema, series) — not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez CANAL+ (accueil, recherche, cinéma, séries) — pas seulement pendant la lecture.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar CANAL+ (inicio, búsqueda, cine, series), no solo al reproducir contenido.",
     },
   },
 })
@@ -35,12 +35,12 @@ presence.on("UpdateData", async (ctx) => {
 
     const data: Parameters<typeof presence.setActivity>[0] = {
       details: metadata.title || "CANAL+",
-      state: live ? metadata.subtitle || "Live TV" : metadata.subtitle,
+      state: live ? metadata.subtitle || strings.liveTv : metadata.subtitle,
       largeImageKey: metadata.image || Assets.Logo,
       largeImageText: metadata.title || "CANAL+",
       type: PresenceType.Watching,
       buttons: [{
-        label: live ? "Watch Live" : "Watch Now",
+        label: live ? strings.watchLive : strings.watchNow,
         url: href.split("?")[0] || href,
       }],
     }

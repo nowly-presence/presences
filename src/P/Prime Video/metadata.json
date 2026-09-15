@@ -9,36 +9,33 @@
   "color": "#0779FF",
   "category": "streaming",
   "description": {
-    "en-US": "Watch movies, TV shows, and Amazon Originals on Prime Video.",
-    "fr-FR": "Regardez des films, des séries et des Amazon Originals sur Prime Video.",
-    "es-ES": "Disfruta de películas, series y Amazon Originals en Prime Video."
+    "en-US": "Show the movie, series, or Amazon Original you're watching on Prime Video.",
+    "fr-FR": "Affichez le film, la série ou l'Amazon Original que vous regardez sur Prime Video.",
+    "es-ES": "Muestra la película, serie o Amazon Original que estás viendo en Prime Video."
   },
   "longDescription": {
-    "en-US": "Prime Video gives you access to thousands of movies, TV shows, live events, and exclusive Amazon Originals. Automatically display what you're watching, including the title, season and episode information, and playback status. Let your friends see exactly what you're watching in real time.",
-    "fr-FR": "Prime Video vous donne accès à des milliers de films, séries, événements en direct et exclusivités Amazon Originals. Affichez automatiquement ce que vous regardez, avec le titre, les informations de saison et d'épisode, ainsi que votre statut de lecture. Vos amis peuvent voir précisément ce que vous regardez en temps réel.",
-    "es-ES": "Prime Video te da acceso a miles de películas, series, eventos en directo y contenidos exclusivos de Amazon Originals. Muestra automáticamente lo que estás viendo, incluyendo el título, la temporada, el episodio y el estado de reproducción. Tus amigos podrán ver exactamente lo que estás viendo en tiempo real."
+    "en-US": "Prime Video streams movies, series, live events, and Amazon Originals. This presence shows the title you're watching, including season, episode, and playback state.",
+    "fr-FR": "Prime Video propose films, séries, événements en direct et Amazon Originals. Cette présence affiche le titre que vous regardez, avec la saison, l'épisode et l'état de lecture.",
+    "es-ES": "Prime Video ofrece películas, series, eventos en directo y Amazon Originals. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción."
   },
   "features": {
     "en-US": [
-      "Automatic content detection",
-      "Display title, season, and episode information",
-      "Playback status tracking",
-      "Amazon Originals support",
-      "Real-time viewing activity"
+      "Detects movies and series automatically",
+      "Shows title, season, and episode",
+      "Tracks playing and paused state",
+      "Supports Amazon Originals"
     ],
     "fr-FR": [
-      "Détection automatique du contenu",
-      "Affichage du titre, de la saison et de l'épisode",
-      "Suivi du statut de lecture",
-      "Prise en charge des Amazon Originals",
-      "Activité de visionnage en temps réel"
+      "Détecte automatiquement films et séries",
+      "Affiche le titre, la saison et l'épisode",
+      "Suit l'état en lecture ou en pause",
+      "Prend en charge les Amazon Originals"
     ],
     "es-ES": [
-      "Detección automática del contenu",
-      "Visualización del título, temporada y episodio",
-      "Seguimiento del estado de reproducción",
-      "Compatibilidad con Amazon Originals",
-      "Actividad de visualización en tiempo real"
+      "Detecta películas y series automáticamente",
+      "Muestra título, temporada y episodio",
+      "Sigue el estado en reproducción o en pausa",
+      "Compatible con Amazon Originals"
     ]
   }
 }

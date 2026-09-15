@@ -3,17 +3,22 @@ import { PresenceType } from "@nowly/sdk"
 import { findCategoryImage, findCategoryName } from "./category"
 import { isOnCategoryPage, isOnChannelPage, isOnFollowingPage } from "./dom"
 import { findStreamerAvatar, findStreamerName } from "./streamer"
+import type enUS from "../locales/en-US.json"
 
 export const handleBrowsingActivity = async (
   presence: PresenceInstance,
   pathname: string,
 ): Promise<void> => {
+  const strings = await presence.getStrings<typeof enUS>()
+
   if (isOnChannelPage()) {
     const streamer = findStreamerName()
     const avatar = findStreamerAvatar(streamer)
     await presence.setActivity({
-      details: streamer ? `Viewing ${streamer}` : "Viewing channel",
-      state: "Browsing...",
+      details: streamer
+        ? presence.formatString(strings.viewingNamed, { name: streamer })
+        : strings.viewingChannel,
+      state: strings.browsingEllipsis,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: streamer || "Twitch",
       smallImageKey: Assets.Logo,
@@ -25,7 +30,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname === "/directory" || pathname === "/directory/") {
     await presence.setActivity({
-      details: "Browsing categories",
+      details: strings.browsingCategories,
       largeImageKey: Assets.Logo,
       largeImageText: "Twitch",
       type: PresenceType.Watching,
@@ -35,23 +40,25 @@ export const handleBrowsingActivity = async (
       const category = findCategoryName()
       const categoryImage = findCategoryImage()
       await presence.setActivity({
-        details: category ? `Browsing ${category}` : "Browsing category",
+        details: category
+          ? presence.formatString(strings.browsingNamed, { name: category })
+          : strings.browsingCategory,
         largeImageKey: categoryImage || Assets.Logo,
         largeImageText: category || "Twitch",
         smallImageKey: Assets.Logo,
         smallImageText: "Twitch",
         type: PresenceType.Watching,
-        buttons: [{ label: "View Category", url: window.location.href.split("?")[0] }],
+        buttons: [{ label: strings.viewCategory, url: window.location.href.split("?")[0] }],
       })
     } else if (isOnFollowingPage()) {
       await presence.setActivity({
-        details: "Browsing followed channels",
+        details: strings.browsingFollowed,
         largeImageKey: Assets.Logo,
         type: PresenceType.Watching,
       })
     } else {
       await presence.setActivity({
-        details: "Browsing directory",
+        details: strings.browsingDirectory,
         largeImageKey: Assets.Logo,
         type: PresenceType.Watching,
       })
@@ -59,7 +66,7 @@ export const handleBrowsingActivity = async (
   } else if (pathname.includes("/search")) {
     const query = new URLSearchParams(window.location.search).get("term")
     await presence.setActivity({
-      details: "Searching for:",
+      details: strings.searchingFor,
       state: query || "...",
       largeImageKey: Assets.Logo,
       smallImageKey: "search",
@@ -68,26 +75,26 @@ export const handleBrowsingActivity = async (
   } else if (pathname.includes("/team/")) {
     const team = pathname.split("/").pop()
     await presence.setActivity({
-      details: "Viewing team",
+      details: strings.viewingTeam,
       state: team,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.includes("/subscriptions")) {
     await presence.setActivity({
-      details: "Viewing subscriptions",
+      details: strings.viewingSubscriptions,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.includes("/wallet")) {
     await presence.setActivity({
-      details: "Viewing wallet",
+      details: strings.viewingWallet,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.includes("/drops")) {
     await presence.setActivity({
-      details: "Viewing Drops",
+      details: strings.viewingDrops,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })

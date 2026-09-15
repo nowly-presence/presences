@@ -1,7 +1,16 @@
 {
-  "browsing": "Browsing",
-  "searching": "Searching",
-  "watching": "Watching",
   "playing": "Playing",
-  "paused": "Paused"
+  "paused": "Paused",
+  "viewingDetails": "Viewing details",
+  "viewingHome": "Viewing Home",
+  "browsingEllipsis": "Browsing…",
+  "searchingFor": "Searching for:",
+  "viewingMovies": "Viewing Movies",
+  "viewingTvSeries": "Viewing TV series",
+  "viewingSports": "Viewing Sports",
+  "viewingLiveTv": "Viewing Live TV",
+  "viewingCategories": "Viewing Categories",
+  "viewingKidsMovies": "Viewing movies for kids",
+  "viewingGenres": "Viewing Genres",
+  "browsingStore": "Browsing the store"
 }

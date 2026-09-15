@@ -1,10 +1,5 @@
 {
-  "browsing": "Navigation",
-  "searching": "Recherche",
-  "watching": "Regarde",
-  "playing": "Lecture en cours",
-  "paused": "En pause",
-  "browsingHomepage": "Parcourt l’accueil",
+  "browsingHomepage": "Parcourt l'accueil",
   "browsingFigma": "Parcourt Figma",
   "designing": "Conçoit sur Figma",
   "whiteboarding": "Travaille sur un tableau FigJam",

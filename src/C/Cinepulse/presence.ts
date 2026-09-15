@@ -11,9 +11,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "Show presence when browsing Cinepulse (home, catalog, etc.), not just when watching content.",
-      "fr-FR": "Afficher la présence lors de la navigation sur Cinepulse (accueil, catalogue, etc.), pas seulement lors du visionnage.",
-      "es-ES": "Mostrar presencia al navegar por Cinepulse (inicio, catálogo, etc.), no solo al ver contenido.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Cinepulse (home, catalog) — not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Cinepulse (accueil, catalogue), pas seulement pendant la lecture.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Cinepulse (inicio, catálogo), no solo al reproducir contenido.",
     },
   },
 })
@@ -83,14 +83,14 @@ presence.on("UpdateData", async (ctx) => {
     const poster = getSheetPoster()
 
     await presence.setActivity({
-      details: contentType === "movie" ? "Viewing a movie" : "Viewing a TV show",
+      details: contentType === "movie" ? strings.viewingMovie : strings.viewingTvShow,
       state: title,
       largeImageKey: poster || Assets.Logo,
       largeImageText: title,
       type: PresenceType.Watching,
       buttons: [
         {
-          label: contentType === "movie" ? "View Movie" : "View TV Show",
+          label: contentType === "movie" ? strings.viewMovie : strings.viewTvShow,
           url: location.href,
         },
       ],
@@ -104,7 +104,7 @@ presence.on("UpdateData", async (ctx) => {
   }
 
   await presence.setActivity({
-    details: "Browsing Cinepulse",
+    details: strings.browsingCinepulse,
     largeImageKey: Assets.Logo,
     type: PresenceType.Watching,
   })

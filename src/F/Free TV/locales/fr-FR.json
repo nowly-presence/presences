@@ -1,11 +1,11 @@
 {
-  "watchingLive": "Regarde la télé en direct",
-  "watchingVod": "Regarde un film ou une série",
+  "watchingLive": "En direct",
+  "watchingVod": "En lecture",
   "liveState": "{channel} · {program}",
-  "browsingHome": "Navigue sur Free TV",
+  "browsingHome": "Parcourt Free TV",
   "browsingChannels": "Parcourt les chaînes",
   "browsingVodHub": "Parcourt les films et séries",
   "browsingTvGuide": "Consulte le guide TV",
-  "browsingMyList": "Parcourt sa liste",
+  "browsingMyList": "Parcourt Ma liste",
   "viewingDetail": "Consulte une fiche"
 }

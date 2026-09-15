@@ -11,36 +11,36 @@
   "color": "#FF0033",
   "category": "video",
   "description": {
-    "en-US": "Watch and share videos on the world's largest video platform.",
-    "fr-FR": "Regardez et partagez des vidéos sur la plus grande plateforme vidéo au monde.",
-    "es-ES": "Mira y comparte vídeos en la plataforma de vídeo más grande del mundo."
+    "en-US": "Show the YouTube video, live, or Playables session you're on.",
+    "fr-FR": "Affichez la vidéo, le live ou la session Playables YouTube en cours.",
+    "es-ES": "Muestra el vídeo, directo o sesión de Playables de YouTube en la que estás."
   },
   "longDescription": {
-    "en-US": "YouTube is the world's most popular video sharing platform. Automatically display the video you're watching, whether it's music, tutorials, live streams or any other content. Your friends can see exactly what you're watching in real time.",
-    "fr-FR": "YouTube est la plateforme de partage de vidéos la plus populaire au monde. Affichez automatiquement la vidéo que vous regardez, qu'il s'agisse de musique, de tutoriels, de streams en direct ou de tout autre contenu. Vos amis pourront voir exactement ce que vous visionnez en temps réel.",
-    "es-ES": "YouTube es la plataforma de intercambio de vídeos más popular del mundo. Muestra automáticamente el vídeo que estás viendo, ya sea música, tutoriales, transmisiones en directo o cualquier otro tipo de contenido. Tus amigos podrán ver exactamente lo que estás viendo en tiempo real."
+    "en-US": "YouTube is the world's largest video platform. This presence shows the video or channel you're on — music, tutorials, lives, Playables, and more — so friends can see it on Discord in real time.",
+    "fr-FR": "YouTube est la plus grande plateforme vidéo au monde. Cette présence affiche la vidéo ou la chaîne que vous consultez — musique, tutoriels, lives, Playables et plus — pour que vos amis le voient sur Discord en temps réel.",
+    "es-ES": "YouTube es la plataforma de vídeo más grande del mundo. Esta presencia muestra el vídeo o canal que estás viendo — música, tutoriales, directos, Playables y más — para que tus amigos lo vean en Discord en tiempo real."
   },
   "features": {
     "en-US": [
-      "Automatic video detection",
-      "Display title and channel name",
-      "Real-time watch time",
-      "Live stream and premiere support",
-      "Video thumbnail display"
+      "Detects videos automatically",
+      "Shows title and channel",
+      "Tracks watch progress",
+      "Supports lives, premieres, and Playables",
+      "Displays the video thumbnail"
     ],
     "fr-FR": [
-      "Détection automatique des vidéos",
-      "Affichage du titre et de la chaîne",
-      "Temps de visionnage en temps réel",
-      "Support des lives et premières",
-      "Miniature de la vidéo"
+      "Détecte les vidéos automatiquement",
+      "Affiche le titre et la chaîne",
+      "Suit la progression de lecture",
+      "Prend en charge lives, premières et Playables",
+      "Affiche la miniature de la vidéo"
     ],
     "es-ES": [
-      "Detección automática de vídeos",
-      "Visualización del título y del canal",
-      "Tiempo de visualización en tiempo real",
-      "Compatibilidad con directos y estrenos",
-      "Miniatura del vídeo"
+      "Detecta vídeos automáticamente",
+      "Muestra el título y el canal",
+      "Sigue el progreso de reproducción",
+      "Compatible con directos, estrenos y Playables",
+      "Muestra la miniatura del vídeo"
     ]
   }
 }

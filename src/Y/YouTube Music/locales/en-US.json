@@ -1,7 +1,13 @@
 {
-  "browsing": "Browsing",
   "searching": "Searching",
-  "watching": "Watching",
   "playing": "Playing",
-  "paused": "Paused"
+  "paused": "Paused",
+  "listeningToMusic": "Listening to music",
+  "browsingHome": "Browsing home",
+  "viewingPlaylist": "Viewing a playlist",
+  "viewingArtist": "Viewing an artist",
+  "browsingLibrary": "Browsing library",
+  "exploringMusic": "Exploring music",
+  "browsingYouTubeMusic": "Browsing YouTube Music",
+  "listen": "Listen"
 }

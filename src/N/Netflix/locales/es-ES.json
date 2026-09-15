@@ -1,7 +1,14 @@
 {
-  "browsing": "Navegando",
-  "searching": "Buscando",
   "watching": "Viendo",
   "playing": "Reproduciendo",
-  "paused": "En pausa"
+  "paused": "En pausa",
+  "searchingFor": "Buscando:",
+  "browsingNewPopular": "Explorando Novedades populares",
+  "browsingMyList": "Explorando Mi lista",
+  "browsingGenre": "Explorando un género",
+  "browsingHome": "Explorando el inicio",
+  "watchEpisode": "Ver episodio",
+  "watchMovie": "Ver película",
+  "viewSeries": "Ver serie",
+  "viewMovie": "Ver película"
 }

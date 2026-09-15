@@ -1,7 +1,9 @@
 {
-  "browsing": "Navigation",
-  "searching": "Recherche",
-  "watching": "Regarde",
-  "playing": "Lecture en cours",
-  "paused": "En pause"
+  "playing": "En lecture",
+  "paused": "En pause",
+  "viewingMovie": "Consulte un film",
+  "viewingTvShow": "Consulte une série",
+  "browsingCinepulse": "Parcourt Cinepulse",
+  "viewMovie": "Voir le film",
+  "viewTvShow": "Voir la série"
 }

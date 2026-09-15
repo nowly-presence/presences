@@ -1,11 +1,6 @@
 {
-  "browsing": "Navegando",
-  "searching": "Buscando",
-  "watching": "Viendo",
-  "playing": "Reproduciendo",
-  "paused": "En pausa",
-  "browsingHomepage": "Navegando por el inicio",
-  "browsingFigma": "Navegando por Figma",
+  "browsingHomepage": "Explorando el inicio",
+  "browsingFigma": "Explorando Figma",
   "designing": "Diseñando en Figma",
   "whiteboarding": "Trabajando en un tablero de FigJam",
   "presentingSlides": "Presentando con Figma Slides",

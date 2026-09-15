@@ -9,36 +9,33 @@
   "color": "#555555",
   "category": "streaming",
   "description": {
-    "en-US": "Watch award-winning Apple Original series, movies, and documentaries on Apple TV+.",
-    "fr-FR": "Regardez des séries, films et documentaires Apple Originals récompensés sur Apple TV+.",
-    "es-ES": "Disfruta de series, películas y documentales Apple Originals galardonados en Apple TV+."
+    "en-US": "Show the Apple Original series, movie, or documentary you're watching on Apple TV+.",
+    "fr-FR": "Affichez la série, le film ou le documentaire Apple Originals que vous regardez sur Apple TV+.",
+    "es-ES": "Muestra la serie, película o documental de Apple Originals que estás viendo en Apple TV+."
   },
   "longDescription": {
-    "en-US": "Apple TV+ features acclaimed Apple Original series, blockbuster movies, documentaries, and exclusive content. Automatically display what you're watching, including the title, season and episode information, and playback status. Let your friends see your viewing activity in real time.",
-    "fr-FR": "Apple TV+ propose des séries acclamées, des films, des documentaires et des contenus exclusifs Apple Originals. Affichez automatiquement ce que vous regardez, avec le titre, les informations de saison et d'épisode, ainsi que votre statut de lecture. Vos amis peuvent suivre votre activité de visionnage en temps réel.",
-    "es-ES": "Apple TV+ ofrece series aclamadas, películas, documentales y contenidos exclusivos de Apple Originals. Muestra automáticamente lo que estás viendo, incluyendo el título, la temporada, el episodio y el estado de reproducción. Tus amigos podrán seguir tu actividad de visualización en tiempo real."
+    "en-US": "Apple TV+ streams Apple Original series, movies, and documentaries. This presence shows the title you're watching, including season, episode, and playback state.",
+    "fr-FR": "Apple TV+ propose des séries, films et documentaires Apple Originals. Cette présence affiche le titre que vous regardez, avec la saison, l'épisode et l'état de lecture.",
+    "es-ES": "Apple TV+ ofrece series, películas y documentales de Apple Originals. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción."
   },
   "features": {
     "en-US": [
-      "Automatic content detection",
-      "Display title, season, and episode information",
-      "Apple Originals support",
-      "Playback status tracking",
-      "Real-time viewing activity"
+      "Detects movies and series automatically",
+      "Shows title, season, and episode",
+      "Supports Apple Originals",
+      "Tracks playing and paused state"
     ],
     "fr-FR": [
-      "Détection automatique du contenu",
-      "Affichage du titre, de la saison et de l'épisode",
-      "Prise en charge des Apple Originals",
-      "Suivi du statut de lecture",
-      "Activité de visionnage en temps réel"
+      "Détecte automatiquement films et séries",
+      "Affiche le titre, la saison et l'épisode",
+      "Prend en charge les Apple Originals",
+      "Suit l'état en lecture ou en pause"
     ],
     "es-ES": [
-      "Detección automática del contenido",
-      "Visualización del título, temporada y episodio",
-      "Compatibilidad con Apple Originals",
-      "Seguimiento del estado de reproducción",
-      "Actividad de visualización en tiempo real"
+      "Detecta películas y series automáticamente",
+      "Muestra título, temporada y episodio",
+      "Compatible con Apple Originals",
+      "Sigue el estado en reproducción o en pausa"
     ]
   }
 }

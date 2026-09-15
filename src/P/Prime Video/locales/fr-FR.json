@@ -1,7 +1,16 @@
 {
-  "browsing": "Navigation",
-  "searching": "Recherche",
-  "watching": "Regarde",
-  "playing": "Lecture en cours",
-  "paused": "En pause"
+  "playing": "En lecture",
+  "paused": "En pause",
+  "viewingDetails": "Consulte une fiche",
+  "viewingHome": "Parcourt l'accueil",
+  "browsingEllipsis": "Parcourt…",
+  "searchingFor": "Recherche :",
+  "viewingMovies": "Parcourt les films",
+  "viewingTvSeries": "Parcourt les séries",
+  "viewingSports": "Parcourt le sport",
+  "viewingLiveTv": "Parcourt la TV en direct",
+  "viewingCategories": "Parcourt les catégories",
+  "viewingKidsMovies": "Parcourt les films jeunesse",
+  "viewingGenres": "Parcourt les genres",
+  "browsingStore": "Parcourt la boutique"
 }

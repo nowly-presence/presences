@@ -1,5 +1,6 @@
 import type { PresenceInstance } from "@nowly/sdk"
 import { PresenceType } from "@nowly/sdk"
+import type enUS from "../locales/en-US.json"
 
 const findSearchQuery = (): string | undefined => {
   const fromUrl = new URLSearchParams(document.location.search).get("q")
@@ -13,10 +14,12 @@ export const handleBrowsingActivity = async (
   presence: PresenceInstance,
   pathname: string,
 ): Promise<void> => {
+  const strings = await presence.getStrings<typeof enUS>()
+
   if (pathname.includes("/search")) {
     const query = findSearchQuery()
     await presence.setActivity({
-      details: "Searching for:",
+      details: strings.searchingFor,
       state: query || "...",
       largeImageKey: Assets.Logo,
       smallImageKey: "search",
@@ -24,25 +27,25 @@ export const handleBrowsingActivity = async (
     })
   } else if (pathname.includes("/latest")) {
     await presence.setActivity({
-      details: "Browsing New & Popular",
+      details: strings.browsingNewPopular,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.includes("/my-list")) {
     await presence.setActivity({
-      details: "Browsing My List",
+      details: strings.browsingMyList,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.includes("/browse/genre")) {
     await presence.setActivity({
-      details: "Browsing a genre",
+      details: strings.browsingGenre,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname === "/" || pathname.includes("/browse")) {
     await presence.setActivity({
-      details: "Browsing home",
+      details: strings.browsingHome,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })

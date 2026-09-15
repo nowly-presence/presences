@@ -1,7 +1,13 @@
 {
-  "browsing": "Navigation",
+  "browsing": "Parcourt",
   "searching": "Recherche",
-  "watching": "Regarde",
-  "playing": "Lecture en cours",
-  "paused": "En pause"
+  "playing": "En lecture",
+  "paused": "En pause",
+  "browsingHome": "Parcourt l'accueil",
+  "viewingSeries": "Consulte une série",
+  "sharePlayRoom": "Dans une salle SharePlay",
+  "watchEpisode": "Voir l'épisode",
+  "watchShow": "Voir la série",
+  "movie": "Film",
+  "seasonEpisode": "Saison {season}, épisode {episode}"
 }

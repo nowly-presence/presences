@@ -2,23 +2,59 @@ import type { PresenceInstance } from "@nowly/sdk"
 import { PresenceType } from "@nowly/sdk"
 import { getCategory } from "./categories"
 import { getDetailImage, getPageTitle, getSearchQuery } from "./player"
+import type enUS from "../locales/en-US.json"
+
+const categoryDetails = (strings: typeof enUS): Record<string, string> => ({
+  browsingCinema: strings.browsingCinema,
+  browsingSeries: strings.browsingSeries,
+  browsingSports: strings.browsingSports,
+  browsingKids: strings.browsingKids,
+  browsingDocumentaries: strings.browsingDocumentaries,
+  browsingEntertainment: strings.browsingEntertainment,
+  browsingPicks: strings.browsingPicks,
+  browsingNews: strings.browsingNews,
+  browsingMusic: strings.browsingMusic,
+  browsingCanalVod: strings.browsingCanalVod,
+  browsingLaPresse: strings.browsingLaPresse,
+  browsingSme: strings.browsingSme,
+  browsingAudioDescription: strings.browsingAudioDescription,
+  browsingLsf: strings.browsingLsf,
+})
+
+const categoryImageText = (strings: typeof enUS): Record<string, string> => ({
+  imageMovies: strings.imageMovies,
+  imageSeries: strings.imageSeries,
+  imageSports: strings.imageSports,
+  imageKids: strings.imageKids,
+  imageDocumentaries: strings.imageDocumentaries,
+  imageEntertainment: strings.imageEntertainment,
+  imageForYou: strings.imageForYou,
+  imageNews: strings.imageNews,
+  imageMusic: strings.imageMusic,
+  imageCanalVod: strings.imageCanalVod,
+  imagePress: strings.imagePress,
+  imageSme: strings.imageSme,
+  imageAudioDescription: strings.imageAudioDescription,
+  imageLsf: strings.imageLsf,
+})
 
 export const handleBrowsingActivity = async (
   presence: PresenceInstance,
   pathname: string,
 ): Promise<void> => {
+  const strings = await presence.getStrings<typeof enUS>()
   const category = getCategory(pathname)
 
   if (pathname === "/" || pathname === "") {
     await presence.setActivity({
-      details: "Browsing home",
+      details: strings.browsingHome,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.startsWith("/recherche") || pathname.startsWith("/search")) {
     const query = getSearchQuery()
     await presence.setActivity({
-      details: "Searching for:",
+      details: strings.searchingFor,
       state: query || "...",
       largeImageKey: Assets.Logo,
       smallImageKey: "search",
@@ -26,28 +62,28 @@ export const handleBrowsingActivity = async (
     })
   } else if (pathname.startsWith("/live")) {
     await presence.setActivity({
-      details: "Browsing live TV",
+      details: strings.browsingLiveTv,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (category) {
     await presence.setActivity({
-      details: category.details,
+      details: categoryDetails(strings)[category.detailsKey],
       state: getPageTitle(),
       largeImageKey: category.image,
-      largeImageText: category.imageText,
+      largeImageText: categoryImageText(strings)[category.imageTextKey],
       type: PresenceType.Watching,
     })
   } else if (pathname.startsWith("/docs")) {
-    await setCategoryActivity(presence, "Browsing documentaries", Assets.Logo)
+    await setCategoryActivity(presence, strings.browsingDocumentaries)
   } else if (pathname.startsWith("/chaines")) {
-    await setCategoryActivity(presence, "Browsing channels", Assets.Logo)
+    await setCategoryActivity(presence, strings.browsingChannels)
   } else if (pathname.startsWith("/streaming")) {
-    await setCategoryActivity(presence, "Browsing streaming", Assets.Logo)
+    await setCategoryActivity(presence, strings.browsingStreaming)
   } else if (/\/h\/\d+/i.test(pathname)) {
     const title = getPageTitle()
     await presence.setActivity({
-      details: "Viewing a programme",
+      details: strings.viewingProgramme,
       state: title,
       largeImageKey: getDetailImage() || Assets.Logo,
       largeImageText: title || "CANAL+",
@@ -61,12 +97,11 @@ export const handleBrowsingActivity = async (
 const setCategoryActivity = async (
   presence: PresenceInstance,
   details: string,
-  image: string,
 ): Promise<void> => {
   await presence.setActivity({
     details,
     state: getPageTitle(),
-    largeImageKey: getDetailImage() || image,
+    largeImageKey: getDetailImage() || Assets.Logo,
     largeImageText: "CANAL+",
     type: PresenceType.Watching,
   })

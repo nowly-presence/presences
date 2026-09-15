@@ -1,6 +1,7 @@
 import { PresenceType, type PresenceInstance } from "@nowly/sdk"
 import { Category } from "./categories"
 import { getChannelAvatar, getChannelName, getChannelSubscribers } from "./channel"
+import type enUS from "../locales/en-US.json"
 
 type YouTubeBrowsingSettings = {
   showChannels?: unknown
@@ -10,11 +11,12 @@ export const handleBrowsingActivity = async (
   presence: PresenceInstance,
   settings: YouTubeBrowsingSettings,
 ): Promise<void> => {
+  const strings = await presence.getStrings<typeof enUS>()
   const { pathname, search } = document.location
 
   if (pathname === "/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ" || pathname === "/@youtubemusic") {
     await presence.setActivity({
-      details: "Browsing YouTube Music",
+      details: strings.browsingYouTubeMusic,
       largeImageKey: Category.Music,
       type: PresenceType.Watching,
     })
@@ -23,7 +25,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname === "/channel/UC4R8DWoMoI7CAwX8_LjQHig") {
     await presence.setActivity({
-      details: "Browsing YouTube Live",
+      details: strings.browsingYouTubeLive,
       largeImageKey: Category.Live,
       type: PresenceType.Watching,
     })
@@ -32,7 +34,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname === "/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ") {
     await presence.setActivity({
-      details: "Browsing YouTube Fashion",
+      details: strings.browsingYouTubeFashion,
       largeImageKey: Category.Fashion,
       type: PresenceType.Watching,
     })
@@ -46,7 +48,7 @@ export const handleBrowsingActivity = async (
       const subscribers = getChannelSubscribers()
 
       await presence.setActivity({
-        details: channelName || "Viewing channel",
+        details: channelName || strings.viewingChannel,
         state: subscribers,
         largeImageKey: avatar || Assets.Logo,
         largeImageText: channelName || "YouTube",
@@ -54,7 +56,7 @@ export const handleBrowsingActivity = async (
       })
     } else {
       await presence.setActivity({
-        details: "Viewing channel",
+        details: strings.viewingChannel,
         largeImageKey: Assets.Logo,
         type: PresenceType.Watching,
       })
@@ -64,7 +66,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname === "/" || pathname === "/feed/trending") {
     await presence.setActivity({
-      details: "Browsing home",
+      details: strings.browsingHome,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
@@ -74,7 +76,7 @@ export const handleBrowsingActivity = async (
   if (pathname.startsWith("/results")) {
     const query = new URLSearchParams(search).get("search_query")
     await presence.setActivity({
-      details: "Searching",
+      details: strings.searching,
       state: query ? `"${query}"` : undefined,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
@@ -84,7 +86,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/feed/subscriptions")) {
     await presence.setActivity({
-      details: "Browsing subscriptions",
+      details: strings.browsingSubscriptions,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
@@ -93,7 +95,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/feed/history")) {
     await presence.setActivity({
-      details: "Viewing history",
+      details: strings.viewingHistory,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
@@ -102,7 +104,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/feed/playlists")) {
     await presence.setActivity({
-      details: "Browsing playlists",
+      details: strings.browsingPlaylists,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
@@ -111,7 +113,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/feed/you")) {
     await presence.setActivity({
-      details: "Browsing your feed",
+      details: strings.browsingYourFeed,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
@@ -120,7 +122,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/feed/storefront")) {
     await presence.setActivity({
-      details: "Browsing movies & TV",
+      details: strings.browsingMoviesTv,
       largeImageKey: Category.Storefront,
       type: PresenceType.Watching,
     })
@@ -129,7 +131,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/gaming")) {
     await presence.setActivity({
-      details: "Browsing gaming",
+      details: strings.browsingGaming,
       largeImageKey: Category.Gaming,
       type: PresenceType.Watching,
     })
@@ -138,7 +140,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/podcasts")) {
     await presence.setActivity({
-      details: "Browsing podcasts",
+      details: strings.browsingPodcasts,
       largeImageKey: Category.Podcasts,
       type: PresenceType.Watching,
     })
@@ -147,7 +149,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/playables")) {
     await presence.setActivity({
-      details: "Playing games",
+      details: strings.playingGames,
       largeImageKey: Category.Playables,
       type: PresenceType.Watching,
     })
@@ -156,7 +158,7 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/feed/courses_destination")) {
     await presence.setActivity({
-      details: "Browsing courses",
+      details: strings.browsingCourses,
       largeImageKey: Category.Courses,
       type: PresenceType.Watching,
     })
@@ -165,9 +167,9 @@ export const handleBrowsingActivity = async (
 
   if (pathname.startsWith("/playlist")) {
     const list = new URLSearchParams(search).get("list")
-    let playlistName = "Viewing playlist"
-    if (list === "WL") playlistName = "Watch Later"
-    else if (list === "LL") playlistName = "Liked videos"
+    let playlistName = strings.viewingPlaylist
+    if (list === "WL") playlistName = strings.watchLater
+    else if (list === "LL") playlistName = strings.likedVideos
 
     await presence.setActivity({
       details: playlistName,
@@ -178,7 +180,7 @@ export const handleBrowsingActivity = async (
   }
 
   await presence.setActivity({
-    details: "Browsing",
+    details: strings.browsing,
     largeImageKey: Assets.Logo,
     type: PresenceType.Watching,
   })
