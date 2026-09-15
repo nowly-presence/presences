@@ -1,0 +1,60 @@
+{
+  "name": "Amazon",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": [
+    "amazon.com",
+    "www.amazon.com",
+    "amazon.fr",
+    "www.amazon.fr",
+    "amazon.de",
+    "www.amazon.de",
+    "amazon.co.uk",
+    "www.amazon.co.uk",
+    "amazon.es",
+    "www.amazon.es",
+    "amazon.it",
+    "www.amazon.it",
+    "amazon.ca",
+    "www.amazon.ca",
+    "amazon.co.jp",
+    "www.amazon.co.jp",
+    "amazon.com.au",
+    "www.amazon.com.au",
+    "amazon.in",
+    "www.amazon.in",
+    "amazon.com.be",
+    "www.amazon.com.be",
+    "amazon.nl",
+    "www.amazon.nl"
+  ],
+  "regExp": "^https?://(www\\.)?amazon\\.(com|fr|de|co\\.uk|es|it|ca|co\\.jp|com\\.mx|com\\.br|in|nl|se|pl|com\\.au|sg|ae|sa|com\\.tr|com\\.be|ie|com\\.co)/",
+  "color": "#FF6201",
+  "category": "other",
+  "description": {
+    "en-US": "Show what you're browsing on Amazon.",
+    "fr-FR": "Affichez ce que vous parcourez sur Amazon.",
+    "es-ES": "Muestra lo que estás explorando en Amazon."
+  },
+  "longDescription": {
+    "en-US": "Amazon is an online store. This presence shows product pages you're viewing. Privacy mode hides product names.",
+    "fr-FR": "Amazon est une boutique en ligne. Cette présence affiche les fiches produit consultées. Le mode privé masque les noms de produits.",
+    "es-ES": "Amazon es una tienda en línea. Esta presencia muestra las fichas de producto que consultas. El modo privado oculta los nombres de productos."
+  },
+  "features": {
+    "en-US": [
+      "Detects product pages",
+      "Optional privacy mode",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte les fiches produit",
+      "Mode privé optionnel",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta fichas de producto",
+      "Modo privado opcional",
+      "Actividad de navegación opcional"
+    ]
+  }
+}
