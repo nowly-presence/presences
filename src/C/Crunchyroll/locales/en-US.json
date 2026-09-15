@@ -1,0 +1,16 @@
+{
+  "watching": "Watching",
+  "playing": "Playing",
+  "paused": "Paused",
+  "searching": "Searching",
+  "viewingSeries": "Viewing a series",
+  "readingManga": "Reading manga",
+  "readingNews": "Reading news",
+  "viewingWatchlist": "Viewing the watchlist",
+  "viewingHistory": "Viewing watch history",
+  "viewingCalendar": "Viewing the simulcast calendar",
+  "browsingGames": "Browsing games",
+  "browsingMusic": "Browsing music",
+  "browsingCrunchyroll": "Browsing Crunchyroll",
+  "viewTitle": "Watch"
+}
