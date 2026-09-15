@@ -1,0 +1,35 @@
+{
+  "name": "Notion",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["notion.so", "www.notion.so", "notion.com", "www.notion.com"],
+  "regExp": "^https?://(www\\.)?notion\\.(so|com)/",
+  "color": "#000000",
+  "category": "tools",
+  "description": {
+    "en-US": "Show the page you're working on in Notion.",
+    "fr-FR": "Affichez la page sur laquelle vous travaillez dans Notion.",
+    "es-ES": "Muestra la página en la que trabajas en Notion."
+  },
+  "longDescription": {
+    "en-US": "Notion is a workspace for notes, docs, and wikis. This presence shows the open page title, with an optional toggle to hide it.",
+    "fr-FR": "Notion est un espace de travail pour notes, docs et wikis. Cette présence affiche le titre de la page ouverte, avec une option pour le masquer.",
+    "es-ES": "Notion es un espacio de trabajo para notas, docs y wikis. Esta presencia muestra el título de la página abierta, con una opción para ocultarlo."
+  },
+  "features": {
+    "en-US": [
+      "Shows the open page title",
+      "Optional toggle to hide the title",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Affiche le titre de la page ouverte",
+      "Option pour masquer le titre",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Muestra el título de la página abierta",
+      "Opción para ocultar el título",
+      "Actividad de navegación opcional"
+    ]
+  }
+}
