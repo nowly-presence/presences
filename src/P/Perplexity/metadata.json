@@ -1,0 +1,38 @@
+{
+  "name": "Perplexity",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["perplexity.ai", "www.perplexity.ai"],
+  "regExp": "^https?://(www\\.)?perplexity\\.ai/",
+  "color": "#1FB8CD",
+  "category": "ai",
+  "description": {
+    "en-US": "Show when you're searching or chatting with Perplexity.",
+    "fr-FR": "Affichez lorsque vous cherchez ou discutez avec Perplexity.",
+    "es-ES": "Muestra cuando buscas o hablas con Perplexity."
+  },
+  "longDescription": {
+    "en-US": "Perplexity is an AI-powered answer engine. This presence shows that you're using Perplexity, with an optional query or thread title. Incognito searches stay generic unless you opt in.",
+    "fr-FR": "Perplexity est un moteur de réponses IA. Cette présence indique que vous utilisez Perplexity, avec la requête ou le titre du fil en option. Les recherches incognito restent génériques, sauf si vous l'activez.",
+    "es-ES": "Perplexity es un motor de respuestas con IA. Esta presencia muestra que usas Perplexity, con la consulta o el título del hilo en opción. Las búsquedas incógnito se quedan genéricas salvo que lo actives."
+  },
+  "features": {
+    "en-US": [
+      "Shows when you are using Perplexity",
+      "Optional search or thread title",
+      "Incognito searches stay private by default",
+      "Optional Spaces and browsing activity"
+    ],
+    "fr-FR": [
+      "Affiche lorsque vous utilisez Perplexity",
+      "Titre de recherche ou de fil optionnel",
+      "Les recherches incognito restent privées par défaut",
+      "Activité Spaces et navigation optionnelle"
+    ],
+    "es-ES": [
+      "Muestra cuando usas Perplexity",
+      "Título de búsqueda o hilo opcional",
+      "Las búsquedas incógnito son privadas por defecto",
+      "Actividad Spaces y navegación opcional"
+    ]
+  }
+}
