@@ -1,0 +1,14 @@
+{
+  "watching": "Watching",
+  "playing": "Playing",
+  "paused": "Paused",
+  "searching": "Searching",
+  "viewingSeries": "Viewing a series",
+  "browsingCatalog": "Browsing the catalog",
+  "viewingSchedule": "Viewing the schedule",
+  "viewingSimulcast": "Browsing simulcasts",
+  "browsingMovies": "Browsing movies",
+  "viewingWatchlist": "Viewing the watchlist",
+  "browsingAdn": "Browsing ADN",
+  "viewTitle": "Watch"
+}

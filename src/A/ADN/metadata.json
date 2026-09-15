@@ -1,0 +1,38 @@
+{
+  "name": "ADN",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["animedigitalnetwork.fr", "www.animedigitalnetwork.fr"],
+  "regExp": "^https?://(www\\.)?animedigitalnetwork\\.fr/",
+  "color": "#0098FF",
+  "category": "streaming",
+  "description": {
+    "en-US": "Show the anime you're watching on ADN.",
+    "fr-FR": "Affichez l'animé que vous regardez sur ADN.",
+    "es-ES": "Muestra el anime que estás viendo en ADN."
+  },
+  "longDescription": {
+    "en-US": "ADN (Anime Digital Network) streams anime in French-speaking regions. This presence shows the title you're watching, with playback state when available.",
+    "fr-FR": "ADN (Anime Digital Network) diffuse des animés. Cette présence affiche le titre que vous regardez, avec l'état de lecture lorsqu'il est disponible.",
+    "es-ES": "ADN (Anime Digital Network) emite anime. Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible."
+  },
+  "features": {
+    "en-US": [
+      "Detects the current title",
+      "Tracks playing and paused state",
+      "Optional privacy mode",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte le titre en cours",
+      "Suit la lecture et la pause",
+      "Mode privé optionnel",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta el título actual",
+      "Sigue reproducción y pausa",
+      "Modo privado opcional",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

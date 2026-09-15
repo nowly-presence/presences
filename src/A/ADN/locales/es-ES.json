@@ -1,0 +1,14 @@
+{
+  "watching": "Viendo",
+  "playing": "Reproduciendo",
+  "paused": "En pausa",
+  "searching": "Buscando",
+  "viewingSeries": "Viendo una serie",
+  "browsingCatalog": "Explorando el catálogo",
+  "viewingSchedule": "Viendo la programación",
+  "viewingSimulcast": "Explorando simulcasts",
+  "browsingMovies": "Explorando películas",
+  "viewingWatchlist": "Viendo la lista",
+  "browsingAdn": "Explorando ADN",
+  "viewTitle": "Ver"
+}
