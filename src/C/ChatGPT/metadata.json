@@ -1,0 +1,38 @@
+{
+  "name": "ChatGPT",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["chatgpt.com", "chat.openai.com"],
+  "regExp": "^https?://(chatgpt\\.com|chat\\.openai\\.com)/",
+  "color": "#FFFFFF",
+  "category": "ai",
+  "description": {
+    "en-US": "Show when you're chatting with ChatGPT.",
+    "fr-FR": "Affichez lorsque vous discutez avec ChatGPT.",
+    "es-ES": "Muestra cuando estás hablando con ChatGPT."
+  },
+  "longDescription": {
+    "en-US": "ChatGPT is OpenAI's conversational assistant. This presence shows that you're using ChatGPT, with an optional conversation or GPT title. Temporary chats stay generic unless you opt in.",
+    "fr-FR": "ChatGPT est l'assistant conversationnel d'OpenAI. Cette présence indique que vous utilisez ChatGPT, avec le titre de conversation ou de GPT en option. Les chats temporaires restent génériques, sauf si vous l'activez.",
+    "es-ES": "ChatGPT es el asistente conversacional de OpenAI. Esta presencia muestra que usas ChatGPT, con el título de la conversación o GPT en opción. Los chats temporales se quedan genéricos salvo que lo actives."
+  },
+  "features": {
+    "en-US": [
+      "Shows when you are using ChatGPT",
+      "Optional conversation title",
+      "Temporary chats stay private by default",
+      "Optional GPTs and browsing activity"
+    ],
+    "fr-FR": [
+      "Affiche lorsque vous utilisez ChatGPT",
+      "Titre de conversation optionnel",
+      "Les chats temporaires restent privés par défaut",
+      "Activité GPTs et navigation optionnelle"
+    ],
+    "es-ES": [
+      "Muestra cuando usas ChatGPT",
+      "Título de conversación opcional",
+      "Los chats temporales son privados por defecto",
+      "Actividad de GPTs y navegación opcional"
+    ]
+  }
+}
