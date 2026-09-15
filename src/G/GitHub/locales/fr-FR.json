@@ -1,9 +1,4 @@
 {
-  "browsing": "Parcourt",
-  "searching": "Recherche",
-  "watching": "En lecture",
-  "playing": "En lecture",
-  "paused": "En pause",
   "browsingGitHub": "Parcourt GitHub",
   "browsingFeed": "Parcourt le fil",
   "browsingRepositories": "Parcourt les dépôts",
