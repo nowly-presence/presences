@@ -1,0 +1,124 @@
+import { PresenceType, type PresenceData } from "@nowly/sdk"
+import { getXPage } from "./utils/page"
+import type enUS from "./locales/en-US.json"
+
+const settings = Presence.Settings({
+  privacy: {
+    type: "boolean",
+    default: false,
+    label: {
+      "en-US": "Privacy mode",
+      "fr-FR": "Mode privé",
+      "es-ES": "Modo privado",
+    },
+    description: {
+      "en-US": "Hide usernames and post links on Discord.",
+      "fr-FR": "Masque les identifiants et les liens de posts sur Discord.",
+      "es-ES": "Oculta nombres de usuario y enlaces de publicaciones en Discord.",
+    },
+  },
+  showBrowsing: {
+    type: "boolean",
+    default: false,
+    label: {
+      "en-US": "Show browsing activity",
+      "fr-FR": "Afficher l'activité de navigation",
+      "es-ES": "Mostrar actividad de navegación",
+    },
+    description: {
+      "en-US": "Show activity on the home timeline, explore, and other browsing pages.",
+      "fr-FR": "Affiche l'activité sur le fil d'accueil, Explorer et les autres pages de navigation.",
+      "es-ES": "Muestra actividad en el inicio, Explorar y otras páginas de navegación.",
+    },
+  },
+  showButtons: {
+    type: "boolean",
+    default: true,
+    label: {
+      "en-US": "Show buttons",
+      "fr-FR": "Afficher les boutons",
+      "es-ES": "Mostrar botones",
+    },
+    description: {
+      "en-US": "Show buttons to open the current post or profile.",
+      "fr-FR": "Affiche des boutons pour ouvrir le post ou le profil en cours.",
+      "es-ES": "Muestra botones para abrir la publicación o el perfil actual.",
+    },
+  },
+})
+
+const presence = new Presence(settings)
+
+const isEnabled = (value: unknown): boolean => value === true || value === "true"
+
+presence.on("UpdateData", async (ctx) => {
+  const strings = await presence.getStrings<typeof enUS>()
+  const privacy = isEnabled(ctx.settings.privacy)
+  const showBrowsing = isEnabled(ctx.settings.showBrowsing)
+  const showButtons = !("showButtons" in ctx.settings) || isEnabled(ctx.settings.showButtons)
+  const page = getXPage()
+
+  if (page.kind === "messages") {
+    await presence.setActivity({
+      details: strings.usingX,
+      state: strings.readingMessages,
+      largeImageKey: Assets.Logo,
+      largeImageText: "X",
+      type: PresenceType.Watching,
+    })
+    return
+  }
+
+  if (page.kind === "status") {
+    const data: PresenceData = {
+      details: strings.viewingPost,
+      state: privacy ? undefined : `@${page.user}`,
+      largeImageKey: Assets.Logo,
+      largeImageText: "X",
+      type: PresenceType.Watching,
+    }
+    if (!privacy && showButtons) {
+      data.buttons = [{ label: strings.viewPost, url: page.url }]
+    }
+    await presence.setActivity(data)
+    return
+  }
+
+  if (page.kind === "profile") {
+    const data: PresenceData = {
+      details: privacy ? strings.viewingProfile : presence.formatString(strings.viewingProfileOf, { user: page.user }),
+      largeImageKey: Assets.Logo,
+      largeImageText: "X",
+      type: PresenceType.Watching,
+    }
+    if (!privacy && showButtons) {
+      data.buttons = [{ label: strings.viewProfile, url: page.url }]
+    }
+    await presence.setActivity(data)
+    return
+  }
+
+  if (page.kind === "search") {
+    await presence.setActivity({
+      details: strings.searching,
+      state: privacy ? undefined : page.query,
+      largeImageKey: Assets.Logo,
+      largeImageText: "X",
+      smallImageKey: "search",
+      type: PresenceType.Watching,
+    })
+    return
+  }
+
+  if (!showBrowsing) {
+    presence.clearActivity()
+    return
+  }
+
+  await presence.setActivity({
+    details: page.kind === "home" ? strings.browsingHome : strings.browsingX,
+    largeImageKey: Assets.Logo,
+    largeImageText: "X",
+    type: PresenceType.Watching,
+  })
+})
