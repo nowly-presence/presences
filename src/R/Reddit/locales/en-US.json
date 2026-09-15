@@ -1,0 +1,14 @@
+{
+  "usingReddit": "Using Reddit",
+  "viewingPost": "Viewing a post",
+  "viewingSubreddit": "Viewing a community",
+  "viewingSubredditOf": "Browsing r/{subreddit}",
+  "viewingProfile": "Viewing a profile",
+  "viewingProfileOf": "Viewing u/{user}",
+  "searching": "Searching",
+  "readingMessages": "Reading messages",
+  "browsingHome": "Browsing home",
+  "browsingReddit": "Browsing Reddit",
+  "viewPost": "View post",
+  "viewCommunity": "View community"
+}
