@@ -1,0 +1,41 @@
+{
+  "name": "Gemini",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["gemini.google.com"],
+  "regExp": "^https?://gemini\\.google\\.com/",
+  "color": "#3689FF",
+  "category": "ai",
+  "description": {
+    "en-US": "Show when you're chatting with Gemini.",
+    "fr-FR": "Affichez lorsque vous discutez avec Gemini.",
+    "es-ES": "Muestra cuando estás hablando con Gemini."
+  },
+  "longDescription": {
+    "en-US": "Gemini is Google's AI assistant. This presence shows that you're using Gemini, with an optional conversation title. Temporary chats stay generic unless you opt in.",
+    "fr-FR": "Gemini est l'assistant IA de Google. Cette présence indique que vous utilisez Gemini, avec le titre de conversation en option. Les chats temporaires restent génériques, sauf si vous l'activez.",
+    "es-ES": "Gemini es el asistente de IA de Google. Esta presencia muestra que usas Gemini, con el título de la conversación en opción. Los chats temporales se quedan genéricos salvo que lo actives."
+  },
+  "features": {
+    "en-US": [
+      "Shows when you are using Gemini",
+      "Optional conversation title",
+      "Temporary chats stay private by default",
+      "Optional Gems and browsing activity"
+    ],
+    "fr-FR": [
+      "Affiche lorsque vous utilisez Gemini",
+      "Titre de conversation optionnel",
+      "Les chats temporaires restent privés par défaut",
+      "Activité Gems et navigation optionnelle"
+    ],
+    "es-ES": [
+      "Muestra cuando usas Gemini",
+      "Título de conversación opcional",
+      "Los chats temporales son privados por defecto",
+      "Actividad de Gems y navegación opcional"
+    ]
+  }
+}
