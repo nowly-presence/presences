@@ -1,0 +1,38 @@
+{
+  "name": "Steam",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["store.steampowered.com", "steamcommunity.com"],
+  "regExp": "^https?://(store\\.steampowered\\.com|steamcommunity\\.com)/",
+  "color": "#1B2838",
+  "category": "gaming",
+  "description": {
+    "en-US": "Show which games and pages you're browsing on Steam.",
+    "fr-FR": "Affichez les jeux et pages que vous parcourez sur Steam.",
+    "es-ES": "Muestra los juegos y páginas que exploras en Steam."
+  },
+  "longDescription": {
+    "en-US": "Steam is Valve's game store and community. This presence shows the game or profile you're looking at. Optional privacy mode hides names.",
+    "fr-FR": "Steam est la boutique et la communauté de Valve. Cette présence affiche le jeu ou le profil consulté. Le mode privé masque les noms.",
+    "es-ES": "Steam es la tienda y comunidad de Valve. Esta presencia muestra el juego o perfil que consultas. El modo privado oculta los nombres."
+  },
+  "features": {
+    "en-US": [
+      "Detects game store pages",
+      "Shows community profiles",
+      "Optional privacy mode",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte les pages boutique",
+      "Affiche les profils communauté",
+      "Mode privé optionnel",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta fichas de juegos",
+      "Muestra perfiles de comunidad",
+      "Modo privado opcional",
+      "Actividad de navegación opcional"
+    ]
+  }
+}
