@@ -1,0 +1,38 @@
+{
+  "name": "Wikipedia",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["wikipedia.org"],
+  "regExp": "^https?://([a-z0-9-]+\\.)?wikipedia\\.org/",
+  "color": "#ffffff",
+  "category": "learning",
+  "description": {
+    "en-US": "Show the article you're reading on Wikipedia.",
+    "fr-FR": "Affichez l'article que vous lisez sur Wikipédia.",
+    "es-ES": "Muestra el artículo que estás leyendo en Wikipedia."
+  },
+  "longDescription": {
+    "en-US": "Wikipedia is a free encyclopedia. This presence shows the article you're reading. Privacy mode hides the article title.",
+    "fr-FR": "Wikipédia est une encyclopédie libre. Cette présence affiche l'article que vous lisez. Le mode privé masque le titre de l'article.",
+    "es-ES": "Wikipedia es una enciclopedia libre. Esta presencia muestra el artículo que lees. El modo privado oculta el título del artículo."
+  },
+  "features": {
+    "en-US": [
+      "Detects the current article",
+      "Works on language subdomains",
+      "Optional privacy mode",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte l'article en cours",
+      "Fonctionne sur les sous-domaines de langue",
+      "Mode privé optionnel",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta el artículo actual",
+      "Funciona en subdominios de idioma",
+      "Modo privado opcional",
+      "Actividad de navegación opcional"
+    ]
+  }
+}
