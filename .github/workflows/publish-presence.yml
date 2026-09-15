@@ -14,9 +14,7 @@ permissions: {}
 
 jobs:
   publish:
-    if: >
-      github.event.pull_request.merged == true
-      && (contains(github.event.pull_request.labels.*.name, 'new') || contains(github.event.pull_request.labels.*.name, 'update'))
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Generate token
@@ -46,29 +44,58 @@ jobs:
         working-directory: .internal-cli
         run: npm install
 
-      - name: Detect changed presence slugs
+      - name: Detect changed and removed presence slugs
         id: changed
         run: |
           BASE="${{ github.event.pull_request.base.sha }}"
           HEAD="${{ github.event.pull_request.head.sha }}"
 
-          SLUGS=$(git diff --name-only --diff-filter=AMR "$BASE"..."$HEAD" -- src/ \
-            | sed -n 's|^src/[^/]*/\([^/]*\)/.*|\1|p' \
-            | tr '[:upper:]' '[:lower:]' \
-            | tr ' ' '-' \
-            | sort -u)
+          slug_from_paths() {
+            sed -n 's|^src/[^/]*/\([^/]*\)/.*|\1|p' \
+              | tr '[:upper:]' '[:lower:]' \
+              | tr ' ' '-' \
+              | sort -u
+          }
+
+          SLUGS=$(git diff --name-only --diff-filter=AMR "$BASE"..."$HEAD" -- src/ | slug_from_paths)
+          DELETED=$(git diff --name-only --diff-filter=D "$BASE"..."$HEAD" -- src/ | slug_from_paths)
+
+          CURRENT=""
+          if [ -d src ]; then
+            CURRENT=$(find src -mindepth 2 -maxdepth 2 -type d \
+              | while IFS= read -r dir; do
+                  [ -f "$dir/metadata.json" ] || continue
+                  basename "$dir" | tr '[:upper:]' '[:lower:]' | tr ' ' '-'
+                done | sort -u)
+          fi
+
+          REMOVED=""
+          while IFS= read -r slug; do
+            [ -z "$slug" ] && continue
+            if ! printf '%s\n' "$CURRENT" | grep -qx "$slug"; then
+              REMOVED="$REMOVED$slug"$'\n'
+            fi
+          done <<< "$DELETED"
 
           echo "Changed slugs:"
           echo "$SLUGS"
+          echo "Removed slugs:"
+          echo "$REMOVED"
 
           {
             echo "slugs<<EOF"
-            printf '%s\n' "$SLUGS"
+            [ -n "$SLUGS" ] && printf '%s\n' "$SLUGS"
+            echo "EOF"
+            echo "removed<<EOF"
+            [ -n "$REMOVED" ] && printf '%s\n' "$REMOVED"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
       - name: Push changed presences to API and CDN
-        if: steps.changed.outputs.slugs != ''
+        if: >
+          steps.changed.outputs.slugs != ''
+          && (contains(github.event.pull_request.labels.*.name, 'new')
+            || contains(github.event.pull_request.labels.*.name, 'update'))
         env:
           API_URL: ${{ secrets.API_URL }}
           API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
@@ -97,3 +124,21 @@ jobs:
               --pr-title "${{ github.event.pull_request.title }}" \
               --author "$PR_AUTHOR"
           done <<< "${{ steps.changed.outputs.slugs }}"
+
+      - name: Archive removed presences
+        if: steps.changed.outputs.removed != ''
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+        run: |
+          SLUGS=""
+          while IFS= read -r slug; do
+            [ -z "$slug" ] && continue
+            SLUGS="$SLUGS $slug"
+          done <<< "${{ steps.changed.outputs.removed }}"
+
+          echo "Archiving$SLUGS"
+          "$GITHUB_WORKSPACE/.internal-cli/node_modules/.bin/tsx" --tsconfig "$GITHUB_WORKSPACE/.internal-cli/tsconfig.json" "$GITHUB_WORKSPACE/.internal-cli/index.ts" archive $SLUGS \
+            --source pr \
+            --pr "#${{ github.event.pull_request.number }}" \
+            --pr-title "${{ github.event.pull_request.title }}"
