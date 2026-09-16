@@ -9,35 +9,35 @@
   "color": "#ffffff",
   "category": "streaming",
   "description": {
-    "en-US": "Watch movies, series, live TV, sports, and replays on CANAL+.",
-    "fr-FR": "Regardez films, séries, TV en direct, sport et replays sur CANAL+.",
-    "es-ES": "Disfruta de películas, series, televisión en directo, deporte y repeticiones en CANAL+."
+    "en-US": "Show the movie, series, live channel, or replay you're watching on CANAL+.",
+    "fr-FR": "Affichez le film, la série, la chaîne en direct ou le replay que vous regardez sur CANAL+.",
+    "es-ES": "Muestra la película, serie, canal en directo o replay que estás viendo en CANAL+."
   },
   "longDescription": {
-    "en-US": "CANAL+ brings together movies, series, live channels, sports competitions, documentaries, and replay programs in one streaming platform. Automatically display what you're watching, including the title, playback status, and progress when available, while keeping browsing activity optional.",
-    "fr-FR": "CANAL+ réunit films, séries, chaînes en direct, compétitions sportives, documentaires et programmes en replay dans une seule plateforme de streaming. Affichez automatiquement ce que vous regardez, avec le titre, le statut de lecture et la progression lorsque disponible, tout en gardant l'activité de navigation optionnelle.",
-    "es-ES": "CANAL+ reúne películas, series, canales en directo, competiciones deportivas, documentales y programas en replay en una sola plataforma de streaming. Muestra automáticamente lo que estás viendo, incluido el título, el estado de reproducción y el progreso cuando esté disponible, manteniendo la actividad de navegación como opcional."
+    "en-US": "CANAL+ streams movies, series, live channels, sports, documentaries, and replays. This presence shows the title you're watching, including playback state and progress when available. Browsing activity is optional.",
+    "fr-FR": "CANAL+ réunit films, séries, chaînes en direct, sport, documentaires et replays. Cette présence affiche le titre que vous regardez, avec l'état de lecture et la progression lorsqu'ils sont disponibles. L'activité de navigation est optionnelle.",
+    "es-ES": "CANAL+ reúne películas, series, canales en directo, deportes, documentales y repeticiones. Esta presencia muestra el título que estás viendo, con el estado de reproducción y el progreso cuando están disponibles. La actividad de navegación es opcional."
   },
   "features": {
     "en-US": [
-      "Automatic video detection",
-      "Movie, series, live TV, and replay support",
-      "Playback status tracking",
-      "Progress bar when media duration is available",
+      "Detects video automatically",
+      "Supports movies, series, live TV, and replays",
+      "Tracks playing and paused state",
+      "Shows progress when duration is known",
       "Optional browsing activity"
     ],
     "fr-FR": [
-      "Détection automatique des vidéos",
-      "Prise en charge des films, séries, directs TV et replays",
-      "Suivi du statut de lecture",
-      "Barre de progression lorsque la durée du média est disponible",
+      "Détecte la vidéo automatiquement",
+      "Prend en charge films, séries, directs et replays",
+      "Suit l'état en lecture ou en pause",
+      "Affiche la progression lorsque la durée est connue",
       "Activité de navigation optionnelle"
     ],
     "es-ES": [
-      "Detección automática de vídeo",
-      "Compatibilidad con películas, series, televisión en directo y repeticiones",
-      "Seguimiento del estado de reproducción",
-      "Barra de progreso cuando la duración del contenido está disponible",
+      "Detecta el vídeo automáticamente",
+      "Compatible con películas, series, TV en directo y repeticiones",
+      "Sigue el estado en reproducción o en pausa",
+      "Muestra el progreso cuando se conoce la duración",
       "Actividad de navegación opcional"
     ]
   }

@@ -20,9 +20,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your presence will also show when browsing Netflix (home, search, title pages, etc.), not just when watching a video.",
-      "fr-FR": "Quand activé, votre présence s'affichera aussi lorsque vous naviguez sur Netflix (accueil, recherche, pages de titres, etc.), pas seulement quand vous regardez une vidéo.",
-      "es-ES": "Cuando está activado, tu presencia también se mostrará al navegar por Netflix (inicio, búsqueda, páginas de títulos, etc.), no solo al ver un vídeo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Netflix (home, search, title pages) — not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Netflix (accueil, recherche, fiches) — pas seulement pendant la lecture.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Netflix (inicio, búsqueda, fichas), no solo al reproducir contenido.",
     },
   },
 })
@@ -63,7 +63,7 @@ presence.on("UpdateData", async (ctx) => {
         largeImageText: v?.title || "Netflix",
         type: PresenceType.Watching,
         buttons: [{
-          label: isEpisode ? "Watch Episode" : "Watch Movie",
+          label: isEpisode ? strings.watchEpisode : strings.watchMovie,
           url: href.split("?")[0] || href,
         }],
       }
@@ -100,7 +100,7 @@ presence.on("UpdateData", async (ctx) => {
       largeImageText: v?.title || "Netflix",
       type: PresenceType.Watching,
       buttons: [{
-        label: v?.type === "show" ? "View Series" : "View Movie",
+        label: v?.type === "show" ? strings.viewSeries : strings.viewMovie,
         url: href,
       }],
     })

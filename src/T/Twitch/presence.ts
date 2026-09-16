@@ -17,13 +17,13 @@ const settings = Presence.Settings({
     default: true,
     label: {
       "en-US": "Show VOD activity",
-      "fr-FR": "Afficher l'activité des VODs",
-      "es-ES": "Mostrar actividad de VODs",
+      "fr-FR": "Afficher l'activité VOD",
+      "es-ES": "Mostrar actividad de VOD",
     },
     description: {
-      "en-US": "Show presence activity when watching VODs or clips.",
-      "fr-FR": "Affiche votre activité lorsque vous regardez des VODs ou des clips.",
-      "es-ES": "Muestra actividad de presencia al ver VODs o clips.",
+      "en-US": "Show your Discord presence when you watch VODs or clips.",
+      "fr-FR": "Affiche votre présence Discord lorsque vous regardez des VOD ou des clips.",
+      "es-ES": "Muestra tu presencia de Discord al ver VODs o clips.",
     },
   },
   showBrowsing: {
@@ -35,9 +35,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your presence will also show when browsing Twitch (directory, channel pages, etc.), not just when watching a stream or video.",
-      "fr-FR": "Quand activé, votre présence s'affichera aussi lorsque vous naviguez sur Twitch (répertoire, chaînes, etc.), pas seulement quand vous regardez un stream ou une vidéo.",
-      "es-ES": "Cuando está activado, tu presencia también se mostrará al navegar por Twitch (directorio, canales, etc.), no solo al ver un directo o vídeo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Twitch (directory, channels) — not only when a stream or video is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Twitch (répertoire, chaînes) — pas seulement pendant un live ou une vidéo.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Twitch (directorio, canales), no solo al ver un directo o un vídeo.",
     },
   },
 })
@@ -60,7 +60,7 @@ presence.on("UpdateData", async (ctx) => {
     }
 
     await presence.setActivity({
-      details: "Viewing homepage",
+      details: strings.viewingHomepage,
       largeImageKey: Assets.Logo,
       largeImageText: "Twitch",
       type: PresenceType.Watching,
@@ -83,12 +83,12 @@ presence.on("UpdateData", async (ctx) => {
     const avatar = findStreamerAvatar(streamer)
 
     await presence.setActivity({
-      details: title || "Live",
+      details: title || strings.live,
       state: streamer ? `${streamer}${game ? ` - ${game}` : ""}` : game,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: streamer || "Twitch",
       type: PresenceType.Watching,
-      buttons: [{ label: "Watch Stream", url: window.location.href.split("?")[0] }],
+      buttons: [{ label: strings.watchStream, url: window.location.href.split("?")[0] }],
     })
     return
   }
@@ -104,14 +104,14 @@ presence.on("UpdateData", async (ctx) => {
     const avatar = findStreamerAvatar(streamer)
 
     const data: Parameters<typeof presence.setActivity>[0] = {
-      details: title || "VOD",
+      details: title || strings.vod,
       state: streamer,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: streamer || "Twitch",
       smallImageKey: video?.paused ? "pause" : "play",
       smallImageText: video?.paused ? strings.paused : strings.playing,
       type: PresenceType.Watching,
-      buttons: [{ label: "Watch Video", url: window.location.href.split("?")[0] }],
+      buttons: [{ label: strings.watchVideo, url: window.location.href.split("?")[0] }],
     }
 
     if (video && !video.paused) Object.assign(data, createMediaTimestamps(video))
@@ -130,14 +130,14 @@ presence.on("UpdateData", async (ctx) => {
     const avatar = findStreamerAvatar(creator)
 
     const data: Parameters<typeof presence.setActivity>[0] = {
-      details: title || "Clip",
+      details: title || strings.clip,
       state: creator,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: creator || "Twitch Clip",
       smallImageKey: video?.paused ? "pause" : "play",
       smallImageText: video?.paused ? strings.paused : strings.playing,
       type: PresenceType.Watching,
-      buttons: [{ label: "Watch Clip", url: window.location.href }],
+      buttons: [{ label: strings.watchClip, url: window.location.href }],
     }
 
     if (video && !video.paused) Object.assign(data, createMediaTimestamps(video))

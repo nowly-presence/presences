@@ -10,36 +10,33 @@
   "color": "#E50914",
   "category": "streaming",
   "description": {
-    "en-US": "Watch movies, series, and documentaries from Netflix's streaming catalog.",
-    "fr-FR": "Regardez films, séries et documentaires du catalogue de streaming Netflix.",
-    "es-ES": "Mira películas, series y documentales del catálogo de streaming de Netflix."
+    "en-US": "Show the movie, series, or documentary you're watching on Netflix.",
+    "fr-FR": "Affichez le film, la série ou le documentaire que vous regardez sur Netflix.",
+    "es-ES": "Muestra la película, serie o documental que estás viendo en Netflix."
   },
   "longDescription": {
-    "en-US": "Netflix is a streaming service offering a vast catalog of movies, series, documentaries, and originals. Automatically display the movie or episode you're watching, including season and episode information, and let your friends see what you're streaming in real time.",
-    "fr-FR": "Netflix est un service de streaming proposant un vaste catalogue de films, séries, documentaires et productions originales. Affichez automatiquement le film ou l'épisode que vous regardez, avec les informations de saison et d'épisode, et permettez à vos amis de voir ce que vous regardez en temps réel.",
-    "es-ES": "Netflix es un servicio de streaming que ofrece un amplio catálogo de películas, series, documentales y producciones originales. Muestra automáticamente la película o el episodio que estás viendo, incluyendo la temporada y el episodio, y permite que tus amigos vean lo que estás disfrutando en tiempo real."
+    "en-US": "Netflix streams movies, series, documentaries, and originals. This presence shows the title you're watching, including season and episode when it applies, so friends can see it on Discord in real time.",
+    "fr-FR": "Netflix propose films, séries, documentaires et productions originales. Cette présence affiche le titre que vous regardez, avec la saison et l'épisode le cas échéant, pour que vos amis le voient sur Discord en temps réel.",
+    "es-ES": "Netflix ofrece películas, series, documentales y originales. Esta presencia muestra el título que estás viendo, con temporada y episodio cuando corresponde, para que tus amigos lo vean en Discord en tiempo real."
   },
   "features": {
     "en-US": [
-      "Automatic content detection",
-      "Display movie and series titles",
-      "Season and episode information",
-      "Playback status tracking",
-      "Real-time viewing activity"
+      "Detects movies and series automatically",
+      "Shows title, season, and episode",
+      "Tracks playing and paused state",
+      "Updates your Discord activity in real time"
     ],
     "fr-FR": [
-      "Détection automatique du contenu",
-      "Affichage des titres des films et séries",
-      "Informations sur les saisons et épisodes",
-      "Suivi du statut de lecture",
-      "Activité de visionnage en temps réel"
+      "Détecte automatiquement films et séries",
+      "Affiche le titre, la saison et l'épisode",
+      "Suit l'état en lecture ou en pause",
+      "Met à jour votre activité Discord en temps réel"
     ],
     "es-ES": [
-      "Detección automática del contenido",
-      "Visualización de títulos de películas y series",
-      "Información de temporadas y episodios",
-      "Seguimiento del estado de reproducción",
-      "Actividad de visualización en tiempo real"
+      "Detecta películas y series automáticamente",
+      "Muestra título, temporada y episodio",
+      "Sigue el estado en reproducción o en pausa",
+      "Actualiza tu actividad de Discord en tiempo real"
     ]
   }
 }

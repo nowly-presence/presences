@@ -1,7 +1,13 @@
 {
   "browsing": "Browsing",
   "searching": "Searching",
-  "watching": "Watching",
   "playing": "Playing",
-  "paused": "Paused"
+  "paused": "Paused",
+  "browsingHome": "Browsing home",
+  "viewingSeries": "Viewing a series",
+  "sharePlayRoom": "In a SharePlay room",
+  "watchEpisode": "Watch Episode",
+  "watchShow": "Watch Show",
+  "movie": "Movie",
+  "seasonEpisode": "Season {season}, Episode {episode}"
 }

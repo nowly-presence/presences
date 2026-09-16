@@ -15,9 +15,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your presence will also show when browsing Disney+ (home, search, categories, etc.), not just when watching a video.",
-      "fr-FR": "Quand activé, votre présence s'affichera aussi lorsque vous naviguez sur Disney+ (accueil, recherche, catégories, etc.), pas seulement quand vous regardez une vidéo.",
-      "es-ES": "Cuando está activado, tu presencia también se mostrará al navegar por Disney+ (inicio, búsqueda, categorías, etc.), no solo al ver un vídeo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Disney+ (home, search, categories) — not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Disney+ (accueil, recherche, catégories) — pas seulement pendant la lecture.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Disney+ (inicio, búsqueda, categorías), no solo al reproducir contenido.",
     },
   },
 })
@@ -41,7 +41,7 @@ presence.on("UpdateData", async (ctx) => {
       largeImageText: title || "Disney+",
       type: PresenceType.Watching,
       buttons: [{
-        label: isEpisodeSubtitle(subtitle) ? "Watch Episode" : "Watch Movie",
+        label: isEpisodeSubtitle(subtitle) ? strings.watchEpisode : strings.watchMovie,
         url: window.location.href,
       }],
     }
@@ -64,7 +64,7 @@ presence.on("UpdateData", async (ctx) => {
     const isSeries = !!document.querySelector("#episodes_control")
 
     await presence.setActivity({
-      details: isSeries ? "Viewing series" : "Viewing movie",
+      details: isSeries ? strings.viewingSeries : strings.viewingMovie,
       state: title,
       largeImageKey: Assets.Logo,
       largeImageText: title,
@@ -80,14 +80,14 @@ presence.on("UpdateData", async (ctx) => {
 
   if (pathname === "/" || pathname.includes("/home")) {
     await presence.setActivity({
-      details: "Browsing home",
+      details: strings.browsingHome,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.includes("/search")) {
     const query = document.querySelector<HTMLInputElement>('input[type="search"]')?.value
     await presence.setActivity({
-      details: "Searching for:",
+      details: strings.searchingFor,
       state: query || "...",
       largeImageKey: Assets.Logo,
       smallImageKey: "search",
@@ -95,19 +95,19 @@ presence.on("UpdateData", async (ctx) => {
     })
   } else if (pathname.includes("/watchlist")) {
     await presence.setActivity({
-      details: "Browsing watchlist",
+      details: strings.browsingWatchlist,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.includes("/series")) {
     await presence.setActivity({
-      details: "Browsing series",
+      details: strings.browsingSeries,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
   } else if (pathname.includes("/movies")) {
     await presence.setActivity({
-      details: "Browsing movies",
+      details: strings.browsingMovies,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })

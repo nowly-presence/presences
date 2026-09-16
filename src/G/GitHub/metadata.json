@@ -9,42 +9,42 @@
   "color": "#0FBF3E",
   "category": "tools",
   "description": {
-    "en-US": "Build, review, and explore code on GitHub.",
-    "fr-FR": "Développez, relisez et explorez du code sur GitHub.",
-    "es-ES": "Crea, revisa y explora código en GitHub."
+    "en-US": "Show where you're browsing on GitHub — repos, PRs, issues, and more.",
+    "fr-FR": "Affichez où vous naviguez sur GitHub — dépôts, pull requests, issues et plus.",
+    "es-ES": "Muestra por dónde navegas en GitHub: repos, PRs, issues y más."
   },
   "longDescription": {
-    "en-US": "GitHub is a platform for developers to host repositories, review pull requests, track issues, share gists, and read product updates. This presence shows where you are browsing across GitHub, Gist, GitHub Blog, GitHub Next, and GitHub Universe while keeping private repositories protected by default.",
-    "fr-FR": "GitHub est une plateforme qui permet aux développeurs d’héberger des repositories, de relire des pull requests, de suivre des issues, de partager des gists et de lire les nouveautés produit. Cette présence affiche votre navigation sur GitHub, Gist, GitHub Blog, GitHub Next et GitHub Universe, tout en protégeant les repositories privés par défaut.",
-    "es-ES": "GitHub es una plataforma que permite a los desarrolladores alojar repositorios, revisar pull requests, seguir issues, compartir gists y leer novedades del producto. Esta presencia muestra tu navegación por GitHub, Gist, GitHub Blog, GitHub Next y GitHub Universe, mientras protege los repositorios privados de forma predeterminada."
+    "en-US": "GitHub hosts repositories, pull requests, issues, gists, and product updates. This presence shows where you are across GitHub, Gist, GitHub Blog, GitHub Next, and GitHub Universe. Private repositories stay hidden unless you opt in.",
+    "fr-FR": "GitHub héberge dépôts, pull requests, issues, gists et actualités produit. Cette présence affiche où vous êtes sur GitHub, Gist, GitHub Blog, GitHub Next et GitHub Universe. Les dépôts privés restent masqués, sauf si vous l'activez.",
+    "es-ES": "GitHub aloja repositorios, pull requests, issues, gists y novedades de producto. Esta presencia muestra dónde estás en GitHub, Gist, GitHub Blog, GitHub Next y GitHub Universe. Los repositorios privados permanecen ocultos salvo que lo actives."
   },
   "features": {
     "en-US": [
-      "Repository and profile detection",
-      "Private repository privacy setting",
+      "Detects repositories and profiles",
+      "Optional private-repository visibility",
       "GitHub Copilot and Spark pages",
       "Marketplace, MCP Registry, topics, trending, and collections",
-      "Issues, notifications, pull requests, and feed dashboards",
-      "Optional Gist, GitHub Blog, and GitHub Next support",
-      "GitHub Universe event page support"
+      "Issues, notifications, pull requests, and feed",
+      "Optional Gist, GitHub Blog, and GitHub Next",
+      "GitHub Universe event pages"
     ],
     "fr-FR": [
-      "Détection des repositories et des profils",
-      "Paramètre de confidentialité pour les repositories privés",
+      "Détecte les dépôts et les profils",
+      "Visibilité optionnelle des dépôts privés",
       "Pages GitHub Copilot et Spark",
-      "Marketplace, registre MCP, topics, tendances et collections",
-      "Tableaux issues, notifications, pull requests et feed",
-      "Support optionnel de Gist, GitHub Blog et GitHub Next",
-      "Support de la page événementielle GitHub Universe"
+      "Marketplace, registre MCP, sujets, tendances et collections",
+      "Issues, notifications, pull requests et fil",
+      "Gist, GitHub Blog et GitHub Next en option",
+      "Pages de l'événement GitHub Universe"
     ],
     "es-ES": [
-      "Detección de repositorios y perfiles",
-      "Ajuste de privacidad para repositorios privados",
+      "Detecta repositorios y perfiles",
+      "Visibilidad opcional de repositorios privados",
       "Páginas de GitHub Copilot y Spark",
-      "Marketplace, registro MCP, topics, tendencias y colecciones",
-      "Paneles de issues, notificaciones, pull requests y feed",
-      "Soporte opcional para Gist, GitHub Blog y GitHub Next",
-      "Soporte para la página del evento GitHub Universe"
+      "Marketplace, registro MCP, temas, tendencias y colecciones",
+      "Issues, notificaciones, pull requests y feed",
+      "Gist, GitHub Blog y GitHub Next opcionales",
+      "Páginas del evento GitHub Universe"
     ]
   }
 }

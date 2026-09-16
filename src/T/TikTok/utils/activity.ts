@@ -62,27 +62,27 @@ export const handleUpdate = async (
       }
 
       if (privacy) {
-        data.details = "Browsing feed"
+        data.details = strings.browsingFeed
       } else if (nickname && handle) {
         data.details = `${nickname} (@${handle})`
         data.state = extractVideoDescription(container)
       } else if (video) {
-        data.details = "Watching a video"
+        data.details = strings.watchingVideo
       } else {
-        data.details = "Browsing feed"
+        data.details = strings.browsingFeed
       }
 
       if (!privacy && showButtons) {
         const buttons = []
         if (tiktokURL && creatorURL) {
           buttons.push(
-            { label: "View TikTok", url: tiktokURL },
-            { label: "View Profile", url: creatorURL },
+            { label: strings.viewTikTok, url: tiktokURL },
+            { label: strings.viewProfile, url: creatorURL },
           )
         } else if (creatorURL) {
-          buttons.push({ label: "View Profile", url: creatorURL })
+          buttons.push({ label: strings.viewProfile, url: creatorURL })
         } else if (tiktokURL) {
-          buttons.push({ label: "View TikTok", url: tiktokURL })
+          buttons.push({ label: strings.viewTikTok, url: tiktokURL })
         }
         if (buttons.length > 0) data.buttons = buttons
       }
@@ -111,9 +111,9 @@ export const handleUpdate = async (
       }
 
       if (privacy) {
-        data.details = "Watching a video"
+        data.details = strings.watchingVideo
       } else {
-        data.details = author.nickname ? `${author.nickname} (@${handle})` : "Watching a video"
+        data.details = author.nickname ? `${author.nickname} (@${handle})` : strings.watchingVideo
         data.state = extractVideoDescription()
       }
 
@@ -127,8 +127,8 @@ export const handleUpdate = async (
 
       if (!privacy && showButtons && handle) {
         data.buttons = [
-          { label: "View TikTok", url: href },
-          { label: "View Profile", url: `https://www.tiktok.com/@${handle}` },
+          { label: strings.viewTikTok, url: href },
+          { label: strings.viewProfile, url: `https://www.tiktok.com/@${handle}` },
         ]
       }
 
@@ -143,19 +143,19 @@ export const handleUpdate = async (
 
       const data: PresenceData = {
         largeImageKey: image ?? Assets.Logo,
-        largeImageText: category ?? "TikTok Live",
+        largeImageText: category ?? strings.tiktok,
         smallImageKey: image ? Assets.Logo : undefined,
-        smallImageText: image ? "TikTok" : undefined,
+        smallImageText: image ? strings.tiktok : undefined,
         type: PresenceType.Watching,
         details: privacy
-          ? "Browsing live categories"
+          ? strings.browsingLiveCategories
           : category
-            ? `Browsing ${category}`
-            : "Browsing live category",
+            ? presence.formatString(strings.browsingNamed, { name: category })
+            : strings.browsingLiveCategory,
       }
 
       if (!privacy && showButtons) {
-        data.buttons = [{ label: "View Category", url: href.split("?")[0] }]
+        data.buttons = [{ label: strings.viewCategory, url: href.split("?")[0] }]
       }
 
       await presence.setActivity(data)
@@ -166,7 +166,7 @@ export const handleUpdate = async (
       await presence.setActivity({
         largeImageKey: Assets.Logo,
         type: PresenceType.Watching,
-        details: "Watching a live stream",
+        details: strings.watchingLive,
       })
       return
     }
@@ -180,17 +180,19 @@ export const handleUpdate = async (
       }
 
       if (privacy) {
-        data.details = "Watching a live stream"
+        data.details = strings.watchingLive
       } else if (author.nickname && author.handle) {
-        data.details = `Watching live - ${author.nickname} (@${author.handle})`
+        data.details = presence.formatString(strings.watchingLiveNamed, {
+          name: `${author.nickname} (@${author.handle})`,
+        })
       } else {
-        data.details = "Watching a live stream"
+        data.details = strings.watchingLive
       }
 
       if (!privacy && showButtons && author.handle) {
         data.buttons = [
-          { label: "Watch Stream", url: href },
-          { label: "View Profile", url: `https://www.tiktok.com/@${author.handle}` },
+          { label: strings.watchStream, url: href },
+          { label: strings.viewProfile, url: `https://www.tiktok.com/@${author.handle}` },
         ]
       }
 
@@ -205,12 +207,12 @@ export const handleUpdate = async (
       const data: PresenceData = {
         largeImageKey: avatar ?? Assets.Logo,
         smallImageKey: avatar ? Assets.Logo : undefined,
-        smallImageText: avatar ? "TikTok" : undefined,
+        smallImageText: avatar ? strings.tiktok : undefined,
         type: PresenceType.Watching,
       }
 
       if (privacy || !showProfileUsernames) {
-        data.details = "Viewing a profile"
+        data.details = strings.viewingProfile
       } else if (displayName && username) {
         data.details = `${displayName} (@${username})`
         data.state = bio
@@ -218,11 +220,11 @@ export const handleUpdate = async (
         data.details = `@${username}`
         data.state = bio
       } else {
-        data.details = "Viewing a profile"
+        data.details = strings.viewingProfile
       }
 
       if (showProfileUsernames && !privacy && showButtons && username) {
-        data.buttons = [{ label: "View Profile", url: `https://www.tiktok.com/@${username}` }]
+        data.buttons = [{ label: strings.viewProfile, url: `https://www.tiktok.com/@${username}` }]
       }
 
       await presence.setActivity(data)
@@ -233,7 +235,7 @@ export const handleUpdate = async (
       await presence.setActivity({
         largeImageKey: Assets.Logo,
         type: PresenceType.Watching,
-        details: privacy ? "Browsing explore" : "Exploring",
+        details: privacy ? strings.browsingExplore : strings.exploring,
       })
       return
     }
@@ -242,7 +244,7 @@ export const handleUpdate = async (
       await presence.setActivity({
         largeImageKey: Assets.Logo,
         type: PresenceType.Watching,
-        details: privacy ? "Browsing messages" : "Reading messages",
+        details: privacy ? strings.browsingMessages : strings.readingMessages,
       })
       return
     }
@@ -250,14 +252,14 @@ export const handleUpdate = async (
     await presence.setActivity({
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
-      details: "TikTok",
+      details: strings.tiktok,
     })
   } catch (err) {
     presence.error(`TikTok presence error: ${err}`)
     await presence.setActivity({
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
-      details: "TikTok",
+      details: strings.tiktok,
     })
   }
 }

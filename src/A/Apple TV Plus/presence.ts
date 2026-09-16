@@ -13,9 +13,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your presence will also show when browsing Apple TV+ (home, search, etc.), not just when watching a video.",
-      "fr-FR": "Quand activé, votre présence s'affichera aussi lorsque vous naviguez sur Apple TV+ (accueil, recherche, etc.), pas seulement quand vous regardez une vidéo.",
-      "es-ES": "Cuando está activado, tu presencia también se mostrará al navegar por Apple TV+ (inicio, búsqueda, etc.), no solo al ver un vídeo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Apple TV+ (home, search) — not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Apple TV+ (accueil, recherche) — pas seulement pendant la lecture.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Apple TV+ (inicio, búsqueda), no solo al reproducir contenido.",
     },
   },
 })
@@ -40,7 +40,7 @@ presence.on("UpdateData", async (ctx) => {
       largeImageText: title || "Apple TV+",
       type: PresenceType.Watching,
       buttons: [{
-        label: subtitle ? "Watch Episode" : "Watch Show",
+        label: subtitle ? strings.watchEpisode : strings.watchShow,
         url: href,
       }],
     }
@@ -48,12 +48,16 @@ presence.on("UpdateData", async (ctx) => {
     if (subtitle) {
       const { seasonNum, episodeNum, episodeTitle } = parseSubtitle(subtitle)
       data.details = title || "Apple TV+"
-      data.state = episodeTitle
-        ? `S${seasonNum}:E${episodeNum} ${episodeTitle}`
-        : `Season ${seasonNum}, Episode ${episodeNum}`
+      if (episodeTitle) {
+        data.state = `S${seasonNum}:E${episodeNum} ${episodeTitle}`
+      } else if (Number.isFinite(seasonNum) && Number.isFinite(episodeNum)) {
+        data.state = presence.formatString(strings.seasonEpisode, { season: seasonNum!, episode: episodeNum! })
+      } else {
+        data.state = subtitle
+      }
     } else {
       data.details = title || getPageTitle() || "Apple TV+"
-      data.state = genre || "Movie"
+      data.state = genre || strings.movie
     }
 
     if (isPaused) {
@@ -76,7 +80,7 @@ presence.on("UpdateData", async (ctx) => {
 
   if (pathname === "/" || pathname.startsWith("/home")) {
     await presence.setActivity({
-      details: "Browsing home",
+      details: strings.browsingHome,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
@@ -97,7 +101,7 @@ presence.on("UpdateData", async (ctx) => {
   if (pathname.startsWith("/show/")) {
     const pageTitle = getPageTitle()
     await presence.setActivity({
-      details: pageTitle || "Viewing series",
+      details: pageTitle || strings.viewingSeries,
       state: pageTitle ? undefined : getPageDescription(),
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
@@ -107,7 +111,7 @@ presence.on("UpdateData", async (ctx) => {
 
   if (pathname.startsWith("/room/")) {
     await presence.setActivity({
-      details: "In a SharePlay room",
+      details: strings.sharePlayRoom,
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })

@@ -1,7 +1,13 @@
 {
-  "browsing": "Navigation",
   "searching": "Recherche",
-  "watching": "Regarde",
-  "playing": "Lecture en cours",
-  "paused": "En pause"
+  "playing": "En lecture",
+  "paused": "En pause",
+  "listeningToMusic": "Écoute de la musique",
+  "browsingHome": "Parcourt l'accueil",
+  "viewingPlaylist": "Consulte une playlist",
+  "viewingArtist": "Consulte un artiste",
+  "browsingLibrary": "Parcourt la bibliothèque",
+  "exploringMusic": "Explore la musique",
+  "browsingYouTubeMusic": "Parcourt YouTube Music",
+  "listen": "Écouter"
 }

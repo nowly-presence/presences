@@ -15,9 +15,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your presence will also show when browsing YouTube (home, search, subscriptions, etc.), not just when watching a video.",
-      "fr-FR": "Quand activé, votre présence s'affichera aussi lorsque vous naviguez sur YouTube (accueil, recherche, abonnements, etc.), pas seulement quand vous regardez une vidéo.",
-      "es-ES": "Cuando está activado, tu presencia también se mostrará al navegar por YouTube (inicio, búsqueda, suscripciones, etc.), no solo al ver un vídeo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse YouTube (home, search, subscriptions) — not only when a video is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez YouTube (accueil, recherche, abonnements) — pas seulement pendant la lecture.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar YouTube (inicio, búsqueda, suscripciones), no solo al reproducir un vídeo.",
     },
   },
   showChannels: {
@@ -29,9 +29,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar detalles del canal",
     },
     description: {
-      "en-US": "When enabled, your presence will show the channel name and avatar when viewing a channel page.",
-      "fr-FR": "Quand activé, votre présence affichera le nom et l'avatar de la chaîne lorsque vous consultez une page chaîne.",
-      "es-ES": "Cuando está activado, tu presencia mostrará el nombre y avatar del canal al ver una página de canal.",
+      "en-US": "When enabled, your Discord presence shows the channel name and avatar on channel pages.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord affiche le nom et l'avatar de la chaîne sur les pages chaîne.",
+      "es-ES": "Si está activada, tu presencia de Discord muestra el nombre y el avatar del canal en las páginas de canal.",
     },
   },
 })

@@ -9,36 +9,33 @@
   "color": "#0064FF",
   "category": "streaming",
   "description": {
-    "en-US": "Watch movies, series, live sports, and exclusive originals on Paramount+.",
-    "fr-FR": "Regardez films, séries, sport en direct et exclusivités originales sur Paramount+.",
-    "es-ES": "Disfruta de películas, series, deportes en directo y originales exclusivos en Paramount+."
+    "en-US": "Show the movie, series, or live sports title you're watching on Paramount+.",
+    "fr-FR": "Affichez le film, la série ou le sport en direct que vous regardez sur Paramount+.",
+    "es-ES": "Muestra la película, serie o deporte en directo que estás viendo en Paramount+."
   },
   "longDescription": {
-    "en-US": "Paramount+ streams a huge catalog of movies, series, live sports, and exclusive originals from CBS, MTV, Nickelodeon, Comedy Central, and more. Automatically display the movie or episode you're watching, including season and episode information and playback status, and let your friends see what you're streaming in real time.",
-    "fr-FR": "Paramount+ propose un vaste catalogue de films, séries, sport en direct et exclusivités originales de CBS, MTV, Nickelodeon, Comedy Central et plus encore. Affichez automatiquement le film ou l'épisode que vous regardez, avec les informations de saison et d'épisode ainsi que le statut de lecture, et permettez à vos amis de voir ce que vous regardez en temps réel.",
-    "es-ES": "Paramount+ ofrece un amplio catálogo de películas, series, deportes en directo y originales exclusivos de CBS, MTV, Nickelodeon, Comedy Central y mucho más. Muestra automáticamente la película o el episodio que estás viendo, incluyendo la temporada, el episodio y el estado de reproducción, y permite que tus amigos vean lo que estás disfrutando en tiempo real."
+    "en-US": "Paramount+ streams movies, series, live sports, and originals from CBS, MTV, Nickelodeon, Comedy Central, and more. This presence shows the title you're watching, including season, episode, and playback state.",
+    "fr-FR": "Paramount+ propose films, séries, sport en direct et originaux de CBS, MTV, Nickelodeon, Comedy Central et plus. Cette présence affiche le titre que vous regardez, avec la saison, l'épisode et l'état de lecture.",
+    "es-ES": "Paramount+ ofrece películas, series, deportes en directo y originales de CBS, MTV, Nickelodeon, Comedy Central y más. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción."
   },
   "features": {
     "en-US": [
-      "Automatic content detection",
-      "Display movie and series titles",
-      "Season and episode information",
-      "Playback status tracking",
-      "Real-time viewing activity"
+      "Detects movies and series automatically",
+      "Shows title, season, and episode",
+      "Tracks playing and paused state",
+      "Updates your Discord activity in real time"
     ],
     "fr-FR": [
-      "Détection automatique du contenu",
-      "Affichage des titres des films et séries",
-      "Informations sur les saisons et épisodes",
-      "Suivi du statut de lecture",
-      "Activité de visionnage en temps réel"
+      "Détecte automatiquement films et séries",
+      "Affiche le titre, la saison et l'épisode",
+      "Suit l'état en lecture ou en pause",
+      "Met à jour votre activité Discord en temps réel"
     ],
     "es-ES": [
-      "Detección automática del contenido",
-      "Visualización de títulos de películas y series",
-      "Información de temporadas y episodios",
-      "Seguimiento del estado de reproducción",
-      "Actividad de visualización en tiempo real"
+      "Detecta películas y series automáticamente",
+      "Muestra título, temporada y episodio",
+      "Sigue el estado en reproducción o en pausa",
+      "Actualiza tu actividad de Discord en tiempo real"
     ]
   }
 }

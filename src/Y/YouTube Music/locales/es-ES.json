@@ -1,7 +1,13 @@
 {
-  "browsing": "Navegando",
   "searching": "Buscando",
-  "watching": "Viendo",
   "playing": "Reproduciendo",
-  "paused": "En pausa"
+  "paused": "En pausa",
+  "listeningToMusic": "Escuchando música",
+  "browsingHome": "Explorando el inicio",
+  "viewingPlaylist": "Viendo una playlist",
+  "viewingArtist": "Viendo un artista",
+  "browsingLibrary": "Explorando la biblioteca",
+  "exploringMusic": "Explorando música",
+  "browsingYouTubeMusic": "Explorando YouTube Music",
+  "listen": "Escuchar"
 }

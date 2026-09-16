@@ -1,5 +1,6 @@
 import { PresenceType, type PresenceInstance } from "@nowly/sdk"
 import { getTitle } from "./dom"
+import type enUS from "../locales/en-US.json"
 
 const ProductAssets = Presence.Assets({
   CopilotLogo: "/products/copilot_logo.png",
@@ -15,9 +16,11 @@ export const handleProductPage = async (
   presence: PresenceInstance,
   pathname: string,
 ): Promise<boolean> => {
+  const strings = await presence.getStrings<typeof enUS>()
+
   if (pathname === "/copilot" || pathname.startsWith("/copilot/")) {
     await presence.setActivity({
-      details: "Using GitHub Copilot",
+      details: strings.usingCopilot,
       state: getTitle("GitHub Copilot"),
       largeImageKey: ProductAssets.CopilotLogo,
       largeImageText: "GitHub Copilot",
@@ -28,7 +31,7 @@ export const handleProductPage = async (
 
   if (pathname === "/spark" || pathname.startsWith("/spark/")) {
     await presence.setActivity({
-      details: "Exploring GitHub Spark",
+      details: strings.exploringSpark,
       state: getTitle("GitHub Spark"),
       largeImageKey: ProductAssets.SparkLogo,
       largeImageText: "GitHub Spark",

@@ -1,7 +1,21 @@
 {
-  "browsing": "Browsing",
-  "searching": "Searching",
-  "watching": "Watching",
   "playing": "Playing",
-  "paused": "Paused"
+  "paused": "Paused",
+  "browsingFeed": "Browsing the feed",
+  "watchingVideo": "Watching a video",
+  "watchingLive": "Watching a live",
+  "watchingLiveNamed": "Watching live — {name}",
+  "browsingLiveCategories": "Browsing live categories",
+  "browsingNamed": "Browsing {name}",
+  "browsingLiveCategory": "Browsing a live category",
+  "viewingProfile": "Viewing a profile",
+  "browsingExplore": "Browsing Explore",
+  "exploring": "Exploring",
+  "browsingMessages": "Browsing messages",
+  "readingMessages": "Reading messages",
+  "tiktok": "TikTok",
+  "viewTikTok": "View TikTok",
+  "viewProfile": "View Profile",
+  "viewCategory": "View Category",
+  "watchStream": "Watch Stream"
 }

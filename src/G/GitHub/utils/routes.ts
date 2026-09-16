@@ -1,4 +1,5 @@
 import { getPathSegments } from "./dom"
+import type enUS from "../locales/en-US.json"
 
 const RESERVED_GITHUB_PATHS = new Set([
   "about",
@@ -44,22 +45,22 @@ const RESERVED_GITHUB_PATHS = new Set([
 
 export const isGitHubReservedPath = (part: string): boolean => RESERVED_GITHUB_PATHS.has(part.toLowerCase())
 
-export const getIssueSection = (pathname: string): string | undefined => {
+export const getIssueSection = (pathname: string, strings: typeof enUS): string | undefined => {
   const section = getPathSegments(pathname)[1]
-  if (section === "assigned") return "Assigned"
-  if (section === "created") return "Created"
-  if (section === "mentioned") return "Mentioned"
-  if (section === "recent") return "Recent"
+  if (section === "assigned") return strings.assigned
+  if (section === "created") return strings.created
+  if (section === "mentioned") return strings.mentioned
+  if (section === "recent") return strings.recent
   return undefined
 }
 
-export const getGitHubFallbackDetails = (pathname: string): string => {
-  if (pathname.startsWith("/pulls")) return "Checking pull requests"
-  if (pathname.startsWith("/issues")) return "Checking issues"
-  if (pathname.startsWith("/notifications")) return "Checking notifications"
-  if (pathname.startsWith("/marketplace")) return "Browsing Marketplace"
-  if (pathname.startsWith("/explore")) return "Exploring GitHub"
-  if (pathname.startsWith("/settings")) return "Changing settings"
-  if (pathname.startsWith("/search")) return "Searching GitHub"
-  return "Browsing GitHub"
+export const getGitHubFallbackDetails = (pathname: string, strings: typeof enUS): string => {
+  if (pathname.startsWith("/pulls")) return strings.checkingPullRequests
+  if (pathname.startsWith("/issues")) return strings.checkingIssues
+  if (pathname.startsWith("/notifications")) return strings.checkingNotifications
+  if (pathname.startsWith("/marketplace")) return strings.browsingMarketplace
+  if (pathname.startsWith("/explore")) return strings.exploringGitHub
+  if (pathname.startsWith("/settings")) return strings.changingSettings
+  if (pathname.startsWith("/search")) return strings.searchingGitHub
+  return strings.browsingGitHub
 }

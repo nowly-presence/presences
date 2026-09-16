@@ -1,44 +1,47 @@
 import { PresenceType, type PresenceInstance } from "@nowly/sdk"
 import { createButton, getPathSegments, getTitle } from "./dom"
 import { ProductAssets } from "./products"
+import type enUS from "../locales/en-US.json"
 
 export const handleGitHubNext = async (
   presence: PresenceInstance,
   pathname: string,
   href: string,
 ): Promise<void> => {
+  const strings = await presence.getStrings<typeof enUS>()
   const [first, second] = getPathSegments(pathname)
 
   if (pathname === "/" || pathname === "") {
-    await setNextActivity(presence, "Browsing GitHub Next")
+    await setNextActivity(presence, strings, strings.browsingGitHubNext)
     return
   }
 
   if (first === "projects" && second) {
-    await setNextActivity(presence, "Viewing a GitHub Next project", getTitle(projectName(second)), href)
+    await setNextActivity(presence, strings, strings.viewingGitHubNextProject, getTitle(projectName(second)), href)
     return
   }
 
   if (first === "posts" && second) {
-    await setNextActivity(presence, "Reading a GitHub Next post", getTitle(postName(second)), href)
+    await setNextActivity(presence, strings, strings.readingGitHubNextPost, getTitle(postName(second)), href)
     return
   }
 
   if (pathname === "/talks") {
-    await setNextActivity(presence, "Browsing GitHub Next talks")
+    await setNextActivity(presence, strings, strings.browsingGitHubNextTalks)
     return
   }
 
   if (first === "talks" && second) {
-    await setNextActivity(presence, "Watching a GitHub Next talk", getTitle(talkName(second)), href)
+    await setNextActivity(presence, strings, strings.watchingGitHubNextTalk, getTitle(talkName(second)), href)
     return
   }
 
-  await setNextActivity(presence, "Browsing GitHub Next", getTitle("GitHub Next"), href)
+  await setNextActivity(presence, strings, strings.browsingGitHubNext, getTitle("GitHub Next"), href)
 }
 
 const setNextActivity = async (
   presence: PresenceInstance,
+  strings: typeof enUS,
   details: string,
   state?: string,
   href?: string,
@@ -49,7 +52,7 @@ const setNextActivity = async (
     largeImageKey: ProductAssets.GitHubNextLogo,
     largeImageText: "GitHub Next",
     type: PresenceType.Watching,
-    buttons: href ? [createButton("View on GitHub Next", href)] : undefined,
+    buttons: href ? [createButton(strings.viewOnGitHubNext, href)] : undefined,
   })
 }
 

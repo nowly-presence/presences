@@ -1,15 +1,18 @@
 import { PresenceType, type PresenceInstance } from "@nowly/sdk"
 import { createButton, cleanTitle, getMetaContent } from "./dom"
 import { getMetaImage, toDiscordImage } from "./images"
+import type enUS from "../locales/en-US.json"
 
 export const handleBlog = async (
   presence: PresenceInstance,
   pathname: string,
   href: string,
 ): Promise<void> => {
+  const strings = await presence.getStrings<typeof enUS>()
+
   if (pathname === "/" || pathname === "") {
     await presence.setActivity({
-      details: "Reading GitHub Blog",
+      details: strings.readingGitHubBlog,
       largeImageKey: Assets.Logo,
       largeImageText: "GitHub Blog",
       type: PresenceType.Watching,
@@ -21,12 +24,12 @@ export const handleBlog = async (
   const image = await toDiscordImage(getMetaImage())
 
   await presence.setActivity({
-    details: "Reading an article",
+    details: strings.readingArticle,
     state: title,
     largeImageKey: image || Assets.Logo,
     largeImageText: title || "GitHub Blog",
     type: PresenceType.Watching,
-    buttons: [createButton("Read Article", href)],
+    buttons: [createButton(strings.readArticle, href)],
   })
 }
 

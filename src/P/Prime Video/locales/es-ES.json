@@ -1,7 +1,16 @@
 {
-  "browsing": "Navegando",
-  "searching": "Buscando",
-  "watching": "Viendo",
   "playing": "Reproduciendo",
-  "paused": "En pausa"
+  "paused": "En pausa",
+  "viewingDetails": "Consultando una ficha",
+  "viewingHome": "Explorando el inicio",
+  "browsingEllipsis": "Navegando…",
+  "searchingFor": "Buscando:",
+  "viewingMovies": "Explorando películas",
+  "viewingTvSeries": "Explorando series",
+  "viewingSports": "Explorando deportes",
+  "viewingLiveTv": "Explorando TV en directo",
+  "viewingCategories": "Explorando categorías",
+  "viewingKidsMovies": "Explorando películas infantiles",
+  "viewingGenres": "Explorando géneros",
+  "browsingStore": "Explorando la tienda"
 }

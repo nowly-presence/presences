@@ -1,7 +1,17 @@
 {
   "browsing": "Browsing",
-  "searching": "Searching",
-  "watching": "Watching",
   "playing": "Playing",
-  "paused": "Paused"
+  "paused": "Paused",
+  "liveTv": "Live TV",
+  "watchEpisode": "Watch Episode",
+  "watchNow": "Watch Now",
+  "browsingHome": "Browsing home",
+  "searchingFor": "Searching for:",
+  "browsingMyList": "Browsing My List",
+  "viewingShow": "Viewing a show",
+  "viewingMovie": "Viewing a movie",
+  "viewingCollection": "Viewing a collection",
+  "browsingLiveTv": "Browsing Live TV",
+  "browsingNamed": "Browsing {name}",
+  "browsingBrands": "Browsing brands"
 }

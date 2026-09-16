@@ -1,7 +1,9 @@
 {
-  "browsing": "Browsing",
-  "searching": "Searching",
-  "watching": "Watching",
   "playing": "Playing",
-  "paused": "Paused"
+  "paused": "Paused",
+  "viewingMovie": "Viewing a movie",
+  "viewingTvShow": "Viewing a TV show",
+  "browsingCinepulse": "Browsing Cinepulse",
+  "viewMovie": "View Movie",
+  "viewTvShow": "View TV Show"
 }

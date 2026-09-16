@@ -1,7 +1,17 @@
 {
-  "browsing": "Navigation",
-  "searching": "Recherche",
-  "watching": "Regarde",
-  "playing": "Lecture en cours",
-  "paused": "En pause"
+  "browsing": "Parcourt",
+  "playing": "En lecture",
+  "paused": "En pause",
+  "liveTv": "TV en direct",
+  "watchEpisode": "Voir l'épisode",
+  "watchNow": "Regarder",
+  "browsingHome": "Parcourt l'accueil",
+  "searchingFor": "Recherche :",
+  "browsingMyList": "Parcourt Ma liste",
+  "viewingShow": "Consulte une série",
+  "viewingMovie": "Consulte un film",
+  "viewingCollection": "Consulte une collection",
+  "browsingLiveTv": "Parcourt la TV en direct",
+  "browsingNamed": "Parcourt {name}",
+  "browsingBrands": "Parcourt les marques"
 }

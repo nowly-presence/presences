@@ -6,27 +6,27 @@
   "color": "#CE0000",
   "category": "streaming",
   "description": {
-    "en-US": "Watch live French TV channels on Free TV.",
-    "fr-FR": "Regarde les chaînes de télévision françaises en direct sur Free TV.",
-    "es-ES": "Mira canales de televisión franceses en directo en Free TV."
+    "en-US": "Show the live French TV channel you're watching on Free TV.",
+    "fr-FR": "Affichez la chaîne de télévision française en direct que vous regardez sur Free TV.",
+    "es-ES": "Muestra el canal de televisión francés en directo que estás viendo en Free TV."
   },
   "longDescription": {
-    "en-US": "Free TV is the web live TV player from French ISP Free, letting Freebox subscribers stream French TV channels live from their browser. This presence shows the channel you're currently watching on Discord.",
-    "fr-FR": "Free TV est le lecteur de télévision en direct du fournisseur d'accès Free, permettant aux abonnés Freebox de regarder les chaînes françaises en direct depuis leur navigateur. Cette présence affiche la chaîne que tu regardes sur Discord.",
-    "es-ES": "Free TV es el reproductor de televisión en directo del proveedor de internet francés Free, que permite a los abonados de Freebox ver canales franceses en directo desde su navegador. Esta presencia muestra el canal que estás viendo en Discord."
+    "en-US": "Free TV is the web live-TV player from French ISP Free. Freebox subscribers can stream French channels from the browser. This presence shows the channel you're watching on Discord.",
+    "fr-FR": "Free TV est le lecteur de télévision en direct de l'opérateur Free. Les abonnés Freebox peuvent regarder les chaînes françaises depuis le navigateur. Cette présence affiche la chaîne que vous regardez sur Discord.",
+    "es-ES": "Free TV es el reproductor de televisión en directo del operador francés Free. Los abonados de Freebox pueden ver canales franceses desde el navegador. Esta presencia muestra el canal que estás viendo en Discord."
   },
   "features": {
     "en-US": [
-      "Shows the live channel you're currently watching",
-      "Optional browsing activity when not watching a channel"
+      "Shows the live channel you're watching",
+      "Optional browsing activity when nothing is playing"
     ],
     "fr-FR": [
-      "Affiche la chaîne en direct que tu regardes",
-      "Activité de navigation optionnelle en dehors d'une chaîne"
+      "Affiche la chaîne en direct que vous regardez",
+      "Activité de navigation optionnelle hors lecture"
     ],
     "es-ES": [
       "Muestra el canal en directo que estás viendo",
-      "Actividad de navegación opcional fuera de un canal"
+      "Actividad de navegación opcional fuera de la reproducción"
     ]
   }
 }

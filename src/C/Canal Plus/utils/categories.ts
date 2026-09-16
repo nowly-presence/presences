@@ -1,3 +1,5 @@
+import type enUS from "../locales/en-US.json"
+
 const CategoryAssets = Presence.Assets({
   Cinema: "/categories/cinema.png",
   Series: "/categories/series.png",
@@ -15,123 +17,125 @@ const CategoryAssets = Presence.Assets({
   Lsf: "/categories/lsf.png",
 })
 
+type LocaleKey = keyof typeof enUS
+
 export type CanalCategory = {
-  details: string
+  detailsKey: LocaleKey
   image: string
-  imageText: string
+  imageTextKey: LocaleKey
 }
 
 const categories: Array<{ path: string; category: CanalCategory }> = [
   {
     path: "/cinema",
     category: {
-      details: "Browsing cinema",
+      detailsKey: "browsingCinema",
       image: CategoryAssets.Cinema,
-      imageText: "Movies",
+      imageTextKey: "imageMovies",
     },
   },
   {
     path: "/series",
     category: {
-      details: "Browsing series",
+      detailsKey: "browsingSeries",
       image: CategoryAssets.Series,
-      imageText: "Series",
+      imageTextKey: "imageSeries",
     },
   },
   {
     path: "/sport",
     category: {
-      details: "Browsing sports",
+      detailsKey: "browsingSports",
       image: CategoryAssets.Sport,
-      imageText: "Sports",
+      imageTextKey: "imageSports",
     },
   },
   {
     path: "/jeunesse",
     category: {
-      details: "Browsing kids",
+      detailsKey: "browsingKids",
       image: CategoryAssets.Jeunesse,
-      imageText: "Kids",
+      imageTextKey: "imageKids",
     },
   },
   {
     path: "/documentaires",
     category: {
-      details: "Browsing documentaries",
+      detailsKey: "browsingDocumentaries",
       image: CategoryAssets.Documentaires,
-      imageText: "Documentaries",
+      imageTextKey: "imageDocumentaries",
     },
   },
   {
     path: "/divertissement",
     category: {
-      details: "Browsing entertainment",
+      detailsKey: "browsingEntertainment",
       image: CategoryAssets.Divertissement,
-      imageText: "Entertainment",
+      imageTextKey: "imageEntertainment",
     },
   },
   {
     path: "/selection-pour-vous",
     category: {
-      details: "Browsing picks",
+      detailsKey: "browsingPicks",
       image: CategoryAssets.PourVous,
-      imageText: "For you",
+      imageTextKey: "imageForYou",
     },
   },
   {
     path: "/info",
     category: {
-      details: "Browsing news",
+      detailsKey: "browsingNews",
       image: CategoryAssets.Info,
-      imageText: "News",
+      imageTextKey: "imageNews",
     },
   },
   {
     path: "/musique",
     category: {
-      details: "Browsing music",
+      detailsKey: "browsingMusic",
       image: CategoryAssets.Musique,
-      imageText: "Music",
+      imageTextKey: "imageMusic",
     },
   },
   {
     path: "/canal-vod",
     category: {
-      details: "Browsing CANAL VOD",
+      detailsKey: "browsingCanalVod",
       image: CategoryAssets.CanalVod,
-      imageText: "CANAL VOD",
+      imageTextKey: "imageCanalVod",
     },
   },
   {
     path: "/chaines-apps/la-presse",
     category: {
-      details: "Browsing La Presse",
+      detailsKey: "browsingLaPresse",
       image: CategoryAssets.LaPresse,
-      imageText: "Press",
+      imageTextKey: "imagePress",
     },
   },
   {
     path: "/sous-titres-malentendants",
     category: {
-      details: "Browsing SME content",
+      detailsKey: "browsingSme",
       image: CategoryAssets.Sme,
-      imageText: "Deaf and hard-of-hearing subtitles",
+      imageTextKey: "imageSme",
     },
   },
   {
     path: "/audiodescription",
     category: {
-      details: "Browsing audio description",
+      detailsKey: "browsingAudioDescription",
       image: CategoryAssets.AudioDescription,
-      imageText: "Audio description",
+      imageTextKey: "imageAudioDescription",
     },
   },
   {
     path: "/langue-des-signes-francaise",
     category: {
-      details: "Browsing LSF content",
+      detailsKey: "browsingLsf",
       image: CategoryAssets.Lsf,
-      imageText: "French sign language",
+      imageTextKey: "imageLsf",
     },
   },
 ]
