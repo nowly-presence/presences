@@ -13,8 +13,8 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your Discord presence also shows when you browse CANAL+ (home, search, cinema, series) — not only when something is playing.",
-      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez CANAL+ (accueil, recherche, cinéma, séries) — pas seulement pendant la lecture.",
+      "en-US": "When enabled, your Discord presence also shows when you browse CANAL+ (home, search, cinema, series) - not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez CANAL+ (accueil, recherche, cinéma, séries) - pas seulement pendant la lecture.",
       "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar CANAL+ (inicio, búsqueda, cine, series), no solo al reproducir contenido.",
     },
   },

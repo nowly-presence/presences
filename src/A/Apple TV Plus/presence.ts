@@ -13,8 +13,8 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your Discord presence also shows when you browse Apple TV+ (home, search) — not only when something is playing.",
-      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Apple TV+ (accueil, recherche) — pas seulement pendant la lecture.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Apple TV+ (home, search) - not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Apple TV+ (accueil, recherche) - pas seulement pendant la lecture.",
       "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Apple TV+ (inicio, búsqueda), no solo al reproducir contenido.",
     },
   },

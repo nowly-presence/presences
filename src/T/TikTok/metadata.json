@@ -14,9 +14,9 @@
     "es-ES": "Muestra el vídeo, directo o perfil de TikTok que estás viendo."
   },
   "longDescription": {
-    "en-US": "TikTok is the leading short-form video app. This presence shows the video or creator you're watching — username, description, and live status — with an optional privacy mode.",
-    "fr-FR": "TikTok est l'application de référence pour les vidéos courtes. Cette présence affiche la vidéo ou le créateur que vous consultez — identifiant, description et statut du live — avec un mode privé optionnel.",
-    "es-ES": "TikTok es la app de referencia para vídeos cortos. Esta presencia muestra el vídeo o creador que estás viendo — usuario, descripción y estado del directo — con un modo privado opcional."
+    "en-US": "TikTok is the leading short-form video app. This presence shows the video or creator you're watching - username, description, and live status - with an optional privacy mode.",
+    "fr-FR": "TikTok est l'application de référence pour les vidéos courtes. Cette présence affiche la vidéo ou le créateur que vous consultez - identifiant, description et statut du live - avec un mode privé optionnel.",
+    "es-ES": "TikTok es la app de referencia para vídeos cortos. Esta presencia muestra el vídeo o creador que estás viendo - usuario, descripción y estado del directo - con un modo privado opcional."
   },
   "features": {
     "en-US": [

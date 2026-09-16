@@ -14,8 +14,8 @@
     "es-ES": "Muestra la canción que estás escuchando en YouTube Music."
   },
   "longDescription": {
-    "en-US": "YouTube Music is Google's music streaming service. This presence shows the track you're listening to — title, artist, playback state, progress, and artwork when available.",
-    "fr-FR": "YouTube Music est le service de streaming musical de Google. Cette présence affiche le titre que vous écoutez — morceau, artiste, état de lecture, progression et pochette lorsqu'elle est disponible.",
+    "en-US": "YouTube Music is Google's music streaming service. This presence shows the track you're listening to - title, artist, playback state, progress, and artwork when available.",
+    "fr-FR": "YouTube Music est le service de streaming musical de Google. Cette présence affiche le titre que vous écoutez - morceau, artiste, état de lecture, progression et pochette lorsqu'elle est disponible.",
     "es-ES": "YouTube Music es el servicio de streaming musical de Google. Esta presencia muestra la canción que estás escuchando: título, artista, estado de reproducción, progreso y portada cuando esté disponible."
   },
   "features": {

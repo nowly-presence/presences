@@ -11,7 +11,7 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your Discord presence also shows when you browse Cinepulse (home, catalog) — not only when something is playing.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Cinepulse (home, catalog) - not only when something is playing.",
       "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Cinepulse (accueil, catalogue), pas seulement pendant la lecture.",
       "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Cinepulse (inicio, catálogo), no solo al reproducir contenido.",
     },

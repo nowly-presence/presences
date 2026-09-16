@@ -14,7 +14,7 @@
   "properties": {
     "slug": {
       "type": "string",
-      "description": "Auto-generated from folder name — do not set manually"
+      "description": "Auto-generated from folder name - do not set manually"
     },
     "name": {
       "type": "string",

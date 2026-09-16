@@ -11,8 +11,8 @@
     "es-ES": "Muestra la canción que estás escuchando en SoundCloud."
   },
   "longDescription": {
-    "en-US": "SoundCloud is an audio platform for artists and listeners. This presence shows the track you're playing — title, artist, playback state, and artwork when available.",
-    "fr-FR": "SoundCloud est une plateforme audio pour artistes et auditeurs. Cette présence affiche le titre en lecture — morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
+    "en-US": "SoundCloud is an audio platform for artists and listeners. This presence shows the track you're playing - title, artist, playback state, and artwork when available.",
+    "fr-FR": "SoundCloud est une plateforme audio pour artistes et auditeurs. Cette présence affiche le titre en lecture - morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
     "es-ES": "SoundCloud es una plataforma de audio para artistas y oyentes. Esta presencia muestra la pista que suena: título, artista, estado de reproducción y portada cuando esté disponible."
   },
   "features": {

@@ -13,8 +13,8 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your Discord presence also shows when you browse Paramount+ (home, search, shows) — not only when something is playing.",
-      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Paramount+ (accueil, recherche, séries) — pas seulement pendant la lecture.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Paramount+ (home, search, shows) - not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Paramount+ (accueil, recherche, séries) - pas seulement pendant la lecture.",
       "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Paramount+ (inicio, búsqueda, series), no solo al reproducir contenido.",
     },
   },

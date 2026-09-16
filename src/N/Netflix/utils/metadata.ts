@@ -1,6 +1,6 @@
 // Netflix exposes a same-origin member API that returns rich metadata for a
 // given video id. Presences run as content scripts on netflix.com, so this
-// fetch is same-origin and carries the user's session — far more reliable than
+// fetch is same-origin and carries the user's session - far more reliable than
 // scraping the obfuscated player DOM.
 const METADATA_ENDPOINT = "https://www.netflix.com/nq/website/memberapi/release/metadata?movieid="
 const MAX_IMAGE_KEY_LENGTH = 300
@@ -61,7 +61,7 @@ export const fetchMetadata = async (id: string): Promise<NetflixMetadata | undef
         if (cache?.url === url) cache.data = data
       })
       .catch(() => {
-        // Network/auth failure — caller falls back to the logo + basic activity.
+        // Network/auth failure - caller falls back to the logo + basic activity.
       })
       .finally(() => {
         pending = null

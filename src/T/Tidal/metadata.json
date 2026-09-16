@@ -11,8 +11,8 @@
     "es-ES": "Muestra la canción que estás escuchando en Tidal."
   },
   "longDescription": {
-    "en-US": "Tidal is a hi-fi music streaming service. This presence shows the track you're listening to — title, artist, playback state, and artwork when available.",
-    "fr-FR": "Tidal est un service de streaming musical hi-fi. Cette présence affiche le titre que vous écoutez — morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
+    "en-US": "Tidal is a hi-fi music streaming service. This presence shows the track you're listening to - title, artist, playback state, and artwork when available.",
+    "fr-FR": "Tidal est un service de streaming musical hi-fi. Cette présence affiche le titre que vous écoutez - morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
     "es-ES": "Tidal es un servicio de streaming musical hi-fi. Esta presencia muestra la canción que escuchas: título, artista, estado de reproducción y portada cuando esté disponible."
   },
   "features": {

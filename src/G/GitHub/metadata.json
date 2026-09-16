@@ -9,8 +9,8 @@
   "color": "#0FBF3E",
   "category": "tools",
   "description": {
-    "en-US": "Show where you're browsing on GitHub — repos, PRs, issues, and more.",
-    "fr-FR": "Affichez où vous naviguez sur GitHub — dépôts, pull requests, issues et plus.",
+    "en-US": "Show where you're browsing on GitHub - repos, PRs, issues, and more.",
+    "fr-FR": "Affichez où vous naviguez sur GitHub - dépôts, pull requests, issues et plus.",
     "es-ES": "Muestra por dónde navegas en GitHub: repos, PRs, issues y más."
   },
   "longDescription": {

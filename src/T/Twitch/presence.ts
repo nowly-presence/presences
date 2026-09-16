@@ -35,8 +35,8 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your Discord presence also shows when you browse Twitch (directory, channels) — not only when a stream or video is playing.",
-      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Twitch (répertoire, chaînes) — pas seulement pendant un live ou une vidéo.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Twitch (directory, channels) - not only when a stream or video is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Twitch (répertoire, chaînes) - pas seulement pendant un live ou une vidéo.",
       "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Twitch (directorio, canales), no solo al ver un directo o un vídeo.",
     },
   },
