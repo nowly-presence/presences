@@ -1,6 +1,3 @@
 {
-  "usingDeepSeek": "Utilise DeepSeek",
-  "chatting": "Discussion : {title}",
-  "browsingDeepSeek": "Parcourt DeepSeek",
-  "openChat": "Ouvrir le chat"
+  "viewingConversation": "Consulte une discussion"
 }
