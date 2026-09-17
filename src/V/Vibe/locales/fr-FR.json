@@ -1,0 +1,21 @@
+{
+  "usingVibe": "Utilise Vibe",
+  "viewingConversation": "Consulte une discussion",
+  "viewingProject": "Consulte un projet",
+  "viewingConnector": "Consulte un connecteur",
+  "viewingLibrary": "Consulte une bibliothèque",
+  "editingInstructions": "Modifie les instructions",
+  "browsingWork": "Utilise Vibe Work",
+  "browsingCode": "Utilise Vibe Code",
+  "browsingCodeExtensions": "Parcourt les extensions Code",
+  "browsingMemories": "Parcourt les souvenirs",
+  "browsingConnectors": "Parcourt les connecteurs",
+  "browsingLibraries": "Parcourt les bibliothèques",
+  "browsingAgents": "Parcourt les agents",
+  "browsingAgentsShared": "Parcourt les agents partagés",
+  "browsingAgentsMine": "Parcourt ses agents",
+  "browsingSkills": "Parcourt les compétences",
+  "browsingKnowledge": "Parcourt Apprentissage",
+  "browsingTasks": "Parcourt les tâches",
+  "browsingVibe": "Parcourt Vibe"
+}

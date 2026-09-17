@@ -1,0 +1,17 @@
+{
+  "usingGrok": "Utilise Grok",
+  "viewingConversation": "Consulte une discussion",
+  "viewingProject": "Consulte un projet",
+  "usingImagine": "Utilise Imagine",
+  "editingImage": "Modifie une image",
+  "writingSkill": "Rédige une compétence",
+  "browsingAutomations": "Parcourt les Automatisations",
+  "browsingLibrary": "Parcourt la Bibliothèque",
+  "browsingMedia": "Parcourt les Médias",
+  "browsingProjects": "Parcourt les Projets",
+  "browsingApps": "Parcourt les Apps",
+  "browsingFiles": "Parcourt les Fichiers",
+  "browsingConnectors": "Parcourt les Connecteurs",
+  "browsingSkills": "Parcourt les Compétences",
+  "browsingGrok": "Parcourt Grok"
+}

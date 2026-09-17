@@ -96,11 +96,11 @@ jobs:
             }
 
             let body = "## 🌐 Locale validation\n\n";
-            body += "*Checking every `getStrings()` key against `locales/*.json` — no silent `undefined` allowed. 🕵️*\n\n";
+            body += "*Checking every `getStrings()` key against `locales/*.json` - no silent `undefined` allowed. 🕵️*\n\n";
 
             for (const p of result.results) {
               const icon = p.status === "success" ? "✅" : "❌";
-              body += `### ${p.name} (\`${p.slug}\`) — ${icon} ${p.status === "success" ? "All good" : p.errors.length + " issue(s)"}\n\n`;
+              body += `### ${p.name} (\`${p.slug}\`) - ${icon} ${p.status === "success" ? "All good" : p.errors.length + " issue(s)"}\n\n`;
 
               if (p.usedKeysMissingFromBase.length > 0) {
                 body += `- ❌ **Used in code but missing from \`en-US.json\`:** ${p.usedKeysMissingFromBase.map(k => `\`${k}\``).join(", ")}\n`;
@@ -126,7 +126,7 @@ jobs:
               body += "\n---\n\n";
             }
 
-            body += "*Beep boop — I refresh this comment on every push, so no need to scroll. 🤖*";
+            body += "*Beep boop - I refresh this comment on every push, so no need to scroll. 🤖*";
 
             const { data: comments } = await github.rest.issues.listComments({
               owner, repo,

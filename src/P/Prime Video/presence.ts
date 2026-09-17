@@ -20,8 +20,8 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your Discord presence also shows when you browse Prime Video (home, search, categories) — not only when something is playing.",
-      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Prime Video (accueil, recherche, catégories) — pas seulement pendant la lecture.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Prime Video (home, search, categories) - not only when something is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Prime Video (accueil, recherche, catégories) - pas seulement pendant la lecture.",
       "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Prime Video (inicio, búsqueda, categorías), no solo al reproducir contenido.",
     },
   },

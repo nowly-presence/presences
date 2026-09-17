@@ -1,0 +1,38 @@
+{
+  "name": "Claude",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["claude.ai"],
+  "regExp": "^https?://claude\\.ai/",
+  "color": "#D97757",
+  "category": "ai",
+  "description": {
+    "en-US": "Show when you're chatting with Claude.",
+    "fr-FR": "Affichez lorsque vous discutez avec Claude.",
+    "es-ES": "Muestra cuando estás hablando con Claude."
+  },
+  "longDescription": {
+    "en-US": "Claude is Anthropic's AI assistant. This presence shows that you're using Claude, with an optional conversation or project title. Incognito chats stay generic unless you opt in.",
+    "fr-FR": "Claude est l'assistant IA d'Anthropic. Cette présence indique que vous utilisez Claude, avec le titre de conversation ou de projet en option. Les chats incognito restent génériques, sauf si vous l'activez.",
+    "es-ES": "Claude es el asistente de IA de Anthropic. Esta presencia muestra que usas Claude, con el título de la conversación o proyecto en opción. Los chats incógnito se quedan genéricos salvo que lo actives."
+  },
+  "features": {
+    "en-US": [
+      "Shows when you are using Claude",
+      "Optional conversation or project title",
+      "Incognito chats stay private by default",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Affiche lorsque vous utilisez Claude",
+      "Titre de conversation ou de projet optionnel",
+      "Les chats incognito restent privés par défaut",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Muestra cuando usas Claude",
+      "Título de conversación o proyecto opcional",
+      "Los chats incógnito son privados por defecto",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

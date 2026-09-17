@@ -1,0 +1,14 @@
+{
+  "viewingPost": "Viewing a post",
+  "viewingProfile": "Viewing a profile",
+  "viewingProfileOf": "Viewing @{user}",
+  "searching": "Searching",
+  "browsingHome": "Browsing home",
+  "viewingFollowing": "Browsing following feed",
+  "viewingSaved": "Viewing saved threads",
+  "viewingLiked": "Viewing liked threads",
+  "viewingActivity": "Viewing activity",
+  "browsingThreads": "Browsing Threads",
+  "viewPost": "View post",
+  "viewProfile": "View profile"
+}

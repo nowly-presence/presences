@@ -15,8 +15,8 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your Discord presence also shows when you browse YouTube (home, search, subscriptions) — not only when a video is playing.",
-      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez YouTube (accueil, recherche, abonnements) — pas seulement pendant la lecture.",
+      "en-US": "When enabled, your Discord presence also shows when you browse YouTube (home, search, subscriptions) - not only when a video is playing.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez YouTube (accueil, recherche, abonnements) - pas seulement pendant la lecture.",
       "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar YouTube (inicio, búsqueda, suscripciones), no solo al reproducir un vídeo.",
     },
   },

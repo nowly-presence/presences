@@ -1,0 +1,41 @@
+{
+  "name": "Apple Music",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["music.apple.com"],
+  "regExp": "^https?://music\\.apple\\.com/",
+  "color": "#FA243C",
+  "category": "music",
+  "description": {
+    "en-US": "Show the track you're listening to on Apple Music.",
+    "fr-FR": "Affichez le titre que vous écoutez sur Apple Music.",
+    "es-ES": "Muestra la canción que estás escuchando en Apple Music."
+  },
+  "longDescription": {
+    "en-US": "Apple Music is Apple's music streaming service. This presence shows the track you're listening to on the web player - title, artist, playback state, and artwork when available.",
+    "fr-FR": "Apple Music est le service de streaming musical d'Apple. Cette présence affiche le titre que vous écoutez sur le lecteur web - morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
+    "es-ES": "Apple Music es el servicio de streaming musical de Apple. Esta presencia muestra la canción que escuchas en el reproductor web: título, artista, estado de reproducción y portada cuando esté disponible."
+  },
+  "features": {
+    "en-US": [
+      "Detects the current track",
+      "Shows title and artist",
+      "Tracks listening progress",
+      "Displays album artwork",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte le titre en cours",
+      "Affiche le morceau et l'artiste",
+      "Suit la progression d'écoute",
+      "Affiche la pochette d'album",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta la canción actual",
+      "Muestra título y artista",
+      "Sigue el progreso de escucha",
+      "Muestra la portada del álbum",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

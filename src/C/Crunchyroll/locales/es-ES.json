@@ -1,0 +1,18 @@
+{
+  "watching": "Viendo",
+  "seasonEpisode": "Temporada {season}, Episodio {episode}",
+  "playing": "Reproduciendo",
+  "paused": "En pausa",
+  "searching": "Buscando",
+  "viewingSeries": "Viendo una serie",
+  "readingManga": "Leyendo manga",
+  "readingNews": "Leyendo noticias",
+  "viewingWatchlist": "Viendo la lista",
+  "viewingHistory": "Viendo el historial",
+  "viewingCalendar": "Viendo el calendario simulcast",
+  "browsingGames": "Explorando juegos",
+  "browsingMusic": "Explorando música",
+  "browsingCrunchyroll": "Explorando Crunchyroll",
+  "watchEpisode": "Ver episodio",
+  "viewSeries": "Ver serie"
+}

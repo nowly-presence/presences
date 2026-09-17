@@ -4,7 +4,7 @@
   "browsingFeed": "Explorando el feed",
   "watchingVideo": "Viendo un vídeo",
   "watchingLive": "Viendo un directo",
-  "watchingLiveNamed": "Viendo en directo — {name}",
+  "watchingLiveNamed": "Viendo en directo - {name}",
   "browsingLiveCategories": "Explorando categorías en directo",
   "browsingNamed": "Explorando {name}",
   "browsingLiveCategory": "Explorando una categoría en directo",

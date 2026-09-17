@@ -11,7 +11,7 @@ description: >
 
 # Creating a Nowly Presence
 
-This is a self-contained guide to author a new **presence** — a script that detects
+This is a self-contained guide to author a new **presence** - a script that detects
 what a user is doing on a website and shows it as Discord Rich Presence. Follow it
 top to bottom.
 
@@ -31,7 +31,7 @@ website DOM  ──read──▶  presence.on("UpdateData")  ──setActivity()
 
 1. Read the official presence docs at https://nowly.me/docs (Creating your first
    presence, Presence structure, Metadata, Presence API, Assets, Settings).
-2. Open **two existing presences as references** — pick the ones closest to your
+2. Open **two existing presences as references** - pick the ones closest to your
    target site (see "Pick a strategy" below). Match their structure, naming, and
    tone exactly.
 
@@ -39,16 +39,16 @@ website DOM  ──read──▶  presence.on("UpdateData")  ──setActivity()
 
 ```
 src/{LETTER}/{Service Name}/
-  metadata.json        # required — marketplace + matching metadata
-  presence.ts          # required — the script (entry point bundled by esbuild)
-  utils/               # optional but recommended — helpers (DOM, parsing, API, bridge)
+  metadata.json        # required - marketplace + matching metadata
+  presence.ts          # required - the script (entry point bundled by esbuild)
+  utils/               # optional but recommended - helpers (DOM, parsing, API, bridge)
     player.ts
     browsing.ts
-  locales/             # required — runtime activity strings shown on Discord
+  locales/             # required - runtime activity strings shown on Discord
     en-US.json
     fr-FR.json
     es-ES.json
-  assets/              # required for publishing — binary images
+  assets/              # required for publishing - binary images
     logo.png
     icon.png
     thumbnail.jpg
@@ -80,16 +80,16 @@ pnpm install
    folder/files by hand, copying an existing presence.
 2. **Write `metadata.json`** (see reference below). Include `longDescription` and
    `features` in `en-US`, `fr-FR`, `es-ES`.
-3. **Write `locales/en-US.json`, `fr-FR.json`, `es-ES.json`** — the runtime strings
+3. **Write `locales/en-US.json`, `fr-FR.json`, `es-ES.json`** - the runtime strings
    your `presence.ts` will show as `details`/`state` (see "Locales" below). Write
    `en-US.json` first, then translate the same keys into the other two.
 4. **Inspect the target site's DOM** with the snippets in "DOM inspection".
-5. **Write `presence.ts` + `utils/`** following the SDK reference and conventions —
+5. **Write `presence.ts` + `utils/`** following the SDK reference and conventions -
    call `presence.getStrings()` for activity text instead of hardcoding English.
-6. **Build:** `nowly build <slug>` — must succeed.
+6. **Build:** `nowly build <slug>` - must succeed.
 7. **Load locally:** `nowly extension <slug>` (first time) or `nowly pack <slug>` and drop the zip in the extension Debug panel.
-8. **Validate:** `nowly validate <slug>` — must report `✓`.
-9. **Type-check:** `npx tsc --noEmit -p tsconfig.json` — must be clean.
+8. **Validate:** `nowly validate <slug>` - must report `✓`.
+9. **Type-check:** `npx tsc --noEmit -p tsconfig.json` - must be clean.
 10. Hand off assets + manual E2E verification.
 
 ## CLI commands
@@ -98,7 +98,7 @@ Run all commands from the repo root:
 
 ```bash
 nowly                          # Interactive init
-nowly init "Service Name"      # Non-interactive init (add --category, --color, etc.)
+nowly init "Service Name"      # Non-interactive init (add --category, --color, --discord-native, etc.)
 nowly build <slug>             # Build a presence
 nowly pack <slug>              # Zip a built presence for drop-install
 nowly extension <slug...>      # Bake presences into a ready-to-load Chrome dev extension
@@ -121,14 +121,15 @@ nowly list                     # List all presences
 | `description` | Short, keyed by locale. **`en-US` required.** |
 | `longDescription` | Detailed, per locale. |
 | `features` | Per locale, 1–10 short bullet strings. |
+| `discordNative` | Optional boolean. `true` when Discord already supports the platform if the user links their account. |
 | `assets` | `{ "logo": "logo.png", "icon": "icon.png", "thumbnail": "thumbnail.jpg" }`. |
 
 Locale keys: `^[a-z]{2}-[A-Z]{2}$`. Standard: `en-US`, `fr-FR`, `es-ES`.
 
-## `presence.ts` — the SDK
+## `presence.ts` - the SDK
 
 The SDK is published on npm as `@nowly/sdk`. `Presence` and `Assets` are **injected
-globals** — do not import them.
+globals** - do not import them.
 
 ```ts
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
@@ -190,7 +191,7 @@ const settings = Presence.Settings({
 ### Locales
 
 `locales/*.json` files hold the strings your `presence.ts` shows on Discord
-(`details`, `state`, mode labels, etc.) — **separate from** `metadata.json`'s own
+(`details`, `state`, mode labels, etc.) - **separate from** `metadata.json`'s own
 per-locale fields (`description`, `longDescription`, `features`, setting
 `label`/`description`), which stay inline objects and are untouched by this.
 
@@ -217,7 +218,7 @@ presence.on("UpdateData", async (ctx) => {
 ```
 
 Keep the exact same key set across all three locale files. Fallback to `en-US` only
-happens when the *entire* locale file is missing — there is no per-key fallback, so
+happens when the *entire* locale file is missing - there is no per-key fallback, so
 a key present in `en-US.json` but forgotten in `fr-FR.json` renders as `undefined`.
 
 ### Assets
@@ -263,19 +264,19 @@ a human. Build and validate pass without them, but they are required before publ
 ```bash
 nowly build <slug>
 nowly validate <slug>
-npx tsc --noEmit -p tsconfig.json   # esbuild does NOT type-check — always run this!
+npx tsc --noEmit -p tsconfig.json   # esbuild does NOT type-check - always run this!
 ```
 
 ## Reference presences
 
 All at `src/{LETTER}/{Service Name}/`:
 
-- **Prime Video** — streaming, pure DOM
-- **Netflix** — streaming, same-origin API (`world: main`)
-- **Disney Plus** — streaming, page-world bridge
-- **Apple TV Plus** — streaming, pure DOM
-- **YouTube Music** — music (`PresenceType.Listening`)
-- **Twitch** — live/VOD/clips with browsing
-- **TikTok / YouTube** — social/video, image proxy
-- **Cinepulse** — single-file (no utils)
-- **Figma / YouTube** — reference for `locales/*.json` + `getStrings()`/`formatString()`
+- **Prime Video** - streaming, pure DOM
+- **Netflix** - streaming, same-origin API (`world: main`)
+- **Disney Plus** - streaming, page-world bridge
+- **Apple TV Plus** - streaming, pure DOM
+- **YouTube Music** - music (`PresenceType.Listening`)
+- **Twitch** - live/VOD/clips with browsing
+- **TikTok / YouTube** - social/video, image proxy
+- **Cinepulse** - single-file (no utils)
+- **Figma / YouTube** - reference for `locales/*.json` + `getStrings()`/`formatString()`

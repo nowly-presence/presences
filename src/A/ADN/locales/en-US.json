@@ -1,0 +1,16 @@
+{
+  "watching": "Watching",
+  "seasonEpisode": "Season {season}, Episode {episode}",
+  "playing": "Playing",
+  "paused": "Paused",
+  "searching": "Searching",
+  "viewingSeries": "Viewing a series",
+  "browsingCatalog": "Browsing the catalog",
+  "viewingSchedule": "Viewing the schedule",
+  "viewingSimulcast": "Browsing simulcasts",
+  "browsingMovies": "Browsing movies",
+  "viewingWatchlist": "Viewing the watchlist",
+  "browsingAdn": "Browsing ADN",
+  "watchEpisode": "Watch episode",
+  "viewSeries": "View series"
+}

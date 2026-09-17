@@ -4,7 +4,7 @@
   "browsingFeed": "Browsing the feed",
   "watchingVideo": "Watching a video",
   "watchingLive": "Watching a live",
-  "watchingLiveNamed": "Watching live — {name}",
+  "watchingLiveNamed": "Watching live - {name}",
   "browsingLiveCategories": "Browsing live categories",
   "browsingNamed": "Browsing {name}",
   "browsingLiveCategory": "Browsing a live category",

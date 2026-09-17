@@ -99,11 +99,11 @@ jobs:
             }
 
             let body = "## 🖼️ Activity asset preview\n\n";
-            body += "*Fresh pixels, hot off the branch — I lined them all up for inspection. 👀*\n\n";
+            body += "*Fresh pixels, hot off the branch - I lined them all up for inspection. 👀*\n\n";
 
             for (const p of result.results) {
               const icon = p.status === "success" ? "✅" : "❌";
-              body += `### ${p.name} (\`${p.slug}\`) — ${icon} ${p.status === "success" ? "All good" : p.errors.length + " issue(s)"}\n\n`;
+              body += `### ${p.name} (\`${p.slug}\`) - ${icon} ${p.status === "success" ? "All good" : p.errors.length + " issue(s)"}\n\n`;
 
               body += "| Preview | Source | URL |\n";
               body += "|---|---|---|\n";
@@ -119,13 +119,13 @@ jobs:
 
                 const label = asset.status === "valid"
                   ? `\`${key}\` (${asset.width}×${asset.height})`
-                  : `\`${key}\` — ${asset.status === "missing" ? "missing" : asset.status === "wrong_size" ? `${asset.width || "?"}×${asset.height || "?"} (expected ${asset.expected})` : "unreadable"}`;
+                  : `\`${key}\` - ${asset.status === "missing" ? "missing" : asset.status === "wrong_size" ? `${asset.width || "?"}×${asset.height || "?"} (expected ${asset.expected})` : "unreadable"}`;
 
                 const preview = asset.exists
                   ? `<a href="${rawUrl}"><img src="${rawUrl}" height="36" alt="${key}"></a>`
-                  : "—";
+                  : "-";
 
-                const url = asset.exists ? rawUrl : "—";
+                const url = asset.exists ? rawUrl : "-";
 
                 body += `| ${preview} ${statusIcon} | ${label} | ${url} |\n`;
               }
@@ -143,7 +143,7 @@ jobs:
               body += "\n---\n\n";
             }
 
-            body += "*Beep boop — I refresh this comment on every push, so no need to scroll. 🤖*";
+            body += "*Beep boop - I refresh this comment on every push, so no need to scroll. 🤖*";
 
             const { data: comments } = await github.rest.issues.listComments({
               owner, repo,

@@ -1,0 +1,38 @@
+{
+  "name": "Vibe (Le Chat)",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["chat.mistral.ai"],
+  "regExp": "^https?://chat\\.mistral\\.ai/",
+  "color": "#FA500F",
+  "category": "ai",
+  "description": {
+    "en-US": "Show when you're chatting with Vibe (formerly Le Chat) by Mistral.",
+    "fr-FR": "Affichez lorsque vous discutez avec Vibe (anciennement Le Chat) de Mistral.",
+    "es-ES": "Muestra cuando estás hablando con Vibe (antes Le Chat) de Mistral."
+  },
+  "longDescription": {
+    "en-US": "Vibe is Mistral's AI assistant, formerly known as Le Chat. This presence shows that you're using Vibe, with an optional conversation title. Private chats stay generic unless you opt in.",
+    "fr-FR": "Vibe est l'assistant IA de Mistral, anciennement nommé Le Chat. Cette présence indique que vous utilisez Vibe, avec le titre de conversation en option. Les chats privés restent génériques, sauf si vous l'activez.",
+    "es-ES": "Vibe es el asistente de IA de Mistral, antes llamado Le Chat. Esta presencia muestra que usas Vibe, con el título de la conversación en opción. Los chats privados se quedan genéricos salvo que lo actives."
+  },
+  "features": {
+    "en-US": [
+      "Shows when you are using Vibe",
+      "Optional conversation title",
+      "Private chats stay hidden by default",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Affiche lorsque vous utilisez Vibe",
+      "Titre de conversation optionnel",
+      "Les chats privés restent masqués par défaut",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Muestra cuando usas Vibe",
+      "Título de conversación opcional",
+      "Los chats privados se ocultan por defecto",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

@@ -15,7 +15,7 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "When enabled, your Discord presence also shows when you browse Free TV — not only when a channel or movie is playing.",
+      "en-US": "When enabled, your Discord presence also shows when you browse Free TV - not only when a channel or movie is playing.",
       "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez Free TV, pas seulement pendant la lecture d'une chaîne ou d'un film.",
       "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar Free TV, no solo al ver un canal o una película.",
     },

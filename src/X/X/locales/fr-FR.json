@@ -1,0 +1,18 @@
+{
+  "usingX": "Utilise X",
+  "viewingPost": "Consulte un post",
+  "viewingProfile": "Consulte un profil",
+  "viewingProfileOf": "Consulte @{user}",
+  "searching": "Recherche",
+  "readingMessages": "Lit ses messages",
+  "browsingHome": "Parcourt l'accueil",
+  "browsingExplore": "Parcourt Explorer",
+  "viewingNotifications": "Consulte ses notifications",
+  "viewingBookmarks": "Consulte ses signets",
+  "viewingLikes": "Consulte ses likes",
+  "viewingLists": "Consulte des listes",
+  "editingSettings": "Modifie les paramètres",
+  "browsingX": "Parcourt X",
+  "viewPost": "Voir le post",
+  "viewProfile": "Voir le profil"
+}

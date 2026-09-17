@@ -1,0 +1,38 @@
+{
+  "name": "Instagram",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["instagram.com", "www.instagram.com"],
+  "regExp": "^https?://(www\\.)?instagram\\.com/",
+  "color": "#E4405F",
+  "category": "social",
+  "description": {
+    "en-US": "Show what you're viewing on Instagram.",
+    "fr-FR": "Affichez ce que vous consultez sur Instagram.",
+    "es-ES": "Muestra lo que estás viendo en Instagram."
+  },
+  "longDescription": {
+    "en-US": "Instagram is a photo and video social network. This presence shows posts, reels, stories, and profiles you open. Direct messages stay generic, and privacy mode hides usernames.",
+    "fr-FR": "Instagram est un réseau social photo et vidéo. Cette présence affiche les posts, reels, stories et profils que vous ouvrez. Les messages directs restent génériques, et le mode privé masque les identifiants.",
+    "es-ES": "Instagram es una red social de fotos y vídeos. Esta presencia muestra publicaciones, reels, stories y perfiles que abres. Los mensajes directos se quedan genéricos y el modo privado oculta los nombres de usuario."
+  },
+  "features": {
+    "en-US": [
+      "Detects posts, reels, and stories",
+      "Optional privacy mode",
+      "Direct messages stay generic",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte posts, reels et stories",
+      "Mode privé optionnel",
+      "Les messages directs restent génériques",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta publicaciones, reels y stories",
+      "Modo privado opcional",
+      "Los mensajes directos se quedan genéricos",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

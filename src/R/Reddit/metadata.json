@@ -1,0 +1,38 @@
+{
+  "name": "Reddit",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["reddit.com", "www.reddit.com", "old.reddit.com", "sh.reddit.com"],
+  "regExp": "^https?://(www\\.|old\\.|sh\\.)?reddit\\.com/",
+  "color": "#FF4500",
+  "category": "social",
+  "description": {
+    "en-US": "Show what you're reading on Reddit.",
+    "fr-FR": "Affichez ce que vous lisez sur Reddit.",
+    "es-ES": "Muestra lo que estás leyendo en Reddit."
+  },
+  "longDescription": {
+    "en-US": "Reddit is a network of communities. This presence shows posts, subreddits, and profiles you open. Chats stay generic, and privacy mode hides titles and names.",
+    "fr-FR": "Reddit est un réseau de communautés. Cette présence affiche les posts, subreddits et profils que vous ouvrez. Les chats restent génériques, et le mode privé masque titres et noms.",
+    "es-ES": "Reddit es una red de comunidades. Esta presencia muestra publicaciones, subreddits y perfiles que abres. Los chats se quedan genéricos y el modo privado oculta títulos y nombres."
+  },
+  "features": {
+    "en-US": [
+      "Detects posts and subreddits",
+      "Optional privacy mode",
+      "Chats stay generic",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte les posts et les subreddits",
+      "Mode privé optionnel",
+      "Les chats restent génériques",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta publicaciones y subreddits",
+      "Modo privado opcional",
+      "Los chats se quedan genéricos",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

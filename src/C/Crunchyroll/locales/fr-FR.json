@@ -1,0 +1,18 @@
+{
+  "watching": "Regarde",
+  "seasonEpisode": "Saison {season}, Épisode {episode}",
+  "playing": "Lecture",
+  "paused": "En pause",
+  "searching": "Recherche",
+  "viewingSeries": "Consulte une série",
+  "readingManga": "Lit un manga",
+  "readingNews": "Lit une actu",
+  "viewingWatchlist": "Consulte sa watchlist",
+  "viewingHistory": "Consulte l'historique",
+  "viewingCalendar": "Consulte le calendrier simulcast",
+  "browsingGames": "Parcourt les jeux",
+  "browsingMusic": "Parcourt la musique",
+  "browsingCrunchyroll": "Parcourt Crunchyroll",
+  "watchEpisode": "Regarder l'épisode",
+  "viewSeries": "Voir la série"
+}

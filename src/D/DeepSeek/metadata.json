@@ -1,0 +1,32 @@
+{
+  "name": "DeepSeek",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["chat.deepseek.com"],
+  "regExp": "^https?://chat\\.deepseek\\.com/",
+  "color": "#4D6BFE",
+  "category": "ai",
+  "description": {
+    "en-US": "Show when you're chatting with DeepSeek.",
+    "fr-FR": "Affichez lorsque vous discutez avec DeepSeek.",
+    "es-ES": "Muestra cuando estás hablando con DeepSeek."
+  },
+  "longDescription": {
+    "en-US": "DeepSeek is an AI assistant. This presence shows that you're using DeepSeek, with an optional conversation title.",
+    "fr-FR": "DeepSeek est un assistant IA. Cette présence indique que vous utilisez DeepSeek, avec le titre de conversation en option.",
+    "es-ES": "DeepSeek es un asistente de IA. Esta presencia muestra que usas DeepSeek, con el título de la conversación en opción."
+  },
+  "features": {
+    "en-US": [
+      "Shows when you are using DeepSeek",
+      "Optional conversation title"
+    ],
+    "fr-FR": [
+      "Affiche lorsque vous utilisez DeepSeek",
+      "Titre de conversation optionnel"
+    ],
+    "es-ES": [
+      "Muestra cuando usas DeepSeek",
+      "Título de conversación opcional"
+    ]
+  }
+}

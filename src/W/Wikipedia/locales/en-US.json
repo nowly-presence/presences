@@ -1,0 +1,12 @@
+{
+  "readingWikipedia": "Reading Wikipedia",
+  "readingArticle": "Reading {title}",
+  "browsingWikipedia": "Browsing Wikipedia",
+  "viewingCategory": "Viewing a category",
+  "searching": "Searching Wikipedia",
+  "viewingPortal": "Viewing a portal",
+  "viewingFile": "Viewing a file",
+  "viewingTalk": "Viewing a talk page",
+  "viewingSpecial": "Viewing a special page",
+  "viewPage": "View page"
+}

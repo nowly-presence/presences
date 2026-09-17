@@ -1,0 +1,14 @@
+{
+  "viewingPost": "Viendo una publicación",
+  "viewingProfile": "Viendo un perfil",
+  "viewingProfileOf": "Viendo @{user}",
+  "searching": "Buscando",
+  "browsingHome": "Explorando el inicio",
+  "viewingFollowing": "Explorando el feed de seguidos",
+  "viewingSaved": "Viendo threads guardados",
+  "viewingLiked": "Viendo threads que le gustan",
+  "viewingActivity": "Viendo su actividad",
+  "browsingThreads": "Explorando Threads",
+  "viewPost": "Ver publicación",
+  "viewProfile": "Ver perfil"
+}

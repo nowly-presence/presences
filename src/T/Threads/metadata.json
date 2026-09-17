@@ -1,0 +1,35 @@
+{
+  "name": "Threads",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["threads.net", "www.threads.net", "threads.com", "www.threads.com"],
+  "regExp": "^https?://(www\\.)?threads\\.(net|com)/",
+  "color": "#000000",
+  "category": "social",
+  "description": {
+    "en-US": "Show what you're viewing on Threads.",
+    "fr-FR": "Affichez ce que vous consultez sur Threads.",
+    "es-ES": "Muestra lo que estás viendo en Threads."
+  },
+  "longDescription": {
+    "en-US": "Threads is Meta's text-based social network. This presence shows posts and profiles you open. Privacy mode hides usernames.",
+    "fr-FR": "Threads est le réseau social textuel de Meta. Cette présence affiche les posts et profils que vous ouvrez. Le mode privé masque les identifiants.",
+    "es-ES": "Threads es la red social de texto de Meta. Esta presencia muestra publicaciones y perfiles que abres. El modo privado oculta los nombres de usuario."
+  },
+  "features": {
+    "en-US": [
+      "Detects posts and profiles",
+      "Optional privacy mode",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte les posts et les profils",
+      "Mode privé optionnel",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta publicaciones y perfiles",
+      "Modo privado opcional",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

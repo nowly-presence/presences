@@ -1,0 +1,38 @@
+{
+  "name": "Grok",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["grok.com"],
+  "regExp": "^https?://grok\\.com/",
+  "color": "#FFFFFF",
+  "category": "ai",
+  "description": {
+    "en-US": "Show when you're chatting with Grok.",
+    "fr-FR": "Affichez lorsque vous discutez avec Grok.",
+    "es-ES": "Muestra cuando estás hablando con Grok."
+  },
+  "longDescription": {
+    "en-US": "Grok is xAI's assistant. This presence shows that you're using Grok, with an optional conversation title. Private chats stay generic unless you opt in.",
+    "fr-FR": "Grok est l'assistant de xAI. Cette présence indique que vous utilisez Grok, avec le titre de conversation en option. Les chats privés restent génériques, sauf si vous l'activez.",
+    "es-ES": "Grok es el asistente de xAI. Esta presencia muestra que usas Grok, con el título de la conversación en opción. Los chats privados se quedan genéricos salvo que lo actives."
+  },
+  "features": {
+    "en-US": [
+      "Shows when you are using Grok",
+      "Optional conversation title",
+      "Private chats stay hidden by default",
+      "Optional Imagine and browsing activity"
+    ],
+    "fr-FR": [
+      "Affiche lorsque vous utilisez Grok",
+      "Titre de conversation optionnel",
+      "Les chats privés restent masqués par défaut",
+      "Activité Imagine et navigation optionnelle"
+    ],
+    "es-ES": [
+      "Muestra cuando usas Grok",
+      "Título de conversación opcional",
+      "Los chats privados se ocultan por defecto",
+      "Actividad Imagine y navegación opcional"
+    ]
+  }
+}

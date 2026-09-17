@@ -1,0 +1,38 @@
+{
+  "name": "LinkedIn",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["linkedin.com", "www.linkedin.com"],
+  "regExp": "^https?://(www\\.)?linkedin\\.com/",
+  "color": "#0A66C2",
+  "category": "other",
+  "description": {
+    "en-US": "Show what you're doing on LinkedIn.",
+    "fr-FR": "Affichez ce que vous faites sur LinkedIn.",
+    "es-ES": "Muestra lo que haces en LinkedIn."
+  },
+  "longDescription": {
+    "en-US": "LinkedIn is a professional network. This presence shows profiles, jobs, and feed activity. Messages stay generic, and privacy mode hides names.",
+    "fr-FR": "LinkedIn est un réseau professionnel. Cette présence affiche profils, offres et fil. Les messages restent génériques, et le mode privé masque les noms.",
+    "es-ES": "LinkedIn es una red profesional. Esta presencia muestra perfiles, empleos y el feed. Los mensajes se quedan genéricos y el modo privado oculta los nombres."
+  },
+  "features": {
+    "en-US": [
+      "Detects profiles and jobs",
+      "Messages stay generic",
+      "Optional privacy mode",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte les profils et les offres",
+      "Les messages restent génériques",
+      "Mode privé optionnel",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta perfiles y empleos",
+      "Los mensajes se quedan genéricos",
+      "Modo privado opcional",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

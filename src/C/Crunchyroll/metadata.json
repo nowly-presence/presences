@@ -1,0 +1,39 @@
+{
+  "name": "Crunchyroll",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["crunchyroll.com", "www.crunchyroll.com"],
+  "regExp": "^https?://(www\\.)?crunchyroll\\.com/",
+  "color": "#F47521",
+  "category": "streaming",
+  "discordNative": true,
+  "description": {
+    "en-US": "Show the anime you're watching on Crunchyroll.",
+    "fr-FR": "Affichez l'animé que vous regardez sur Crunchyroll.",
+    "es-ES": "Muestra el anime que estás viendo en Crunchyroll."
+  },
+  "longDescription": {
+    "en-US": "Crunchyroll streams anime and related series. This presence shows the title you're watching, with playback state when available.",
+    "fr-FR": "Crunchyroll diffuse des animés et des séries associées. Cette présence affiche le titre que vous regardez, avec l'état de lecture lorsqu'il est disponible.",
+    "es-ES": "Crunchyroll emite anime y series relacionadas. Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible."
+  },
+  "features": {
+    "en-US": [
+      "Detects the current title",
+      "Tracks playing and paused state",
+      "Optional privacy mode",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte le titre en cours",
+      "Suit la lecture et la pause",
+      "Mode privé optionnel",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta el título actual",
+      "Sigue reproducción y pausa",
+      "Modo privado opcional",
+      "Actividad de navegación opcional"
+    ]
+  }
+}

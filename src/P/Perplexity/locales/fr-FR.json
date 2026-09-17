@@ -1,0 +1,19 @@
+{
+  "usingPerplexity": "Utilise Perplexity",
+  "searching": "Recherche : {title}",
+  "openThread": "Ouvrir le fil",
+  "viewingLibrary": "Parcourt toutes les discussions",
+  "viewingProject": "Travaille sur un projet",
+  "viewingProjectFiles": "Consulte les fichiers du projet",
+  "viewingProjectWiki": "Consulte le cerveau du projet",
+  "viewingProjectSettings": "Consulte les paramètres du projet",
+  "openProject": "Ouvrir le projet",
+  "usingComputer": "Utilise Perplexity Computer",
+  "viewingComputerTasks": "Consulte les tâches de Computer",
+  "viewingComputerArtifacts": "Consulte les artefacts de Computer",
+  "viewingComputerConnectors": "Consulte les connecteurs de Computer",
+  "viewingComputerSkills": "Consulte les compétences de Computer",
+  "viewingComputerWorkflows": "Consulte les workflows de Computer",
+  "viewingComputerMemory": "Consulte la mémoire de Computer",
+  "browsingPerplexity": "Parcourt Perplexity"
+}

@@ -1,0 +1,18 @@
+{
+  "watching": "Watching",
+  "seasonEpisode": "Season {season}, Episode {episode}",
+  "playing": "Playing",
+  "paused": "Paused",
+  "searching": "Searching",
+  "viewingSeries": "Viewing a series",
+  "readingManga": "Reading manga",
+  "readingNews": "Reading news",
+  "viewingWatchlist": "Viewing the watchlist",
+  "viewingHistory": "Viewing watch history",
+  "viewingCalendar": "Viewing the simulcast calendar",
+  "browsingGames": "Browsing games",
+  "browsingMusic": "Browsing music",
+  "browsingCrunchyroll": "Browsing Crunchyroll",
+  "watchEpisode": "Watch episode",
+  "viewSeries": "View series"
+}

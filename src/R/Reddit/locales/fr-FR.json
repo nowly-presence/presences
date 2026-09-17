@@ -1,0 +1,14 @@
+{
+  "usingReddit": "Utilise Reddit",
+  "viewingPost": "Consulte un post",
+  "viewingSubreddit": "Consulte une communauté",
+  "viewingSubredditOf": "Parcourt r/{subreddit}",
+  "viewingProfile": "Consulte un profil",
+  "viewingProfileOf": "Consulte u/{user}",
+  "searching": "Recherche",
+  "readingMessages": "Lit ses messages",
+  "browsingHome": "Parcourt l'accueil",
+  "browsingReddit": "Parcourt Reddit",
+  "viewPost": "Voir le post",
+  "viewCommunity": "Voir la communauté"
+}

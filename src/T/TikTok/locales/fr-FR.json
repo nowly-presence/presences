@@ -4,7 +4,7 @@
   "browsingFeed": "Parcourt le fil",
   "watchingVideo": "En lecture",
   "watchingLive": "En direct",
-  "watchingLiveNamed": "En direct — {name}",
+  "watchingLiveNamed": "En direct - {name}",
   "browsingLiveCategories": "Parcourt les catégories live",
   "browsingNamed": "Parcourt {name}",
   "browsingLiveCategory": "Parcourt une catégorie live",
