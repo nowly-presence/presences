@@ -105,6 +105,10 @@
       "propertyNames": {
         "pattern": "^[a-z]{2}-[A-Z]{2}$"
       }
+    },
+    "discordNative": {
+      "type": "boolean",
+      "description": "True when Discord already shows this platform if the user links their account (e.g. Spotify)."
     }
   }
 }

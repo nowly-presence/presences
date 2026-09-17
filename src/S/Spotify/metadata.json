@@ -5,6 +5,7 @@
   "regExp": "^https?://open\\.spotify\\.com/",
   "color": "#1ED760",
   "category": "music",
+  "discordNative": true,
   "description": {
     "en-US": "Show the track you're listening to on Spotify.",
     "fr-FR": "Affichez le titre que vous écoutez sur Spotify.",

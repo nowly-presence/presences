@@ -5,6 +5,7 @@
   "regExp": "^https?://(www\\.)?crunchyroll\\.com/",
   "color": "#F47521",
   "category": "streaming",
+  "discordNative": true,
   "description": {
     "en-US": "Show the anime you're watching on Crunchyroll.",
     "fr-FR": "Affichez l'animé que vous regardez sur Crunchyroll.",
