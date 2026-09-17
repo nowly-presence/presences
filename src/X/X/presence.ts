@@ -1,5 +1,5 @@
 import { PresenceType, type PresenceData } from "@nowly/sdk"
-import { getXPage } from "./utils/page"
+import { getPageImage, getXPage } from "./utils/page"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -73,7 +73,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: PresenceData = {
       details: strings.viewingPost,
       state: privacy ? undefined : `@${page.user}`,
-      largeImageKey: Assets.Logo,
+      largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "X",
       type: PresenceType.Watching,
     }
@@ -87,7 +87,7 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "profile") {
     const data: PresenceData = {
       details: privacy ? strings.viewingProfile : presence.formatString(strings.viewingProfileOf, { user: page.user }),
-      largeImageKey: Assets.Logo,
+      largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "X",
       type: PresenceType.Watching,
     }
@@ -110,13 +110,32 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
+  if (page.kind === "settings") {
+    await presence.setActivity({
+      details: strings.editingSettings,
+      largeImageKey: Assets.Logo,
+      largeImageText: "X",
+      type: PresenceType.Watching,
+    })
+    return
+  }
+
   if (!showBrowsing) {
     presence.clearActivity()
     return
   }
 
+  const details =
+    page.kind === "home" ? strings.browsingHome
+    : page.kind === "explore" ? strings.browsingExplore
+    : page.kind === "notifications" ? strings.viewingNotifications
+    : page.kind === "bookmarks" ? strings.viewingBookmarks
+    : page.kind === "likes" ? strings.viewingLikes
+    : page.kind === "lists" ? strings.viewingLists
+    : strings.browsingX
+
   await presence.setActivity({
-    details: page.kind === "home" ? strings.browsingHome : strings.browsingX,
+    details,
     largeImageKey: Assets.Logo,
     largeImageText: "X",
     type: PresenceType.Watching,
