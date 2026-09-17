@@ -63,6 +63,8 @@ const browsingDetails = (pathname: string, strings: typeof enUS): string => {
   if (path.startsWith("/playlist")) return strings.viewingPlaylist
   if (path.startsWith("/album")) return strings.viewingAlbum
   if (path.startsWith("/artist")) return strings.viewingArtist
+  if (path.startsWith("/show")) return strings.viewingPodcast
+  if (path.startsWith("/channels")) return strings.browsingChannels
   return strings.browsingDeezer
 }
 
