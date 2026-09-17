@@ -60,7 +60,8 @@ presence.on("UpdateData", async (ctx) => {
   }
 
   const details =
-    page.kind === "templates" ? strings.browsingTemplates
+    page.kind === "aiChat" ? strings.talkingWithAI
+    : page.kind === "templates" ? strings.browsingTemplates
     : page.kind === "calendar" ? strings.viewingCalendar
     : page.kind === "search" ? strings.searching
     : page.kind === "settings" ? strings.viewingSettings

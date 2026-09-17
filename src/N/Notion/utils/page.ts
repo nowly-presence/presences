@@ -17,6 +17,7 @@ const livePageTitle = (): string => {
 
 export type NotionPage =
   | { kind: "page"; title?: string }
+  | { kind: "aiChat" }
   | { kind: "templates" }
   | { kind: "calendar" }
   | { kind: "home" }
@@ -31,6 +32,7 @@ export const getNotionPage = (): NotionPage => {
   const first = segs[0] ?? ""
   const search = document.location.search
 
+  if (first === "ai" || first === "chat") return { kind: "aiChat" }
   if (first === "templates" || first === "template") return { kind: "templates" }
   if (first === "calendar") return { kind: "calendar" }
   if (first === "search" || search.includes("s=")) return { kind: "search" }
