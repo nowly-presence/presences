@@ -1,7 +1,17 @@
 {
   "usingGrok": "Using Grok",
-  "chatting": "Chatting: {title}",
+  "viewingConversation": "Viewing a conversation",
+  "viewingProject": "Viewing a project",
   "usingImagine": "Using Imagine",
-  "browsingGrok": "Browsing Grok",
-  "openChat": "Open chat"
+  "editingImage": "Editing an image",
+  "writingSkill": "Writing a skill",
+  "browsingAutomations": "Browsing Automations",
+  "browsingLibrary": "Browsing Library",
+  "browsingMedia": "Browsing Media",
+  "browsingProjects": "Browsing Projects",
+  "browsingApps": "Browsing Apps",
+  "browsingFiles": "Browsing Files",
+  "browsingConnectors": "Browsing Connectors",
+  "browsingSkills": "Browsing Skills",
+  "browsingGrok": "Browsing Grok"
 }
