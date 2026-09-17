@@ -4,6 +4,17 @@ const parts = (pathname: string): string[] =>
 export const cleanNotionTitle = (title: string): string =>
   title.replace(/\s*[-–|]\s*Notion\s*$/i, "").trim()
 
+// Notion is a SPA that doesn't reliably refresh document.title on
+// client-side navigation - read the live heading first, like the peek/modal
+// views do, and only fall back to document.title.
+const livePageTitle = (): string => {
+  const heading =
+    document.querySelector(".notion-overlay-container h1")?.textContent
+    ?? document.querySelector(".notion-peek-renderer .layout-content h1")?.textContent
+    ?? document.querySelector("h1")?.textContent
+  return cleanNotionTitle(heading?.trim() || document.title)
+}
+
 export type NotionPage =
   | { kind: "page"; title?: string }
   | { kind: "templates" }
@@ -18,7 +29,6 @@ const SKIP = new Set(["login", "signup", "onboarding", "product", "pricing", "en
 export const getNotionPage = (): NotionPage => {
   const segs = parts(document.location.pathname)
   const first = segs[0] ?? ""
-  const title = cleanNotionTitle(document.title)
   const search = document.location.search
 
   if (first === "templates" || first === "template") return { kind: "templates" }
@@ -29,8 +39,10 @@ export const getNotionPage = (): NotionPage => {
   if (SKIP.has(first)) return { kind: "other" }
 
   const last = segs[segs.length - 1] ?? ""
-  if (last.length > 8 && title && title.toLowerCase() !== "notion") return { kind: "page", title }
-  if (last.length > 8) return { kind: "page", title: title || undefined }
+  if (last.length > 8) {
+    const title = livePageTitle()
+    return { kind: "page", title: title && title.toLowerCase() !== "notion" ? title : undefined }
+  }
   return { kind: "other" }
 }
 
