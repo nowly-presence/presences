@@ -14,5 +14,10 @@
   "viewingGroup": "Viendo un grupo",
   "viewingEvent": "Viendo un evento",
   "viewingPost": "Viendo una publicación",
-  "readingArticle": "Leyendo un artículo"
+  "readingArticle": "Leyendo un artículo",
+  "playingGame": "Jugando un juego",
+  "editingSettings": "Editando la configuración",
+  "viewProfile": "Ver perfil",
+  "viewPage": "Ver página",
+  "viewPost": "Ver publicación"
 }

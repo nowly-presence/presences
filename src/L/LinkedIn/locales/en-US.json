@@ -14,5 +14,10 @@
   "viewingGroup": "Viewing a group",
   "viewingEvent": "Viewing an event",
   "viewingPost": "Viewing a post",
-  "readingArticle": "Reading an article"
+  "readingArticle": "Reading an article",
+  "playingGame": "Playing a game",
+  "editingSettings": "Editing settings",
+  "viewProfile": "View profile",
+  "viewPage": "View page",
+  "viewPost": "View post"
 }
