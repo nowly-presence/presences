@@ -45,47 +45,46 @@ const settings = Presence.Settings({
       "es-ES": "Muestra actividad al explorar Claude fuera de un chat.",
     },
   },
-  showButtons: {
-    type: "boolean",
-    default: true,
-    label: {
-      "en-US": "Show buttons",
-      "fr-FR": "Afficher les boutons",
-      "es-ES": "Mostrar botones",
-    },
-    description: {
-      "en-US": "Show a button to open the current chat.",
-      "fr-FR": "Affiche un bouton pour ouvrir le chat en cours.",
-      "es-ES": "Muestra un botón para abrir el chat actual.",
-    },
-  },
 })
 
 const presence = new Presence(settings)
 
 const isEnabled = (value: unknown): boolean => value === true || value === "true"
 
+const browsingDetails = (activity: string, strings: typeof enUS): string => {
+  switch (activity) {
+    case "skills":
+      return strings.browsingSkills
+    case "connectors":
+      return strings.browsingConnectors
+    case "plugins":
+      return strings.browsingPlugins
+    case "artifacts":
+      return strings.browsingArtifacts
+    case "projects":
+      return strings.browsingProjects
+    default:
+      return strings.browsingClaude
+  }
+}
+
 presence.on("UpdateData", async (ctx) => {
   const strings = await presence.getStrings<typeof enUS>()
   const showPrivateChats = isEnabled(ctx.settings.showPrivateChats)
   const showConversationTitle = !("showConversationTitle" in ctx.settings) || isEnabled(ctx.settings.showConversationTitle)
   const showBrowsing = isEnabled(ctx.settings.showBrowsing)
-  const showButtons = !("showButtons" in ctx.settings) || isEnabled(ctx.settings.showButtons)
   const page = getClaudePage()
 
   if (page.kind === "chat") {
     const hideDetails = page.private && !showPrivateChats
     const title = !hideDetails && showConversationTitle ? page.title : undefined
     const data: PresenceData = {
-      details: title ? presence.formatString(strings.chatting, { title }) : strings.usingClaude,
+      details: hideDetails ? strings.usingClaude : strings.viewingConversation,
+      state: title,
       largeImageKey: Assets.Logo,
       largeImageText: "Claude",
       type: PresenceType.Playing,
       startTimestamp: page.startedAt,
-    }
-
-    if (!hideDetails && showButtons && page.url) {
-      data.buttons = [{ label: strings.openChat, url: page.url }]
     }
 
     await presence.setActivity(data)
@@ -95,8 +94,8 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "project") {
     const title = showConversationTitle ? page.title : undefined
     await presence.setActivity({
-      details: title ?? strings.viewingProject,
-      state: title ? strings.viewingProject : undefined,
+      details: strings.viewingProject,
+      state: title,
       largeImageKey: Assets.Logo,
       largeImageText: "Claude",
       type: PresenceType.Playing,
@@ -109,8 +108,10 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
+  const label = browsingDetails(page.activity, strings)
   await presence.setActivity({
-    details: strings.browsingClaude,
+    details: page.title ?? label,
+    state: page.title ? label : undefined,
     largeImageKey: Assets.Logo,
     largeImageText: "Claude",
     type: PresenceType.Playing,

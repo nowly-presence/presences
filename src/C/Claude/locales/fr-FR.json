@@ -1,7 +1,11 @@
 {
   "usingClaude": "Utilise Claude",
-  "chatting": "Discussion : {title}",
+  "viewingConversation": "Consulte une discussion",
   "viewingProject": "Consulte un projet",
-  "browsingClaude": "Parcourt Claude",
-  "openChat": "Ouvrir le chat"
+  "browsingSkills": "Parcourt les Compétences",
+  "browsingConnectors": "Parcourt les Connecteurs",
+  "browsingPlugins": "Parcourt les Plugins",
+  "browsingArtifacts": "Parcourt les Artefacts",
+  "browsingProjects": "Parcourt les Projets",
+  "browsingClaude": "Parcourt Claude"
 }
