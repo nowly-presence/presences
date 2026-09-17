@@ -3,17 +3,20 @@ import { createButton, getTitle } from "./dom"
 import { getAvatarImage, getMetaImage, toDiscordImage } from "./images"
 import type enUS from "../locales/en-US.json"
 
-const PROFILE_TAB_DETAILS: Record<string, keyof typeof enUS> = {
-  stars: "viewingProfileStars",
-  packages: "viewingProfilePackages",
-  projects: "viewingProfileProjects",
-  repositories: "viewingProfileRepositories",
-}
-
 const getProfileTabDetails = (search: string, strings: typeof enUS): string => {
   const tab = new URLSearchParams(search).get("tab") ?? ""
-  const key = PROFILE_TAB_DETAILS[tab]
-  return key ? strings[key] : strings.viewingProfile
+  switch (tab) {
+    case "stars":
+      return strings.viewingProfileStars
+    case "packages":
+      return strings.viewingProfilePackages
+    case "projects":
+      return strings.viewingProfileProjects
+    case "repositories":
+      return strings.viewingProfileRepositories
+    default:
+      return strings.viewingProfile
+  }
 }
 
 export const handleProfilePage = async (
