@@ -1,5 +1,6 @@
 {
   "watching": "Viendo",
+  "seasonEpisode": "Temporada {season}, Episodio {episode}",
   "playing": "Reproduciendo",
   "paused": "En pausa",
   "searching": "Buscando",
@@ -10,5 +11,6 @@
   "browsingMovies": "Explorando películas",
   "viewingWatchlist": "Viendo la lista",
   "browsingAdn": "Explorando ADN",
-  "viewTitle": "Ver"
+  "watchEpisode": "Ver episodio",
+  "viewSeries": "Ver serie"
 }

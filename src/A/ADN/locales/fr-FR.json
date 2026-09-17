@@ -1,5 +1,6 @@
 {
   "watching": "Regarde",
+  "seasonEpisode": "Saison {season}, Épisode {episode}",
   "playing": "Lecture",
   "paused": "En pause",
   "searching": "Recherche",
@@ -10,5 +11,6 @@
   "browsingMovies": "Parcourt les films",
   "viewingWatchlist": "Consulte sa liste",
   "browsingAdn": "Parcourt ADN",
-  "viewTitle": "Regarder"
+  "watchEpisode": "Regarder l'épisode",
+  "viewSeries": "Voir la série"
 }

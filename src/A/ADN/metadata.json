@@ -1,8 +1,8 @@
 {
   "name": "ADN",
   "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["animedigitalnetwork.fr", "www.animedigitalnetwork.fr"],
-  "regExp": "^https?://(www\\.)?animedigitalnetwork\\.fr/",
+  "url": ["animedigitalnetwork.fr", "www.animedigitalnetwork.fr", "animationdigitalnetwork.com", "www.animationdigitalnetwork.com", "animationdigitalnetwork.fr", "www.animationdigitalnetwork.fr"],
+  "regExp": "^https?://(www\\.)?anim(e|ation)digitalnetwork\\.(fr|com)/",
   "color": "#0098FF",
   "category": "streaming",
   "description": {

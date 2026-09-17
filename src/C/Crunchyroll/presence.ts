@@ -1,5 +1,5 @@
 import { createMediaTimestamps, PresenceType, type PresenceData } from "@nowly/sdk"
-import { getCrunchyrollPage, getVideo } from "./utils/page"
+import { getCrunchyrollPage, getEpisodeCover, getSeriesUrl, getVideo, getWatchInfo } from "./utils/page"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -62,16 +62,28 @@ presence.on("UpdateData", async (ctx) => {
 
   if (watching) {
     const playing = video ? !video.paused && !video.ended : true
+    const info = getWatchInfo()
+    const seasonEpisode =
+      info.season !== undefined && info.episodeNumber !== undefined
+        ? presence.formatString(strings.seasonEpisode, { season: info.season, episode: info.episodeNumber })
+        : undefined
     const data: PresenceData = {
-      details: privacy ? strings.watching : page.kind === "watch" ? page.title || strings.watching : strings.watching,
-      largeImageKey: Assets.Logo,
-      largeImageText: "Crunchyroll",
+      details: privacy ? strings.watching : info.show || (page.kind === "watch" ? page.title : undefined) || strings.watching,
+      state: privacy ? undefined : info.episode,
+      largeImageKey: (!privacy && getEpisodeCover()) || Assets.Logo,
+      largeImageText: seasonEpisode ?? "Crunchyroll",
       smallImageKey: playing ? "play" : "pause",
       smallImageText: playing ? strings.playing : strings.paused,
       type: PresenceType.Watching,
     }
     if (playing && video) Object.assign(data, createMediaTimestamps(video))
-    if (!privacy && showButtons) data.buttons = [{ label: strings.viewTitle, url: href }]
+    if (!privacy && showButtons) {
+      const seriesUrl = getSeriesUrl()
+      data.buttons = [
+        { label: strings.watchEpisode, url: href },
+        ...(seriesUrl ? [{ label: strings.viewSeries, url: seriesUrl }] : []),
+      ]
+    }
     await presence.setActivity(data)
     return
   }

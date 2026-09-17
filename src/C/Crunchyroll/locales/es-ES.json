@@ -1,5 +1,6 @@
 {
   "watching": "Viendo",
+  "seasonEpisode": "Temporada {season}, Episodio {episode}",
   "playing": "Reproduciendo",
   "paused": "En pausa",
   "searching": "Buscando",
@@ -12,5 +13,6 @@
   "browsingGames": "Explorando juegos",
   "browsingMusic": "Explorando música",
   "browsingCrunchyroll": "Explorando Crunchyroll",
-  "viewTitle": "Ver"
+  "watchEpisode": "Ver episodio",
+  "viewSeries": "Ver serie"
 }

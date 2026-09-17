@@ -1,5 +1,6 @@
 {
   "watching": "Watching",
+  "seasonEpisode": "Season {season}, Episode {episode}",
   "playing": "Playing",
   "paused": "Paused",
   "searching": "Searching",
@@ -12,5 +13,6 @@
   "browsingGames": "Browsing games",
   "browsingMusic": "Browsing music",
   "browsingCrunchyroll": "Browsing Crunchyroll",
-  "viewTitle": "Watch"
+  "watchEpisode": "Watch episode",
+  "viewSeries": "View series"
 }
