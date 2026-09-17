@@ -24,14 +24,20 @@ const parts = (pathname: string): string[] =>
   pathname.split("/").filter(Boolean).map((part) => decodeURIComponent(part))
 
 export const cleanChatGptTitle = (title: string): string =>
-  title.replace(/\s*[-–|]\s*ChatGPT\s*$/i, "").trim()
+  title
+    .replace(/^\s*ChatGPT\s*[-–|]\s*/i, "")
+    .replace(/\s*[-–|]\s*ChatGPT\s*$/i, "")
+    .trim()
 
 const pageTitle = (): string => {
   const og = document.querySelector<HTMLMetaElement>('meta[property="og:title"]')?.content
-  return cleanChatGptTitle(og || document.title)
+  return cleanChatGptTitle(document.title || og || "")
 }
 
 const isGenericTitle = (title: string): boolean => !title || GENERIC_TITLES.has(title.toLowerCase())
+
+// Project chats render the page title as "{Project name} - {Conversation title}"
+const stripProjectPrefix = (title: string): string => title.replace(/^[^-–]+[-–]\s*/, "").trim()
 
 export const isPrivateChatGpt = (title: string, pathname: string, search: string): boolean => {
   const params = new URLSearchParams(search)
@@ -45,38 +51,66 @@ export const isPrivateChatGpt = (title: string, pathname: string, search: string
   )
 }
 
+export type ChatGptBrowseActivity =
+  | "gpts"
+  | "plugins"
+  | "scheduled"
+  | "library"
+  | "images"
+  | "health"
+  | "finances"
+  | "codex"
+  | "other"
+
 export type ChatGptPage =
   | {
       kind: "chat"
       title?: string
       private: boolean
-      url?: string
       startedAt: number
     }
-  | { kind: "browse"; activity: "gpts" | "other" }
+  | { kind: "project"; title?: string }
+  | { kind: "browse"; activity: ChatGptBrowseActivity }
+
+const BROWSE_ACTIVITIES: Record<string, ChatGptBrowseActivity> = {
+  gpts: "gpts",
+  explore: "gpts",
+  plugins: "plugins",
+  scheduled: "scheduled",
+  library: "library",
+  images: "images",
+  health: "health",
+  finances: "finances",
+  codex: "codex",
+}
 
 export const getChatGptPage = (): ChatGptPage => {
-  const { pathname, href, search } = document.location
+  const { pathname, search } = document.location
   const segs = parts(pathname)
   const title = pageTitle()
   const privateChat = isPrivateChatGpt(title, pathname, search)
   const first = segs[0] ?? ""
 
-  if (first === "gpts" || first === "explore" || (first === "g" && !segs[2])) {
-    if (first === "gpts" || first === "explore") return { kind: "browse", activity: "gpts" }
+  const browseActivity = BROWSE_ACTIVITIES[first]
+  if (browseActivity) {
+    return { kind: "browse", activity: browseActivity }
+  }
+
+  if (first === "g" && segs[1]?.startsWith("g-p-") && segs[2] === "project") {
+    return { kind: "project", title: isGenericTitle(title) ? undefined : title }
   }
 
   if (!first || first === "c" || first === "g") {
     const id = first === "c" ? segs[1] : first === "g" ? segs[3] || segs[1] : undefined
-    const url = id ? href.split("?")[0] : undefined
+    const isProjectChat = first === "g" && segs[1]?.startsWith("g-p-") && segs[2] === "c"
+    const chatTitle = isProjectChat ? stripProjectPrefix(title) : title
     return {
       kind: "chat",
-      title: isGenericTitle(title) ? undefined : title,
+      title: isGenericTitle(chatTitle) ? undefined : chatTitle,
       private: privateChat,
-      url,
       startedAt: touchSession(id ?? (privateChat ? "temporary" : "new")),
     }
   }
 
-  return { kind: "browse", activity: first === "gpts" || first === "explore" ? "gpts" : "other" }
+  return { kind: "browse", activity: "other" }
 }

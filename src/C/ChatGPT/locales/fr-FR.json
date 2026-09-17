@@ -1,7 +1,14 @@
 {
   "usingChatGPT": "Utilise ChatGPT",
-  "chatting": "Discussion : {title}",
+  "viewingConversation": "Consulte une discussion",
+  "viewingProject": "Consulte un projet",
   "browsingGpts": "Parcourt les GPTs",
-  "browsingChatGPT": "Parcourt ChatGPT",
-  "openChat": "Ouvrir le chat"
+  "browsingPlugins": "Parcourt les Plugins",
+  "browsingScheduled": "Parcourt la Planification",
+  "browsingLibrary": "Parcourt la Bibliothèque",
+  "browsingImages": "Parcourt les Images",
+  "browsingHealth": "Parcourt Santé",
+  "browsingFinances": "Parcourt Finances",
+  "browsingCodex": "Utilise Codex",
+  "browsingChatGPT": "Parcourt ChatGPT"
 }

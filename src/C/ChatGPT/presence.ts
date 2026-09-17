@@ -45,50 +45,67 @@ const settings = Presence.Settings({
       "es-ES": "Muestra actividad al explorar GPTs u otras páginas de ChatGPT fuera de un chat.",
     },
   },
-  showButtons: {
-    type: "boolean",
-    default: true,
-    label: {
-      "en-US": "Show buttons",
-      "fr-FR": "Afficher les boutons",
-      "es-ES": "Mostrar botones",
-    },
-    description: {
-      "en-US": "Show a button to open the current chat.",
-      "fr-FR": "Affiche un bouton pour ouvrir le chat en cours.",
-      "es-ES": "Muestra un botón para abrir el chat actual.",
-    },
-  },
 })
 
 const presence = new Presence(settings)
 
 const isEnabled = (value: unknown): boolean => value === true || value === "true"
 
+const browsingDetails = (activity: string, strings: typeof enUS): string => {
+  switch (activity) {
+    case "gpts":
+      return strings.browsingGpts
+    case "plugins":
+      return strings.browsingPlugins
+    case "scheduled":
+      return strings.browsingScheduled
+    case "library":
+      return strings.browsingLibrary
+    case "images":
+      return strings.browsingImages
+    case "health":
+      return strings.browsingHealth
+    case "finances":
+      return strings.browsingFinances
+    case "codex":
+      return strings.browsingCodex
+    default:
+      return strings.browsingChatGPT
+  }
+}
+
 presence.on("UpdateData", async (ctx) => {
   const strings = await presence.getStrings<typeof enUS>()
   const showPrivateChats = isEnabled(ctx.settings.showPrivateChats)
   const showConversationTitle = !("showConversationTitle" in ctx.settings) || isEnabled(ctx.settings.showConversationTitle)
   const showBrowsing = isEnabled(ctx.settings.showBrowsing)
-  const showButtons = !("showButtons" in ctx.settings) || isEnabled(ctx.settings.showButtons)
   const page = getChatGptPage()
 
   if (page.kind === "chat") {
     const hideDetails = page.private && !showPrivateChats
     const title = !hideDetails && showConversationTitle ? page.title : undefined
     const data: PresenceData = {
-      details: title ? presence.formatString(strings.chatting, { title }) : strings.usingChatGPT,
+      details: hideDetails ? strings.usingChatGPT : strings.viewingConversation,
+      state: title,
       largeImageKey: Assets.Logo,
       largeImageText: "ChatGPT",
       type: PresenceType.Playing,
       startTimestamp: page.startedAt,
     }
 
-    if (!hideDetails && showButtons && page.url) {
-      data.buttons = [{ label: strings.openChat, url: page.url }]
-    }
-
     await presence.setActivity(data)
+    return
+  }
+
+  if (page.kind === "project") {
+    const title = showConversationTitle ? page.title : undefined
+    await presence.setActivity({
+      details: strings.viewingProject,
+      state: title,
+      largeImageKey: Assets.Logo,
+      largeImageText: "ChatGPT",
+      type: PresenceType.Playing,
+    })
     return
   }
 
@@ -98,7 +115,7 @@ presence.on("UpdateData", async (ctx) => {
   }
 
   await presence.setActivity({
-    details: page.activity === "gpts" ? strings.browsingGpts : strings.browsingChatGPT,
+    details: browsingDetails(page.activity, strings),
     largeImageKey: Assets.Logo,
     largeImageText: "ChatGPT",
     type: PresenceType.Playing,

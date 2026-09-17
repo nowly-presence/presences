@@ -1,7 +1,14 @@
 {
   "usingChatGPT": "Usando ChatGPT",
-  "chatting": "Chat: {title}",
+  "viewingConversation": "Viendo una conversación",
+  "viewingProject": "Viendo un proyecto",
   "browsingGpts": "Explorando GPTs",
-  "browsingChatGPT": "Explorando ChatGPT",
-  "openChat": "Abrir chat"
+  "browsingPlugins": "Explorando Plugins",
+  "browsingScheduled": "Explorando Programaciones",
+  "browsingLibrary": "Explorando Biblioteca",
+  "browsingImages": "Explorando Imágenes",
+  "browsingHealth": "Explorando Salud",
+  "browsingFinances": "Explorando Finanzas",
+  "browsingCodex": "Usando Codex",
+  "browsingChatGPT": "Explorando ChatGPT"
 }
