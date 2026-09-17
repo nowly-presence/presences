@@ -3,17 +3,31 @@ import { createButton, getTitle } from "./dom"
 import { getAvatarImage, getMetaImage, toDiscordImage } from "./images"
 import type enUS from "../locales/en-US.json"
 
+const PROFILE_TAB_DETAILS: Record<string, keyof typeof enUS> = {
+  stars: "viewingProfileStars",
+  packages: "viewingProfilePackages",
+  projects: "viewingProfileProjects",
+  repositories: "viewingProfileRepositories",
+}
+
+const getProfileTabDetails = (search: string, strings: typeof enUS): string => {
+  const tab = new URLSearchParams(search).get("tab") ?? ""
+  const key = PROFILE_TAB_DETAILS[tab]
+  return key ? strings[key] : strings.viewingProfile
+}
+
 export const handleProfilePage = async (
   presence: PresenceInstance,
   username: string,
   href: string,
+  search: string,
 ): Promise<void> => {
   const strings = await presence.getStrings<typeof enUS>()
   const avatar = await toDiscordImage(getAvatarImage(username) || getMetaImage())
   const title = getProfileTitle(username)
 
   await presence.setActivity({
-    details: strings.viewingProfile,
+    details: getProfileTabDetails(search, strings),
     state: title,
     largeImageKey: avatar || Assets.Logo,
     largeImageText: title,

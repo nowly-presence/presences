@@ -30,7 +30,7 @@ export const handleGitHub = async (
   }
 
   if (first && !second && !isGitHubReservedPath(first)) {
-    await handleProfilePage(presence, first, href)
+    await handleProfilePage(presence, first, href, search)
     return
   }
 
