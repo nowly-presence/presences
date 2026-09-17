@@ -1,5 +1,5 @@
 import { createMediaTimestamps, PresenceType, type PresenceData } from "@nowly/sdk"
-import { getMaxPage, getVideo } from "./utils/page"
+import { getHboMaxPage, getVideo } from "./utils/page"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -26,9 +26,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "Show activity on leftover Max pages.",
-      "fr-FR": "Affiche l'activité sur les autres pages Max.",
-      "es-ES": "Muestra actividad en las demás páginas de Max.",
+      "en-US": "Show activity on leftover HBO Max pages.",
+      "fr-FR": "Affiche l'activité sur les autres pages HBO Max.",
+      "es-ES": "Muestra actividad en las demás páginas de HBO Max.",
     },
   },
   showButtons: {
@@ -55,7 +55,7 @@ presence.on("UpdateData", async (ctx) => {
   const privacy = isEnabled(ctx.settings.privacy)
   const showButtons = !("showButtons" in ctx.settings) || isEnabled(ctx.settings.showButtons)
   const showBrowsing = isEnabled(ctx.settings.showBrowsing)
-  const page = getMaxPage()
+  const page = getHboMaxPage()
   const video = getVideo()
   const href = document.location.href.split("?")[0] ?? document.location.href
   const watching = page.kind === "watch" || Boolean(video && video.duration > 0)
@@ -66,7 +66,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: PresenceData = {
       details: privacy ? strings.watching : title || strings.watching,
       largeImageKey: Assets.Logo,
-      largeImageText: "Max",
+      largeImageText: "HBO Max",
       smallImageKey: playing ? "play" : "pause",
       smallImageText: playing ? strings.playing : strings.paused,
       type: PresenceType.Watching,
@@ -85,17 +85,15 @@ presence.on("UpdateData", async (ctx) => {
   const details =
     page.kind === "show" ? strings.viewingShow
     : page.kind === "movie" ? strings.viewingMovie
-    : page.kind === "sport" ? strings.viewingSport
-    : page.kind === "genre" ? strings.browsingGenre
     : page.kind === "search" ? strings.searching
     : page.kind === "myList" ? strings.viewingMyList
-    : strings.browsingMax
+    : strings.browsingHboMax
 
   const data: PresenceData = {
     details,
     state: privacy ? undefined : "title" in page ? page.title : undefined,
     largeImageKey: Assets.Logo,
-    largeImageText: "Max",
+    largeImageText: "HBO Max",
     type: PresenceType.Watching,
   }
   if (page.kind === "search") data.smallImageKey = "search"

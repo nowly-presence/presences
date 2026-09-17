@@ -1,0 +1,38 @@
+{
+  "name": "HBO Max",
+  "author": { "name": "Gaëtan H", "github": "steellgold" },
+  "url": ["play.hbomax.com"],
+  "regExp": "^https?://play\\.hbomax\\.com/",
+  "color": "#0014A4",
+  "category": "streaming",
+  "description": {
+    "en-US": "Show what you're watching on HBO Max.",
+    "fr-FR": "Affichez ce que vous regardez sur HBO Max.",
+    "es-ES": "Muestra lo que estás viendo en HBO Max."
+  },
+  "longDescription": {
+    "en-US": "HBO Max streams series, movies, and originals (formerly known as Max). This presence shows the title you're watching, with playback state when available.",
+    "fr-FR": "HBO Max diffuse des séries, films et productions originales (anciennement Max). Cette présence affiche le titre que vous regardez, avec l'état de lecture lorsqu'il est disponible.",
+    "es-ES": "HBO Max emite series, películas y originales (antes Max). Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible."
+  },
+  "features": {
+    "en-US": [
+      "Detects the current title",
+      "Tracks playing and paused state",
+      "Optional privacy mode",
+      "Optional browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte le titre en cours",
+      "Suit la lecture et la pause",
+      "Mode privé optionnel",
+      "Activité de navigation optionnelle"
+    ],
+    "es-ES": [
+      "Detecta el título actual",
+      "Sigue reproducción y pausa",
+      "Modo privado opcional",
+      "Actividad de navegación opcional"
+    ]
+  }
+}
