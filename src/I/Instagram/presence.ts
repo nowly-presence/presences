@@ -1,5 +1,5 @@
 import { PresenceType, type PresenceData } from "@nowly/sdk"
-import { getInstagramPage } from "./utils/page"
+import { getInstagramPage, getPageImage } from "./utils/page"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -72,7 +72,7 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "post" || page.kind === "reel") {
     const data: PresenceData = {
       details: page.kind === "reel" ? strings.viewingReel : strings.viewingPost,
-      largeImageKey: Assets.Logo,
+      largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "Instagram",
       type: PresenceType.Watching,
     }
@@ -84,20 +84,24 @@ presence.on("UpdateData", async (ctx) => {
   }
 
   if (page.kind === "story") {
-    await presence.setActivity({
+    const data: PresenceData = {
       details: strings.viewingStory,
       state: privacy ? undefined : page.user ? `@${page.user}` : undefined,
       largeImageKey: Assets.Logo,
       largeImageText: "Instagram",
       type: PresenceType.Watching,
-    })
+    }
+    if (!privacy && showButtons && page.url) {
+      data.buttons = [{ label: strings.viewStory, url: page.url }]
+    }
+    await presence.setActivity(data)
     return
   }
 
   if (page.kind === "profile") {
     const data: PresenceData = {
       details: privacy ? strings.viewingProfile : presence.formatString(strings.viewingProfileOf, { user: page.user }),
-      largeImageKey: Assets.Logo,
+      largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "Instagram",
       type: PresenceType.Watching,
     }
@@ -105,6 +109,16 @@ presence.on("UpdateData", async (ctx) => {
       data.buttons = [{ label: strings.viewProfile, url: page.url }]
     }
     await presence.setActivity(data)
+    return
+  }
+
+  if (page.kind === "settings") {
+    await presence.setActivity({
+      details: strings.editingSettings,
+      largeImageKey: Assets.Logo,
+      largeImageText: "Instagram",
+      type: PresenceType.Watching,
+    })
     return
   }
 
