@@ -1,5 +1,5 @@
 import { createMediaTimestamps, PresenceType, type PresenceData } from "@nowly/sdk"
-import { getMediaElement, getMediaSessionTrack, toDiscordImage } from "./utils/track"
+import { getMediaElement, getMediaSessionTrack, getPageImage, toDiscordImage } from "./utils/track"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -54,6 +54,11 @@ const isEnabled = (value: unknown): boolean => value === true || value === "true
 const browsingDetails = (pathname: string, strings: typeof enUS): string => {
   if (pathname.startsWith("/search") || pathname.startsWith("/you/search")) return strings.searching
   if (pathname.startsWith("/discover")) return strings.browsingDiscover
+  if (pathname.startsWith("/charts")) return strings.browsingCharts
+  if (pathname.startsWith("/notifications")) return strings.viewingNotifications
+  if (pathname.startsWith("/messages")) return strings.viewingMessages
+  if (pathname.startsWith("/you/")) return strings.browsingLibrary
+  if (pathname.startsWith("/settings")) return strings.viewingSettings
   if (pathname.split("/").filter(Boolean).length === 1) return strings.viewingProfile
   return strings.browsingSoundCloud
 }
@@ -93,10 +98,17 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
-  await presence.setActivity({
-    details: browsingDetails(document.location.pathname, strings),
-    largeImageKey: Assets.Logo,
+  const pathname = document.location.pathname
+  const isProfile = pathname.split("/").filter(Boolean).length === 1
+
+  const data: PresenceData = {
+    details: browsingDetails(pathname, strings),
+    largeImageKey: (!privacy && isProfile && getPageImage()) || Assets.Logo,
     largeImageText: "SoundCloud",
     type: PresenceType.Listening,
-  })
+  }
+  if (!privacy && isProfile && showButtons) {
+    data.buttons = [{ label: strings.viewProfile, url: document.location.href.split("?")[0] ?? document.location.href }]
+  }
+  await presence.setActivity(data)
 })

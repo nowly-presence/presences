@@ -21,6 +21,11 @@ export const getMediaElement = (): HTMLMediaElement | undefined => {
   return nodes[0]
 }
 
+// og:image reflects the profile picture on user pages - a stable source
+// for browsing activity when no track is currently playing.
+export const getPageImage = (): string | undefined =>
+  toDiscordImage(document.querySelector<HTMLMetaElement>('meta[property="og:image"]')?.content ?? undefined)
+
 export const getMediaSessionTrack = (fallbackUrl: string): TrackInfo | undefined => {
   const meta = navigator.mediaSession?.metadata
   if (!meta) return undefined

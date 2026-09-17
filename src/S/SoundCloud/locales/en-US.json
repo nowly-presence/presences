@@ -6,5 +6,11 @@
   "searching": "Searching",
   "viewingProfile": "Viewing a profile",
   "browsingDiscover": "Browsing Discover",
-  "browsingSoundCloud": "Browsing SoundCloud"
+  "browsingCharts": "Browsing charts",
+  "viewingNotifications": "Checking notifications",
+  "viewingMessages": "Checking messages",
+  "browsingLibrary": "Browsing library",
+  "viewingSettings": "Viewing settings",
+  "browsingSoundCloud": "Browsing SoundCloud",
+  "viewProfile": "View profile"
 }
