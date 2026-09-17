@@ -40,9 +40,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar actividad de navegación",
     },
     description: {
-      "en-US": "Show activity while you browse Spaces or other Perplexity pages.",
-      "fr-FR": "Affiche l'activité lorsque vous parcourez les Spaces ou d'autres pages Perplexity.",
-      "es-ES": "Muestra actividad al explorar Spaces u otras páginas de Perplexity.",
+      "en-US": "Show activity while you browse the library or other Perplexity pages.",
+      "fr-FR": "Affiche l'activité lorsque vous parcourez la bibliothèque ou d'autres pages Perplexity.",
+      "es-ES": "Muestra actividad al explorar la biblioteca u otras páginas de Perplexity.",
     },
   },
   showButtons: {
@@ -54,9 +54,9 @@ const settings = Presence.Settings({
       "es-ES": "Mostrar botones",
     },
     description: {
-      "en-US": "Show a button to open the current thread.",
-      "fr-FR": "Affiche un bouton pour ouvrir le fil en cours.",
-      "es-ES": "Muestra un botón para abrir el hilo actual.",
+      "en-US": "Show a button to open the current thread or project.",
+      "fr-FR": "Affiche un bouton pour ouvrir le fil ou le projet en cours.",
+      "es-ES": "Muestra un botón para abrir el hilo o el proyecto actual.",
     },
   },
 })
@@ -92,13 +92,63 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
+  if (page.kind === "project") {
+    const details =
+      page.tab === "files" ? strings.viewingProjectFiles
+      : page.tab === "wiki" ? strings.viewingProjectWiki
+      : page.tab === "settings" ? strings.viewingProjectSettings
+      : strings.viewingProject
+
+    const data: PresenceData = {
+      details,
+      state: page.title,
+      largeImageKey: Assets.Logo,
+      largeImageText: "Perplexity",
+      type: PresenceType.Playing,
+    }
+    if (showButtons) {
+      data.buttons = [{ label: strings.openProject, url: page.url }]
+    }
+    await presence.setActivity(data)
+    return
+  }
+
+  if (page.kind === "computer") {
+    const details =
+      page.tab === "tasks" ? strings.viewingComputerTasks
+      : page.tab === "artifacts" ? strings.viewingComputerArtifacts
+      : page.tab === "connectors" ? strings.viewingComputerConnectors
+      : page.tab === "skills" ? strings.viewingComputerSkills
+      : page.tab === "workflows" ? strings.viewingComputerWorkflows
+      : page.tab === "memory" ? strings.viewingComputerMemory
+      : strings.usingComputer
+
+    await presence.setActivity({
+      details,
+      largeImageKey: Assets.Logo,
+      largeImageText: "Perplexity",
+      type: PresenceType.Playing,
+    })
+    return
+  }
+
+  if (page.kind === "library") {
+    await presence.setActivity({
+      details: strings.viewingLibrary,
+      largeImageKey: Assets.Logo,
+      largeImageText: "Perplexity",
+      type: PresenceType.Playing,
+    })
+    return
+  }
+
   if (!showBrowsing) {
     presence.clearActivity()
     return
   }
 
   await presence.setActivity({
-    details: page.activity === "spaces" ? strings.browsingSpaces : strings.browsingPerplexity,
+    details: strings.browsingPerplexity,
     largeImageKey: Assets.Logo,
     largeImageText: "Perplexity",
     type: PresenceType.Playing,

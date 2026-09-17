@@ -20,19 +20,19 @@
       "Shows when you are using Perplexity",
       "Optional search or thread title",
       "Incognito searches stay private by default",
-      "Optional Spaces and browsing activity"
+      "Shows Projects, Computer, and library activity"
     ],
     "fr-FR": [
       "Affiche lorsque vous utilisez Perplexity",
       "Titre de recherche ou de fil optionnel",
       "Les recherches incognito restent privées par défaut",
-      "Activité Spaces et navigation optionnelle"
+      "Affiche l'activité sur les Projets, Computer et la bibliothèque"
     ],
     "es-ES": [
       "Muestra cuando usas Perplexity",
       "Título de búsqueda o hilo opcional",
       "Las búsquedas incógnito son privadas por defecto",
-      "Actividad Spaces y navegación opcional"
+      "Muestra la actividad en Proyectos, Computer y la biblioteca"
     ]
   }
 }

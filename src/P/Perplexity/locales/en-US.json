@@ -1,7 +1,19 @@
 {
   "usingPerplexity": "Using Perplexity",
   "searching": "Searching: {title}",
-  "browsingSpaces": "Browsing Spaces",
-  "browsingPerplexity": "Browsing Perplexity",
-  "openThread": "Open thread"
+  "openThread": "Open thread",
+  "viewingLibrary": "Browsing all threads",
+  "viewingProject": "Working on a project",
+  "viewingProjectFiles": "Viewing project files",
+  "viewingProjectWiki": "Viewing project wiki",
+  "viewingProjectSettings": "Viewing project settings",
+  "openProject": "Open project",
+  "usingComputer": "Using Perplexity Computer",
+  "viewingComputerTasks": "Viewing Computer tasks",
+  "viewingComputerArtifacts": "Viewing Computer artifacts",
+  "viewingComputerConnectors": "Viewing Computer connectors",
+  "viewingComputerSkills": "Viewing Computer skills",
+  "viewingComputerWorkflows": "Viewing Computer workflows",
+  "viewingComputerMemory": "Viewing Computer memory",
+  "browsingPerplexity": "Browsing Perplexity"
 }
