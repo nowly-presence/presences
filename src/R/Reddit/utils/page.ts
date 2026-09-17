@@ -1,8 +1,11 @@
 const parts = (pathname: string): string[] =>
   pathname.split("/").filter(Boolean).map((part) => decodeURIComponent(part))
 
+const postTitle = (): string | undefined =>
+  document.querySelector("shreddit-title")?.getAttribute("title") ?? undefined
+
 export type RedditPage =
-  | { kind: "post"; subreddit: string; url: string }
+  | { kind: "post"; subreddit: string; url: string; title?: string }
   | { kind: "subreddit"; subreddit: string; url: string }
   | { kind: "profile"; user: string }
   | { kind: "search"; query?: string }
@@ -26,7 +29,7 @@ export const getRedditPage = (): RedditPage => {
   }
   if ((first === "r" || first === "r") && second) {
     if (third === "comments" || segs.includes("comments")) {
-      return { kind: "post", subreddit: second, url: href.split("?")[0] ?? href }
+      return { kind: "post", subreddit: second, url: href.split("?")[0] ?? href, title: postTitle() }
     }
     return { kind: "subreddit", subreddit: second, url: `${location.origin}/r/${second}` }
   }

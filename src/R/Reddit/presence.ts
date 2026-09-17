@@ -71,7 +71,7 @@ presence.on("UpdateData", async (ctx) => {
 
   if (page.kind === "post") {
     const data: PresenceData = {
-      details: strings.viewingPost,
+      details: !privacy && page.title ? page.title : strings.viewingPost,
       state: privacy ? undefined : `r/${page.subreddit}`,
       largeImageKey: Assets.Logo,
       largeImageText: "Reddit",
