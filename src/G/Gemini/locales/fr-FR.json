@@ -1,7 +1,13 @@
 {
   "usingGemini": "Utilise Gemini",
-  "chatting": "Discussion : {title}",
+  "viewingConversation": "Consulte une discussion",
+  "viewingNotebook": "Consulte un notebook",
   "browsingGems": "Parcourt les Gems",
-  "browsingGemini": "Parcourt Gemini",
-  "openChat": "Ouvrir le chat"
+  "browsingLibrary": "Parcourt la Bibliothèque",
+  "browsingVideos": "Parcourt les Vidéos",
+  "browsingImages": "Parcourt les Images",
+  "browsingStudents": "Utilise Gemini pour les étudiants",
+  "browsingSearch": "Recherche sur Gemini",
+  "browsingNotebooks": "Crée un notebook",
+  "browsingGemini": "Parcourt Gemini"
 }

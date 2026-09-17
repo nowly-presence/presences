@@ -58,36 +58,71 @@ export const isPrivateGemini = (title: string, pathname: string, search: string)
   )
 }
 
+export type GeminiBrowseActivity =
+  | "gems"
+  | "library"
+  | "videos"
+  | "images"
+  | "students"
+  | "search"
+  | "notebooks"
+  | "other"
+
 export type GeminiPage =
   | {
       kind: "chat"
       title?: string
       private: boolean
-      url?: string
       startedAt: number
     }
-  | { kind: "browse"; activity: "gems" | "other" }
+  | { kind: "notebook"; title?: string }
+  | { kind: "browse"; activity: GeminiBrowseActivity }
+
+const BROWSE_ACTIVITIES: Record<string, GeminiBrowseActivity> = {
+  gems: "gems",
+  gem: "gems",
+  library: "library",
+  videos: "videos",
+  images: "images",
+  students: "students",
+  search: "search",
+}
+
+const notebookTitle = (): string => {
+  const heading = document.querySelector("h1.gds-display-s")?.textContent
+  return (heading ?? "").trim()
+}
 
 export const getGeminiPage = (): GeminiPage => {
-  const { pathname, href, search } = document.location
+  const { pathname, search } = document.location
   const parts = pathParts(pathname)
   const title = pageTitle()
   const privateChat = isPrivateGemini(title, pathname, search)
   const first = parts[0] ?? ""
 
-  if (first === "gems" || first === "gem") {
-    return { kind: "browse", activity: "gems" }
+  const browseActivity = BROWSE_ACTIVITIES[first]
+  if (browseActivity) {
+    return { kind: "browse", activity: browseActivity }
+  }
+
+  if (first === "notebooks") {
+    return { kind: "browse", activity: "notebooks" }
+  }
+
+  if (first === "notebook" && parts[1]) {
+    const name = notebookTitle()
+    return { kind: "notebook", title: isGenericTitle(name) ? undefined : name }
   }
 
   if (!first || first === "app") {
     const id = first === "app" ? parts[1] : undefined
-    const conversationTitle = isGenericTitle(title) ? undefined : title
-    const url = id ? href.split("?")[0] : undefined
+    // Without a real conversation id, the page title can still show marketing
+    // copy - never trust it as a chat title.
+    const conversationTitle = id && !isGenericTitle(title) ? title : undefined
     return {
       kind: "chat",
       title: conversationTitle,
       private: privateChat,
-      url,
       startedAt: touchSession(id ?? (privateChat ? "temporary" : "app")),
     }
   }
