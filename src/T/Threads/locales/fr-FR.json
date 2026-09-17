@@ -4,6 +4,10 @@
   "viewingProfileOf": "Consulte @{user}",
   "searching": "Recherche",
   "browsingHome": "Parcourt l'accueil",
+  "viewingFollowing": "Parcourt le fil abonnements",
+  "viewingSaved": "Consulte les threads enregistrés",
+  "viewingLiked": "Consulte les threads aimés",
+  "viewingActivity": "Consulte son activité",
   "browsingThreads": "Parcourt Threads",
   "viewPost": "Voir le post",
   "viewProfile": "Voir le profil"

@@ -1,5 +1,5 @@
 import { PresenceType, type PresenceData } from "@nowly/sdk"
-import { getThreadsPage } from "./utils/page"
+import { getPageImage, getThreadsPage } from "./utils/page"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -61,7 +61,7 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "post") {
     const data: PresenceData = {
       details: strings.viewingPost,
-      largeImageKey: Assets.Logo,
+      largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "Threads",
       type: PresenceType.Watching,
     }
@@ -75,7 +75,7 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "profile") {
     const data: PresenceData = {
       details: privacy ? strings.viewingProfile : presence.formatString(strings.viewingProfileOf, { user: page.user }),
-      largeImageKey: Assets.Logo,
+      largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "Threads",
       type: PresenceType.Watching,
     }
@@ -103,8 +103,16 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
+  const details =
+    page.kind === "home" ? strings.browsingHome
+    : page.kind === "following" ? strings.viewingFollowing
+    : page.kind === "saved" ? strings.viewingSaved
+    : page.kind === "liked" ? strings.viewingLiked
+    : page.kind === "activity" ? strings.viewingActivity
+    : strings.browsingThreads
+
   await presence.setActivity({
-    details: page.kind === "home" ? strings.browsingHome : strings.browsingThreads,
+    details,
     largeImageKey: Assets.Logo,
     largeImageText: "Threads",
     type: PresenceType.Watching,
