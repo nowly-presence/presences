@@ -3,7 +3,7 @@
 // fetch is same-origin and carries the user's session - far more reliable than
 // scraping the obfuscated player DOM.
 const METADATA_ENDPOINT = "https://www.netflix.com/nq/website/memberapi/release/metadata?movieid="
-const MAX_IMAGE_KEY_LENGTH = 300
+const MAX_IMAGE_KEY_LENGTH = 256
 
 export type NetflixBoxart = { w: number; h: number; url: string }
 
