@@ -1,9 +1,10 @@
+import { createCachedImageProxyUrl } from "@nowly/sdk"
+
 // Netflix exposes a same-origin member API that returns rich metadata for a
 // given video id. Presences run as content scripts on netflix.com, so this
 // fetch is same-origin and carries the user's session - far more reliable than
 // scraping the obfuscated player DOM.
 const METADATA_ENDPOINT = "https://www.netflix.com/nq/website/memberapi/release/metadata?movieid="
-const MAX_IMAGE_KEY_LENGTH = 256
 
 export type NetflixBoxart = { w: number; h: number; url: string }
 
@@ -76,11 +77,11 @@ export const clearMetadata = (): void => {
   cache = null
 }
 
-// Discord rejects overly long or non-https image keys, so guard before use.
-export const getBoxart = (video: NetflixVideo | undefined): string | undefined => {
+// Discord can't hotlink Netflix's boxart CDN directly, so route it through the proxy.
+export const getBoxart = async (video: NetflixVideo | undefined): Promise<string | undefined> => {
   const url = video?.boxart?.[0]?.url
-  if (url && url.startsWith("https://") && url.length <= MAX_IMAGE_KEY_LENGTH) return url
-  return undefined
+  if (!url?.startsWith("https://")) return undefined
+  return createCachedImageProxyUrl("netflix", url)
 }
 
 export const findCurrentEpisode = (

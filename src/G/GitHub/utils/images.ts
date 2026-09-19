@@ -1,4 +1,4 @@
-import { createCachedImageProxyUrl, createImageProxyUrl } from "@nowly/sdk"
+import { createCachedImageProxyUrl } from "@nowly/sdk"
 import { getMetaContent } from "./dom"
 
 const DISCORD_IMAGE_KEY_MAX_LENGTH = 300
@@ -28,8 +28,7 @@ export const toDiscordImage = async (imageUrl: string | undefined): Promise<stri
   if (!imageUrl?.startsWith("https://")) return undefined
   if (imageUrl.length <= DISCORD_IMAGE_KEY_MAX_LENGTH) return imageUrl
 
-  return await createCachedImageProxyUrl("github", imageUrl)
-    || createImageProxyUrl("github", imageUrl)
+  return createCachedImageProxyUrl("github", imageUrl)
 }
 
 const normalizeAvatarUrl = (imageUrl: string | undefined): string | undefined => {

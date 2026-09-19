@@ -85,7 +85,7 @@ export const handleBrowsingActivity = async (
     await presence.setActivity({
       details: strings.viewingProgramme,
       state: title,
-      largeImageKey: getDetailImage() || Assets.Logo,
+      largeImageKey: await getDetailImage() || Assets.Logo,
       largeImageText: title || "CANAL+",
       type: PresenceType.Watching,
     })
@@ -101,7 +101,7 @@ const setCategoryActivity = async (
   await presence.setActivity({
     details,
     state: getPageTitle(),
-    largeImageKey: getDetailImage() || Assets.Logo,
+    largeImageKey: await getDetailImage() || Assets.Logo,
     largeImageText: "CANAL+",
     type: PresenceType.Watching,
   })

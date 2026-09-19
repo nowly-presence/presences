@@ -98,6 +98,9 @@ jobs:
                 }
               }
 
+              const metadataFileChanged = [...fileActions.added, ...fileActions.modified]
+                .includes(`${prefix}${presencePath}/metadata.json`);
+
               changes.push({
                 slug,
                 presencePath,
@@ -114,6 +117,7 @@ jobs:
                 features: meta.features?.["en-US"] || null,
                 assets,
                 missingAssets,
+                imageProxy: metadataFileChanged ? meta.imageProxy || null : null,
               });
             }
 
@@ -132,6 +136,17 @@ jobs:
             if (errors.length > 0) {
               body += `### ⚠️ Issues\n\n`;
               for (const err of errors) body += `- ${err}\n`;
+              body += `\n---\n\n`;
+            }
+
+            const imageProxyRequests = changes.filter(c => c.imageProxy?.hostSuffixes?.length);
+
+            if (imageProxyRequests.length > 0) {
+              body += `### 🖼️ Image Proxy Requested\n\n`;
+              body += `This PR declares \`imageProxy\` in \`metadata.json\`. A maintainer needs to confirm the hostnames are public and safe to proxy before merging.\n\n`;
+              for (const p of imageProxyRequests) {
+                body += `- **${p.name}** (\`${p.slug}\`): \`${p.imageProxy.hostSuffixes.join("`, `")}\`\n`;
+              }
               body += `\n---\n\n`;
             }
 
@@ -213,11 +228,15 @@ jobs:
                 ? "delete"
                 : "update";
 
-            if (!existingLabels.includes(labelToAdd)) {
+            const labelsToAdd = [labelToAdd];
+            if (imageProxyRequests.length > 0) labelsToAdd.push("image-proxy");
+
+            const missingLabels = labelsToAdd.filter(l => !existingLabels.includes(l));
+            if (missingLabels.length > 0) {
               await github.rest.issues.addLabels({
                 owner, repo,
                 issue_number: context.issue.number,
-                labels: [labelToAdd],
+                labels: missingLabels,
               });
             }
 

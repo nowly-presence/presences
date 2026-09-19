@@ -9,6 +9,9 @@
   "world": "main",
   "color": "#E50914",
   "category": "streaming",
+  "imageProxy": {
+    "hostSuffixes": ["netflix.com", "nflxvideo.net", "nflximg.net", "nflxext.com", "nflxso.net"]
+  },
   "description": {
     "en-US": "Show the movie, series, or documentary you're watching on Netflix.",
     "fr-FR": "Affichez le film, la série ou le documentaire que vous regardez sur Netflix.",

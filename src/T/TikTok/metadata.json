@@ -8,6 +8,10 @@
   "regExp": "^https?://(www\\.)?tiktok\\.com/",
   "color": "#25F4EE",
   "category": "video",
+  "imageProxy": {
+    "hostSuffixes": ["tiktokcdn.com", "tiktokcdn-eu.com", "tiktokcdn-us.com", "tiktokv.com"],
+    "headers": { "Referer": "https://www.tiktok.com/" }
+  },
   "description": {
     "en-US": "Show the TikTok video, live, or profile you're watching.",
     "fr-FR": "Affichez la vidéo, le live ou le profil TikTok que vous consultez.",

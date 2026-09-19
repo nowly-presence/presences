@@ -8,6 +8,10 @@
   "regExp": "^https?://(www\\.)?canalplus\\.com/",
   "color": "#ffffff",
   "category": "streaming",
+  "imageProxy": {
+    "hostSuffixes": ["thumb.canalplus.pro"],
+    "headers": { "Referer": "https://www.canalplus.com/" }
+  },
   "description": {
     "en-US": "Show the movie, series, live channel, or replay you're watching on CANAL+.",
     "fr-FR": "Affichez le film, la série, la chaîne en direct ou le replay que vous regardez sur CANAL+.",

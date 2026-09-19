@@ -8,6 +8,10 @@
   "regExp": "^https?://(github\\.com|gist\\.github\\.com|github\\.blog|githubnext\\.com|githubuniverse\\.com)/",
   "color": "#0FBF3E",
   "category": "tools",
+  "imageProxy": {
+    "hostSuffixes": ["github.com", "github.blog", "githubassets.com", "githubusercontent.com", "githubnext.com", "githubuniverse.com"],
+    "headers": { "User-Agent": "Nowly/1.0" }
+  },
   "description": {
     "en-US": "Show where you're browsing on GitHub - repos, PRs, issues, and more.",
     "fr-FR": "Affichez où vous naviguez sur GitHub - dépôts, pull requests, issues et plus.",
