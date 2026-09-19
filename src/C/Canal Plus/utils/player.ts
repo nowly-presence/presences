@@ -76,20 +76,33 @@ export const getDetailImage = async (): Promise<string | undefined> =>
     || getLargestContentImage(),
   )
 
+const imageCache = new Map<string, string>()
+
+const getProgrammeId = (): string | undefined =>
+  document.location.pathname.match(/\/h\/(\d+)/i)?.[1]
+
 export const getPageMetadata = async (): Promise<PageMetadata> => {
   const structured = getStructuredMetadata()
   const title = structured.title || getMediaSessionTitle() || getPageTitle()
   const subtitle = structured.subtitle || getMediaSessionSubtitle() || getEpisodeLabel()
+
+  const programmeId = getProgrammeId()
+  const cachedImage = programmeId ? imageCache.get(programmeId) : undefined
   const image = await toDiscordImage(
     getMediaSessionArtwork()
     || structured.image
     || (await getDetailImage()),
-  )
+  ) || cachedImage
+
+  if (programmeId && image) imageCache.set(programmeId, image)
 
   return { title, subtitle, image }
 }
 
 const getVisibleTitle = (): string | undefined => {
+  const heroTitle = cleanTitle(document.querySelector<HTMLImageElement>("img[class*='Heading__title-image']")?.alt || undefined)
+  if (heroTitle) return heroTitle
+
   const selectors = [
     "[data-testid*='title' i]",
     "[class*='Title']",
