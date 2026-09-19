@@ -66,6 +66,15 @@ export const handleBrowsingActivity = async (
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
     })
+  } else if (/\/h\/\d+/i.test(pathname)) {
+    const title = getPageTitle()
+    await presence.setActivity({
+      details: strings.viewingProgramme,
+      state: title,
+      largeImageKey: await getDetailImage() || Assets.Logo,
+      largeImageText: title || "CANAL+",
+      type: PresenceType.Watching,
+    })
   } else if (category) {
     await presence.setActivity({
       details: categoryDetails(strings)[category.detailsKey],
@@ -80,15 +89,6 @@ export const handleBrowsingActivity = async (
     await setCategoryActivity(presence, strings.browsingChannels)
   } else if (pathname.startsWith("/streaming")) {
     await setCategoryActivity(presence, strings.browsingStreaming)
-  } else if (/\/h\/\d+/i.test(pathname)) {
-    const title = getPageTitle()
-    await presence.setActivity({
-      details: strings.viewingProgramme,
-      state: title,
-      largeImageKey: await getDetailImage() || Assets.Logo,
-      largeImageText: title || "CANAL+",
-      type: PresenceType.Watching,
-    })
   } else {
     presence.clearActivity()
   }
