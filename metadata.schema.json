@@ -109,6 +109,24 @@
     "discordNative": {
       "type": "boolean",
       "description": "True when Discord already shows this platform if the user links their account (e.g. Spotify)."
+    },
+    "imageProxy": {
+      "type": "object",
+      "description": "Declares the external CDN hosts this presence needs to proxy images through (via @nowly/sdk's createCachedImageProxyUrl), when Discord cannot load them directly from the source URL.",
+      "required": ["hostSuffixes"],
+      "properties": {
+        "hostSuffixes": {
+          "type": "array",
+          "description": "Hostnames (or suffixes) of the external CDN(s) allowed to be proxied for this presence.",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "headers": {
+          "type": "object",
+          "description": "Extra HTTP headers to send when fetching from the CDN (e.g. Referer).",
+          "additionalProperties": { "type": "string" }
+        }
+      }
     }
   }
 }

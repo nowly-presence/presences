@@ -59,7 +59,7 @@ presence.on("UpdateData", async (ctx) => {
       const data: Parameters<typeof presence.setActivity>[0] = {
         details: v?.title || strings.watching,
         state,
-        largeImageKey: getBoxart(v) || Assets.Logo,
+        largeImageKey: await getBoxart(v) || Assets.Logo,
         largeImageText: v?.title || "Netflix",
         type: PresenceType.Watching,
         buttons: [{
@@ -96,7 +96,7 @@ presence.on("UpdateData", async (ctx) => {
     await presence.setActivity({
       details: v?.title || strings.watching,
       state: v?.synopsis?.slice(0, 128),
-      largeImageKey: getBoxart(v) || Assets.Logo,
+      largeImageKey: await getBoxart(v) || Assets.Logo,
       largeImageText: v?.title || "Netflix",
       type: PresenceType.Watching,
       buttons: [{

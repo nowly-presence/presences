@@ -1,4 +1,4 @@
-import { createCachedImageProxyUrl, createImageProxyUrl } from "@nowly/sdk"
+import { createCachedImageProxyUrl } from "@nowly/sdk"
 
 const DISCORD_IMAGE_KEY_MAX_LENGTH = 300
 const isTikTokCdnImage = (imageUrl: string): boolean => {
@@ -22,9 +22,6 @@ export const toDiscordImage = async (imageUrl: string | undefined): Promise<stri
 
   const cached = await createCachedImageProxyUrl("tiktok", imageUrl)
   if (cached) return cached
-
-  const directProxy = createImageProxyUrl("tiktok", imageUrl)
-  if (directProxy) return directProxy
 
   return !isTikTokCdnImage(imageUrl) && imageUrl.length <= DISCORD_IMAGE_KEY_MAX_LENGTH
     ? imageUrl

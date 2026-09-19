@@ -1,4 +1,4 @@
-import { createImageProxyUrl } from "@nowly/sdk"
+import { createCachedImageProxyUrl } from "@nowly/sdk"
 
 const MAX_IMAGE_KEY_LENGTH = 300
 
@@ -69,7 +69,7 @@ export const getSearchQuery = (): string | undefined =>
   || document.querySelector<HTMLInputElement>("input[type='search']")?.value?.trim()
   || undefined
 
-export const getDetailImage = (): string | undefined =>
+export const getDetailImage = async (): Promise<string | undefined> =>
   toDiscordImage(
     getMetaContent('meta[property="og:image"]')
     || getStructuredImage()
@@ -80,10 +80,10 @@ export const getPageMetadata = async (): Promise<PageMetadata> => {
   const structured = getStructuredMetadata()
   const title = structured.title || getMediaSessionTitle() || getPageTitle()
   const subtitle = structured.subtitle || getMediaSessionSubtitle() || getEpisodeLabel()
-  const image = toDiscordImage(
+  const image = await toDiscordImage(
     getMediaSessionArtwork()
     || structured.image
-    || getDetailImage(),
+    || (await getDetailImage()),
   )
 
   return { title, subtitle, image }
@@ -233,10 +233,10 @@ const getLargestContentImage = (): string | undefined => {
   return images[0]?.src
 }
 
-const toDiscordImage = (imageUrl: string | undefined): string | undefined => {
+const toDiscordImage = async (imageUrl: string | undefined): Promise<string | undefined> => {
   if (!imageUrl?.startsWith("https://")) return undefined
 
   if (imageUrl.length <= MAX_IMAGE_KEY_LENGTH) return imageUrl
 
-  return createImageProxyUrl("canalplus", imageUrl)
+  return createCachedImageProxyUrl("canalplus", imageUrl)
 }
