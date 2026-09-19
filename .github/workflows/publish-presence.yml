@@ -23,12 +23,12 @@ jobs:
         with:
           app-id: ${{ secrets.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
-          repositories: internal-cli
 
       - uses: actions/checkout@v4
         with:
           ref: stable
           fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
       - uses: actions/checkout@v4
         with:
@@ -90,6 +90,53 @@ jobs:
             [ -n "$REMOVED" ] && printf '%s\n' "$REMOVED"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
+
+      - name: Credit PR author as contributor
+        if: >
+          steps.changed.outputs.slugs != ''
+          && (contains(github.event.pull_request.labels.*.name, 'new')
+            || contains(github.event.pull_request.labels.*.name, 'update'))
+        run: |
+          PR_LOGIN="${{ github.event.pull_request.user.login }}"
+          CHANGED=0
+
+          while IFS= read -r slug; do
+            [ -z "$slug" ] && continue
+
+            dir=""
+            while IFS= read -r d; do
+              [ -f "$d/metadata.json" ] || continue
+              name=$(basename "$d" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+              if [ "$name" = "$slug" ]; then
+                dir="$d"
+                break
+              fi
+            done < <(find src -mindepth 2 -maxdepth 2 -type d)
+            [ -z "$dir" ] && continue
+
+            META="$dir/metadata.json"
+            ALREADY=$(jq --arg login "$PR_LOGIN" '
+              ([.author.github // ""] + [.contributors[]?.github // ""])
+              | map(ascii_downcase) | index($login | ascii_downcase) != null
+            ' "$META")
+
+            if [ "$ALREADY" != "true" ]; then
+              jq --arg login "$PR_LOGIN" \
+                '.contributors = ((.contributors // []) + [{name: $login, github: $login}])' \
+                "$META" > "$META.tmp"
+              mv "$META.tmp" "$META"
+              CHANGED=1
+              echo "Credited @$PR_LOGIN on $slug"
+            fi
+          done <<< "${{ steps.changed.outputs.slugs }}"
+
+          if [ "$CHANGED" = "1" ]; then
+            git config user.name "Nolo[bot]"
+            git config user.email "4160418+nowly-nolo[bot]@users.noreply.github.com"
+            git add src
+            git commit -m "chore: credit @$PR_LOGIN as contributor"
+            git push origin HEAD:stable
+          fi
 
       - name: Push changed presences to API and CDN
         if: >
