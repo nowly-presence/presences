@@ -23,6 +23,8 @@ jobs:
         with:
           app-id: ${{ secrets.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: presences,internal-cli
 
       - uses: actions/checkout@v4
         with:
