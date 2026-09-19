@@ -98,6 +98,8 @@ presence.on("UpdateData", async (ctx) => {
       state: v?.synopsis?.slice(0, 128),
       largeImageKey: await getBoxart(v) || Assets.Logo,
       largeImageText: v?.title || "Netflix",
+      smallImageKey: Assets.Logo,
+      smallImageText: "Netflix",
       type: PresenceType.Watching,
       buttons: [{
         label: v?.type === "show" ? strings.viewSeries : strings.viewMovie,
