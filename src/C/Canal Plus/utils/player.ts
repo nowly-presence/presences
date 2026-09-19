@@ -233,8 +233,18 @@ const getLargestContentImage = (): string | undefined => {
   return images[0]?.src
 }
 
+const isThumborCdnImage = (imageUrl: string): boolean => {
+  try {
+    return new URL(imageUrl).hostname.toLowerCase() === "thumb.canalplus.pro"
+  } catch {
+    return false
+  }
+}
+
 const toDiscordImage = async (imageUrl: string | undefined): Promise<string | undefined> => {
   if (!imageUrl?.startsWith("https://")) return undefined
+
+  if (isThumborCdnImage(imageUrl)) return createCachedImageProxyUrl("canalplus", imageUrl)
 
   if (imageUrl.length <= MAX_IMAGE_KEY_LENGTH) return imageUrl
 
