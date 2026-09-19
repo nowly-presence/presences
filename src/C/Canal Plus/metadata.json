@@ -4,13 +4,20 @@
     "name": "KiMi",
     "github": "q-kimi"
   },
-  "url": ["canalplus.com", "www.canalplus.com"],
+  "url": [
+    "canalplus.com",
+    "www.canalplus.com"
+  ],
   "regExp": "^https?://(www\\.)?canalplus\\.com/",
   "color": "#ffffff",
   "category": "streaming",
   "imageProxy": {
-    "hostSuffixes": ["thumb.canalplus.pro"],
-    "headers": { "Referer": "https://www.canalplus.com/" }
+    "hostSuffixes": [
+      "thumb.canalplus.pro"
+    ],
+    "headers": {
+      "Referer": "https://www.canalplus.com/"
+    }
   },
   "description": {
     "en-US": "Show the movie, series, live channel, or replay you're watching on CANAL+.",
@@ -44,5 +51,11 @@
       "Muestra el progreso cuando se conoce la duración",
       "Actividad de navegación opcional"
     ]
-  }
+  },
+  "contributors": [
+    {
+      "name": "Steellgold",
+      "github": "Steellgold"
+    }
+  ]
 }
