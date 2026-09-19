@@ -4,13 +4,22 @@
     "name": "KiMi",
     "github": "q-kimi"
   },
-  "url": ["netflix.com", "www.netflix.com"],
+  "url": [
+    "netflix.com",
+    "www.netflix.com"
+  ],
   "regExp": "^https?://(www\\.)?netflix\\.com/",
   "world": "main",
   "color": "#E50914",
   "category": "streaming",
   "imageProxy": {
-    "hostSuffixes": ["netflix.com", "nflxvideo.net", "nflximg.net", "nflxext.com", "nflxso.net"]
+    "hostSuffixes": [
+      "netflix.com",
+      "nflxvideo.net",
+      "nflximg.net",
+      "nflxext.com",
+      "nflxso.net"
+    ]
   },
   "description": {
     "en-US": "Show the movie, series, or documentary you're watching on Netflix.",
@@ -41,5 +50,11 @@
       "Sigue el estado en reproducción o en pausa",
       "Actualiza tu actividad de Discord en tiempo real"
     ]
-  }
+  },
+  "contributors": [
+    {
+      "name": "Steellgold",
+      "github": "Steellgold"
+    }
+  ]
 }
