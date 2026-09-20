@@ -122,7 +122,7 @@ nowly list                     # List all presences
 | `longDescription` | Detailed, per locale. |
 | `features` | Per locale, 1–10 short bullet strings. |
 | `discordNative` | Optional boolean. `true` when Discord already supports the platform if the user links their account. |
-| `assets` | `{ "logo": "logo.png", "icon": "icon.png", "thumbnail": "thumbnail.jpg" }`. |
+| `imageProxy` | Optional `{ hostSuffixes: string[], headers?: Record<string,string> }`. Declares external CDN hosts to proxy images through (via `createCachedImageProxyUrl`) when Discord can't load them directly. |
 
 Locale keys: `^[a-z]{2}-[A-Z]{2}$`. Standard: `en-US`, `fr-FR`, `es-ES`.
 
