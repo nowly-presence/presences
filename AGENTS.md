@@ -1,27 +1,10 @@
----
-name: create-presence
-description: >
-  Step-by-step guide for creating a new Nowly presence (a Discord Rich Presence script
-  for a website). Use this whenever you need to add support for a new site/service such
-  as streaming, music, social, gaming, tools, AI, learning, or creator platforms. Trigger
-  on mentions of: 'create a presence', 'new presence', 'write a presence', 'presence
-  script', 'Discord Rich Presence', 'setActivity', 'PresenceData', 'metadata.json',
-  'presence.ts', 'nowly presence', 'add support for', 'add presence for'.
----
-
 # Creating a Nowly Presence
 
-This is a self-contained guide to author a new **presence** - a script that detects
-what a user is doing on a website and shows it as Discord Rich Presence. Follow it
-top to bottom.
+Self-contained guide to author a new **presence** — a script that detects what a user is doing on a website and shows it as Discord Rich Presence. Use this whenever adding support for a new site/service (streaming, music, social, gaming, tools, AI, learning, creator platforms). Follow it top to bottom.
 
 ## What a presence is
 
-A presence lives in `src/{LETTER}/{Service Name}/`. The Nowly CLI (`@nowly/cli`)
-bundles its `presence.ts` with esbuild, and the browser extension injects the bundle
-into matching pages. On a timer, the extension fires an `UpdateData` event; your
-handler reads the DOM and calls `setActivity(...)`, which is forwarded to the Go
-native host and on to Discord over IPC.
+A presence lives in `src/{LETTER}/{Service Name}/`. The Nowly CLI (`@nowly/cli`) bundles its `presence.ts` with esbuild, and the browser extension injects the bundle into matching pages. On a timer, the extension fires an `UpdateData` event; your handler reads the DOM and calls `setActivity(...)`, which is forwarded to the Go native host and on to Discord over IPC.
 
 ```
 website DOM  ──read──▶  presence.on("UpdateData")  ──setActivity()──▶  extension  ──▶  native host  ──▶  Discord
@@ -29,11 +12,8 @@ website DOM  ──read──▶  presence.on("UpdateData")  ──setActivity()
 
 ## Before you start
 
-1. Read the official presence docs at https://nowly.me/docs (Creating your first
-   presence, Presence structure, Metadata, Presence API, Assets, Settings).
-2. Open **two existing presences as references** - pick the ones closest to your
-   target site (see "Pick a strategy" below). Match their structure, naming, and
-   tone exactly.
+1. Read the official presence docs at https://nowly.me/docs (Creating your first presence, Presence structure, Metadata, Presence API, Assets, Settings).
+2. Open **two existing presences as references** — pick the ones closest to your target site (see "Pick a strategy" below). Match their structure, naming, and tone exactly.
 
 ## Folder anatomy
 
@@ -70,26 +50,19 @@ pnpm i -g @nowly/cli
 pnpm install
 ```
 
-> On Node 24+, the global install may require `--config.minimumReleaseAge=0` if the
-> package was recently published.
+> On Node 24+, the global install may require `--config.minimumReleaseAge=0` if the package was recently published.
 
 ## Workflow
 
-1. **Scaffold.** Either run `nowly init "Service Name"` (also creates a starter
-   `locales/{en-US,fr-FR,es-ES}.json` with a generic browsing string) or create the
-   folder/files by hand, copying an existing presence.
-2. **Write `metadata.json`** (see reference below). Include `longDescription` and
-   `features` in `en-US`, `fr-FR`, `es-ES`.
-3. **Write `locales/en-US.json`, `fr-FR.json`, `es-ES.json`** - the runtime strings
-   your `presence.ts` will show as `details`/`state` (see "Locales" below). Write
-   `en-US.json` first, then translate the same keys into the other two.
-4. **Inspect the target site's DOM** with the snippets in "DOM inspection".
-5. **Write `presence.ts` + `utils/`** following the SDK reference and conventions -
-   call `presence.getStrings()` for activity text instead of hardcoding English.
-6. **Build:** `nowly build <slug>` - must succeed.
+1. **Scaffold.** Either run `nowly init "Service Name"` (also creates a starter `locales/{en-US,fr-FR,es-ES}.json` with a generic browsing string) or create the folder/files by hand, copying an existing presence.
+2. **Write `metadata.json`** (see reference below). Include `longDescription` and `features` in `en-US`, `fr-FR`, `es-ES`.
+3. **Write `locales/en-US.json`, `fr-FR.json`, `es-ES.json`** — the runtime strings your `presence.ts` will show as `details`/`state` (see "Locales" below). Write `en-US.json` first, then translate the same keys into the other two.
+4. **Inspect the target site's DOM** to find where the relevant data lives.
+5. **Write `presence.ts` + `utils/`** following the SDK reference and conventions — call `presence.getStrings()` for activity text instead of hardcoding English.
+6. **Build:** `nowly build <slug>` — must succeed.
 7. **Load locally:** `nowly extension <slug>` (first time) or `nowly pack <slug>` and drop the zip in the extension Debug panel.
-8. **Validate:** `nowly validate <slug>` - must report `✓`.
-9. **Type-check:** `npx tsc --noEmit -p tsconfig.json` - must be clean.
+8. **Validate:** `nowly validate <slug>` — must report `✓`.
+9. **Type-check:** `npx tsc --noEmit -p tsconfig.json` — must be clean.
 10. Hand off assets + manual E2E verification.
 
 ## CLI commands
@@ -126,10 +99,9 @@ nowly list                     # List all presences
 
 Locale keys: `^[a-z]{2}-[A-Z]{2}$`. Standard: `en-US`, `fr-FR`, `es-ES`.
 
-## `presence.ts` - the SDK
+## `presence.ts` — the SDK
 
-The SDK is published on npm as `@nowly/sdk`. `Presence` and `Assets` are **injected
-globals** - do not import them.
+The SDK is published on npm as `@nowly/sdk`. `Presence` and `Assets` are **injected globals** — do not import them.
 
 ```ts
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
@@ -190,10 +162,7 @@ const settings = Presence.Settings({
 
 ### Locales
 
-`locales/*.json` files hold the strings your `presence.ts` shows on Discord
-(`details`, `state`, mode labels, etc.) - **separate from** `metadata.json`'s own
-per-locale fields (`description`, `longDescription`, `features`, setting
-`label`/`description`), which stay inline objects and are untouched by this.
+`locales/*.json` files hold the strings your `presence.ts` shows on Discord (`details`, `state`, mode labels, etc.) — **separate from** `metadata.json`'s own per-locale fields (`description`, `longDescription`, `features`, setting `label`/`description`), which stay inline objects and are untouched by this.
 
 ```json
 // locales/en-US.json
@@ -217,9 +186,7 @@ presence.on("UpdateData", async (ctx) => {
 })
 ```
 
-Keep the exact same key set across all three locale files. Fallback to `en-US` only
-happens when the *entire* locale file is missing - there is no per-key fallback, so
-a key present in `en-US.json` but forgotten in `fr-FR.json` renders as `undefined`.
+Keep the exact same key set across all three locale files. Fallback to `en-US` only happens when the *entire* locale file is missing — there is no per-key fallback, so a key present in `en-US.json` but forgotten in `fr-FR.json` renders as `undefined`.
 
 ### Assets
 
@@ -229,9 +196,7 @@ Assets.Icon       // -> assets/icon.png
 Assets.Thumbnail  // -> assets/thumbnail.jpg
 ```
 
-For large posters fetched from the page, pass `https://` URL directly as `largeImageKey`.
-For dynamic/expiring/long URLs, use `createImageProxyUrl` / `createCachedImageProxyUrl`
-from `@nowly/sdk`.
+For large posters fetched from the page, pass `https://` URL directly as `largeImageKey`. For dynamic/expiring/long URLs, use `createImageProxyUrl` / `createCachedImageProxyUrl` from `@nowly/sdk`.
 
 ## Pick a strategy
 
@@ -243,21 +208,17 @@ from `@nowly/sdk`.
 
 ## Conventions
 
-- **Browsing toggle.** Add `showBrowsing` boolean setting, `default: false`, with
-  tri-lingual label/description. Watch state always shows; browsing only if enabled.
+- **Browsing toggle.** Add `showBrowsing` boolean setting, `default: false`, with tri-lingual label/description. Watch state always shows; browsing only if enabled.
 - **Clear when irrelevant.** `presence.clearActivity()` on unmatched pages.
 - **Small images.** Only `"play"`, `"pause"`, `"search"`.
 - **Buttons.** At most 2; strip query strings.
 - **`world`.** Stay isolated by default.
-- **Localization.** `en-US`, `fr-FR`, `es-ES` everywhere: inline objects in
-  `metadata.json` for marketplace/settings text, `locales/*.json` + `getStrings()`
-  for anything rendered inside `setActivity()`. Never hardcode English activity text.
+- **Localization.** `en-US`, `fr-FR`, `es-ES` everywhere: inline objects in `metadata.json` for marketplace/settings text, `locales/*.json` + `getStrings()` for anything rendered inside `setActivity()`. Never hardcode English activity text.
 - **Code style.** No semicolons, double quotes, 2-space indent.
 
 ## Assets
 
-`logo.png`, `icon.png`, `thumbnail.jpg` are binary images that must be supplied by
-a human. Build and validate pass without them, but they are required before publishing.
+`logo.png`, `icon.png`, `thumbnail.jpg` are binary images that must be supplied by a human. Build and validate pass without them, but they are required before publishing.
 
 ## Build & type-check
 
@@ -271,12 +232,12 @@ npx tsc --noEmit -p tsconfig.json   # esbuild does NOT type-check - always run t
 
 All at `src/{LETTER}/{Service Name}/`:
 
-- **Prime Video** - streaming, pure DOM
-- **Netflix** - streaming, same-origin API (`world: main`)
-- **Disney Plus** - streaming, page-world bridge
-- **Apple TV Plus** - streaming, pure DOM
-- **YouTube Music** - music (`PresenceType.Listening`)
-- **Twitch** - live/VOD/clips with browsing
-- **TikTok / YouTube** - social/video, image proxy
-- **Cinepulse** - single-file (no utils)
-- **Figma / YouTube** - reference for `locales/*.json` + `getStrings()`/`formatString()`
+- **Prime Video** — streaming, pure DOM
+- **Netflix** — streaming, same-origin API (`world: main`)
+- **Disney Plus** — streaming, page-world bridge
+- **Apple TV Plus** — streaming, pure DOM
+- **YouTube Music** — music (`PresenceType.Listening`)
+- **Twitch** — live/VOD/clips with browsing
+- **TikTok / YouTube** — social/video, image proxy
+- **Cinepulse** — single-file (no utils)
+- **Figma / YouTube** — reference for `locales/*.json` + `getStrings()`/`formatString()`
