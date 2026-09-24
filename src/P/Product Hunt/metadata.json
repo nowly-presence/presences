@@ -1,0 +1,105 @@
+{
+  "name": "Product Hunt",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["producthunt.com", "www.producthunt.com"],
+  "regExp": "^https?://(www\\.)?producthunt\\.com/",
+  "color": "#DA552F",
+  "category": "social",
+  "description": {
+    "en-US": "Show the Product Hunt product page, launch, or profile you're browsing.",
+    "fr-FR": "Affichez la page produit, le launch ou le profil Product Hunt que vous consultez.",
+    "es-ES": "Muestra la página de producto, el lanzamiento o el perfil de Product Hunt que estás viendo.",
+    "de-DE": "Zeigt die Product-Hunt-Produktseite, den Launch oder das Profil, das du gerade ansiehst.",
+    "pt-BR": "Mostra a página do produto, o lançamento ou o perfil do Product Hunt que você está vendo.",
+    "pl-PL": "Pokazuje stronę produktu, premierę lub profil Product Hunt, który przeglądasz.",
+    "ja-JP": "閲覧中のProduct Huntの製品ページ、ローンチ、プロフィールを表示します。",
+    "ko-KR": "지금 보고 있는 Product Hunt 제품 페이지, 런칭, 프로필을 표시합니다.",
+    "tr-TR": "İncelediğin Product Hunt ürün sayfasını, lansmanı veya profilini gösterir.",
+    "ms-MY": "Papar halaman produk, pelancaran, atau profil Product Hunt yang anda lihat.",
+    "el-GR": "Εμφανίζει τη σελίδα προϊόντος, το launch ή το προφίλ του Product Hunt που βλέπεις."
+  },
+  "longDescription": {
+    "en-US": "Product Hunt is the go-to community for discovering and launching new products. This presence shows the product you're viewing, the category or forum you're browsing, or the profile you're checking - so friends can see it on Discord in real time.",
+    "fr-FR": "Product Hunt est la référence pour découvrir et lancer de nouveaux produits. Cette présence affiche le produit que vous consultez, la catégorie ou le forum que vous parcourez, ou le profil que vous consultez - pour que vos amis le voient sur Discord en temps réel.",
+    "es-ES": "Product Hunt es la comunidad de referencia para descubrir y lanzar nuevos productos. Esta presencia muestra el producto que estás viendo, la categoría o el foro que estás explorando, o el perfil que estás consultando - para que tus amigos lo vean en Discord en tiempo real.",
+    "de-DE": "Product Hunt ist die führende Community zum Entdecken und Launchen neuer Produkte. Diese Präsenz zeigt das Produkt, das du dir ansiehst, die Kategorie oder das Forum, das du durchsuchst, oder das Profil, das du dir ansiehst - damit deine Freunde es in Echtzeit auf Discord sehen.",
+    "pt-BR": "O Product Hunt é a comunidade de referência para descobrir e lançar novos produtos. Esta presença mostra o produto que você está vendo, a categoria ou fórum que está navegando, ou o perfil que está consultando - para que seus amigos vejam no Discord em tempo real.",
+    "pl-PL": "Product Hunt to wiodąca społeczność do odkrywania i wprowadzania na rynek nowych produktów. Ta prezencja pokazuje produkt, który oglądasz, kategorię lub forum, które przeglądasz, albo profil, który sprawdzasz - dzięki czemu znajomi zobaczą to na Discordzie w czasie rzeczywistym.",
+    "ja-JP": "Product Huntは新しい製品を発見しローンチするための代表的なコミュニティです。このプレゼンスは、閲覧中の製品、カテゴリーやフォーラム、確認中のプロフィールを表示し、友達がDiscordでリアルタイムに確認できるようにします。",
+    "ko-KR": "Product Hunt는 새로운 제품을 발견하고 런칭하는 대표적인 커뮤니티입니다. 이 프레즌스는 보고 있는 제품, 탐색 중인 카테고리나 포럼, 확인 중인 프로필을 표시하여 친구들이 Discord에서 실시간으로 볼 수 있게 합니다.",
+    "tr-TR": "Product Hunt, yeni ürünleri keşfetmek ve lansmanını yapmak için önde gelen topluluktur. Bu prezans, incelediğin ürünü, gezindiğin kategoriyi veya forumu ya da baktığın profili gösterir - böylece arkadaşların bunu Discord'da gerçek zamanlı görebilir.",
+    "ms-MY": "Product Hunt ialah komuniti utama untuk menemui dan melancarkan produk baharu. Kehadiran ini memaparkan produk yang anda lihat, kategori atau forum yang anda layari, atau profil yang anda semak - supaya rakan dapat melihatnya di Discord secara masa nyata.",
+    "el-GR": "Το Product Hunt είναι η κορυφαία κοινότητα για την ανακάλυψη και την κυκλοφορία νέων προϊόντων. Αυτή η παρουσία εμφανίζει το προϊόν που βλέπεις, την κατηγορία ή το φόρουμ που περιηγείσαι, ή το προφίλ που ελέγχεις - ώστε οι φίλοι σου να το βλέπουν στο Discord σε πραγματικό χρόνο."
+  },
+  "features": {
+    "en-US": [
+      "Detects product, category, forum, and profile pages",
+      "Shows product name and tagline while browsing",
+      "Displays the profile you're viewing and its section",
+      "Updates your Discord activity in real time"
+    ],
+    "fr-FR": [
+      "Détecte les pages produit, catégorie, forum et profil",
+      "Affiche le nom et la tagline du produit consulté",
+      "Affiche le profil consulté et sa section",
+      "Met à jour votre activité Discord en temps réel"
+    ],
+    "es-ES": [
+      "Detecta páginas de producto, categoría, foro y perfil",
+      "Muestra el nombre y el eslogan del producto",
+      "Muestra el perfil que estás viendo y su sección",
+      "Actualiza tu actividad de Discord en tiempo real"
+    ],
+    "de-DE": [
+      "Erkennt Produkt-, Kategorie-, Forum- und Profilseiten",
+      "Zeigt Produktname und Slogan an",
+      "Zeigt das angesehene Profil und dessen Bereich",
+      "Aktualisiert deine Discord-Aktivität in Echtzeit"
+    ],
+    "pt-BR": [
+      "Detecta páginas de produto, categoria, fórum e perfil",
+      "Mostra o nome e o slogan do produto",
+      "Mostra o perfil visualizado e sua seção",
+      "Atualiza sua atividade do Discord em tempo real"
+    ],
+    "pl-PL": [
+      "Wykrywa strony produktu, kategorii, forum i profilu",
+      "Pokazuje nazwę i hasło produktu",
+      "Pokazuje przeglądany profil i jego sekcję",
+      "Aktualizuje twoją aktywność na Discordzie w czasie rzeczywistym"
+    ],
+    "ja-JP": [
+      "製品・カテゴリー・フォーラム・プロフィールページを検出",
+      "製品名とタグラインを表示",
+      "閲覧中のプロフィールとそのセクションを表示",
+      "Discordのアクティビティをリアルタイムで更新"
+    ],
+    "ko-KR": [
+      "제품, 카테고리, 포럼, 프로필 페이지 감지",
+      "제품 이름과 태그라인 표시",
+      "보고 있는 프로필과 섹션 표시",
+      "Discord 활동을 실시간으로 업데이트"
+    ],
+    "tr-TR": [
+      "Ürün, kategori, forum ve profil sayfalarını algılar",
+      "Ürün adını ve sloganını gösterir",
+      "İncelenen profili ve bölümünü gösterir",
+      "Discord etkinliğini gerçek zamanlı günceller"
+    ],
+    "ms-MY": [
+      "Mengesan halaman produk, kategori, forum dan profil",
+      "Memaparkan nama produk dan slogan",
+      "Memaparkan profil yang dilihat dan bahagiannya",
+      "Mengemas kini aktiviti Discord anda secara masa nyata"
+    ],
+    "el-GR": [
+      "Εντοπίζει σελίδες προϊόντος, κατηγορίας, φόρουμ και προφίλ",
+      "Εμφανίζει το όνομα και το σύνθημα του προϊόντος",
+      "Εμφανίζει το προφίλ που βλέπεις και την ενότητά του",
+      "Ενημερώνει τη δραστηριότητά σου στο Discord σε πραγματικό χρόνο"
+    ]
+  }
+}
