@@ -19,15 +19,18 @@ import type enUS from "./locales/en-US.json"
 
 const presence = new Presence()
 
-const TAB_STRING_KEYS = {
-  forums: "tabForums",
-  activity: "tabActivity",
-  upvotes: "tabUpvotes",
-  submitted: "tabSubmitted",
-  collections: "tabCollections",
-  stacks: "tabStacks",
-  reviews: "tabReviews",
-} as const satisfies Record<string, keyof typeof enUS>
+const getProfileTabLabel = (subTab: string | undefined, strings: typeof enUS): string | undefined => {
+  switch (subTab) {
+    case "forums": return strings.tabForums
+    case "activity": return strings.tabActivity
+    case "upvotes": return strings.tabUpvotes
+    case "submitted": return strings.tabSubmitted
+    case "collections": return strings.tabCollections
+    case "stacks": return strings.tabStacks
+    case "reviews": return strings.tabReviews
+    default: return undefined
+  }
+}
 
 presence.on("UpdateData", async () => {
   const strings = await presence.getStrings<typeof enUS>()
@@ -118,14 +121,13 @@ presence.on("UpdateData", async () => {
   if (isOnProfilePage()) {
     const name = findProfileName()
     const avatar = findProfileAvatar()
-    const subTab = getProfileSubTab()
-    const tabKey = subTab && subTab in TAB_STRING_KEYS ? TAB_STRING_KEYS[subTab as keyof typeof TAB_STRING_KEYS] : undefined
+    const tabLabel = getProfileTabLabel(getProfileSubTab(), strings)
 
     await presence.setActivity({
       details: name
         ? presence.formatString(strings.viewingNamedProfile, { name })
         : strings.viewingProfile,
-      state: tabKey ? strings[tabKey] : undefined,
+      state: tabLabel,
       largeImageKey: Assets.Logo,
       largeImageText: "Product Hunt",
       smallImageKey: avatar,
