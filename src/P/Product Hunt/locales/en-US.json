@@ -1,0 +1,22 @@
+{
+  "discoveringProduct": "Discovering a product",
+  "viewProduct": "View Product",
+  "browsingCategories": "Browsing categories",
+  "browsingCategory": "Browsing a category",
+  "browsingNamed": "Browsing {name}",
+  "browsingLaunches": "Browsing today's launches",
+  "readingLaunchGuide": "Reading the launch guide",
+  "browsingForums": "Browsing forums",
+  "readingForumTopic": "Reading a forum topic",
+  "submittingProduct": "Submitting a product",
+  "viewingProfile": "Viewing a profile",
+  "viewingNamedProfile": "Viewing {name}'s profile",
+  "viewProfile": "View Profile",
+  "tabForums": "Viewing forum posts",
+  "tabActivity": "Viewing activity",
+  "tabUpvotes": "Viewing upvotes",
+  "tabSubmitted": "Viewing submitted products",
+  "tabCollections": "Viewing collections",
+  "tabStacks": "Viewing stacks",
+  "tabReviews": "Viewing reviews"
+}
