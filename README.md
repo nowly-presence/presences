@@ -125,6 +125,10 @@
   </tr>
   <tr>
     <td align="center">
+      <img src="https://cdn.nowly.me/presences/product-hunt/assets/logo.png" width="48" height="48" alt="Product Hunt"><br>
+      <b>Product Hunt</b>
+    </td>
+    <td align="center">
       <img src="https://cdn.nowly.me/presences/reddit/assets/logo.png" width="48" height="48" alt="Reddit"><br>
       <b>Reddit</b>
     </td>
@@ -140,12 +144,12 @@
       <img src="https://cdn.nowly.me/presences/steam/assets/logo.png" width="48" height="48" alt="Steam"><br>
       <b>Steam</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/threads/assets/logo.png" width="48" height="48" alt="Threads"><br>
       <b>Threads</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/tidal/assets/logo.png" width="48" height="48" alt="Tidal"><br>
       <b>Tidal</b>
@@ -162,12 +166,12 @@
       <img src="https://cdn.nowly.me/presences/vibe/assets/logo.png" width="48" height="48" alt="Vibe (Le Chat)"><br>
       <b>Vibe (Le Chat)</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/wikipedia/assets/logo.png" width="48" height="48" alt="Wikipedia"><br>
       <b>Wikipedia</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/x/assets/logo.png" width="48" height="48" alt="X"><br>
       <b>X</b>
