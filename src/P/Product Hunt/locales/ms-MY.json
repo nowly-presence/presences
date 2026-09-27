@@ -1,0 +1,23 @@
+{
+  "discoveringProduct": "Menemui produk",
+  "viewProduct": "Lihat Produk",
+  "browsingCategories": "Melayari kategori",
+  "browsingCategory": "Melayari kategori",
+  "browsingNamed": "Melayari {name}",
+  "browsingLaunches": "Melayari pelancaran hari ini",
+  "readingLaunchGuide": "Membaca panduan pelancaran",
+  "browsingForums": "Melayari forum",
+  "readingForumTopic": "Membaca topik forum",
+  "viewTopic": "Lihat Topik",
+  "submittingProduct": "Menghantar produk",
+  "viewingProfile": "Melihat profil",
+  "viewingNamedProfile": "Melihat profil {name}",
+  "viewProfile": "Lihat Profil",
+  "tabForums": "Melihat siaran forum",
+  "tabActivity": "Melihat aktiviti",
+  "tabUpvotes": "Melihat undian",
+  "tabSubmitted": "Melihat produk yang dihantar",
+  "tabCollections": "Melihat koleksi",
+  "tabStacks": "Melihat stack",
+  "tabReviews": "Melihat ulasan"
+}

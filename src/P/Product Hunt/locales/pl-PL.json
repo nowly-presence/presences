@@ -1,0 +1,23 @@
+{
+  "discoveringProduct": "Odkrywa produkt",
+  "viewProduct": "Zobacz produkt",
+  "browsingCategories": "Przegląda kategorie",
+  "browsingCategory": "Przegląda kategorię",
+  "browsingNamed": "Przegląda {name}",
+  "browsingLaunches": "Przegląda dzisiejsze premiery",
+  "readingLaunchGuide": "Czyta przewodnik premiery",
+  "browsingForums": "Przegląda forum",
+  "readingForumTopic": "Czyta wątek na forum",
+  "viewTopic": "Zobacz wątek",
+  "submittingProduct": "Zgłasza produkt",
+  "viewingProfile": "Przegląda profil",
+  "viewingNamedProfile": "Przegląda profil {name}",
+  "viewProfile": "Zobacz profil",
+  "tabForums": "Przegląda posty na forum",
+  "tabActivity": "Przegląda aktywność",
+  "tabUpvotes": "Przegląda głosy",
+  "tabSubmitted": "Przegląda zgłoszone produkty",
+  "tabCollections": "Przegląda kolekcje",
+  "tabStacks": "Przegląda stacki",
+  "tabReviews": "Przegląda opinie"
+}

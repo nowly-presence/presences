@@ -1,0 +1,23 @@
+{
+  "discoveringProduct": "Bir ürün keşfediyor",
+  "viewProduct": "Ürünü Gör",
+  "browsingCategories": "Kategorilere göz atıyor",
+  "browsingCategory": "Bir kategoriye göz atıyor",
+  "browsingNamed": "{name} inceleniyor",
+  "browsingLaunches": "Bugünün lansmanlarına göz atıyor",
+  "readingLaunchGuide": "Lansman rehberini okuyor",
+  "browsingForums": "Forumlara göz atıyor",
+  "readingForumTopic": "Bir forum konusunu okuyor",
+  "viewTopic": "Konuyu Gör",
+  "submittingProduct": "Bir ürün gönderiyor",
+  "viewingProfile": "Bir profile bakıyor",
+  "viewingNamedProfile": "{name} adlı kullanıcının profiline bakıyor",
+  "viewProfile": "Profili Gör",
+  "tabForums": "Forum gönderilerine bakıyor",
+  "tabActivity": "Etkinliğe bakıyor",
+  "tabUpvotes": "Oylara bakıyor",
+  "tabSubmitted": "Gönderilen ürünlere bakıyor",
+  "tabCollections": "Koleksiyonlara bakıyor",
+  "tabStacks": "Stack'lere bakıyor",
+  "tabReviews": "Yorumlara bakıyor"
+}

@@ -1,0 +1,23 @@
+{
+  "discoveringProduct": "Entdeckt ein Produkt",
+  "viewProduct": "Produkt ansehen",
+  "browsingCategories": "Durchsucht Kategorien",
+  "browsingCategory": "Durchsucht eine Kategorie",
+  "browsingNamed": "Durchsucht {name}",
+  "browsingLaunches": "Sieht sich die heutigen Launches an",
+  "readingLaunchGuide": "Liest den Launch-Guide",
+  "browsingForums": "Durchsucht die Foren",
+  "readingForumTopic": "Liest einen Forumsbeitrag",
+  "viewTopic": "Beitrag ansehen",
+  "submittingProduct": "Reicht ein Produkt ein",
+  "viewingProfile": "Sieht sich ein Profil an",
+  "viewingNamedProfile": "Sieht sich das Profil von {name} an",
+  "viewProfile": "Profil ansehen",
+  "tabForums": "Sieht Forenbeiträge an",
+  "tabActivity": "Sieht die Aktivität an",
+  "tabUpvotes": "Sieht Upvotes an",
+  "tabSubmitted": "Sieht eingereichte Produkte an",
+  "tabCollections": "Sieht Sammlungen an",
+  "tabStacks": "Sieht Stacks an",
+  "tabReviews": "Sieht Bewertungen an"
+}

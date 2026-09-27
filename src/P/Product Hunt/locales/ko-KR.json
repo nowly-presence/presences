@@ -1,0 +1,23 @@
+{
+  "discoveringProduct": "제품 발견 중",
+  "viewProduct": "제품 보기",
+  "browsingCategories": "카테고리 둘러보는 중",
+  "browsingCategory": "카테고리 둘러보는 중",
+  "browsingNamed": "{name} 둘러보는 중",
+  "browsingLaunches": "오늘의 런칭 둘러보는 중",
+  "readingLaunchGuide": "런칭 가이드 읽는 중",
+  "browsingForums": "포럼 둘러보는 중",
+  "readingForumTopic": "포럼 게시글 읽는 중",
+  "viewTopic": "게시글 보기",
+  "submittingProduct": "제품 제출 중",
+  "viewingProfile": "프로필 보는 중",
+  "viewingNamedProfile": "{name}님의 프로필 보는 중",
+  "viewProfile": "프로필 보기",
+  "tabForums": "포럼 게시글 보는 중",
+  "tabActivity": "활동 보는 중",
+  "tabUpvotes": "추천 보는 중",
+  "tabSubmitted": "제출한 제품 보는 중",
+  "tabCollections": "컬렉션 보는 중",
+  "tabStacks": "스택 보는 중",
+  "tabReviews": "리뷰 보는 중"
+}

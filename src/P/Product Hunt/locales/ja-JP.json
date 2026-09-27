@@ -1,0 +1,23 @@
+{
+  "discoveringProduct": "製品を発見中",
+  "viewProduct": "製品を見る",
+  "browsingCategories": "カテゴリーを閲覧中",
+  "browsingCategory": "カテゴリーを閲覧中",
+  "browsingNamed": "{name}を閲覧中",
+  "browsingLaunches": "本日のローンチを閲覧中",
+  "readingLaunchGuide": "ローンチガイドを読んでいます",
+  "browsingForums": "フォーラムを閲覧中",
+  "readingForumTopic": "フォーラムのトピックを読んでいます",
+  "viewTopic": "トピックを見る",
+  "submittingProduct": "製品を投稿中",
+  "viewingProfile": "プロフィールを閲覧中",
+  "viewingNamedProfile": "{name}のプロフィールを閲覧中",
+  "viewProfile": "プロフィールを見る",
+  "tabForums": "フォーラム投稿を閲覧中",
+  "tabActivity": "アクティビティを閲覧中",
+  "tabUpvotes": "投票を閲覧中",
+  "tabSubmitted": "投稿した製品を閲覧中",
+  "tabCollections": "コレクションを閲覧中",
+  "tabStacks": "スタックを閲覧中",
+  "tabReviews": "レビューを閲覧中"
+}

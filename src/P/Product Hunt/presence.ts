@@ -13,11 +13,28 @@ import {
   isOnSubmitPage,
 } from "./utils/dom"
 import { findForumTopicTitle } from "./utils/forum"
-import { findProductName, findProductTagline, findProductThumbnail } from "./utils/product"
+import { findProductLogo, findProductName, findProductTagline } from "./utils/product"
 import { findProfileAvatar, findProfileName } from "./utils/profile"
 import type enUS from "./locales/en-US.json"
 
-const presence = new Presence()
+const settings = Presence.Settings({
+  showBrowsing: {
+    type: "boolean",
+    default: false,
+    label: {
+      "en-US": "Show browsing activity",
+      "fr-FR": "Afficher l'activité de navigation",
+      "es-ES": "Mostrar actividad de navegación",
+    },
+    description: {
+      "en-US": "When enabled, your Discord presence also shows when browsing Product Hunt categories, forums, and launches.",
+      "fr-FR": "Lorsque cette option est activée, votre présence Discord s'affiche aussi lorsque vous parcourez les catégories, forums et lancements de Product Hunt.",
+      "es-ES": "Si está activada, tu presencia de Discord también se muestra al explorar categorías, foros y lanzamientos de Product Hunt.",
+    },
+  },
+})
+
+const presence = new Presence(settings)
 
 const getProfileTabLabel = (subTab: string | undefined, strings: typeof enUS): string | undefined => {
   switch (subTab) {
@@ -32,21 +49,21 @@ const getProfileTabLabel = (subTab: string | undefined, strings: typeof enUS): s
   }
 }
 
-presence.on("UpdateData", async () => {
+presence.on("UpdateData", async (ctx) => {
   const strings = await presence.getStrings<typeof enUS>()
 
   if (isOnProductPage()) {
     const name = findProductName()
     const tagline = findProductTagline()
-    const thumbnail = findProductThumbnail()
+    const logo = findProductLogo()
 
     await presence.setActivity({
       details: name || strings.discoveringProduct,
       state: tagline,
-      largeImageKey: Assets.Logo,
-      largeImageText: "Product Hunt",
-      smallImageKey: thumbnail,
-      smallImageText: name || "Product Hunt",
+      largeImageKey: logo || Assets.Logo,
+      largeImageText: name || "Product Hunt",
+      smallImageKey: Assets.Logo,
+      smallImageText: "Product Hunt",
       type: PresenceType.Watching,
       buttons: [{ label: strings.viewProduct, url: window.location.href.split("?")[0] }],
     })
@@ -67,6 +84,11 @@ presence.on("UpdateData", async () => {
   }
 
   if (isOnCategoriesListPage()) {
+    if (!ctx.settings.showBrowsing) {
+      presence.clearActivity()
+      return
+    }
+
     await presence.setActivity({
       details: strings.browsingCategories,
       largeImageKey: Assets.Logo,
@@ -83,12 +105,17 @@ presence.on("UpdateData", async () => {
       largeImageKey: Assets.Logo,
       largeImageText: "Product Hunt",
       type: PresenceType.Watching,
-      buttons: [{ label: strings.viewProduct, url: window.location.href.split("?")[0] }],
+      buttons: [{ label: strings.viewTopic, url: window.location.href.split("?")[0] }],
     })
     return
   }
 
   if (isOnForumsListPage()) {
+    if (!ctx.settings.showBrowsing) {
+      presence.clearActivity()
+      return
+    }
+
     await presence.setActivity({
       details: strings.browsingForums,
       largeImageKey: Assets.Logo,
@@ -128,10 +155,10 @@ presence.on("UpdateData", async () => {
         ? presence.formatString(strings.viewingNamedProfile, { name })
         : strings.viewingProfile,
       state: tabLabel,
-      largeImageKey: Assets.Logo,
-      largeImageText: "Product Hunt",
-      smallImageKey: avatar,
-      smallImageText: name || "Product Hunt",
+      largeImageKey: avatar || Assets.Logo,
+      largeImageText: name || "Product Hunt",
+      smallImageKey: Assets.Logo,
+      smallImageText: "Product Hunt",
       type: PresenceType.Watching,
       buttons: [{ label: strings.viewProfile, url: window.location.href.split("?")[0] }],
     })
@@ -139,6 +166,11 @@ presence.on("UpdateData", async () => {
   }
 
   if (isOnHomePage()) {
+    if (!ctx.settings.showBrowsing) {
+      presence.clearActivity()
+      return
+    }
+
     await presence.setActivity({
       details: strings.browsingLaunches,
       largeImageKey: Assets.Logo,

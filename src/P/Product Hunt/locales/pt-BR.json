@@ -1,0 +1,23 @@
+{
+  "discoveringProduct": "Descobrindo um produto",
+  "viewProduct": "Ver produto",
+  "browsingCategories": "Navegando pelas categorias",
+  "browsingCategory": "Navegando por uma categoria",
+  "browsingNamed": "Navegando por {name}",
+  "browsingLaunches": "Vendo os lançamentos de hoje",
+  "readingLaunchGuide": "Lendo o guia de lançamento",
+  "browsingForums": "Navegando pelos fóruns",
+  "readingForumTopic": "Lendo um tópico do fórum",
+  "viewTopic": "Ver tópico",
+  "submittingProduct": "Enviando um produto",
+  "viewingProfile": "Vendo um perfil",
+  "viewingNamedProfile": "Vendo o perfil de {name}",
+  "viewProfile": "Ver perfil",
+  "tabForums": "Vendo publicações do fórum",
+  "tabActivity": "Vendo a atividade",
+  "tabUpvotes": "Vendo os votos",
+  "tabSubmitted": "Vendo produtos enviados",
+  "tabCollections": "Vendo coleções",
+  "tabStacks": "Vendo stacks",
+  "tabReviews": "Vendo avaliações"
+}

@@ -1,0 +1,23 @@
+{
+  "discoveringProduct": "Ανακαλύπτει ένα προϊόν",
+  "viewProduct": "Δείτε το προϊόν",
+  "browsingCategories": "Περιηγείται στις κατηγορίες",
+  "browsingCategory": "Περιηγείται σε μια κατηγορία",
+  "browsingNamed": "Περιηγείται στο {name}",
+  "browsingLaunches": "Βλέπει τα σημερινά launches",
+  "readingLaunchGuide": "Διαβάζει τον οδηγό launch",
+  "browsingForums": "Περιηγείται στα φόρουμ",
+  "readingForumTopic": "Διαβάζει ένα θέμα φόρουμ",
+  "viewTopic": "Δείτε το θέμα",
+  "submittingProduct": "Υποβάλλει ένα προϊόν",
+  "viewingProfile": "Βλέπει ένα προφίλ",
+  "viewingNamedProfile": "Βλέπει το προφίλ του/της {name}",
+  "viewProfile": "Δείτε το προφίλ",
+  "tabForums": "Βλέπει αναρτήσεις φόρουμ",
+  "tabActivity": "Βλέπει τη δραστηριότητα",
+  "tabUpvotes": "Βλέπει τις ψήφους",
+  "tabSubmitted": "Βλέπει τα προϊόντα που υποβλήθηκαν",
+  "tabCollections": "Βλέπει συλλογές",
+  "tabStacks": "Βλέπει stacks",
+  "tabReviews": "Βλέπει κριτικές"
+}
