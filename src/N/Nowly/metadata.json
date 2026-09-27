@@ -1,0 +1,53 @@
+{
+  "name": "Nowly",
+  "author": {
+    "name": "Nowly",
+    "github": "nowly-presence"
+  },
+  "url": ["nowly.me", "www.nowly.me", "docs.nowly.me"],
+  "regExp": "^https?://(?:(?:www\\.)?nowly\\.me|docs\\.nowly\\.me)/",
+  "color": "#0891B2",
+  "category": "tools",
+  "imageProxy": {
+    "hostSuffixes": ["cdn.nowly.me"]
+  },
+  "description": {
+    "en-US": "Browse Nowly's website and documentation with a live Discord activity.",
+    "fr-FR": "Parcourez le site et la documentation de Nowly avec une activité Discord en direct.",
+    "es-ES": "Explora el sitio y la documentación de Nowly con una actividad de Discord en directo.",
+    "de-DE": "Entdecke die Nowly-Website und Dokumentation mit einer Live-Discord-Aktivität.",
+    "pt-BR": "Explore o site e a documentação do Nowly com uma atividade ao vivo no Discord.",
+    "pl-PL": "Przeglądaj stronę i dokumentację Nowly, wyświetlając aktywność na Discordzie.",
+    "ja-JP": "Nowlyのサイトやドキュメントを見ていることをDiscordにリアルタイムで表示します。",
+    "ko-KR": "Nowly 웹사이트와 문서를 둘러보는 활동을 Discord에 실시간으로 표시합니다.",
+    "tr-TR": "Nowly sitesini ve belgelerini gezerken Discord etkinliğini canlı olarak gösterir.",
+    "ms-MY": "Layari laman web dan dokumentasi Nowly dengan aktiviti Discord secara langsung.",
+    "el-GR": "Περιηγήσου στον ιστότοπο και την τεκμηρίωση του Nowly με ζωντανή δραστηριότητα στο Discord."
+  },
+  "longDescription": {
+    "en-US": "Show what you're exploring across the Nowly website and docs, from the presence library and release notes to setup guides, support, and service status.",
+    "fr-FR": "Affichez ce que vous consultez sur le site et la documentation de Nowly : bibliothèque de présences, notes de version, guides, assistance et état des services.",
+    "es-ES": "Muestra lo que consultas en el sitio y la documentación de Nowly: biblioteca de presencias, notas de versión, guías, ayuda y estado del servicio.",
+    "de-DE": "Zeigt, was du auf der Nowly-Website und in der Dokumentation ansiehst: Presence-Bibliothek, Versionshinweise, Anleitungen, Support und Dienststatus.",
+    "pt-BR": "Mostra o que você está explorando no site e na documentação do Nowly: biblioteca de presenças, notas de versão, guias, suporte e status do serviço.",
+    "pl-PL": "Pokazuje, co przeglądasz na stronie i w dokumentacji Nowly: bibliotekę aktywności, informacje o wydaniach, poradniki, pomoc i status usług.",
+    "ja-JP": "Nowlyのサイトやドキュメントで見ているページを表示します。プレゼンス一覧、リリースノート、ガイド、サポート、サービス状況に対応しています。",
+    "ko-KR": "Nowly 웹사이트와 문서에서 살펴보는 내용을 표시합니다. 프레즌스 라이브러리, 릴리스 노트, 가이드, 지원 및 서비스 상태를 확인할 수 있습니다.",
+    "tr-TR": "Nowly web sitesinde ve belgelerinde incelediğin sayfaları gösterir: presence kütüphanesi, sürüm notları, kılavuzlar, destek ve hizmet durumu.",
+    "ms-MY": "Paparkan perkara yang anda terokai di laman web dan dokumentasi Nowly, termasuk pustaka presence, nota keluaran, panduan, sokongan dan status perkhidmatan.",
+    "el-GR": "Δείχνει τι εξερευνάς στον ιστότοπο και την τεκμηρίωση του Nowly: βιβλιοθήκη παρουσιών, σημειώσεις εκδόσεων, οδηγούς, υποστήριξη και κατάσταση υπηρεσιών."
+  },
+  "features": {
+    "en-US": ["Covers the Nowly website and documentation", "Shows the page or presence you're viewing", "Detects localized pages and release notes", "Updates Discord activity as you navigate"],
+    "fr-FR": ["Couvre le site et la documentation de Nowly", "Affiche la page ou la présence consultée", "Détecte les pages localisées et les notes de version", "Actualise l'activité Discord pendant la navigation"],
+    "es-ES": ["Cubre el sitio y la documentación de Nowly", "Muestra la página o presencia que consultas", "Detecta páginas traducidas y notas de versión", "Actualiza la actividad de Discord al navegar"],
+    "de-DE": ["Deckt die Nowly-Website und Dokumentation ab", "Zeigt die aktuell besuchte Seite oder Presence", "Erkennt übersetzte Seiten und Versionshinweise", "Aktualisiert Discord beim Navigieren"],
+    "pt-BR": ["Abrange o site e a documentação do Nowly", "Mostra a página ou presença que você está vendo", "Detecta páginas traduzidas e notas de versão", "Atualiza a atividade do Discord durante a navegação"],
+    "pl-PL": ["Obejmuje stronę i dokumentację Nowly", "Pokazuje przeglądaną stronę lub aktywność", "Wykrywa przetłumaczone strony i informacje o wydaniach", "Aktualizuje aktywność Discorda podczas nawigacji"],
+    "ja-JP": ["Nowlyのサイトとドキュメントに対応", "閲覧中のページやプレゼンスを表示", "翻訳ページとリリースノートを検出", "ページ移動に合わせてDiscordの活動を更新"],
+    "ko-KR": ["Nowly 웹사이트와 문서 지원", "보고 있는 페이지 또는 프레즌스 표시", "번역된 페이지와 릴리스 노트 감지", "탐색할 때 Discord 활동 업데이트"],
+    "tr-TR": ["Nowly web sitesini ve belgelerini kapsar", "Görüntülediğin sayfayı veya presence'ı gösterir", "Çevrilmiş sayfaları ve sürüm notlarını algılar", "Gezinirken Discord etkinliğini günceller"],
+    "ms-MY": ["Meliputi laman web dan dokumentasi Nowly", "Memaparkan halaman atau presence yang anda lihat", "Mengesan halaman terjemahan dan nota keluaran", "Mengemas kini aktiviti Discord semasa anda melayari"],
+    "el-GR": ["Καλύπτει τον ιστότοπο και την τεκμηρίωση του Nowly", "Δείχνει τη σελίδα ή την παρουσία που βλέπεις", "Εντοπίζει μεταφρασμένες σελίδες και σημειώσεις εκδόσεων", "Ενημερώνει τη δραστηριότητα Discord κατά την περιήγηση"]
+  }
+}
