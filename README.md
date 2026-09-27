@@ -111,6 +111,10 @@
       <b>Notion</b>
     </td>
     <td align="center">
+      <img src="https://cdn.nowly.me/presences/nowly/assets/logo.png" width="48" height="48" alt="Nowly"><br>
+      <b>Nowly</b>
+    </td>
+    <td align="center">
       <img src="https://cdn.nowly.me/presences/paramount-plus/assets/logo.png" width="48" height="48" alt="Paramount+"><br>
       <b>Paramount+</b>
     </td>
@@ -118,12 +122,12 @@
       <img src="https://cdn.nowly.me/presences/perplexity/assets/logo.png" width="48" height="48" alt="Perplexity"><br>
       <b>Perplexity</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/prime-video/assets/logo.png" width="48" height="48" alt="Prime Video"><br>
       <b>Prime Video</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/product-hunt/assets/logo.png" width="48" height="48" alt="Product Hunt"><br>
       <b>Product Hunt</b>
@@ -140,12 +144,12 @@
       <img src="https://cdn.nowly.me/presences/spotify/assets/logo.png" width="48" height="48" alt="Spotify"><br>
       <b>Spotify</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/steam/assets/logo.png" width="48" height="48" alt="Steam"><br>
       <b>Steam</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/threads/assets/logo.png" width="48" height="48" alt="Threads"><br>
       <b>Threads</b>
@@ -162,12 +166,12 @@
       <img src="https://cdn.nowly.me/presences/twitch/assets/logo.png" width="48" height="48" alt="Twitch"><br>
       <b>Twitch</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/vibe/assets/logo.png" width="48" height="48" alt="Vibe (Le Chat)"><br>
       <b>Vibe (Le Chat)</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/wikipedia/assets/logo.png" width="48" height="48" alt="Wikipedia"><br>
       <b>Wikipedia</b>
