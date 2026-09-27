@@ -4,7 +4,6 @@ import { join, extname } from "path";
 const BASE_DIR = process.argv[2] || ".";
 const OUTPUT_FILE = process.argv[3] || "";
 
-const LOCALES = ["en-US", "fr-FR", "es-ES"] as const;
 const BASE_LOCALE = "en-US";
 
 const slug = (name: string): string => name.toLowerCase().replace(/\s+/g, "-");
@@ -70,6 +69,15 @@ const extractUsedKeys = (dir: string): Set<string> => {
   return used
 }
 
+const loadLocalesPresent = (dir: string): string[] => {
+  const localesDir = join(dir, "locales")
+  if (!existsSync(localesDir)) return []
+
+  return readdirSync(localesDir)
+    .filter(name => extname(name) === ".json" && name !== `${BASE_LOCALE}.json`)
+    .map(name => name.slice(0, -".json".length))
+}
+
 const loadLocaleKeys = (dir: string, locale: string): Set<string> | null => {
   const path = join(dir, "locales", `${locale}.json`)
   if (!existsSync(path)) return null
@@ -96,8 +104,7 @@ const validatePresence = (dir: string, slugName: string, presencePath: string, n
 
   const localeReports: LocaleKeyReport[] = []
 
-  for (const locale of LOCALES) {
-    if (locale === BASE_LOCALE) continue
+  for (const locale of loadLocalesPresent(dir)) {
     const keys = loadLocaleKeys(dir, locale)
 
     if (!keys) {
