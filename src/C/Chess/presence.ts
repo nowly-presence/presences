@@ -1,5 +1,11 @@
 import { PresenceType } from "@nowly/sdk"
-import { getChessOpponent, getChessPageKind, getChessPageTitle, getChessProfileImage, getChessProfileName } from "./utils/page"
+import {
+  getChessOpponent,
+  getChessPageKind,
+  getChessPageTitle,
+  getChessProfileImage,
+  getChessProfileName,
+} from "./utils/page"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -114,7 +120,7 @@ presence.on("UpdateData", async (ctx) => {
     details,
     state,
     largeImageKey,
-    largeImageText: title,
+    largeImageText: privacy ? undefined : title,
     smallImageKey,
     smallImageText,
     type: PresenceType.Playing,
