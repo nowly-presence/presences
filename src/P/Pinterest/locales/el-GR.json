@@ -1,0 +1,19 @@
+{
+  "browsing": "Περιηγείται στο Pinterest",
+  "home": "Βλέπει την αρχική σελίδα",
+  "searching": "Αναζητά στο Pinterest",
+  "searchResults": "Βλέπει αποτελέσματα αναζήτησης Pinterest",
+  "viewingProfile": "Βλέπει ένα προφίλ",
+  "viewingPin": "Βλέπει ένα Pin",
+  "viewingVideoPin": "Βλέπει ένα βίντεο Pin",
+  "viewingIdeas": "Περιηγείται σε ιδέες",
+  "creatingPin": "Δημιουργεί ένα Pin",
+  "creatingCollage": "Δημιουργεί ένα κολάζ",
+  "watchPin": "Προβολή Pin",
+  "viewProfile": "Προβολή προφίλ",
+  "playing": "Αναπαραγωγή",
+  "paused": "Σε παύση",
+  "pinBy": "Pin από {name}",
+  "videoBy": "Βίντεο Pin από {name}",
+  "privateBrowsing": "Περιηγείται ιδιωτικά στο Pinterest"
+}

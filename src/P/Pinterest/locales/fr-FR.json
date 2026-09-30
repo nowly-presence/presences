@@ -1,0 +1,19 @@
+{
+  "browsing": "Parcourt Pinterest",
+  "home": "Consulte l'accueil",
+  "searching": "Recherche sur Pinterest",
+  "searchResults": "Consulte les résultats Pinterest",
+  "viewingProfile": "Consulte un profil",
+  "viewingPin": "Consulte une épingle",
+  "viewingVideoPin": "Consulte une épingle vidéo",
+  "viewingIdeas": "Parcourt des idées",
+  "creatingPin": "Crée une épingle",
+  "creatingCollage": "Crée un collage",
+  "watchPin": "Voir l'épingle",
+  "viewProfile": "Voir le profil",
+  "playing": "En lecture",
+  "paused": "En pause",
+  "pinBy": "Épingle de {name}",
+  "videoBy": "Épingle vidéo de {name}",
+  "privateBrowsing": "Parcourt Pinterest en privé"
+}

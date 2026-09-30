@@ -1,0 +1,105 @@
+{
+  "name": "Pinterest",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["pinterest.com", "www.pinterest.com"],
+  "regExp": "^https?://([a-z0-9-]+\\.)?pinterest\\.[a-z.]+/",
+  "color": "#CB1F27",
+  "category": "social",
+  "description": {
+    "en-US": "Show the Pinterest pin, profile, or ideas you're browsing.",
+    "fr-FR": "Affichez l'épingle, le profil ou les idées Pinterest que vous consultez.",
+    "es-ES": "Muestra el pin, perfil o las ideas de Pinterest que estás explorando.",
+    "de-DE": "Zeige den Pinterest-Pin, das Profil oder die Ideen, die du gerade ansiehst.",
+    "pt-BR": "Mostre o Pin, perfil ou ideias do Pinterest que você está explorando.",
+    "pl-PL": "Pokazuj przeglądany Pin, profil lub pomysły na Pintereście.",
+    "ja-JP": "閲覧中のPinterestのピン、プロフィール、アイデアを表示します。",
+    "ko-KR": "보고 있는 Pinterest 핀, 프로필 또는 아이디어를 표시합니다.",
+    "tr-TR": "Göz attığın Pinterest Pin'ini, profilini veya fikirleri gösterir.",
+    "ms-MY": "Paparkan Pin, profil atau idea Pinterest yang sedang anda lihat.",
+    "el-GR": "Εμφανίζει το Pin, το προφίλ ή τις ιδέες του Pinterest που περιηγείσαι."
+  },
+  "longDescription": {
+    "en-US": "Pinterest is a visual discovery platform for finding and saving ideas. This presence detects pins, video pins, profiles, searches, idea pages, and creation tools.",
+    "fr-FR": "Pinterest est une plateforme de découverte visuelle pour trouver et enregistrer des idées. Cette présence détecte les épingles, vidéos, profils, recherches, pages d'idées et outils de création.",
+    "es-ES": "Pinterest es una plataforma de descubrimiento visual para encontrar y guardar ideas. Esta presencia detecta pins, vídeos, perfiles, búsquedas, páginas de ideas y herramientas de creación.",
+    "de-DE": "Pinterest ist eine visuelle Entdeckungsplattform zum Finden und Speichern von Ideen. Diese Präsenz erkennt Pins, Video-Pins, Profile, Suchanfragen, Ideenseiten und Erstellungstools.",
+    "pt-BR": "Pinterest é uma plataforma de descoberta visual para encontrar e salvar ideias. Esta presença detecta Pins, vídeos, perfis, pesquisas, páginas de ideias e ferramentas de criação.",
+    "pl-PL": "Pinterest to wizualna platforma do odkrywania i zapisywania pomysłów. Ta aktywność wykrywa Piny, filmy, profile, wyszukiwania, strony pomysłów i narzędzia do tworzenia.",
+    "ja-JP": "Pinterestはアイデアを見つけて保存するためのビジュアル発見プラットフォームです。このプレゼンスはピン、動画ピン、プロフィール、検索、アイデアページ、作成ツールを検出します。",
+    "ko-KR": "Pinterest는 아이디어를 찾고 저장하는 시각적 탐색 플랫폼입니다. 이 프레즌스는 핀, 동영상 핀, 프로필, 검색, 아이디어 페이지 및 제작 도구를 감지합니다.",
+    "tr-TR": "Pinterest, fikirleri keşfetmek ve kaydetmek için görsel bir platformdur. Bu presence Pin'leri, video Pin'lerini, profilleri, aramaları, fikir sayfalarını ve oluşturma araçlarını algılar.",
+    "ms-MY": "Pinterest ialah platform penemuan visual untuk mencari dan menyimpan idea. Presence ini mengesan Pin, Pin video, profil, carian, halaman idea dan alat penciptaan.",
+    "el-GR": "Το Pinterest είναι μια πλατφόρμα οπτικής ανακάλυψης για εύρεση και αποθήκευση ιδεών. Αυτή η παρουσία εντοπίζει Pin, βίντεο Pin, προφίλ, αναζητήσεις, σελίδες ιδεών και εργαλεία δημιουργίας."
+  },
+  "features": {
+    "en-US": [
+      "Detects pins and video pins",
+      "Shows profiles and search activity",
+      "Recognizes idea pages and creation tools",
+      "Includes optional privacy and buttons settings"
+    ],
+    "fr-FR": [
+      "Détecte les épingles et les épingles vidéo",
+      "Affiche les profils et les recherches",
+      "Reconnaît les pages d'idées et les outils de création",
+      "Propose des réglages facultatifs de confidentialité et de boutons"
+    ],
+    "es-ES": [
+      "Detecta pins y pins de vídeo",
+      "Muestra perfiles y actividad de búsqueda",
+      "Reconoce páginas de ideas y herramientas de creación",
+      "Incluye opciones de privacidad y botones"
+    ],
+    "de-DE": [
+      "Erkennt Pins und Video-Pins",
+      "Zeigt Profile und Suchaktivitäten",
+      "Erkennt Ideenseiten und Erstellungstools",
+      "Bietet optionale Datenschutz- und Schaltflächeneinstellungen"
+    ],
+    "pt-BR": [
+      "Detecta Pins e Pins de vídeo",
+      "Mostra perfis e atividade de pesquisa",
+      "Reconhece páginas de ideias e ferramentas de criação",
+      "Inclui opções de privacidade e botões"
+    ],
+    "pl-PL": [
+      "Wykrywa Piny i filmy",
+      "Pokazuje profile i aktywność wyszukiwania",
+      "Rozpoznaje strony pomysłów i narzędzia tworzenia",
+      "Zawiera opcjonalne ustawienia prywatności i przycisków"
+    ],
+    "ja-JP": [
+      "ピンと動画ピンを検出",
+      "プロフィールと検索アクティビティを表示",
+      "アイデアページと作成ツールを認識",
+      "プライバシーとボタンのオプション設定"
+    ],
+    "ko-KR": [
+      "핀과 동영상 핀 감지",
+      "프로필 및 검색 활동 표시",
+      "아이디어 페이지와 제작 도구 인식",
+      "선택 가능한 개인정보 보호 및 버튼 설정"
+    ],
+    "tr-TR": [
+      "Pin'leri ve video Pin'lerini algılar",
+      "Profilleri ve arama etkinliğini gösterir",
+      "Fikir sayfalarını ve oluşturma araçlarını tanır",
+      "İsteğe bağlı gizlilik ve düğme ayarları sunar"
+    ],
+    "ms-MY": [
+      "Mengesan Pin dan Pin video",
+      "Memaparkan profil dan aktiviti carian",
+      "Mengenali halaman idea dan alat penciptaan",
+      "Menyediakan tetapan privasi dan butang pilihan"
+    ],
+    "el-GR": [
+      "Εντοπίζει Pin και βίντεο Pin",
+      "Εμφανίζει προφίλ και δραστηριότητα αναζήτησης",
+      "Αναγνωρίζει σελίδες ιδεών και εργαλεία δημιουργίας",
+      "Περιλαμβάνει προαιρετικές ρυθμίσεις απορρήτου και κουμπιών"
+    ]
+  }
+}

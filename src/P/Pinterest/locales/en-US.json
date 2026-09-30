@@ -1,0 +1,19 @@
+{
+  "browsing": "Browsing Pinterest",
+  "home": "Viewing the homepage",
+  "searching": "Searching Pinterest",
+  "searchResults": "Viewing Pinterest search results",
+  "viewingProfile": "Viewing a profile",
+  "viewingPin": "Viewing a pin",
+  "viewingVideoPin": "Viewing a video pin",
+  "viewingIdeas": "Browsing ideas",
+  "creatingPin": "Creating a pin",
+  "creatingCollage": "Creating a collage",
+  "watchPin": "View Pin",
+  "viewProfile": "View Profile",
+  "playing": "Playing",
+  "paused": "Paused",
+  "pinBy": "Pin by {name}",
+  "videoBy": "Video pin by {name}",
+  "privateBrowsing": "Browsing Pinterest privately"
+}

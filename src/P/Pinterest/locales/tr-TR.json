@@ -1,0 +1,19 @@
+{
+  "browsing": "Pinterest'te geziniyor",
+  "home": "Ana sayfayı görüntülüyor",
+  "searching": "Pinterest'te arıyor",
+  "searchResults": "Pinterest arama sonuçlarını görüntülüyor",
+  "viewingProfile": "Bir profili görüntülüyor",
+  "viewingPin": "Bir Pin'i görüntülüyor",
+  "viewingVideoPin": "Bir video Pin'i görüntülüyor",
+  "viewingIdeas": "Fikirlere göz atıyor",
+  "creatingPin": "Pin oluşturuyor",
+  "creatingCollage": "Kolaj oluşturuyor",
+  "watchPin": "Pin'i görüntüle",
+  "viewProfile": "Profili görüntüle",
+  "playing": "Oynatılıyor",
+  "paused": "Duraklatıldı",
+  "pinBy": "{name} adlı kullanıcının Pin'i",
+  "videoBy": "{name} adlı kullanıcının video Pin'i",
+  "privateBrowsing": "Pinterest'te gizli geziniyor"
+}
