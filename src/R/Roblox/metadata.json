@@ -1,0 +1,112 @@
+{
+  "name": "Roblox",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "roblox.com",
+    "www.roblox.com",
+    "web.roblox.com",
+    "create.roblox.com",
+    "devforum.roblox.com",
+    "rbx.com"
+  ],
+  "regExp": "^https?://((www|web|create|devforum)\\.roblox\\.com|rbx\\.com)/",
+  "color": "#335FFF",
+  "category": "gaming",
+  "description": {
+    "en-US": "Show the Roblox game, profile, or creator page you're viewing.",
+    "fr-FR": "Affichez le jeu, le profil ou la page de création Roblox consulté.",
+    "es-ES": "Muestra el juego, perfil o página de creación de Roblox que estás viendo.",
+    "de-DE": "Zeige das Roblox-Spiel, Profil oder die Creator-Seite, die du gerade ansiehst.",
+    "pt-BR": "Mostre o jogo, perfil ou página de criação do Roblox que você está visualizando.",
+    "pl-PL": "Pokazuj oglądaną grę, profil lub stronę twórcy w Roblox.",
+    "ja-JP": "閲覧中のRobloxのゲーム、プロフィール、クリエイターページを表示します。",
+    "ko-KR": "보고 있는 Roblox 게임, 프로필 또는 크리에이터 페이지를 표시합니다.",
+    "tr-TR": "Görüntülediğin Roblox oyununu, profilini veya oluşturucu sayfasını gösterir.",
+    "ms-MY": "Paparkan permainan, profil atau halaman pencipta Roblox yang sedang anda lihat.",
+    "el-GR": "Εμφανίζει το παιχνίδι, το προφίλ ή τη σελίδα δημιουργού του Roblox που βλέπεις."
+  },
+  "longDescription": {
+    "en-US": "Roblox is an online platform for games and experiences created by its community. This presence detects game and catalog pages, player profiles, groups, and creator tools.",
+    "fr-FR": "Roblox est une plateforme en ligne de jeux et d'expériences créés par sa communauté. Cette présence détecte les pages de jeux et du catalogue, les profils, groupes et outils de création.",
+    "es-ES": "Roblox es una plataforma en línea de juegos y experiencias creados por su comunidad. Esta presencia detecta páginas de juegos y del catálogo, perfiles, grupos y herramientas de creación.",
+    "de-DE": "Roblox ist eine Online-Plattform für Spiele und Erlebnisse, die von der Community erstellt werden. Diese Präsenz erkennt Spiel- und Katalogseiten, Profile, Gruppen und Creator-Tools.",
+    "pt-BR": "Roblox é uma plataforma on-line de jogos e experiências criados pela comunidade. Esta presença detecta páginas de jogos e catálogo, perfis, grupos e ferramentas de criação.",
+    "pl-PL": "Roblox to internetowa platforma gier i doświadczeń tworzonych przez społeczność. Ta aktywność wykrywa strony gier i katalogu, profile, grupy oraz narzędzia twórców.",
+    "ja-JP": "Robloxはコミュニティが作成したゲームや体験を楽しめるオンラインプラットフォームです。このプレゼンスはゲームやカタログ、プロフィール、グループ、クリエイターツールのページを検出します。",
+    "ko-KR": "Roblox는 커뮤니티가 만든 게임과 경험을 위한 온라인 플랫폼입니다. 이 프레즌스는 게임 및 카탈로그 페이지, 프로필, 그룹, 크리에이터 도구를 감지합니다.",
+    "tr-TR": "Roblox, topluluğu tarafından oluşturulan oyunlar ve deneyimler için çevrim içi bir platformdur. Bu presence oyun ve katalog sayfalarını, profilleri, grupları ve oluşturucu araçlarını algılar.",
+    "ms-MY": "Roblox ialah platform dalam talian untuk permainan dan pengalaman ciptaan komuniti. Presence ini mengesan halaman permainan dan katalog, profil, kumpulan serta alat pencipta.",
+    "el-GR": "Το Roblox είναι μια διαδικτυακή πλατφόρμα για παιχνίδια και εμπειρίες που δημιουργεί η κοινότητα. Αυτή η παρουσία εντοπίζει σελίδες παιχνιδιών και καταλόγου, προφίλ, ομάδες και εργαλεία δημιουργών."
+  },
+  "features": {
+    "en-US": [
+      "Detects game, catalog, and creator pages",
+      "Shows player and group profiles",
+      "Displays search activity",
+      "Includes optional privacy and browsing settings"
+    ],
+    "fr-FR": [
+      "Détecte les pages de jeux, du catalogue et de création",
+      "Affiche les profils de joueurs et de groupes",
+      "Affiche l'activité de recherche",
+      "Propose des réglages facultatifs de confidentialité et de navigation"
+    ],
+    "es-ES": [
+      "Detecta páginas de juegos, catálogo y creación",
+      "Muestra perfiles de jugadores y grupos",
+      "Muestra la actividad de búsqueda",
+      "Incluye opciones de privacidad y navegación"
+    ],
+    "de-DE": [
+      "Erkennt Spiel-, Katalog- und Creator-Seiten",
+      "Zeigt Spieler- und Gruppenprofile",
+      "Zeigt Suchaktivitäten",
+      "Bietet optionale Datenschutz- und Browsing-Einstellungen"
+    ],
+    "pt-BR": [
+      "Detecta páginas de jogos, catálogo e criação",
+      "Mostra perfis de jogadores e grupos",
+      "Exibe a atividade de pesquisa",
+      "Inclui opções de privacidade e navegação"
+    ],
+    "pl-PL": [
+      "Wykrywa strony gier, katalogu i twórców",
+      "Pokazuje profile graczy i grup",
+      "Wyświetla aktywność wyszukiwania",
+      "Zawiera opcjonalne ustawienia prywatności i przeglądania"
+    ],
+    "ja-JP": [
+      "ゲーム、カタログ、クリエイターページを検出",
+      "プレイヤーとグループのプロフィールを表示",
+      "検索アクティビティを表示",
+      "プライバシーと閲覧のオプション設定"
+    ],
+    "ko-KR": [
+      "게임, 카탈로그 및 크리에이터 페이지 감지",
+      "플레이어 및 그룹 프로필 표시",
+      "검색 활동 표시",
+      "선택 가능한 개인정보 보호 및 탐색 설정"
+    ],
+    "tr-TR": [
+      "Oyun, katalog ve oluşturucu sayfalarını algılar",
+      "Oyuncu ve grup profillerini gösterir",
+      "Arama etkinliğini görüntüler",
+      "İsteğe bağlı gizlilik ve gezinme ayarları sunar"
+    ],
+    "ms-MY": [
+      "Mengesan halaman permainan, katalog dan pencipta",
+      "Memaparkan profil pemain dan kumpulan",
+      "Memaparkan aktiviti carian",
+      "Menyediakan tetapan privasi dan pelayaran pilihan"
+    ],
+    "el-GR": [
+      "Εντοπίζει σελίδες παιχνιδιών, καταλόγου και δημιουργών",
+      "Εμφανίζει προφίλ παικτών και ομάδων",
+      "Εμφανίζει δραστηριότητα αναζήτησης",
+      "Περιλαμβάνει προαιρετικές ρυθμίσεις απορρήτου και περιήγησης"
+    ]
+  }
+}
