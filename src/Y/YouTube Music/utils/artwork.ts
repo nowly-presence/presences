@@ -11,7 +11,7 @@ export const normalizeArtworkUrl = (url: string | undefined): string | undefined
 }
 
 export const findArtwork = (playerBar: Element | null): string | undefined => {
-  const mediaSessionArtwork = navigator.mediaSession.metadata?.artwork
+  const mediaSessionArtwork = navigator.mediaSession?.metadata?.artwork
   const largestMediaSessionArtwork = mediaSessionArtwork?.[mediaSessionArtwork.length - 1]?.src
   const normalizedMediaSessionArtwork = normalizeArtworkUrl(largestMediaSessionArtwork)
   if (normalizedMediaSessionArtwork) return normalizedMediaSessionArtwork
