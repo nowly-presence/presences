@@ -31,14 +31,22 @@
       <b>Apple TV+</b>
     </td>
     <td align="center">
-      <img src="https://cdn.nowly.me/presences/canal-plus/assets/logo.png" width="48" height="48" alt="CANAL+"><br>
-      <b>CANAL+</b>
+      <img src="https://cdn.nowly.me/presences/ard-mediathek/assets/logo.png" width="48" height="48" alt="ARD Mediathek"><br>
+      <b>ARD Mediathek</b>
     </td>
   </tr>
   <tr>
     <td align="center">
+      <img src="https://cdn.nowly.me/presences/canal-plus/assets/logo.png" width="48" height="48" alt="CANAL+"><br>
+      <b>CANAL+</b>
+    </td>
+    <td align="center">
       <img src="https://cdn.nowly.me/presences/chatgpt/assets/logo.png" width="48" height="48" alt="ChatGPT"><br>
       <b>ChatGPT</b>
+    </td>
+    <td align="center">
+      <img src="https://cdn.nowly.me/presences/chess/assets/logo.png" width="48" height="48" alt="Chess.com"><br>
+      <b>Chess.com</b>
     </td>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/cinepulse/assets/logo.png" width="48" height="48" alt="Cinepulse"><br>
@@ -48,6 +56,8 @@
       <img src="https://cdn.nowly.me/presences/claude/assets/logo.png" width="48" height="48" alt="Claude"><br>
       <b>Claude</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/crunchyroll/assets/logo.png" width="48" height="48" alt="Crunchyroll"><br>
       <b>Crunchyroll</b>
@@ -56,8 +66,6 @@
       <img src="https://cdn.nowly.me/presences/deepseek/assets/logo.png" width="48" height="48" alt="DeepSeek"><br>
       <b>DeepSeek</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/deezer/assets/logo.png" width="48" height="48" alt="Deezer"><br>
       <b>Deezer</b>
@@ -66,6 +74,12 @@
       <img src="https://cdn.nowly.me/presences/disney-plus/assets/logo.png" width="48" height="48" alt="Disney+"><br>
       <b>Disney+</b>
     </td>
+    <td align="center">
+      <img src="https://cdn.nowly.me/presences/fandom/assets/logo.png" width="48" height="48" alt="Fandom"><br>
+      <b>Fandom</b>
+    </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/figma/assets/logo.png" width="48" height="48" alt="Figma"><br>
       <b>Figma</b>
@@ -78,8 +92,6 @@
       <img src="https://cdn.nowly.me/presences/gemini/assets/logo.png" width="48" height="48" alt="Gemini"><br>
       <b>Gemini</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/github/assets/logo.png" width="48" height="48" alt="GitHub"><br>
       <b>GitHub</b>
@@ -88,6 +100,8 @@
       <img src="https://cdn.nowly.me/presences/grok/assets/logo.png" width="48" height="48" alt="Grok"><br>
       <b>Grok</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/hbo-max/assets/logo.png" width="48" height="48" alt="HBO Max"><br>
       <b>HBO Max</b>
@@ -100,8 +114,6 @@
       <img src="https://cdn.nowly.me/presences/linkedin/assets/logo.png" width="48" height="48" alt="LinkedIn"><br>
       <b>LinkedIn</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/netflix/assets/logo.png" width="48" height="48" alt="Netflix"><br>
       <b>Netflix</b>
@@ -110,6 +122,8 @@
       <img src="https://cdn.nowly.me/presences/notion/assets/logo.png" width="48" height="48" alt="Notion"><br>
       <b>Notion</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/nowly/assets/logo.png" width="48" height="48" alt="Nowly"><br>
       <b>Nowly</b>
@@ -119,8 +133,16 @@
       <b>Paramount+</b>
     </td>
     <td align="center">
+      <img src="https://cdn.nowly.me/presences/peacock/assets/logo.png" width="48" height="48" alt="Peacock"><br>
+      <b>Peacock</b>
+    </td>
+    <td align="center">
       <img src="https://cdn.nowly.me/presences/perplexity/assets/logo.png" width="48" height="48" alt="Perplexity"><br>
       <b>Perplexity</b>
+    </td>
+    <td align="center">
+      <img src="https://cdn.nowly.me/presences/pinterest/assets/logo.png" width="48" height="48" alt="Pinterest"><br>
+      <b>Pinterest</b>
     </td>
   </tr>
   <tr>
@@ -137,18 +159,26 @@
       <b>Reddit</b>
     </td>
     <td align="center">
-      <img src="https://cdn.nowly.me/presences/soundcloud/assets/logo.png" width="48" height="48" alt="SoundCloud"><br>
-      <b>SoundCloud</b>
+      <img src="https://cdn.nowly.me/presences/roblox/assets/logo.png" width="48" height="48" alt="Roblox"><br>
+      <b>Roblox</b>
     </td>
     <td align="center">
-      <img src="https://cdn.nowly.me/presences/spotify/assets/logo.png" width="48" height="48" alt="Spotify"><br>
-      <b>Spotify</b>
+      <img src="https://cdn.nowly.me/presences/soundcloud/assets/logo.png" width="48" height="48" alt="SoundCloud"><br>
+      <b>SoundCloud</b>
     </td>
   </tr>
   <tr>
     <td align="center">
+      <img src="https://cdn.nowly.me/presences/spotify/assets/logo.png" width="48" height="48" alt="Spotify"><br>
+      <b>Spotify</b>
+    </td>
+    <td align="center">
       <img src="https://cdn.nowly.me/presences/steam/assets/logo.png" width="48" height="48" alt="Steam"><br>
       <b>Steam</b>
+    </td>
+    <td align="center">
+      <img src="https://cdn.nowly.me/presences/steamdb/assets/logo.png" width="48" height="48" alt="SteamDB"><br>
+      <b>SteamDB</b>
     </td>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/threads/assets/logo.png" width="48" height="48" alt="Threads"><br>
@@ -158,6 +188,8 @@
       <img src="https://cdn.nowly.me/presences/tidal/assets/logo.png" width="48" height="48" alt="Tidal"><br>
       <b>Tidal</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/tiktok/assets/logo.png" width="48" height="48" alt="TikTok"><br>
       <b>TikTok</b>
@@ -166,16 +198,20 @@
       <img src="https://cdn.nowly.me/presences/twitch/assets/logo.png" width="48" height="48" alt="Twitch"><br>
       <b>Twitch</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/vibe/assets/logo.png" width="48" height="48" alt="Vibe (Le Chat)"><br>
       <b>Vibe (Le Chat)</b>
     </td>
     <td align="center">
+      <img src="https://cdn.nowly.me/presences/webtoon/assets/logo.png" width="48" height="48" alt="WEBTOON"><br>
+      <b>WEBTOON</b>
+    </td>
+    <td align="center">
       <img src="https://cdn.nowly.me/presences/wikipedia/assets/logo.png" width="48" height="48" alt="Wikipedia"><br>
       <b>Wikipedia</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/x/assets/logo.png" width="48" height="48" alt="X"><br>
       <b>X</b>
