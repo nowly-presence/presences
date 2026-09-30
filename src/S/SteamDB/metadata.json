@@ -1,0 +1,50 @@
+{
+  "name": "SteamDB",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["steamdb.info", "steamstat.us"],
+  "regExp": "^https?://(steamdb\\.info|steamstat\\.us)/",
+  "color": "#3771C8",
+  "category": "gaming",
+  "description": {
+    "en-US": "Show the SteamDB page, game, or statistic you're viewing.",
+    "fr-FR": "Affichez la page, le jeu ou la statistique SteamDB que vous consultez.",
+    "es-ES": "Muestra la página, el juego o la estadística de SteamDB que estás viendo.",
+    "de-DE": "Zeige die SteamDB-Seite, das Spiel oder die Statistik, die du gerade ansiehst.",
+    "pt-BR": "Mostre a página, o jogo ou a estatística do SteamDB que você está visualizando.",
+    "pl-PL": "Pokazuj oglądaną stronę, grę lub statystykę SteamDB.",
+    "ja-JP": "閲覧中のSteamDBページ、ゲーム、統計情報を表示します。",
+    "ko-KR": "보고 있는 SteamDB 페이지, 게임 또는 통계를 표시합니다.",
+    "tr-TR": "Görüntülediğin SteamDB sayfasını, oyununu veya istatistiğini gösterir.",
+    "ms-MY": "Paparkan halaman, permainan atau statistik SteamDB yang sedang anda lihat.",
+    "el-GR": "Εμφανίζει τη σελίδα, το παιχνίδι ή τα στατιστικά του SteamDB που βλέπεις."
+  },
+  "longDescription": {
+    "en-US": "SteamDB provides data and tools for the Steam platform. This presence shows the game, chart, release, package, or other SteamDB page you're browsing.",
+    "fr-FR": "SteamDB fournit des données et des outils sur la plateforme Steam. Cette présence affiche le jeu, le graphique, la sortie, le package ou une autre page SteamDB consultée.",
+    "es-ES": "SteamDB ofrece datos y herramientas para la plataforma Steam. Esta presencia muestra el juego, gráfico, lanzamiento, paquete u otra página de SteamDB que estás consultando.",
+    "de-DE": "SteamDB bietet Daten und Tools für die Steam-Plattform. Diese Präsenz zeigt das Spiel, Diagramm, Release, Paket oder eine andere SteamDB-Seite, die du besuchst.",
+    "pt-BR": "O SteamDB fornece dados e ferramentas para a plataforma Steam. Esta presença mostra o jogo, gráfico, lançamento, pacote ou outra página do SteamDB que você está acessando.",
+    "pl-PL": "SteamDB udostępnia dane i narzędzia dotyczące platformy Steam. Ta aktywność pokazuje przeglądaną grę, wykres, premierę, pakiet lub inną stronę SteamDB.",
+    "ja-JP": "SteamDBはSteamプラットフォームのデータとツールを提供します。このプレゼンスは閲覧中のゲーム、グラフ、リリース、パッケージなどのページを表示します。",
+    "ko-KR": "SteamDB는 Steam 플랫폼의 데이터와 도구를 제공합니다. 이 프레즌스는 보고 있는 게임, 차트, 출시 정보, 패키지 또는 기타 SteamDB 페이지를 표시합니다.",
+    "tr-TR": "SteamDB, Steam platformu için veriler ve araçlar sunar. Bu presence görüntülediğin oyunu, grafiği, çıkışı, paketi veya diğer SteamDB sayfalarını gösterir.",
+    "ms-MY": "SteamDB menyediakan data dan alat untuk platform Steam. Presence ini memaparkan permainan, carta, keluaran, pakej atau halaman SteamDB lain yang anda layari.",
+    "el-GR": "Το SteamDB παρέχει δεδομένα και εργαλεία για την πλατφόρμα Steam. Αυτή η παρουσία εμφανίζει το παιχνίδι, το γράφημα, την κυκλοφορία, το πακέτο ή άλλη σελίδα SteamDB που περιηγείσαι."
+  },
+  "features": {
+    "en-US": ["Detects game and package pages", "Shows Steam charts and release information", "Displays search activity", "Supports SteamDB and Steam status pages"],
+    "fr-FR": ["Détecte les pages de jeux et de packages", "Affiche les statistiques Steam et les sorties", "Affiche l'activité de recherche", "Prend en charge SteamDB et les pages de statut Steam"],
+    "es-ES": ["Detecta páginas de juegos y paquetes", "Muestra gráficos de Steam e información de lanzamientos", "Muestra la actividad de búsqueda", "Compatible con SteamDB y las páginas de estado de Steam"],
+    "de-DE": ["Erkennt Spiel- und Paket-Seiten", "Zeigt Steam-Charts und Release-Informationen", "Zeigt Suchaktivitäten", "Unterstützt SteamDB- und Steam-Statusseiten"],
+    "pt-BR": ["Detecta páginas de jogos e pacotes", "Mostra gráficos do Steam e informações de lançamentos", "Exibe a atividade de pesquisa", "Compatível com páginas do SteamDB e do status do Steam"],
+    "pl-PL": ["Wykrywa strony gier i pakietów", "Pokazuje wykresy Steam i informacje o premierach", "Wyświetla aktywność wyszukiwania", "Obsługuje strony SteamDB i statusu Steam"],
+    "ja-JP": ["ゲームとパッケージのページを検出", "Steamのグラフとリリース情報を表示", "検索アクティビティを表示", "SteamDBとSteamステータスのページに対応"],
+    "ko-KR": ["게임 및 패키지 페이지 감지", "Steam 차트와 출시 정보 표시", "검색 활동 표시", "SteamDB 및 Steam 상태 페이지 지원"],
+    "tr-TR": ["Oyun ve paket sayfalarını algılar", "Steam grafiklerini ve çıkış bilgilerini gösterir", "Arama etkinliğini görüntüler", "SteamDB ve Steam durum sayfalarını destekler"],
+    "ms-MY": ["Mengesan halaman permainan dan pakej", "Memaparkan carta Steam dan maklumat keluaran", "Memaparkan aktiviti carian", "Menyokong halaman SteamDB dan status Steam"],
+    "el-GR": ["Εντοπίζει σελίδες παιχνιδιών και πακέτων", "Εμφανίζει γραφήματα Steam και πληροφορίες κυκλοφορίας", "Εμφανίζει δραστηριότητα αναζήτησης", "Υποστηρίζει σελίδες SteamDB και κατάστασης Steam"]
+  }
+}
