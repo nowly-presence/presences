@@ -1,0 +1,14 @@
+{
+  "browsing": "WEBTOON'da geziniyor",
+  "viewingSeries": "Bir WEBTOON serisini görüntülüyor",
+  "reading": "{title} okuyor",
+  "readingGeneric": "Bir WEBTOON bölümü okuyor",
+  "browsingSchedule": "Günlük programa göz atıyor",
+  "completedSeries": "Tamamlanmış seriler",
+  "ongoingSeries": "Devam eden seriler",
+  "popularSeries": "Popüler serilere göz atıyor",
+  "browsingGenres": "Türlere göz atıyor",
+  "searching": "WEBTOON'da arıyor",
+  "about": "WEBTOON hakkında okuyor",
+  "openWebtoon": "WEBTOON'u aç"
+}

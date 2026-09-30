@@ -1,0 +1,14 @@
+{
+  "browsing": "Przegląda WEBTOON",
+  "viewingSeries": "Przegląda serię WEBTOON",
+  "reading": "Czyta {title}",
+  "readingGeneric": "Czyta odcinek WEBTOON",
+  "browsingSchedule": "Przegląda dzienny harmonogram",
+  "completedSeries": "Ukończone serie",
+  "ongoingSeries": "Trwające serie",
+  "popularSeries": "Przegląda popularne serie",
+  "browsingGenres": "Przegląda gatunki",
+  "searching": "Szuka w WEBTOON",
+  "about": "Czyta o WEBTOON",
+  "openWebtoon": "Otwórz WEBTOON"
+}
