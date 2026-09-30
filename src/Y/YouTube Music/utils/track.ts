@@ -28,7 +28,7 @@ export const findVideo = (): HTMLVideoElement | null =>
 
 const findTitle = (playerBar: Element | null): string | undefined => {
   const root = playerBar ?? document
-  return cleanTrackTitle(navigator.mediaSession.metadata?.title)
+  return cleanTrackTitle(navigator.mediaSession?.metadata?.title)
     ?? cleanTrackTitle(root.querySelector(".title.ytmusic-player-bar")?.textContent)
     ?? cleanTrackTitle(root.querySelector(".content-info-wrapper .title")?.textContent)
     ?? cleanTrackTitle(root.querySelector("yt-formatted-string.title")?.textContent)
@@ -40,7 +40,7 @@ const findByline = (playerBar: Element | null): string | undefined =>
   ?? text(".content-info-wrapper .byline", playerBar ?? document)
 
 const findArtist = (playerBar: Element | null): string | undefined => {
-  const mediaSessionArtist = cleanArtist(navigator.mediaSession.metadata?.artist)
+  const mediaSessionArtist = cleanArtist(navigator.mediaSession?.metadata?.artist)
   if (mediaSessionArtist) return mediaSessionArtist
 
   const byline = findByline(playerBar)
