@@ -1,0 +1,105 @@
+{
+  "name": "WEBTOON",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["webtoons.com", "www.webtoons.com"],
+  "regExp": "^https?://(www\\.)?webtoons\\.com/",
+  "color": "#00DC64",
+  "category": "other",
+  "description": {
+    "en-US": "Show the WEBTOON series or episode you're browsing.",
+    "fr-FR": "Affichez la série ou l'épisode WEBTOON que vous consultez.",
+    "es-ES": "Muestra la serie o el episodio de WEBTOON que estás viendo.",
+    "de-DE": "Zeige die WEBTOON-Serie oder -Episode, die du gerade ansiehst.",
+    "pt-BR": "Mostre a série ou o episódio do WEBTOON que você está lendo.",
+    "pl-PL": "Pokazuj przeglądaną serię lub odcinek WEBTOON.",
+    "ja-JP": "閲覧中のWEBTOONシリーズやエピソードを表示します。",
+    "ko-KR": "보고 있는 WEBTOON 시리즈 또는 에피소드를 표시합니다.",
+    "tr-TR": "Göz attığın WEBTOON serisini veya bölümünü gösterir.",
+    "ms-MY": "Paparkan siri atau episod WEBTOON yang sedang anda lihat.",
+    "el-GR": "Εμφανίζει τη σειρά ή το επεισόδιο WEBTOON που βλέπεις."
+  },
+  "longDescription": {
+    "en-US": "WEBTOON is a digital comics platform featuring original series across romance, comedy, action, fantasy, horror, and more. This presence detects series pages, episode reading, charts, genres, search, and schedules.",
+    "fr-FR": "WEBTOON est une plateforme de bandes dessinées numériques proposant des séries originales de romance, comédie, action, fantasy, horreur et plus encore. Cette présence détecte les fiches de série, la lecture d'épisodes, les classements, les genres, la recherche et les programmes.",
+    "es-ES": "WEBTOON es una plataforma de cómics digitales con series originales de romance, comedia, acción, fantasía, terror y más. Esta presencia detecta páginas de series, lectura de episodios, listas, géneros, búsquedas y programación.",
+    "de-DE": "WEBTOON ist eine Plattform für digitale Comics mit Originalserien aus den Bereichen Romantik, Comedy, Action, Fantasy, Horror und mehr. Diese Präsenz erkennt Serienseiten, Episoden, Charts, Genres, Suche und Zeitpläne.",
+    "pt-BR": "WEBTOON é uma plataforma de quadrinhos digitais com séries originais de romance, comédia, ação, fantasia, terror e muito mais. Esta presença detecta páginas de séries, leitura de episódios, rankings, gêneros, pesquisas e programação.",
+    "pl-PL": "WEBTOON to platforma cyfrowych komiksów z oryginalnymi seriami z gatunków romansu, komedii, akcji, fantasy, horroru i innych. Ta aktywność wykrywa strony serii, czytanie odcinków, rankingi, gatunki, wyszukiwanie i harmonogramy.",
+    "ja-JP": "WEBTOONは、恋愛、コメディ、アクション、ファンタジー、ホラーなどのオリジナルシリーズを配信するデジタルコミックプラットフォームです。このプレゼンスはシリーズページ、エピソード閲覧、ランキング、ジャンル、検索、スケジュールを検出します。",
+    "ko-KR": "WEBTOON은 로맨스, 코미디, 액션, 판타지, 공포 등 다양한 오리지널 시리즈를 제공하는 디지털 만화 플랫폼입니다. 이 프레즌스는 시리즈 페이지, 에피소드 읽기, 차트, 장르, 검색 및 일정을 감지합니다.",
+    "tr-TR": "WEBTOON; romantizm, komedi, aksiyon, fantastik, korku ve daha birçok türde özgün seriler sunan dijital çizgi roman platformudur. Bu presence seri sayfalarını, bölüm okumayı, listeleri, türleri, aramayı ve programları algılar.",
+    "ms-MY": "WEBTOON ialah platform komik digital yang menampilkan siri asli dalam genre romantik, komedi, aksi, fantasi, seram dan banyak lagi. Presence ini mengesan halaman siri, bacaan episod, carta, genre, carian dan jadual.",
+    "el-GR": "Το WEBTOON είναι μια πλατφόρμα ψηφιακών κόμικ με πρωτότυπες σειρές ρομαντισμού, κωμωδίας, δράσης, φαντασίας, τρόμου και άλλων ειδών. Αυτή η παρουσία εντοπίζει σελίδες σειρών, ανάγνωση επεισοδίων, κατατάξεις, είδη, αναζήτηση και προγράμματα."
+  },
+  "features": {
+    "en-US": [
+      "Detects series pages and episode reading",
+      "Shows episode title and number when available",
+      "Recognizes charts, genres, search, and daily schedules",
+      "Includes optional privacy and browsing settings"
+    ],
+    "fr-FR": [
+      "Détecte les fiches de série et la lecture d'épisodes",
+      "Affiche le titre et le numéro de l'épisode si disponibles",
+      "Reconnaît les classements, genres, recherches et programmes quotidiens",
+      "Propose des réglages facultatifs de confidentialité et de navigation"
+    ],
+    "es-ES": [
+      "Detecta páginas de series y lectura de episodios",
+      "Muestra el título y número del episodio cuando están disponibles",
+      "Reconoce listas, géneros, búsquedas y programación diaria",
+      "Incluye opciones de privacidad y navegación"
+    ],
+    "de-DE": [
+      "Erkennt Serienseiten und das Lesen von Episoden",
+      "Zeigt Episodentitel und -nummer, sofern verfügbar",
+      "Erkennt Charts, Genres, Suche und Tagespläne",
+      "Bietet optionale Datenschutz- und Browsing-Einstellungen"
+    ],
+    "pt-BR": [
+      "Detecta páginas de séries e leitura de episódios",
+      "Mostra o título e o número do episódio quando disponíveis",
+      "Reconhece rankings, gêneros, pesquisas e programação diária",
+      "Inclui opções de privacidade e navegação"
+    ],
+    "pl-PL": [
+      "Wykrywa strony serii i czytanie odcinków",
+      "Pokazuje tytuł i numer odcinka, jeśli są dostępne",
+      "Rozpoznaje rankingi, gatunki, wyszukiwanie i harmonogramy",
+      "Zawiera opcjonalne ustawienia prywatności i przeglądania"
+    ],
+    "ja-JP": [
+      "シリーズページとエピソード閲覧を検出",
+      "利用可能な場合、エピソード名と番号を表示",
+      "ランキング、ジャンル、検索、日程を認識",
+      "プライバシーと閲覧のオプション設定"
+    ],
+    "ko-KR": [
+      "시리즈 페이지와 에피소드 읽기 감지",
+      "가능한 경우 에피소드 제목과 번호 표시",
+      "차트, 장르, 검색 및 일일 일정 인식",
+      "선택 가능한 개인정보 보호 및 탐색 설정"
+    ],
+    "tr-TR": [
+      "Seri sayfalarını ve bölüm okumayı algılar",
+      "Mümkün olduğunda bölüm başlığını ve numarasını gösterir",
+      "Listeleri, türleri, aramayı ve günlük programları tanır",
+      "İsteğe bağlı gizlilik ve gezinme ayarları sunar"
+    ],
+    "ms-MY": [
+      "Mengesan halaman siri dan bacaan episod",
+      "Memaparkan tajuk dan nombor episod jika tersedia",
+      "Mengenali carta, genre, carian dan jadual harian",
+      "Menyediakan tetapan privasi dan pelayaran pilihan"
+    ],
+    "el-GR": [
+      "Εντοπίζει σελίδες σειρών και ανάγνωση επεισοδίων",
+      "Εμφανίζει τίτλο και αριθμό επεισοδίου όταν είναι διαθέσιμα",
+      "Αναγνωρίζει κατατάξεις, είδη, αναζήτηση και ημερήσια προγράμματα",
+      "Περιλαμβάνει προαιρετικές ρυθμίσεις απορρήτου και περιήγησης"
+    ]
+  }
+}

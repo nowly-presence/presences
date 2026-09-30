@@ -1,0 +1,105 @@
+{
+  "name": "Fandom",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["fandom.com", "www.fandom.com"],
+  "regExp": "^https?://([a-z0-9-]+\\.)?fandom\\.com/",
+  "color": "#F4F4F4",
+  "category": "learning",
+  "description": {
+    "en-US": "Show the Fandom wiki or article you're reading.",
+    "fr-FR": "Affichez le wiki ou l'article Fandom que vous consultez.",
+    "es-ES": "Muestra la wiki o el artículo de Fandom que estás leyendo.",
+    "de-DE": "Zeige das Fandom-Wiki oder den Artikel, den du gerade liest.",
+    "pt-BR": "Mostre a wiki ou o artigo do Fandom que você está lendo.",
+    "pl-PL": "Pokazuj wiki lub artykuł Fandom, który czytasz.",
+    "ja-JP": "閲覧中のFandomのWikiや記事を表示します。",
+    "ko-KR": "읽고 있는 Fandom 위키 또는 문서를 표시합니다.",
+    "tr-TR": "Okuduğun Fandom wiki sayfasını veya makaleyi gösterir.",
+    "ms-MY": "Paparkan wiki atau rencana Fandom yang sedang anda baca.",
+    "el-GR": "Εμφανίζει το wiki ή το άρθρο του Fandom που διαβάζεις."
+  },
+  "longDescription": {
+    "en-US": "Fandom is a fan-powered platform of wikis and editorial content about games, movies, TV, and more. This presence shows the wiki, article, discussion, or video page you're viewing.",
+    "fr-FR": "Fandom est une plateforme communautaire de wikis et de contenus éditoriaux sur les jeux, les films, les séries et bien plus. Cette présence affiche le wiki, l'article, la discussion ou la vidéo consulté.",
+    "es-ES": "Fandom es una plataforma comunitaria de wikis y contenido editorial sobre videojuegos, películas, televisión y más. Esta presencia muestra la wiki, el artículo, el debate o el vídeo que estás viendo.",
+    "de-DE": "Fandom ist eine von Fans betriebene Plattform mit Wikis und redaktionellen Inhalten zu Spielen, Filmen, Serien und mehr. Diese Präsenz zeigt das Wiki, den Artikel, die Diskussion oder das Video, das du ansiehst.",
+    "pt-BR": "Fandom é uma plataforma criada por fãs com wikis e conteúdo editorial sobre jogos, filmes, TV e muito mais. Esta presença mostra a wiki, o artigo, a discussão ou o vídeo que você está vendo.",
+    "pl-PL": "Fandom to prowadzona przez fanów platforma z wiki i treściami redakcyjnymi o grach, filmach, telewizji i nie tylko. Ta aktywność pokazuje przeglądaną wiki, artykuł, dyskusję lub film.",
+    "ja-JP": "Fandomは、ゲーム、映画、テレビなどのファン運営Wikiと編集コンテンツのプラットフォームです。このプレゼンスは閲覧中のWiki、記事、ディスカッション、動画を表示します。",
+    "ko-KR": "Fandom은 게임, 영화, TV 등에 관한 팬 제작 위키와 편집 콘텐츠 플랫폼입니다. 이 프레즌스는 보고 있는 위키, 문서, 토론 또는 동영상을 표시합니다.",
+    "tr-TR": "Fandom; oyunlar, filmler, TV ve daha fazlası hakkında hayranların oluşturduğu wiki ve editoryal içerik platformudur. Bu presence görüntülediğin wiki, makale, tartışma veya videoyu gösterir.",
+    "ms-MY": "Fandom ialah platform wiki dan kandungan editorial yang diterajui peminat tentang permainan, filem, TV dan banyak lagi. Presence ini memaparkan wiki, rencana, perbincangan atau video yang anda lihat.",
+    "el-GR": "Το Fandom είναι μια πλατφόρμα wiki και συντακτικού περιεχομένου από θαυμαστές για παιχνίδια, ταινίες, τηλεόραση και άλλα. Αυτή η παρουσία εμφανίζει το wiki, το άρθρο, τη συζήτηση ή το βίντεο που βλέπεις."
+  },
+  "features": {
+    "en-US": [
+      "Detects wiki articles and page actions",
+      "Shows the wiki and article title",
+      "Recognizes search and discussion pages",
+      "Covers Fandom editorial pages and community wikis"
+    ],
+    "fr-FR": [
+      "Détecte les articles wiki et les actions de page",
+      "Affiche le nom du wiki et le titre de l'article",
+      "Reconnaît les recherches et les discussions",
+      "Couvre les pages éditoriales Fandom et les wikis communautaires"
+    ],
+    "es-ES": [
+      "Detecta artículos wiki y acciones de página",
+      "Muestra el nombre de la wiki y el título del artículo",
+      "Reconoce búsquedas y páginas de debate",
+      "Cubre páginas editoriales de Fandom y wikis comunitarias"
+    ],
+    "de-DE": [
+      "Erkennt Wiki-Artikel und Seitenaktionen",
+      "Zeigt Wiki- und Artikeltitel",
+      "Erkennt Such- und Diskussionsseiten",
+      "Unterstützt Fandom-Redaktionsseiten und Community-Wikis"
+    ],
+    "pt-BR": [
+      "Detecta artigos wiki e ações de página",
+      "Mostra o nome da wiki e o título do artigo",
+      "Reconhece páginas de pesquisa e discussão",
+      "Abrange páginas editoriais do Fandom e wikis da comunidade"
+    ],
+    "pl-PL": [
+      "Wykrywa artykuły wiki i działania na stronach",
+      "Pokazuje nazwę wiki i tytuł artykułu",
+      "Rozpoznaje strony wyszukiwania i dyskusji",
+      "Obsługuje strony redakcyjne Fandom i wiki społeczności"
+    ],
+    "ja-JP": [
+      "Wiki記事とページ操作を検出",
+      "Wiki名と記事タイトルを表示",
+      "検索ページとディスカッションページを認識",
+      "Fandomの編集ページとコミュニティWikiに対応"
+    ],
+    "ko-KR": [
+      "위키 문서 및 페이지 작업 감지",
+      "위키 이름과 문서 제목 표시",
+      "검색 및 토론 페이지 인식",
+      "Fandom 편집 페이지와 커뮤니티 위키 지원"
+    ],
+    "tr-TR": [
+      "Wiki makalelerini ve sayfa işlemlerini algılar",
+      "Wiki ve makale başlığını gösterir",
+      "Arama ve tartışma sayfalarını tanır",
+      "Fandom editoryal sayfalarını ve topluluk wikilerini kapsar"
+    ],
+    "ms-MY": [
+      "Mengesan rencana wiki dan tindakan halaman",
+      "Memaparkan nama wiki dan tajuk rencana",
+      "Mengenali halaman carian dan perbincangan",
+      "Merangkumi halaman editorial Fandom dan wiki komuniti"
+    ],
+    "el-GR": [
+      "Εντοπίζει άρθρα wiki και ενέργειες σελίδας",
+      "Εμφανίζει το wiki και τον τίτλο του άρθρου",
+      "Αναγνωρίζει σελίδες αναζήτησης και συζήτησης",
+      "Καλύπτει συντακτικές σελίδες Fandom και wiki κοινότητας"
+    ]
+  }
+}

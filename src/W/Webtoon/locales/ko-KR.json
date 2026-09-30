@@ -1,0 +1,14 @@
+{
+  "browsing": "WEBTOON 탐색 중",
+  "viewingSeries": "WEBTOON 시리즈 보는 중",
+  "reading": "{title} 읽는 중",
+  "readingGeneric": "WEBTOON 에피소드 읽는 중",
+  "browsingSchedule": "일일 일정 탐색 중",
+  "completedSeries": "완결된 시리즈",
+  "ongoingSeries": "연재 중인 시리즈",
+  "popularSeries": "인기 시리즈 탐색 중",
+  "browsingGenres": "장르 탐색 중",
+  "searching": "WEBTOON 검색 중",
+  "about": "WEBTOON 소개 읽는 중",
+  "openWebtoon": "WEBTOON 열기"
+}

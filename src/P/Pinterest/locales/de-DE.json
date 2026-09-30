@@ -1,0 +1,19 @@
+{
+  "browsing": "Durchsucht Pinterest",
+  "home": "Sieht sich die Startseite an",
+  "searching": "Sucht auf Pinterest",
+  "searchResults": "Sieht sich Pinterest-Suchergebnisse an",
+  "viewingProfile": "Sieht ein Profil an",
+  "viewingPin": "Sieht sich einen Pin an",
+  "viewingVideoPin": "Sieht sich einen Video-Pin an",
+  "viewingIdeas": "Durchsucht Ideen",
+  "creatingPin": "Erstellt einen Pin",
+  "creatingCollage": "Erstellt eine Collage",
+  "watchPin": "Pin ansehen",
+  "viewProfile": "Profil ansehen",
+  "playing": "Wiedergabe",
+  "paused": "Pausiert",
+  "pinBy": "Pin von {name}",
+  "videoBy": "Video-Pin von {name}",
+  "privateBrowsing": "Durchsucht Pinterest privat"
+}

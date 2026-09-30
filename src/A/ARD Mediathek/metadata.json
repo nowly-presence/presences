@@ -1,0 +1,50 @@
+{
+  "name": "ARD Mediathek",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["ardmediathek.de", "www.ardmediathek.de"],
+  "regExp": "^https?://(www\\.)?ardmediathek\\.de/",
+  "color": "#000F2D",
+  "category": "streaming",
+  "description": {
+    "en-US": "Show the program or livestream you're watching on ARD Mediathek.",
+    "fr-FR": "Affichez le programme ou le direct que vous regardez sur ARD Mediathek.",
+    "es-ES": "Muestra el programa o la emisión en directo que estás viendo en ARD Mediathek.",
+    "de-DE": "Zeige das Programm oder den Livestream, den du in der ARD Mediathek ansiehst."
+  },
+  "longDescription": {
+    "en-US": "ARD Mediathek is the video-on-demand and livestream service from German public broadcaster ARD. This presence displays the program, playback state, and timestamps when available.",
+    "fr-FR": "ARD Mediathek est le service de vidéo à la demande et de direct du groupe audiovisuel public allemand ARD. Cette présence affiche le programme, l'état de lecture et les timestamps lorsqu'ils sont disponibles.",
+    "es-ES": "ARD Mediathek es el servicio de vídeo bajo demanda y emisiones en directo de la cadena pública alemana ARD. Esta presencia muestra el programa, el estado de reproducción y las marcas de tiempo cuando están disponibles.",
+    "de-DE": "Die ARD Mediathek ist das Video-on-Demand- und Livestream-Angebot der öffentlich-rechtlichen ARD. Diese Presence zeigt das Programm, den Wiedergabestatus und verfügbare Zeitangaben an."
+  },
+  "features": {
+    "en-US": [
+      "Detects on-demand videos and livestreams",
+      "Shows program title and available episode details",
+      "Tracks playing and paused state",
+      "Optionally shows browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte les vidéos à la demande et les directs",
+      "Affiche le titre du programme et les détails d'épisode disponibles",
+      "Suit l'état de lecture ou de pause",
+      "Peut afficher l'activité de navigation"
+    ],
+    "es-ES": [
+      "Detecta vídeos bajo demanda y emisiones en directo",
+      "Muestra el título del programa y los detalles del episodio disponibles",
+      "Sigue el estado de reproducción o pausa",
+      "Puede mostrar la actividad de navegación"
+    ],
+    "de-DE": [
+      "Erkennt Videos auf Abruf und Livestreams",
+      "Zeigt den Programmtitel und verfügbare Episodendetails an",
+      "Zeigt den Wiedergabe- oder Pausenstatus",
+      "Kann auch die Browsing-Aktivität anzeigen"
+    ]
+  },
+  "supportedLocales": ["de-DE", "en-US", "fr-FR", "es-ES"]
+}

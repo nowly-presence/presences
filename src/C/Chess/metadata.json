@@ -1,0 +1,105 @@
+{
+  "name": "Chess.com",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["chess.com", "www.chess.com"],
+  "regExp": "^https?://(www\\.)?chess\\.com/",
+  "color": "#81B64C",
+  "category": "gaming",
+  "description": {
+    "en-US": "Show your chess games, puzzles, analysis, and activity on Chess.com.",
+    "fr-FR": "Affichez vos parties, puzzles, analyses et activités sur Chess.com.",
+    "es-ES": "Muestra tus partidas, problemas, análisis y actividad en Chess.com.",
+    "de-DE": "Zeige deine Schachpartien, Rätsel, Analysen und Aktivitäten auf Chess.com.",
+    "pt-BR": "Mostre suas partidas, quebra-cabeças, análises e atividades no Chess.com.",
+    "pl-PL": "Pokazuj swoje partie, zadania, analizy i aktywność na Chess.com.",
+    "ja-JP": "Chess.comでの対局、パズル、分析、アクティビティを表示します。",
+    "ko-KR": "Chess.com에서의 대국, 퍼즐, 분석 및 활동을 표시합니다.",
+    "tr-TR": "Chess.com'daki maçlarını, bulmacalarını, analizlerini ve etkinliğini gösterir.",
+    "ms-MY": "Paparkan permainan catur, teka-teki, analisis dan aktiviti anda di Chess.com.",
+    "el-GR": "Εμφανίζει τις παρτίδες, τους γρίφους, τις αναλύσεις και τη δραστηριότητά σου στο Chess.com."
+  },
+  "longDescription": {
+    "en-US": "Chess.com is an online chess platform for playing, learning, solving puzzles, and following chess content. This presence detects games, analysis, puzzles, lessons, and profiles.",
+    "fr-FR": "Chess.com est une plateforme d'échecs en ligne pour jouer, apprendre, résoudre des puzzles et suivre du contenu consacré aux échecs. Cette présence détecte les parties, analyses, puzzles, leçons et profils.",
+    "es-ES": "Chess.com es una plataforma de ajedrez en línea para jugar, aprender, resolver problemas y seguir contenido de ajedrez. Esta presencia detecta partidas, análisis, problemas, lecciones y perfiles.",
+    "de-DE": "Chess.com ist eine Online-Schachplattform zum Spielen, Lernen, Lösen von Rätseln und Verfolgen von Schachinhalten. Diese Präsenz erkennt Partien, Analysen, Rätsel, Lektionen und Profile.",
+    "pt-BR": "Chess.com é uma plataforma de xadrez on-line para jogar, aprender, resolver quebra-cabeças e acompanhar conteúdo de xadrez. Esta presença detecta partidas, análises, quebra-cabeças, aulas e perfis.",
+    "pl-PL": "Chess.com to internetowa platforma szachowa do gry, nauki, rozwiązywania zadań i śledzenia treści szachowych. Ta aktywność wykrywa partie, analizy, zadania, lekcje i profile.",
+    "ja-JP": "Chess.comは、対局、学習、パズル、チェスコンテンツを楽しめるオンラインプラットフォームです。このプレゼンスは対局、分析、パズル、レッスン、プロフィールを検出します。",
+    "ko-KR": "Chess.com은 체스 대국, 학습, 퍼즐 풀이 및 체스 콘텐츠를 위한 온라인 플랫폼입니다. 이 프레즌스는 대국, 분석, 퍼즐, 레슨 및 프로필을 감지합니다.",
+    "tr-TR": "Chess.com; satranç oynamak, öğrenmek, bulmaca çözmek ve satranç içeriklerini takip etmek için çevrim içi bir platformdur. Bu presence maçları, analizleri, bulmacaları, dersleri ve profilleri algılar.",
+    "ms-MY": "Chess.com ialah platform catur dalam talian untuk bermain, belajar, menyelesaikan teka-teki dan mengikuti kandungan catur. Presence ini mengesan permainan, analisis, teka-teki, pelajaran dan profil.",
+    "el-GR": "Το Chess.com είναι μια διαδικτυακή πλατφόρμα σκακιού για παιχνίδι, μάθηση, επίλυση γρίφων και παρακολούθηση σκακιστικού περιεχομένου. Αυτή η παρουσία εντοπίζει παρτίδες, αναλύσεις, γρίφους, μαθήματα και προφίλ."
+  },
+  "features": {
+    "en-US": [
+      "Detects live and daily games",
+      "Shows opponent and game mode when available",
+      "Recognizes puzzles, analysis, lessons, and profiles",
+      "Includes optional privacy and browsing settings"
+    ],
+    "fr-FR": [
+      "Détecte les parties en direct et quotidiennes",
+      "Affiche l'adversaire et le mode de jeu si disponibles",
+      "Reconnaît les puzzles, analyses, leçons et profils",
+      "Propose des réglages facultatifs de confidentialité et de navigation"
+    ],
+    "es-ES": [
+      "Detecta partidas en directo y diarias",
+      "Muestra al rival y el modo de juego cuando están disponibles",
+      "Reconoce problemas, análisis, lecciones y perfiles",
+      "Incluye opciones de privacidad y navegación"
+    ],
+    "de-DE": [
+      "Erkennt Live- und tägliche Partien",
+      "Zeigt Gegner und Spielmodus, sofern verfügbar",
+      "Erkennt Rätsel, Analysen, Lektionen und Profile",
+      "Bietet optionale Datenschutz- und Browsing-Einstellungen"
+    ],
+    "pt-BR": [
+      "Detecta partidas ao vivo e diárias",
+      "Mostra o adversário e o modo de jogo quando disponíveis",
+      "Reconhece quebra-cabeças, análises, aulas e perfis",
+      "Inclui opções de privacidade e navegação"
+    ],
+    "pl-PL": [
+      "Wykrywa partie na żywo i dzienne",
+      "Pokazuje przeciwnika i tryb gry, jeśli są dostępne",
+      "Rozpoznaje zadania, analizy, lekcje i profile",
+      "Zawiera opcjonalne ustawienia prywatności i przeglądania"
+    ],
+    "ja-JP": [
+      "ライブ対局とデイリー対局を検出",
+      "利用可能な場合、対戦相手とゲームモードを表示",
+      "パズル、分析、レッスン、プロフィールを認識",
+      "プライバシーと閲覧のオプション設定"
+    ],
+    "ko-KR": [
+      "실시간 및 일일 대국 감지",
+      "가능한 경우 상대와 게임 모드 표시",
+      "퍼즐, 분석, 레슨 및 프로필 인식",
+      "선택 가능한 개인정보 보호 및 탐색 설정"
+    ],
+    "tr-TR": [
+      "Canlı ve günlük maçları algılar",
+      "Mümkün olduğunda rakibi ve oyun modunu gösterir",
+      "Bulmacaları, analizleri, dersleri ve profilleri tanır",
+      "İsteğe bağlı gizlilik ve gezinme ayarları sunar"
+    ],
+    "ms-MY": [
+      "Mengesan permainan langsung dan harian",
+      "Memaparkan lawan dan mod permainan jika tersedia",
+      "Mengenali teka-teki, analisis, pelajaran dan profil",
+      "Menyediakan tetapan privasi dan pelayaran pilihan"
+    ],
+    "el-GR": [
+      "Εντοπίζει ζωντανές και ημερήσιες παρτίδες",
+      "Εμφανίζει αντίπαλο και λειτουργία παιχνιδιού όταν είναι διαθέσιμα",
+      "Αναγνωρίζει γρίφους, αναλύσεις, μαθήματα και προφίλ",
+      "Περιλαμβάνει προαιρετικές ρυθμίσεις απορρήτου και περιήγησης"
+    ]
+  }
+}

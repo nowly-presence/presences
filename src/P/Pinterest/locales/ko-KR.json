@@ -1,0 +1,19 @@
+{
+  "browsing": "Pinterest 탐색 중",
+  "home": "홈페이지 보는 중",
+  "searching": "Pinterest 검색 중",
+  "searchResults": "Pinterest 검색 결과 보는 중",
+  "viewingProfile": "프로필 보는 중",
+  "viewingPin": "핀 보는 중",
+  "viewingVideoPin": "동영상 핀 보는 중",
+  "viewingIdeas": "아이디어 탐색 중",
+  "creatingPin": "핀 만드는 중",
+  "creatingCollage": "콜라주 만드는 중",
+  "watchPin": "핀 보기",
+  "viewProfile": "프로필 보기",
+  "playing": "재생 중",
+  "paused": "일시 정지",
+  "pinBy": "{name}의 핀",
+  "videoBy": "{name}의 동영상 핀",
+  "privateBrowsing": "Pinterest 비공개 탐색 중"
+}

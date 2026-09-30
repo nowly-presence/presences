@@ -1,0 +1,14 @@
+{
+  "browsing": "Περιηγείται στο WEBTOON",
+  "viewingSeries": "Βλέπει μια σειρά WEBTOON",
+  "reading": "Διαβάζει το {title}",
+  "readingGeneric": "Διαβάζει ένα επεισόδιο WEBTOON",
+  "browsingSchedule": "Περιηγείται στο ημερήσιο πρόγραμμα",
+  "completedSeries": "Ολοκληρωμένες σειρές",
+  "ongoingSeries": "Σειρές σε εξέλιξη",
+  "popularSeries": "Περιηγείται σε δημοφιλείς σειρές",
+  "browsingGenres": "Περιηγείται σε είδη",
+  "searching": "Αναζητά στο WEBTOON",
+  "about": "Διαβάζει για το WEBTOON",
+  "openWebtoon": "Άνοιγμα WEBTOON"
+}

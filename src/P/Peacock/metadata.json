@@ -1,0 +1,41 @@
+{
+  "name": "Peacock",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": ["peacocktv.com", "www.peacocktv.com"],
+  "regExp": "^https?://(www\\.)?peacocktv\\.com/",
+  "color": "#FCCC12",
+  "category": "streaming",
+  "description": {
+    "en-US": "Show the movie, series, or live event you're watching on Peacock.",
+    "fr-FR": "Affichez le film, la série ou l'événement en direct que vous regardez sur Peacock.",
+    "es-ES": "Muestra la película, serie o evento en directo que estás viendo en Peacock."
+  },
+  "longDescription": {
+    "en-US": "Peacock offers movies, TV shows, originals, live news, and sports. This presence shows what you're watching, including playback state and live events.",
+    "fr-FR": "Peacock propose des films, des séries, des créations originales, des actualités et du sport en direct. Cette présence affiche ce que vous regardez ainsi que l'état de lecture et les événements en direct.",
+    "es-ES": "Peacock ofrece películas, series, producciones originales, noticias y deportes en directo. Esta presencia muestra lo que estás viendo, el estado de reproducción y los eventos en directo."
+  },
+  "features": {
+    "en-US": [
+      "Detects movies, shows, and live events",
+      "Shows playback and paused status",
+      "Displays playback timestamps when available",
+      "Optionally shows browsing activity"
+    ],
+    "fr-FR": [
+      "Détecte les films, séries et événements en direct",
+      "Affiche l'état de lecture ou de pause",
+      "Affiche les timestamps de lecture lorsqu'ils sont disponibles",
+      "Peut afficher l'activité de navigation"
+    ],
+    "es-ES": [
+      "Detecta películas, series y eventos en directo",
+      "Muestra el estado de reproducción o pausa",
+      "Muestra marcas de tiempo cuando están disponibles",
+      "Puede mostrar la actividad de navegación"
+    ]
+  }
+}

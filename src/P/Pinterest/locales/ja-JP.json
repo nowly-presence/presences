@@ -1,0 +1,19 @@
+{
+  "browsing": "Pinterestを閲覧中",
+  "home": "ホームページを表示中",
+  "searching": "Pinterestを検索中",
+  "searchResults": "Pinterestの検索結果を表示中",
+  "viewingProfile": "プロフィールを表示中",
+  "viewingPin": "ピンを表示中",
+  "viewingVideoPin": "動画ピンを表示中",
+  "viewingIdeas": "アイデアを閲覧中",
+  "creatingPin": "ピンを作成中",
+  "creatingCollage": "コラージュを作成中",
+  "watchPin": "ピンを見る",
+  "viewProfile": "プロフィールを見る",
+  "playing": "再生中",
+  "paused": "一時停止中",
+  "pinBy": "{name}のピン",
+  "videoBy": "{name}の動画ピン",
+  "privateBrowsing": "Pinterestをプライベートで閲覧中"
+}
