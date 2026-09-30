@@ -35,16 +35,71 @@
     "el-GR": "Το Fandom είναι μια πλατφόρμα wiki και συντακτικού περιεχομένου από θαυμαστές για παιχνίδια, ταινίες, τηλεόραση και άλλα. Αυτή η παρουσία εμφανίζει το wiki, το άρθρο, τη συζήτηση ή το βίντεο που βλέπεις."
   },
   "features": {
-    "en-US": ["Detects wiki articles and page actions", "Shows the wiki and article title", "Recognizes search and discussion pages", "Covers Fandom editorial pages and community wikis"],
-    "fr-FR": ["Détecte les articles wiki et les actions de page", "Affiche le nom du wiki et le titre de l'article", "Reconnaît les recherches et les discussions", "Couvre les pages éditoriales Fandom et les wikis communautaires"],
-    "es-ES": ["Detecta artículos wiki y acciones de página", "Muestra el nombre de la wiki y el título del artículo", "Reconoce búsquedas y páginas de debate", "Cubre páginas editoriales de Fandom y wikis comunitarias"],
-    "de-DE": ["Erkennt Wiki-Artikel und Seitenaktionen", "Zeigt Wiki- und Artikeltitel", "Erkennt Such- und Diskussionsseiten", "Unterstützt Fandom-Redaktionsseiten und Community-Wikis"],
-    "pt-BR": ["Detecta artigos wiki e ações de página", "Mostra o nome da wiki e o título do artigo", "Reconhece páginas de pesquisa e discussão", "Abrange páginas editoriais do Fandom e wikis da comunidade"],
-    "pl-PL": ["Wykrywa artykuły wiki i działania na stronach", "Pokazuje nazwę wiki i tytuł artykułu", "Rozpoznaje strony wyszukiwania i dyskusji", "Obsługuje strony redakcyjne Fandom i wiki społeczności"],
-    "ja-JP": ["Wiki記事とページ操作を検出", "Wiki名と記事タイトルを表示", "検索ページとディスカッションページを認識", "Fandomの編集ページとコミュニティWikiに対応"],
-    "ko-KR": ["위키 문서 및 페이지 작업 감지", "위키 이름과 문서 제목 표시", "검색 및 토론 페이지 인식", "Fandom 편집 페이지와 커뮤니티 위키 지원"],
-    "tr-TR": ["Wiki makalelerini ve sayfa işlemlerini algılar", "Wiki ve makale başlığını gösterir", "Arama ve tartışma sayfalarını tanır", "Fandom editoryal sayfalarını ve topluluk wikilerini kapsar"],
-    "ms-MY": ["Mengesan rencana wiki dan tindakan halaman", "Memaparkan nama wiki dan tajuk rencana", "Mengenali halaman carian dan perbincangan", "Merangkumi halaman editorial Fandom dan wiki komuniti"],
-    "el-GR": ["Εντοπίζει άρθρα wiki και ενέργειες σελίδας", "Εμφανίζει το wiki και τον τίτλο του άρθρου", "Αναγνωρίζει σελίδες αναζήτησης και συζήτησης", "Καλύπτει συντακτικές σελίδες Fandom και wiki κοινότητας"]
+    "en-US": [
+      "Detects wiki articles and page actions",
+      "Shows the wiki and article title",
+      "Recognizes search and discussion pages",
+      "Covers Fandom editorial pages and community wikis"
+    ],
+    "fr-FR": [
+      "Détecte les articles wiki et les actions de page",
+      "Affiche le nom du wiki et le titre de l'article",
+      "Reconnaît les recherches et les discussions",
+      "Couvre les pages éditoriales Fandom et les wikis communautaires"
+    ],
+    "es-ES": [
+      "Detecta artículos wiki y acciones de página",
+      "Muestra el nombre de la wiki y el título del artículo",
+      "Reconoce búsquedas y páginas de debate",
+      "Cubre páginas editoriales de Fandom y wikis comunitarias"
+    ],
+    "de-DE": [
+      "Erkennt Wiki-Artikel und Seitenaktionen",
+      "Zeigt Wiki- und Artikeltitel",
+      "Erkennt Such- und Diskussionsseiten",
+      "Unterstützt Fandom-Redaktionsseiten und Community-Wikis"
+    ],
+    "pt-BR": [
+      "Detecta artigos wiki e ações de página",
+      "Mostra o nome da wiki e o título do artigo",
+      "Reconhece páginas de pesquisa e discussão",
+      "Abrange páginas editoriais do Fandom e wikis da comunidade"
+    ],
+    "pl-PL": [
+      "Wykrywa artykuły wiki i działania na stronach",
+      "Pokazuje nazwę wiki i tytuł artykułu",
+      "Rozpoznaje strony wyszukiwania i dyskusji",
+      "Obsługuje strony redakcyjne Fandom i wiki społeczności"
+    ],
+    "ja-JP": [
+      "Wiki記事とページ操作を検出",
+      "Wiki名と記事タイトルを表示",
+      "検索ページとディスカッションページを認識",
+      "Fandomの編集ページとコミュニティWikiに対応"
+    ],
+    "ko-KR": [
+      "위키 문서 및 페이지 작업 감지",
+      "위키 이름과 문서 제목 표시",
+      "검색 및 토론 페이지 인식",
+      "Fandom 편집 페이지와 커뮤니티 위키 지원"
+    ],
+    "tr-TR": [
+      "Wiki makalelerini ve sayfa işlemlerini algılar",
+      "Wiki ve makale başlığını gösterir",
+      "Arama ve tartışma sayfalarını tanır",
+      "Fandom editoryal sayfalarını ve topluluk wikilerini kapsar"
+    ],
+    "ms-MY": [
+      "Mengesan rencana wiki dan tindakan halaman",
+      "Memaparkan nama wiki dan tajuk rencana",
+      "Mengenali halaman carian dan perbincangan",
+      "Merangkumi halaman editorial Fandom dan wiki komuniti"
+    ],
+    "el-GR": [
+      "Εντοπίζει άρθρα wiki και ενέργειες σελίδας",
+      "Εμφανίζει το wiki και τον τίτλο του άρθρου",
+      "Αναγνωρίζει σελίδες αναζήτησης και συζήτησης",
+      "Καλύπτει συντακτικές σελίδες Fandom και wiki κοινότητας"
+    ]
   }
 }
