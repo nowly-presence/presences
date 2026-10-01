@@ -44,6 +44,29 @@ export const getPinterestPage = (
     }
   }
 
+  if (pathname === "/today" || pathname === "/today/") {
+    return { details: strings.today, kind: "general" }
+  }
+  if (pathname === "/settings" || pathname.startsWith("/settings/")) {
+    return { details: strings.settings, kind: "general" }
+  }
+
+  const profileSection = pathname.match(/^\/[^/]+\/_(pins|boards|collages)\/?$/)?.[1]
+  if (profileSection) {
+    const details = profileSection === "pins"
+      ? strings.viewingPins
+      : profileSection === "boards"
+        ? strings.viewingBoards
+        : strings.viewingCollages
+
+    return {
+      details,
+      state: creator,
+      kind: "profile",
+      profileUrl: href.split("?")[0],
+    }
+  }
+
   if (pathname.includes("/pin/")) {
     return {
       details: video ? strings.viewingVideoPin : getPinTitle() || strings.viewingPin,

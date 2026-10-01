@@ -5,12 +5,18 @@ type SteamDBStrings = typeof enUS
 export type SteamDBPage = {
   details: string
   state?: string
+  image?: string
   isSearch?: boolean
   buttonUrl?: string
 }
 
 const getHeaderTitle = (selector: string): string | undefined =>
   document.querySelector<HTMLElement>(selector)?.textContent?.trim() || undefined
+
+const getImage = (...selectors: string[]): string | undefined => {
+  const src = document.querySelector<HTMLImageElement>(selectors.join(", "))?.src
+  return src?.startsWith("https://") ? src : undefined
+}
 
 export const getSteamDBPage = (
   hostname: string,
@@ -34,18 +40,33 @@ export const getSteamDBPage = (
   }
 
   if (search) return { details: strings.searching, state: search, isSearch: true }
-  if (pathname.startsWith("/graph/")) return { details: strings.viewingCharts, state: subTitle }
+  if (pathname.startsWith("/sales")) return { details: strings.viewingSales, state: title, buttonUrl: url.origin + pathname }
+  if (pathname === "/charts" || pathname.startsWith("/charts/") || pathname.startsWith("/graph/")) {
+    return { details: strings.viewingCharts, state: subTitle || title, buttonUrl: url.origin + pathname }
+  }
+  if (pathname === "/calculator" || pathname.startsWith("/calculator/")) {
+    return { details: strings.viewingCalculator, state: title, buttonUrl: url.origin + pathname }
+  }
+  if (pathname.startsWith("/patchnotes")) {
+    return {
+      details: strings.viewingPatchnotes,
+      state: title || subTitle,
+      image: getImage("img.patchnotes-applogo"),
+      buttonUrl: url.origin + pathname,
+    }
+  }
 
   const segments = pathname.split("/").filter(Boolean)
   if (segments[0] === "app" && segments[1]) {
     return {
       details: strings.viewingGame,
       state: title || document.querySelector("h1")?.lastChild?.textContent?.trim(),
+      image: getImage("img.app-icon.avatar"),
       buttonUrl: url.origin + pathname,
     }
   }
 
-  if (["sub", "bundle", "depot", "changelist", "patchnotes"].includes(segments[0])) {
+  if (["sub", "bundle", "depot", "changelist"].includes(segments[0])) {
     return {
       details: strings.viewingPage,
       state: title || subTitle,

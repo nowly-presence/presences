@@ -10,9 +10,10 @@
     "web.roblox.com",
     "create.roblox.com",
     "devforum.roblox.com",
+    "about.roblox.com",
     "rbx.com"
   ],
-  "regExp": "^https?://((www|web|create|devforum)\\.roblox\\.com|rbx\\.com)/",
+  "regExp": "^https?://((www|web|create|devforum|about)\\.roblox\\.com|rbx\\.com)/",
   "color": "#335FFF",
   "category": "gaming",
   "description": {

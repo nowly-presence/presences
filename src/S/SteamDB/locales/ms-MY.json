@@ -5,5 +5,8 @@
   "viewingCharts": "Melihat carta Steam",
   "viewingPage": "Melihat halaman SteamDB",
   "viewingStatus": "Melihat status Steam",
-  "openPage": "Buka SteamDB"
+  "openPage": "Buka SteamDB",
+  "viewingSales": "Melihat jualan Steam",
+  "viewingCalculator": "Menggunakan kalkulator Steam",
+  "viewingPatchnotes": "Melihat nota tampalan Steam"
 }

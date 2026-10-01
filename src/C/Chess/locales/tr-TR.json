@@ -6,5 +6,10 @@
   "analyzingGame": "Bir maçı analiz ediyor",
   "studyingChess": "Satranç çalışıyor",
   "viewingProfile": "Oyuncu profilini görüntülüyor",
-  "openPage": "Chess.com'u aç"
+  "openPage": "Chess.com'u aç",
+  "watching": "Chess.com'u izliyor",
+  "events": "Chess.com etkinliklerini görüntülüyor",
+  "tv": "Chess.com TV'yi izliyor",
+  "streamers": "Satranç yayıncılarına göz atıyor",
+  "settings": "Chess.com ayarlarını görüntülüyor"
 }

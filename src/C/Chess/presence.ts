@@ -81,7 +81,7 @@ presence.on("UpdateData", async (ctx) => {
   const title = getChessPageTitle()
   let details = strings.browsing
   let state: string | undefined
-  let smallImageKey: "play" | "pause" | "search" | undefined
+  let smallImageKey: string | undefined
   let smallImageText: string | undefined
   let largeImageKey = Assets.Logo
 
@@ -103,6 +103,16 @@ presence.on("UpdateData", async (ctx) => {
     details = strings.viewingProfile
     state = getChessProfileName()
     largeImageKey = getChessProfileImage() || Assets.Logo
+  } else if (page === "watch") {
+    details = strings.watching
+  } else if (page === "events") {
+    details = strings.events
+  } else if (page === "tv") {
+    details = strings.tv
+  } else if (page === "streamers") {
+    details = strings.streamers
+  } else if (page === "settings") {
+    details = strings.settings
   } else if (!ctx.settings.showBrowsing) {
     presence.clearActivity()
     return
@@ -115,6 +125,10 @@ presence.on("UpdateData", async (ctx) => {
     state = undefined
     largeImageKey = Assets.Logo
   }
+  if (!privacy && page === "profile" && largeImageKey !== Assets.Logo) {
+    smallImageKey = Assets.Logo
+    smallImageText = "Chess.com"
+  }
 
   await presence.setActivity({
     details,
@@ -123,7 +137,7 @@ presence.on("UpdateData", async (ctx) => {
     largeImageText: privacy ? undefined : title,
     smallImageKey,
     smallImageText,
-    type: PresenceType.Playing,
+    type: page === "watch" || page === "tv" ? PresenceType.Watching : PresenceType.Playing,
     buttons: !privacy && (page === "game" || page === "profile")
       ? [{ label: strings.openPage, url: href.split("?")[0] }]
       : undefined,

@@ -15,5 +15,10 @@
   "paused": "En pausa",
   "pinBy": "Pin de {name}",
   "videoBy": "Pin de vídeo de {name}",
-  "privateBrowsing": "Explorando Pinterest en privado"
+  "privateBrowsing": "Explorando Pinterest en privado",
+  "today": "Viendo Hoy",
+  "viewingPins": "Viendo pines guardados",
+  "viewingBoards": "Viendo tableros",
+  "viewingCollages": "Viendo collages",
+  "settings": "Viendo la configuración de la cuenta"
 }

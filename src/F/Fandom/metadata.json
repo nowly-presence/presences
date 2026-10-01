@@ -4,8 +4,8 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["fandom.com", "www.fandom.com"],
-  "regExp": "^https?://([a-z0-9-]+\\.)?fandom\\.com/",
+  "url": ["fandom.com", "www.fandom.com", "tvguide.com", "www.tvguide.com"],
+  "regExp": "^https?://([a-z0-9-]+\\.)?(fandom|tvguide)\\.com/",
   "color": "#F4F4F4",
   "category": "learning",
   "description": {

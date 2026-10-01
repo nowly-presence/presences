@@ -6,5 +6,10 @@
   "analyzingGame": "Αναλύει μια παρτίδα",
   "studyingChess": "Μελετά σκάκι",
   "viewingProfile": "Προβάλλει προφίλ παίκτη",
-  "openPage": "Άνοιγμα Chess.com"
+  "openPage": "Άνοιγμα Chess.com",
+  "watching": "Παρακολουθεί το Chess.com",
+  "events": "Προβάλλει εκδηλώσεις του Chess.com",
+  "tv": "Παρακολουθεί το Chess.com TV",
+  "streamers": "Περιηγείται σε streamers σκακιού",
+  "settings": "Προβάλλει τις ρυθμίσεις του Chess.com"
 }

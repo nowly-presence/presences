@@ -8,5 +8,19 @@
   "devForum": "Melihat-lihat Forum Pembangun Roblox",
   "forumHome": "Melihat halaman utama forum",
   "creatorHub": "Menggunakan Roblox Creator Hub",
-  "openPage": "Buka Roblox"
+  "openPage": "Buka Roblox",
+  "home": "Melihat halaman utama Roblox",
+  "messages": "Melihat mesej Roblox",
+  "friends": "Melihat rakan",
+  "following": "Melihat pengguna yang diikuti",
+  "followers": "Melihat pengikut",
+  "friendRequests": "Melihat permintaan rakan",
+  "avatar": "Menyunting avatar Roblox",
+  "inboundTrades": "Melihat dagangan masuk",
+  "outboundTrades": "Melihat dagangan keluar",
+  "completedTrades": "Melihat dagangan selesai",
+  "inactiveTrades": "Melihat dagangan tidak aktif",
+  "searchingCommunities": "Mencari komuniti Roblox",
+  "viewingInventory": "Melihat inventori Roblox",
+  "newsroom": "Membaca berita Roblox"
 }

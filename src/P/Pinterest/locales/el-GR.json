@@ -15,5 +15,10 @@
   "paused": "Σε παύση",
   "pinBy": "Pin από {name}",
   "videoBy": "Βίντεο Pin από {name}",
-  "privateBrowsing": "Περιηγείται ιδιωτικά στο Pinterest"
+  "privateBrowsing": "Περιηγείται ιδιωτικά στο Pinterest",
+  "today": "Προβάλλει το Σήμερα",
+  "viewingPins": "Προβάλλει αποθηκευμένα Pin",
+  "viewingBoards": "Προβάλλει πίνακες",
+  "viewingCollages": "Προβάλλει κολάζ",
+  "settings": "Προβάλλει τις ρυθμίσεις λογαριασμού"
 }

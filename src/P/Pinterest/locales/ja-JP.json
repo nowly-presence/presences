@@ -15,5 +15,10 @@
   "paused": "一時停止中",
   "pinBy": "{name}のピン",
   "videoBy": "{name}の動画ピン",
-  "privateBrowsing": "Pinterestをプライベートで閲覧中"
+  "privateBrowsing": "Pinterestをプライベートで閲覧中",
+  "today": "Todayを表示中",
+  "viewingPins": "保存したピンを表示中",
+  "viewingBoards": "ボードを表示中",
+  "viewingCollages": "コラージュを表示中",
+  "settings": "アカウント設定を表示中"
 }

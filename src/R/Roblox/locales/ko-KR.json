@@ -8,5 +8,19 @@
   "devForum": "Roblox 개발자 포럼 탐색 중",
   "forumHome": "포럼 홈 보는 중",
   "creatorHub": "Roblox Creator Hub 이용 중",
-  "openPage": "Roblox 열기"
+  "openPage": "Roblox 열기",
+  "home": "Roblox 홈페이지 보는 중",
+  "messages": "Roblox 메시지 보는 중",
+  "friends": "친구 보는 중",
+  "following": "팔로잉 사용자 보는 중",
+  "followers": "팔로워 보는 중",
+  "friendRequests": "친구 요청 보는 중",
+  "avatar": "Roblox 아바타 편집 중",
+  "inboundTrades": "받은 거래 보는 중",
+  "outboundTrades": "보낸 거래 보는 중",
+  "completedTrades": "완료된 거래 보는 중",
+  "inactiveTrades": "비활성 거래 보는 중",
+  "searchingCommunities": "Roblox 커뮤니티 검색 중",
+  "viewingInventory": "Roblox 인벤토리 보는 중",
+  "newsroom": "Roblox 뉴스 읽는 중"
 }

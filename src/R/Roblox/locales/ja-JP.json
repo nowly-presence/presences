@@ -8,5 +8,19 @@
   "devForum": "Roblox開発者フォーラムを閲覧中",
   "forumHome": "フォーラムのホームを表示中",
   "creatorHub": "Roblox Creator Hubを利用中",
-  "openPage": "Robloxを開く"
+  "openPage": "Robloxを開く",
+  "home": "Robloxのホームページを表示中",
+  "messages": "Robloxのメッセージを表示中",
+  "friends": "フレンドを表示中",
+  "following": "フォロー中のユーザーを表示中",
+  "followers": "フォロワーを表示中",
+  "friendRequests": "フレンドリクエストを表示中",
+  "avatar": "Robloxアバターを編集中",
+  "inboundTrades": "受信トレードを表示中",
+  "outboundTrades": "送信トレードを表示中",
+  "completedTrades": "完了したトレードを表示中",
+  "inactiveTrades": "無効なトレードを表示中",
+  "searchingCommunities": "Robloxコミュニティを検索中",
+  "viewingInventory": "Robloxインベントリを表示中",
+  "newsroom": "Robloxニュースを読んでいます"
 }

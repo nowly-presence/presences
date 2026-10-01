@@ -8,5 +8,19 @@
   "devForum": "Durchsucht das Roblox-Entwicklerforum",
   "forumHome": "Sieht sich die Forenstartseite an",
   "creatorHub": "Nutzt den Roblox Creator Hub",
-  "openPage": "Roblox öffnen"
+  "openPage": "Roblox öffnen",
+  "home": "Sieht sich die Roblox-Startseite an",
+  "messages": "Sieht sich Roblox-Nachrichten an",
+  "friends": "Sieht sich Freunde an",
+  "following": "Sieht sich gefolgte Nutzer an",
+  "followers": "Sieht sich Follower an",
+  "friendRequests": "Sieht sich Freundschaftsanfragen an",
+  "avatar": "Bearbeitet den Roblox-Avatar",
+  "inboundTrades": "Sieht sich eingehende Tauschgeschäfte an",
+  "outboundTrades": "Sieht sich ausgehende Tauschgeschäfte an",
+  "completedTrades": "Sieht sich abgeschlossene Tauschgeschäfte an",
+  "inactiveTrades": "Sieht sich inaktive Tauschgeschäfte an",
+  "searchingCommunities": "Sucht nach Roblox-Communities",
+  "viewingInventory": "Sieht sich das Roblox-Inventar an",
+  "newsroom": "Liest Roblox-Nachrichten"
 }
