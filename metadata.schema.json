@@ -73,6 +73,14 @@
       "type": "string",
       "description": "RegExp pattern to match URLs beyond simple domain matching"
     },
+    "iframe": {
+      "type": "boolean",
+      "description": "Enable a dedicated script injected into matching nested frames."
+    },
+    "iFrameRegExp": {
+      "type": "string",
+      "description": "Regular expression matched against nested frame URLs when iframe is enabled."
+    },
     "world": {
       "type": "string",
       "description": "Execution context. 'main' runs the presence in the page world (needed for page globals or same-origin authenticated fetch); defaults to isolated.",
@@ -128,5 +136,20 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "iframe": { "const": true } },
+        "required": ["iframe"]
+      },
+      "then": { "required": ["iFrameRegExp"] }
+    },
+    {
+      "if": { "required": ["iFrameRegExp"] },
+      "then": {
+        "properties": { "iframe": { "const": true } }
+      }
+    }
+  ]
 }
