@@ -8,5 +8,19 @@
   "devForum": "Περιηγείται στο φόρουμ δημιουργών Roblox",
   "forumHome": "Βλέπει την αρχική σελίδα του φόρουμ",
   "creatorHub": "Χρησιμοποιεί το Roblox Creator Hub",
-  "openPage": "Άνοιγμα Roblox"
+  "openPage": "Άνοιγμα Roblox",
+  "home": "Προβάλλει την αρχική σελίδα του Roblox",
+  "messages": "Προβάλλει τα μηνύματα του Roblox",
+  "friends": "Προβάλλει τους φίλους",
+  "following": "Προβάλλει τους χρήστες που ακολουθεί",
+  "followers": "Προβάλλει τους ακόλουθους",
+  "friendRequests": "Προβάλλει τα αιτήματα φιλίας",
+  "avatar": "Επεξεργάζεται το avatar του Roblox",
+  "inboundTrades": "Προβάλλει τις εισερχόμενες ανταλλαγές",
+  "outboundTrades": "Προβάλλει τις εξερχόμενες ανταλλαγές",
+  "completedTrades": "Προβάλλει τις ολοκληρωμένες ανταλλαγές",
+  "inactiveTrades": "Προβάλλει τις ανενεργές ανταλλαγές",
+  "searchingCommunities": "Αναζητά κοινότητες Roblox",
+  "viewingInventory": "Προβάλλει το απόθεμα Roblox",
+  "newsroom": "Διαβάζει ειδήσεις του Roblox"
 }

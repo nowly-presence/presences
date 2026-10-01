@@ -15,5 +15,10 @@
   "paused": "En pause",
   "pinBy": "Épingle de {name}",
   "videoBy": "Épingle vidéo de {name}",
-  "privateBrowsing": "Parcourt Pinterest en privé"
+  "privateBrowsing": "Parcourt Pinterest en privé",
+  "today": "Consulte Aujourd'hui",
+  "viewingPins": "Consulte les épingles enregistrées",
+  "viewingBoards": "Consulte les tableaux",
+  "viewingCollages": "Consulte les collages",
+  "settings": "Consulte les paramètres du compte"
 }

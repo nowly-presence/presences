@@ -15,5 +15,10 @@
   "paused": "Dijeda",
   "pinBy": "Pin oleh {name}",
   "videoBy": "Pin video oleh {name}",
-  "privateBrowsing": "Melihat-lihat Pinterest secara peribadi"
+  "privateBrowsing": "Melihat-lihat Pinterest secara peribadi",
+  "today": "Melihat Hari Ini",
+  "viewingPins": "Melihat Pin yang disimpan",
+  "viewingBoards": "Melihat papan",
+  "viewingCollages": "Melihat kolaj",
+  "settings": "Melihat tetapan akaun"
 }

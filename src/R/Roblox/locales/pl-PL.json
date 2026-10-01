@@ -8,5 +8,19 @@
   "devForum": "Przegląda forum deweloperów Roblox",
   "forumHome": "Przegląda stronę główną forum",
   "creatorHub": "Korzysta z Roblox Creator Hub",
-  "openPage": "Otwórz Roblox"
+  "openPage": "Otwórz Roblox",
+  "home": "Przegląda stronę główną Roblox",
+  "messages": "Przegląda wiadomości Roblox",
+  "friends": "Przegląda znajomych",
+  "following": "Przegląda obserwowanych użytkowników",
+  "followers": "Przegląda obserwujących",
+  "friendRequests": "Przegląda zaproszenia do znajomych",
+  "avatar": "Edytuje awatar Roblox",
+  "inboundTrades": "Przegląda przychodzące wymiany",
+  "outboundTrades": "Przegląda wychodzące wymiany",
+  "completedTrades": "Przegląda zakończone wymiany",
+  "inactiveTrades": "Przegląda nieaktywne wymiany",
+  "searchingCommunities": "Szuka społeczności Roblox",
+  "viewingInventory": "Przegląda ekwipunek Roblox",
+  "newsroom": "Czyta wiadomości Roblox"
 }

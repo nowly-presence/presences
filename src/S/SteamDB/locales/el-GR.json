@@ -5,5 +5,8 @@
   "viewingCharts": "Βλέπει τα γραφήματα Steam",
   "viewingPage": "Βλέπει μια σελίδα SteamDB",
   "viewingStatus": "Βλέπει την κατάσταση Steam",
-  "openPage": "Άνοιγμα SteamDB"
+  "openPage": "Άνοιγμα SteamDB",
+  "viewingSales": "Προβάλλει τις πωλήσεις του Steam",
+  "viewingCalculator": "Χρησιμοποιεί την αριθμομηχανή Steam",
+  "viewingPatchnotes": "Προβάλλει τις σημειώσεις ενημερώσεων Steam"
 }

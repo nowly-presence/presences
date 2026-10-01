@@ -5,5 +5,8 @@
   "viewingCharts": "Viewing Steam charts",
   "viewingPage": "Viewing a SteamDB page",
   "viewingStatus": "Viewing Steam status",
-  "openPage": "Open SteamDB"
+  "openPage": "Open SteamDB",
+  "viewingSales": "Viewing Steam sales",
+  "viewingCalculator": "Using the Steam calculator",
+  "viewingPatchnotes": "Viewing Steam patch notes"
 }

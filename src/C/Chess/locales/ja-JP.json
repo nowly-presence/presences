@@ -6,5 +6,10 @@
   "analyzingGame": "対局を分析中",
   "studyingChess": "チェスを学習中",
   "viewingProfile": "プレイヤープロフィールを表示中",
-  "openPage": "Chess.comを開く"
+  "openPage": "Chess.comを開く",
+  "watching": "Chess.comを視聴中",
+  "events": "Chess.comのイベントを表示中",
+  "tv": "Chess.com TVを視聴中",
+  "streamers": "チェスストリーマーを閲覧中",
+  "settings": "Chess.comの設定を表示中"
 }

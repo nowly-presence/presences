@@ -35,6 +35,14 @@ export const getRobloxPage = (
   const search = url.searchParams.get("keyword")
     || url.searchParams.get("Keyword")
     || url.searchParams.get("query")
+  const hash = url.hash.toLowerCase()
+  const routePath = pathname.replace(/^\/[a-z]{2}(?:-[A-Z]{2})?(?=\/|$)/, "") || "/"
+  if (hostname === "about.roblox.com" || hostname === "www.about.roblox.com") {
+
+    if (routePath.startsWith("/newsroom")) {
+      return { details: strings.newsroom, isSpecific: true, buttonUrl: href.split("#")[0] }
+    }
+  }
 
   if (hostname === "devforum.roblox.com") {
     return {
@@ -52,8 +60,64 @@ export const getRobloxPage = (
       isSpecific: true,
     }
   }
+  if (routePath === "/home" || routePath.endsWith("/home")) {
+    return { details: strings.home, isSpecific: true }
+  }
+  if (routePath.includes("/my/messages")) {
+    return { details: strings.messages, state: getText("h1"), isSpecific: true, buttonUrl: href.split("#")[0] }
+  }
+  if (routePath.includes("/users/friends")) {
+    const details = hash.includes("following")
+      ? strings.following
+      : hash.includes("followers")
+        ? strings.followers
+        : hash.includes("friend-requests")
+          ? strings.friendRequests
+          : strings.friends
 
-  if (/\/games?\//.test(pathname)) {
+    return { details, isSpecific: true, buttonUrl: href.split("#")[0] }
+  }
+  if (routePath.includes("/my/avatar")) {
+    return { details: strings.avatar, isSpecific: true, buttonUrl: href.split("#")[0] }
+  }
+  if (routePath.startsWith("/trades")) {
+    const tab = url.searchParams.get("tab")?.toLowerCase()
+    const details = tab === "outbound"
+      ? strings.outboundTrades
+      : tab === "completed"
+        ? strings.completedTrades
+        : tab === "inactive"
+          ? strings.inactiveTrades
+          : strings.inboundTrades
+
+    return { details, isSpecific: true, buttonUrl: href.split("#")[0] }
+  }
+  if (routePath === "/search/communities") {
+    return { details: strings.searchingCommunities, isSpecific: true, isSearch: true, buttonUrl: href.split("#")[0] }
+  }
+  if (/\/communities\/|\/groups\//.test(routePath) && !routePath.includes("/search")) {
+    return {
+      details: strings.viewingGroup,
+      state: getText(".group-name", ".community-name", "h1.game-name", "h1"),
+      image: getImage(".group-image img", ".group-header img", ".community-header img", "img[src*='rbxcdn.com']"),
+      isSpecific: true,
+      buttonUrl: href.split("?")[0],
+    }
+  }
+  if (routePath.includes("/users/inventory")) {
+    return {
+      details: strings.viewingInventory,
+      state: getText(
+        "[data-page-name='Inventory'] .tab-item.active",
+        "[data-page-name='Inventory'] .rbx-tab.active",
+        "[data-page-name='Inventory'] [aria-current='page']",
+        "h1",
+      ),
+      isSpecific: true,
+      buttonUrl: href.split("?")[0],
+    }
+  }
+  if (/\/games?\//.test(routePath)) {
     const gameName = getText(".game-calls-to-action h1", "[data-testid='game-name']", "h1")
     if (gameName) {
       return {
@@ -65,8 +129,7 @@ export const getRobloxPage = (
       }
     }
   }
-
-  if (/\/users\/[^/]+\/profile|\/member\//.test(pathname)) {
+  if (/\/users\/[^/]+\/profile|\/member\//.test(routePath)) {
     return {
       details: strings.viewingProfile,
       state: getText(".profile-name", ".username", "h1"),
@@ -75,22 +138,11 @@ export const getRobloxPage = (
       buttonUrl: href.split("?")[0],
     }
   }
-
-  if (pathname.includes("/groups/") && !pathname.includes("/search")) {
-    return {
-      details: strings.viewingGroup,
-      state: getText(".group-name", "h1"),
-      image: getImage(".group-image img"),
-      isSpecific: true,
-      buttonUrl: href.split("?")[0],
-    }
-  }
-
-  if (pathname.includes("/catalog") || pathname.includes("/bundles/") || pathname.includes("/library/")) {
+  if (routePath.includes("/catalog") || routePath.includes("/bundles/") || routePath.includes("/library/")) {
     return {
       details: strings.viewingCatalog,
       state: getText(".item-name-container h2", "h1"),
-      image: getImage(".thumbnail-span img"),
+      image: getImage(".thumbnail-span img", ".thumbnail-2d-container img"),
       isSpecific: true,
       buttonUrl: href.split("?")[0],
     }

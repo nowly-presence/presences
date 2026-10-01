@@ -15,5 +15,10 @@
   "paused": "Pausiert",
   "pinBy": "Pin von {name}",
   "videoBy": "Video-Pin von {name}",
-  "privateBrowsing": "Durchsucht Pinterest privat"
+  "privateBrowsing": "Durchsucht Pinterest privat",
+  "today": "Sieht sich Heute an",
+  "viewingPins": "Sieht sich gespeicherte Pins an",
+  "viewingBoards": "Sieht sich Pinnwände an",
+  "viewingCollages": "Sieht sich Collagen an",
+  "settings": "Sieht sich Kontoeinstellungen an"
 }

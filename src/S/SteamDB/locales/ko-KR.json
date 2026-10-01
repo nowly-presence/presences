@@ -5,5 +5,8 @@
   "viewingCharts": "Steam 차트 보는 중",
   "viewingPage": "SteamDB 페이지 보는 중",
   "viewingStatus": "Steam 상태 보는 중",
-  "openPage": "SteamDB 열기"
+  "openPage": "SteamDB 열기",
+  "viewingSales": "Steam 판매 정보 보는 중",
+  "viewingCalculator": "Steam 계산기 사용하는 중",
+  "viewingPatchnotes": "Steam 패치 노트 보는 중"
 }

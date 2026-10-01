@@ -5,5 +5,8 @@
   "viewingCharts": "Visualizando gráficos do Steam",
   "viewingPage": "Visualizando uma página do SteamDB",
   "viewingStatus": "Visualizando o status do Steam",
-  "openPage": "Abrir SteamDB"
+  "openPage": "Abrir SteamDB",
+  "viewingSales": "Visualizando as vendas do Steam",
+  "viewingCalculator": "Usando a calculadora do Steam",
+  "viewingPatchnotes": "Visualizando as notas de atualização do Steam"
 }

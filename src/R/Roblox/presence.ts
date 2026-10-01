@@ -84,7 +84,8 @@ presence.on("UpdateData", async (ctx) => {
     state: privacy ? undefined : page.state,
     largeImageKey: privacy ? Assets.Logo : page.image || Assets.Logo,
     largeImageText: privacy ? undefined : page.state,
-    smallImageKey: page.isSearch && !privacy ? "search" : undefined,
+    smallImageKey: !privacy && page.image ? Assets.Logo : page.isSearch && !privacy ? "search" : undefined,
+    smallImageText: !privacy && page.image ? "Roblox" : undefined,
     type: PresenceType.Playing,
     buttons: !privacy && page.buttonUrl
       ? [{ label: strings.openPage, url: page.buttonUrl }]

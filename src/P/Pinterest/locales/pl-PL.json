@@ -15,5 +15,10 @@
   "paused": "Wstrzymano",
   "pinBy": "Pin użytkownika {name}",
   "videoBy": "Film Pin użytkownika {name}",
-  "privateBrowsing": "Przegląda Pinterest prywatnie"
+  "privateBrowsing": "Przegląda Pinterest prywatnie",
+  "today": "Przegląda sekcję Dziś",
+  "viewingPins": "Przegląda zapisane Piny",
+  "viewingBoards": "Przegląda tablice",
+  "viewingCollages": "Przegląda kolaże",
+  "settings": "Przegląda ustawienia konta"
 }

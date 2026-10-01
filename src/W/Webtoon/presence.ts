@@ -33,13 +33,27 @@ const settings = Presence.Settings({
       "el-GR": "Εμφανίζει τη γενική περιήγηση στο WEBTOON όταν δεν είναι ανοιχτή σελίδα σειράς ή επεισοδίου.",
     },
   },
+  showButtons: {
+    type: "boolean",
+    default: true,
+    label: {
+      "en-US": "Show series button",
+      "fr-FR": "Afficher le bouton de la série",
+      "es-ES": "Mostrar botón de la serie",
+    },
+    description: {
+      "en-US": "Add a button to open the WEBTOON series you're viewing.",
+      "fr-FR": "Ajoute un bouton pour ouvrir la série WEBTOON consultée.",
+      "es-ES": "Añade un botón para abrir la serie de WEBTOON que estás viendo.",
+    },
+  },
 })
 
 const presence = new Presence(settings)
 
 presence.on("UpdateData", async (ctx) => {
   const strings = await presence.getStrings<typeof enUS>()
-  const { pathname, href } = document.location
+  const { pathname } = document.location
   const page = getWebtoonPage(pathname, strings)
 
   if (!page.isSpecific && !ctx.settings.showBrowsing) {
@@ -50,12 +64,12 @@ presence.on("UpdateData", async (ctx) => {
   await presence.setActivity({
     details: page.details,
     state: page.state,
-    largeImageKey: Assets.Logo,
+    largeImageKey: page.image || Assets.Logo,
     largeImageText: "WEBTOON",
-    smallImageKey: page.isSearch ? "search" : undefined,
-    type: PresenceType.Watching,
-    buttons: pathname.includes("/viewer") || pathname.includes("/list")
-      ? [{ label: strings.openWebtoon, url: href.split("?")[0] }]
+    smallImageKey: page.image ? Assets.Logo : page.isSearch ? "search" : undefined,
+    smallImageText: page.image ? "WEBTOON" : undefined,
+    buttons: ctx.settings.showButtons && page.buttonUrl
+      ? [{ label: strings.openWebtoon, url: page.buttonUrl }]
       : undefined,
   })
 })

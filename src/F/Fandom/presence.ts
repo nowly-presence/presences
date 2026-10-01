@@ -17,6 +17,20 @@ const settings = Presence.Settings({
       "es-ES": "Muestra la navegación general por Fandom cuando no hay ninguna página wiki abierta.",
     },
   },
+  showButtons: {
+    type: "boolean",
+    default: true,
+    label: {
+      "en-US": "Show page button",
+      "fr-FR": "Afficher le bouton de la page",
+      "es-ES": "Mostrar botón de la página",
+    },
+    description: {
+      "en-US": "Add a button to open the Fandom page you're viewing.",
+      "fr-FR": "Ajoute un bouton pour ouvrir la page Fandom consultée.",
+      "es-ES": "Añade un botón para abrir la página de Fandom que estás viendo.",
+    },
+  },
 })
 
 const presence = new Presence(settings)
@@ -25,9 +39,8 @@ presence.on("UpdateData", async (ctx) => {
   const strings = await presence.getStrings<typeof enUS>()
   const { hostname, pathname, href } = document.location
   const page = getFandomPage(hostname, pathname, href, strings)
-  const showBrowsing = ctx.settings.showBrowsing
 
-  if (!page.isSpecific && !showBrowsing) {
+  if (!page.isSpecific && !ctx.settings.showBrowsing) {
     presence.clearActivity()
     return
   }
@@ -35,7 +48,12 @@ presence.on("UpdateData", async (ctx) => {
   await presence.setActivity({
     details: page.details,
     state: page.state,
-    largeImageKey: Assets.Logo,
-    type: PresenceType.Watching,
+    largeImageKey: page.image || Assets.Logo,
+    largeImageText: page.image ? page.state : undefined,
+    smallImageKey: page.image ? Assets.Logo : undefined,
+    smallImageText: page.image ? "Fandom" : undefined,
+    buttons: ctx.settings.showButtons && page.buttonUrl
+      ? [{ label: strings.openPage, url: page.buttonUrl }]
+      : undefined,
   })
 })

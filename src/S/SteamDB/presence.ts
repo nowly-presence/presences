@@ -29,8 +29,10 @@ presence.on("UpdateData", async (ctx) => {
   await presence.setActivity({
     details: page.details,
     state: page.state,
-    largeImageKey: Assets.Logo,
-    smallImageKey: page.isSearch ? "search" : undefined,
+    largeImageKey: page.image || Assets.Logo,
+    largeImageText: page.image ? page.state : undefined,
+    smallImageKey: page.image ? Assets.Logo : page.isSearch ? "search" : undefined,
+    smallImageText: page.image ? "SteamDB" : undefined,
     type: PresenceType.Playing,
     buttons: ctx.settings.showButtons && page.buttonUrl
       ? [{ label: strings.openPage, url: page.buttonUrl }]

@@ -15,5 +15,10 @@
   "paused": "Duraklatıldı",
   "pinBy": "{name} adlı kullanıcının Pin'i",
   "videoBy": "{name} adlı kullanıcının video Pin'i",
-  "privateBrowsing": "Pinterest'te gizli geziniyor"
+  "privateBrowsing": "Pinterest'te geziniyor",
+  "today": "Bugün'ü görüntülüyor",
+  "viewingPins": "Kaydedilen Pin'leri görüntülüyor",
+  "viewingBoards": "Panoları görüntülüyor",
+  "viewingCollages": "Kolajları görüntülüyor",
+  "settings": "Hesap ayarlarını görüntülüyor"
 }

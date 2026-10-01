@@ -8,5 +8,19 @@
   "devForum": "Roblox geliştirici forumunda geziniyor",
   "forumHome": "Forum ana sayfasını görüntülüyor",
   "creatorHub": "Roblox Creator Hub'ı kullanıyor",
-  "openPage": "Roblox'u aç"
+  "openPage": "Roblox'u aç",
+  "home": "Roblox ana sayfasını görüntülüyor",
+  "messages": "Roblox mesajlarını görüntülüyor",
+  "friends": "Arkadaşlarını görüntülüyor",
+  "following": "Takip ettiği kullanıcıları görüntülüyor",
+  "followers": "Takipçilerini görüntülüyor",
+  "friendRequests": "Arkadaşlık isteklerini görüntülüyor",
+  "avatar": "Roblox avatarını düzenliyor",
+  "inboundTrades": "Gelen takasları görüntülüyor",
+  "outboundTrades": "Giden takasları görüntülüyor",
+  "completedTrades": "Tamamlanan takasları görüntülüyor",
+  "inactiveTrades": "Etkin olmayan takasları görüntülüyor",
+  "searchingCommunities": "Roblox topluluklarını arıyor",
+  "viewingInventory": "Roblox envanterini görüntülüyor",
+  "newsroom": "Roblox haberlerini okuyor"
 }

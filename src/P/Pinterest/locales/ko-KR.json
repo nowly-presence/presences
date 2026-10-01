@@ -15,5 +15,10 @@
   "paused": "일시 정지",
   "pinBy": "{name}의 핀",
   "videoBy": "{name}의 동영상 핀",
-  "privateBrowsing": "Pinterest 비공개 탐색 중"
+  "privateBrowsing": "Pinterest 비공개 탐색 중",
+  "today": "Today 보는 중",
+  "viewingPins": "저장한 핀 보는 중",
+  "viewingBoards": "보드 보는 중",
+  "viewingCollages": "콜라주 보는 중",
+  "settings": "계정 설정 보는 중"
 }
