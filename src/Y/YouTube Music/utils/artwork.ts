@@ -11,23 +11,30 @@ export const normalizeArtworkUrl = (url: string | undefined): string | undefined
 }
 
 export const findArtwork = (playerBar: Element | null): string | undefined => {
+  const modernArtwork = playerBar?.querySelector("img.ytmusicTrackInfoThumbnail")
+    ?? document.querySelector("ytmusic-track-info[aria-label='Now playing'] img.ytmusicTrackInfoThumbnail")
+  const normalizedModernArtwork = normalizeArtworkUrl(modernArtwork?.getAttribute("src") ?? undefined)
+  if (normalizedModernArtwork) return normalizedModernArtwork
+
   const mediaSessionArtwork = navigator.mediaSession?.metadata?.artwork
   const largestMediaSessionArtwork = mediaSessionArtwork?.[mediaSessionArtwork.length - 1]?.src
   const normalizedMediaSessionArtwork = normalizeArtworkUrl(largestMediaSessionArtwork)
   if (normalizedMediaSessionArtwork) return normalizedMediaSessionArtwork
 
-  const selectors = [
-    "img.image",
-    "yt-img-shadow.image img",
-    ".thumbnail-image img",
-    "img[src*='googleusercontent.com']",
-    "img[src*='ytimg.com']",
-  ]
+  if (playerBar) {
+    const selectors = [
+      "img.image",
+      "yt-img-shadow.image img",
+      ".thumbnail-image img",
+      "img[src*='googleusercontent.com']",
+      "img[src*='ytimg.com']",
+    ]
 
-  for (const selector of selectors) {
-    const src = attr(selector, "src", playerBar ?? document)
-    const normalized = normalizeArtworkUrl(src)
-    if (normalized) return normalized
+    for (const selector of selectors) {
+      const src = attr(selector, "src", playerBar)
+      const normalized = normalizeArtworkUrl(src)
+      if (normalized) return normalized
+    }
   }
 
   const metaImage = document.querySelector<HTMLMetaElement>("meta[property='og:image']")?.content
