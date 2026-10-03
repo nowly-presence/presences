@@ -18,7 +18,8 @@ export type TrackInfo = {
 let lastTrack: TrackInfo | undefined
 
 export const findPlayerBar = (): Element | null =>
-  document.querySelector("ytmusic-player-bar")
+  document.querySelector("ytmusic-miniplayer")
+  ?? document.querySelector("ytmusic-player-bar")
   ?? document.querySelector("#player-bar")
 
 export const findVideo = (): HTMLVideoElement | null =>
@@ -26,31 +27,47 @@ export const findVideo = (): HTMLVideoElement | null =>
   ?? document.querySelector<HTMLVideoElement>("#movie_player video")
   ?? document.querySelector<HTMLVideoElement>("video")
 
+const NOW_PLAYING_TRACK_INFO_SELECTOR = "ytmusic-track-info[aria-label='Now playing']"
+
+const findNowPlayingTrackInfo = (playerBar: Element | null): Element | null =>
+  playerBar?.querySelector(NOW_PLAYING_TRACK_INFO_SELECTOR)
+  ?? document.querySelector(NOW_PLAYING_TRACK_INFO_SELECTOR)
+
 const findTitle = (playerBar: Element | null): string | undefined => {
-  const root = playerBar ?? document
-  return cleanTrackTitle(navigator.mediaSession?.metadata?.title)
-    ?? cleanTrackTitle(root.querySelector(".title.ytmusic-player-bar")?.textContent)
-    ?? cleanTrackTitle(root.querySelector(".content-info-wrapper .title")?.textContent)
-    ?? cleanTrackTitle(root.querySelector("yt-formatted-string.title")?.textContent)
+  const trackInfo = findNowPlayingTrackInfo(playerBar)
+  const modernTitle = trackInfo?.querySelector(".ytmusicTrackInfoTitle")
+  return cleanTrackTitle(modernTitle?.getAttribute("title") ?? modernTitle?.textContent)
+    ?? cleanTrackTitle(playerBar?.querySelector(".title.ytmusic-player-bar")?.textContent)
+    ?? cleanTrackTitle(playerBar?.querySelector(".content-info-wrapper .title")?.textContent)
+    ?? cleanTrackTitle(playerBar?.querySelector("yt-formatted-string.title")?.textContent)
+    ?? cleanTrackTitle(navigator.mediaSession?.metadata?.title)
 }
 
 const findByline = (playerBar: Element | null): string | undefined =>
-  text(".byline.ytmusic-player-bar", playerBar ?? document)
-  ?? text(".subtitle.ytmusic-player-bar", playerBar ?? document)
-  ?? text(".content-info-wrapper .byline", playerBar ?? document)
+  playerBar
+    ? text(".byline.ytmusic-player-bar", playerBar)
+      ?? text(".subtitle.ytmusic-player-bar", playerBar)
+      ?? text(".content-info-wrapper .byline", playerBar)
+    : undefined
 
 const findArtist = (playerBar: Element | null): string | undefined => {
-  const mediaSessionArtist = cleanArtist(navigator.mediaSession?.metadata?.artist)
-  if (mediaSessionArtist) return mediaSessionArtist
+  const trackInfo = findNowPlayingTrackInfo(playerBar)
+  const modernArtist = cleanArtist(trackInfo?.querySelector(".ytmusicTrackInfoByline a")?.textContent)
+  if (modernArtist) return modernArtist
 
   const byline = findByline(playerBar)
-  if (!byline || /^youtube music$/i.test(byline)) return undefined
-  return byline
-    .split(/\s+(?:\u2022|\u00b7)\s+/)
-    .map(part => part.trim())
-    .filter(Boolean)
-    .slice(0, 2)
-    .join(" - ")
+  if (byline && !/^youtube music$/i.test(byline)) {
+    return cleanArtist(
+      byline
+        .split(/\s+(?:\u2022|\u00b7)\s+/)
+        .map(part => part.trim())
+        .filter(Boolean)
+        .slice(0, 2)
+        .join(" - "),
+    )
+  }
+
+  return cleanArtist(navigator.mediaSession?.metadata?.artist)
 }
 
 const isPlaying = (video: HTMLVideoElement | null, playerBar: Element | null): boolean => {
@@ -87,10 +104,13 @@ const toAbsoluteUrl = (value: string | undefined): string | undefined => {
   }
 }
 
-const findTrackUrl = (playerBar: Element | null): string =>
-  toAbsoluteUrl(attr(".title a[href]", "href", playerBar ?? document))
-  ?? toAbsoluteUrl(attr("a[href*='/watch'][href*='v=']", "href", playerBar ?? document))
-  ?? currentTrackUrl()
+const findTrackUrl = (playerBar: Element | null): string => {
+  if (!playerBar) return currentTrackUrl()
+
+  return toAbsoluteUrl(attr(".title a[href]", "href", playerBar))
+    ?? toAbsoluteUrl(attr("a[href*='/watch'][href*='v=']", "href", playerBar))
+    ?? currentTrackUrl()
+}
 
 export const createProgressTimestamps = (
   video: HTMLVideoElement | null,
