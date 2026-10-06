@@ -1,0 +1,11 @@
+{
+  "watchingLive": "Canlı TV izliyor",
+  "watchingVod": "Film veya dizi izliyor",
+  "liveState": "{channel} · {program}",
+  "browsingHome": "Ücretsiz TV'ye göz atıyor",
+  "browsingChannels": "Kanallara göz atıyor",
+  "browsingVodHub": "Filmlere ve dizilere göz atıyor",
+  "browsingTvGuide": "TV rehberine göz atıyor",
+  "browsingMyList": "Listem'e göz atıyor",
+  "viewingDetail": "Ayrıntıları görüntülüyor"
+}

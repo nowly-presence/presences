@@ -1,0 +1,11 @@
+{
+  "watchingLive": "Ogląda telewizję na żywo",
+  "watchingVod": "Ogląda film lub serial",
+  "liveState": "{channel} · {program}",
+  "browsingHome": "Przeglądanie Free TV",
+  "browsingChannels": "Przeglądanie kanałów",
+  "browsingVodHub": "Przegląda filmy i seriale",
+  "browsingTvGuide": "Przegląda program telewizyjny",
+  "browsingMyList": "Przeglądanie My List",
+  "viewingDetail": "Przeglądanie szczegółów"
+}

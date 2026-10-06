@@ -1,0 +1,11 @@
+{
+  "watchingLive": "Assistindo à TV ao vivo",
+  "watchingVod": "Assistindo a um filme ou série",
+  "liveState": "{channel} · {program}",
+  "browsingHome": "Navegando em TV gratuita",
+  "browsingChannels": "Navegando por canais",
+  "browsingVodHub": "Navegando por filmes e programas",
+  "browsingTvGuide": "Navegando pelo guia de TV",
+  "browsingMyList": "Navegando em Minha lista",
+  "viewingDetail": "Vendo detalhes"
+}

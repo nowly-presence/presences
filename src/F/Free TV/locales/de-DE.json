@@ -1,0 +1,11 @@
+{
+  "watchingLive": "Schaut Live-TV",
+  "watchingVod": "Schaut einen Film oder eine Serie",
+  "liveState": "{channel} · {program}",
+  "browsingHome": "Stöbert in Free TV",
+  "browsingChannels": "Stöbert in Kanälen",
+  "browsingVodHub": "Durchsucht Filme & Serien",
+  "browsingTvGuide": "Durchsucht das TV-Programm",
+  "browsingMyList": "Stöbert in „Meine Liste“",
+  "viewingDetail": "Sieht Details an"
+}
