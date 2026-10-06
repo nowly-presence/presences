@@ -1,0 +1,18 @@
+{
+  "watching": "Schaut gerade",
+  "seasonEpisode": "Staffel {season}, Folge {episode}",
+  "playing": "Wiedergabe",
+  "paused": "Pausiert",
+  "searching": "Sucht",
+  "viewingSeries": "Sieht eine Serie an",
+  "readingManga": "Liest Manga",
+  "readingNews": "Liest Nachrichten",
+  "viewingWatchlist": "Sieht die Merkliste an",
+  "viewingHistory": "Sieht den Wiedergabeverlauf an",
+  "viewingCalendar": "Sieht den Simulcast-Kalender an",
+  "browsingGames": "Stöbert in Spielen",
+  "browsingMusic": "Durchsucht Musik",
+  "browsingCrunchyroll": "Stöbert auf Crunchyroll",
+  "watchEpisode": "Folge ansehen",
+  "viewSeries": "Serie ansehen"
+}

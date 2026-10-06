@@ -1,0 +1,18 @@
+{
+  "watching": "Παρακολουθεί",
+  "seasonEpisode": "Σεζόν {season}, Επεισόδιο {episode}",
+  "playing": "Παίζει",
+  "paused": "Σε παύση",
+  "searching": "Αναζήτηση",
+  "viewingSeries": "Προβολή σειράς",
+  "readingManga": "Διαβάζει manga",
+  "readingNews": "Διαβάζει ειδήσεις",
+  "viewingWatchlist": "Προβολή λίστας παρακολούθησης",
+  "viewingHistory": "Προβολή ιστορικού παρακολούθησης",
+  "viewingCalendar": "Προβολή ημερολογίου ταυτόχρονων μεταδόσεων",
+  "browsingGames": "Περιήγηση στα παιχνίδια",
+  "browsingMusic": "Περιήγηση στη μουσική",
+  "browsingCrunchyroll": "Περιήγηση στο Crunchyroll",
+  "watchEpisode": "Παρακολούθηση επεισοδίου",
+  "viewSeries": "Προβολή σειράς"
+}

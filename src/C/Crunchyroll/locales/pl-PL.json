@@ -1,0 +1,18 @@
+{
+  "watching": "Ogląda",
+  "seasonEpisode": "Sezon {season}, odcinek {episode}",
+  "playing": "Gra w szachy",
+  "paused": "Wstrzymano",
+  "searching": "Wyszukiwanie",
+  "viewingSeries": "Przeglądanie serialu",
+  "readingManga": "Czytanie mangi",
+  "readingNews": "Czytanie wiadomości",
+  "viewingWatchlist": "Przeglądanie listy do obejrzenia",
+  "viewingHistory": "Przeglądanie historii oglądania",
+  "viewingCalendar": "Przeglądanie kalendarza simulcastów",
+  "browsingGames": "Przeglądanie gier",
+  "browsingMusic": "Przegląda muzykę",
+  "browsingCrunchyroll": "Przeglądanie Crunchyroll",
+  "watchEpisode": "Obejrzyj odcinek",
+  "viewSeries": "Wyświetl serial"
+}

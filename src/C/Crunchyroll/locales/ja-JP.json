@@ -1,0 +1,18 @@
+{
+  "watching": "視聴中",
+  "seasonEpisode": "シーズン{season}、エピソード{episode}",
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "searching": "検索中",
+  "viewingSeries": "シリーズを閲覧中",
+  "readingManga": "漫画を読んでいます",
+  "readingNews": "ニュースを読んでいます",
+  "viewingWatchlist": "ウォッチリストを閲覧中",
+  "viewingHistory": "視聴履歴を閲覧中",
+  "viewingCalendar": "同時配信カレンダーを閲覧中",
+  "browsingGames": "ゲームを閲覧中",
+  "browsingMusic": "音楽を閲覧中",
+  "browsingCrunchyroll": "Crunchyrollを閲覧中",
+  "watchEpisode": "エピソードを見る",
+  "viewSeries": "シリーズを見る"
+}
