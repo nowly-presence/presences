@@ -4,20 +4,44 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "contributors": [{ "name": "KiMi", "github": "q-kimi" }],
-  "url": ["twitch.tv", "www.twitch.tv"],
+  "contributors": [
+    {
+      "name": "KiMi",
+      "github": "q-kimi"
+    }
+  ],
+  "url": [
+    "twitch.tv",
+    "www.twitch.tv"
+  ],
   "regExp": "^https?://(www|clips)\\.twitch\\.tv/",
   "color": "#9146FF",
   "category": "gaming",
   "description": {
     "en-US": "Show the Twitch live, VOD, or clip you're watching.",
     "fr-FR": "Affichez le live, la VOD ou le clip Twitch que vous regardez.",
-    "es-ES": "Muestra el directo, VOD o clip de Twitch que estás viendo."
+    "es-ES": "Muestra el directo, VOD o clip de Twitch que estás viendo.",
+    "de-DE": "Zeige den Twitch-Livestream, das VOD oder den Clip, den du ansiehst.",
+    "el-GR": "Εμφάνιση της ζωντανής μετάδοσης, του VOD ή του κλιπ που παρακολουθείτε στο Twitch.",
+    "ja-JP": "視聴中のTwitchライブ配信、VOD、クリップを表示します。",
+    "ko-KR": "시청 중인 Twitch 라이브, VOD 또는 클립을 표시합니다.",
+    "ms-MY": "Tunjukkan siaran langsung, VOD atau klip Twitch yang anda tonton.",
+    "pl-PL": "Pokazuj oglądaną transmisję na żywo, VOD lub klip na Twitchu.",
+    "pt-BR": "Mostrar a live, o VOD ou o clipe que você está assistindo na Twitch.",
+    "tr-TR": "İzlediğin Twitch canlı yayınını, VOD'u veya klibi göster."
   },
   "longDescription": {
     "en-US": "Twitch is the leading live platform for gaming, esports, music, and creators. This presence shows the stream, VOD, or clip you're watching - streamer, title, and category - so friends can see it on Discord in real time.",
     "fr-FR": "Twitch est la plateforme de référence pour le jeu, l'esport, la musique et les créateurs. Cette présence affiche le live, la VOD ou le clip que vous regardez - streamer, titre et catégorie - pour que vos amis le voient sur Discord en temps réel.",
-    "es-ES": "Twitch es la plataforma líder de directos para videojuegos, esports, música y creadores. Esta presencia muestra el directo, VOD o clip que estás viendo - streamer, título y categoría - para que tus amigos lo vean en Discord en tiempo real."
+    "es-ES": "Twitch es la plataforma líder de directos para videojuegos, esports, música y creadores. Esta presencia muestra el directo, VOD o clip que estás viendo - streamer, título y categoría - para que tus amigos lo vean en Discord en tiempo real.",
+    "de-DE": "Twitch ist die führende Live-Plattform für Gaming, E-Sport, Musik und Creator. Dieser Status zeigt den Stream, das VOD oder den Clip, den du ansiehst – Streamer, Titel und Kategorie –, sodass Freunde dies in Echtzeit auf Discord sehen können.",
+    "el-GR": "Το Twitch είναι η κορυφαία πλατφόρμα ζωντανών μεταδόσεων για gaming, esports, μουσική και δημιουργούς. Αυτή η παρουσία εμφανίζει τη ζωντανή μετάδοση, το VOD ή το κλιπ που παρακολουθείτε — τον streamer, τον τίτλο και την κατηγορία — ώστε οι φίλοι σας να το βλέπουν στο Discord σε πραγματικό χρόνο.",
+    "ja-JP": "Twitchは、ゲーム、eスポーツ、音楽、クリエイター向けの主要ライブ配信プラットフォームです。このプレゼンスには、視聴中の配信、VOD、クリップの配信者、タイトル、カテゴリーが表示され、フレンドがDiscord上でリアルタイムに確認できます。",
+    "ko-KR": "Twitch는 게임, e스포츠, 음악, 크리에이터를 위한 최고의 라이브 플랫폼입니다. 이 활동은 현재 시청 중인 스트리밍, VOD 또는 클립의 스트리머, 제목, 카테고리를 표시하여 친구들이 Discord에서 실시간으로 확인할 수 있게 합니다.",
+    "ms-MY": "Twitch ialah platform siaran langsung terkemuka untuk permainan, e-sukan, muzik dan pencipta. Kehadiran ini menunjukkan strim, VOD atau klip yang anda tonton - penstrim, tajuk dan kategori - supaya rakan dapat melihatnya di Discord dalam masa nyata.",
+    "pl-PL": "Twitch to wiodąca platforma transmisji na żywo dla graczy, e-sportu, muzyki i twórców. Ta aktywność pokazuje oglądaną transmisję, VOD lub klip — streamera, tytuł i kategorię — dzięki czemu znajomi mogą widzieć ją na Discordzie w czasie rzeczywistym.",
+    "pt-BR": "A Twitch é a principal plataforma de transmissões ao vivo de jogos, esports, música e criadores. Esta presença mostra a transmissão, o VOD ou o clipe que você está assistindo — streamer, título e categoria — para que seus amigos vejam no Discord em tempo real.",
+    "tr-TR": "Twitch; oyun, espor, müzik ve içerik üreticileri için lider canlı yayın platformudur. Bu presence, izlediğin yayını, VOD'u veya klibi; yayıncı, başlık ve kategori bilgileriyle birlikte gösterir, böylece arkadaşların bunu Discord'da gerçek zamanlı olarak görebilir."
   },
   "features": {
     "en-US": [
@@ -37,6 +61,54 @@
       "Muestra streamer, título y categoría",
       "Compatible con VODs y clips",
       "Actualiza tu actividad de Discord en tiempo real"
+    ],
+    "de-DE": [
+      "Erkennt Livestreams automatisch",
+      "Zeigt Streamer, Titel und Kategorie",
+      "Unterstützt VODs und Clips",
+      "Aktualisiert deine Discord-Aktivität in Echtzeit"
+    ],
+    "el-GR": [
+      "Εντοπίζει αυτόματα ζωντανές μεταδόσεις",
+      "Εμφανίζει τον streamer, τον τίτλο και την κατηγορία",
+      "Υποστηρίζει VOD και κλιπ",
+      "Ενημερώνει τη δραστηριότητά σου στο Discord σε πραγματικό χρόνο"
+    ],
+    "ja-JP": [
+      "ライブ配信を自動検出",
+      "配信者、タイトル、カテゴリーを表示",
+      "VODとクリップに対応",
+      "Discordのアクティビティをリアルタイムで更新"
+    ],
+    "ko-KR": [
+      "라이브 자동 감지",
+      "스트리머, 제목 및 카테고리 표시",
+      "VOD 및 클립 지원",
+      "Discord 활동을 실시간으로 업데이트"
+    ],
+    "ms-MY": [
+      "Mengesan siaran langsung secara automatik",
+      "Menunjukkan penstrim, tajuk dan kategori",
+      "Menyokong VOD dan klip",
+      "Mengemas kini aktiviti Discord anda secara masa nyata"
+    ],
+    "pl-PL": [
+      "Automatycznie wykrywa transmisje na żywo",
+      "Pokazuje streamera, tytuł i kategorię",
+      "Obsługuje VOD-y i klipy",
+      "Aktualizuje twoją aktywność na Discordzie w czasie rzeczywistym"
+    ],
+    "pt-BR": [
+      "Detecta lives automaticamente",
+      "Mostra o streamer, o título e a categoria",
+      "Compatível com VODs e clipes",
+      "Atualiza sua atividade do Discord em tempo real"
+    ],
+    "tr-TR": [
+      "Canlı yayınları otomatik olarak algılar",
+      "Yayıncıyı, başlığı ve kategoriyi gösterir",
+      "VOD'ları ve klipleri destekler",
+      "Discord etkinliğini gerçek zamanlı günceller"
     ]
   }
 }
