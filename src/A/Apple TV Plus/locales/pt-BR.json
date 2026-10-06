@@ -1,0 +1,13 @@
+{
+  "browsing": "Navegando",
+  "searching": "Pesquisando",
+  "playing": "Jogando",
+  "paused": "Pausado",
+  "browsingHome": "Navegando na página inicial",
+  "viewingSeries": "Vendo uma série",
+  "sharePlayRoom": "Em uma sala do SharePlay",
+  "watchEpisode": "Assistir ao episódio",
+  "watchShow": "Assistir à série",
+  "movie": "Filme",
+  "seasonEpisode": "Temporada {season}, Episódio {episode}"
+}

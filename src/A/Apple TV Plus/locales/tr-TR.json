@@ -1,0 +1,13 @@
+{
+  "browsing": "Göz atıyor",
+  "searching": "Arıyor",
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "browsingHome": "Ana sayfaya göz atıyor",
+  "viewingSeries": "Bir diziyi görüntülüyor",
+  "sharePlayRoom": "Bir SharePlay odasında",
+  "watchEpisode": "Bölümü İzle",
+  "watchShow": "Diziyi İzle",
+  "movie": "Film",
+  "seasonEpisode": "{season}. Sezon, {episode}. Bölüm"
+}

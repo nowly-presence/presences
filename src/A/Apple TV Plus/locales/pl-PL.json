@@ -1,0 +1,13 @@
+{
+  "browsing": "Przeglądanie",
+  "searching": "Wyszukiwanie",
+  "playing": "Gra w szachy",
+  "paused": "Wstrzymano",
+  "browsingHome": "Przeglądanie strony głównej",
+  "viewingSeries": "Przeglądanie serialu",
+  "sharePlayRoom": "W pokoju SharePlay",
+  "watchEpisode": "Obejrzyj odcinek",
+  "watchShow": "Obejrzyj serial",
+  "movie": "Film",
+  "seasonEpisode": "Sezon {season}, odcinek {episode}"
+}
