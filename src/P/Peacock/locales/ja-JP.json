@@ -1,0 +1,14 @@
+{
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "live": "ライブ",
+  "watching": "視聴中",
+  "browsing": "閲覧中",
+  "browsingMovies": "映画を閲覧中",
+  "browsingTv": "テレビ番組を閲覧中",
+  "browsingKids": "Kidsを閲覧中",
+  "browsingSports": "スポーツを閲覧中",
+  "browsingLatino": "Latinoを閲覧中",
+  "browsingMyStuff": "マイコンテンツを閲覧中",
+  "searching": "Peacockを検索中"
+}
