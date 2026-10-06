@@ -165,7 +165,6 @@ jobs:
             echo "Pushing $slug..."
             "$GITHUB_WORKSPACE/.internal-cli/node_modules/.bin/tsx" --tsconfig "$GITHUB_WORKSPACE/.internal-cli/tsconfig.json" "$GITHUB_WORKSPACE/.internal-cli/index.ts" push "$slug" \
               --patch \
-              --ai \
               --source pr \
               --base "$BASE_SHA" \
               --head "$HEAD_SHA" \
