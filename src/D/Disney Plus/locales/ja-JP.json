@@ -1,0 +1,13 @@
+{
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "viewingSeries": "シリーズを閲覧中",
+  "viewingMovie": "映画を閲覧中",
+  "browsingHome": "ホームを閲覧中",
+  "searchingFor": "検索中：",
+  "browsingWatchlist": "ウォッチリストを閲覧中",
+  "browsingSeries": "シリーズを閲覧中",
+  "browsingMovies": "映画を閲覧中",
+  "watchEpisode": "エピソードを見る",
+  "watchMovie": "映画を見る"
+}

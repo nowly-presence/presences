@@ -1,0 +1,13 @@
+{
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "viewingSeries": "Bir diziyi görüntülüyor",
+  "viewingMovie": "Bir filmi görüntülüyor",
+  "browsingHome": "Ana sayfaya göz atıyor",
+  "searchingFor": "Aranan:",
+  "browsingWatchlist": "İzleme listesine göz atıyor",
+  "browsingSeries": "Dizilere göz atıyor",
+  "browsingMovies": "Filmlere göz atıyor",
+  "watchEpisode": "Bölümü İzle",
+  "watchMovie": "Filmi İzle"
+}
