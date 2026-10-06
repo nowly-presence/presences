@@ -1,0 +1,16 @@
+{
+  "playing": "플레이 중",
+  "paused": "일시 정지",
+  "viewingDetails": "세부 정보 보는 중",
+  "viewingHome": "홈 보는 중",
+  "browsingEllipsis": "둘러보는 중…",
+  "searchingFor": "검색어:",
+  "viewingMovies": "영화 보는 중",
+  "viewingTvSeries": "TV 시리즈 보는 중",
+  "viewingSports": "스포츠 보는 중",
+  "viewingLiveTv": "라이브 TV 보는 중",
+  "viewingCategories": "카테고리 보는 중",
+  "viewingKidsMovies": "어린이 영화 보는 중",
+  "viewingGenres": "장르 보는 중",
+  "browsingStore": "스토어 둘러보는 중"
+}

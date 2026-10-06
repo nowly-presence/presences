@@ -1,0 +1,16 @@
+{
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "viewingDetails": "詳細を閲覧中",
+  "viewingHome": "ホームを閲覧中",
+  "browsingEllipsis": "閲覧中…",
+  "searchingFor": "検索中：",
+  "viewingMovies": "映画を閲覧中",
+  "viewingTvSeries": "テレビシリーズを閲覧中",
+  "viewingSports": "スポーツを閲覧中",
+  "viewingLiveTv": "ライブTVを視聴中",
+  "viewingCategories": "カテゴリーを閲覧中",
+  "viewingKidsMovies": "子ども向け映画を閲覧中",
+  "viewingGenres": "ジャンルを閲覧中",
+  "browsingStore": "ストアを閲覧中"
+}

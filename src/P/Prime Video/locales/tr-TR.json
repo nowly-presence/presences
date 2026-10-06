@@ -1,0 +1,16 @@
+{
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "viewingDetails": "Ayrıntıları görüntülüyor",
+  "viewingHome": "Ana sayfaya göz atıyor",
+  "browsingEllipsis": "Göz atıyor…",
+  "searchingFor": "Aranan:",
+  "viewingMovies": "Filmlere göz atıyor",
+  "viewingTvSeries": "TV dizilerine göz atıyor",
+  "viewingSports": "Spor içeriklerine göz atıyor",
+  "viewingLiveTv": "Canlı TV'ye göz atıyor",
+  "viewingCategories": "Kategorilere göz atıyor",
+  "viewingKidsMovies": "Çocuk filmlerine göz atıyor",
+  "viewingGenres": "Türlere göz atıyor",
+  "browsingStore": "Mağazaya göz atıyor"
+}

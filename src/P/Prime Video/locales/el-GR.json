@@ -1,0 +1,16 @@
+{
+  "playing": "Παίζει",
+  "paused": "Σε παύση",
+  "viewingDetails": "Προβολή λεπτομερειών",
+  "viewingHome": "Προβολή αρχικής",
+  "browsingEllipsis": "Περιήγηση…",
+  "searchingFor": "Αναζήτηση για:",
+  "viewingMovies": "Προβολή ταινιών",
+  "viewingTvSeries": "Προβολή τηλεοπτικών σειρών",
+  "viewingSports": "Προβολή αθλητικών",
+  "viewingLiveTv": "Προβολή ζωντανής τηλεόρασης",
+  "viewingCategories": "Προβολή κατηγοριών",
+  "viewingKidsMovies": "Προβολή παιδικών ταινιών",
+  "viewingGenres": "Προβολή ειδών",
+  "browsingStore": "Περιήγηση στο κατάστημα"
+}
