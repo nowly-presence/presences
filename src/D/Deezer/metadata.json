@@ -1,19 +1,41 @@
 {
   "name": "Deezer",
-  "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["deezer.com", "www.deezer.com"],
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "deezer.com",
+    "www.deezer.com"
+  ],
   "regExp": "^https?://(www\\.)?deezer\\.com/",
   "color": "#A238FF",
   "category": "music",
   "description": {
     "en-US": "Show the track you're listening to on Deezer.",
     "fr-FR": "Affichez le titre que vous écoutez sur Deezer.",
-    "es-ES": "Muestra la canción que estás escuchando en Deezer."
+    "es-ES": "Muestra la canción que estás escuchando en Deezer.",
+    "de-DE": "Zeige den Titel, den du auf Deezer hörst.",
+    "el-GR": "Εμφάνιση του κομματιού που ακούτε στο Deezer.",
+    "ja-JP": "Deezerで聴いている曲を表示します。",
+    "ko-KR": "Deezer에서 듣고 있는 트랙을 표시합니다.",
+    "ms-MY": "Tunjukkan lagu yang anda dengar di Deezer.",
+    "pl-PL": "Pokazuj utwór słuchany w Deezer.",
+    "pt-BR": "Mostrar a faixa que você está ouvindo no Deezer.",
+    "tr-TR": "Deezer'da dinlediğin parçayı göster."
   },
   "longDescription": {
     "en-US": "Deezer is a music streaming service. This presence shows the track you're listening to - title, artist, playback state, and artwork when available.",
     "fr-FR": "Deezer est un service de streaming musical. Cette présence affiche le titre que vous écoutez - morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
-    "es-ES": "Deezer es un servicio de streaming musical. Esta presencia muestra la canción que escuchas: título, artista, estado de reproducción y portada cuando esté disponible."
+    "es-ES": "Deezer es un servicio de streaming musical. Esta presencia muestra la canción que escuchas: título, artista, estado de reproducción y portada cuando esté disponible.",
+    "de-DE": "Deezer ist ein Musikstreaming-Dienst. Diese Präsenz zeigt den Titel, den du gerade hörst, sowie Interpret, Wiedergabestatus und Cover, sofern verfügbar.",
+    "el-GR": "Το Deezer είναι μια υπηρεσία streaming μουσικής. Αυτή η παρουσία εμφανίζει το κομμάτι που ακούτε — τίτλο, καλλιτέχνη, κατάσταση αναπαραγωγής και εξώφυλλο, όταν είναι διαθέσιμο.",
+    "ja-JP": "Deezerは音楽ストリーミングサービスです。このプレゼンスには聴いている楽曲のタイトル、アーティスト、再生状態が表示され、利用可能な場合はアートワークも表示されます。",
+    "ko-KR": "Deezer는 음악 스트리밍 서비스입니다. 이 활동 상태에는 듣고 있는 트랙의 제목, 아티스트, 재생 상태가 표시되며, 가능한 경우 아트워크도 표시됩니다.",
+    "ms-MY": "Deezer ialah perkhidmatan penstriman muzik. Kehadiran ini menunjukkan lagu yang sedang anda dengar—tajuk, artis, status main balik dan karya seni apabila tersedia.",
+    "pl-PL": "Deezer to serwis do strumieniowego przesyłania muzyki. Ta aktywność pokazuje słuchany utwór — tytuł, wykonawcę, stan odtwarzania i okładkę, jeśli jest dostępna.",
+    "pt-BR": "O Deezer é um serviço de streaming de música. Esta presença mostra a faixa que você está ouvindo — título, artista, estado da reprodução e capa quando disponíveis.",
+    "tr-TR": "Deezer bir müzik yayın hizmetidir. Bu durum, dinlediğin parçanın adını, sanatçısını, oynatma durumunu ve mevcut olduğunda kapak görselini gösterir."
   },
   "features": {
     "en-US": [
@@ -36,6 +58,62 @@
       "Sigue el progreso de escucha",
       "Muestra la portada del álbum",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt den aktuellen Song",
+      "Zeigt Titel und Künstler",
+      "Erfasst den Hörfortschritt",
+      "Zeigt das Albumcover an",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει το τρέχον κομμάτι",
+      "Εμφανίζει τίτλο και καλλιτέχνη",
+      "Παρακολουθεί την πρόοδο ακρόασης",
+      "Εμφανίζει το εξώφυλλο του άλμπουμ",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "現在の楽曲を検出",
+      "タイトルとアーティストを表示",
+      "再生の進行状況を追跡",
+      "アルバムアートワークを表示",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "현재 트랙 감지",
+      "제목과 아티스트 표시",
+      "청취 진행 상황 표시",
+      "앨범 아트워크 표시",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan lagu semasa",
+      "Menunjukkan tajuk dan artis",
+      "Menjejaki kemajuan mendengar",
+      "Memaparkan karya seni album",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa bieżący utwór",
+      "Pokazuje tytuł i wykonawcę",
+      "Śledzi postęp słuchania",
+      "Wyświetla okładkę albumu",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta a faixa atual",
+      "Mostra o título e o artista",
+      "Acompanha o progresso da reprodução",
+      "Exibe a capa do álbum",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Mevcut parçayı algılar",
+      "Başlığı ve sanatçıyı gösterir",
+      "Dinleme ilerlemesini takip eder",
+      "Albüm kapağını gösterir",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   }
 }
