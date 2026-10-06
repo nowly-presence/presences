@@ -56,9 +56,10 @@ export const handleUpdate = async (
       const paused = video?.paused ?? false
       const mediaTitle = extractVideoDescription(container)
       const poster = !privacy ? await toDiscordImage(extractPoster(video)) : undefined
+      const mediaTitleInHeader = Boolean(!privacy && showMediaTitle && mediaTitle)
 
       const data: PresenceData = {
-        name: !privacy && showMediaTitle ? mediaTitle : undefined,
+        name: mediaTitleInHeader ? mediaTitle : undefined,
         largeImageKey: poster ?? Assets.Logo,
         smallImageKey: paused ? "pause" : "play",
         smallImageText: paused ? strings.paused : strings.playing,
@@ -69,9 +70,10 @@ export const handleUpdate = async (
         data.details = strings.browsingFeed
       } else if (nickname && handle) {
         data.details = `${nickname} (@${handle})`
-        data.state = mediaTitle
+        data.state = mediaTitleInHeader ? "TikTok" : mediaTitle
       } else if (video) {
         data.details = strings.watchingVideo
+        if (mediaTitleInHeader) data.state = "TikTok"
       } else {
         data.details = strings.browsingFeed
       }
@@ -107,9 +109,10 @@ export const handleUpdate = async (
       const handle = author.handle ?? videoPath?.handle
       const mediaTitle = extractVideoDescription()
       const poster = !privacy ? await toDiscordImage(extractPoster(vidEl)) : undefined
+      const mediaTitleInHeader = Boolean(!privacy && showMediaTitle && mediaTitle)
 
       const data: PresenceData = {
-        name: !privacy && showMediaTitle ? mediaTitle : undefined,
+        name: mediaTitleInHeader ? mediaTitle : undefined,
         largeImageKey: poster ?? Assets.Logo,
         smallImageKey: vidEl?.paused ? "pause" : "play",
         smallImageText: vidEl?.paused ? strings.paused : strings.playing,
@@ -120,7 +123,7 @@ export const handleUpdate = async (
         data.details = strings.watchingVideo
       } else {
         data.details = author.nickname ? `${author.nickname} (@${handle})` : strings.watchingVideo
-        data.state = mediaTitle
+        data.state = mediaTitleInHeader ? "TikTok" : mediaTitle
       }
 
       if (!video.paused) {
