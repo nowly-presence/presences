@@ -1,0 +1,100 @@
+name: Republish Presences
+
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: "Comma-separated presence slugs to publish"
+        required: true
+        type: string
+      pr_number:
+        description: "Source pull request number"
+        required: true
+        type: string
+      base_sha:
+        description: "Pull request base commit SHA"
+        required: true
+        type: string
+      head_sha:
+        description: "Pull request head commit SHA"
+        required: true
+        type: string
+      pr_title:
+        description: "Pull request title"
+        required: true
+        type: string
+      author:
+        description: "Release author GitHub login"
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  republish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: presences,internal-cli
+
+      - uses: actions/checkout@v4
+        with:
+          ref: stable
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
+      - uses: actions/checkout@v4
+        with:
+          repository: nowly-presence/internal-cli
+          token: ${{ steps.app-token.outputs.token }}
+          path: .internal-cli
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install internal-cli dependencies
+        working-directory: .internal-cli
+        run: npm install
+
+      - name: Republish selected presences
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          SLUGS: ${{ inputs.slugs }}
+          PR_NUMBER: ${{ inputs.pr_number }}
+          BASE_SHA: ${{ inputs.base_sha }}
+          HEAD_SHA: ${{ inputs.head_sha }}
+          PR_TITLE: ${{ inputs.pr_title }}
+          PR_AUTHOR: ${{ inputs.author }}
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r raw_slug; do
+            slug=$(printf '%s' "$raw_slug" | xargs)
+            [ -n "$slug" ] || continue
+            echo "Pushing $slug..."
+            .internal-cli/node_modules/.bin/tsx \
+              --tsconfig .internal-cli/tsconfig.json \
+              .internal-cli/index.ts push "$slug" \
+              --patch \
+              --source pr \
+              --base "$BASE_SHA" \
+              --head "$HEAD_SHA" \
+              --pr "#$PR_NUMBER" \
+              --pr-title "$PR_TITLE" \
+              --author "$PR_AUTHOR"
+          done < <(printf '%s' "$SLUGS" | tr ',' '\n')
