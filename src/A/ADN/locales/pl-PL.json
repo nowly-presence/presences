@@ -1,0 +1,16 @@
+{
+  "watching": "Ogląda",
+  "seasonEpisode": "Sezon {season}, odcinek {episode}",
+  "playing": "Gra w szachy",
+  "paused": "Wstrzymano",
+  "searching": "Wyszukiwanie",
+  "viewingSeries": "Przeglądanie serialu",
+  "browsingCatalog": "Przegląda katalog",
+  "viewingSchedule": "Przeglądanie harmonogramu",
+  "viewingSimulcast": "Przegląda simulcasty",
+  "browsingMovies": "Przegląda filmy",
+  "viewingWatchlist": "Przeglądanie listy do obejrzenia",
+  "browsingAdn": "Przeglądanie ADN",
+  "watchEpisode": "Obejrzyj odcinek",
+  "viewSeries": "Wyświetl serial"
+}

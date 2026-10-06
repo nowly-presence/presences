@@ -1,19 +1,45 @@
 {
   "name": "ADN",
-  "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["animedigitalnetwork.fr", "www.animedigitalnetwork.fr", "animationdigitalnetwork.com", "www.animationdigitalnetwork.com", "animationdigitalnetwork.fr", "www.animationdigitalnetwork.fr"],
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "animedigitalnetwork.fr",
+    "www.animedigitalnetwork.fr",
+    "animationdigitalnetwork.com",
+    "www.animationdigitalnetwork.com",
+    "animationdigitalnetwork.fr",
+    "www.animationdigitalnetwork.fr"
+  ],
   "regExp": "^https?://(www\\.)?anim(e|ation)digitalnetwork\\.(fr|com)/",
   "color": "#0098FF",
   "category": "streaming",
   "description": {
     "en-US": "Show the anime you're watching on ADN.",
     "fr-FR": "Affichez l'animé que vous regardez sur ADN.",
-    "es-ES": "Muestra el anime que estás viendo en ADN."
+    "es-ES": "Muestra el anime que estás viendo en ADN.",
+    "de-DE": "Zeige den Anime, den du auf ADN ansiehst.",
+    "el-GR": "Εμφάνιση του anime που παρακολουθείτε στο ADN.",
+    "ja-JP": "ADNで視聴中のアニメを表示します。",
+    "ko-KR": "ADN에서 시청 중인 애니메이션을 표시합니다.",
+    "ms-MY": "Tunjukkan anime yang anda tonton di ADN.",
+    "pl-PL": "Pokazuj anime oglądane w ADN.",
+    "pt-BR": "Mostrar o anime que você está assistindo na ADN.",
+    "tr-TR": "ADN'de izlediğin animeyi göster."
   },
   "longDescription": {
     "en-US": "ADN (Anime Digital Network) streams anime in French-speaking regions. This presence shows the title you're watching, with playback state when available.",
     "fr-FR": "ADN (Anime Digital Network) diffuse des animés. Cette présence affiche le titre que vous regardez, avec l'état de lecture lorsqu'il est disponible.",
-    "es-ES": "ADN (Anime Digital Network) emite anime. Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible."
+    "es-ES": "ADN (Anime Digital Network) emite anime. Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible.",
+    "de-DE": "ADN (Anime Digital Network) streamt Anime in französischsprachigen Regionen. Diese Aktivität zeigt den Titel, den du gerade ansiehst, sowie den Wiedergabestatus, sofern verfügbar.",
+    "el-GR": "Το ADN (Anime Digital Network) μεταδίδει anime σε γαλλόφωνες περιοχές. Αυτή η δραστηριότητα εμφανίζει τον τίτλο που παρακολουθείτε και, όταν είναι διαθέσιμη, την κατάσταση αναπαραγωγής.",
+    "ja-JP": "ADN（Anime Digital Network）は、フランス語圏でアニメを配信しています。このプレゼンスには、視聴中のタイトルと、利用可能な場合は再生状態が表示されます。",
+    "ko-KR": "ADN (Anime Digital Network)은 프랑스어권 지역에서 애니메이션을 스트리밍합니다. 이 활동에는 시청 중인 작품명과 가능한 경우 재생 상태가 표시됩니다.",
+    "ms-MY": "ADN (Anime Digital Network) menstrim anime di rantau berbahasa Perancis. Status ini menunjukkan tajuk yang sedang anda tonton, berserta keadaan main balik apabila tersedia.",
+    "pl-PL": "ADN (Anime Digital Network) udostępnia anime w streamingu w regionach francuskojęzycznych. Ta aktywność pokazuje oglądany tytuł oraz stan odtwarzania, jeśli jest dostępny.",
+    "pt-BR": "A ADN (Anime Digital Network) transmite animes em regiões francófonas. Esta presença mostra o título que você está assistindo e, quando disponível, o estado da reprodução.",
+    "tr-TR": "ADN (Anime Digital Network), Fransızca konuşulan bölgelerde anime yayınlar. Bu durum, izlediğiniz içeriğin başlığını ve mevcut olduğunda oynatma durumunu gösterir."
   },
   "features": {
     "en-US": [
@@ -33,6 +59,54 @@
       "Sigue reproducción y pausa",
       "Modo privado opcional",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt den aktuellen Titel",
+      "Zeigt den Wiedergabe- oder Pausenstatus",
+      "Optionaler Datenschutzmodus",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει τον τρέχοντα τίτλο",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
+      "Προαιρετική λειτουργία απορρήτου",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "現在のタイトルを検出",
+      "再生中・一時停止中の状態を追跡",
+      "任意のプライバシーモード",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "현재 콘텐츠 제목 감지",
+      "재생 및 일시 정지 상태 표시",
+      "선택적 개인정보 보호 모드",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan tajuk semasa",
+      "Menjejaki status sedang dimainkan dan dijeda",
+      "Mod privasi pilihan",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa bieżący tytuł",
+      "Śledzi stan odtwarzania i wstrzymania",
+      "Opcjonalny tryb prywatności",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta o título atual",
+      "Acompanha os estados de reprodução e pausa",
+      "Modo de privacidade opcional",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Mevcut içeriğin adını algılar",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder",
+      "İsteğe bağlı gizlilik modu",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   }
 }

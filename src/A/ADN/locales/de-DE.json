@@ -1,0 +1,16 @@
+{
+  "watching": "Schaut gerade",
+  "seasonEpisode": "Staffel {season}, Folge {episode}",
+  "playing": "Wiedergabe",
+  "paused": "Pausiert",
+  "searching": "Sucht",
+  "viewingSeries": "Sieht eine Serie an",
+  "browsingCatalog": "Durchsucht den Katalog",
+  "viewingSchedule": "Sieht den Zeitplan an",
+  "viewingSimulcast": "Durchsucht Simulcasts",
+  "browsingMovies": "Durchsucht Filme",
+  "viewingWatchlist": "Sieht die Merkliste an",
+  "browsingAdn": "Stöbert auf ADN",
+  "watchEpisode": "Folge ansehen",
+  "viewSeries": "Serie ansehen"
+}
