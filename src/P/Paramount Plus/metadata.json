@@ -104,5 +104,11 @@
       "Oynatılıyor ve duraklatıldı durumunu takip eder",
       "Discord etkinliğini gerçek zamanlı günceller"
     ]
-  }
+  },
+  "contributors": [
+    {
+      "name": "Steellgold",
+      "github": "Steellgold"
+    }
+  ]
 }
