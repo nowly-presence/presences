@@ -1,0 +1,21 @@
+{
+  "playing": "Sedang bermain",
+  "paused": "Dijeda",
+  "browsingFeed": "Melayari suapan",
+  "watchingVideo": "Menonton video",
+  "watchingLive": "Sedang menonton siaran langsung",
+  "watchingLiveNamed": "Sedang menonton secara langsung - {name}",
+  "browsingLiveCategories": "Melayari kategori siaran langsung",
+  "browsingNamed": "Melayari {name}",
+  "browsingLiveCategory": "Melayari kategori langsung",
+  "viewingProfile": "Melihat profil",
+  "browsingExplore": "Melayari Explore",
+  "exploring": "Meneroka",
+  "browsingMessages": "Melayari mesej",
+  "readingMessages": "Membaca mesej",
+  "tiktok": "TikTok",
+  "viewTikTok": "Lihat TikTok",
+  "viewProfile": "Lihat profil",
+  "viewCategory": "Lihat Kategori",
+  "watchStream": "Tonton Strim"
+}

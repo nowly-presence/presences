@@ -1,0 +1,21 @@
+{
+  "playing": "Gra w szachy",
+  "paused": "Wstrzymano",
+  "browsingFeed": "Przegląda aktualności",
+  "watchingVideo": "Ogląda film",
+  "watchingLive": "Ogląda transmisję na żywo",
+  "watchingLiveNamed": "Ogląda na żywo – {name}",
+  "browsingLiveCategories": "Przegląda kategorie transmisji na żywo",
+  "browsingNamed": "Przegląda {name}",
+  "browsingLiveCategory": "Przeglądanie kategorii transmisji na żywo",
+  "viewingProfile": "Przegląda profil",
+  "browsingExplore": "Przeglądanie Explore",
+  "exploring": "Odkrywa",
+  "browsingMessages": "Przegląda wiadomości",
+  "readingMessages": "Czytanie wiadomości",
+  "tiktok": "TikTok",
+  "viewTikTok": "Wyświetl TikToka",
+  "viewProfile": "Zobacz profil",
+  "viewCategory": "Wyświetl kategorię",
+  "watchStream": "Oglądaj transmisję"
+}

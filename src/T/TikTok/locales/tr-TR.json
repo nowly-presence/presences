@@ -1,0 +1,21 @@
+{
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "browsingFeed": "Akışa göz atıyor",
+  "watchingVideo": "Bir video izliyor",
+  "watchingLive": "Canlı yayın izliyor",
+  "watchingLiveNamed": "Canlı izliyor - {name}",
+  "browsingLiveCategories": "Canlı kategorilere göz atıyor",
+  "browsingNamed": "{name} inceleniyor",
+  "browsingLiveCategory": "Bir canlı yayın kategorisine göz atıyor",
+  "viewingProfile": "Bir profili görüntülüyor",
+  "browsingExplore": "Keşfet'e göz atıyor",
+  "exploring": "Keşfediyor",
+  "browsingMessages": "Mesajlara göz atıyor",
+  "readingMessages": "Mesajları okuyor",
+  "tiktok": "TikTok",
+  "viewTikTok": "TikTok'u Görüntüle",
+  "viewProfile": "Profili görüntüle",
+  "viewCategory": "Kategoriyi Görüntüle",
+  "watchStream": "Yayını İzle"
+}

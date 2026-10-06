@@ -1,0 +1,21 @@
+{
+  "playing": "Wiedergabe",
+  "paused": "Pausiert",
+  "browsingFeed": "Durchsucht den Feed",
+  "watchingVideo": "Sieht ein Video an",
+  "watchingLive": "Schaut einen Livestream",
+  "watchingLiveNamed": "Schaut live – {name}",
+  "browsingLiveCategories": "Durchsucht Live-Kategorien",
+  "browsingNamed": "Durchsucht {name}",
+  "browsingLiveCategory": "Stöbert in einer Live-Kategorie",
+  "viewingProfile": "Sieht ein Profil an",
+  "browsingExplore": "Stöbert in „Erkunden“",
+  "exploring": "Erkundet",
+  "browsingMessages": "Durchsucht Nachrichten",
+  "readingMessages": "Liest Nachrichten",
+  "tiktok": "TikTok",
+  "viewTikTok": "TikTok ansehen",
+  "viewProfile": "Profil ansehen",
+  "viewCategory": "Kategorie ansehen",
+  "watchStream": "Stream ansehen"
+}

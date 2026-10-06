@@ -4,23 +4,49 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["tiktok.com", "www.tiktok.com"],
+  "url": [
+    "tiktok.com",
+    "www.tiktok.com"
+  ],
   "regExp": "^https?://(www\\.)?tiktok\\.com/",
   "color": "#25F4EE",
   "category": "video",
   "imageProxy": {
-    "hostSuffixes": ["tiktokcdn.com", "tiktokcdn-eu.com", "tiktokcdn-us.com", "tiktokv.com"],
-    "headers": { "Referer": "https://www.tiktok.com/" }
+    "hostSuffixes": [
+      "tiktokcdn.com",
+      "tiktokcdn-eu.com",
+      "tiktokcdn-us.com",
+      "tiktokv.com"
+    ],
+    "headers": {
+      "Referer": "https://www.tiktok.com/"
+    }
   },
   "description": {
     "en-US": "Show the TikTok video, live, or profile you're watching.",
     "fr-FR": "Affichez la vidéo, le live ou le profil TikTok que vous consultez.",
-    "es-ES": "Muestra el vídeo, directo o perfil de TikTok que estás viendo."
+    "es-ES": "Muestra el vídeo, directo o perfil de TikTok que estás viendo.",
+    "de-DE": "Zeige das TikTok-Video, den Livestream oder das Profil, das du ansiehst.",
+    "el-GR": "Εμφάνιση του βίντεο, της ζωντανής μετάδοσης ή του προφίλ που παρακολουθείτε στο TikTok.",
+    "ja-JP": "視聴中のTikTok動画、ライブ配信、プロフィールを表示します。",
+    "ko-KR": "시청 중인 TikTok 동영상, 라이브 또는 프로필을 표시합니다.",
+    "ms-MY": "Tunjukkan video TikTok, siaran langsung atau profil yang anda tonton.",
+    "pl-PL": "Pokazuj oglądany film, transmisję na żywo lub profil na TikToku.",
+    "pt-BR": "Mostrar o vídeo, a live ou o perfil que você está vendo no TikTok.",
+    "tr-TR": "İzlediğin TikTok videosunu, canlı yayınını veya profilini göster."
   },
   "longDescription": {
     "en-US": "TikTok is the leading short-form video app. This presence shows the video or creator you're watching - username, description, and live status - with an optional privacy mode.",
     "fr-FR": "TikTok est l'application de référence pour les vidéos courtes. Cette présence affiche la vidéo ou le créateur que vous consultez - identifiant, description et statut du live - avec un mode privé optionnel.",
-    "es-ES": "TikTok es la app de referencia para vídeos cortos. Esta presencia muestra el vídeo o creador que estás viendo - usuario, descripción y estado del directo - con un modo privado opcional."
+    "es-ES": "TikTok es la app de referencia para vídeos cortos. Esta presencia muestra el vídeo o creador que estás viendo - usuario, descripción y estado del directo - con un modo privado opcional.",
+    "de-DE": "TikTok ist die führende App für Kurzvideos. Dieser Status zeigt das Video oder den Creator, das bzw. den du ansiehst – Benutzername, Beschreibung und Live-Status – mit einem optionalen Privatsphäre-Modus.",
+    "el-GR": "Το TikTok είναι η κορυφαία εφαρμογή βίντεο σύντομης διάρκειας. Αυτή η κατάσταση εμφανίζει το βίντεο ή τον δημιουργό που παρακολουθείτε — όνομα χρήστη, περιγραφή και κατάσταση ζωντανής μετάδοσης — με προαιρετική λειτουργία απορρήτου.",
+    "ja-JP": "TikTokは、短尺動画を代表するアプリです。このプレゼンスには、視聴中の動画またはクリエイターのユーザー名、説明、ライブ配信状況が表示され、任意でプライバシーモードを利用できます。",
+    "ko-KR": "TikTok은 대표적인 숏폼 동영상 앱입니다. 이 활동은 시청 중인 동영상 또는 크리에이터의 사용자 이름, 설명 및 라이브 상태를 표시하며, 선택적으로 개인정보 보호 모드를 사용할 수 있습니다.",
+    "ms-MY": "TikTok ialah aplikasi video pendek terkemuka. Presence ini menunjukkan video atau pencipta yang anda tonton — nama pengguna, penerangan dan status langsung — dengan mod privasi pilihan.",
+    "pl-PL": "TikTok to wiodąca aplikacja z krótkimi filmami. Ta aktywność pokazuje oglądany film lub twórcę — nazwę użytkownika, opis i status transmisji na żywo — z opcjonalnym trybem prywatności.",
+    "pt-BR": "O TikTok é o principal aplicativo de vídeos curtos. Esta presença mostra o vídeo ou criador que você está vendo — nome de usuário, descrição e status da live — com um modo de privacidade opcional.",
+    "tr-TR": "TikTok, kısa video alanında lider uygulamadır. Bu etkinlik, izlediğin videoyu veya içerik üreticisini; kullanıcı adı, açıklama ve canlı yayın durumuyla birlikte, isteğe bağlı gizlilik moduyla gösterir."
   },
   "features": {
     "en-US": [
@@ -43,6 +69,62 @@
       "Detecta directos",
       "Compatible con perfiles y Explorar",
       "Modo privado opcional"
+    ],
+    "de-DE": [
+      "Erkennt Videos im Feed",
+      "Zeigt Creator und Beschreibung",
+      "Erkennt Livestreams",
+      "Unterstützt Profile und „Entdecken“",
+      "Optionaler Datenschutzmodus"
+    ],
+    "el-GR": [
+      "Εντοπίζει βίντεο στη ροή",
+      "Εμφανίζει δημιουργό και περιγραφή",
+      "Εντοπίζει ζωντανές μεταδόσεις",
+      "Υποστηρίζει προφίλ και Explore",
+      "Προαιρετική λειτουργία απορρήτου"
+    ],
+    "ja-JP": [
+      "フィード内の動画を検出",
+      "クリエイターと説明を表示",
+      "ライブ配信を検出",
+      "プロフィールとExploreに対応",
+      "任意のプライバシーモード"
+    ],
+    "ko-KR": [
+      "피드의 동영상 감지",
+      "크리에이터와 설명 표시",
+      "라이브 감지",
+      "프로필 및 둘러보기 지원",
+      "선택적 개인정보 보호 모드"
+    ],
+    "ms-MY": [
+      "Mengesan video dalam suapan",
+      "Menunjukkan pencipta dan penerangan",
+      "Mengesan siaran langsung",
+      "Menyokong profil dan Explore",
+      "Mod privasi pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa filmy w aktualnościach",
+      "Pokazuje twórcę i opis",
+      "Wykrywa transmisje na żywo",
+      "Obsługuje profile i sekcję Explore",
+      "Opcjonalny tryb prywatności"
+    ],
+    "pt-BR": [
+      "Detecta vídeos no feed",
+      "Mostra o criador e a descrição",
+      "Detecta lives",
+      "Compatível com perfis e o Explore",
+      "Modo de privacidade opcional"
+    ],
+    "tr-TR": [
+      "Akıştaki videoları algılar",
+      "İçerik üreticisini ve açıklamayı gösterir",
+      "Canlı yayınları algılar",
+      "Profilleri ve Explore'u destekler",
+      "İsteğe bağlı gizlilik modu"
     ]
   }
 }
