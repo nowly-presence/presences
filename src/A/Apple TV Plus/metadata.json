@@ -4,19 +4,38 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["tv.apple.com", "apple.com/tv"],
+  "url": [
+    "tv.apple.com",
+    "apple.com/tv"
+  ],
   "regExp": "^https?://(tv\\.apple\\.com|www\\.apple\\.com/tv)",
   "color": "#555555",
   "category": "streaming",
   "description": {
     "en-US": "Show the Apple Original series, movie, or documentary you're watching on Apple TV+.",
     "fr-FR": "Affichez la série, le film ou le documentaire Apple Originals que vous regardez sur Apple TV+.",
-    "es-ES": "Muestra la serie, película o documental de Apple Originals que estás viendo en Apple TV+."
+    "es-ES": "Muestra la serie, película o documental de Apple Originals que estás viendo en Apple TV+.",
+    "de-DE": "Zeige die Apple Original-Serie, den Film oder die Dokumentation, die du auf Apple TV+ ansiehst.",
+    "el-GR": "Εμφάνιση της σειράς Apple Original, της ταινίας ή του ντοκιμαντέρ που παρακολουθείτε στο Apple TV+.",
+    "ja-JP": "Apple TV+で視聴中のApple Originalシリーズ、映画、ドキュメンタリーを表示します。",
+    "ko-KR": "Apple TV+에서 시청 중인 Apple Original 시리즈, 영화 또는 다큐멘터리를 표시합니다.",
+    "ms-MY": "Tunjukkan siri Apple Original, filem atau dokumentari yang anda tonton di Apple TV+.",
+    "pl-PL": "Pokazuj serial Apple Original, film lub dokument oglądany w Apple TV+.",
+    "pt-BR": "Mostrar a série Apple Original, o filme ou documentário que você está assistindo no Apple TV+.",
+    "tr-TR": "Apple TV+'ta izlediğin Apple Original dizisini, filmini veya belgeselini göster."
   },
   "longDescription": {
     "en-US": "Apple TV+ streams Apple Original series, movies, and documentaries. This presence shows the title you're watching, including season, episode, and playback state.",
     "fr-FR": "Apple TV+ propose des séries, films et documentaires Apple Originals. Cette présence affiche le titre que vous regardez, avec la saison, l'épisode et l'état de lecture.",
-    "es-ES": "Apple TV+ ofrece series, películas y documentales de Apple Originals. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción."
+    "es-ES": "Apple TV+ ofrece series, películas y documentales de Apple Originals. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción.",
+    "de-DE": "Apple TV+ streamt Apple Original-Serien, -Filme und -Dokumentationen. Diese Aktivität zeigt den Titel, den du gerade ansiehst, einschließlich Staffel, Folge und Wiedergabestatus.",
+    "el-GR": "Το Apple TV+ μεταδίδει σειρές, ταινίες και ντοκιμαντέρ Apple Original. Αυτή η δραστηριότητα εμφανίζει τον τίτλο που παρακολουθείτε, καθώς και τη σεζόν, το επεισόδιο και την κατάσταση αναπαραγωγής.",
+    "ja-JP": "Apple TV+では、Apple Originalのシリーズ、映画、ドキュメンタリーを配信しています。このプレゼンスには、視聴中のタイトル、シーズン、エピソード、再生状態が表示されます。",
+    "ko-KR": "Apple TV+는 Apple Original 시리즈, 영화 및 다큐멘터리를 스트리밍합니다. 이 활동에는 시청 중인 작품명과 시즌, 에피소드 및 재생 상태가 표시됩니다.",
+    "ms-MY": "Apple TV+ menstrim siri Apple Original, filem dan dokumentari. Status ini menunjukkan tajuk yang sedang anda tonton, termasuk musim, episod dan keadaan main balik.",
+    "pl-PL": "Apple TV+ oferuje w streamingu seriale, filmy i dokumenty Apple Original. Ta aktywność pokazuje oglądany tytuł, w tym sezon, odcinek i stan odtwarzania.",
+    "pt-BR": "O Apple TV+ transmite séries, filmes e documentários Apple Original. Esta presença mostra o título que você está assistindo, incluindo temporada, episódio e estado da reprodução.",
+    "tr-TR": "Apple TV+, Apple Original dizilerini, filmlerini ve belgesellerini yayınlar. Bu durum, izlediğiniz içeriğin başlığını; sezon, bölüm ve oynatma durumuyla birlikte gösterir."
   },
   "features": {
     "en-US": [
@@ -36,6 +55,54 @@
       "Muestra título, temporada y episodio",
       "Compatible con Apple Originals",
       "Sigue el estado en reproducción o en pausa"
+    ],
+    "de-DE": [
+      "Erkennt Filme und Serien automatisch",
+      "Zeigt Titel, Staffel und Folge",
+      "Unterstützt Apple Originals",
+      "Zeigt den Wiedergabe- oder Pausenstatus"
+    ],
+    "el-GR": [
+      "Εντοπίζει αυτόματα ταινίες και σειρές",
+      "Εμφανίζει τίτλο, σεζόν και επεισόδιο",
+      "Υποστηρίζει Apple Originals",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης"
+    ],
+    "ja-JP": [
+      "映画とシリーズを自動検出",
+      "タイトル、シーズン、エピソードを表示",
+      "Apple Originalsに対応",
+      "再生中・一時停止中の状態を追跡"
+    ],
+    "ko-KR": [
+      "영화 및 시리즈 자동 감지",
+      "제목, 시즌 및 에피소드 표시",
+      "Apple Originals 지원",
+      "재생 및 일시 정지 상태 표시"
+    ],
+    "ms-MY": [
+      "Mengesan filem dan siri secara automatik",
+      "Menunjukkan tajuk, musim dan episod",
+      "Menyokong Apple Originals",
+      "Menjejaki status sedang dimainkan dan dijeda"
+    ],
+    "pl-PL": [
+      "Automatycznie wykrywa filmy i seriale",
+      "Pokazuje tytuł, sezon i odcinek",
+      "Obsługuje produkcje Apple Originals",
+      "Śledzi stan odtwarzania i wstrzymania"
+    ],
+    "pt-BR": [
+      "Detecta filmes e séries automaticamente",
+      "Mostra o título, a temporada e o episódio",
+      "Compatível com Apple Originals",
+      "Acompanha os estados de reprodução e pausa"
+    ],
+    "tr-TR": [
+      "Filmleri ve dizileri otomatik olarak algılar",
+      "Başlığı, sezonu ve bölümü gösterir",
+      "Apple Originals yapımlarını destekler",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder"
     ]
   }
 }

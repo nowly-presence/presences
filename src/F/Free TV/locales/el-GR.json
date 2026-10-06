@@ -1,0 +1,11 @@
+{
+  "watchingLive": "Παρακολουθεί ζωντανή τηλεόραση",
+  "watchingVod": "Παρακολουθεί ταινία ή σειρά",
+  "liveState": "{channel} · {program}",
+  "browsingHome": "Περιήγηση στο Free TV",
+  "browsingChannels": "Περιήγηση στα κανάλια",
+  "browsingVodHub": "Περιήγηση σε ταινίες και σειρές",
+  "browsingTvGuide": "Περιήγηση στον τηλεοπτικό οδηγό",
+  "browsingMyList": "Περιήγηση στη λίστα μου",
+  "viewingDetail": "Προβολή λεπτομερειών"
+}

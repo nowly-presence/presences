@@ -1,0 +1,11 @@
+{
+  "watching": "시청 중",
+  "playing": "플레이 중",
+  "paused": "일시 정지",
+  "searching": "검색 중",
+  "viewingShow": "시리즈 보는 중",
+  "viewingMovie": "영화 보는 중",
+  "viewingMyList": "내 목록 보는 중",
+  "browsingHboMax": "HBO Max 둘러보는 중",
+  "viewTitle": "시청하기"
+}

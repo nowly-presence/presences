@@ -1,7 +1,12 @@
 {
   "name": "Spotify",
-  "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["open.spotify.com"],
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "open.spotify.com"
+  ],
   "regExp": "^https?://open\\.spotify\\.com/",
   "color": "#1ED760",
   "category": "music",
@@ -9,12 +14,28 @@
   "description": {
     "en-US": "Show the track you're listening to on Spotify.",
     "fr-FR": "Affichez le titre que vous écoutez sur Spotify.",
-    "es-ES": "Muestra la canción que estás escuchando en Spotify."
+    "es-ES": "Muestra la canción que estás escuchando en Spotify.",
+    "de-DE": "Zeige den Titel, den du auf Spotify hörst.",
+    "el-GR": "Εμφάνιση του κομματιού που ακούτε στο Spotify.",
+    "ja-JP": "Spotifyで聴いている曲を表示します。",
+    "ko-KR": "Spotify에서 듣고 있는 트랙을 표시합니다.",
+    "ms-MY": "Tunjukkan lagu yang anda dengar di Spotify.",
+    "pl-PL": "Pokazuj utwór słuchany w Spotify.",
+    "pt-BR": "Mostrar a faixa que você está ouvindo no Spotify.",
+    "tr-TR": "Spotify'da dinlediğin parçayı göster."
   },
   "longDescription": {
     "en-US": "Spotify is a music streaming service. This presence shows the track you're listening to in the web player - title, artist, playback state, and artwork when available.",
     "fr-FR": "Spotify est un service de streaming musical. Cette présence affiche le titre que vous écoutez dans le lecteur web - morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
-    "es-ES": "Spotify es un servicio de streaming musical. Esta presencia muestra la canción que escuchas en el reproductor web: título, artista, estado de reproducción y portada cuando esté disponible."
+    "es-ES": "Spotify es un servicio de streaming musical. Esta presencia muestra la canción que escuchas en el reproductor web: título, artista, estado de reproducción y portada cuando esté disponible.",
+    "de-DE": "Spotify ist ein Musikstreamingdienst. Dieser Status zeigt den Titel, den du im Webplayer hörst – Titelname, Künstler, Wiedergabestatus und, sofern verfügbar, Cover.",
+    "el-GR": "Το Spotify είναι μια υπηρεσία streaming μουσικής. Αυτή η κατάσταση εμφανίζει το κομμάτι που ακούτε στο πρόγραμμα αναπαραγωγής ιστού — τίτλο, καλλιτέχνη, κατάσταση αναπαραγωγής και εξώφυλλο, όταν είναι διαθέσιμο.",
+    "ja-JP": "Spotifyは音楽ストリーミングサービスです。このプレゼンスには、ウェブプレーヤーで聴いている曲のタイトル、アーティスト、再生状態、および利用可能な場合はアートワークが表示されます。",
+    "ko-KR": "Spotify는 음악 스트리밍 서비스입니다. 이 활동은 웹 플레이어에서 듣고 있는 트랙의 제목, 아티스트, 재생 상태와 가능한 경우 아트워크를 표시합니다.",
+    "ms-MY": "Spotify ialah perkhidmatan penstriman muzik. Presence ini menunjukkan lagu yang anda dengar dalam pemain web — tajuk, artis, status main balik dan karya seni apabila tersedia.",
+    "pl-PL": "Spotify to serwis strumieniowego przesyłania muzyki. Ta aktywność pokazuje utwór, którego słuchasz w odtwarzaczu internetowym — tytuł, wykonawcę, stan odtwarzania oraz okładkę, jeśli jest dostępna.",
+    "pt-BR": "O Spotify é um serviço de streaming de música. Esta presença mostra a faixa que você está ouvindo no player da web — título, artista, estado da reprodução e capa, quando disponível.",
+    "tr-TR": "Spotify bir müzik akışı hizmetidir. Bu etkinlik, web oynatıcısında dinlediğin parçanın başlığını, sanatçısını, oynatma durumunu ve mevcut olduğunda kapak görselini gösterir."
   },
   "features": {
     "en-US": [
@@ -37,6 +58,62 @@
       "Sigue el progreso de escucha",
       "Muestra la portada del álbum",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt den aktuellen Song",
+      "Zeigt Titel und Künstler",
+      "Erfasst den Hörfortschritt",
+      "Zeigt das Albumcover an",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει το τρέχον κομμάτι",
+      "Εμφανίζει τίτλο και καλλιτέχνη",
+      "Παρακολουθεί την πρόοδο ακρόασης",
+      "Εμφανίζει το εξώφυλλο του άλμπουμ",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "現在の楽曲を検出",
+      "タイトルとアーティストを表示",
+      "再生の進行状況を追跡",
+      "アルバムアートワークを表示",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "현재 트랙 감지",
+      "제목과 아티스트 표시",
+      "청취 진행 상황 표시",
+      "앨범 아트워크 표시",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan lagu semasa",
+      "Menunjukkan tajuk dan artis",
+      "Menjejaki kemajuan mendengar",
+      "Memaparkan karya seni album",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa bieżący utwór",
+      "Pokazuje tytuł i wykonawcę",
+      "Śledzi postęp słuchania",
+      "Wyświetla okładkę albumu",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta a faixa atual",
+      "Mostra o título e o artista",
+      "Acompanha o progresso da reprodução",
+      "Exibe a capa do álbum",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Mevcut parçayı algılar",
+      "Başlığı ve sanatçıyı gösterir",
+      "Dinleme ilerlemesini takip eder",
+      "Albüm kapağını gösterir",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   }
 }

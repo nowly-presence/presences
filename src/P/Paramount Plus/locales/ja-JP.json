@@ -1,0 +1,17 @@
+{
+  "browsing": "閲覧中",
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "liveTv": "ライブテレビ",
+  "watchEpisode": "エピソードを見る",
+  "watchNow": "今すぐ見る",
+  "browsingHome": "ホームを閲覧中",
+  "searchingFor": "検索中：",
+  "browsingMyList": "マイリストを閲覧中",
+  "viewingShow": "番組を閲覧中",
+  "viewingMovie": "映画を閲覧中",
+  "viewingCollection": "コレクションを閲覧中",
+  "browsingLiveTv": "ライブTVを閲覧中",
+  "browsingNamed": "{name}を閲覧中",
+  "browsingBrands": "ブランドを閲覧中"
+}

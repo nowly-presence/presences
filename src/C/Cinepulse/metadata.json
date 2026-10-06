@@ -4,19 +4,38 @@
     "name": "KiMi",
     "github": "q-kimi"
   },
-  "url": ["cinepulse.cat", "www.cinepulse.cat"],
+  "url": [
+    "cinepulse.cat",
+    "www.cinepulse.cat"
+  ],
   "regExp": "^https?://(?:www\\.)?cinepulse\\.cat",
   "color": "#EF7A7A",
   "category": "streaming",
   "description": {
     "en-US": "Show the movie or series you're watching on Cinepulse.",
     "fr-FR": "Affichez le film ou la série que vous regardez sur Cinepulse.",
-    "es-ES": "Muestra la película o serie que estás viendo en Cinepulse."
+    "es-ES": "Muestra la película o serie que estás viendo en Cinepulse.",
+    "de-DE": "Zeige den Film oder die Serie, die du auf Cinepulse ansiehst.",
+    "el-GR": "Εμφάνιση της ταινίας ή της σειράς που παρακολουθείτε στο Cinepulse.",
+    "ja-JP": "Cinepulseで視聴中の映画やシリーズを表示します。",
+    "ko-KR": "Cinepulse에서 시청 중인 영화 또는 시리즈를 표시합니다.",
+    "ms-MY": "Tunjukkan filem atau siri yang anda tonton di Cinepulse.",
+    "pl-PL": "Pokazuj film lub serial oglądany w Cinepulse.",
+    "pt-BR": "Mostrar o filme ou a série que você está assistindo no Cinepulse.",
+    "tr-TR": "Cinepulse'ta izlediğin filmi veya diziyi göster."
   },
   "longDescription": {
     "en-US": "Cinepulse is a private streaming platform for movies and series. This presence shows the title you're watching, including season, episode, and playback state.",
     "fr-FR": "Cinepulse est une plateforme de streaming privée pour les films et séries. Cette présence affiche le titre que vous regardez, avec la saison, l'épisode et l'état de lecture.",
-    "es-ES": "Cinepulse es una plataforma de streaming privada para películas y series. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción."
+    "es-ES": "Cinepulse es una plataforma de streaming privada para películas y series. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción.",
+    "de-DE": "Cinepulse ist eine private Streaming-Plattform für Filme und Serien. Diese Präsenz zeigt den Titel, den du gerade ansiehst, einschließlich Staffel, Folge und Wiedergabestatus.",
+    "el-GR": "Το Cinepulse είναι μια ιδιωτική πλατφόρμα streaming για ταινίες και σειρές. Αυτή η παρουσία εμφανίζει τον τίτλο που παρακολουθείτε, μαζί με τη σεζόν, το επεισόδιο και την κατάσταση αναπαραγωγής.",
+    "ja-JP": "Cinepulseは、映画とシリーズ向けのプライベートストリーミングプラットフォームです。このプレゼンスには、視聴中のタイトル、シーズン、エピソード、再生状態が表示されます。",
+    "ko-KR": "Cinepulse는 영화와 시리즈를 제공하는 비공개 스트리밍 플랫폼입니다. 이 활동 상태에는 시청 중인 콘텐츠의 제목과 시즌, 에피소드 및 재생 상태가 표시됩니다.",
+    "ms-MY": "Cinepulse ialah platform penstriman peribadi untuk filem dan siri. Kehadiran ini menunjukkan tajuk yang sedang anda tonton, termasuk musim, episod dan status main balik.",
+    "pl-PL": "Cinepulse to prywatna platforma streamingowa z filmami i serialami. Ta aktywność pokazuje tytuł oglądanej treści, w tym sezon, odcinek i stan odtwarzania.",
+    "pt-BR": "Cinepulse é uma plataforma privada de streaming de filmes e séries. Esta presença mostra o título que você está assistindo, incluindo temporada, episódio e estado da reprodução.",
+    "tr-TR": "Cinepulse, film ve dizilere yönelik özel bir yayın platformudur. Bu durum; izlediğin içeriğin adını, sezonunu, bölümünü ve oynatma durumunu gösterir."
   },
   "features": {
     "en-US": [
@@ -36,6 +55,54 @@
       "Muestra título, temporada y episodio",
       "Sigue el estado en reproducción o en pausa",
       "Actualiza tu actividad de Discord en tiempo real"
+    ],
+    "de-DE": [
+      "Erkennt Filme und Serien automatisch",
+      "Zeigt Titel, Staffel und Folge",
+      "Zeigt den Wiedergabe- oder Pausenstatus",
+      "Aktualisiert deine Discord-Aktivität in Echtzeit"
+    ],
+    "el-GR": [
+      "Εντοπίζει αυτόματα ταινίες και σειρές",
+      "Εμφανίζει τίτλο, σεζόν και επεισόδιο",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
+      "Ενημερώνει τη δραστηριότητά σου στο Discord σε πραγματικό χρόνο"
+    ],
+    "ja-JP": [
+      "映画とシリーズを自動検出",
+      "タイトル、シーズン、エピソードを表示",
+      "再生中・一時停止中の状態を追跡",
+      "Discordのアクティビティをリアルタイムで更新"
+    ],
+    "ko-KR": [
+      "영화 및 시리즈 자동 감지",
+      "제목, 시즌 및 에피소드 표시",
+      "재생 및 일시 정지 상태 표시",
+      "Discord 활동을 실시간으로 업데이트"
+    ],
+    "ms-MY": [
+      "Mengesan filem dan siri secara automatik",
+      "Menunjukkan tajuk, musim dan episod",
+      "Menjejaki status sedang dimainkan dan dijeda",
+      "Mengemas kini aktiviti Discord anda secara masa nyata"
+    ],
+    "pl-PL": [
+      "Automatycznie wykrywa filmy i seriale",
+      "Pokazuje tytuł, sezon i odcinek",
+      "Śledzi stan odtwarzania i wstrzymania",
+      "Aktualizuje twoją aktywność na Discordzie w czasie rzeczywistym"
+    ],
+    "pt-BR": [
+      "Detecta filmes e séries automaticamente",
+      "Mostra o título, a temporada e o episódio",
+      "Acompanha os estados de reprodução e pausa",
+      "Atualiza sua atividade do Discord em tempo real"
+    ],
+    "tr-TR": [
+      "Filmleri ve dizileri otomatik olarak algılar",
+      "Başlığı, sezonu ve bölümü gösterir",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder",
+      "Discord etkinliğini gerçek zamanlı günceller"
     ]
   }
 }

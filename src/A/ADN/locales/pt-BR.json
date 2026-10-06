@@ -1,0 +1,16 @@
+{
+  "watching": "Assistindo",
+  "seasonEpisode": "Temporada {season}, Episódio {episode}",
+  "playing": "Jogando",
+  "paused": "Pausado",
+  "searching": "Pesquisando",
+  "viewingSeries": "Vendo uma série",
+  "browsingCatalog": "Explorando o catálogo",
+  "viewingSchedule": "Vendo a programação",
+  "viewingSimulcast": "Navegando pelas transmissões simultâneas",
+  "browsingMovies": "Navegando pelos filmes",
+  "viewingWatchlist": "Vendo a lista para assistir",
+  "browsingAdn": "Navegando na ADN",
+  "watchEpisode": "Assistir ao episódio",
+  "viewSeries": "Ver série"
+}

@@ -1,0 +1,15 @@
+{
+  "listeningToMusic": "음악 듣는 중",
+  "playing": "플레이 중",
+  "paused": "일시 정지",
+  "listen": "듣기",
+  "searching": "검색 중",
+  "viewingPlaylist": "재생목록 보는 중",
+  "viewingAlbum": "앨범 보는 중",
+  "viewingArtist": "아티스트 보는 중",
+  "viewingMix": "믹스 보는 중",
+  "viewingVideo": "동영상 보는 중",
+  "viewingCollection": "컬렉션 보는 중",
+  "exploring": "Tidal 탐색 중",
+  "browsingTidal": "Tidal 둘러보는 중"
+}

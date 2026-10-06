@@ -1,0 +1,17 @@
+{
+  "browsing": "Stöbert",
+  "playing": "Wiedergabe",
+  "paused": "Pausiert",
+  "liveTv": "Live-TV",
+  "watchEpisode": "Folge ansehen",
+  "watchNow": "Jetzt ansehen",
+  "browsingHome": "Stöbert auf der Startseite",
+  "searchingFor": "Sucht nach:",
+  "browsingMyList": "Stöbert in „Meine Liste“",
+  "viewingShow": "Sieht eine Show an",
+  "viewingMovie": "Sieht einen Film an",
+  "viewingCollection": "Sieht eine Sammlung an",
+  "browsingLiveTv": "Stöbert in Live-TV",
+  "browsingNamed": "Durchsucht {name}",
+  "browsingBrands": "Stöbert in Marken"
+}

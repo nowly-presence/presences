@@ -1,0 +1,17 @@
+{
+  "browsing": "Navegando",
+  "playing": "Jogando",
+  "paused": "Pausado",
+  "liveTv": "TV ao vivo",
+  "watchEpisode": "Assistir ao episódio",
+  "watchNow": "Assistir agora",
+  "browsingHome": "Navegando na página inicial",
+  "searchingFor": "Pesquisando por:",
+  "browsingMyList": "Navegando em Minha lista",
+  "viewingShow": "Vendo um programa",
+  "viewingMovie": "Vendo um filme",
+  "viewingCollection": "Vendo uma coleção",
+  "browsingLiveTv": "Navegando em TV ao vivo",
+  "browsingNamed": "Navegando por {name}",
+  "browsingBrands": "Navegando por marcas"
+}

@@ -1,0 +1,15 @@
+{
+  "listeningToMusic": "Ακούει μουσική",
+  "playing": "Παίζει",
+  "paused": "Σε παύση",
+  "listen": "Ακρόαση",
+  "searching": "Αναζήτηση",
+  "viewingPlaylist": "Προβολή λίστας αναπαραγωγής",
+  "viewingAlbum": "Προβολή άλμπουμ",
+  "viewingArtist": "Προβολή καλλιτέχνη",
+  "viewingMix": "Προβολή μίξης",
+  "viewingVideo": "Προβολή βίντεο",
+  "viewingCollection": "Προβολή της συλλογής",
+  "exploring": "Εξερεύνηση του Tidal",
+  "browsingTidal": "Περιήγηση στο Tidal"
+}

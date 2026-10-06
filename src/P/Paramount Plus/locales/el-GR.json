@@ -1,0 +1,17 @@
+{
+  "browsing": "Περιήγηση",
+  "playing": "Παίζει",
+  "paused": "Σε παύση",
+  "liveTv": "Ζωντανή τηλεόραση",
+  "watchEpisode": "Παρακολούθηση επεισοδίου",
+  "watchNow": "Παρακολούθηση τώρα",
+  "browsingHome": "Περιήγηση στην αρχική σελίδα",
+  "searchingFor": "Αναζήτηση για:",
+  "browsingMyList": "Περιήγηση στη λίστα μου",
+  "viewingShow": "Προβολή εκπομπής",
+  "viewingMovie": "Προβολή ταινίας",
+  "viewingCollection": "Προβολή συλλογής",
+  "browsingLiveTv": "Περιήγηση στη ζωντανή τηλεόραση",
+  "browsingNamed": "Περιηγείται στο {name}",
+  "browsingBrands": "Περιήγηση στις επωνυμίες"
+}

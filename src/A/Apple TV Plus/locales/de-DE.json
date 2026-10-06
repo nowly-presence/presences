@@ -1,0 +1,13 @@
+{
+  "browsing": "Stöbert",
+  "searching": "Sucht",
+  "playing": "Wiedergabe",
+  "paused": "Pausiert",
+  "browsingHome": "Stöbert auf der Startseite",
+  "viewingSeries": "Sieht eine Serie an",
+  "sharePlayRoom": "In einem SharePlay-Raum",
+  "watchEpisode": "Folge ansehen",
+  "watchShow": "Show ansehen",
+  "movie": "Film",
+  "seasonEpisode": "Staffel {season}, Folge {episode}"
+}

@@ -1,0 +1,21 @@
+{
+  "playing": "Παίζει",
+  "paused": "Σε παύση",
+  "browsingFeed": "Περιήγηση στη ροή",
+  "watchingVideo": "Παρακολουθεί ένα βίντεο",
+  "watchingLive": "Παρακολουθεί ζωντανή μετάδοση",
+  "watchingLiveNamed": "Παρακολουθεί ζωντανά - {name}",
+  "browsingLiveCategories": "Περιήγηση στις κατηγορίες ζωντανού περιεχομένου",
+  "browsingNamed": "Περιηγείται στο {name}",
+  "browsingLiveCategory": "Περιήγηση σε κατηγορία ζωντανών μεταδόσεων",
+  "viewingProfile": "Βλέπει ένα προφίλ",
+  "browsingExplore": "Περιήγηση στην Εξερεύνηση",
+  "exploring": "Εξερεύνηση",
+  "browsingMessages": "Περιήγηση στα μηνύματα",
+  "readingMessages": "Διαβάζει μηνύματα",
+  "tiktok": "TikTok",
+  "viewTikTok": "Προβολή στο TikTok",
+  "viewProfile": "Προβολή προφίλ",
+  "viewCategory": "Προβολή κατηγορίας",
+  "watchStream": "Παρακολούθηση μετάδοσης"
+}

@@ -1,0 +1,18 @@
+{
+  "watching": "Sedang menonton",
+  "seasonEpisode": "Musim {season}, Episod {episode}",
+  "playing": "Sedang bermain",
+  "paused": "Dijeda",
+  "searching": "Mencari",
+  "viewingSeries": "Melihat siri",
+  "readingManga": "Membaca manga",
+  "readingNews": "Membaca berita",
+  "viewingWatchlist": "Melihat senarai tontonan",
+  "viewingHistory": "Melihat sejarah tontonan",
+  "viewingCalendar": "Melihat kalendar siaran serentak",
+  "browsingGames": "Melayari permainan",
+  "browsingMusic": "Melayari muzik",
+  "browsingCrunchyroll": "Melayari Crunchyroll",
+  "watchEpisode": "Tonton episod",
+  "viewSeries": "Lihat siri"
+}

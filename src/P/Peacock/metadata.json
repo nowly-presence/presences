@@ -4,19 +4,38 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["peacocktv.com", "www.peacocktv.com"],
+  "url": [
+    "peacocktv.com",
+    "www.peacocktv.com"
+  ],
   "regExp": "^https?://(www\\.)?peacocktv\\.com/",
   "color": "#FCCC12",
   "category": "streaming",
   "description": {
     "en-US": "Show the movie, series, or live event you're watching on Peacock.",
     "fr-FR": "Affichez le film, la série ou l'événement en direct que vous regardez sur Peacock.",
-    "es-ES": "Muestra la película, serie o evento en directo que estás viendo en Peacock."
+    "es-ES": "Muestra la película, serie o evento en directo que estás viendo en Peacock.",
+    "de-DE": "Zeige den Film, die Serie oder das Live-Event, das du auf Peacock ansiehst.",
+    "el-GR": "Εμφάνιση της ταινίας, της σειράς ή της ζωντανής εκδήλωσης που παρακολουθείτε στο Peacock.",
+    "ja-JP": "Peacockで視聴中の映画、シリーズ、ライブイベントを表示します。",
+    "ko-KR": "Peacock에서 시청 중인 영화, 시리즈 또는 라이브 이벤트를 표시합니다.",
+    "ms-MY": "Tunjukkan filem, siri atau acara langsung yang anda tonton di Peacock.",
+    "pl-PL": "Pokazuj film, serial lub wydarzenie na żywo oglądane w Peacock.",
+    "pt-BR": "Mostrar o filme, a série ou o evento ao vivo que você está assistindo no Peacock.",
+    "tr-TR": "Peacock'ta izlediğin filmi, diziyi veya canlı etkinliği göster."
   },
   "longDescription": {
     "en-US": "Peacock offers movies, TV shows, originals, live news, and sports. This presence shows what you're watching, including playback state and live events.",
     "fr-FR": "Peacock propose des films, des séries, des créations originales, des actualités et du sport en direct. Cette présence affiche ce que vous regardez ainsi que l'état de lecture et les événements en direct.",
-    "es-ES": "Peacock ofrece películas, series, producciones originales, noticias y deportes en directo. Esta presencia muestra lo que estás viendo, el estado de reproducción y los eventos en directo."
+    "es-ES": "Peacock ofrece películas, series, producciones originales, noticias y deportes en directo. Esta presencia muestra lo que estás viendo, el estado de reproducción y los eventos en directo.",
+    "de-DE": "Peacock bietet Filme, TV-Sendungen, Originals, Live-Nachrichten und Sport. Diese Aktivität zeigt, was du gerade ansiehst, einschließlich Wiedergabestatus und Live-Events.",
+    "el-GR": "Το Peacock προσφέρει ταινίες, τηλεοπτικές εκπομπές, πρωτότυπες παραγωγές, ζωντανές ειδήσεις και αθλητικά. Αυτή η παρουσία δείχνει τι παρακολουθείτε, καθώς και την κατάσταση αναπαραγωγής και τις ζωντανές εκδηλώσεις.",
+    "ja-JP": "Peacockでは、映画、テレビ番組、オリジナル作品、ニュースやスポーツのライブ配信を楽しめます。このプレゼンスには、再生状態やライブイベントを含む視聴中のコンテンツが表示されます。",
+    "ko-KR": "Peacock에서는 영화, TV 프로그램, 오리지널 콘텐츠, 라이브 뉴스 및 스포츠를 제공합니다. 이 프레즌스는 재생 상태와 라이브 이벤트를 포함해 시청 중인 콘텐츠를 표시합니다.",
+    "ms-MY": "Peacock menawarkan filem, rancangan TV, kandungan asli, berita langsung dan sukan. Kehadiran ini menunjukkan kandungan yang sedang anda tonton, termasuk status main balik dan acara langsung.",
+    "pl-PL": "Peacock oferuje filmy, programy telewizyjne, produkcje oryginalne, wiadomości na żywo i sport. Ta aktywność pokazuje oglądane przez Ciebie treści, w tym stan odtwarzania i wydarzenia na żywo.",
+    "pt-BR": "O Peacock oferece filmes, programas de TV, produções originais, notícias ao vivo e esportes. Esta presença mostra o que você está assistindo, incluindo o estado da reprodução e eventos ao vivo.",
+    "tr-TR": "Peacock; filmler, TV programları, orijinal yapımlar, canlı haberler ve spor yayınları sunar. Bu etkinlik, oynatma durumu ve canlı etkinlikler dâhil olmak üzere ne izlediğini gösterir."
   },
   "features": {
     "en-US": [
@@ -36,6 +55,54 @@
       "Muestra el estado de reproducción o pausa",
       "Muestra marcas de tiempo cuando están disponibles",
       "Puede mostrar la actividad de navegación"
+    ],
+    "de-DE": [
+      "Erkennt Filme, Serien und Live-Events",
+      "Zeigt Wiedergabe- und Pausenstatus",
+      "Zeigt Wiedergabezeitstempel an, sofern verfügbar",
+      "Kann auch die Browsing-Aktivität anzeigen"
+    ],
+    "el-GR": [
+      "Εντοπίζει ταινίες, εκπομπές και ζωντανές εκδηλώσεις",
+      "Εμφανίζει την κατάσταση αναπαραγωγής και παύσης",
+      "Εμφανίζει χρονικές ενδείξεις αναπαραγωγής, όταν είναι διαθέσιμες",
+      "Προαιρετική εμφάνιση δραστηριότητας περιήγησης"
+    ],
+    "ja-JP": [
+      "映画、番組、ライブイベントを検出",
+      "再生中・一時停止中の状態を表示",
+      "利用可能な場合は再生タイムスタンプを表示",
+      "必要に応じて閲覧アクティビティを表示します"
+    ],
+    "ko-KR": [
+      "영화, 프로그램 및 라이브 이벤트 감지",
+      "재생 및 일시정지 상태 표시",
+      "가능한 경우 재생 타임스탬프 표시",
+      "선택적으로 탐색 활동 표시"
+    ],
+    "ms-MY": [
+      "Mengesan filem, rancangan dan acara langsung",
+      "Menunjukkan status main balik dan dijeda",
+      "Memaparkan cap masa main balik apabila tersedia",
+      "Tunjukkan aktiviti penyemakan imbas secara pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa filmy, programy i wydarzenia na żywo",
+      "Pokazuje stan odtwarzania i wstrzymania",
+      "Wyświetla znaczniki czasu odtwarzania, jeśli są dostępne",
+      "Opcjonalnie pokazuje aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta filmes, programas e eventos ao vivo",
+      "Mostra o status de reprodução e pausa",
+      "Exibe os tempos de reprodução quando disponíveis",
+      "Opcionalmente, mostra a atividade de navegação"
+    ],
+    "tr-TR": [
+      "Filmleri, programları ve canlı etkinlikleri algılar",
+      "Oynatma ve duraklatma durumunu gösterir",
+      "Mevcut olduğunda oynatma zaman damgalarını gösterir",
+      "İsteğe bağlı olarak gezinme etkinliğini gösterir"
     ]
   }
 }

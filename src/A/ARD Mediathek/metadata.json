@@ -4,7 +4,10 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["ardmediathek.de", "www.ardmediathek.de"],
+  "url": [
+    "ardmediathek.de",
+    "www.ardmediathek.de"
+  ],
   "regExp": "^https?://(www\\.)?ardmediathek\\.de/",
   "color": "#000F2D",
   "category": "streaming",
@@ -12,13 +15,27 @@
     "en-US": "Show the program or livestream you're watching on ARD Mediathek.",
     "fr-FR": "Affichez le programme ou le direct que vous regardez sur ARD Mediathek.",
     "es-ES": "Muestra el programa o la emisión en directo que estás viendo en ARD Mediathek.",
-    "de-DE": "Zeige das Programm oder den Livestream, den du in der ARD Mediathek ansiehst."
+    "de-DE": "Zeige das Programm oder den Livestream, den du in der ARD Mediathek ansiehst.",
+    "el-GR": "Εμφάνιση του προγράμματος ή της ζωντανής μετάδοσης που παρακολουθείτε στο ARD Mediathek.",
+    "ja-JP": "ARD Mediathekで視聴中の番組やライブ配信を表示します。",
+    "ko-KR": "ARD Mediathek에서 시청 중인 프로그램 또는 라이브 스트리밍을 표시합니다.",
+    "ms-MY": "Tunjukkan program atau strim langsung yang anda tonton di ARD Mediathek.",
+    "pl-PL": "Pokazuj program lub transmisję na żywo oglądaną w ARD Mediathek.",
+    "pt-BR": "Mostrar o programa ou a transmissão ao vivo que você está assistindo na ARD Mediathek.",
+    "tr-TR": "ARD Mediathek'te izlediğin programı veya canlı yayını göster."
   },
   "longDescription": {
     "en-US": "ARD Mediathek is the video-on-demand and livestream service from German public broadcaster ARD. This presence displays the program, playback state, and timestamps when available.",
     "fr-FR": "ARD Mediathek est le service de vidéo à la demande et de direct du groupe audiovisuel public allemand ARD. Cette présence affiche le programme, l'état de lecture et les timestamps lorsqu'ils sont disponibles.",
     "es-ES": "ARD Mediathek es el servicio de vídeo bajo demanda y emisiones en directo de la cadena pública alemana ARD. Esta presencia muestra el programa, el estado de reproducción y las marcas de tiempo cuando están disponibles.",
-    "de-DE": "Die ARD Mediathek ist das Video-on-Demand- und Livestream-Angebot der öffentlich-rechtlichen ARD. Diese Presence zeigt das Programm, den Wiedergabestatus und verfügbare Zeitangaben an."
+    "de-DE": "Die ARD Mediathek ist das Video-on-Demand- und Livestream-Angebot der öffentlich-rechtlichen ARD. Diese Presence zeigt das Programm, den Wiedergabestatus und verfügbare Zeitangaben an.",
+    "el-GR": "Το ARD Mediathek είναι η υπηρεσία βίντεο κατά παραγγελία και ζωντανής μετάδοσης του γερμανικού δημόσιου ραδιοτηλεοπτικού φορέα ARD. Αυτή η δραστηριότητα εμφανίζει το πρόγραμμα, την κατάσταση αναπαραγωγής και, όταν είναι διαθέσιμες, τις χρονικές σημάνσεις.",
+    "ja-JP": "ARD Mediathekは、ドイツの公共放送局ARDが提供するビデオオンデマンドおよびライブ配信サービスです。このプレゼンスには、番組、再生状態、利用可能な場合はタイムスタンプが表示されます。",
+    "ko-KR": "ARD Mediathek은 독일 공영 방송사 ARD의 주문형 비디오 및 라이브 스트리밍 서비스입니다. 이 활동에는 가능한 경우 프로그램, 재생 상태 및 타임스탬프가 표시됩니다.",
+    "ms-MY": "ARD Mediathek ialah perkhidmatan video atas permintaan dan strim langsung daripada penyiar awam Jerman, ARD. Status ini memaparkan rancangan, keadaan main balik dan cap masa apabila tersedia.",
+    "pl-PL": "ARD Mediathek to serwis wideo na żądanie i transmisji na żywo niemieckiego nadawcy publicznego ARD. Ta aktywność wyświetla program, stan odtwarzania i znaczniki czasu, jeśli są dostępne.",
+    "pt-BR": "A ARD Mediathek é o serviço de vídeo sob demanda e transmissão ao vivo da emissora pública alemã ARD. Esta presença exibe o programa, o estado da reprodução e, quando disponíveis, os horários.",
+    "tr-TR": "ARD Mediathek, Alman kamu yayıncısı ARD'nin isteğe bağlı video ve canlı yayın hizmetidir. Bu durum; programı, oynatma durumunu ve mevcut olduğunda zaman damgalarını gösterir."
   },
   "features": {
     "en-US": [
@@ -44,7 +61,54 @@
       "Zeigt den Programmtitel und verfügbare Episodendetails an",
       "Zeigt den Wiedergabe- oder Pausenstatus",
       "Kann auch die Browsing-Aktivität anzeigen"
+    ],
+    "el-GR": [
+      "Εντοπίζει βίντεο κατά παραγγελία και ζωντανές μεταδόσεις",
+      "Εμφανίζει τον τίτλο του προγράμματος και τις διαθέσιμες λεπτομέρειες επεισοδίου",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
+      "Προαιρετική εμφάνιση δραστηριότητας περιήγησης"
+    ],
+    "ja-JP": [
+      "オンデマンド動画とライブ配信を検出",
+      "番組タイトルと利用可能なエピソード情報を表示",
+      "再生中・一時停止中の状態を追跡",
+      "必要に応じて閲覧アクティビティを表示します"
+    ],
+    "ko-KR": [
+      "주문형 동영상 및 라이브 스트리밍 감지",
+      "프로그램 제목과 제공되는 에피소드 세부 정보 표시",
+      "재생 및 일시 정지 상태 표시",
+      "선택적으로 탐색 활동 표시"
+    ],
+    "ms-MY": [
+      "Mengesan video atas permintaan dan strim langsung",
+      "Menunjukkan tajuk program dan butiran episod yang tersedia",
+      "Menjejaki status sedang dimainkan dan dijeda",
+      "Tunjukkan aktiviti penyemakan imbas secara pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa filmy na żądanie i transmisje na żywo",
+      "Pokazuje tytuł programu i dostępne szczegóły odcinka",
+      "Śledzi stan odtwarzania i wstrzymania",
+      "Opcjonalnie pokazuje aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta vídeos sob demanda e transmissões ao vivo",
+      "Mostra o título do programa e os detalhes disponíveis do episódio",
+      "Acompanha os estados de reprodução e pausa",
+      "Opcionalmente, mostra a atividade de navegação"
+    ],
+    "tr-TR": [
+      "İsteğe bağlı videoları ve canlı yayınları algılar",
+      "Program başlığını ve mevcut bölüm ayrıntılarını gösterir",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder",
+      "İsteğe bağlı olarak gezinme etkinliğini gösterir"
     ]
   },
-  "supportedLocales": ["de-DE", "en-US", "fr-FR", "es-ES"]
+  "supportedLocales": [
+    "de-DE",
+    "en-US",
+    "fr-FR",
+    "es-ES"
+  ]
 }

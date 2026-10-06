@@ -16,6 +16,7 @@ import type enUS from "../locales/en-US.json"
 
 type TikTokSettings = {
   privacy?: unknown
+  showMediaTitle?: unknown
   showButtons?: unknown
   showProfileUsernames?: unknown
 }
@@ -38,6 +39,7 @@ export const handleUpdate = async (
     const { pathname, href } = document.location
     const lang = document.querySelector("html")?.getAttribute("lang")
     const privacy = isEnabled(ctx.settings.privacy)
+    const showMediaTitle = isEnabled(ctx.settings.showMediaTitle)
     const showButtons = ctx.settings.showButtons !== false
     const showProfileUsernames = ctx.settings.showProfileUsernames !== false
 
@@ -52,9 +54,11 @@ export const handleUpdate = async (
       const tiktokURL = handle && videoId ? `https://www.tiktok.com/@${handle}/video/${videoId}` : undefined
       const creatorURL = handle ? `https://www.tiktok.com/@${handle}/` : undefined
       const paused = video?.paused ?? false
+      const mediaTitle = extractVideoDescription(container)
       const poster = !privacy ? await toDiscordImage(extractPoster(video)) : undefined
 
       const data: PresenceData = {
+        name: !privacy && showMediaTitle ? mediaTitle : undefined,
         largeImageKey: poster ?? Assets.Logo,
         smallImageKey: paused ? "pause" : "play",
         smallImageText: paused ? strings.paused : strings.playing,
@@ -65,7 +69,7 @@ export const handleUpdate = async (
         data.details = strings.browsingFeed
       } else if (nickname && handle) {
         data.details = `${nickname} (@${handle})`
-        data.state = extractVideoDescription(container)
+        data.state = mediaTitle
       } else if (video) {
         data.details = strings.watchingVideo
       } else {
@@ -101,9 +105,11 @@ export const handleUpdate = async (
       const author = extractSingleVideoAuthor()
       const videoPath = extractVideoPagePath(pathname)
       const handle = author.handle ?? videoPath?.handle
+      const mediaTitle = extractVideoDescription()
       const poster = !privacy ? await toDiscordImage(extractPoster(vidEl)) : undefined
 
       const data: PresenceData = {
+        name: !privacy && showMediaTitle ? mediaTitle : undefined,
         largeImageKey: poster ?? Assets.Logo,
         smallImageKey: vidEl?.paused ? "pause" : "play",
         smallImageText: vidEl?.paused ? strings.paused : strings.playing,
@@ -114,7 +120,7 @@ export const handleUpdate = async (
         data.details = strings.watchingVideo
       } else {
         data.details = author.nickname ? `${author.nickname} (@${handle})` : strings.watchingVideo
-        data.state = extractVideoDescription()
+        data.state = mediaTitle
       }
 
       if (!video.paused) {
@@ -259,7 +265,7 @@ export const handleUpdate = async (
     await presence.setActivity({
       largeImageKey: Assets.Logo,
       type: PresenceType.Watching,
-      details: strings.tiktok,
+      details: "TikTok",
     })
   }
 }

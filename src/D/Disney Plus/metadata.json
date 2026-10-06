@@ -4,19 +4,38 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["disneyplus.com", "www.disneyplus.com"],
+  "url": [
+    "disneyplus.com",
+    "www.disneyplus.com"
+  ],
   "regExp": "^https?://(www\\.)?disneyplus\\.com/",
   "color": "#099DAE",
   "category": "streaming",
   "description": {
     "en-US": "Show the Disney, Pixar, Marvel, Star Wars, or National Geographic title you're watching.",
     "fr-FR": "Affichez le titre Disney, Pixar, Marvel, Star Wars ou National Geographic que vous regardez.",
-    "es-ES": "Muestra el título de Disney, Pixar, Marvel, Star Wars o National Geographic que estás viendo."
+    "es-ES": "Muestra el título de Disney, Pixar, Marvel, Star Wars o National Geographic que estás viendo.",
+    "de-DE": "Zeige den Titel von Disney, Pixar, Marvel, Star Wars oder National Geographic, den du ansiehst.",
+    "el-GR": "Εμφάνιση του τίτλου Disney, Pixar, Marvel, Star Wars ή National Geographic που παρακολουθείτε.",
+    "ja-JP": "視聴中のDisney、Pixar、Marvel、Star Wars、National Geographicの作品を表示します。",
+    "ko-KR": "시청 중인 Disney, Pixar, Marvel, Star Wars 또는 National Geographic 콘텐츠를 표시합니다.",
+    "ms-MY": "Tunjukkan judul Disney, Pixar, Marvel, Star Wars atau National Geographic yang anda tonton.",
+    "pl-PL": "Pokazuj oglądany tytuł Disney, Pixar, Marvel, Star Wars lub National Geographic.",
+    "pt-BR": "Mostrar o título da Disney, Pixar, Marvel, Star Wars ou National Geographic que você está assistindo.",
+    "tr-TR": "İzlediğin Disney, Pixar, Marvel, Star Wars veya National Geographic içeriğini göster."
   },
   "longDescription": {
     "en-US": "Disney+ brings together movies, series, and franchises from Disney, Pixar, Marvel, Star Wars, and National Geographic. This presence shows the title you're watching, including season and episode when it applies.",
     "fr-FR": "Disney+ réunit films, séries et franchises de Disney, Pixar, Marvel, Star Wars et National Geographic. Cette présence affiche le titre que vous regardez, avec la saison et l'épisode le cas échéant.",
-    "es-ES": "Disney+ reúne películas, series y franquicias de Disney, Pixar, Marvel, Star Wars y National Geographic. Esta presencia muestra el título que estás viendo, con temporada y episodio cuando corresponde."
+    "es-ES": "Disney+ reúne películas, series y franquicias de Disney, Pixar, Marvel, Star Wars y National Geographic. Esta presencia muestra el título que estás viendo, con temporada y episodio cuando corresponde.",
+    "de-DE": "Disney+ vereint Filme, Serien und Franchises von Disney, Pixar, Marvel, Star Wars und National Geographic. Diese Präsenz zeigt den Titel, den du gerade ansiehst, gegebenenfalls einschließlich Staffel und Folge.",
+    "el-GR": "Το Disney+ συγκεντρώνει ταινίες, σειρές και franchise από τα Disney, Pixar, Marvel, Star Wars και National Geographic. Αυτή η παρουσία εμφανίζει τον τίτλο που παρακολουθείτε, μαζί με τη σεζόν και το επεισόδιο, όπου ισχύει.",
+    "ja-JP": "Disney+では、Disney、Pixar、Marvel、Star Wars、National Geographicの映画、シリーズ、人気作品をまとめて楽しめます。このプレゼンスには視聴中のタイトルが表示され、該当する場合はシーズンとエピソードも表示されます。",
+    "ko-KR": "Disney+에서는 Disney, Pixar, Marvel, Star Wars 및 National Geographic의 영화, 시리즈와 프랜차이즈 콘텐츠를 한곳에서 만나볼 수 있습니다. 이 활동 상태에는 시청 중인 콘텐츠의 제목이 표시되며, 해당하는 경우 시즌과 에피소드도 표시됩니다.",
+    "ms-MY": "Disney+ menghimpunkan filem, siri dan francais daripada Disney, Pixar, Marvel, Star Wars dan National Geographic. Kehadiran ini menunjukkan tajuk yang sedang anda tonton, termasuk musim dan episod jika berkenaan.",
+    "pl-PL": "Disney+ łączy filmy, seriale i franczyzy Disney, Pixar, Marvel, Star Wars oraz National Geographic. Ta aktywność pokazuje tytuł oglądanej treści, w tym sezon i odcinek, jeśli ma to zastosowanie.",
+    "pt-BR": "O Disney+ reúne filmes, séries e franquias da Disney, Pixar, Marvel, Star Wars e National Geographic. Esta presença mostra o título que você está assistindo, incluindo temporada e episódio quando aplicável.",
+    "tr-TR": "Disney+, Disney, Pixar, Marvel, Star Wars ve National Geographic'in film, dizi ve serilerini bir araya getirir. Bu durum, izlediğin içeriğin adını ve uygun olduğunda sezon ile bölüm bilgilerini gösterir."
   },
   "features": {
     "en-US": [
@@ -36,6 +55,54 @@
       "Muestra título, temporada y episodio",
       "Sigue el estado en reproducción o en pausa",
       "Actualiza tu actividad de Discord en tiempo real"
+    ],
+    "de-DE": [
+      "Erkennt Filme und Serien automatisch",
+      "Zeigt Titel, Staffel und Folge",
+      "Zeigt den Wiedergabe- oder Pausenstatus",
+      "Aktualisiert deine Discord-Aktivität in Echtzeit"
+    ],
+    "el-GR": [
+      "Εντοπίζει αυτόματα ταινίες και σειρές",
+      "Εμφανίζει τίτλο, σεζόν και επεισόδιο",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
+      "Ενημερώνει τη δραστηριότητά σου στο Discord σε πραγματικό χρόνο"
+    ],
+    "ja-JP": [
+      "映画とシリーズを自動検出",
+      "タイトル、シーズン、エピソードを表示",
+      "再生中・一時停止中の状態を追跡",
+      "Discordのアクティビティをリアルタイムで更新"
+    ],
+    "ko-KR": [
+      "영화 및 시리즈 자동 감지",
+      "제목, 시즌 및 에피소드 표시",
+      "재생 및 일시 정지 상태 표시",
+      "Discord 활동을 실시간으로 업데이트"
+    ],
+    "ms-MY": [
+      "Mengesan filem dan siri secara automatik",
+      "Menunjukkan tajuk, musim dan episod",
+      "Menjejaki status sedang dimainkan dan dijeda",
+      "Mengemas kini aktiviti Discord anda secara masa nyata"
+    ],
+    "pl-PL": [
+      "Automatycznie wykrywa filmy i seriale",
+      "Pokazuje tytuł, sezon i odcinek",
+      "Śledzi stan odtwarzania i wstrzymania",
+      "Aktualizuje twoją aktywność na Discordzie w czasie rzeczywistym"
+    ],
+    "pt-BR": [
+      "Detecta filmes e séries automaticamente",
+      "Mostra o título, a temporada e o episódio",
+      "Acompanha os estados de reprodução e pausa",
+      "Atualiza sua atividade do Discord em tempo real"
+    ],
+    "tr-TR": [
+      "Filmleri ve dizileri otomatik olarak algılar",
+      "Başlığı, sezonu ve bölümü gösterir",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder",
+      "Discord etkinliğini gerçek zamanlı günceller"
     ]
   }
 }

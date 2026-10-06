@@ -1,0 +1,16 @@
+{
+  "watching": "Παρακολουθεί",
+  "seasonEpisode": "Σεζόν {season}, Επεισόδιο {episode}",
+  "playing": "Παίζει",
+  "paused": "Σε παύση",
+  "searching": "Αναζήτηση",
+  "viewingSeries": "Προβολή σειράς",
+  "browsingCatalog": "Περιηγείται στον κατάλογο",
+  "viewingSchedule": "Προβολή προγράμματος",
+  "viewingSimulcast": "Περιήγηση στις ταυτόχρονες μεταδόσεις",
+  "browsingMovies": "Περιήγηση στις ταινίες",
+  "viewingWatchlist": "Προβολή λίστας παρακολούθησης",
+  "browsingAdn": "Περιήγηση στο ADN",
+  "watchEpisode": "Παρακολούθηση επεισοδίου",
+  "viewSeries": "Προβολή σειράς"
+}

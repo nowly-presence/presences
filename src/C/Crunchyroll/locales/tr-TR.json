@@ -1,0 +1,18 @@
+{
+  "watching": "İzliyor",
+  "seasonEpisode": "{season}. Sezon, {episode}. Bölüm",
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "searching": "Arıyor",
+  "viewingSeries": "Bir diziyi görüntülüyor",
+  "readingManga": "Manga okuyor",
+  "readingNews": "Haberleri okuyor",
+  "viewingWatchlist": "İzleme listesini görüntülüyor",
+  "viewingHistory": "İzleme geçmişini görüntülüyor",
+  "viewingCalendar": "Eş zamanlı yayın takvimini görüntülüyor",
+  "browsingGames": "Oyunlara göz atıyor",
+  "browsingMusic": "Müziklere göz atıyor",
+  "browsingCrunchyroll": "Crunchyroll'a göz atıyor",
+  "watchEpisode": "Bölümü izle",
+  "viewSeries": "Diziyi görüntüle"
+}

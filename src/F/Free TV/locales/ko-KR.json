@@ -1,0 +1,11 @@
+{
+  "watchingLive": "실시간 TV 시청 중",
+  "watchingVod": "영화 또는 프로그램 시청 중",
+  "liveState": "{channel} · {program}",
+  "browsingHome": "Free TV 둘러보는 중",
+  "browsingChannels": "채널 둘러보는 중",
+  "browsingVodHub": "영화 및 프로그램 둘러보는 중",
+  "browsingTvGuide": "TV 편성표 둘러보는 중",
+  "browsingMyList": "My List 둘러보는 중",
+  "viewingDetail": "세부 정보 보는 중"
+}

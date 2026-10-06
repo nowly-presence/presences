@@ -1,19 +1,40 @@
 {
   "name": "Apple Music",
-  "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["music.apple.com"],
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "music.apple.com"
+  ],
   "regExp": "^https?://music\\.apple\\.com/",
   "color": "#FA243C",
   "category": "music",
   "description": {
     "en-US": "Show the track you're listening to on Apple Music.",
     "fr-FR": "Affichez le titre que vous écoutez sur Apple Music.",
-    "es-ES": "Muestra la canción que estás escuchando en Apple Music."
+    "es-ES": "Muestra la canción que estás escuchando en Apple Music.",
+    "de-DE": "Zeige den Titel, den du auf Apple Music hörst.",
+    "el-GR": "Εμφάνιση του κομματιού που ακούτε στο Apple Music.",
+    "ja-JP": "Apple Musicで聴いている曲を表示します。",
+    "ko-KR": "Apple Music에서 듣고 있는 트랙을 표시합니다.",
+    "ms-MY": "Tunjukkan lagu yang anda dengar di Apple Music.",
+    "pl-PL": "Pokazuj utwór słuchany w Apple Music.",
+    "pt-BR": "Mostrar a faixa que você está ouvindo no Apple Music.",
+    "tr-TR": "Apple Music'te dinlediğin parçayı göster."
   },
   "longDescription": {
     "en-US": "Apple Music is Apple's music streaming service. This presence shows the track you're listening to on the web player - title, artist, playback state, and artwork when available.",
     "fr-FR": "Apple Music est le service de streaming musical d'Apple. Cette présence affiche le titre que vous écoutez sur le lecteur web - morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
-    "es-ES": "Apple Music es el servicio de streaming musical de Apple. Esta presencia muestra la canción que escuchas en el reproductor web: título, artista, estado de reproducción y portada cuando esté disponible."
+    "es-ES": "Apple Music es el servicio de streaming musical de Apple. Esta presencia muestra la canción que escuchas en el reproductor web: título, artista, estado de reproducción y portada cuando esté disponible.",
+    "de-DE": "Apple Music ist der Musikstreamingdienst von Apple. Diese Aktivität zeigt den Titel, den du gerade im Webplayer hörst, den Interpreten, den Wiedergabestatus und das Cover, sofern verfügbar.",
+    "el-GR": "Το Apple Music είναι η υπηρεσία streaming μουσικής της Apple. Αυτή η δραστηριότητα εμφανίζει το κομμάτι που ακούτε στο πρόγραμμα αναπαραγωγής ιστού — τον τίτλο, τον καλλιτέχνη, την κατάσταση αναπαραγωγής και, όταν είναι διαθέσιμο, το εξώφυλλο.",
+    "ja-JP": "Apple Musicは、Appleの音楽ストリーミングサービスです。このプレゼンスには、Webプレーヤーで聴いている曲のタイトル、アーティスト、再生状態、利用可能な場合はアートワークが表示されます。",
+    "ko-KR": "Apple Music은 Apple의 음악 스트리밍 서비스입니다. 이 활동에는 웹 플레이어에서 듣고 있는 곡의 제목, 아티스트, 재생 상태 및 가능한 경우 앨범 아트가 표시됩니다.",
+    "ms-MY": "Apple Music ialah perkhidmatan penstriman muzik Apple. Status ini menunjukkan lagu yang sedang anda dengar pada pemain web — tajuk, artis, keadaan main balik dan karya seni apabila tersedia.",
+    "pl-PL": "Apple Music to usługa streamingu muzyki firmy Apple. Ta aktywność pokazuje utwór, którego słuchasz w odtwarzaczu internetowym — tytuł, wykonawcę, stan odtwarzania oraz okładkę, jeśli są dostępne.",
+    "pt-BR": "O Apple Music é o serviço de streaming de música da Apple. Esta presença mostra a faixa que você está ouvindo no player da web — título, artista, estado da reprodução e, quando disponível, a capa.",
+    "tr-TR": "Apple Music, Apple'ın müzik akış hizmetidir. Bu durum, web oynatıcısında dinlediğiniz parçanın başlığını, sanatçısını, oynatma durumunu ve mevcut olduğunda kapak görselini gösterir."
   },
   "features": {
     "en-US": [
@@ -36,6 +57,62 @@
       "Sigue el progreso de escucha",
       "Muestra la portada del álbum",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt den aktuellen Song",
+      "Zeigt Titel und Künstler",
+      "Erfasst den Hörfortschritt",
+      "Zeigt das Albumcover an",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει το τρέχον κομμάτι",
+      "Εμφανίζει τίτλο και καλλιτέχνη",
+      "Παρακολουθεί την πρόοδο ακρόασης",
+      "Εμφανίζει το εξώφυλλο του άλμπουμ",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "現在の楽曲を検出",
+      "タイトルとアーティストを表示",
+      "再生の進行状況を追跡",
+      "アルバムアートワークを表示",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "현재 트랙 감지",
+      "제목과 아티스트 표시",
+      "청취 진행 상황 표시",
+      "앨범 아트워크 표시",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan lagu semasa",
+      "Menunjukkan tajuk dan artis",
+      "Menjejaki kemajuan mendengar",
+      "Memaparkan karya seni album",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa bieżący utwór",
+      "Pokazuje tytuł i wykonawcę",
+      "Śledzi postęp słuchania",
+      "Wyświetla okładkę albumu",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta a faixa atual",
+      "Mostra o título e o artista",
+      "Acompanha o progresso da reprodução",
+      "Exibe a capa do álbum",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Mevcut parçayı algılar",
+      "Başlığı ve sanatçıyı gösterir",
+      "Dinleme ilerlemesini takip eder",
+      "Albüm kapağını gösterir",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   }
 }

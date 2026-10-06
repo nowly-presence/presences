@@ -1,0 +1,16 @@
+{
+  "watching": "視聴中",
+  "seasonEpisode": "シーズン{season}、エピソード{episode}",
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "searching": "検索中",
+  "viewingSeries": "シリーズを閲覧中",
+  "browsingCatalog": "カタログを閲覧中",
+  "viewingSchedule": "スケジュールを閲覧中",
+  "viewingSimulcast": "同時配信を閲覧中",
+  "browsingMovies": "映画を閲覧中",
+  "viewingWatchlist": "ウォッチリストを閲覧中",
+  "browsingAdn": "ADNを閲覧中",
+  "watchEpisode": "エピソードを見る",
+  "viewSeries": "シリーズを見る"
+}

@@ -4,7 +4,11 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["www.youtube.com", "m.youtube.com", "youtu.be"],
+  "url": [
+    "www.youtube.com",
+    "m.youtube.com",
+    "youtu.be"
+  ],
   "regExp": "^https?://(www|m)\\.youtube\\.com/",
   "world": "main",
   "runAt": "document_start",
@@ -13,12 +17,28 @@
   "description": {
     "en-US": "Show the YouTube video, live, or Playables session you're on.",
     "fr-FR": "Affichez la vidéo, le live ou la session Playables YouTube en cours.",
-    "es-ES": "Muestra el vídeo, directo o sesión de Playables de YouTube en la que estás."
+    "es-ES": "Muestra el vídeo, directo o sesión de Playables de YouTube en la que estás.",
+    "de-DE": "Zeige das YouTube-Video, den Livestream oder die Playables-Sitzung, die du gerade nutzt.",
+    "el-GR": "Εμφάνιση του βίντεο, της ζωντανής μετάδοσης ή της συνεδρίας Playables που παρακολουθείτε στο YouTube.",
+    "ja-JP": "視聴中のYouTube動画、ライブ配信、Playablesセッションを表示します。",
+    "ko-KR": "시청 중인 YouTube 동영상, 라이브 또는 Playables 세션을 표시합니다.",
+    "ms-MY": "Tunjukkan video, siaran langsung atau sesi Playables YouTube yang sedang anda tonton atau mainkan.",
+    "pl-PL": "Pokazuj oglądany film, transmisję na żywo lub sesję Playables w YouTube.",
+    "pt-BR": "Mostrar o vídeo, a live ou a sessão de Playables que você está acessando no YouTube.",
+    "tr-TR": "İzlediğin YouTube videosunu, canlı yayınını veya Playables oturumunu göster."
   },
   "longDescription": {
     "en-US": "YouTube is the world's largest video platform. This presence shows the video or channel you're on - music, tutorials, lives, Playables, and more - so friends can see it on Discord in real time.",
     "fr-FR": "YouTube est la plus grande plateforme vidéo au monde. Cette présence affiche la vidéo ou la chaîne que vous consultez - musique, tutoriels, lives, Playables et plus - pour que vos amis le voient sur Discord en temps réel.",
-    "es-ES": "YouTube es la plataforma de vídeo más grande del mundo. Esta presencia muestra el vídeo o canal que estás viendo - música, tutoriales, directos, Playables y más - para que tus amigos lo vean en Discord en tiempo real."
+    "es-ES": "YouTube es la plataforma de vídeo más grande del mundo. Esta presencia muestra el vídeo o canal que estás viendo - música, tutoriales, directos, Playables y más - para que tus amigos lo vean en Discord en tiempo real.",
+    "de-DE": "YouTube ist die größte Videoplattform der Welt. Diese Aktivität zeigt das Video oder den Kanal an, das bzw. den du gerade aufgerufen hast – Musik, Tutorials, Livestreams, Playables und mehr –, sodass Freunde dies in Echtzeit auf Discord sehen können.",
+    "el-GR": "Το YouTube είναι η μεγαλύτερη πλατφόρμα βίντεο στον κόσμο. Αυτή η παρουσία εμφανίζει το βίντεο ή το κανάλι στο οποίο βρίσκεστε — μουσική, οδηγούς, ζωντανές μεταδόσεις, Playables και άλλα — ώστε οι φίλοι σας να το βλέπουν στο Discord σε πραγματικό χρόνο.",
+    "ja-JP": "YouTubeは世界最大の動画プラットフォームです。このプレゼンスには、現在見ている動画やチャンネル（音楽、チュートリアル、ライブ、Playablesなど）が表示されるため、フレンドがDiscordでリアルタイムに確認できます。",
+    "ko-KR": "YouTube는 세계 최대의 동영상 플랫폼입니다. 이 활동 상태에는 현재 보고 있는 동영상이나 채널(음악, 튜토리얼, 라이브, Playables 등)이 표시되어 친구들이 Discord에서 실시간으로 확인할 수 있습니다.",
+    "ms-MY": "YouTube ialah platform video terbesar di dunia. Presence ini memaparkan video atau saluran yang sedang anda akses—muzik, tutorial, siaran langsung, Playables dan banyak lagi—supaya rakan dapat melihatnya di Discord dalam masa nyata.",
+    "pl-PL": "YouTube to największa na świecie platforma wideo. Ta aktywność pokazuje oglądany film lub odwiedzany kanał — muzykę, poradniki, transmisje na żywo, Playables i nie tylko — aby znajomi mogli zobaczyć to na Discordzie w czasie rzeczywistym.",
+    "pt-BR": "O YouTube é a maior plataforma de vídeos do mundo. Este status mostra o vídeo ou canal em que você está — músicas, tutoriais, lives, Playables e muito mais — para que seus amigos possam ver isso no Discord em tempo real.",
+    "tr-TR": "YouTube, dünyanın en büyük video platformudur. Bu durum; izlediğiniz videoyu veya bulunduğunuz kanalı (müzik, öğretici videolar, canlı yayınlar, Playables ve daha fazlası) gösterir. Böylece arkadaşlarınız bunları Discord'da gerçek zamanlı olarak görebilir."
   },
   "features": {
     "en-US": [
@@ -41,6 +61,62 @@
       "Sigue el progreso de reproducción",
       "Compatible con directos, estrenos y Playables",
       "Muestra la miniatura del vídeo"
+    ],
+    "de-DE": [
+      "Erkennt Videos automatisch",
+      "Zeigt Titel und Kanal",
+      "Erfasst den Wiedergabefortschritt",
+      "Unterstützt Livestreams, Premieren und Playables",
+      "Zeigt das Video-Thumbnail an"
+    ],
+    "el-GR": [
+      "Εντοπίζει αυτόματα βίντεο",
+      "Εμφανίζει τίτλο και κανάλι",
+      "Παρακολουθεί την πρόοδο θέασης",
+      "Υποστηρίζει ζωντανές μεταδόσεις, πρεμιέρες και Playables",
+      "Εμφανίζει τη μικρογραφία του βίντεο"
+    ],
+    "ja-JP": [
+      "動画を自動検出",
+      "タイトルとチャンネルを表示",
+      "視聴の進行状況を追跡",
+      "ライブ配信、プレミア公開、Playablesに対応",
+      "動画のサムネイルを表示"
+    ],
+    "ko-KR": [
+      "동영상 자동 감지",
+      "제목과 채널 표시",
+      "시청 진행 상황 표시",
+      "라이브, 프리미어 및 Playables 지원",
+      "동영상 썸네일 표시"
+    ],
+    "ms-MY": [
+      "Mengesan video secara automatik",
+      "Menunjukkan tajuk dan saluran",
+      "Menjejaki kemajuan tontonan",
+      "Menyokong siaran langsung, tayangan perdana dan Playables",
+      "Memaparkan imej kecil video"
+    ],
+    "pl-PL": [
+      "Automatycznie wykrywa filmy",
+      "Pokazuje tytuł i kanał",
+      "Śledzi postęp oglądania",
+      "Obsługuje transmisje na żywo, premiery i Playables",
+      "Wyświetla miniaturę filmu"
+    ],
+    "pt-BR": [
+      "Detecta vídeos automaticamente",
+      "Mostra o título e o canal",
+      "Acompanha o progresso do que você assiste",
+      "Compatível com lives, estreias e Playables",
+      "Exibe a miniatura do vídeo"
+    ],
+    "tr-TR": [
+      "Videoları otomatik olarak algılar",
+      "Başlığı ve kanalı gösterir",
+      "İzleme ilerlemesini takip eder",
+      "Canlı yayınları, prömiyerleri ve Playables'ı destekler",
+      "Video küçük resmini gösterir"
     ]
   }
 }

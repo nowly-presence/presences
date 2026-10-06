@@ -1,0 +1,18 @@
+{
+  "watching": "Assistindo",
+  "seasonEpisode": "Temporada {season}, Episódio {episode}",
+  "playing": "Jogando",
+  "paused": "Pausado",
+  "searching": "Pesquisando",
+  "viewingSeries": "Vendo uma série",
+  "readingManga": "Lendo mangá",
+  "readingNews": "Lendo notícias",
+  "viewingWatchlist": "Vendo a lista para assistir",
+  "viewingHistory": "Vendo o histórico de exibição",
+  "viewingCalendar": "Vendo o calendário de transmissões simultâneas",
+  "browsingGames": "Navegando por jogos",
+  "browsingMusic": "Navegando pelas músicas",
+  "browsingCrunchyroll": "Navegando no Crunchyroll",
+  "watchEpisode": "Assistir ao episódio",
+  "viewSeries": "Ver série"
+}

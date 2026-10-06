@@ -1,0 +1,21 @@
+{
+  "playing": "플레이 중",
+  "paused": "일시 정지",
+  "browsingFeed": "피드 둘러보는 중",
+  "watchingVideo": "동영상 시청 중",
+  "watchingLive": "라이브 시청 중",
+  "watchingLiveNamed": "라이브 시청 중 - {name}",
+  "browsingLiveCategories": "라이브 카테고리 둘러보는 중",
+  "browsingNamed": "{name} 둘러보는 중",
+  "browsingLiveCategory": "라이브 카테고리 둘러보는 중",
+  "viewingProfile": "프로필 보는 중",
+  "browsingExplore": "Explore 둘러보는 중",
+  "exploring": "탐색 중",
+  "browsingMessages": "메시지 둘러보는 중",
+  "readingMessages": "메시지 읽는 중",
+  "tiktok": "TikTok",
+  "viewTikTok": "TikTok 보기",
+  "viewProfile": "프로필 보기",
+  "viewCategory": "카테고리 보기",
+  "watchStream": "스트림 시청"
+}

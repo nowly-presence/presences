@@ -1,0 +1,16 @@
+{
+  "watching": "Sedang menonton",
+  "seasonEpisode": "Musim {season}, Episod {episode}",
+  "playing": "Sedang bermain",
+  "paused": "Dijeda",
+  "searching": "Mencari",
+  "viewingSeries": "Melihat siri",
+  "browsingCatalog": "Melihat-lihat katalog",
+  "viewingSchedule": "Melihat jadual",
+  "viewingSimulcast": "Melayari siaran serentak",
+  "browsingMovies": "Melayari filem",
+  "viewingWatchlist": "Melihat senarai tontonan",
+  "browsingAdn": "Melayari ADN",
+  "watchEpisode": "Tonton episod",
+  "viewSeries": "Lihat siri"
+}

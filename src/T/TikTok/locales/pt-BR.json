@@ -1,0 +1,21 @@
+{
+  "playing": "Jogando",
+  "paused": "Pausado",
+  "browsingFeed": "Navegando pelo feed",
+  "watchingVideo": "Assistindo a um vídeo",
+  "watchingLive": "Assistindo a uma live",
+  "watchingLiveNamed": "Assistindo ao vivo — {name}",
+  "browsingLiveCategories": "Navegando pelas categorias ao vivo",
+  "browsingNamed": "Navegando por {name}",
+  "browsingLiveCategory": "Navegando por uma categoria ao vivo",
+  "viewingProfile": "Visualizando um perfil",
+  "browsingExplore": "Navegando em Explorar",
+  "exploring": "Explorando",
+  "browsingMessages": "Navegando pelas mensagens",
+  "readingMessages": "Lendo mensagens",
+  "tiktok": "TikTok",
+  "viewTikTok": "Ver TikTok",
+  "viewProfile": "Ver perfil",
+  "viewCategory": "Ver categoria",
+  "watchStream": "Assistir à transmissão"
+}

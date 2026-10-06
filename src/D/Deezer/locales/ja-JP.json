@@ -1,0 +1,13 @@
+{
+  "listeningToMusic": "音楽を聴いています",
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "listen": "聴く",
+  "searching": "検索中",
+  "viewingPlaylist": "プレイリストを閲覧中",
+  "viewingAlbum": "アルバムを閲覧中",
+  "viewingArtist": "アーティストを閲覧中",
+  "viewingPodcast": "ポッドキャストを閲覧中",
+  "browsingChannels": "チャンネルを閲覧中",
+  "browsingDeezer": "Deezerを閲覧中"
+}

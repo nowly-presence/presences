@@ -1,7 +1,13 @@
 {
   "name": "Crunchyroll",
-  "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["crunchyroll.com", "www.crunchyroll.com"],
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "crunchyroll.com",
+    "www.crunchyroll.com"
+  ],
   "regExp": "^https?://(www\\.)?crunchyroll\\.com/",
   "color": "#F47521",
   "category": "streaming",
@@ -9,12 +15,28 @@
   "description": {
     "en-US": "Show the anime you're watching on Crunchyroll.",
     "fr-FR": "Affichez l'animé que vous regardez sur Crunchyroll.",
-    "es-ES": "Muestra el anime que estás viendo en Crunchyroll."
+    "es-ES": "Muestra el anime que estás viendo en Crunchyroll.",
+    "de-DE": "Zeige den Anime, den du auf Crunchyroll ansiehst.",
+    "el-GR": "Εμφάνιση του anime που παρακολουθείτε στο Crunchyroll.",
+    "ja-JP": "Crunchyrollで視聴中のアニメを表示します。",
+    "ko-KR": "Crunchyroll에서 시청 중인 애니메이션을 표시합니다.",
+    "ms-MY": "Tunjukkan anime yang anda tonton di Crunchyroll.",
+    "pl-PL": "Pokazuj anime oglądane w Crunchyroll.",
+    "pt-BR": "Mostrar o anime que você está assistindo na Crunchyroll.",
+    "tr-TR": "Crunchyroll'da izlediğin animeyi göster."
   },
   "longDescription": {
     "en-US": "Crunchyroll streams anime and related series. This presence shows the title you're watching, with playback state when available.",
     "fr-FR": "Crunchyroll diffuse des animés et des séries associées. Cette présence affiche le titre que vous regardez, avec l'état de lecture lorsqu'il est disponible.",
-    "es-ES": "Crunchyroll emite anime y series relacionadas. Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible."
+    "es-ES": "Crunchyroll emite anime y series relacionadas. Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible.",
+    "de-DE": "Crunchyroll streamt Anime und verwandte Serien. Diese Präsenz zeigt den Titel, den du gerade ansiehst, mit Wiedergabestatus, sofern verfügbar.",
+    "el-GR": "Το Crunchyroll μεταδίδει anime και σχετικές σειρές. Αυτή η παρουσία εμφανίζει τον τίτλο που παρακολουθείτε, μαζί με την κατάσταση αναπαραγωγής, όταν είναι διαθέσιμη.",
+    "ja-JP": "Crunchyrollでは、アニメや関連シリーズをストリーミングできます。このプレゼンスには視聴中のタイトルが表示され、利用可能な場合は再生状態も表示されます。",
+    "ko-KR": "Crunchyroll에서는 애니메이션과 관련 시리즈를 스트리밍합니다. 이 활동 상태에는 시청 중인 콘텐츠의 제목이 표시되며, 가능한 경우 재생 상태도 표시됩니다.",
+    "ms-MY": "Crunchyroll menstrim anime dan siri berkaitan. Kehadiran ini menunjukkan tajuk yang sedang anda tonton, berserta status main balik apabila tersedia.",
+    "pl-PL": "Crunchyroll oferuje streaming anime i powiązanych seriali. Ta aktywność pokazuje tytuł oglądanej treści oraz stan odtwarzania, jeśli jest dostępny.",
+    "pt-BR": "A Crunchyroll transmite animes e séries relacionadas. Esta presença mostra o título que você está assistindo, com o estado da reprodução quando disponível.",
+    "tr-TR": "Crunchyroll, anime ve ilgili dizileri yayınlar. Bu durum, izlediğin içeriğin adını ve mevcut olduğunda oynatma durumunu gösterir."
   },
   "features": {
     "en-US": [
@@ -34,6 +56,54 @@
       "Sigue reproducción y pausa",
       "Modo privado opcional",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt den aktuellen Titel",
+      "Zeigt den Wiedergabe- oder Pausenstatus",
+      "Optionaler Datenschutzmodus",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει τον τρέχοντα τίτλο",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
+      "Προαιρετική λειτουργία απορρήτου",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "現在のタイトルを検出",
+      "再生中・一時停止中の状態を追跡",
+      "任意のプライバシーモード",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "현재 콘텐츠 제목 감지",
+      "재생 및 일시 정지 상태 표시",
+      "선택적 개인정보 보호 모드",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan tajuk semasa",
+      "Menjejaki status sedang dimainkan dan dijeda",
+      "Mod privasi pilihan",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa bieżący tytuł",
+      "Śledzi stan odtwarzania i wstrzymania",
+      "Opcjonalny tryb prywatności",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta o título atual",
+      "Acompanha os estados de reprodução e pausa",
+      "Modo de privacidade opcional",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Mevcut içeriğin adını algılar",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder",
+      "İsteğe bağlı gizlilik modu",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   }
 }

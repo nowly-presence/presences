@@ -1,0 +1,16 @@
+{
+  "watching": "İzliyor",
+  "seasonEpisode": "{season}. Sezon, {episode}. Bölüm",
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "searching": "Arıyor",
+  "viewingSeries": "Bir diziyi görüntülüyor",
+  "browsingCatalog": "Kataloğa göz atıyor",
+  "viewingSchedule": "Yayın akışını görüntülüyor",
+  "viewingSimulcast": "Eş zamanlı yayınlara göz atıyor",
+  "browsingMovies": "Filmlere göz atıyor",
+  "viewingWatchlist": "İzleme listesini görüntülüyor",
+  "browsingAdn": "ADN'e göz atıyor",
+  "watchEpisode": "Bölümü izle",
+  "viewSeries": "Diziyi görüntüle"
+}

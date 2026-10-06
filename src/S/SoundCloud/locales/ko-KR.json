@@ -1,0 +1,16 @@
+{
+  "listeningToMusic": "음악 듣는 중",
+  "playing": "플레이 중",
+  "paused": "일시 정지",
+  "listen": "듣기",
+  "searching": "검색 중",
+  "viewingProfile": "프로필 보는 중",
+  "browsingDiscover": "Discover 둘러보는 중",
+  "browsingCharts": "차트 둘러보는 중",
+  "viewingNotifications": "알림 확인 중",
+  "viewingMessages": "메시지 확인 중",
+  "browsingLibrary": "라이브러리 둘러보는 중",
+  "viewingSettings": "설정 보는 중",
+  "browsingSoundCloud": "SoundCloud 둘러보는 중",
+  "viewProfile": "프로필 보기"
+}

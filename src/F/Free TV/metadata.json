@@ -1,19 +1,40 @@
 {
   "name": "Free TV",
-  "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["tv.free.fr"],
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "tv.free.fr"
+  ],
   "regExp": "^https?://(www\\.)?tv\\.free\\.fr/",
   "color": "#CE0000",
   "category": "streaming",
   "description": {
     "en-US": "Show the live French TV channel you're watching on Free TV.",
     "fr-FR": "Affichez la chaîne de télévision française en direct que vous regardez sur Free TV.",
-    "es-ES": "Muestra el canal de televisión francés en directo que estás viendo en Free TV."
+    "es-ES": "Muestra el canal de televisión francés en directo que estás viendo en Free TV.",
+    "de-DE": "Zeige den französischen Live-TV-Sender, den du auf Free TV ansiehst.",
+    "el-GR": "Εμφάνιση του γαλλικού τηλεοπτικού καναλιού που παρακολουθείτε ζωντανά στο Free TV.",
+    "ja-JP": "Free TVで視聴中のフランスのライブTVチャンネルを表示します。",
+    "ko-KR": "Free TV에서 시청 중인 프랑스 실시간 TV 채널을 표시합니다.",
+    "ms-MY": "Tunjukkan saluran TV Perancis secara langsung yang anda tonton di Free TV.",
+    "pl-PL": "Pokazuj oglądany francuski kanał telewizyjny na żywo w Free TV.",
+    "pt-BR": "Mostrar o canal de TV francesa ao vivo que você está assistindo na Free TV.",
+    "tr-TR": "Free TV'de izlediğin canlı Fransız TV kanalını göster."
   },
   "longDescription": {
     "en-US": "Free TV is the web live-TV player from French ISP Free. Freebox subscribers can stream French channels from the browser. This presence shows the channel you're watching on Discord.",
     "fr-FR": "Free TV est le lecteur de télévision en direct de l'opérateur Free. Les abonnés Freebox peuvent regarder les chaînes françaises depuis le navigateur. Cette présence affiche la chaîne que vous regardez sur Discord.",
-    "es-ES": "Free TV es el reproductor de televisión en directo del operador francés Free. Los abonados de Freebox pueden ver canales franceses desde el navegador. Esta presencia muestra el canal que estás viendo en Discord."
+    "es-ES": "Free TV es el reproductor de televisión en directo del operador francés Free. Los abonados de Freebox pueden ver canales franceses desde el navegador. Esta presencia muestra el canal que estás viendo en Discord.",
+    "de-DE": "Free TV ist der webbasierte Live-TV-Player des französischen Internetanbieters Free. Freebox-Abonnenten können französische Sender im Browser streamen. Diese Präsenz zeigt auf Discord den Sender, den du gerade ansiehst.",
+    "el-GR": "Το Free TV είναι το διαδικτυακό πρόγραμμα αναπαραγωγής ζωντανής τηλεόρασης του γαλλικού παρόχου υπηρεσιών διαδικτύου Free. Οι συνδρομητές του Freebox μπορούν να παρακολουθούν γαλλικά κανάλια μέσω του προγράμματος περιήγησης. Αυτή η παρουσία δείχνει στο Discord το κανάλι που παρακολουθείτε.",
+    "ja-JP": "Free TVは、フランスのISPであるFreeが提供するウェブ版ライブテレビプレーヤーです。Freeboxの加入者は、ブラウザからフランスのチャンネルをストリーミングできます。このプレゼンスには、視聴中のチャンネルがDiscordに表示されます。",
+    "ko-KR": "Free TV는 프랑스 인터넷 서비스 제공업체 Free의 웹 라이브 TV 플레이어입니다. Freebox 가입자는 브라우저에서 프랑스 채널을 스트리밍할 수 있습니다. 이 프레즌스는 시청 중인 채널을 Discord에 표시합니다.",
+    "ms-MY": "Free TV ialah pemain TV langsung web daripada ISP Perancis, Free. Pelanggan Freebox boleh menstrim saluran Perancis daripada pelayar. Kehadiran ini menunjukkan saluran yang sedang anda tonton di Discord.",
+    "pl-PL": "Free TV to internetowy odtwarzacz telewizji na żywo od francuskiego dostawcy internetu Free. Abonenci Freebox mogą oglądać francuskie kanały w przeglądarce. Ta aktywność pokazuje na Discordzie oglądany przez Ciebie kanał.",
+    "pt-BR": "Free TV é o player web de TV ao vivo da operadora francesa Free. Assinantes da Freebox podem assistir a canais franceses pelo navegador. Esta presença mostra no Discord o canal que você está assistindo.",
+    "tr-TR": "Free TV, Fransız internet servis sağlayıcısı Free'nin web tabanlı canlı TV oynatıcısıdır. Freebox aboneleri Fransız kanallarını tarayıcıdan izleyebilir. Bu etkinlik, izlediğin kanalı Discord'da gösterir."
   },
   "features": {
     "en-US": [
@@ -27,6 +48,38 @@
     "es-ES": [
       "Muestra el canal en directo que estás viendo",
       "Actividad de navegación opcional fuera de la reproducción"
+    ],
+    "de-DE": [
+      "Zeigt den Live-Sender, den du ansiehst",
+      "Optionale Browsing-Aktivität, wenn nichts wiedergegeben wird"
+    ],
+    "el-GR": [
+      "Εμφανίζει το ζωντανό κανάλι που παρακολουθείτε",
+      "Προαιρετική δραστηριότητα περιήγησης όταν δεν αναπαράγεται τίποτα"
+    ],
+    "ja-JP": [
+      "視聴中のライブチャンネルを表示",
+      "何も再生していないときの任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "시청 중인 실시간 채널 표시",
+      "재생 중인 콘텐츠가 없을 때 선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Menunjukkan saluran langsung yang anda tonton",
+      "Aktiviti penyemakan imbas pilihan apabila tiada apa-apa dimainkan"
+    ],
+    "pl-PL": [
+      "Pokazuje oglądany kanał na żywo",
+      "Opcjonalna aktywność podczas przeglądania, gdy nic nie jest odtwarzane"
+    ],
+    "pt-BR": [
+      "Mostra o canal ao vivo que você está assistindo",
+      "Atividade de navegação opcional quando nada estiver sendo reproduzido"
+    ],
+    "tr-TR": [
+      "İzlediğin canlı kanalı gösterir",
+      "Hiçbir şey oynatılmadığında isteğe bağlı gezinme etkinliği"
     ]
   }
 }

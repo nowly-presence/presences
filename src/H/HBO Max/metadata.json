@@ -1,19 +1,40 @@
 {
   "name": "HBO Max",
-  "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["play.hbomax.com"],
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "play.hbomax.com"
+  ],
   "regExp": "^https?://play\\.hbomax\\.com/",
   "color": "#0014A4",
   "category": "streaming",
   "description": {
     "en-US": "Show what you're watching on HBO Max.",
     "fr-FR": "Affichez ce que vous regardez sur HBO Max.",
-    "es-ES": "Muestra lo que estás viendo en HBO Max."
+    "es-ES": "Muestra lo que estás viendo en HBO Max.",
+    "de-DE": "Zeige, was du auf HBO Max ansiehst.",
+    "el-GR": "Εμφάνιση όσων παρακολουθείτε στο HBO Max.",
+    "ja-JP": "HBO Maxで視聴中のコンテンツを表示します。",
+    "ko-KR": "HBO Max에서 시청 중인 콘텐츠를 표시합니다.",
+    "ms-MY": "Tunjukkan kandungan yang anda tonton di HBO Max.",
+    "pl-PL": "Pokazuj, co oglądasz w HBO Max.",
+    "pt-BR": "Mostrar o que você está assistindo na HBO Max.",
+    "tr-TR": "HBO Max'te ne izlediğini göster."
   },
   "longDescription": {
     "en-US": "HBO Max streams series, movies, and originals (formerly known as Max). This presence shows the title you're watching, with playback state when available.",
     "fr-FR": "HBO Max diffuse des séries, films et productions originales (anciennement Max). Cette présence affiche le titre que vous regardez, avec l'état de lecture lorsqu'il est disponible.",
-    "es-ES": "HBO Max emite series, películas y originales (antes Max). Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible."
+    "es-ES": "HBO Max emite series, películas y originales (antes Max). Esta presencia muestra el título que estás viendo, con el estado de reproducción cuando esté disponible.",
+    "de-DE": "HBO Max streamt Serien, Filme und Originals (früher bekannt als Max). Diese Aktivität zeigt den Titel, den du gerade ansiehst, sowie den Wiedergabestatus, sofern verfügbar.",
+    "el-GR": "Το HBO Max μεταδίδει σειρές, ταινίες και πρωτότυπες παραγωγές (παλαιότερα γνωστό ως Max). Αυτή η παρουσία δείχνει τον τίτλο που παρακολουθείτε, μαζί με την κατάσταση αναπαραγωγής όταν είναι διαθέσιμη.",
+    "ja-JP": "HBO Maxでは、シリーズ、映画、オリジナル作品をストリーミングできます（旧称Max）。このプレゼンスには、視聴中のタイトルと、利用可能な場合は再生状態が表示されます。",
+    "ko-KR": "HBO Max에서는 시리즈, 영화, 오리지널 콘텐츠를 스트리밍할 수 있습니다(이전 명칭: Max). 이 프레즌스는 시청 중인 콘텐츠의 제목과, 가능한 경우 재생 상태를 표시합니다.",
+    "ms-MY": "HBO Max menstrim siri, filem dan kandungan asli (sebelum ini dikenali sebagai Max). Kehadiran ini menunjukkan tajuk yang sedang anda tonton, berserta status main balik apabila tersedia.",
+    "pl-PL": "HBO Max oferuje seriale, filmy i produkcje oryginalne (wcześniej serwis nosił nazwę Max). Ta aktywność pokazuje oglądany przez Ciebie tytuł oraz, jeśli to możliwe, stan odtwarzania.",
+    "pt-BR": "A HBO Max transmite séries, filmes e produções originais (anteriormente conhecida como Max). Esta presença mostra o título que você está assistindo e, quando disponível, o estado da reprodução.",
+    "tr-TR": "HBO Max; diziler, filmler ve orijinal yapımlar yayınlar (eski adıyla Max). Bu etkinlik, izlediğin içeriğin adını ve mevcut olduğunda oynatma durumunu gösterir."
   },
   "features": {
     "en-US": [
@@ -33,6 +54,54 @@
       "Sigue reproducción y pausa",
       "Modo privado opcional",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt den aktuellen Titel",
+      "Zeigt den Wiedergabe- oder Pausenstatus",
+      "Optionaler Datenschutzmodus",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει τον τρέχοντα τίτλο",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
+      "Προαιρετική λειτουργία απορρήτου",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "現在のタイトルを検出",
+      "再生中・一時停止中の状態を追跡",
+      "任意のプライバシーモード",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "현재 콘텐츠 제목 감지",
+      "재생 및 일시 정지 상태 표시",
+      "선택적 개인정보 보호 모드",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan tajuk semasa",
+      "Menjejaki status sedang dimainkan dan dijeda",
+      "Mod privasi pilihan",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa bieżący tytuł",
+      "Śledzi stan odtwarzania i wstrzymania",
+      "Opcjonalny tryb prywatności",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta o título atual",
+      "Acompanha os estados de reprodução e pausa",
+      "Modo de privacidade opcional",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Mevcut içeriğin adını algılar",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder",
+      "İsteğe bağlı gizlilik modu",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   }
 }

@@ -1,0 +1,13 @@
+{
+  "browsing": "둘러보는 중",
+  "searching": "검색 중",
+  "playing": "플레이 중",
+  "paused": "일시 정지",
+  "browsingHome": "홈 둘러보는 중",
+  "viewingSeries": "시리즈 보는 중",
+  "sharePlayRoom": "SharePlay 방에 참여 중",
+  "watchEpisode": "에피소드 보기",
+  "watchShow": "프로그램 보기",
+  "movie": "영화",
+  "seasonEpisode": "시즌 {season}, 에피소드 {episode}"
+}

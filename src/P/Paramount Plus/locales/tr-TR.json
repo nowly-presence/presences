@@ -1,0 +1,17 @@
+{
+  "browsing": "Göz atıyor",
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "liveTv": "Canlı TV",
+  "watchEpisode": "Bölümü İzle",
+  "watchNow": "Şimdi İzle",
+  "browsingHome": "Ana sayfaya göz atıyor",
+  "searchingFor": "Aranan:",
+  "browsingMyList": "Listem'e göz atıyor",
+  "viewingShow": "Bir programı görüntülüyor",
+  "viewingMovie": "Bir filmi görüntülüyor",
+  "viewingCollection": "Bir koleksiyonu görüntülüyor",
+  "browsingLiveTv": "Canlı TV'ye göz atıyor",
+  "browsingNamed": "{name} inceleniyor",
+  "browsingBrands": "Markalara göz atıyor"
+}

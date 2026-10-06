@@ -4,19 +4,37 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["music.youtube.com"],
+  "url": [
+    "music.youtube.com"
+  ],
   "regExp": "^https?://music\\.youtube\\.com/",
   "color": "#FF0000",
   "category": "music",
   "description": {
     "en-US": "Show the track you're listening to on YouTube Music.",
     "fr-FR": "Affichez le titre que vous écoutez sur YouTube Music.",
-    "es-ES": "Muestra la canción que estás escuchando en YouTube Music."
+    "es-ES": "Muestra la canción que estás escuchando en YouTube Music.",
+    "de-DE": "Zeige den Titel, den du auf YouTube Music hörst.",
+    "el-GR": "Εμφάνιση του κομματιού που ακούτε στο YouTube Music.",
+    "ja-JP": "YouTube Musicで聴いている曲を表示します。",
+    "ko-KR": "YouTube Music에서 듣고 있는 트랙을 표시합니다.",
+    "ms-MY": "Tunjukkan lagu yang anda dengar di YouTube Music.",
+    "pl-PL": "Pokazuj utwór słuchany w YouTube Music.",
+    "pt-BR": "Mostrar a faixa que você está ouvindo no YouTube Music.",
+    "tr-TR": "YouTube Music'te dinlediğin parçayı göster."
   },
   "longDescription": {
     "en-US": "YouTube Music is Google's music streaming service. This presence shows the track you're listening to - title, artist, playback state, progress, and artwork when available.",
     "fr-FR": "YouTube Music est le service de streaming musical de Google. Cette présence affiche le titre que vous écoutez - morceau, artiste, état de lecture, progression et pochette lorsqu'elle est disponible.",
-    "es-ES": "YouTube Music es el servicio de streaming musical de Google. Esta presencia muestra la canción que estás escuchando: título, artista, estado de reproducción, progreso y portada cuando esté disponible."
+    "es-ES": "YouTube Music es el servicio de streaming musical de Google. Esta presencia muestra la canción que estás escuchando: título, artista, estado de reproducción, progreso y portada cuando esté disponible.",
+    "de-DE": "YouTube Music ist der Musikstreamingdienst von Google. Diese Aktivität zeigt den Titel, den du gerade hörst – einschließlich Titelname, Interpret, Wiedergabestatus, Fortschritt und Cover, sofern verfügbar.",
+    "el-GR": "Το YouTube Music είναι η υπηρεσία ροής μουσικής της Google. Αυτή η παρουσία εμφανίζει το κομμάτι που ακούτε — τίτλο, καλλιτέχνη, κατάσταση αναπαραγωγής, πρόοδο και εξώφυλλο, όταν είναι διαθέσιμο.",
+    "ja-JP": "YouTube MusicはGoogleの音楽ストリーミングサービスです。このプレゼンスには、再生中の曲のタイトル、アーティスト、再生状態、進行状況、および利用可能な場合はアートワークが表示されます。",
+    "ko-KR": "YouTube Music은 Google의 음악 스트리밍 서비스입니다. 이 활동 상태에는 현재 듣고 있는 트랙의 제목, 아티스트, 재생 상태, 진행 상황과 가능한 경우 아트워크가 표시됩니다.",
+    "ms-MY": "YouTube Music ialah perkhidmatan penstriman muzik Google. Presence ini memaparkan lagu yang sedang anda dengar—tajuk, artis, status main balik, kemajuan dan karya seni apabila tersedia.",
+    "pl-PL": "YouTube Music to należąca do Google usługa strumieniowego przesyłania muzyki. Ta aktywność pokazuje słuchany utwór — tytuł, wykonawcę, stan odtwarzania, postęp oraz okładkę, jeśli jest dostępna.",
+    "pt-BR": "O YouTube Music é o serviço de streaming de música do Google. Este status mostra a faixa que você está ouvindo: título, artista, estado da reprodução, progresso e capa, quando disponível.",
+    "tr-TR": "YouTube Music, Google'ın müzik yayın hizmetidir. Bu durum, dinlediğiniz parçanın adını, sanatçısını, oynatma durumunu, ilerleme bilgisini ve mevcut olduğunda kapak görselini gösterir."
   },
   "features": {
     "en-US": [
@@ -39,6 +57,62 @@
       "Sigue el progreso de escucha",
       "Muestra la portada del álbum",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt den aktuellen Song",
+      "Zeigt Titel und Künstler",
+      "Erfasst den Hörfortschritt",
+      "Zeigt das Albumcover an",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει το τρέχον κομμάτι",
+      "Εμφανίζει τίτλο και καλλιτέχνη",
+      "Παρακολουθεί την πρόοδο ακρόασης",
+      "Εμφανίζει το εξώφυλλο του άλμπουμ",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "現在の楽曲を検出",
+      "タイトルとアーティストを表示",
+      "再生の進行状況を追跡",
+      "アルバムアートワークを表示",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "현재 트랙 감지",
+      "제목과 아티스트 표시",
+      "청취 진행 상황 표시",
+      "앨범 아트워크 표시",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan lagu semasa",
+      "Menunjukkan tajuk dan artis",
+      "Menjejaki kemajuan mendengar",
+      "Memaparkan karya seni album",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa bieżący utwór",
+      "Pokazuje tytuł i wykonawcę",
+      "Śledzi postęp słuchania",
+      "Wyświetla okładkę albumu",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta a faixa atual",
+      "Mostra o título e o artista",
+      "Acompanha o progresso da reprodução",
+      "Exibe a capa do álbum",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Mevcut parçayı algılar",
+      "Başlığı ve sanatçıyı gösterir",
+      "Dinleme ilerlemesini takip eder",
+      "Albüm kapağını gösterir",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   }
 }

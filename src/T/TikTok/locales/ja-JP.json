@@ -1,0 +1,21 @@
+{
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "browsingFeed": "フィードを閲覧中",
+  "watchingVideo": "動画を視聴中",
+  "watchingLive": "ライブを視聴中",
+  "watchingLiveNamed": "ライブ視聴中 - {name}",
+  "browsingLiveCategories": "ライブカテゴリーを閲覧中",
+  "browsingNamed": "{name}を閲覧中",
+  "browsingLiveCategory": "ライブカテゴリーを閲覧中",
+  "viewingProfile": "プロフィールを表示中",
+  "browsingExplore": "Exploreを閲覧中",
+  "exploring": "探索中",
+  "browsingMessages": "メッセージを閲覧中",
+  "readingMessages": "メッセージを読んでいます",
+  "tiktok": "TikTok",
+  "viewTikTok": "TikTokを見る",
+  "viewProfile": "プロフィールを見る",
+  "viewCategory": "カテゴリーを見る",
+  "watchStream": "配信を見る"
+}

@@ -4,19 +4,38 @@
     "name": "Gaëtan H",
     "github": "steellgold"
   },
-  "url": ["primevideo.com", "www.primevideo.com"],
+  "url": [
+    "primevideo.com",
+    "www.primevideo.com"
+  ],
   "regExp": "^https?://(www\\.)?primevideo\\.com/",
   "color": "#0779FF",
   "category": "streaming",
   "description": {
     "en-US": "Show the movie, series, or Amazon Original you're watching on Prime Video.",
     "fr-FR": "Affichez le film, la série ou l'Amazon Original que vous regardez sur Prime Video.",
-    "es-ES": "Muestra la película, serie o Amazon Original que estás viendo en Prime Video."
+    "es-ES": "Muestra la película, serie o Amazon Original que estás viendo en Prime Video.",
+    "de-DE": "Zeige den Film, die Serie oder das Amazon Original, das du auf Prime Video ansiehst.",
+    "el-GR": "Εμφάνιση της ταινίας, της σειράς ή του Amazon Original που παρακολουθείτε στο Prime Video.",
+    "ja-JP": "Prime Videoで視聴中の映画、シリーズ、Amazon Originalを表示します。",
+    "ko-KR": "Prime Video에서 시청 중인 영화, 시리즈 또는 Amazon Original을 표시합니다.",
+    "ms-MY": "Tunjukkan filem, siri atau Amazon Original yang anda tonton di Prime Video.",
+    "pl-PL": "Pokazuj film, serial lub produkcję Amazon Original oglądaną w Prime Video.",
+    "pt-BR": "Mostrar o filme, a série ou o Amazon Original que você está assistindo no Prime Video.",
+    "tr-TR": "Prime Video'da izlediğin filmi, diziyi veya Amazon Original yapımını göster."
   },
   "longDescription": {
     "en-US": "Prime Video streams movies, series, live events, and Amazon Originals. This presence shows the title you're watching, including season, episode, and playback state.",
     "fr-FR": "Prime Video propose films, séries, événements en direct et Amazon Originals. Cette présence affiche le titre que vous regardez, avec la saison, l'épisode et l'état de lecture.",
-    "es-ES": "Prime Video ofrece películas, series, eventos en directo y Amazon Originals. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción."
+    "es-ES": "Prime Video ofrece películas, series, eventos en directo y Amazon Originals. Esta presencia muestra el título que estás viendo, con temporada, episodio y estado de reproducción.",
+    "de-DE": "Prime Video streamt Filme, Serien, Live-Events und Amazon Originals. Diese Aktivität zeigt den Titel, den du gerade ansiehst, einschließlich Staffel, Folge und Wiedergabestatus.",
+    "el-GR": "Το Prime Video μεταδίδει ταινίες, σειρές, ζωντανές εκδηλώσεις και Amazon Originals. Αυτή η παρουσία δείχνει τον τίτλο που παρακολουθείτε, καθώς και τη σεζόν, το επεισόδιο και την κατάσταση αναπαραγωγής.",
+    "ja-JP": "Prime Videoでは、映画、シリーズ、ライブイベント、Amazon Originalsをストリーミングできます。このプレゼンスには、シーズン、エピソード、再生状態を含む視聴中のタイトルが表示されます。",
+    "ko-KR": "Prime Video에서는 영화, 시리즈, 라이브 이벤트 및 Amazon Originals를 스트리밍할 수 있습니다. 이 프레즌스는 시즌, 에피소드 및 재생 상태를 포함해 시청 중인 콘텐츠의 제목을 표시합니다.",
+    "ms-MY": "Prime Video menstrim filem, siri, acara langsung dan Amazon Originals. Kehadiran ini menunjukkan tajuk yang sedang anda tonton, termasuk musim, episod dan status main balik.",
+    "pl-PL": "Prime Video oferuje filmy, seriale, wydarzenia na żywo i Amazon Originals. Ta aktywność pokazuje oglądany przez Ciebie tytuł, w tym sezon, odcinek i stan odtwarzania.",
+    "pt-BR": "O Prime Video transmite filmes, séries, eventos ao vivo e produções Amazon Originals. Esta presença mostra o título que você está assistindo, incluindo temporada, episódio e estado da reprodução.",
+    "tr-TR": "Prime Video; filmler, diziler, canlı etkinlikler ve Amazon Originals yapımları yayınlar. Bu etkinlik, sezon, bölüm ve oynatma durumu dâhil olmak üzere izlediğin içeriğin adını gösterir."
   },
   "features": {
     "en-US": [
@@ -36,6 +55,54 @@
       "Muestra título, temporada y episodio",
       "Sigue el estado en reproducción o en pausa",
       "Compatible con Amazon Originals"
+    ],
+    "de-DE": [
+      "Erkennt Filme und Serien automatisch",
+      "Zeigt Titel, Staffel und Folge",
+      "Zeigt den Wiedergabe- oder Pausenstatus",
+      "Unterstützt Amazon Originals"
+    ],
+    "el-GR": [
+      "Εντοπίζει αυτόματα ταινίες και σειρές",
+      "Εμφανίζει τίτλο, σεζόν και επεισόδιο",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
+      "Υποστηρίζει Amazon Originals"
+    ],
+    "ja-JP": [
+      "映画とシリーズを自動検出",
+      "タイトル、シーズン、エピソードを表示",
+      "再生中・一時停止中の状態を追跡",
+      "Amazon Originalsに対応"
+    ],
+    "ko-KR": [
+      "영화 및 시리즈 자동 감지",
+      "제목, 시즌 및 에피소드 표시",
+      "재생 및 일시 정지 상태 표시",
+      "Amazon Originals 지원"
+    ],
+    "ms-MY": [
+      "Mengesan filem dan siri secara automatik",
+      "Menunjukkan tajuk, musim dan episod",
+      "Menjejaki status sedang dimainkan dan dijeda",
+      "Menyokong Amazon Originals"
+    ],
+    "pl-PL": [
+      "Automatycznie wykrywa filmy i seriale",
+      "Pokazuje tytuł, sezon i odcinek",
+      "Śledzi stan odtwarzania i wstrzymania",
+      "Obsługuje produkcje Amazon Originals"
+    ],
+    "pt-BR": [
+      "Detecta filmes e séries automaticamente",
+      "Mostra o título, a temporada e o episódio",
+      "Acompanha os estados de reprodução e pausa",
+      "Compatível com Amazon Originals"
+    ],
+    "tr-TR": [
+      "Filmleri ve dizileri otomatik olarak algılar",
+      "Başlığı, sezonu ve bölümü gösterir",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder",
+      "Amazon Originals yapımlarını destekler"
     ]
   }
 }

@@ -1,0 +1,13 @@
+{
+  "browsing": "Περιήγηση",
+  "searching": "Αναζήτηση",
+  "playing": "Παίζει",
+  "paused": "Σε παύση",
+  "browsingHome": "Περιήγηση στην αρχική σελίδα",
+  "viewingSeries": "Προβολή σειράς",
+  "sharePlayRoom": "Σε δωμάτιο SharePlay",
+  "watchEpisode": "Παρακολούθηση επεισοδίου",
+  "watchShow": "Παρακολούθηση σειράς",
+  "movie": "Ταινία",
+  "seasonEpisode": "Σεζόν {season}, Επεισόδιο {episode}"
+}

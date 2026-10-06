@@ -1,0 +1,17 @@
+{
+  "browsing": "둘러보는 중",
+  "playing": "플레이 중",
+  "paused": "일시 정지",
+  "liveTv": "라이브 TV",
+  "watchEpisode": "에피소드 보기",
+  "watchNow": "지금 보기",
+  "browsingHome": "홈 둘러보는 중",
+  "searchingFor": "검색어:",
+  "browsingMyList": "My List 둘러보는 중",
+  "viewingShow": "프로그램 보는 중",
+  "viewingMovie": "영화 보는 중",
+  "viewingCollection": "컬렉션 보는 중",
+  "browsingLiveTv": "Live TV 둘러보는 중",
+  "browsingNamed": "{name} 둘러보는 중",
+  "browsingBrands": "브랜드 둘러보는 중"
+}
