@@ -22,12 +22,28 @@
   "description": {
     "en-US": "Show the movie, series, live channel, or replay you're watching on CANAL+.",
     "fr-FR": "Affichez le film, la série, la chaîne en direct ou le replay que vous regardez sur CANAL+.",
-    "es-ES": "Muestra la película, serie, canal en directo o replay que estás viendo en CANAL+."
+    "es-ES": "Muestra la película, serie, canal en directo o replay que estás viendo en CANAL+.",
+    "de-DE": "Zeige den Film, die Serie, den Live-Sender oder die Wiederholung, die du auf CANAL+ ansiehst.",
+    "el-GR": "Εμφάνιση της ταινίας, της σειράς, του ζωντανού καναλιού ή της επανάληψης που παρακολουθείτε στο CANAL+.",
+    "ja-JP": "CANAL+で視聴中の映画、シリーズ、ライブチャンネル、見逃し配信を表示します。",
+    "ko-KR": "CANAL+에서 시청 중인 영화, 시리즈, 실시간 채널 또는 다시보기를 표시합니다.",
+    "ms-MY": "Tunjukkan filem, siri, saluran langsung atau siaran ulangan yang anda tonton di CANAL+.",
+    "pl-PL": "Pokazuj film, serial, kanał na żywo lub powtórkę oglądaną w CANAL+.",
+    "pt-BR": "Mostrar o filme, a série, o canal ao vivo ou o replay que você está assistindo no CANAL+.",
+    "tr-TR": "CANAL+'ta izlediğin filmi, diziyi, canlı kanalı veya tekrar yayını göster."
   },
   "longDescription": {
     "en-US": "CANAL+ streams movies, series, live channels, sports, documentaries, and replays. This presence shows the title you're watching, including playback state and progress when available. Browsing activity is optional.",
     "fr-FR": "CANAL+ réunit films, séries, chaînes en direct, sport, documentaires et replays. Cette présence affiche le titre que vous regardez, avec l'état de lecture et la progression lorsqu'ils sont disponibles. L'activité de navigation est optionnelle.",
-    "es-ES": "CANAL+ reúne películas, series, canales en directo, deportes, documentales y repeticiones. Esta presencia muestra el título que estás viendo, con el estado de reproducción y el progreso cuando están disponibles. La actividad de navegación es opcional."
+    "es-ES": "CANAL+ reúne películas, series, canales en directo, deportes, documentales y repeticiones. Esta presencia muestra el título que estás viendo, con el estado de reproducción y el progreso cuando están disponibles. La actividad de navegación es opcional.",
+    "de-DE": "CANAL+ streamt Filme, Serien, Live-Sender, Sport, Dokumentationen und Wiederholungen. Diese Präsenz zeigt den Titel, den du gerade ansiehst, einschließlich Wiedergabestatus und -fortschritt, sofern verfügbar. Die Anzeige der Suchaktivität ist optional.",
+    "el-GR": "Το CANAL+ μεταδίδει ταινίες, σειρές, ζωντανά κανάλια, αθλητικά, ντοκιμαντέρ και επαναλήψεις. Αυτή η παρουσία εμφανίζει τον τίτλο που παρακολουθείτε, μαζί με την κατάσταση και την πρόοδο αναπαραγωγής, όταν είναι διαθέσιμες. Η δραστηριότητα περιήγησης είναι προαιρετική.",
+    "ja-JP": "CANAL+では、映画、シリーズ、ライブチャンネル、スポーツ、ドキュメンタリー、見逃し配信をストリーミングできます。このプレゼンスには視聴中のタイトルが表示され、利用可能な場合は再生状態と進行状況も表示されます。閲覧アクティビティの表示は任意です。",
+    "ko-KR": "CANAL+에서는 영화, 시리즈, 라이브 채널, 스포츠, 다큐멘터리 및 다시보기를 스트리밍합니다. 이 활동 상태에는 시청 중인 콘텐츠의 제목이 표시되며, 가능한 경우 재생 상태와 진행률도 표시됩니다. 탐색 활동 표시는 선택 사항입니다.",
+    "ms-MY": "CANAL+ menstrim filem, siri, saluran langsung, sukan, dokumentari dan siaran ulangan. Kehadiran ini menunjukkan tajuk yang sedang anda tonton, termasuk status main balik dan kemajuan apabila tersedia. Aktiviti pelayaran adalah pilihan.",
+    "pl-PL": "CANAL+ oferuje streaming filmów, seriali, kanałów na żywo, wydarzeń sportowych, filmów dokumentalnych i powtórek. Ta aktywność pokazuje tytuł oglądanej treści, a także stan i postęp odtwarzania, jeśli są dostępne. Wyświetlanie aktywności podczas przeglądania jest opcjonalne.",
+    "pt-BR": "O CANAL+ transmite filmes, séries, canais ao vivo, esportes, documentários e reprises. Esta presença mostra o título que você está assistindo, incluindo o estado e o progresso da reprodução quando disponíveis. A atividade de navegação é opcional.",
+    "tr-TR": "CANAL+; filmler, diziler, canlı kanallar, spor içerikleri, belgeseller ve tekrar yayınları sunar. Bu durum, izlediğin içeriğin adını ve mevcut olduğunda oynatma durumunu ve ilerlemeyi gösterir. Göz atma etkinliğini göstermek isteğe bağlıdır."
   },
   "features": {
     "en-US": [
@@ -50,6 +66,62 @@
       "Sigue el estado en reproducción o en pausa",
       "Muestra el progreso cuando se conoce la duración",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt das Video automatisch",
+      "Unterstützt Filme, Serien, Live-TV und Wiederholungen",
+      "Zeigt den Wiedergabe- oder Pausenstatus",
+      "Zeigt den Fortschritt, wenn die Dauer bekannt ist",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει αυτόματα το βίντεο",
+      "Υποστηρίζει ταινίες, σειρές, ζωντανή τηλεόραση και επαναλήψεις",
+      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
+      "Εμφανίζει την πρόοδο όταν είναι γνωστή η διάρκεια",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "動画を自動検出",
+      "映画、シリーズ、ライブTV、見逃し配信に対応",
+      "再生中・一時停止中の状態を追跡",
+      "再生時間が判明している場合に進行状況を表示",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "동영상 자동 감지",
+      "영화, 시리즈, 실시간 TV 및 다시보기 지원",
+      "재생 및 일시 정지 상태 표시",
+      "재생 시간을 알 수 있을 때 진행률 표시",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan video secara automatik",
+      "Menyokong filem, siri, TV langsung dan siaran ulangan",
+      "Menjejaki status sedang dimainkan dan dijeda",
+      "Menunjukkan kemajuan apabila tempoh diketahui",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Automatycznie wykrywa film",
+      "Obsługuje filmy, seriale, telewizję na żywo i powtórki",
+      "Śledzi stan odtwarzania i wstrzymania",
+      "Pokazuje postęp, gdy czas trwania jest znany",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta o vídeo automaticamente",
+      "Compatível com filmes, séries, TV ao vivo e replays",
+      "Acompanha os estados de reprodução e pausa",
+      "Mostra o progresso quando a duração é conhecida",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Videoyu otomatik olarak algılar",
+      "Filmleri, dizileri, canlı TV'yi ve tekrar yayınlarını destekler",
+      "Oynatılıyor ve duraklatıldı durumunu takip eder",
+      "Süre biliniyorsa ilerlemeyi gösterir",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   },
   "contributors": [
