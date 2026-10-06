@@ -1,0 +1,17 @@
+{
+  "browsing": "Przeglądanie",
+  "playing": "Gra w szachy",
+  "paused": "Wstrzymano",
+  "liveTv": "Telewizja na żywo",
+  "watchEpisode": "Obejrzyj odcinek",
+  "watchNow": "Obejrzyj teraz",
+  "browsingHome": "Przeglądanie strony głównej",
+  "searchingFor": "Wyszukiwanie:",
+  "browsingMyList": "Przeglądanie My List",
+  "viewingShow": "Przeglądanie programu",
+  "viewingMovie": "Przeglądanie filmu",
+  "viewingCollection": "Przeglądanie kolekcji",
+  "browsingLiveTv": "Przeglądanie Live TV",
+  "browsingNamed": "Przegląda {name}",
+  "browsingBrands": "Przeglądanie marek"
+}
