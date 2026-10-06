@@ -1,0 +1,16 @@
+{
+  "listeningToMusic": "Müzik dinliyor",
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "listen": "Dinle",
+  "searching": "Arıyor",
+  "viewingProfile": "Bir profili görüntülüyor",
+  "browsingDiscover": "Keşfet'e göz atıyor",
+  "browsingCharts": "Listelere göz atıyor",
+  "viewingNotifications": "Bildirimleri kontrol ediyor",
+  "viewingMessages": "Mesajları kontrol ediyor",
+  "browsingLibrary": "Kitaplığa göz atıyor",
+  "viewingSettings": "Ayarları görüntülüyor",
+  "browsingSoundCloud": "SoundCloud'a göz atıyor",
+  "viewProfile": "Profili görüntüle"
+}

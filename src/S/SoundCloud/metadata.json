@@ -1,19 +1,42 @@
 {
   "name": "SoundCloud",
-  "author": { "name": "Gaëtan H", "github": "steellgold" },
-  "url": ["soundcloud.com", "www.soundcloud.com", "m.soundcloud.com"],
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "soundcloud.com",
+    "www.soundcloud.com",
+    "m.soundcloud.com"
+  ],
   "regExp": "^https?://((www|m)\\.)?soundcloud\\.com/",
   "color": "#FF5500",
   "category": "music",
   "description": {
     "en-US": "Show the track you're listening to on SoundCloud.",
     "fr-FR": "Affichez le titre que vous écoutez sur SoundCloud.",
-    "es-ES": "Muestra la canción que estás escuchando en SoundCloud."
+    "es-ES": "Muestra la canción que estás escuchando en SoundCloud.",
+    "de-DE": "Zeige den Titel, den du auf SoundCloud hörst.",
+    "el-GR": "Εμφάνιση του κομματιού που ακούτε στο SoundCloud.",
+    "ja-JP": "SoundCloudで聴いている曲を表示します。",
+    "ko-KR": "SoundCloud에서 듣고 있는 트랙을 표시합니다.",
+    "ms-MY": "Tunjukkan lagu yang anda dengar di SoundCloud.",
+    "pl-PL": "Pokazuj utwór słuchany w SoundCloud.",
+    "pt-BR": "Mostrar a faixa que você está ouvindo no SoundCloud.",
+    "tr-TR": "SoundCloud'da dinlediğin parçayı göster."
   },
   "longDescription": {
     "en-US": "SoundCloud is an audio platform for artists and listeners. This presence shows the track you're playing - title, artist, playback state, and artwork when available.",
     "fr-FR": "SoundCloud est une plateforme audio pour artistes et auditeurs. Cette présence affiche le titre en lecture - morceau, artiste, état de lecture et pochette lorsqu'elle est disponible.",
-    "es-ES": "SoundCloud es una plataforma de audio para artistas y oyentes. Esta presencia muestra la pista que suena: título, artista, estado de reproducción y portada cuando esté disponible."
+    "es-ES": "SoundCloud es una plataforma de audio para artistas y oyentes. Esta presencia muestra la pista que suena: título, artista, estado de reproducción y portada cuando esté disponible.",
+    "de-DE": "SoundCloud ist eine Audioplattform für Künstler und Hörer. Dieser Status zeigt den Titel, den du abspielst – Titelname, Künstler, Wiedergabestatus und, sofern verfügbar, Cover.",
+    "el-GR": "Το SoundCloud είναι μια πλατφόρμα ήχου για καλλιτέχνες και ακροατές. Αυτή η κατάσταση εμφανίζει το κομμάτι που αναπαράγετε — τίτλο, καλλιτέχνη, κατάσταση αναπαραγωγής και εξώφυλλο, όταν είναι διαθέσιμο.",
+    "ja-JP": "SoundCloudは、アーティストとリスナーのためのオーディオプラットフォームです。このプレゼンスには、再生中の曲のタイトル、アーティスト、再生状態、および利用可能な場合はアートワークが表示されます。",
+    "ko-KR": "SoundCloud는 아티스트와 청취자를 위한 오디오 플랫폼입니다. 이 활동은 재생 중인 트랙의 제목, 아티스트, 재생 상태와 가능한 경우 아트워크를 표시합니다.",
+    "ms-MY": "SoundCloud ialah platform audio untuk artis dan pendengar. Presence ini menunjukkan lagu yang sedang anda mainkan — tajuk, artis, status main balik dan karya seni apabila tersedia.",
+    "pl-PL": "SoundCloud to platforma audio dla artystów i słuchaczy. Ta aktywność pokazuje odtwarzany utwór — tytuł, wykonawcę, stan odtwarzania oraz okładkę, jeśli jest dostępna.",
+    "pt-BR": "O SoundCloud é uma plataforma de áudio para artistas e ouvintes. Esta presença mostra a faixa que você está reproduzindo — título, artista, estado da reprodução e capa, quando disponível.",
+    "tr-TR": "SoundCloud, sanatçılar ve dinleyiciler için bir ses platformudur. Bu etkinlik, çaldığın parçanın başlığını, sanatçısını, oynatma durumunu ve mevcut olduğunda kapak görselini gösterir."
   },
   "features": {
     "en-US": [
@@ -36,6 +59,62 @@
       "Sigue el progreso de escucha",
       "Muestra la portada",
       "Actividad de navegación opcional"
+    ],
+    "de-DE": [
+      "Erkennt den aktuellen Song",
+      "Zeigt Titel und Künstler",
+      "Erfasst den Hörfortschritt",
+      "Zeigt das Cover an",
+      "Optionale Browsing-Aktivität"
+    ],
+    "el-GR": [
+      "Εντοπίζει το τρέχον κομμάτι",
+      "Εμφανίζει τίτλο και καλλιτέχνη",
+      "Παρακολουθεί την πρόοδο ακρόασης",
+      "Εμφανίζει το εξώφυλλο",
+      "Προαιρετική δραστηριότητα περιήγησης"
+    ],
+    "ja-JP": [
+      "現在の楽曲を検出",
+      "タイトルとアーティストを表示",
+      "再生の進行状況を追跡",
+      "アートワークを表示",
+      "任意の閲覧アクティビティ"
+    ],
+    "ko-KR": [
+      "현재 트랙 감지",
+      "제목과 아티스트 표시",
+      "청취 진행 상황 표시",
+      "아트워크 표시",
+      "선택적 탐색 활동"
+    ],
+    "ms-MY": [
+      "Mengesan lagu semasa",
+      "Menunjukkan tajuk dan artis",
+      "Menjejaki kemajuan mendengar",
+      "Memaparkan karya seni",
+      "Aktiviti penyemakan imbas pilihan"
+    ],
+    "pl-PL": [
+      "Wykrywa bieżący utwór",
+      "Pokazuje tytuł i wykonawcę",
+      "Śledzi postęp słuchania",
+      "Wyświetla grafikę",
+      "Opcjonalna aktywność podczas przeglądania"
+    ],
+    "pt-BR": [
+      "Detecta a faixa atual",
+      "Mostra o título e o artista",
+      "Acompanha o progresso da reprodução",
+      "Exibe a arte",
+      "Atividade de navegação opcional"
+    ],
+    "tr-TR": [
+      "Mevcut parçayı algılar",
+      "Başlığı ve sanatçıyı gösterir",
+      "Dinleme ilerlemesini takip eder",
+      "Kapak görselini gösterir",
+      "İsteğe bağlı gezinme etkinliği"
     ]
   }
 }

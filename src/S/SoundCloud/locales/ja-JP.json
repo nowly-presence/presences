@@ -1,0 +1,16 @@
+{
+  "listeningToMusic": "音楽を聴いています",
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "listen": "聴く",
+  "searching": "検索中",
+  "viewingProfile": "プロフィールを表示中",
+  "browsingDiscover": "Discoverを閲覧中",
+  "browsingCharts": "ランキングを閲覧中",
+  "viewingNotifications": "通知を確認中",
+  "viewingMessages": "メッセージを確認中",
+  "browsingLibrary": "ライブラリを閲覧中",
+  "viewingSettings": "設定を閲覧中",
+  "browsingSoundCloud": "SoundCloudを閲覧中",
+  "viewProfile": "プロフィールを見る"
+}
