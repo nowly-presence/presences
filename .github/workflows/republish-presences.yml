@@ -97,4 +97,4 @@ jobs:
               --pr "#$PR_NUMBER" \
               --pr-title "$PR_TITLE" \
               --author "$PR_AUTHOR"
-          done < <(printf '%s' "$SLUGS" | tr ',' '\n')
+          done < <(printf '%s\n' "$SLUGS" | tr ',' '\n')
