@@ -1,0 +1,15 @@
+{
+  "listeningToMusic": "Müzik dinliyor",
+  "playing": "Oynuyor",
+  "paused": "Duraklatıldı",
+  "listen": "Dinle",
+  "searching": "Arıyor",
+  "viewingPlaylist": "Bir çalma listesini görüntülüyor",
+  "viewingAlbum": "Bir albümü görüntülüyor",
+  "viewingArtist": "Bir sanatçıyı görüntülüyor",
+  "viewingMix": "Bir mix'i görüntülüyor",
+  "viewingVideo": "Bir videoyu görüntülüyor",
+  "viewingCollection": "Koleksiyonu görüntülüyor",
+  "exploring": "Tidal'ı keşfediyor",
+  "browsingTidal": "Tidal'a göz atıyor"
+}

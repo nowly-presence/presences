@@ -1,0 +1,15 @@
+{
+  "listeningToMusic": "音楽を聴いています",
+  "playing": "プレイ中",
+  "paused": "一時停止中",
+  "listen": "聴く",
+  "searching": "検索中",
+  "viewingPlaylist": "プレイリストを閲覧中",
+  "viewingAlbum": "アルバムを閲覧中",
+  "viewingArtist": "アーティストを閲覧中",
+  "viewingMix": "ミックスを閲覧中",
+  "viewingVideo": "動画を視聴中",
+  "viewingCollection": "コレクションを閲覧中",
+  "exploring": "Tidalを探索中",
+  "browsingTidal": "Tidalを閲覧中"
+}
