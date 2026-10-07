@@ -58,16 +58,16 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           mkdir -p .nolo
-          pnpm --dir packages/presences exec tsx scripts/nolo/collect-files.ts \
+          pnpm exec tsx scripts/nolo/collect-files.ts \
             --pull-request "${{ github.event.pull_request.number }}" \
             --output .nolo/files.json \
             --context-output .nolo/context.json
           BASE_SHA="${{ github.event.pull_request.base.sha }}" \
           HEAD_SHA="${{ github.event.pull_request.head.sha }}" \
-            pnpm --dir packages/presences exec tsx scripts/nolo/resolve-changes.ts \
+            pnpm exec tsx scripts/nolo/resolve-changes.ts \
               --files .nolo/files.json \
               --output .nolo/changes.json
-          pnpm --dir packages/presences exec tsx scripts/nolo/publish-selection.ts \
+          pnpm exec tsx scripts/nolo/publish-selection.ts \
             --input .nolo/changes.json
 
       - name: Credit PR author as contributor

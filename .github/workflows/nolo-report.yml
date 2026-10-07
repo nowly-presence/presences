@@ -62,7 +62,7 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          pnpm --dir packages/presences exec tsx scripts/nolo/collect-files.ts \
+          pnpm exec tsx scripts/nolo/collect-files.ts \
             --pull-request "$PULL_REQUEST_NUMBER" \
             --output "$NOLO_DIR/files.json" \
             --context-output "$NOLO_DIR/context.json"
@@ -90,7 +90,7 @@ jobs:
 
       - name: Resolve changed presences
         run: |
-          pnpm --dir packages/presences exec tsx scripts/nolo/resolve-changes.ts \
+          pnpm exec tsx scripts/nolo/resolve-changes.ts \
             --files "$NOLO_DIR/files.json" \
             --output "$NOLO_DIR/changes.json" \
             --selection-output "$NOLO_DIR/selection.json"
@@ -98,14 +98,14 @@ jobs:
       - name: Validate selected presences
         run: |
           export CHANGED_PRESENCES_JSON="$(cat "$NOLO_DIR/selection.json")"
-          pnpm --dir packages/presences exec tsx scripts/validate-assets.ts \
+          pnpm exec tsx scripts/validate-assets.ts \
             "$NOLO_DIR/pr" "$NOLO_DIR/assets.json"
-          pnpm --dir packages/presences exec tsx scripts/validate-locales.ts \
+          pnpm exec tsx scripts/validate-locales.ts \
             "$NOLO_DIR/pr" "$NOLO_DIR/locales.json"
 
       - name: Build professional report data
         run: |
-          pnpm --dir packages/presences exec tsx scripts/nolo/build-report.ts \
+          pnpm exec tsx scripts/nolo/build-report.ts \
             --root "$NOLO_DIR/pr" \
             --changes "$NOLO_DIR/changes.json" \
             --assets "$NOLO_DIR/assets.json" \
@@ -114,7 +114,7 @@ jobs:
             --head-ref "$HEAD_REF" \
             --head-repository "$HEAD_REPOSITORY" \
             --output "$NOLO_DIR/report.json"
-          pnpm --dir packages/presences exec tsx scripts/nolo/render-report-cli.ts \
+          pnpm exec tsx scripts/nolo/render-report-cli.ts \
             --input "$NOLO_DIR/report.json" \
             --output "$NOLO_DIR/report.md"
 
@@ -122,5 +122,5 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          pnpm --dir packages/presences exec tsx scripts/nolo/update-comment.ts \
+          pnpm exec tsx scripts/nolo/update-comment.ts \
             "$NOLO_DIR/report.json" "$NOLO_DIR/report.md"
