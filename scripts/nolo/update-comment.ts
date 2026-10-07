@@ -90,29 +90,6 @@ const applyLabels = async (report: NoloReportData): Promise<void> => {
   }
 }
 
-const updateCheck = async (report: NoloReportData, body: string): Promise<void> => {
-  const checkName = "Nolo / PR report"
-  const externalId = `nolo-pr-${pullRequest}`
-  const failed = report.presences.some(presence =>
-    Object.values(presence.validations).some(validation => validation.status === "failure"),
-  )
-  const conclusion = failed ? "failure" : "success"
-  const output = {
-    title: failed ? "Nolo found issues" : "Nolo validation passed",
-    summary: body.replace(/<!--.*?-->/gs, "").slice(0, 60_000),
-  }
-  const { data } = await request<{ check_runs: Array<{ id: number; external_id?: string }> }>(
-    `/repos/${repository}/commits/${report.headSha}/check-runs?check_name=${encodeURIComponent(checkName)}&per_page=100`,
-  )
-  const existing = data.check_runs.find(run => run.external_id === externalId)
-  const payload = { name: checkName, head_sha: report.headSha, status: "completed", conclusion, external_id: externalId, output }
-
-  if (existing) {
-    await request(`/repos/${repository}/check-runs/${existing.id}`, { method: "PATCH", body: JSON.stringify(payload) })
-  } else {
-    await request(`/repos/${repository}/check-runs`, { method: "POST", body: JSON.stringify(payload) })
-  }
-}
 
 const main = async (): Promise<void> => {
   const report = JSON.parse(readFileSync(process.argv[2] ?? "", "utf-8")) as NoloReportData
@@ -126,7 +103,6 @@ const main = async (): Promise<void> => {
   const body = readFileSync(process.argv[3] ?? "", "utf-8")
   const commentId = await upsertNoloComment({ github, owner, repo, issueNumber: pullRequest, body })
   await applyLabels(report)
-  await updateCheck(report, body)
   console.log(`Updated Nolo report comment ${commentId} for ${report.presences.length} presence(s).`)
 }
 

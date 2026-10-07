@@ -117,7 +117,7 @@ jobs:
             --input "$NOLO_DIR/report.json" \
             --output "$NOLO_DIR/report.md"
 
-      - name: Publish idempotent report, labels, and check
+      - name: Publish idempotent report and labels
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
