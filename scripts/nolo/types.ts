@@ -40,6 +40,7 @@ export type NoloPresenceReport = ChangedPresence & {
   world: string
   runAt: string
   validations: {
+    metadata: NoloValidation
     assets: NoloValidation
     locales: NoloValidation
   }
