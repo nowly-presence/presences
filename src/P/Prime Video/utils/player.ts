@@ -1,86 +1,173 @@
-export const findVideo = (): HTMLVideoElement | null => {
-  const selectors = [
-    'div[id^="dv-web-player"] video[src]',
-    "#dv-web-player video",
-    "#dv-web-player .atvwebplayersdk-video-surface video",
-    ".atvwebplayersdk-player-container video",
-    "video",
-  ] as const
+type DetailPage = {
+  title: string
+  image?: string
+  detailUrl: string
+  watchUrl?: string
+  trailer: boolean
+}
 
-  for (const selector of selectors) {
-    const video = document.querySelector<HTMLVideoElement>(selector)
-    if (video) return video
+type Playback = {
+  video: HTMLVideoElement
+  title: string
+  episode?: string
+  watchUrl?: string
+}
+
+const detailPath = /\/(?:detail|dp)\/[A-Z0-9]+(?:\/|$)/i
+
+const cleanUrl = (href: string, autoplay = false): string | undefined => {
+  const url = new URL(href, location.href)
+  if (url.origin !== location.origin || !detailPath.test(url.pathname)) return undefined
+  url.search = ""
+  url.hash = ""
+  // autoplay is functional, not a tracking parameter.
+  if (autoplay) url.searchParams.set("autoplay", "1")
+  return url.href
+}
+
+const findWatchUrl = (): string | undefined => {
+  const link = document.querySelector<HTMLAnchorElement>(
+    'a[data-testid="dp-atf-play-button"][href], a[data-automation-id="dp-atf-play-button"][href], a[data-testid="episodes-playbutton"][href]',
+  )
+  return link ? cleanUrl(link.href, true) : undefined
+}
+
+const findEpisode = (watchUrl: string | undefined): string | undefined => {
+  if (!watchUrl) return undefined
+  for (const item of document.querySelectorAll('[data-testid="episode-list-item"]')) {
+    const link = item.querySelector<HTMLAnchorElement>('a[data-testid="episodes-playbutton"][href]')
+    if (!link || cleanUrl(link.href, true) !== watchUrl) continue
+    const heading = item.querySelector("h3")?.textContent?.trim()
+    const match = heading?.match(/^(\d+)\.\s*(.*)$/)
+    const season = document.querySelector('[data-testid="dp-season-selector"] label')?.textContent?.match(/\d+/)?.[0]
+    return match && season ? `S${season}.E${match[1]} ${match[2]}`.trim() : heading
   }
-
-  return null
-}
-
-export const isActivePlayer = (video: HTMLVideoElement | null): video is HTMLVideoElement => {
-  if (!video || video.classList.contains("tst") || !document.body) return false
-
-  return window.getComputedStyle(document.body).overflow === "hidden"
-}
-
-export const findSeriesTitle = (): string | null => {
-  const el = document.querySelector(".atvwebplayersdk-title-text")
-  return el?.textContent?.trim() || null
-}
-
-export const findEpisodeInfo = (): { season?: string; episode?: string; episodeTitle?: string } | null => {
-  const el = document.querySelector(".atvwebplayersdk-episode-info")
-  if (!el?.textContent) return null
-
-  const text = el.textContent.trim()
-  const match = text.match(/S\.(\d+)\s*Ép\.(\d+)\s*(.*)/i)
-  if (match) {
-    return {
-      season: match[1],
-      episode: match[2],
-      episodeTitle: match[3]?.trim() || undefined,
-    }
-  }
-
-  return null
-}
-
-export const findTitleText = (): string | null => {
-  const selectors = [
-    ".atvwebplayersdk-player-container h1",
-    ".atvwebplayersdk-player-container [class*='title']",
-    ".DVWebNode-detail-atf-wrapper picture img",
-    ".DVWebNode-detail-atf-wrapper h1",
-    'h1[data-automation-id="title"]',
-  ] as const
-
-  for (const selector of selectors) {
-    const el = document.querySelector<HTMLElement | HTMLImageElement>(selector)
-    if (!el) continue
-    const text = el instanceof HTMLImageElement ? el.alt : el.textContent?.trim()
-    if (text) return text
-  }
-
-  return null
-}
-
-export const findBanner = (): string | undefined => {
-  const selectors = [
-    '[data-automation-id="hero-background"] img',
-    "#atf-full",
-    ".atvwebplayersdk-player-container img[src*='https']",
-    "main div[data-automation-id='hero-background'] img",
-  ] as const
-
-  for (const selector of selectors) {
-    const img = document.querySelector<HTMLImageElement>(selector)
-    if (img?.src) return img.src
-  }
-
   return undefined
 }
 
-export const findDescription = (): string | undefined => {
-  const el = document.querySelector('div[class^=synopsis] > span, [data-automation-id="synopsis"]')
-  return el?.textContent?.trim() || undefined
+export const readDetailPage = (): DetailPage | undefined => {
+  if (!detailPath.test(location.pathname)) return undefined
+  const heading = document.querySelector<HTMLElement>(
+    'h1[data-testid="title-art"], .DVWebNode-detail-atf-wrapper h1, h1[data-automation-id="title"]',
+  )
+  const title = heading?.querySelector("img")?.alt?.trim() || heading?.textContent?.trim()
+  if (!title) return undefined
+  const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href
+  const detailUrl = (canonical && cleanUrl(canonical)) || cleanUrl(location.href)
+  if (!detailUrl) return undefined
+  const image = document.querySelector<HTMLImageElement>(
+    '[data-automation-id="hero-background"] img, img#atf-full',
+  )
+  const trailerLink = document.querySelector<HTMLAnchorElement>('a[data-testid="trailer-button"][href]')
+  return {
+    title,
+    image: image?.currentSrc || image?.src || undefined,
+    detailUrl,
+    watchUrl: findWatchUrl(),
+    trailer: !!trailerLink && cleanUrl(trailerLink.href) === cleanUrl(location.href),
+  }
+}
+
+const isVisible = (element: HTMLElement): boolean => {
+  const style = getComputedStyle(element)
+  const bounds = element.getBoundingClientRect()
+  return style.display !== "none" && style.visibility !== "hidden" && bounds.width > 0 && bounds.height > 0
+}
+
+export const createPlaybackReader = () => {
+  let root: HTMLElement | undefined
+  let identity: string | undefined
+  let title: string | undefined
+  let episode: string | undefined
+  let watchUrl: string | undefined
+  let selectedWatchUrl: string | undefined
+  let selectedPath: string | undefined
+  let selectedTrailer = false
+  let trailer = false
+
+  document.addEventListener("click", event => {
+    const link = event.target instanceof Element
+      ? event.target.closest<HTMLAnchorElement>('a[href*="autoplay="]')
+      : null
+    if (link) {
+      selectedTrailer = link.matches('[data-testid="trailer-button"]') ||
+        new URL(link.href).searchParams.get("autoplay") === "trailer"
+      if (selectedTrailer) episode = undefined
+      selectedWatchUrl = selectedTrailer ? undefined : cleanUrl(link.href, true)
+      selectedPath = location.pathname
+    }
+  }, true)
+
+  const captureMetadata = () => {
+    const nextTitle = root?.querySelector(".atvwebplayersdk-title-text")?.textContent?.trim()
+    const nextEpisode = root?.querySelector(".atvwebplayersdk-episode-info")?.textContent?.trim()
+    if (nextTitle && nextTitle !== title) {
+      title = nextTitle
+      episode = undefined
+    }
+    // Controls are unmounted when idle. Absence must not erase known metadata.
+    if (nextEpisode && !trailer) {
+      const parts = nextEpisode.match(/^\D*(\d+)\D+(\d+)\s*(.*)$/)
+      episode = parts ? `S${parts[1]}.E${parts[2]} ${parts[3]}`.trim() : nextEpisode
+      for (const item of document.querySelectorAll('[data-testid="episode-list-item"]')) {
+        const episodeTitle = item.querySelector("h3")?.textContent?.trim().replace(/^\d+\.\s*/, "")
+        if (episodeTitle && nextEpisode.endsWith(episodeTitle)) {
+          const link = item.querySelector<HTMLAnchorElement>('a[data-testid="episodes-playbutton"][href]')
+          if (link) watchUrl = cleanUrl(link.href, true)
+          break
+        }
+      }
+    }
+  }
+
+  const readPlayback = (page: DetailPage | undefined): Playback | undefined => {
+    const nextIdentity = location.pathname
+    if (selectedPath && selectedPath !== nextIdentity) {
+      selectedPath = undefined
+      selectedWatchUrl = undefined
+      selectedTrailer = false
+    }
+    const nextRoot = [...document.querySelectorAll<HTMLElement>('[id^="dv-web-player"]')]
+      .find(isVisible)
+    const video = nextRoot && [...nextRoot.querySelectorAll<HTMLVideoElement>("video")]
+      .find(candidate => !candidate.classList.contains("tst") && isVisible(candidate))
+    // Never fall back to the ambient trailer or a hidden, preloaded player.
+    if (!nextRoot || !video || !page) {
+      root = undefined
+      identity = undefined
+      title = undefined
+      episode = undefined
+      watchUrl = undefined
+      return undefined
+    }
+
+    trailer = selectedTrailer || page.trailer || new URL(location.href).searchParams.get("autoplay") === "trailer"
+    if (identity !== nextIdentity || root !== nextRoot) {
+      root = nextRoot
+      identity = nextIdentity
+      title = page.title
+      watchUrl = selectedPath === nextIdentity ? selectedWatchUrl : page.watchUrl
+      watchUrl ||= page.watchUrl
+      // A trailer can share the series page but must not inherit its episode.
+      episode = trailer ? undefined : findEpisode(watchUrl)
+    }
+    if (trailer) episode = undefined
+    captureMetadata()
+    return { video, title: title || page.title, episode, watchUrl }
+  }
+
+  // Capture controls when they mount, even between the extension's update ticks.
+  const metadataSelector = ".atvwebplayersdk-title-text, .atvwebplayersdk-episode-info"
+  const observer = new MutationObserver(records => {
+    if (records.some(record =>
+      (record.target instanceof Element && record.target.closest(metadataSelector)) ||
+      (record.target.parentElement?.closest(metadataSelector)) ||
+      [...record.addedNodes].some(node => node instanceof Element &&
+        (node.matches(metadataSelector) || node.querySelector(metadataSelector))),
+    )) readPlayback(readDetailPage())
+  })
+  observer.observe(document, { childList: true, subtree: true, characterData: true })
+  return readPlayback
 }
 
 export const findSearchQuery = (): string | undefined => {

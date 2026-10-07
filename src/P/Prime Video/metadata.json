@@ -49,68 +49,79 @@
     "en-US": [
       "Detects movies and series automatically",
       "Shows title, season, and episode",
-      "Tracks playing and paused state",
-      "Supports Amazon Originals"
+      "Tracks playback, pause, and progress even when player controls are hidden",
+      "Supports Amazon Originals",
+      "Provides buttons linking to the title detail page and playback"
     ],
     "fr-FR": [
       "Détecte automatiquement films et séries",
       "Affiche le titre, la saison et l'épisode",
-      "Suit l'état en lecture ou en pause",
-      "Prend en charge les Amazon Originals"
+      "Suit la lecture, la pause et la progression même lorsque les contrôles du lecteur sont masqués",
+      "Prend en charge les Amazon Originals",
+      "Propose des boutons vers la fiche du titre et sa lecture"
     ],
     "es-ES": [
       "Detecta películas y series automáticamente",
       "Muestra título, temporada y episodio",
-      "Sigue el estado en reproducción o en pausa",
-      "Compatible con Amazon Originals"
+      "Sigue la reproducción, la pausa y el progreso incluso con los controles del reproductor ocultos",
+      "Compatible con Amazon Originals",
+      "Ofrece botones con enlaces a la ficha del título y a su reproducción"
     ],
     "de-DE": [
       "Erkennt Filme und Serien automatisch",
       "Zeigt Titel, Staffel und Folge",
-      "Zeigt den Wiedergabe- oder Pausenstatus",
-      "Unterstützt Amazon Originals"
+      "Zeigt Wiedergabe, Pause und Fortschritt auch bei ausgeblendeten Player-Steuerelementen",
+      "Unterstützt Amazon Originals",
+      "Bietet Buttons zur Detailseite des Titels und zur Wiedergabe"
     ],
     "el-GR": [
       "Εντοπίζει αυτόματα ταινίες και σειρές",
       "Εμφανίζει τίτλο, σεζόν και επεισόδιο",
-      "Παρακολουθεί την κατάσταση αναπαραγωγής και παύσης",
-      "Υποστηρίζει Amazon Originals"
+      "Παρακολουθεί την αναπαραγωγή, την παύση και την πρόοδο ακόμη και όταν τα χειριστήρια είναι κρυμμένα",
+      "Υποστηρίζει Amazon Originals",
+      "Παρέχει κουμπιά με συνδέσμους προς τη σελίδα λεπτομερειών του τίτλου και την αναπαραγωγή του"
     ],
     "ja-JP": [
       "映画とシリーズを自動検出",
       "タイトル、シーズン、エピソードを表示",
-      "再生中・一時停止中の状態を追跡",
-      "Amazon Originalsに対応"
+      "プレーヤーの操作ボタンが非表示でも再生、一時停止、進行状況を追跡",
+      "Amazon Originalsに対応",
+      "作品の詳細ページと再生へのリンクボタンを表示"
     ],
     "ko-KR": [
       "영화 및 시리즈 자동 감지",
       "제목, 시즌 및 에피소드 표시",
-      "재생 및 일시 정지 상태 표시",
-      "Amazon Originals 지원"
+      "플레이어 컨트롤이 숨겨져 있어도 재생, 일시 정지 및 진행 상황 추적",
+      "Amazon Originals 지원",
+      "작품 상세 페이지와 재생으로 연결되는 버튼 제공"
     ],
     "ms-MY": [
       "Mengesan filem dan siri secara automatik",
       "Menunjukkan tajuk, musim dan episod",
-      "Menjejaki status sedang dimainkan dan dijeda",
-      "Menyokong Amazon Originals"
+      "Menjejaki main balik, jeda dan kemajuan walaupun kawalan pemain tersembunyi",
+      "Menyokong Amazon Originals",
+      "Menyediakan butang pautan ke halaman butiran tajuk dan main balik"
     ],
     "pl-PL": [
       "Automatycznie wykrywa filmy i seriale",
       "Pokazuje tytuł, sezon i odcinek",
-      "Śledzi stan odtwarzania i wstrzymania",
-      "Obsługuje produkcje Amazon Originals"
+      "Śledzi odtwarzanie, pauzę i postęp nawet przy ukrytych elementach sterowania",
+      "Obsługuje produkcje Amazon Originals",
+      "Udostępnia przyciski prowadzące do strony ze szczegółami tytułu i jego odtwarzania"
     ],
     "pt-BR": [
       "Detecta filmes e séries automaticamente",
       "Mostra o título, a temporada e o episódio",
-      "Acompanha os estados de reprodução e pausa",
-      "Compatível com Amazon Originals"
+      "Acompanha a reprodução, a pausa e o progresso mesmo com os controles do player ocultos",
+      "Compatível com Amazon Originals",
+      "Oferece botões com links para a página de detalhes do título e sua reprodução"
     ],
     "tr-TR": [
       "Filmleri ve dizileri otomatik olarak algılar",
       "Başlığı, sezonu ve bölümü gösterir",
-      "Oynatılıyor ve duraklatıldı durumunu takip eder",
-      "Amazon Originals yapımlarını destekler"
+      "Oynatıcı kontrolleri gizliyken bile oynatmayı, duraklatmayı ve ilerlemeyi takip eder",
+      "Amazon Originals yapımlarını destekler",
+      "İçeriğin ayrıntı sayfasına ve oynatılmasına bağlantı veren düğmeler sunar"
     ]
   }
 }

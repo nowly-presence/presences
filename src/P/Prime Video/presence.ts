@@ -1,14 +1,6 @@
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { handleBrowsingActivity } from "./utils/browsing"
-import {
-  findBanner,
-  findDescription,
-  findEpisodeInfo,
-  findSeriesTitle,
-  findTitleText,
-  findVideo,
-  isActivePlayer,
-} from "./utils/player"
+import { createPlaybackReader, readDetailPage } from "./utils/player"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -105,64 +97,47 @@ const settings = Presence.Settings({
 })
 
 const presence = new Presence(settings)
+const readPlayback = createPlaybackReader()
 
 presence.on("UpdateData", async (ctx) => {
   const strings = await presence.getStrings<typeof enUS>()
   const { pathname } = document.location
-  const isOnDetailPage = pathname.includes("/detail/")
+  const page = readDetailPage()
+  const playback = readPlayback(page)
 
-  if (isOnDetailPage) {
-    const seriesTitle = findSeriesTitle()
-    const episode = findEpisodeInfo()
-    const titleText = seriesTitle || findTitleText()
-    const video = findVideo()
+  if (page) {
+    const buttons = [{ label: strings.viewDetails, url: page.detailUrl }]
+    const watchUrl = playback?.watchUrl || page.watchUrl
+    if (watchUrl) buttons.push({ label: strings.watchNow, url: watchUrl })
 
-    if (isActivePlayer(video) && titleText) {
-      const bannerImg = findBanner()
-      const description = findDescription()
-
-      let state: string | undefined
-
-      if (episode) {
-        state = `S${episode.season}.E${episode.episode}`
-        if (episode.episodeTitle) {
-          state += ` ${episode.episodeTitle}`
-        }
-      } else {
-        const desc = description && description !== titleText ? description : undefined
-        state = desc
-      }
-
+    if (playback) {
+      const { video, title, episode } = playback
       const data: Parameters<typeof presence.setActivity>[0] = {
-        name: ctx.settings.showMediaTitle ? titleText ?? undefined : undefined,
-        details: ctx.settings.showMediaTitle && titleText ? "Prime Video" : titleText ?? undefined,
-        state,
-        largeImageKey: ctx.settings.hideThumbnail ? Assets.Logo : bannerImg || Assets.Logo,
-        largeImageText: titleText ?? undefined,
+        name: ctx.settings.showMediaTitle ? title : undefined,
+        details: ctx.settings.showMediaTitle ? "Prime Video" : title,
+        state: episode,
+        largeImageKey: ctx.settings.hideThumbnail ? Assets.Logo : page.image || Assets.Logo,
+        largeImageText: title,
+        smallImageKey: video.paused || video.ended ? "pause" : "play",
+        smallImageText: video.paused || video.ended ? strings.paused : strings.playing,
         type: PresenceType.Watching,
+        buttons,
       }
-
-      if (video.paused) {
-        data.smallImageKey = "pause"
-        data.smallImageText = strings.paused
-      } else {
-        data.smallImageKey = "play"
-        data.smallImageText = strings.playing
+      if (!video.paused && !video.ended && Number.isFinite(video.duration) && video.duration > 0) {
         Object.assign(data, createMediaTimestamps(video))
       }
-
       await presence.setActivity(data)
       return
     }
 
-    if (titleText) {
-      const bannerImg = findBanner()
+    if (ctx.settings.showBrowsing) {
       await presence.setActivity({
         details: strings.viewingDetails,
-        state: titleText,
-        largeImageKey: ctx.settings.hideThumbnail ? Assets.Logo : bannerImg || Assets.Logo,
-        largeImageText: titleText,
+        state: page.title,
+        largeImageKey: ctx.settings.hideThumbnail ? Assets.Logo : page.image || Assets.Logo,
+        largeImageText: page.title,
         type: PresenceType.Watching,
+        buttons,
       })
       return
     }
