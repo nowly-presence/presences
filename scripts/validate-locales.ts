@@ -6,6 +6,17 @@ const OUTPUT_FILE = process.argv[3] || "";
 
 const BASE_LOCALE = "en-US";
 
+const selectedPresencePaths = (): Set<string> | null => {
+  const raw = process.env.CHANGED_PRESENCES_JSON
+  if (!raw) return null
+
+  const parsed: unknown = JSON.parse(raw)
+  if (!Array.isArray(parsed) || parsed.some(path => typeof path !== "string")) {
+    throw new Error("CHANGED_PRESENCES_JSON must be a JSON array of presence paths")
+  }
+
+  return new Set(parsed)
+}
 const slug = (name: string): string => name.toLowerCase().replace(/\s+/g, "-");
 
 type LocaleKeyReport = {
@@ -153,7 +164,8 @@ const validatePresence = (dir: string, slugName: string, presencePath: string, n
 
 const main = async (): Promise<void> => {
   const srcDir = join(BASE_DIR, "src")
-  type PresenceInfo = { dir: string; slug: string; dirName: string; path: string; name: string }
+  type PresenceInfo = { dir: string; slug: string; path: string; name: string }
+  const selectedPaths = selectedPresencePaths()
 
   const presences: PresenceInfo[] = []
 
@@ -172,17 +184,13 @@ const main = async (): Promise<void> => {
         // keep folder name as fallback
       }
 
-      presences.push({ dir: join(letterDir, sub.name), slug: slug(sub.name), dirName: sub.name, path: `${entry.name}/${sub.name}`, name })
+      presences.push({ dir: join(letterDir, sub.name), slug: slug(sub.name), path: `${entry.name}/${sub.name}`, name })
     }
   }
 
-  const changedDirs: string[] = process.env.CHANGED_DIRS
-    ? process.env.CHANGED_DIRS.split(",").map(s => s.trim()).filter(Boolean)
-    : presences.map(p => p.dirName)
-
   const results: PresenceResult[] = []
   for (const p of presences) {
-    if (!changedDirs.includes(p.dirName)) continue
+    if (selectedPaths && !selectedPaths.has(p.path)) continue
     const r = validatePresence(p.dir, p.slug, p.path, p.name)
     if (r) results.push(r)
   }

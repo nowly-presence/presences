@@ -13,6 +13,17 @@ const ASSET_RULES: Record<string, { w: number; h: number }> = {
 const THUMBNAIL_NAMES = ["thumbnail.png", "thumbnail.jpg", "thumbnail.jpeg"];
 const IMAGE_EXTS = [".png", ".jpg", ".jpeg", ".gif", ".webp"];
 
+const selectedPresencePaths = (): Set<string> | null => {
+  const raw = process.env.CHANGED_PRESENCES_JSON
+  if (!raw) return null
+
+  const parsed: unknown = JSON.parse(raw)
+  if (!Array.isArray(parsed) || parsed.some(path => typeof path !== "string")) {
+    throw new Error("CHANGED_PRESENCES_JSON must be a JSON array of presence paths")
+  }
+
+  return new Set(parsed)
+}
 const slug = (name: string): string => name.toLowerCase().replace(/\s+/g, "-");
 
 type AssetStatus = "valid" | "missing" | "wrong_size" | "unreadable";
@@ -167,8 +178,9 @@ const validatePresence = async (dir: string, slugName: string, presencePath: str
 }
 
 const main = async (): Promise<void> => {
-  const srcDir = join(BASE_DIR, "src");
-  type PresenceInfo = { dir: string; slug: string; dirName: string; path: string };
+  const srcDir = join(BASE_DIR, "src")
+  type PresenceInfo = { dir: string; slug: string; path: string };
+  const selectedPaths = selectedPresencePaths()
 
   const presences: PresenceInfo[] = [];
 
@@ -179,17 +191,13 @@ const main = async (): Promise<void> => {
       if (!sub.isDirectory()) continue;
       const metaPath = join(letterDir, sub.name, "metadata.json");
       if (!existsSync(metaPath)) continue;
-      presences.push({ dir: join(letterDir, sub.name), slug: slug(sub.name), dirName: sub.name, path: `${entry.name}/${sub.name}` });
+      presences.push({ dir: join(letterDir, sub.name), slug: slug(sub.name), path: `${entry.name}/${sub.name}` });
     }
   }
 
-  const changedDirs: string[] = process.env.CHANGED_DIRS
-    ? process.env.CHANGED_DIRS.split(",").map(s => s.trim()).filter(Boolean)
-    : presences.map(p => p.dirName);
-
   const results: PresenceResult[] = [];
   for (const p of presences) {
-    if (!changedDirs.includes(p.dirName)) continue;
+    if (selectedPaths && !selectedPaths.has(p.path)) continue;
     const r = await validatePresence(p.dir, p.slug, p.path);
     if (r) results.push(r);
   }
