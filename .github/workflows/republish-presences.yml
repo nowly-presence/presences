@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       slugs:
-        description: "Comma-separated presence slugs to publish"
+        description: "One presence slug per line"
         required: true
         type: string
       pr_number:
@@ -36,26 +36,26 @@ jobs:
     steps:
       - name: Generate token
         id: app-token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
         with:
           app-id: ${{ secrets.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
           repositories: presences,internal-cli
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: stable
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: nowly-presence/internal-cli
           token: ${{ steps.app-token.outputs.token }}
           path: .internal-cli
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
 
@@ -83,9 +83,12 @@ jobs:
         run: |
           set -euo pipefail
 
-          while IFS= read -r raw_slug; do
-            slug=$(printf '%s' "$raw_slug" | xargs)
+          while IFS= read -r slug; do
             [ -n "$slug" ] || continue
+            if [[ ! "$slug" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
+              echo "Invalid presence slug: $slug"
+              exit 1
+            fi
             echo "Pushing $slug..."
             .internal-cli/node_modules/.bin/tsx \
               --tsconfig .internal-cli/tsconfig.json \
@@ -97,4 +100,4 @@ jobs:
               --pr "#$PR_NUMBER" \
               --pr-title "$PR_TITLE" \
               --author "$PR_AUTHOR"
-          done < <(printf '%s\n' "$SLUGS" | tr ',' '\n')
+          done <<< "$SLUGS"
