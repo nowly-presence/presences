@@ -7,6 +7,7 @@ import {
   findSeriesTitle,
   findTitleText,
   findVideo,
+  isActivePlayer,
 } from "./utils/player"
 import type enUS from "./locales/en-US.json"
 
@@ -86,7 +87,7 @@ presence.on("UpdateData", async (ctx) => {
     const titleText = seriesTitle || findTitleText()
     const video = findVideo()
 
-    if (video && (seriesTitle || episode)) {
+    if (isActivePlayer(video) && titleText) {
       const bannerImg = findBanner()
       const description = findDescription()
 
