@@ -79,13 +79,12 @@ jobs:
       - name: Materialize pull request snapshot as data
         env:
           HEAD_REPOSITORY: ${{ env.HEAD_REPOSITORY }}
-          HEAD_REF: ${{ env.HEAD_REF }}
         run: |
           if [[ ! "$HEAD_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]; then
             echo "Invalid pull request repository: $HEAD_REPOSITORY"
             exit 1
           fi
-          git fetch --no-tags --depth=1 "https://github.com/$HEAD_REPOSITORY.git" "refs/heads/$HEAD_REF"
+          git fetch --no-tags --depth=1 "https://github.com/$HEAD_REPOSITORY.git" "$HEAD_SHA"
           git archive FETCH_HEAD | tar -x -C "$NOLO_DIR/pr"
 
       - name: Resolve changed presences
