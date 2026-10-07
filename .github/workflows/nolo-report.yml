@@ -1,0 +1,125 @@
+name: Nolo PR Report
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/**"
+  workflow_dispatch:
+    inputs:
+      pull_request:
+        description: "Pull request number to reprocess"
+        required: true
+        type: string
+
+concurrency:
+  group: nolo-pr-${{ github.event.pull_request.number || inputs.pull_request }}
+  cancel-in-progress: true
+
+permissions: {}
+
+env:
+  PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number || inputs.pull_request }}
+  NOLO_DIR: .nolo
+
+jobs:
+  report:
+    name: Generate Nolo report
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: presences
+
+      - name: Checkout trusted Nolo source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          token: ${{ steps.app-token.outputs.token }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+
+      - name: Install trusted dependencies
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+          pnpm install --frozen-lockfile --ignore-scripts --filter @nowly/presences...
+
+      - name: Prepare report workspace
+        run: mkdir -p "$NOLO_DIR" "$NOLO_DIR/pr"
+
+      - name: Collect pull request files
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          pnpm exec tsx scripts/nolo/collect-files.ts \
+            --pull-request "$PULL_REQUEST_NUMBER" \
+            --output "$NOLO_DIR/files.json" \
+            --context-output "$NOLO_DIR/context.json"
+
+      - name: Load pull request context
+        run: |
+          {
+            printf 'BASE_SHA=%s\n' "$(jq -r '.baseSha' "$NOLO_DIR/context.json")"
+            printf 'HEAD_SHA=%s\n' "$(jq -r '.headSha' "$NOLO_DIR/context.json")"
+            printf 'HEAD_REF=%s\n' "$(jq -r '.headRef' "$NOLO_DIR/context.json")"
+            printf 'HEAD_REPOSITORY=%s\n' "$(jq -r '.headRepository' "$NOLO_DIR/context.json")"
+          } >> "$GITHUB_ENV"
+
+      - name: Materialize pull request snapshot as data
+        env:
+          HEAD_REPOSITORY: ${{ env.HEAD_REPOSITORY }}
+        run: |
+          if [[ ! "$HEAD_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]; then
+            echo "Invalid pull request repository: $HEAD_REPOSITORY"
+            exit 1
+          fi
+          git fetch --no-tags --depth=1 "https://github.com/$HEAD_REPOSITORY.git" "$HEAD_SHA"
+          git archive FETCH_HEAD | tar -x -C "$NOLO_DIR/pr"
+
+      - name: Resolve changed presences
+        run: |
+          pnpm exec tsx scripts/nolo/resolve-changes.ts \
+            --files "$NOLO_DIR/files.json" \
+            --output "$NOLO_DIR/changes.json" \
+            --selection-output "$NOLO_DIR/selection.json"
+
+      - name: Validate selected presences
+        run: |
+          export CHANGED_PRESENCES_JSON="$(cat "$NOLO_DIR/selection.json")"
+          pnpm exec tsx scripts/validate-assets.ts \
+            "$NOLO_DIR/pr" "$NOLO_DIR/assets.json"
+          pnpm exec tsx scripts/validate-locales.ts \
+            "$NOLO_DIR/pr" "$NOLO_DIR/locales.json"
+
+      - name: Build professional report data
+        run: |
+          pnpm exec tsx scripts/nolo/build-report.ts \
+            --root "$NOLO_DIR/pr" \
+            --changes "$NOLO_DIR/changes.json" \
+            --assets "$NOLO_DIR/assets.json" \
+            --locales "$NOLO_DIR/locales.json" \
+            --pull-request "$PULL_REQUEST_NUMBER" \
+            --head-ref "$HEAD_REF" \
+            --head-repository "$HEAD_REPOSITORY" \
+            --output "$NOLO_DIR/report.json"
+          pnpm exec tsx scripts/nolo/render-report-cli.ts \
+            --input "$NOLO_DIR/report.json" \
+            --output "$NOLO_DIR/report.md"
+
+      - name: Publish idempotent report and labels
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          pnpm exec tsx scripts/nolo/update-comment.ts \
+            "$NOLO_DIR/report.json" "$NOLO_DIR/report.md"

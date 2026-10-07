@@ -19,28 +19,34 @@ jobs:
     steps:
       - name: Generate token
         id: app-token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
         with:
           app-id: ${{ secrets.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
           repositories: presences,internal-cli
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: stable
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: nowly-presence/internal-cli
           token: ${{ steps.app-token.outputs.token }}
           path: .internal-cli
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
+
+      - name: Install trusted presence dependencies
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+          pnpm install --frozen-lockfile --ignore-scripts --filter @nowly/presences...
 
       - name: Install internal-cli dependencies
         working-directory: .internal-cli
@@ -48,58 +54,28 @@ jobs:
 
       - name: Detect changed and removed presence slugs
         id: changed
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          BASE="${{ github.event.pull_request.base.sha }}"
-          HEAD="${{ github.event.pull_request.head.sha }}"
-
-          slug_from_paths() {
-            sed -n 's|^src/[^/]*/\([^/]*\)/.*|\1|p' \
-              | tr '[:upper:]' '[:lower:]' \
-              | tr ' ' '-' \
-              | sort -u
-          }
-
-          SLUGS=$(git diff --name-only --diff-filter=AMR "$BASE"..."$HEAD" -- src/ | slug_from_paths)
-          DELETED=$(git diff --name-only --diff-filter=D "$BASE"..."$HEAD" -- src/ | slug_from_paths)
-
-          CURRENT=""
-          if [ -d src ]; then
-            CURRENT=$(find src -mindepth 2 -maxdepth 2 -type d \
-              | while IFS= read -r dir; do
-                  [ -f "$dir/metadata.json" ] || continue
-                  basename "$dir" | tr '[:upper:]' '[:lower:]' | tr ' ' '-'
-                done | sort -u)
-          fi
-
-          REMOVED=""
-          while IFS= read -r slug; do
-            [ -z "$slug" ] && continue
-            if ! printf '%s\n' "$CURRENT" | grep -qx "$slug"; then
-              REMOVED="$REMOVED$slug"$'\n'
-            fi
-          done <<< "$DELETED"
-
-          echo "Changed slugs:"
-          echo "$SLUGS"
-          echo "Removed slugs:"
-          echo "$REMOVED"
-
-          {
-            echo "slugs<<EOF"
-            [ -n "$SLUGS" ] && printf '%s\n' "$SLUGS"
-            echo "EOF"
-            echo "removed<<EOF"
-            [ -n "$REMOVED" ] && printf '%s\n' "$REMOVED"
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          mkdir -p .nolo
+          pnpm exec tsx scripts/nolo/collect-files.ts \
+            --pull-request "${{ github.event.pull_request.number }}" \
+            --output .nolo/files.json \
+            --context-output .nolo/context.json
+          BASE_SHA="${{ github.event.pull_request.base.sha }}" \
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}" \
+            pnpm exec tsx scripts/nolo/resolve-changes.ts \
+              --files .nolo/files.json \
+              --output .nolo/changes.json
+          pnpm exec tsx scripts/nolo/publish-selection.ts \
+            --input .nolo/changes.json
 
       - name: Credit PR author as contributor
-        if: >
-          steps.changed.outputs.slugs != ''
-          && (contains(github.event.pull_request.labels.*.name, 'new')
-            || contains(github.event.pull_request.labels.*.name, 'update'))
+        if: steps.changed.outputs.slugs != ''
+        env:
+          PR_LOGIN: ${{ github.event.pull_request.user.login }}
+          CHANGED_SLUGS: ${{ steps.changed.outputs.slugs }}
         run: |
-          PR_LOGIN="${{ github.event.pull_request.user.login }}"
           CHANGED=0
 
           while IFS= read -r slug; do
@@ -130,7 +106,7 @@ jobs:
               CHANGED=1
               echo "Credited @$PR_LOGIN on $slug"
             fi
-          done <<< "${{ steps.changed.outputs.slugs }}"
+          done <<< "$CHANGED_SLUGS"
 
           if [ "$CHANGED" = "1" ]; then
             git config user.name "Nolo[bot]"
@@ -141,10 +117,7 @@ jobs:
           fi
 
       - name: Push changed presences to API and CDN
-        if: >
-          steps.changed.outputs.slugs != ''
-          && (contains(github.event.pull_request.labels.*.name, 'new')
-            || contains(github.event.pull_request.labels.*.name, 'update'))
+        if: steps.changed.outputs.slugs != ''
         env:
           API_URL: ${{ secrets.API_URL }}
           API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
@@ -155,11 +128,13 @@ jobs:
           R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          CHANGED_SLUGS: ${{ steps.changed.outputs.slugs }}
         run: |
-          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
-
           while IFS= read -r slug; do
             [ -z "$slug" ] && continue
             echo "Pushing $slug..."
@@ -168,25 +143,28 @@ jobs:
               --source pr \
               --base "$BASE_SHA" \
               --head "$HEAD_SHA" \
-              --pr "#${{ github.event.pull_request.number }}" \
-              --pr-title "${{ github.event.pull_request.title }}" \
+              --pr "#$PR_NUMBER" \
+              --pr-title "$PR_TITLE" \
               --author "$PR_AUTHOR"
-          done <<< "${{ steps.changed.outputs.slugs }}"
+          done <<< "$CHANGED_SLUGS"
 
       - name: Archive removed presences
         if: steps.changed.outputs.removed != ''
         env:
           API_URL: ${{ secrets.API_URL }}
           API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          REMOVED_SLUGS: ${{ steps.changed.outputs.removed }}
         run: |
-          SLUGS=""
+          SLUG_ARGS=()
           while IFS= read -r slug; do
-            [ -z "$slug" ] && continue
-            SLUGS="$SLUGS $slug"
-          done <<< "${{ steps.changed.outputs.removed }}"
+            [ -z "$slug" ] || SLUG_ARGS+=("$slug")
+          done <<< "$REMOVED_SLUGS"
 
-          echo "Archiving$SLUGS"
-          "$GITHUB_WORKSPACE/.internal-cli/node_modules/.bin/tsx" --tsconfig "$GITHUB_WORKSPACE/.internal-cli/tsconfig.json" "$GITHUB_WORKSPACE/.internal-cli/index.ts" archive $SLUGS \
+          [ "${#SLUG_ARGS[@]}" -gt 0 ] || exit 0
+          echo "Archiving ${#SLUG_ARGS[@]} presence(s)..."
+          "$GITHUB_WORKSPACE/.internal-cli/node_modules/.bin/tsx" --tsconfig "$GITHUB_WORKSPACE/.internal-cli/tsconfig.json" "$GITHUB_WORKSPACE/.internal-cli/index.ts" archive "${SLUG_ARGS[@]}" \
             --source pr \
-            --pr "#${{ github.event.pull_request.number }}" \
-            --pr-title "${{ github.event.pull_request.title }}"
+            --pr "#$PR_NUMBER" \
+            --pr-title "$PR_TITLE"
