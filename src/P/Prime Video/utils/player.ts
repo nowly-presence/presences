@@ -1,5 +1,6 @@
 export const findVideo = (): HTMLVideoElement | null => {
   const selectors = [
+    'div[id^="dv-web-player"] video[src]',
     "#dv-web-player video",
     "#dv-web-player .atvwebplayersdk-video-surface video",
     ".atvwebplayersdk-player-container video",
@@ -12,6 +13,12 @@ export const findVideo = (): HTMLVideoElement | null => {
   }
 
   return null
+}
+
+export const isActivePlayer = (video: HTMLVideoElement | null): video is HTMLVideoElement => {
+  if (!video || video.classList.contains("tst") || !document.body) return false
+
+  return window.getComputedStyle(document.body).overflow === "hidden"
 }
 
 export const findSeriesTitle = (): string | null => {
@@ -42,6 +49,7 @@ export const findTitleText = (): string | null => {
     ".atvwebplayersdk-player-container [class*='title']",
     ".DVWebNode-detail-atf-wrapper picture img",
     ".DVWebNode-detail-atf-wrapper h1",
+    'h1[data-automation-id="title"]',
   ] as const
 
   for (const selector of selectors) {
