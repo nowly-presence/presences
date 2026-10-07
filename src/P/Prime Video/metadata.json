@@ -6,9 +6,17 @@
   },
   "url": [
     "primevideo.com",
-    "www.primevideo.com"
+    "www.primevideo.com",
+    "amazon.com",
+    "www.amazon.com",
+    "amazon.co.uk",
+    "www.amazon.co.uk",
+    "amazon.de",
+    "www.amazon.de",
+    "amazon.co.jp",
+    "www.amazon.co.jp"
   ],
-  "regExp": "^https?://(www\\.)?primevideo\\.com/",
+  "regExp": "^https?://(www\\.)?(primevideo\\.com|amazon\\.com|amazon\\.co\\.uk|amazon\\.de|amazon\\.co\\.jp)/",
   "color": "#0779FF",
   "category": "streaming",
   "description": {
