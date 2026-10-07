@@ -20,7 +20,7 @@ permissions: {}
 
 env:
   PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number || inputs.pull_request }}
-  NOLO_DIR: ${{ runner.temp }}/nolo
+  NOLO_DIR: .nolo
 
 jobs:
   report:
