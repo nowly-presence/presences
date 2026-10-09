@@ -1,15 +1,8 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.nowly.me/brand/lockup/blue.svg">
-    <img alt="Nowly" title="Nowly" src="https://cdn.nowly.me/brand/lockup/dark.svg" width="200">
-  </picture>
-</p>
+# Nowly presences
 
-<p align="center">
-  Presence definitions for <a href="https://nowly.me">Nowly</a>.
-</p>
+This repository contains the website-specific presence definitions used by [Nowly](https://nowly.me) to display activity in Discord. Each presence lives under `src/{LETTER}/{Service Name}/` and supplies its matching metadata, activity script, localized strings, and publishing assets. Browse the [source catalog](https://github.com/nowly-presence/presences/tree/stable/src) or the generated list below; the list is maintained from presence metadata, not by hand.
 
-## Presences
+## Presence catalog
 
 <!-- TABLE_START -->
 <table width="100%">
@@ -228,16 +221,32 @@
 </table>
 <!-- TABLE_END -->
 
-## Adding a presence
+The catalog between these markers is updated by [`scripts/generate-readme.ts`](https://github.com/nowly-presence/presences/blob/stable/scripts/generate-readme.ts) after qualifying new-presence merges. Keep the markers intact and do not manually edit generated entries.
 
-1. [Open a proposal](https://github.com/nowly-presence/presences/issues/new?template=new_presence.yml)
-2. Wait for feedback from the maintainers
-3. Submit a pull request with your presence in `src/{Letter}/{Name}/`
+## Propose or contribute a presence
 
-## Reporting a bug
+1. [Propose the platform](https://github.com/nowly-presence/presences/issues/new?template=new_presence.yml) with its website, the activity it should show, and representative pages or edge cases. Wait for maintainer feedback before starting a new presence.
+2. Read the [presence authoring guide](https://github.com/nowly-presence/presences/blob/stable/AGENTS.md) and [Nowly documentation](https://nowly.me/docs). Compare similar definitions in the [source tree](https://github.com/nowly-presence/presences/tree/stable/src). Add your implementation in `src/{LETTER}/{Service Name}/`, including `metadata.json`, `presence.ts`, localized activity strings, and the assets needed for publication.
+3. From the **presences repository root**, install dependencies and the published CLI, then build and check your presence (replace `your-service-slug` with the lowercase, hyphenated folder name):
 
-If a presence doesn't work correctly, [open a bug report](https://github.com/nowly-presence/presences/issues/new?template=broken_presence.yml).
+   ```sh
+   pnpm install
+   pnpm i -g @nowly/cli
+   nowly build your-service-slug
+   nowly validate your-service-slug
+   npx tsc --noEmit -p tsconfig.json
+   ```
 
-## License
+4. Use `nowly extension your-service-slug` to generate a ready-to-load development extension, then load it in Chrome and exercise the relevant pages and activity states. Check that the activity shown in Discord is accurate and clears when it should. Build/metadata validation does not replace this manual check; publishing also needs the required images. Submit a pull request once the presence is ready for review.
 
-[MIT](./LICENSE)
+The [authoring guide](https://github.com/nowly-presence/presences/blob/stable/AGENTS.md) covers metadata, locales, assets, SDK conventions, and alternative local packaging (`nowly pack`).
+
+## Report a broken presence
+
+Use the [broken-presence report](https://github.com/nowly-presence/presences/issues/new?template=broken_presence.yml). Include the platform, an example page URL, steps to reproduce, expected versus actual Discord activity, and browser/version details; attach relevant extension debug logs or screenshots if available. Do not include credentials or private browsing data.
+
+## Governance and license
+
+Maintainers review proposals and pull requests; a proposal is not an automatic acceptance. Changes to the catalog are generated after qualifying merges, so contributions should update the presence source rather than the table above. For discussion and other repository issues, use [GitHub issues](https://github.com/nowly-presence/presences/issues).
+
+This repository is licensed under the [MIT License](https://github.com/nowly-presence/presences/blob/stable/LICENSE).
