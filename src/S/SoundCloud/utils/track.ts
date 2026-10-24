@@ -34,9 +34,10 @@ export const getMediaSessionTrack = (fallbackUrl: string): TrackInfo | undefined
   if (!title) return undefined
 
   const artwork = meta.artwork.length ? meta.artwork[meta.artwork.length - 1]?.src : undefined
+  const artist = meta.artist.trim()
   return {
     title,
-    artist: meta.artist.trim() || undefined,
+    artist: artist.length >= 2 ? artist : undefined,
     artwork,
     url: fallbackUrl,
     playing: navigator.mediaSession.playbackState !== "paused",
