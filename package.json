@@ -1,6 +1,7 @@
 {
   "name": "@nowly/presences",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "devDependencies": {
     "@types/node": "^26.0.1",
