@@ -222,6 +222,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: PresenceData = {
       name: mediaTitleInHeader ? mediaTitle : undefined,
       details: privacy ? strings.watching : mediaTitle || strings.watching,
+      detailsUrl: privacy ? undefined : href.split("#")[0],
       state: privacy ? undefined : info.episode,
       largeImageKey: (!privacy && getEpisodeCover()) || Assets.Logo,
       largeImageText: seasonEpisode ?? "Crunchyroll",

@@ -154,6 +154,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: Parameters<typeof presence.setActivity>[0] = {
       name: ctx.settings.showMediaTitle ? metadata.title : undefined,
       details: metadata.title || "CANAL+",
+      detailsUrl: document.location.href.split(/[?#]/)[0],
       state: live ? metadata.subtitle || strings.liveTv : metadata.subtitle,
       largeImageKey: metadata.image || Assets.Logo,
       largeImageText: metadata.title || "CANAL+",

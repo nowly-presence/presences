@@ -72,6 +72,8 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "post") {
     const data: PresenceData = {
       details: !privacy && page.title ? page.title : strings.viewingPost,
+      detailsUrl: privacy ? undefined : page.url,
+      stateUrl: privacy ? undefined : `https://www.reddit.com/r/${encodeURIComponent(page.subreddit)}/`,
       state: privacy ? undefined : `r/${page.subreddit}`,
       largeImageKey: Assets.Logo,
       largeImageText: "Reddit",
@@ -93,6 +95,7 @@ presence.on("UpdateData", async (ctx) => {
       largeImageText: "Reddit",
       type: PresenceType.Watching,
     }
+    if (!privacy) data.detailsUrl = page.url
     if (!privacy && showButtons) {
       data.buttons = [{ label: strings.viewCommunity, url: page.url }]
     }
@@ -103,6 +106,7 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "profile") {
     await presence.setActivity({
       details: privacy ? strings.viewingProfile : presence.formatString(strings.viewingProfileOf, { user: page.user }),
+      detailsUrl: privacy ? undefined : `https://www.reddit.com/user/${encodeURIComponent(page.user)}/`,
       largeImageKey: Assets.Logo,
       largeImageText: "Reddit",
       type: PresenceType.Watching,

@@ -174,6 +174,7 @@ presence.on("UpdateData", async (ctx) => {
   const data: Parameters<typeof presence.setActivity>[0] = {
     name: ctx.settings.showMediaTitle ? title : undefined,
     details: title,
+    detailsUrl: document.location.href.split(/[?#]/)[0],
     state: metadata,
     largeImageKey: Assets.Logo,
     largeImageText: "ARD Mediathek",

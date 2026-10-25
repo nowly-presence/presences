@@ -45,9 +45,30 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
+  let contentUrl: string | undefined
+  if (page.buttonUrl) {
+    const url = new URL(page.buttonUrl)
+    const title = url.searchParams.get("title")
+    const action = url.searchParams.get("action") || url.searchParams.get("veaction")
+    const publicPath = /^\/(?:wiki\/(?!Special:)|f\/|articles\/|news\/|video\/)/i.test(url.pathname)
+      || (url.pathname === "/index.php" && title && !/^Special:/i.test(title))
+    if (publicPath && (!action || action === "view" || action === "history")) {
+      const revision = url.searchParams.get("oldid")
+      const diff = url.searchParams.get("diff")
+      url.search = ""
+      url.hash = ""
+      if (url.pathname === "/index.php" && title) url.searchParams.set("title", title)
+      if (revision && /^\d+$/.test(revision)) url.searchParams.set("oldid", revision)
+      if (diff && /^(?:\d+|prev|next|cur)$/.test(diff)) url.searchParams.set("diff", diff)
+      contentUrl = url.href
+    }
+  }
+
   await presence.setActivity({
     details: page.details,
     state: page.state,
+    detailsUrl: contentUrl,
+    stateUrl: page.state ? contentUrl : undefined,
     largeImageKey: page.image || Assets.Logo,
     largeImageText: page.image ? page.state : undefined,
     smallImageKey: page.image ? Assets.Logo : undefined,

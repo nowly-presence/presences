@@ -197,6 +197,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: Parameters<typeof presence.setActivity>[0] = {
       name: ctx.settings.showMediaTitle ? title : undefined,
       details: title || strings.watching,
+      detailsUrl: href.split(/[?#]/)[0],
       state: description,
       largeImageKey: getCover() || Assets.Logo,
       largeImageText: title,
@@ -231,6 +232,7 @@ presence.on("UpdateData", async (ctx) => {
     if (title) {
       await presence.setActivity({
         details: title,
+        detailsUrl: href.split(/[?#]/)[0],
         state: getText('[data-testid="synopsis"]'),
         largeImageKey: getCover() || Assets.Logo,
         largeImageText: title,

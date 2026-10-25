@@ -194,6 +194,7 @@ presence.on("UpdateData", async (ctx) => {
       delete data.smallImageText
     }
     data.statusDisplayType = ctx.settings.statusDisplayType === "details" ? 2 : ctx.settings.statusDisplayType === "state" && data.state ? 1 : 0
+    data.detailsUrl = document.location.href.split(/[?#]/)[0]
     await presence.setActivity(data)
     return
   }

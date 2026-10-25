@@ -59,6 +59,7 @@ presence.on("UpdateData", async (ctx) => {
 
     await presence.setActivity({
       details: name || strings.discoveringProduct,
+      detailsUrl: window.location.href.split(/[?#]/)[0],
       state: tagline,
       largeImageKey: logo || Assets.Logo,
       largeImageText: name || "Product Hunt",
@@ -102,6 +103,7 @@ presence.on("UpdateData", async (ctx) => {
     const title = findForumTopicTitle()
     await presence.setActivity({
       details: title || strings.readingForumTopic,
+      detailsUrl: window.location.href.split(/[?#]/)[0],
       largeImageKey: Assets.Logo,
       largeImageText: "Product Hunt",
       type: PresenceType.Watching,
@@ -128,6 +130,7 @@ presence.on("UpdateData", async (ctx) => {
   if (isOnLaunchGuidePage()) {
     await presence.setActivity({
       details: strings.readingLaunchGuide,
+      detailsUrl: window.location.href.split(/[?#]/)[0],
       largeImageKey: Assets.Logo,
       largeImageText: "Product Hunt",
       type: PresenceType.Watching,
@@ -155,6 +158,7 @@ presence.on("UpdateData", async (ctx) => {
         ? presence.formatString(strings.viewingNamedProfile, { name })
         : strings.viewingProfile,
       state: tabLabel,
+      detailsUrl: window.location.href.split(/[?#]/)[0],
       largeImageKey: avatar || Assets.Logo,
       largeImageText: name || "Product Hunt",
       smallImageKey: Assets.Logo,

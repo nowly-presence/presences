@@ -61,9 +61,25 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
+  let contentUrl: string | undefined
+  if (page.buttonUrl) {
+    const url = new URL(page.buttonUrl)
+    const title = url.searchParams.get("title_no")
+    const episode = url.searchParams.get("episode_no")
+    url.search = ""
+    url.hash = ""
+    if (title && /^\d+$/.test(title) && (!episode || /^\d+$/.test(episode))) {
+      url.searchParams.set("title_no", title)
+      if (episode) url.searchParams.set("episode_no", episode)
+      contentUrl = url.href
+    }
+  }
+
   await presence.setActivity({
     details: page.details,
     state: page.state,
+    detailsUrl: contentUrl,
+    stateUrl: page.state ? contentUrl : undefined,
     largeImageKey: page.image || Assets.Logo,
     largeImageText: "WEBTOON",
     smallImageKey: page.image ? Assets.Logo : page.isSearch ? "search" : undefined,

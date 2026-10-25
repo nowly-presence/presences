@@ -219,6 +219,7 @@ presence.on("UpdateData", async (ctx) => {
     await presence.setActivity({
       name: ctx.settings.showMediaTitle ? title : undefined,
       details: title || strings.live,
+      detailsUrl: window.location.href.split(/[?#]/)[0],
       state: streamer ? `${streamer}${game ? ` - ${game}` : ""}` : game,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: streamer || "Twitch",
@@ -251,6 +252,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: Parameters<typeof presence.setActivity>[0] = {
       name: ctx.settings.showMediaTitle ? title : undefined,
       details: title || strings.vod,
+      detailsUrl: window.location.href.split(/[?#]/)[0],
       state: streamer,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: streamer || "Twitch",
@@ -288,6 +290,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: Parameters<typeof presence.setActivity>[0] = {
       name: ctx.settings.showMediaTitle ? title : undefined,
       details: title || strings.clip,
+      detailsUrl: window.location.href.split(/[?#]/)[0],
       state: creator,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: creator || "Twitch Clip",

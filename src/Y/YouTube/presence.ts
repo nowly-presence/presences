@@ -1,7 +1,7 @@
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 import { handleBrowsingActivity } from "./utils/browsing"
 import { Category } from "./utils/categories"
-import { findTitle, findUploader } from "./utils/channel"
+import { findTitle, findUploader, findUploaderUrl } from "./utils/channel"
 import { $, findVideo, text } from "./utils/dom"
 import type enUS from "./locales/en-US.json"
 
@@ -33,6 +33,8 @@ presence.on("UpdateData", async (ctx) => {
     await presence.setActivity({
       name: ctx.settings.showMediaTitle ? title : undefined,
       details: title,
+      detailsUrl: `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`,
+      stateUrl: uploader ? findUploaderUrl() : undefined,
       ...(uploader ? { state: uploader } : {}),
       largeImageKey: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
       largeImageText: title,

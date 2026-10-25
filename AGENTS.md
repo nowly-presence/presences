@@ -128,6 +128,8 @@ type PresenceData = {
   name?: string
   details?: string
   state?: string
+  detailsUrl?: string      // SDK 1.7.0+: public HTTPS destination for details
+  stateUrl?: string        // SDK 1.7.0+: public HTTPS destination for state
   largeImageKey?: string   // Assets.Logo | Assets.Icon | Assets.Thumbnail | https:// URL
   largeImageText?: string
   smallImageKey?: string   // "play" | "pause" | "search" only
@@ -223,6 +225,7 @@ For large posters fetched from the page, pass `https://` URL directly as `largeI
 - **Clear when irrelevant.** `presence.clearActivity()` on unmatched pages.
 - **Small images.** Only `"play"`, `"pause"`, `"search"`.
 - **Buttons.** At most 2; strip query strings.
+- **Clickable text.** With SDK 1.7.0+ and compatible extension/native host, use `detailsUrl` and `stateUrl` for independently clickable lines. Match each destination to its displayed content or author, using verified public links from the page or canonical content IDs. Omit unknown links and all links hidden by privacy settings. Do not expose private chats, secret resources, credentials, or access tokens. URLs must be HTTPS, at most 2048 characters, and retain only query parameters needed to identify public content (for example YouTube's `v`). Music links must come from matching now-playing anchors, not the unrelated page being browsed. This is independent of button visibility.
 - **`world`.** Stay isolated by default.
 - **Localization.** `en-US`, `fr-FR`, `es-ES` everywhere: `metadata.json` for marketplace text, setting definitions for labels/descriptions, and `locales/*.json` + `getStrings()` for activity text. Never hardcode English activity text.
 - **Code style.** No semicolons, double quotes, 2-space indent.

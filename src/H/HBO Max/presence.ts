@@ -217,6 +217,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: PresenceData = {
       name: mediaTitleInHeader ? title : undefined,
       details: privacy ? strings.watching : title || strings.watching,
+      detailsUrl: privacy ? undefined : href.split("#")[0],
       largeImageKey: Assets.Logo,
       largeImageText: "HBO Max",
       smallImageKey: playing ? "play" : "pause",

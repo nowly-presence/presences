@@ -187,6 +187,7 @@ presence.on("UpdateData", async (ctx) => {
       const data: Parameters<typeof presence.setActivity>[0] = {
         name: ctx.settings.showMediaTitle ? title : undefined,
         details: title,
+        detailsUrl: buttons[0]?.url,
         state: episode,
         largeImageKey: ctx.settings.hideThumbnail ? Assets.Logo : page.image || Assets.Logo,
         largeImageText: title,
@@ -212,6 +213,7 @@ presence.on("UpdateData", async (ctx) => {
       await presence.setActivity({
         details: strings.viewingDetails,
         state: page.title,
+        stateUrl: buttons[0]?.url,
         largeImageKey: ctx.settings.hideThumbnail ? Assets.Logo : page.image || Assets.Logo,
         largeImageText: page.title,
         type: PresenceType.Watching,

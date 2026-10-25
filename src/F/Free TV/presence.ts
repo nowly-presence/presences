@@ -168,6 +168,7 @@ presence.on("UpdateData", async (ctx) => {
     await presence.setActivity({
       name: mediaTitleInHeader ? mediaTitle : undefined,
       details: mode === "live" ? strings.watchingLive : strings.watchingVod,
+      stateUrl: document.location.href.split(/[?#]/)[0],
       state,
       largeImageKey: Assets.Logo,
       largeImageText: "Free TV",

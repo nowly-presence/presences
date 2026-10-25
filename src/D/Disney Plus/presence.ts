@@ -155,6 +155,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: Parameters<typeof presence.setActivity>[0] = {
       name: ctx.settings.showMediaTitle ? title || undefined : undefined,
       details: title || "Disney+",
+      detailsUrl: document.location.href.split(/[?#]/)[0],
       state,
       largeImageKey,
       largeImageText: title || "Disney+",
@@ -191,6 +192,7 @@ presence.on("UpdateData", async (ctx) => {
     await presence.setActivity({
       details: isSeries ? strings.viewingSeries : strings.viewingMovie,
       state: title,
+      stateUrl: document.location.href.split(/[?#]/)[0],
       largeImageKey: Assets.Logo,
       largeImageText: title,
       type: PresenceType.Watching,

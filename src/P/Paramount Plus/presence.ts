@@ -157,6 +157,7 @@ presence.on("UpdateData", async (ctx) => {
     const data: Parameters<typeof presence.setActivity>[0] = {
       name: ctx.settings.showMediaTitle ? title : undefined,
       details: title || "Paramount+",
+      detailsUrl: document.location.href.split(/[?#]/)[0],
       state: isLive ? strings.liveTv : episode,
       largeImageKey: poster || Assets.Logo,
       largeImageText: title || "Paramount+",

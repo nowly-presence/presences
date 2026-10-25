@@ -79,9 +79,16 @@ presence.on("UpdateData", async (ctx) => {
     return
   }
 
+  const publicContent = /\/(?:games?\/\d+|(?:communities|groups)\/\d+|users\/\d+\/profile|(?:catalog|bundles|library)\/\d+)(?:\/|$)/.test(pathname)
+    || (hostname === "devforum.roblox.com" && pathname.startsWith("/t/"))
+    || (["about.roblox.com", "www.about.roblox.com"].includes(hostname) && pathname.includes("/newsroom/"))
+  const contentUrl = !privacy && publicContent ? page.buttonUrl : undefined
+
   await presence.setActivity({
     details: privacy ? strings.browsing : page.details,
     state: privacy ? undefined : page.state,
+    detailsUrl: contentUrl,
+    stateUrl: page.state ? contentUrl : undefined,
     largeImageKey: privacy ? Assets.Logo : page.image || Assets.Logo,
     largeImageText: privacy ? undefined : page.state,
     smallImageKey: !privacy && page.image ? Assets.Logo : page.isSearch && !privacy ? "search" : undefined,

@@ -29,6 +29,8 @@ presence.on("UpdateData", async (ctx) => {
   await presence.setActivity({
     details: page.details,
     state: page.state,
+    detailsUrl: page.buttonUrl,
+    stateUrl: page.state ? page.buttonUrl : undefined,
     largeImageKey: page.image || Assets.Logo,
     largeImageText: page.image ? page.state : undefined,
     smallImageKey: page.image ? Assets.Logo : page.isSearch ? "search" : undefined,

@@ -26,6 +26,7 @@ export const handleBlog = async (
   await presence.setActivity({
     details: strings.readingArticle,
     state: title,
+    stateUrl: href.split(/[?#]/)[0],
     largeImageKey: image || Assets.Logo,
     largeImageText: title || "GitHub Blog",
     type: PresenceType.Watching,
