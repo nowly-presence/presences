@@ -4,6 +4,74 @@ import { getPageDescription, getPageTitle, getThumbnail, parseSubtitle } from ".
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
+  hideOnPause: {
+    type: "boolean",
+    default: false,
+    label: {
+      "en-US": "Hide presence when paused",
+      "fr-FR": "Masquer la présence en pause",
+      "es-ES": "Ocultar la presencia en pausa"
+    },
+    description: {
+      "en-US": "Hide paused playback and show it again when playback resumes.",
+      "fr-FR": "Masquer la lecture en pause et la réafficher à la reprise.",
+      "es-ES": "Ocultar la reproducción en pausa y mostrarla al reanudarla."
+    }
+  },
+  showPlaybackState: {
+    type: "boolean",
+    default: true,
+    label: {
+      "en-US": "Show play/pause indicator",
+      "fr-FR": "Afficher l'indicateur lecture/pause",
+      "es-ES": "Mostrar el indicador de reproducción/pausa"
+    },
+    description: {
+      "en-US": "Show the small play/pause icon and its tooltip.",
+      "fr-FR": "Afficher la petite icône lecture/pause et son infobulle.",
+      "es-ES": "Mostrar el pequeño icono de reproducción/pausa y su descripción."
+    }
+  },
+  statusDisplayType: {
+    type: "select",
+    default: "name",
+    label: {
+      "en-US": "Compact Discord status",
+      "fr-FR": "Statut Discord compact",
+      "es-ES": "Estado compacto de Discord"
+    },
+    options: [
+      {
+        value: "name",
+        label: {
+          "en-US": "Activity name",
+          "fr-FR": "Nom de l'activité",
+          "es-ES": "Nombre de la actividad"
+        }
+      },
+      {
+        value: "details",
+        label: {
+          "en-US": "Title / details",
+          "fr-FR": "Titre / détails",
+          "es-ES": "Título / detalles"
+        }
+      },
+      {
+        value: "state",
+        label: {
+          "en-US": "Episode / channel / other info",
+          "fr-FR": "Épisode / chaîne / autres infos",
+          "es-ES": "Episodio / canal / otra información"
+        }
+      }
+    ],
+    description: {
+      "en-US": "Choose the compact status text without changing the card. Missing fields fall back to the activity name. Requires a compatible extension and native host.",
+      "fr-FR": "Choisir le texte du statut compact sans modifier la carte. Si le champ manque, utiliser le nom de l'activité. Nécessite une extension et un hôte natif compatibles.",
+      "es-ES": "Elegir el texto del estado compacto sin cambiar la tarjeta. Si falta el campo, usar el nombre de la actividad. Requiere una extensión y un host nativo compatibles."
+    }
+  },
   showMediaTitle: {
     type: "boolean",
     default: false,
@@ -21,17 +89,17 @@ const settings = Presence.Settings({
       "tr-TR": "Etkinlik adında medya başlığını göster",
     },
     description: {
-      "en-US": "When enabled, use the media title as the Discord activity name and show the service name where the title normally appears.",
-      "fr-FR": "Lorsque cette option est activée, le titre du média devient le nom de l’activité Discord et le nom du service s’affiche à la place habituelle du titre.",
-      "es-ES": "Si está activada, el título del contenido pasa a ser el nombre de la actividad de Discord y el nombre del servicio se muestra donde normalmente aparece el título.",
-      "de-DE": "Wenn diese Option aktiviert ist, wird der Medientitel zum Namen der Discord-Aktivität und der Dienstname dort angezeigt, wo normalerweise der Titel steht.",
-      "el-GR": "Όταν είναι ενεργοποιημένο, ο τίτλος του πολυμέσου γίνεται το όνομα της δραστηριότητας Discord και το όνομα της υπηρεσίας εμφανίζεται εκεί όπου εμφανίζεται συνήθως ο τίτλος.",
-      "ja-JP": "有効にすると、メディアタイトルがDiscordのアクティビティ名になり、通常タイトルが表示される場所にサービス名が表示されます。",
-      "ko-KR": "활성화하면 미디어 제목이 Discord 활동 이름이 되고, 원래 제목이 표시되던 위치에는 서비스 이름이 표시됩니다.",
-      "ms-MY": "Apabila diaktifkan, tajuk media menjadi nama aktiviti Discord dan nama perkhidmatan dipaparkan di tempat tajuk biasanya muncul.",
-      "pl-PL": "Po włączeniu tytuł materiału stanie się nazwą aktywności Discord, a nazwa usługi pojawi się w miejscu, w którym zwykle wyświetlany jest tytuł.",
-      "pt-BR": "Quando ativado, o título da mídia se torna o nome da atividade do Discord, e o nome do serviço aparece onde o título normalmente seria exibido.",
-      "tr-TR": "Etkinleştirildiğinde medya başlığı Discord etkinlik adı olur ve hizmet adı başlığın normalde göründüğü yerde gösterilir.",
+      "en-US": "Use the media title as the activity name without removing it from the card.",
+      "fr-FR": "Utiliser le titre comme nom d'activité sans le retirer de la carte.",
+      "es-ES": "Usar el título como nombre de actividad sin quitarlo de la tarjeta.",
+      "de-DE": "Den Titel als Aktivitätsnamen verwenden, ohne ihn aus der Karte zu entfernen.",
+      "el-GR": "Χρήση του τίτλου ως ονόματος δραστηριότητας χωρίς αφαίρεσή του από την κάρτα.",
+      "ja-JP": "カードにタイトルを残したまま、アクティビティ名にも使用します。",
+      "ko-KR": "카드의 제목을 유지하면서 활동 이름으로 사용합니다.",
+      "ms-MY": "Gunakan tajuk sebagai nama aktiviti tanpa membuangnya daripada kad.",
+      "pl-PL": "Używaj tytułu jako nazwy aktywności, zachowując go na karcie.",
+      "pt-BR": "Usar o título como nome da atividade sem removê-lo do cartão.",
+      "tr-TR": "Başlığı karttan kaldırmadan etkinlik adı olarak kullan."
     },
   },
   showBrowsing: {
@@ -75,6 +143,10 @@ presence.on("UpdateData", async (ctx) => {
   const playing = video && hasPlayerTabs()
 
   if (video && playing) {
+    if (ctx.settings.hideOnPause && video.paused) {
+      presence.clearActivity()
+      return
+    }
     const title = text($(".video-metadata .title"))
     const subtitle = text($(".video-metadata .subtitle-text"))
     const genre = text($(".metadata-genre"))
@@ -95,7 +167,7 @@ presence.on("UpdateData", async (ctx) => {
 
     if (subtitle) {
       const { seasonNum, episodeNum, episodeTitle } = parseSubtitle(subtitle)
-      data.details = mediaTitleInHeader ? "Apple TV+" : title || "Apple TV+"
+      data.details = title || "Apple TV+"
       if (episodeTitle) {
         data.state = `S${seasonNum}:E${episodeNum} ${episodeTitle}`
       } else if (Number.isFinite(seasonNum) && Number.isFinite(episodeNum)) {
@@ -104,7 +176,7 @@ presence.on("UpdateData", async (ctx) => {
         data.state = subtitle
       }
     } else {
-      data.details = mediaTitleInHeader ? "Apple TV+" : title || getPageTitle() || "Apple TV+"
+      data.details = title || getPageTitle() || "Apple TV+"
       data.state = genre || strings.movie
     }
 
@@ -117,6 +189,11 @@ presence.on("UpdateData", async (ctx) => {
       Object.assign(data, createMediaTimestamps(video))
     }
 
+    if (ctx.settings.showPlaybackState === false) {
+      delete data.smallImageKey
+      delete data.smallImageText
+    }
+    data.statusDisplayType = ctx.settings.statusDisplayType === "details" ? 2 : ctx.settings.statusDisplayType === "state" && data.state ? 1 : 0
     await presence.setActivity(data)
     return
   }
