@@ -1,0 +1,8 @@
+{
+  "playing": "Παίζει OpenFront.io",
+  "spectating": "Παρακολουθεί ένα παιχνίδι OpenFront.io",
+  "onMap": "Χάρτης: {map}",
+  "playingAs": "Παίζει ως {name}",
+  "spectate": "Παρακολούθηση παιχνιδιού",
+  "viewProfile": "Προβολή προφίλ"
+}

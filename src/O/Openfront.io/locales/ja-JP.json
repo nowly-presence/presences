@@ -1,0 +1,8 @@
+{
+  "playing": "OpenFront.ioをプレイ中",
+  "spectating": "OpenFront.ioのゲームを観戦中",
+  "onMap": "マップ: {map}",
+  "playingAs": "{name}としてプレイ中",
+  "spectate": "ゲームを観戦",
+  "viewProfile": "プロフィールを見る"
+}

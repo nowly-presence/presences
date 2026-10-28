@@ -1,0 +1,97 @@
+{
+  "name": "Openfront.io",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "openfront.io",
+    "www.openfront.io"
+  ],
+  "regExp": "^https?://(?:www\\.)?openfront\\.io/",
+  "color": "#2FAFF0",
+  "category": "gaming",
+  "description": {
+    "en-US": "Show when you are playing OpenFront.io and let friends spectate your game.",
+    "fr-FR": "Affichez vos parties OpenFront.io et permettez à vos amis de les regarder.",
+    "es-ES": "Muestra tus partidas de OpenFront.io y permite que tus amigos las vean.",
+    "de-DE": "Zeigt, wenn du OpenFront.io spielst, und lässt Freunde deine Partie ansehen.",
+    "el-GR": "Εμφανίζει πότε παίζετε OpenFront.io και επιτρέπει στους φίλους σας να παρακολουθούν το παιχνίδι.",
+    "ja-JP": "OpenFront.ioのプレイ状況を表示し、友達がゲームを観戦できるようにします。",
+    "ko-KR": "OpenFront.io 플레이 상태를 표시하고 친구가 게임을 관전할 수 있게 합니다.",
+    "ms-MY": "Tunjukkan apabila anda bermain OpenFront.io dan benarkan rakan menonton permainan anda.",
+    "pl-PL": "Pokazuje, kiedy grasz w OpenFront.io, i pozwala znajomym oglądać Twoją rozgrywkę.",
+    "pt-BR": "Mostra quando você está jogando OpenFront.io e permite que amigos assistam à sua partida.",
+    "tr-TR": "OpenFront.io oynadığını gösterir ve arkadaşlarının oyununu izlemesine olanak tanır."
+  },
+  "longDescription": {
+    "en-US": "Display your OpenFront.io activity on Discord, including the current game and a direct spectator link when available.",
+    "fr-FR": "Affichez votre activité OpenFront.io sur Discord, avec la partie en cours et un lien direct pour la regarder lorsque disponible.",
+    "es-ES": "Muestra tu actividad de OpenFront.io en Discord, incluida la partida actual y un enlace directo para verla cuando esté disponible.",
+    "de-DE": "Zeigt deine OpenFront.io-Aktivität auf Discord an, einschließlich des aktuellen Spiels und, falls verfügbar, eines direkten Zuschauerlinks.",
+    "el-GR": "Εμφανίζει τη δραστηριότητά σας στο OpenFront.io στο Discord, μαζί με το τρέχον παιχνίδι και έναν άμεσο σύνδεσμο παρακολούθησης όταν είναι διαθέσιμος.",
+    "ja-JP": "DiscordにOpenFront.ioのアクティビティを表示します。現在のゲームや、利用可能な場合は観戦用の直接リンクも表示します。",
+    "ko-KR": "Discord에 OpenFront.io 활동을 표시합니다. 현재 게임과 가능한 경우 바로 관전할 수 있는 링크도 표시합니다.",
+    "ms-MY": "Paparkan aktiviti OpenFront.io anda di Discord, termasuk permainan semasa dan pautan terus untuk menonton jika tersedia.",
+    "pl-PL": "Wyświetla Twoją aktywność w OpenFront.io na Discordzie, w tym aktualną grę i bezpośredni link do oglądania, jeśli jest dostępny.",
+    "pt-BR": "Exibe sua atividade no OpenFront.io no Discord, incluindo a partida atual e um link direto para assistir quando disponível.",
+    "tr-TR": "Discord'da OpenFront.io etkinliğini, mevcut oyunu ve varsa doğrudan izleme bağlantısını gösterir."
+  },
+  "features": {
+    "en-US": [
+      "Detects active game lobbies",
+      "Adds a direct spectator button",
+      "Shows the map and public player name when available"
+    ],
+    "fr-FR": [
+      "Détecte les parties en cours",
+      "Ajoute un bouton direct pour regarder la partie",
+      "Affiche la carte et le nom public du joueur si disponibles"
+    ],
+    "es-ES": [
+      "Detecta partidas activas",
+      "Añade un botón directo para ver la partida",
+      "Muestra el mapa y el nombre público del jugador si están disponibles"
+    ],
+    "de-DE": [
+      "Erkennt laufende Spiele",
+      "Fügt eine direkte Schaltfläche zum Zuschauen hinzu",
+      "Zeigt Karte und öffentlichen Spielernamen, sofern verfügbar"
+    ],
+    "el-GR": [
+      "Εντοπίζει ενεργά παιχνίδια",
+      "Προσθέτει κουμπί άμεσης παρακολούθησης",
+      "Εμφανίζει τον χάρτη και το δημόσιο όνομα παίκτη, όταν είναι διαθέσιμα"
+    ],
+    "ja-JP": [
+      "進行中のゲームを検出",
+      "観戦用の直接ボタンを追加",
+      "利用可能な場合、マップと公開プレイヤー名を表示"
+    ],
+    "ko-KR": [
+      "진행 중인 게임 감지",
+      "바로 관전할 수 있는 버튼 추가",
+      "가능한 경우 맵과 공개 플레이어 이름 표시"
+    ],
+    "ms-MY": [
+      "Mengesan permainan yang sedang berlangsung",
+      "Menambah butang terus untuk menonton",
+      "Menunjukkan peta dan nama pemain awam apabila tersedia"
+    ],
+    "pl-PL": [
+      "Wykrywa aktywne rozgrywki",
+      "Dodaje bezpośredni przycisk do oglądania gry",
+      "Pokazuje mapę i publiczną nazwę gracza, jeśli są dostępne"
+    ],
+    "pt-BR": [
+      "Detecta partidas em andamento",
+      "Adiciona um botão direto para assistir à partida",
+      "Mostra o mapa e o nome público do jogador quando disponíveis"
+    ],
+    "tr-TR": [
+      "Devam eden oyunları algılar",
+      "Doğrudan izleme düğmesi ekler",
+      "Mevcut olduğunda haritayı ve herkese açık oyuncu adını gösterir"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "playing": "Jugando a OpenFront.io",
+  "spectating": "Viendo una partida de OpenFront.io",
+  "onMap": "Mapa: {map}",
+  "playingAs": "Jugando como {name}",
+  "spectate": "Ver la partida",
+  "viewProfile": "Ver perfil"
+}
