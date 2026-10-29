@@ -5,10 +5,10 @@
     "github": "q-kimi"
   },
   "url": [
-    "cinepulse.cat",
-    "www.cinepulse.cat"
+    "cinepulse.si",
+    "www.cinepulse.si"
   ],
-  "regExp": "^https?://(?:www\\.)?cinepulse\\.cat",
+  "regExp": "^https?://(?:www\\.)?cinepulse\\.si",
   "color": "#EF7A7A",
   "category": "streaming",
   "description": {
