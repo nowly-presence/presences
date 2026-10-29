@@ -1,6 +1,6 @@
 {
-  "playing": "OpenFront.io 플레이 중",
-  "spectating": "OpenFront.io 게임 관전 중",
+  "playing": "Openfront.io 플레이 중",
+  "spectating": "Openfront.io 게임 관전 중",
   "onMap": "맵: {map}",
   "playingAs": "{name}(으)로 플레이 중",
   "spectate": "게임 관전하기",

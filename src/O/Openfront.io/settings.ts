@@ -48,17 +48,17 @@ export default {
       "tr-TR": "Profilini paylaş"
     },
     description: {
-      "en-US": "Show a button linking to your OpenFront profile when available.",
-      "fr-FR": "Affiche un bouton vers votre profil OpenFront lorsqu'il est disponible.",
-      "es-ES": "Muestra un botón a tu perfil de OpenFront cuando esté disponible.",
-      "de-DE": "Zeigt, sofern verfügbar, eine Schaltfläche zu deinem OpenFront-Profil.",
-      "el-GR": "Εμφανίζει ένα κουμπί προς το προφίλ OpenFront σας, όταν είναι διαθέσιμο.",
-      "ja-JP": "利用可能な場合、OpenFrontプロフィールへのボタンを表示します。",
-      "ko-KR": "사용 가능한 경우 OpenFront 프로필로 연결되는 버튼을 표시합니다.",
-      "ms-MY": "Paparkan butang ke profil OpenFront anda apabila tersedia.",
-      "pl-PL": "Pokazuj przycisk do profilu OpenFront, jeśli jest dostępny.",
-      "pt-BR": "Exibe um botão para seu perfil OpenFront quando disponível.",
-      "tr-TR": "Mevcut olduğunda OpenFront profiline bağlantı düğmesini gösterir."
+      "en-US": "Show a button linking to your Openfront profile when available.",
+      "fr-FR": "Affiche un bouton vers votre profil Openfront lorsqu'il est disponible.",
+      "es-ES": "Muestra un botón a tu perfil de Openfront cuando esté disponible.",
+      "de-DE": "Zeigt, sofern verfügbar, eine Schaltfläche zu deinem Openfront-Profil.",
+      "el-GR": "Εμφανίζει ένα κουμπί προς το προφίλ Openfront σας, όταν είναι διαθέσιμο.",
+      "ja-JP": "利用可能な場合、Openfrontプロフィールへのボタンを表示します。",
+      "ko-KR": "사용 가능한 경우 Openfront 프로필로 연결되는 버튼을 표시합니다.",
+      "ms-MY": "Paparkan butang ke profil Openfront anda apabila tersedia.",
+      "pl-PL": "Pokazuj przycisk do profilu Openfront, jeśli jest dostępny.",
+      "pt-BR": "Exibe um botão para seu perfil Openfront quando disponível.",
+      "tr-TR": "Mevcut olduğunda Openfront profiline bağlantı düğmesini gösterir."
     }
   },
   allowSpectate: {

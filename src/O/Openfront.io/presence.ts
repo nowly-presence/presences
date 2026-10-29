@@ -174,7 +174,7 @@ const getGameActivity = (game: Game, strings: Strings, settings: {
     details: getDetails(game, strings),
     state: getState(game, strings),
     largeImageKey: thumbnailUrl || Assets.Logo,
-    largeImageText: tooltip.filter(Boolean).join(" · ") || "OpenFront.io",
+    largeImageText: tooltip.filter(Boolean).join(" · ") || "Openfront.io",
     smallImageKey: waiting ? "pause" : "play",
     smallImageText: playerName ? presence.formatString(strings.playingAs, { name: playerName }) : undefined,
     type: game.kind === "replay" || game.spectating ? PresenceType.Watching : PresenceType.Playing,
@@ -244,7 +244,7 @@ presence.on("UpdateData", async (ctx) => {
   await presence.setActivity({
     details: getPageDetails(pageId, strings),
     largeImageKey: Assets.Logo,
-    largeImageText: "OpenFront.io",
+    largeImageText: "Openfront.io",
     smallImageKey: "search",
     type: PresenceType.Playing
   })
