@@ -10,6 +10,8 @@ export type TrackInfo = {
   artist?: string
   artwork?: string
   url: string
+  contentUrl?: string
+  artistUrl?: string
   playing: boolean
 }
 
@@ -40,6 +42,27 @@ export const getMediaSessionTrack = (fallbackUrl: string): TrackInfo | undefined
     artist: artist.length >= 2 ? artist : undefined,
     artwork,
     url: fallbackUrl,
+    contentUrl: findPlayerLink(title, false),
+    artistUrl: findPlayerLink(meta.artist.trim(), true),
     playing: navigator.mediaSession.playbackState !== "paused",
   }
+}
+
+const findPlayerLink = (label: string, artist: boolean): string | undefined => {
+  if (!label) return undefined
+  for (const anchor of document.querySelectorAll<HTMLAnchorElement>(".playbackSoundBadge a[href]")) {
+    if (anchor.textContent?.trim().toLocaleLowerCase() !== label.toLocaleLowerCase()) continue
+    try {
+      const url = new URL(anchor.getAttribute("href") ?? "", document.location.href)
+      if (url.protocol !== "https:" || url.hostname !== "soundcloud.com" || url.username || url.password) continue
+      if (url.searchParams.has("secret_token")) continue
+      if (!(artist ? /^\/[^/]+\/?$/ : /^\/[^/]+\/[^/]+\/?$/).test(url.pathname)) continue
+      url.search = ""
+      url.hash = ""
+      return url.href
+    } catch {
+      continue
+    }
+  }
+  return undefined
 }

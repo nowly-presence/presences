@@ -57,6 +57,8 @@ presence.on("UpdateData", async () => {
 
   await presence.setActivity({
     details: truncateActivityText(details),
+    detailsUrl: page.kind !== "websitePage" && page.kind !== "consent" ? url.href : undefined,
+    stateUrl: state && page.kind !== "websitePage" && page.kind !== "consent" ? url.href : undefined,
     state: state ? truncateActivityText(state) : undefined,
     largeImageKey,
     largeImageText: title ? truncateActivityText(title) : "Nowly",

@@ -35,6 +35,21 @@ export const getChannelName = (): string | undefined => {
   return title || undefined
 }
 
+export const findUploaderUrl = (): string | undefined => {
+  const link = $<HTMLAnchorElement>("#owner a[href^='/@'], #owner a[href^='/channel/'], ytd-video-owner-renderer a[href^='/@'], ytd-video-owner-renderer a[href^='/channel/']")
+  const href = link?.getAttribute("href")
+  if (!href) return undefined
+
+  try {
+    const url = new URL(href, "https://www.youtube.com")
+    if (url.protocol !== "https:" || !["www.youtube.com", "m.youtube.com", "youtube.com"].includes(url.hostname)) return undefined
+    if (!/^\/(?:@[^/]+|channel\/[^/]+|c\/[^/]+|user\/[^/]+)\/?$/.test(url.pathname)) return undefined
+    return `https://www.youtube.com${url.pathname.replace(/\/$/, "")}`
+  } catch {
+    return undefined
+  }
+}
+
 export const getChannelAvatar = (): string | undefined => {
   const img = $<HTMLImageElement>("#page-header yt-img-shadow img, ytd-tabbed-page-header yt-img-shadow img, ytd-c4-header yt-img-shadow img")
   return img?.src || undefined

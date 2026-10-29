@@ -21,6 +21,7 @@ website DOM  ──read──▶  presence.on("UpdateData")  ──setActivity()
 src/{LETTER}/{Service Name}/
   metadata.json        # required - marketplace + matching metadata
   presence.ts          # required - the script (entry point bundled by esbuild)
+  settings.ts          # preferred - default-exported setting definitions (CLI 1.7.0+)
   utils/               # optional but recommended - helpers (DOM, parsing, API, bridge)
     player.ts
     browsing.ts
@@ -54,7 +55,7 @@ pnpm install
 
 ## Workflow
 
-1. **Scaffold.** Either run `nowly init "Service Name"` (also creates a starter `locales/{en-US,fr-FR,es-ES}.json` with a generic browsing string) or create the folder/files by hand, copying an existing presence.
+1. **Scaffold.** With CLI 1.7.0+, run `nowly init "Service Name"` (also creates `settings.ts` and starter `locales/{en-US,fr-FR,es-ES}.json`) or create the files by hand. Do not copy legacy inline setting definitions into a new presence.
 2. **Write `metadata.json`** (see reference below). Include `longDescription` and `features` in `en-US`, `fr-FR`, `es-ES`.
 3. **Write `locales/en-US.json`, `fr-FR.json`, `es-ES.json`** — the runtime strings your `presence.ts` will show as `details`/`state` (see "Locales" below). Write `en-US.json` first, then translate the same keys into the other two.
 4. **Inspect the target site's DOM** to find where the relevant data lives.
@@ -106,8 +107,7 @@ The SDK is published on npm as `@nowly/sdk`. `Presence` and `Assets` are **injec
 ```ts
 import { createMediaTimestamps, PresenceType } from "@nowly/sdk"
 
-const settings = Presence.Settings({ /* ... */ })
-const presence = new Presence(settings)
+const presence = new Presence()
 
 presence.on("UpdateData", async (ctx) => {
   // ctx.settings holds the user's current setting values
@@ -125,8 +125,11 @@ presence.error("msg")
 
 ```ts
 type PresenceData = {
+  name?: string
   details?: string
   state?: string
+  detailsUrl?: string      // SDK 1.7.0+: public HTTPS destination for details
+  stateUrl?: string        // SDK 1.7.0+: public HTTPS destination for state
   largeImageKey?: string   // Assets.Logo | Assets.Icon | Assets.Thumbnail | https:// URL
   largeImageText?: string
   smallImageKey?: string   // "play" | "pause" | "search" only
@@ -134,6 +137,7 @@ type PresenceData = {
   startTimestamp?: number
   endTimestamp?: number
   type?: PresenceTypeValue // Watching, Listening, Playing, ...
+  statusDisplayType?: 0 | 1 | 2 // compact status: name, state, details; does not change the card
   buttons?: { label: string; url: string }[]  // max 2
   appName?: string
 }
@@ -149,20 +153,29 @@ if (!video.paused) Object.assign(data, createMediaTimestamps(video))
 
 ### Settings
 
+Prefer a default export in `settings.ts` with CLI 1.7.0+. This file completely overrides legacy inline `Presence.Settings({ ... })` definitions; there is no merge. Invalid files must fail the build, not silently fall back. Without the file, existing inline definitions remain supported. Do not migrate unrelated presences just to change the format.
+
 ```ts
-const settings = Presence.Settings({
+// settings.ts
+import type { PresenceSetting } from "@nowly/sdk"
+
+export default {
   showBrowsing: {
     type: "boolean",
     default: false,
     label: { "en-US": "Show browsing activity", "fr-FR": "...", "es-ES": "..." },
     description: { "en-US": "When enabled, ..." },
   },
-})
+} satisfies Record<string, PresenceSetting>
 ```
+
+Use `new Presence()` in `presence.ts`. Do not import `settings.ts` or call `Presence.Settings` for the new format: the CLI discovers the file and registers defaults automatically. Read values from `ctx.settings` or `getSetting<boolean>("showBrowsing")` for an explicitly typed value. The CLI still emits `settings.json`; stored user values take priority. Keep definitions declarative and JSON-compatible, without browser or Node APIs.
+
+For streaming/video presences, offer `hideOnPause` (false), `showPlaybackState` (true), and `statusDisplayType` (select, `name` by default). Hide paused playback before any browsing fallback; resume normally when playback resumes. Hiding playback state removes both the small icon and its tooltip. Map `name`/`state`/`details` to `0`/`1`/`2`, falling back to `0` if the chosen field is unavailable. Preserve media titles in the card, privacy controls, live-stream timestamps, and browsing toggles. Compact status selection requires compatible extension and native host versions.
 
 ### Locales
 
-`locales/*.json` files hold the strings your `presence.ts` shows on Discord (`details`, `state`, mode labels, etc.) — **separate from** `metadata.json`'s own per-locale fields (`description`, `longDescription`, `features`, setting `label`/`description`), which stay inline objects and are untouched by this.
+`locales/*.json` files hold the strings your `presence.ts` shows on Discord (`details`, `state`, mode labels, etc.). Marketplace translations stay in `metadata.json` (`description`, `longDescription`, `features`); setting labels and descriptions stay in `settings.ts`, or in legacy inline definitions.
 
 ```json
 // locales/en-US.json
@@ -208,12 +221,13 @@ For large posters fetched from the page, pass `https://` URL directly as `largeI
 
 ## Conventions
 
-- **Browsing toggle.** Add `showBrowsing` boolean setting, `default: false`, with tri-lingual label/description. Watch state always shows; browsing only if enabled.
+- **Browsing toggle.** Add `showBrowsing` boolean setting, `default: false`, with tri-lingual label/description. Playback shows unless `hideOnPause` applies; browsing only if enabled.
 - **Clear when irrelevant.** `presence.clearActivity()` on unmatched pages.
 - **Small images.** Only `"play"`, `"pause"`, `"search"`.
 - **Buttons.** At most 2; strip query strings.
+- **Clickable text.** With SDK 1.7.0+ and compatible extension/native host, use `detailsUrl` and `stateUrl` for independently clickable lines. Match each destination to its displayed content or author, using verified public links from the page or canonical content IDs. Omit unknown links and all links hidden by privacy settings. Do not expose private chats, secret resources, credentials, or access tokens. URLs must be HTTPS, at most 2048 characters, and retain only query parameters needed to identify public content (for example YouTube's `v`). Music links must come from matching now-playing anchors, not the unrelated page being browsed. This is independent of button visibility.
 - **`world`.** Stay isolated by default.
-- **Localization.** `en-US`, `fr-FR`, `es-ES` everywhere: inline objects in `metadata.json` for marketplace/settings text, `locales/*.json` + `getStrings()` for anything rendered inside `setActivity()`. Never hardcode English activity text.
+- **Localization.** `en-US`, `fr-FR`, `es-ES` everywhere: `metadata.json` for marketplace text, setting definitions for labels/descriptions, and `locales/*.json` + `getStrings()` for activity text. Never hardcode English activity text.
 - **Code style.** No semicolons, double quotes, 2-space indent.
 
 ## Assets

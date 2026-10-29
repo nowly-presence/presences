@@ -9,6 +9,8 @@ export type TrackInfo = {
   artist?: string
   artwork?: string
   url: string
+  contentUrl?: string
+  artistUrl?: string
   playing: boolean
   currentTime?: number
   duration?: number
@@ -134,6 +136,27 @@ export const createProgressTimestamps = (
   }
 }
 
+const findPlayerLink = (playerBar: Element | null, label: string | undefined, artist: boolean): string | undefined => {
+  if (!playerBar || !label) return undefined
+  for (const anchor of playerBar.querySelectorAll<HTMLAnchorElement>("a[href]")) {
+    const anchorLabel = artist ? cleanArtist(anchor.textContent) : cleanTrackTitle(anchor.textContent)
+    if (anchorLabel !== label) continue
+    try {
+      const url = new URL(anchor.getAttribute("href") ?? "", "https://music.youtube.com")
+      if (url.protocol !== "https:" || url.hostname !== "music.youtube.com" || url.username || url.password) continue
+      if (artist) {
+        if (!/^\/(channel|artist)\/[^/]+\/?$/.test(url.pathname)) continue
+        return `${url.origin}${url.pathname}`
+      }
+      const videoId = url.searchParams.get("v")
+      if (url.pathname === "/watch" && videoId) return `https://music.youtube.com/watch?v=${encodeURIComponent(videoId)}`
+    } catch {
+      continue
+    }
+  }
+  return undefined
+}
+
 export const getCurrentTrack = (playerBar: Element | null, video: HTMLVideoElement | null): TrackInfo | undefined => {
   const previousTrack = lastTrack
   const title = findTitle(playerBar)
@@ -165,6 +188,8 @@ export const getCurrentTrack = (playerBar: Element | null, video: HTMLVideoEleme
     artist: shouldKeepPreviousArtist ? previousTrack.artist : artist,
     artwork: findArtwork(playerBar),
     url,
+    contentUrl: findPlayerLink(playerBar, title, false),
+    artistUrl: findPlayerLink(playerBar, artist, true),
     playing,
     currentTime,
     duration,

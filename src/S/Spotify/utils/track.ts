@@ -10,6 +10,8 @@ export type TrackInfo = {
   artist?: string
   artwork?: string
   url: string
+  contentUrl?: string
+  artistUrl?: string
   playing: boolean
 }
 
@@ -34,6 +36,29 @@ export const getMediaSessionTrack = (fallbackUrl: string): TrackInfo | undefined
     artist: meta.artist.trim() || undefined,
     artwork,
     url: fallbackUrl,
+    contentUrl: findPlayerLink(title, "track"),
+    artistUrl: findPlayerLink(meta.artist.trim(), "artist"),
     playing: navigator.mediaSession.playbackState !== "paused",
   }
+}
+
+const findPlayerLink = (label: string, kind: "track" | "artist"): string | undefined => {
+  if (!label) return undefined
+  const anchors = document.querySelectorAll<HTMLAnchorElement>(
+    "[data-testid='now-playing-widget'] a[href], .now-playing a[href]",
+  )
+  for (const anchor of anchors) {
+    if (anchor.textContent?.trim().toLocaleLowerCase() !== label.toLocaleLowerCase()) continue
+    try {
+      const url = new URL(anchor.getAttribute("href") ?? "", document.location.href)
+      if (url.protocol !== "https:" || url.hostname !== "open.spotify.com" || url.username || url.password) continue
+      if (!new RegExp(`^/(?:intl-[a-z]+/)?${kind}/[a-zA-Z0-9]+/?$`).test(url.pathname)) continue
+      url.search = ""
+      url.hash = ""
+      return url.href
+    } catch {
+      continue
+    }
+  }
+  return undefined
 }

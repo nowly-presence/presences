@@ -91,6 +91,8 @@ presence.on("UpdateData", async (ctx) => {
   const canSharePage = page.kind === "article" || page.kind === "file" || page.kind === "portal" || page.kind === "category"
 
   if (canSharePage && !privacy) {
+    data.detailsUrl = pageUrl()
+    if (state) data.stateUrl = pageUrl()
     const image = getWikipediaLeadImage()
     if (image) {
       data.largeImageKey = image

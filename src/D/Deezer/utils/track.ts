@@ -10,6 +10,8 @@ export type TrackInfo = {
   artist?: string
   artwork?: string
   url: string
+  contentUrl?: string
+  artistUrl?: string
   playing: boolean
 }
 
@@ -34,6 +36,30 @@ export const getMediaSessionTrack = (fallbackUrl: string): TrackInfo | undefined
     artist: meta.artist.trim() || undefined,
     artwork,
     url: fallbackUrl,
+    contentUrl: findPlayerLink(title, "track"),
+    artistUrl: findPlayerLink(meta.artist.trim(), "artist"),
     playing: navigator.mediaSession.playbackState !== "paused",
   }
+}
+
+const findPlayerLink = (label: string, kind: "track" | "artist"): string | undefined => {
+  if (!label) return undefined
+  const anchors = document.querySelectorAll<HTMLAnchorElement>(
+    ".player a[href], [data-testid='player'] a[href], .player-bottom a[href]",
+  )
+  for (const anchor of anchors) {
+    if (anchor.textContent?.trim().toLocaleLowerCase() !== label.toLocaleLowerCase()) continue
+    try {
+      const url = new URL(anchor.getAttribute("href") ?? "", document.location.href)
+      if (url.protocol !== "https:" || url.username || url.password) continue
+      if (!["www.deezer.com", "deezer.com"].includes(url.hostname)) continue
+      if (!new RegExp(`^/(?:[a-z]{2}/)?${kind}/[0-9]+/?$`).test(url.pathname)) continue
+      url.search = ""
+      url.hash = ""
+      return url.href
+    } catch {
+      continue
+    }
+  }
+  return undefined
 }

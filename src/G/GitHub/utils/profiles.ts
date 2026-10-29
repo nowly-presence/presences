@@ -32,6 +32,7 @@ export const handleProfilePage = async (
   await presence.setActivity({
     details: getProfileTabDetails(search, strings),
     state: title,
+    stateUrl: `https://github.com/${encodeURIComponent(username)}`,
     largeImageKey: avatar || Assets.Logo,
     largeImageText: title,
     type: PresenceType.Watching,

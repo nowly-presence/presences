@@ -76,6 +76,8 @@ presence.on("UpdateData", async (ctx) => {
   const data: Parameters<typeof presence.setActivity>[0] = {
     details: privacy && page.kind !== "general" ? strings.privateBrowsing : page.details,
     state: privacy ? undefined : page.state,
+    detailsUrl: !privacy && (page.kind === "pin" || page.kind === "videoPin") ? href.split(/[?#]/)[0] : undefined,
+    stateUrl: !privacy && page.state ? page.profileUrl : undefined,
     largeImageKey: Assets.Logo,
     type: page.kind === "videoPin" ? PresenceType.Watching : PresenceType.Playing,
   }

@@ -160,6 +160,8 @@ presence.on("UpdateData", async (ctx) => {
       name: mediaTitleInHeader ? track.title : undefined,
       details: privacy ? strings.listeningToMusic : mediaTitleInHeader ? "Apple Music" : track.title,
       state: privacy ? undefined : track.artist,
+      detailsUrl: !privacy && !mediaTitleInHeader ? track.contentUrl : undefined,
+      stateUrl: privacy ? undefined : track.artistUrl,
       largeImageKey: privacy ? Assets.Logo : toDiscordImage(track.artwork) ?? Assets.Logo,
       largeImageText: privacy ? "Apple Music" : track.title,
       smallImageKey: playing ? "play" : "pause",

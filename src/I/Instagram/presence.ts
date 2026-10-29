@@ -72,6 +72,7 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "post" || page.kind === "reel") {
     const data: PresenceData = {
       details: page.kind === "reel" ? strings.viewingReel : strings.viewingPost,
+      detailsUrl: privacy ? undefined : page.url,
       largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "Instagram",
       type: PresenceType.Watching,
@@ -86,6 +87,8 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "story") {
     const data: PresenceData = {
       details: strings.viewingStory,
+      detailsUrl: privacy ? undefined : page.url,
+      stateUrl: !privacy && page.user ? `https://www.instagram.com/${encodeURIComponent(page.user)}/` : undefined,
       state: privacy ? undefined : page.user ? `@${page.user}` : undefined,
       largeImageKey: Assets.Logo,
       largeImageText: "Instagram",
@@ -101,6 +104,7 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "profile") {
     const data: PresenceData = {
       details: privacy ? strings.viewingProfile : presence.formatString(strings.viewingProfileOf, { user: page.user }),
+      detailsUrl: privacy ? undefined : page.url,
       largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "Instagram",
       type: PresenceType.Watching,

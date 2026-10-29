@@ -72,6 +72,8 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "status") {
     const data: PresenceData = {
       details: strings.viewingPost,
+      detailsUrl: privacy ? undefined : page.url,
+      stateUrl: privacy ? undefined : `https://x.com/${encodeURIComponent(page.user)}`,
       state: privacy ? undefined : `@${page.user}`,
       largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "X",
@@ -87,6 +89,7 @@ presence.on("UpdateData", async (ctx) => {
   if (page.kind === "profile") {
     const data: PresenceData = {
       details: privacy ? strings.viewingProfile : presence.formatString(strings.viewingProfileOf, { user: page.user }),
+      detailsUrl: privacy ? undefined : page.url,
       largeImageKey: (!privacy && getPageImage()) || Assets.Logo,
       largeImageText: "X",
       type: PresenceType.Watching,

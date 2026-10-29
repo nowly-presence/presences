@@ -92,6 +92,8 @@ presence.on("UpdateData", async (ctx) => {
   }
 
   if (page.kind === "product" && !privacy) {
+    data.detailsUrl = page.url
+    if (state) data.stateUrl = page.url
     const image = getAmazonProductImage()
     if (image) {
       data.largeImageKey = image

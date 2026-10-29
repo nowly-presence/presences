@@ -37,6 +37,7 @@ export const handleGist = async (
 
     await presence.setActivity({
       details: presence.formatString(strings.browsingUserGist, { user: first }),
+      detailsUrl: `https://gist.github.com/${encodeURIComponent(first)}`,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: first,
       type: PresenceType.Watching,
@@ -48,10 +49,14 @@ export const handleGist = async (
   if (first && second) {
     const avatar = await toDiscordImage(getAvatarImage(first) || getMetaImage())
     const secret = isSecretGist()
+    const publicLabel = document.querySelector('[title="Public gist"], [aria-label="Public gist"]')
+      || Array.from(document.querySelectorAll(".gisthead .Label, .gisthead .labels span"))
+        .find((label) => label.textContent?.trim().toLowerCase() === "public")
 
     await presence.setActivity({
       details: secret ? strings.viewingSecretGist : strings.viewingGist,
       state: getGistTitle(),
+      stateUrl: !secret && publicLabel ? href.split(/[?#]/)[0] : undefined,
       largeImageKey: avatar || Assets.Logo,
       largeImageText: first,
       type: PresenceType.Watching,

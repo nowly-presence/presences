@@ -103,6 +103,11 @@ presence.on("UpdateData", async (ctx) => {
   }
   if (page.kind === "search") data.smallImageKey = "search"
 
+  if (!privacy && (page.kind === "profile" || page.kind === "company" || page.kind === "school" || page.kind === "post")) {
+    data.detailsUrl = page.url
+    if (state) data.stateUrl = page.url
+  }
+
   if (!privacy && showButtons) {
     if (page.kind === "profile") data.buttons = [{ label: strings.viewProfile, url: page.url }]
     else if (page.kind === "company" || page.kind === "school") data.buttons = [{ label: strings.viewPage, url: page.url }]

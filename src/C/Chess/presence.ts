@@ -133,6 +133,8 @@ presence.on("UpdateData", async (ctx) => {
   await presence.setActivity({
     details,
     state,
+    detailsUrl: !privacy && (page === "game" || page === "profile" || page === "lesson" || page === "analysis") ? href.split(/[?#]/)[0] : undefined,
+    stateUrl: !privacy && page === "profile" ? href.split(/[?#]/)[0] : undefined,
     largeImageKey,
     largeImageText: privacy ? undefined : title,
     smallImageKey,

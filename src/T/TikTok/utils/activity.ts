@@ -93,6 +93,11 @@ export const handleUpdate = async (
         if (buttons.length > 0) data.buttons = buttons
       }
 
+      if (!privacy) {
+        data.detailsUrl = nickname && handle ? creatorURL : tiktokURL
+        data.stateUrl = !mediaTitleInHeader && data.state ? tiktokURL : undefined
+      }
+
       if (video && !paused && video.duration && video.currentTime) {
         Object.assign(data, createMediaTimestamps(video))
       }
@@ -141,6 +146,12 @@ export const handleUpdate = async (
         ]
       }
 
+      if (!privacy && videoPath) {
+        const contentUrl = `https://www.tiktok.com${pathname}`
+        data.detailsUrl = author.nickname && handle ? `https://www.tiktok.com/@${handle}` : contentUrl
+        data.stateUrl = !mediaTitleInHeader && data.state ? contentUrl : undefined
+      }
+
       await presence.setActivity(data)
       return
     }
@@ -161,6 +172,7 @@ export const handleUpdate = async (
           : category
             ? presence.formatString(strings.browsingNamed, { name: category })
             : strings.browsingLiveCategory,
+        detailsUrl: privacy ? undefined : href.split(/[?#]/)[0],
       }
 
       if (!privacy && showButtons) {
@@ -205,6 +217,8 @@ export const handleUpdate = async (
         ]
       }
 
+      if (!privacy && author.handle) data.detailsUrl = href.split(/[?#]/)[0]
+
       await presence.setActivity(data)
       return
     }
@@ -235,6 +249,8 @@ export const handleUpdate = async (
       if (showProfileUsernames && !privacy && showButtons && username) {
         data.buttons = [{ label: strings.viewProfile, url: `https://www.tiktok.com/@${username}` }]
       }
+
+      if (showProfileUsernames && !privacy && username) data.detailsUrl = `https://www.tiktok.com/@${username}`
 
       await presence.setActivity(data)
       return

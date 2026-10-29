@@ -128,6 +128,8 @@ presence.on("UpdateData", async (ctx) => {
     appName: "Steam",
     details: mapped.details,
     state: namedState(privacy, mapped.state),
+    detailsUrl: privacy ? undefined : mapped.url,
+    stateUrl: !privacy && mapped.state ? mapped.url : undefined,
     largeImageKey: Assets.Logo,
     type: PresenceType.Playing,
   }

@@ -24,6 +24,8 @@ export const handleRepositoryPage = async (
   if (!repository) return false
 
   const isPrivate = isPrivateRepository()
+  const isPublic = !isPrivate
+    && document.querySelector<HTMLMetaElement>('meta[name="octolytics-dimension-repository_public"]')?.content === "true"
   if (isPrivate && !showPrivateRepositories) {
     presence.clearActivity()
     return true
@@ -41,6 +43,8 @@ export const handleRepositoryPage = async (
   await presence.setActivity({
     details: getRepositoryDetails(section, strings),
     state: repository.name,
+    detailsUrl: isPublic ? getRepositoryContextButton(pathname, href, strings)?.url : undefined,
+    stateUrl: isPublic ? `https://github.com/${repository.owner}/${repository.repo}` : undefined,
     largeImageKey: pullRequestAuthorImage || image || Assets.Logo,
     largeImageText: pullRequestAuthor || repository.name,
     smallImageKey: pullRequestAuthorImage && image ? image : undefined,
