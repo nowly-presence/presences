@@ -13,141 +13,163 @@
   "color": "#2FAFF0",
   "category": "gaming",
   "description": {
-    "en-US": "Show when you are playing OpenFront.io and let friends spectate your game.",
-    "fr-FR": "Affichez vos parties OpenFront.io et permettez à vos amis de les regarder.",
-    "es-ES": "Muestra tus partidas de OpenFront.io y permite que tus amigos las vean.",
-    "de-DE": "Zeigt, wenn du OpenFront.io spielst, und lässt Freunde deine Partie ansehen.",
-    "el-GR": "Εμφανίζει πότε παίζετε OpenFront.io και επιτρέπει στους φίλους σας να παρακολουθούν το παιχνίδι.",
-    "ja-JP": "OpenFront.ioのプレイ状況を表示し、友達がゲームを観戦できるようにします。",
-    "ko-KR": "OpenFront.io 플레이 상태를 표시하고 친구가 게임을 관전할 수 있게 합니다.",
-    "ms-MY": "Tunjukkan apabila anda bermain OpenFront.io dan benarkan rakan menonton permainan anda.",
-    "pl-PL": "Pokazuje, kiedy grasz w OpenFront.io, i pozwala znajomym oglądać Twoją rozgrywkę.",
-    "pt-BR": "Mostra quando você está jogando OpenFront.io e permite que amigos assistam à sua partida.",
-    "tr-TR": "OpenFront.io oynadığını gösterir ve arkadaşlarının oyununu izlemesine olanak tanır."
+    "en-US": "Show your OpenFront.io games on Discord: lobbies, solo, replays, live stats and a spectate button for friends.",
+    "fr-FR": "Affichez vos parties OpenFront.io sur Discord : lobbies, solo, replays, stats en direct et bouton spectateur pour vos amis.",
+    "es-ES": "Muestra tus partidas de OpenFront.io en Discord: salas, solitario, repeticiones, estadísticas en vivo y botón de espectador para tus amigos.",
+    "de-DE": "Zeige deine OpenFront.io-Spiele auf Discord: Lobbys, Solo, Replays, Live-Statistiken und eine Zuschauer-Schaltfläche für Freunde.",
+    "el-GR": "Εμφανίστε τα παιχνίδια σας στο OpenFront.io στο Discord: lobbies, μονά παιχνίδια, replays, ζωντανά στατιστικά και κουμπί παρακολούθησης για φίλους.",
+    "ja-JP": "DiscordにOpenFront.ioのゲームを表示：ロビー、ソロ、リプレイ、リアルタイム統計、友達向け観戦ボタン。",
+    "ko-KR": "Discord에 OpenFront.io 게임을 표시합니다: 로비, 솔로, 리플레이, 실시간 통계, 친구용 관전 버튼.",
+    "ms-MY": "Paparkan permainan OpenFront.io anda di Discord: lobi, solo, ulangan, statistik langsung dan butang penonton untuk rakan.",
+    "pl-PL": "Pokazuj swoje gry w OpenFront.io na Discordzie: lobby, gry solo, powtórki, statystyki na żywo i przycisk oglądania dla znajomych.",
+    "pt-BR": "Mostre suas partidas de OpenFront.io no Discord: lobbies, solo, replays, estatísticas ao vivo e botão de espectador para amigos.",
+    "tr-TR": "OpenFront.io oyunlarını Discord'da göster: lobiler, tek kişilik oyunlar, tekrarlar, canlı istatistikler ve arkadaşlar için izleyici düğmesi."
   },
   "longDescription": {
-    "en-US": "Display your OpenFront.io activity on Discord, including the current game and a direct spectator link when available.",
-    "fr-FR": "Affichez votre activité OpenFront.io sur Discord, avec la partie en cours et un lien direct pour la regarder lorsque disponible.",
-    "es-ES": "Muestra tu actividad de OpenFront.io en Discord, incluida la partida actual y un enlace directo para verla cuando esté disponible.",
-    "de-DE": "Zeigt deine OpenFront.io-Aktivität auf Discord an, einschließlich des aktuellen Spiels und, falls verfügbar, eines direkten Zuschauerlinks.",
-    "el-GR": "Εμφανίζει τη δραστηριότητά σας στο OpenFront.io στο Discord, μαζί με το τρέχον παιχνίδι και έναν άμεσο σύνδεσμο παρακολούθησης όταν είναι διαθέσιμος.",
-    "ja-JP": "DiscordにOpenFront.ioのアクティビティを表示します。現在のゲームや、利用可能な場合は観戦用の直接リンクも表示します。",
-    "ko-KR": "Discord에 OpenFront.io 활동을 표시합니다. 현재 게임과 가능한 경우 바로 관전할 수 있는 링크도 표시합니다.",
-    "ms-MY": "Paparkan aktiviti OpenFront.io anda di Discord, termasuk permainan semasa dan pautan terus untuk menonton jika tersedia.",
-    "pl-PL": "Wyświetla Twoją aktywność w OpenFront.io na Discordzie, w tym aktualną grę i bezpośredni link do oglądania, jeśli jest dostępny.",
-    "pt-BR": "Exibe sua atividade no OpenFront.io no Discord, incluindo a partida atual e um link direto para assistir quando disponível.",
-    "tr-TR": "Discord'da OpenFront.io etkinliğini, mevcut oyunu ve varsa doğrudan izleme bağlantısını gösterir."
+    "en-US": "Show everything you do on OpenFront.io in your Discord status. While you wait in a lobby, it shows the map, mode and player count with a countdown to the start. In game, it shows the map, mode, difficulty and modifiers, plus live stats refreshed every few seconds: rank, territory, troops and gold. Solo games, replays and your result (victory, defeat, eliminated) are covered too. Friends can spectate with one click, except in public free-for-all games where the button is hidden to prevent ghosting, and private lobby secrets are never shared. Menu activity such as the store, leaderboard and clans is optional and off by default.",
+    "fr-FR": "Affichez tout ce que vous faites sur OpenFront.io dans votre statut Discord. Dans un lobby, la carte, le mode et le nombre de joueurs s'affichent avec le compte à rebours avant le départ. En partie, la présence montre la carte, le mode, la difficulté et les modificateurs, ainsi que des stats en direct rafraîchies toutes les quelques secondes : rang, territoire, troupes et or. Les parties solo, les replays et votre résultat (victoire, défaite, éliminé) sont aussi pris en charge. Vos amis peuvent regarder la partie en un clic, sauf en chacun pour soi public où le bouton est masqué pour éviter le ghosting, et les secrets des lobbies privés ne sont jamais partagés. L'activité dans les menus, comme la boutique, le classement et les clans, est optionnelle et désactivée par défaut.",
+    "es-ES": "Muestra todo lo que haces en OpenFront.io en tu estado de Discord. Mientras esperas en una sala, aparecen el mapa, el modo y el número de jugadores con la cuenta atrás hasta el inicio. En partida, muestra el mapa, el modo, la dificultad y los modificadores, además de estadísticas en vivo actualizadas cada pocos segundos: puesto, territorio, tropas y oro. También cubre las partidas en solitario, las repeticiones y tu resultado (victoria, derrota, eliminado). Tus amigos pueden ver la partida con un clic, salvo en todos contra todos público, donde el botón se oculta para evitar el ghosting, y los secretos de las salas privadas nunca se comparten. La actividad en los menús, como la tienda, la clasificación y los clanes, es opcional y está desactivada por defecto.",
+    "de-DE": "Zeige alles, was du in OpenFront.io machst, in deinem Discord-Status. In der Lobby erscheinen Karte, Modus und Spielerzahl mit Countdown bis zum Start. Im Spiel zeigt die Präsenz Karte, Modus, Schwierigkeit und Modifikatoren sowie Live-Statistiken, die alle paar Sekunden aktualisiert werden: Platz, Gebiet, Truppen und Gold. Solospiele, Replays und dein Ergebnis (Sieg, Niederlage, ausgeschieden) werden ebenfalls erfasst. Freunde können mit einem Klick zuschauen, außer bei öffentlichem Jeder-gegen-jeden, wo die Schaltfläche gegen Ghosting ausgeblendet ist; Geheimnisse privater Lobbys werden nie geteilt. Menüaktivität wie Shop, Bestenliste und Clans ist optional und standardmäßig aus.",
+    "el-GR": "Εμφανίστε ό,τι κάνετε στο OpenFront.io στην κατάστασή σας στο Discord. Όσο περιμένετε σε lobby, εμφανίζονται ο χάρτης, η λειτουργία και ο αριθμός παικτών με αντίστροφη μέτρηση μέχρι την έναρξη. Στο παιχνίδι εμφανίζονται ο χάρτης, η λειτουργία, η δυσκολία και οι τροποποιητές, μαζί με ζωντανά στατιστικά που ανανεώνονται κάθε λίγα δευτερόλεπτα: θέση, έδαφος, στρατεύματα και χρυσός. Καλύπτονται επίσης τα μονά παιχνίδια, τα replays και το αποτέλεσμά σας (νίκη, ήττα, αποκλεισμός). Οι φίλοι σας μπορούν να παρακολουθήσουν με ένα κλικ, εκτός από τα δημόσια όλοι-εναντίον-όλων, όπου το κουμπί κρύβεται για αποφυγή ghosting, και τα μυστικά των ιδιωτικών lobbies δεν κοινοποιούνται ποτέ. Η δραστηριότητα στα μενού, όπως κατάστημα, κατάταξη και clans, είναι προαιρετική και απενεργοποιημένη από προεπιλογή.",
+    "ja-JP": "OpenFront.ioでの行動をすべてDiscordのステータスに表示します。ロビーでは、マップ、モード、人数と開始までのカウントダウンを表示。ゲーム中は、マップ、モード、難易度、モディファイアに加え、数秒ごとに更新されるリアルタイム統計（順位、領土、兵力、ゴールド）を表示します。ソロゲーム、リプレイ、結果（勝利・敗北・脱落）にも対応。友達はワンクリックで観戦できます。ただし公開の個人戦ではゴースティング防止のためボタンを非表示にし、非公開ロビーの秘密は共有されません。ストア、リーダーボード、クランなどのメニュー表示は任意で、初期設定ではオフです。",
+    "ko-KR": "OpenFront.io에서 하는 모든 활동을 Discord 상태에 표시합니다. 로비에서는 맵, 모드, 인원과 시작까지의 카운트다운을 보여 줍니다. 게임 중에는 맵, 모드, 난이도, 모디파이어와 몇 초마다 갱신되는 실시간 통계(순위, 영토, 병력, 골드)를 표시합니다. 솔로 게임, 리플레이, 결과(승리, 패배, 탈락)도 지원합니다. 친구는 한 번의 클릭으로 관전할 수 있으며, 공개 개인전에서는 고스팅 방지를 위해 버튼이 숨겨지고 비공개 로비의 비밀 정보는 공유되지 않습니다. 상점, 리더보드, 클랜 같은 메뉴 활동 표시는 선택 사항이며 기본값은 꺼짐입니다.",
+    "ms-MY": "Paparkan semua yang anda lakukan di OpenFront.io dalam status Discord anda. Semasa menunggu di lobi, peta, mod dan bilangan pemain dipaparkan bersama kiraan detik sebelum bermula. Dalam permainan, peta, mod, kesukaran dan pengubah suai dipaparkan, bersama statistik langsung yang dikemas kini setiap beberapa saat: kedudukan, wilayah, tentera dan emas. Permainan solo, ulangan dan keputusan anda (menang, kalah, tersingkir) turut diliputi. Rakan boleh menonton dengan satu klik, kecuali dalam permainan awam setiap-orang-untuk-diri-sendiri di mana butang disembunyikan untuk mengelakkan ghosting, dan rahsia lobi persendirian tidak pernah dikongsi. Aktiviti menu seperti kedai, papan pendahulu dan klan adalah pilihan dan dimatikan secara lalai.",
+    "pl-PL": "Pokazuj wszystko, co robisz w OpenFront.io, w statusie na Discordzie. W lobby widoczne są mapa, tryb i liczba graczy wraz z odliczaniem do startu. W grze pokazywane są mapa, tryb, poziom trudności i modyfikatory oraz statystyki na żywo odświeżane co kilka sekund: miejsce, terytorium, wojska i złoto. Obsługiwane są też gry solo, powtórki i Twój wynik (zwycięstwo, porażka, eliminacja). Znajomi mogą oglądać grę jednym kliknięciem, z wyjątkiem publicznych gier każdy na każdego, gdzie przycisk jest ukryty, aby zapobiec ghostingowi; sekrety prywatnych lobby nigdy nie są udostępniane. Aktywność w menu, np. sklep, ranking i klany, jest opcjonalna i domyślnie wyłączona.",
+    "pt-BR": "Mostre tudo o que você faz no OpenFront.io no seu status do Discord. Enquanto espera em um lobby, aparecem o mapa, o modo e o número de jogadores com a contagem regressiva para o início. Em jogo, mostra o mapa, o modo, a dificuldade e os modificadores, além de estatísticas ao vivo atualizadas a cada poucos segundos: posição, território, tropas e ouro. Partidas solo, replays e seu resultado (vitória, derrota, eliminado) também são cobertos. Amigos podem assistir com um clique, exceto em todos contra todos públicos, onde o botão fica oculto para evitar ghosting, e os segredos de lobbies privados nunca são compartilhados. A atividade nos menus, como loja, ranking e clãs, é opcional e vem desativada por padrão.",
+    "tr-TR": "OpenFront.io'da yaptığın her şeyi Discord durumunda göster. Bir lobide beklerken harita, mod ve oyuncu sayısı, başlangıca geri sayımla birlikte görünür. Oyunda harita, mod, zorluk ve değiştiricilerin yanı sıra birkaç saniyede bir yenilenen canlı istatistikler gösterilir: sıra, bölge, asker ve altın. Tek kişilik oyunlar, tekrarlar ve sonucun (zafer, yenilgi, elendi) da kapsanır. Arkadaşların tek tıkla izleyebilir; ancak herkese açık herkes-herkese oyunlarında ghosting'i önlemek için düğme gizlenir ve özel lobi sırları asla paylaşılmaz. Mağaza, sıralama ve klanlar gibi menü etkinliği isteğe bağlıdır ve varsayılan olarak kapalıdır."
   },
   "features": {
     "en-US": [
       "Shows the map you are playing, with its thumbnail as the large image",
-      "Free-for-all or team mode, with a Ranked tag for ranked matches",
+      "Game mode (free-for-all, duos, trios, quads, humans vs nations), difficulty, modifiers and a Ranked tag",
+      "Live stats refreshed every few seconds: rank, territory, troops and gold",
       "Lobby waiting room with the player count (12/50) and a countdown to the start",
       "Elapsed game time in public, private and solo games",
       "Replays: the archived game's map, mode and players, with a \"Watch the replay\" button",
       "\"Spectate the game\" button for friends, hidden on public free-for-all games to prevent ghosting and never carrying a private lobby's secret",
       "Shows when you are searching for a match",
-      "Optional menu activity: store, leaderboard, clans, ranked, stats and profiles (off by default)"
+      "Optional menu activity: store, leaderboard, clans, ranked, stats and profiles (off by default)",
+      "Result at the end of a game: victory, defeat or eliminated"
     ],
     "fr-FR": [
       "Affiche la carte jouée, avec sa miniature en grande image",
-      "Chacun pour soi ou équipes, avec une mention Classé pour les parties classées",
+      "Mode de jeu (chacun pour soi, duos, trios, quatuors, humains contre nations), difficulté, modificateurs et mention Classé",
+      "Stats en direct rafraîchies toutes les quelques secondes : rang, territoire, troupes et or",
       "Salle d'attente avec le nombre de joueurs (12/50) et le compte à rebours avant le départ",
       "Durée écoulée de la partie en public, en privé et en solo",
       "Replays : carte, mode et joueurs de la partie archivée, avec un bouton « Voir le replay »",
       "Bouton « Regarder la partie » pour vos amis, masqué en chacun pour soi public pour éviter le ghosting et sans jamais exposer le secret d'un lobby privé",
       "Indique quand vous cherchez une partie",
-      "Activité dans les menus en option : boutique, classement, clans, classé, stats et profils (désactivée par défaut)"
+      "Activité dans les menus en option : boutique, classement, clans, classé, stats et profils (désactivée par défaut)",
+      "Résultat en fin de partie : victoire, défaite ou éliminé"
     ],
     "es-ES": [
       "Muestra el mapa que juegas, con su miniatura como imagen grande",
-      "Todos contra todos o equipos, con la etiqueta Clasificatoria en partidas clasificatorias",
+      "Modo de juego (todos contra todos, dúos, tríos, cuartetos, humanos contra naciones), dificultad, modificadores y etiqueta Clasificatoria",
+      "Estadísticas en vivo actualizadas cada pocos segundos: puesto, territorio, tropas y oro",
       "Sala de espera con el número de jugadores (12/50) y la cuenta atrás hasta el inicio",
       "Tiempo de partida transcurrido en partidas públicas, privadas y en solitario",
       "Repeticiones: mapa, modo y jugadores de la partida archivada, con un botón «Ver la repetición»",
       "Botón «Ver la partida» para tus amigos, oculto en todos contra todos público para evitar el ghosting y sin exponer nunca el secreto de una sala privada",
       "Indica cuándo buscas una partida",
-      "Actividad opcional en los menús: tienda, clasificación, clanes, clasificatoria, estadísticas y perfiles (desactivada por defecto)"
+      "Actividad opcional en los menús: tienda, clasificación, clanes, clasificatoria, estadísticas y perfiles (desactivada por defecto)",
+      "Resultado al final de la partida: victoria, derrota o eliminado"
     ],
     "de-DE": [
       "Zeigt die gespielte Karte mit ihrem Vorschaubild als großes Bild",
-      "Jeder gegen jeden oder Teams, mit Hinweis „Gewertet“ bei gewerteten Spielen",
+      "Spielmodus (Jeder gegen jeden, Duos, Trios, Quartette, Menschen gegen Nationen), Schwierigkeit, Modifikatoren und Hinweis „Gewertet“",
+      "Live-Statistiken, alle paar Sekunden aktualisiert: Platz, Gebiet, Truppen und Gold",
       "Wartelobby mit Spielerzahl (12/50) und Countdown bis zum Start",
       "Verstrichene Spielzeit in öffentlichen, privaten und Solospielen",
       "Replays: Karte, Modus und Spieler des archivierten Spiels mit Schaltfläche „Replay ansehen“",
       "Schaltfläche „Spiel ansehen“ für Freunde, bei öffentlichem Jeder-gegen-jeden gegen Ghosting ausgeblendet und ohne das Geheimnis privater Lobbys preiszugeben",
       "Zeigt, wenn du ein Spiel suchst",
-      "Optionale Menüaktivität: Shop, Bestenliste, Clans, Rangliste, Statistiken und Profile (standardmäßig aus)"
+      "Optionale Menüaktivität: Shop, Bestenliste, Clans, Rangliste, Statistiken und Profile (standardmäßig aus)",
+      "Ergebnis am Spielende: Sieg, Niederlage oder ausgeschieden"
     ],
     "el-GR": [
       "Εμφανίζει τον χάρτη που παίζετε, με τη μικρογραφία του ως μεγάλη εικόνα",
-      "Όλοι εναντίον όλων ή ομάδες, με ένδειξη Ranked στα ranked παιχνίδια",
+      "Λειτουργία παιχνιδιού (όλοι εναντίον όλων, ζευγάρια, τριάδες, τετράδες, άνθρωποι εναντίον εθνών), δυσκολία, τροποποιητές και ένδειξη Ranked",
+      "Ζωντανά στατιστικά που ανανεώνονται κάθε λίγα δευτερόλεπτα: θέση, έδαφος, στρατεύματα και χρυσός",
       "Αίθουσα αναμονής με αριθμό παικτών (12/50) και αντίστροφη μέτρηση μέχρι την έναρξη",
       "Χρόνος παιχνιδιού σε δημόσια, ιδιωτικά και μονά παιχνίδια",
       "Replays: χάρτης, λειτουργία και παίκτες του αρχειοθετημένου παιχνιδιού, με κουμπί «Δες το replay»",
       "Κουμπί «Παρακολούθηση παιχνιδιού» για φίλους, κρυμμένο στα δημόσια όλοι-εναντίον-όλων για αποφυγή ghosting και χωρίς να αποκαλύπτει το μυστικό ιδιωτικού lobby",
       "Εμφανίζει πότε αναζητάτε παιχνίδι",
-      "Προαιρετική δραστηριότητα στα μενού: κατάστημα, κατάταξη, clans, ranked, στατιστικά και προφίλ (απενεργοποιημένη από προεπιλογή)"
+      "Προαιρετική δραστηριότητα στα μενού: κατάστημα, κατάταξη, clans, ranked, στατιστικά και προφίλ (απενεργοποιημένη από προεπιλογή)",
+      "Αποτέλεσμα στο τέλος του παιχνιδιού: νίκη, ήττα ή αποκλεισμός"
     ],
     "ja-JP": [
       "プレイ中のマップをサムネイルの大きな画像で表示",
-      "個人戦またはチーム戦を表示し、ランクマッチには「ランク」を付与",
+      "ゲームモード（個人戦、デュオ、トリオ、クアッド、人間 vs 国家）、難易度、モディファイア、ランクマッチ表示",
+      "数秒ごとに更新されるリアルタイム統計：順位、領土、兵力、ゴールド",
       "ロビーの待機画面に人数（12/50）と開始までのカウントダウンを表示",
       "公開・非公開・ソロゲームの経過時間を表示",
       "リプレイ：保存されたゲームのマップ・モード・人数と「リプレイを見る」ボタン",
       "友達向けの「ゲームを観戦」ボタン。公開の個人戦ではゴースティング防止のため非表示で、非公開ロビーの秘密は含まれません",
       "対戦相手を検索中であることを表示",
-      "任意のメニュー表示：ストア、リーダーボード、クラン、ランク、統計、プロフィール（初期設定はオフ）"
+      "任意のメニュー表示：ストア、リーダーボード、クラン、ランク、統計、プロフィール（初期設定はオフ）",
+      "ゲーム終了時の結果：勝利、敗北、脱落"
     ],
     "ko-KR": [
       "플레이 중인 맵을 썸네일 큰 이미지로 표시",
-      "개인전 또는 팀전 표시, 랭크 게임에는 랭크 태그 추가",
+      "게임 모드(개인전, 듀오, 트리오, 쿼드, 인간 대 국가), 난이도, 모디파이어, 랭크 태그",
+      "몇 초마다 갱신되는 실시간 통계: 순위, 영토, 병력, 골드",
       "로비 대기실에 인원(12/50)과 시작까지 카운트다운 표시",
       "공개, 비공개, 솔로 게임의 경과 시간 표시",
       "리플레이: 저장된 게임의 맵, 모드, 플레이어와 '리플레이 보기' 버튼",
       "친구용 '게임 관전' 버튼. 공개 개인전에서는 고스팅 방지를 위해 숨기며 비공개 로비의 비밀 정보는 포함하지 않음",
       "매치를 검색 중일 때 표시",
-      "선택형 메뉴 활동: 상점, 리더보드, 클랜, 랭크, 통계, 프로필(기본값 꺼짐)"
+      "선택형 메뉴 활동: 상점, 리더보드, 클랜, 랭크, 통계, 프로필(기본값 꺼짐)",
+      "게임 종료 시 결과: 승리, 패배, 탈락"
     ],
     "ms-MY": [
       "Menunjukkan peta yang dimainkan, dengan lakaran kecilnya sebagai imej besar",
-      "Setiap orang untuk diri sendiri atau pasukan, dengan tag Berpangkat untuk perlawanan berpangkat",
+      "Mod permainan (setiap orang untuk diri sendiri, duo, trio, kuartet, manusia lawan negara), kesukaran, pengubah suai dan tag Berpangkat",
+      "Statistik langsung dikemas kini setiap beberapa saat: kedudukan, wilayah, tentera dan emas",
       "Bilik menunggu lobi dengan bilangan pemain (12/50) dan kiraan detik sebelum bermula",
       "Masa permainan berlalu dalam permainan awam, persendirian dan solo",
       "Ulangan: peta, mod dan pemain permainan yang diarkibkan, dengan butang \"Tonton ulangan\"",
       "Butang \"Tonton permainan\" untuk rakan, disembunyikan dalam permainan awam setiap-orang-untuk-diri-sendiri bagi mengelakkan ghosting dan tidak pernah mendedahkan rahsia lobi persendirian",
       "Menunjukkan apabila anda mencari perlawanan",
-      "Aktiviti menu pilihan: kedai, papan pendahulu, klan, berpangkat, statistik dan profil (mati secara lalai)"
+      "Aktiviti menu pilihan: kedai, papan pendahulu, klan, berpangkat, statistik dan profil (mati secara lalai)",
+      "Keputusan di akhir permainan: menang, kalah atau tersingkir"
     ],
     "pl-PL": [
       "Pokazuje mapę, na której grasz, z miniaturą jako dużym obrazem",
-      "Każdy na każdego lub drużyny, z oznaczeniem Rankingowa dla gier rankingowych",
+      "Tryb gry (każdy na każdego, duety, trójki, czwórki, ludzie kontra narody), poziom trudności, modyfikatory i oznaczenie Rankingowa",
+      "Statystyki na żywo odświeżane co kilka sekund: miejsce, terytorium, wojska i złoto",
       "Poczekalnia lobby z liczbą graczy (12/50) i odliczaniem do startu",
       "Czas trwania gry w grach publicznych, prywatnych i solo",
       "Powtórki: mapa, tryb i gracze zarchiwizowanej gry oraz przycisk „Zobacz powtórkę”",
       "Przycisk „Oglądaj grę” dla znajomych, ukryty w publicznych grach każdy na każdego, by zapobiec ghostingowi, i nigdy nie ujawniający sekretu prywatnego lobby",
       "Pokazuje, kiedy szukasz meczu",
-      "Opcjonalna aktywność w menu: sklep, ranking, klany, gra rankingowa, statystyki i profile (domyślnie wyłączona)"
+      "Opcjonalna aktywność w menu: sklep, ranking, klany, gra rankingowa, statystyki i profile (domyślnie wyłączona)",
+      "Wynik na końcu gry: zwycięstwo, porażka lub eliminacja"
     ],
     "pt-BR": [
       "Mostra o mapa jogado, com a miniatura como imagem grande",
-      "Todos contra todos ou equipes, com a etiqueta Ranqueada em partidas ranqueadas",
+      "Modo de jogo (todos contra todos, duplas, trios, quartetos, humanos contra nações), dificuldade, modificadores e etiqueta Ranqueada",
+      "Estatísticas ao vivo atualizadas a cada poucos segundos: posição, território, tropas e ouro",
       "Sala de espera do lobby com número de jogadores (12/50) e contagem regressiva para o início",
       "Tempo de jogo decorrido em partidas públicas, privadas e solo",
       "Replays: mapa, modo e jogadores da partida arquivada, com botão \"Ver o replay\"",
       "Botão \"Assistir à partida\" para amigos, oculto em todos contra todos públicos para evitar ghosting e sem nunca expor o segredo de um lobby privado",
       "Mostra quando você está procurando uma partida",
-      "Atividade opcional nos menus: loja, ranking, clãs, ranqueado, estatísticas e perfis (desativada por padrão)"
+      "Atividade opcional nos menus: loja, ranking, clãs, ranqueado, estatísticas e perfis (desativada por padrão)",
+      "Resultado no fim da partida: vitória, derrota ou eliminado"
     ],
     "tr-TR": [
       "Oynadığın haritayı küçük resmiyle büyük görsel olarak gösterir",
-      "Herkes herkese veya takım modu, dereceli maçlarda Dereceli etiketiyle",
+      "Oyun modu (herkes herkese, ikili, üçlü, dörtlü, insanlar - uluslar), zorluk, değiştiriciler ve Dereceli etiketi",
+      "Birkaç saniyede bir yenilenen canlı istatistikler: sıra, bölge, asker ve altın",
       "Oyuncu sayısı (12/50) ve başlangıca geri sayımla lobi bekleme odası",
       "Herkese açık, özel ve tek kişilik oyunlarda geçen oyun süresi",
       "Tekrarlar: arşivlenmiş oyunun haritası, modu ve oyuncuları ile \"Tekrarı izle\" düğmesi",
       "Arkadaşlar için \"Oyunu izle\" düğmesi; ghosting'i önlemek için herkese açık herkes-herkese oyunlarda gizlenir ve özel lobinin gizli anahtarını asla içermez",
       "Maç aradığını gösterir",
-      "İsteğe bağlı menü etkinliği: mağaza, sıralama, klanlar, dereceli, istatistikler ve profiller (varsayılan olarak kapalı)"
+      "İsteğe bağlı menü etkinliği: mağaza, sıralama, klanlar, dereceli, istatistikler ve profiller (varsayılan olarak kapalı)",
+      "Oyun sonunda sonuç: zafer, yenilgi veya elendi"
     ]
   }
 }
