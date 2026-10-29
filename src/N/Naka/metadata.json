@@ -1,0 +1,47 @@
+{
+  "name": "Naka",
+  "author": {
+    "name": "KiMi",
+    "github": "q-kimi"
+  },
+  "url": [
+    "naka.cx",
+    "www.naka.cx"
+  ],
+  "regExp": "^https?://(?:www\\.)?naka\\.cx/",
+  "color": "#c8a468",
+  "category": "streaming",
+  "description": {
+    "en-US": "Show what you watch on Naka, a private streaming site with restricted access.",
+    "fr-FR": "Affichez vos visionnages sur Naka, un site priv? ? acc?s restreint.",
+    "es-ES": "Muestra lo que ves en Naka, un sitio privado con acceso restringido."
+  },
+  "longDescription": {
+    "en-US": "Naka is a private streaming site with restricted access. This presence displays the title, season, episode, and playback status for anime, movies, and series.",
+    "fr-FR": "Naka est un site de streaming priv? ? acc?s restreint. Cette pr?sence affiche le titre, la saison, l'?pisode et l'?tat de lecture des animes, films et s?ries.",
+    "es-ES": "Naka es un sitio privado de streaming con acceso restringido. Esta presencia muestra el t?tulo, la temporada, el episodio y el estado de reproducci?n de anime, pel?culas y series."
+  },
+  "features": {
+    "en-US": [
+      "Automatic content detection",
+      "Display title, season, and episode information",
+      "Playback status tracking",
+      "Anime, movie, and series support",
+      "Real-time viewing activity"
+    ],
+    "fr-FR": [
+      "D├®tection automatique du contenu",
+      "Affichage du titre, de la saison et de l'├®pisode",
+      "Suivi du statut de lecture",
+      "Support des animes, films et s├®ries",
+      "Activit├® de visionnage en temps r├®el"
+    ],
+    "es-ES": [
+      "Detecci├│n autom├ítica del contenido",
+      "Visualizaci├│n del t├¡tulo, temporada y episodio",
+      "Seguimiento del estado de reproducci├│n",
+      "Compatible con anime, pel├¡culas y series",
+      "Actividad de visualizaci├│n en tiempo real"
+    ]
+  }
+}
