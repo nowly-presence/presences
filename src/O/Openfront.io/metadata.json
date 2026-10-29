@@ -1,0 +1,109 @@
+{
+  "name": "Openfront.io",
+  "author": {
+    "name": "Gaëtan H",
+    "github": "steellgold"
+  },
+  "url": [
+    "openfront.io",
+    "www.openfront.io",
+    "replay.openfront.io"
+  ],
+  "regExp": "^https?://(?:[a-z0-9-]+\\.)?openfront\\.io/",
+  "color": "#2FAFF0",
+  "category": "gaming",
+  "description": {
+    "en-US": "Show your Openfront.io games on Discord: lobbies, solo, replays, live stats and a spectate button for friends.",
+    "fr-FR": "Affichez vos parties Openfront.io sur Discord : lobbies, solo, replays, stats en direct et bouton spectateur pour vos amis.",
+    "es-ES": "Muestra tus partidas de Openfront.io en Discord: salas, solitario, repeticiones, estadísticas en vivo y botón de espectador para tus amigos.",
+    "de-DE": "Zeige deine Openfront.io-Spiele auf Discord: Lobbys, Solo, Replays, Live-Statistiken und eine Zuschauer-Schaltfläche für Freunde.",
+    "el-GR": "Εμφανίστε τα παιχνίδια σας στο Openfront.io στο Discord: lobbies, μονά παιχνίδια, replays, ζωντανά στατιστικά και κουμπί παρακολούθησης για φίλους.",
+    "ja-JP": "DiscordにOpenfront.ioのゲームを表示：ロビー、ソロ、リプレイ、リアルタイム統計、友達向け観戦ボタン。",
+    "ko-KR": "Discord에 Openfront.io 게임을 표시합니다: 로비, 솔로, 리플레이, 실시간 통계, 친구용 관전 버튼.",
+    "ms-MY": "Paparkan permainan Openfront.io anda di Discord: lobi, solo, ulangan, statistik langsung dan butang penonton untuk rakan.",
+    "pl-PL": "Pokazuj swoje gry w Openfront.io na Discordzie: lobby, gry solo, powtórki, statystyki na żywo i przycisk oglądania dla znajomych.",
+    "pt-BR": "Mostre suas partidas de Openfront.io no Discord: lobbies, solo, replays, estatísticas ao vivo e botão de espectador para amigos.",
+    "tr-TR": "Openfront.io oyunlarını Discord'da göster: lobiler, tek kişilik oyunlar, tekrarlar, canlı istatistikler ve arkadaşlar için izleyici düğmesi."
+  },
+  "longDescription": {
+    "en-US": "Track your Openfront.io games on Discord, from lobby countdowns to live stats, replays and results. Friends can spectate when allowed; optional menu activity is off by default.",
+    "fr-FR": "Suivez vos parties Openfront.io sur Discord : compte à rebours du lobby, stats en direct, replays et résultats. Le mode spectateur est proposé quand il est autorisé ; l’activité des menus est désactivée par défaut.",
+    "es-ES": "Muestra tus partidas de Openfront.io en Discord: cuenta atrás en la sala, estadísticas en vivo, repeticiones y resultados. Permite que tus amigos vean la partida cuando está habilitado; la actividad de los menús está desactivada por defecto.",
+    "de-DE": "Zeige deine Openfront.io-Partien auf Discord – mit Lobby-Countdown, Live-Statistiken, Replays und Ergebnissen. Freunde können zuschauen, sofern es erlaubt ist; Menüaktivität ist standardmäßig deaktiviert.",
+    "el-GR": "Εμφανίστε τις παρτίδες σας στο Openfront.io στο Discord, με αντίστροφη μέτρηση lobby, ζωντανά στατιστικά, replays και αποτελέσματα. Οι φίλοι μπορούν να παρακολουθούν όταν επιτρέπεται· η δραστηριότητα μενού είναι απενεργοποιημένη από προεπιλογή.",
+    "ja-JP": "ロビーのカウントダウン、リアルタイム統計、リプレイ、結果など、Openfront.ioのプレイ状況をDiscordに表示します。許可されている場合は友達が観戦でき、メニューの表示は初期設定でオフです。",
+    "ko-KR": "로비 카운트다운, 실시간 통계, 리플레이와 결과 등 Openfront.io 게임 정보를 Discord에 표시합니다. 허용된 경우 친구가 관전할 수 있으며 메뉴 활동은 기본적으로 꺼져 있습니다.",
+    "ms-MY": "Paparkan permainan Openfront.io anda di Discord, termasuk kiraan detik lobi, statistik langsung, ulangan dan keputusan. Rakan boleh menonton apabila dibenarkan; aktiviti menu dimatikan secara lalai.",
+    "pl-PL": "Pokazuj swoje gry w Openfront.io na Discordzie: odliczanie w lobby, statystyki na żywo, powtórki i wyniki. Znajomi mogą oglądać, jeśli jest to dozwolone; aktywność menu jest domyślnie wyłączona.",
+    "pt-BR": "Mostre suas partidas de Openfront.io no Discord: contagem regressiva no lobby, estatísticas ao vivo, replays e resultados. Amigos podem assistir quando permitido; a atividade nos menus vem desativada por padrão.",
+    "tr-TR": "Lobi geri sayımı, canlı istatistikler, tekrarlar ve sonuçlarla Openfront.io oyunlarını Discord'da göster. İzin verildiğinde arkadaşların izleyebilir; menü etkinliği varsayılan olarak kapalıdır."
+  },
+  "features": {
+    "en-US": [
+      "Displays your current game and map",
+      "Shows live stats and game results",
+      "Lets friends spectate when available",
+      "Optional menu activity, off by default"
+    ],
+    "fr-FR": [
+      "Affiche votre partie et la carte en cours",
+      "Présente les statistiques et le résultat de la partie",
+      "Permet à vos amis de regarder la partie quand c’est possible",
+      "Activité des menus en option, désactivée par défaut"
+    ],
+    "es-ES": [
+      "Muestra tu partida y el mapa actuales",
+      "Incluye estadísticas en vivo y el resultado de la partida",
+      "Permite que tus amigos vean la partida cuando está disponible",
+      "Actividad opcional en los menús, desactivada por defecto"
+    ],
+    "de-DE": [
+      "Zeigt dein aktuelles Spiel und die Karte",
+      "Zeigt Live-Statistiken und das Spielergebnis",
+      "Freunde können zuschauen, wenn verfügbar",
+      "Optionale Menüaktivität, standardmäßig deaktiviert"
+    ],
+    "el-GR": [
+      "Εμφανίζει το τρέχον παιχνίδι και τον χάρτη σας",
+      "Προβάλλει ζωντανά στατιστικά και το αποτέλεσμα του παιχνιδιού",
+      "Οι φίλοι μπορούν να παρακολουθούν όταν είναι διαθέσιμο",
+      "Προαιρετική δραστηριότητα μενού, απενεργοποιημένη από προεπιλογή"
+    ],
+    "ja-JP": [
+      "プレイ中のゲームとマップを表示",
+      "リアルタイム統計とゲーム結果を表示",
+      "可能な場合、友達がゲームを観戦できます",
+      "メニュー表示は任意で、初期設定ではオフ"
+    ],
+    "ko-KR": [
+      "현재 게임과 맵을 표시합니다",
+      "실시간 통계와 게임 결과를 보여 줍니다",
+      "가능한 경우 친구가 게임을 관전할 수 있습니다",
+      "메뉴 활동은 선택 사항이며 기본적으로 꺼져 있습니다"
+    ],
+    "ms-MY": [
+      "Paparkan permainan dan peta semasa anda",
+      "Tunjukkan statistik langsung dan keputusan permainan",
+      "Rakan boleh menonton apabila tersedia",
+      "Aktiviti menu pilihan, dimatikan secara lalai"
+    ],
+    "pl-PL": [
+      "Pokazuje aktualną grę i mapę",
+      "Wyświetla statystyki na żywo i wynik gry",
+      "Znajomi mogą oglądać, jeśli jest to dostępne",
+      "Aktywność menu jest opcjonalna i domyślnie wyłączona"
+    ],
+    "pt-BR": [
+      "Mostra sua partida e o mapa atuais",
+      "Exibe estatísticas ao vivo e o resultado da partida",
+      "Seus amigos podem assistir quando disponível",
+      "Atividade nos menus opcional e desativada por padrão"
+    ],
+    "tr-TR": [
+      "Mevcut oyunu ve haritayı gösterir",
+      "Canlı istatistikleri ve oyun sonucunu gösterir",
+      "Mümkün olduğunda arkadaşların izleyebilir",
+      "Menü etkinliği isteğe bağlıdır ve varsayılan olarak kapalıdır"
+    ]
+  }
+}
