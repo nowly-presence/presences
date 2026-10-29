@@ -108,15 +108,19 @@ This repository contains the website-specific presence definitions used by [Nowl
       <b>LinkedIn</b>
     </td>
     <td align="center">
+      <img src="https://cdn.nowly.me/presences/naka/assets/logo.png" width="48" height="48" alt="Naka"><br>
+      <b>Naka</b>
+    </td>
+    <td align="center">
       <img src="https://cdn.nowly.me/presences/netflix/assets/logo.png" width="48" height="48" alt="Netflix"><br>
       <b>Netflix</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/notion/assets/logo.png" width="48" height="48" alt="Notion"><br>
       <b>Notion</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/nowly/assets/logo.png" width="48" height="48" alt="Nowly"><br>
       <b>Nowly</b>
@@ -133,12 +137,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/peacock/assets/logo.png" width="48" height="48" alt="Peacock"><br>
       <b>Peacock</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/perplexity/assets/logo.png" width="48" height="48" alt="Perplexity"><br>
       <b>Perplexity</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/pinterest/assets/logo.png" width="48" height="48" alt="Pinterest"><br>
       <b>Pinterest</b>
@@ -155,12 +159,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/reddit/assets/logo.png" width="48" height="48" alt="Reddit"><br>
       <b>Reddit</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/roblox/assets/logo.png" width="48" height="48" alt="Roblox"><br>
       <b>Roblox</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/soundcloud/assets/logo.png" width="48" height="48" alt="SoundCloud"><br>
       <b>SoundCloud</b>
@@ -177,12 +181,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/steamdb/assets/logo.png" width="48" height="48" alt="SteamDB"><br>
       <b>SteamDB</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/threads/assets/logo.png" width="48" height="48" alt="Threads"><br>
       <b>Threads</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/tidal/assets/logo.png" width="48" height="48" alt="Tidal"><br>
       <b>Tidal</b>
@@ -199,12 +203,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/vibe/assets/logo.png" width="48" height="48" alt="Vibe (Le Chat)"><br>
       <b>Vibe (Le Chat)</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/webtoon/assets/logo.png" width="48" height="48" alt="WEBTOON"><br>
       <b>WEBTOON</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/wikipedia/assets/logo.png" width="48" height="48" alt="Wikipedia"><br>
       <b>Wikipedia</b>
