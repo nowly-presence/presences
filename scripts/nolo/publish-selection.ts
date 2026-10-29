@@ -15,4 +15,5 @@ const output = process.env.GITHUB_OUTPUT
 if (!output) throw new Error("GITHUB_OUTPUT is required")
 
 appendFileSync(output, `slugs<<NOLO_SLUGS\n${changed.join("\n")}\nNOLO_SLUGS\nremoved<<NOLO_REMOVED\n${removed.join("\n")}\nNOLO_REMOVED\n`, "utf-8")
+appendFileSync(output, `matrix=${JSON.stringify(changed)}\n`, "utf-8")
 console.log(`Publishing ${changed.length} changed and ${removed.length} removed presence(s).`)

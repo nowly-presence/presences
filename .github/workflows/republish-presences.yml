@@ -31,8 +31,51 @@ on:
 permissions: {}
 
 jobs:
-  republish:
+  prepare:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.selection.outputs.matrix }}
+      source_sha: ${{ steps.source.outputs.sha }}
+    steps:
+      - name: Generate token
+        id: app-token
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: presences
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: stable
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Pin prepared source
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Validate and select presences
+        id: selection
+        env:
+          SLUGS: ${{ inputs.slugs }}
+        run: |
+          set -euo pipefail
+          MATRIX=$(printf '%s' "$SLUGS" | jq -Rsc 'split("\n") | map(rtrimstr("\r")) | map(select(length > 0)) | unique')
+          echo "$MATRIX" | jq -e 'length > 0 and all(.[]; test("^[a-z0-9]+(-[a-z0-9]+)*$"))' > /dev/null
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+
+  republish:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        slug: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    concurrency:
+      group: presence-upload-${{ matrix.slug }}
+      cancel-in-progress: false
     steps:
       - name: Generate token
         id: app-token
@@ -45,7 +88,7 @@ jobs:
 
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          ref: stable
+          ref: ${{ needs.prepare.outputs.source_sha }}
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
 
@@ -74,7 +117,7 @@ jobs:
           R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-          SLUGS: ${{ inputs.slugs }}
+          SLUG: ${{ matrix.slug }}
           PR_NUMBER: ${{ inputs.pr_number }}
           BASE_SHA: ${{ inputs.base_sha }}
           HEAD_SHA: ${{ inputs.head_sha }}
@@ -83,21 +126,13 @@ jobs:
         run: |
           set -euo pipefail
 
-          while IFS= read -r slug; do
-            [ -n "$slug" ] || continue
-            if [[ ! "$slug" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
-              echo "Invalid presence slug: $slug"
-              exit 1
-            fi
-            echo "Pushing $slug..."
-            .internal-cli/node_modules/.bin/tsx \
-              --tsconfig .internal-cli/tsconfig.json \
-              .internal-cli/index.ts push "$slug" \
-              --patch \
-              --source pr \
-              --base "$BASE_SHA" \
-              --head "$HEAD_SHA" \
-              --pr "#$PR_NUMBER" \
-              --pr-title "$PR_TITLE" \
-              --author "$PR_AUTHOR"
-          done <<< "$SLUGS"
+          .internal-cli/node_modules/.bin/tsx \
+            --tsconfig .internal-cli/tsconfig.json \
+            .internal-cli/index.ts push "$SLUG" \
+            --patch \
+            --source pr \
+            --base "$BASE_SHA" \
+            --head "$HEAD_SHA" \
+            --pr "#$PR_NUMBER" \
+            --pr-title "$PR_TITLE" \
+            --author "$PR_AUTHOR"
