@@ -1,4 +1,4 @@
-import { mapNames } from "./maps"
+import { getMapName } from "./maps"
 
 const gamePathPattern = /(?:^|\/)game\/([a-zA-Z0-9]{8,10})(?:\/|$)/
 const replayHostPathPattern = /^\/([a-zA-Z0-9]{8,10})\/?$/
@@ -85,7 +85,7 @@ const getLobbyMapId = (): string | undefined => {
 export const getMapDisplayName = (mapId: string | undefined, apiName?: string): string | undefined => {
   if (apiName) return apiName
   if (!mapId) return undefined
-  return mapNames[mapId] ?? mapId.split(/[-_]/).map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ")
+  return getMapName(mapId) ?? mapId.split(/[-_]/).map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ")
 }
 
 const getGameEndpoint = (gameId: string): string => {

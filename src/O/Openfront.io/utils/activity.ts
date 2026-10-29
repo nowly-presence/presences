@@ -1,13 +1,13 @@
 const cdnBasePattern = /cdnBase\s*:\s*(["'])(.*?)\1/
-const thumbnailCache = new Map<string, string | null>()
+const assetCache = new Map<string, string>()
 
 export const normalizeMapId = (map: string): string => map.toLowerCase().replace(/[\s.()]+/g, "")
 
-export const getMapThumbnailUrl = (mapId: string): string | undefined => {
-  const cached = thumbnailCache.get(mapId)
-  if (cached !== undefined) return cached ?? undefined
+// Resolves a game asset ("maps/europe/thumbnail.webp") through the asset manifest the page inlines.
+export const getAssetUrl = (assetKey: string): string | undefined => {
+  const cached = assetCache.get(assetKey)
+  if (cached) return cached
 
-  const assetKey = `maps/${mapId}/thumbnail.webp`
   for (const script of document.querySelectorAll("script:not([src])")) {
     const content = script.textContent || ""
     if (!content.includes(assetKey)) continue
@@ -19,13 +19,15 @@ export const getMapThumbnailUrl = (mapId: string): string | undefined => {
     const assetPath = entry[2].slice(1, -1)
     const cdnBase = content.match(cdnBasePattern)?.[2] || ""
     const url = `${cdnBase.replace(/\/$/, "")}${assetPath}`
-    thumbnailCache.set(mapId, url)
+    assetCache.set(assetKey, url)
     return url
   }
 
   // Not cached on a miss: the inline config may not be parsed yet on early ticks.
   return undefined
 }
+
+export const getMapThumbnailUrl = (mapId: string): string | undefined => getAssetUrl(`maps/${mapId}/thumbnail.webp`)
 
 export const getProfileId = (): string | undefined => {
   const href = document.querySelector<HTMLAnchorElement>('a[href^="/player/"]')?.getAttribute("href")
