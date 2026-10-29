@@ -40,81 +40,114 @@
   },
   "features": {
     "en-US": [
-      "Lobbies, public games, private games and spectating",
-      "Solo games and replays, with the map, mode and player count",
-      "Live lobby countdown and elapsed game time",
-      "Optional menu browsing: store, leaderboard, clans, stats",
-      "Spectator and replay buttons for friends"
+      "Shows the map you are playing, with its thumbnail as the large image",
+      "Free-for-all or team mode, with a Ranked tag for ranked matches",
+      "Lobby waiting room with the player count (12/50) and a countdown to the start",
+      "Elapsed game time in public, private and solo games",
+      "Replays: the archived game's map, mode and players, with a \"Watch the replay\" button",
+      "\"Spectate the game\" button for friends, hidden on public free-for-all games to prevent ghosting and never carrying a private lobby's secret",
+      "Shows when you are searching for a match",
+      "Optional menu activity: store, leaderboard, clans, ranked, stats and profiles (off by default)"
     ],
     "fr-FR": [
-      "Lobbies, parties publiques, privées et mode spectateur",
-      "Parties solo et replays, avec la carte, le mode et le nombre de joueurs",
-      "Compte à rebours du lobby et durée de la partie en direct",
-      "Navigation optionnelle dans les menus : boutique, classement, clans, stats",
-      "Boutons spectateur et replay pour vos amis"
+      "Affiche la carte jouée, avec sa miniature en grande image",
+      "Chacun pour soi ou équipes, avec une mention Classé pour les parties classées",
+      "Salle d'attente avec le nombre de joueurs (12/50) et le compte à rebours avant le départ",
+      "Durée écoulée de la partie en public, en privé et en solo",
+      "Replays : carte, mode et joueurs de la partie archivée, avec un bouton « Voir le replay »",
+      "Bouton « Regarder la partie » pour vos amis, masqué en chacun pour soi public pour éviter le ghosting et sans jamais exposer le secret d'un lobby privé",
+      "Indique quand vous cherchez une partie",
+      "Activité dans les menus en option : boutique, classement, clans, classé, stats et profils (désactivée par défaut)"
     ],
     "es-ES": [
-      "Salas, partidas públicas, privadas y modo espectador",
-      "Partidas en solitario y repeticiones, con mapa, modo y número de jugadores",
-      "Cuenta atrás de la sala y tiempo de partida en directo",
-      "Navegación opcional por los menús: tienda, clasificación, clanes, estadísticas",
-      "Botones de espectador y repetición para tus amigos"
+      "Muestra el mapa que juegas, con su miniatura como imagen grande",
+      "Todos contra todos o equipos, con la etiqueta Clasificatoria en partidas clasificatorias",
+      "Sala de espera con el número de jugadores (12/50) y la cuenta atrás hasta el inicio",
+      "Tiempo de partida transcurrido en partidas públicas, privadas y en solitario",
+      "Repeticiones: mapa, modo y jugadores de la partida archivada, con un botón «Ver la repetición»",
+      "Botón «Ver la partida» para tus amigos, oculto en todos contra todos público para evitar el ghosting y sin exponer nunca el secreto de una sala privada",
+      "Indica cuándo buscas una partida",
+      "Actividad opcional en los menús: tienda, clasificación, clanes, clasificatoria, estadísticas y perfiles (desactivada por defecto)"
     ],
     "de-DE": [
-      "Lobbys, öffentliche und private Spiele sowie Zuschauermodus",
-      "Solospiele und Replays mit Karte, Modus und Spielerzahl",
-      "Live-Countdown der Lobby und Spielzeit",
-      "Optionales Stöbern in den Menüs: Shop, Bestenliste, Clans, Statistiken",
-      "Zuschauer- und Replay-Schaltflächen für Freunde"
+      "Zeigt die gespielte Karte mit ihrem Vorschaubild als großes Bild",
+      "Jeder gegen jeden oder Teams, mit Hinweis „Gewertet“ bei gewerteten Spielen",
+      "Wartelobby mit Spielerzahl (12/50) und Countdown bis zum Start",
+      "Verstrichene Spielzeit in öffentlichen, privaten und Solospielen",
+      "Replays: Karte, Modus und Spieler des archivierten Spiels mit Schaltfläche „Replay ansehen“",
+      "Schaltfläche „Spiel ansehen“ für Freunde, bei öffentlichem Jeder-gegen-jeden gegen Ghosting ausgeblendet und ohne das Geheimnis privater Lobbys preiszugeben",
+      "Zeigt, wenn du ein Spiel suchst",
+      "Optionale Menüaktivität: Shop, Bestenliste, Clans, Rangliste, Statistiken und Profile (standardmäßig aus)"
     ],
     "el-GR": [
-      "Lobbies, δημόσια και ιδιωτικά παιχνίδια και παρακολούθηση",
-      "Μονά παιχνίδια και replays, με χάρτη, λειτουργία και αριθμό παικτών",
-      "Αντίστροφη μέτρηση του lobby και χρόνος παιχνιδιού ζωντανά",
-      "Προαιρετική περιήγηση στα μενού: κατάστημα, κατάταξη, clans, στατιστικά",
-      "Κουμπιά θεατή και replay για τους φίλους σας"
+      "Εμφανίζει τον χάρτη που παίζετε, με τη μικρογραφία του ως μεγάλη εικόνα",
+      "Όλοι εναντίον όλων ή ομάδες, με ένδειξη Ranked στα ranked παιχνίδια",
+      "Αίθουσα αναμονής με αριθμό παικτών (12/50) και αντίστροφη μέτρηση μέχρι την έναρξη",
+      "Χρόνος παιχνιδιού σε δημόσια, ιδιωτικά και μονά παιχνίδια",
+      "Replays: χάρτης, λειτουργία και παίκτες του αρχειοθετημένου παιχνιδιού, με κουμπί «Δες το replay»",
+      "Κουμπί «Παρακολούθηση παιχνιδιού» για φίλους, κρυμμένο στα δημόσια όλοι-εναντίον-όλων για αποφυγή ghosting και χωρίς να αποκαλύπτει το μυστικό ιδιωτικού lobby",
+      "Εμφανίζει πότε αναζητάτε παιχνίδι",
+      "Προαιρετική δραστηριότητα στα μενού: κατάστημα, κατάταξη, clans, ranked, στατιστικά και προφίλ (απενεργοποιημένη από προεπιλογή)"
     ],
     "ja-JP": [
-      "ロビー、公開・非公開ゲーム、観戦に対応",
-      "ソロゲームとリプレイをマップ・モード・人数付きで表示",
-      "ロビーのカウントダウンとゲーム経過時間をリアルタイム表示",
-      "ストア、リーダーボード、クラン、統計などメニュー閲覧を任意で表示",
-      "友達向けの観戦・リプレイボタン"
+      "プレイ中のマップをサムネイルの大きな画像で表示",
+      "個人戦またはチーム戦を表示し、ランクマッチには「ランク」を付与",
+      "ロビーの待機画面に人数（12/50）と開始までのカウントダウンを表示",
+      "公開・非公開・ソロゲームの経過時間を表示",
+      "リプレイ：保存されたゲームのマップ・モード・人数と「リプレイを見る」ボタン",
+      "友達向けの「ゲームを観戦」ボタン。公開の個人戦ではゴースティング防止のため非表示で、非公開ロビーの秘密は含まれません",
+      "対戦相手を検索中であることを表示",
+      "任意のメニュー表示：ストア、リーダーボード、クラン、ランク、統計、プロフィール（初期設定はオフ）"
     ],
     "ko-KR": [
-      "로비, 공개·비공개 게임, 관전 지원",
-      "솔로 게임과 리플레이를 맵, 모드, 인원과 함께 표시",
-      "로비 카운트다운과 게임 경과 시간 실시간 표시",
-      "상점, 리더보드, 클랜, 통계 등 메뉴 탐색 선택 표시",
-      "친구를 위한 관전 및 리플레이 버튼"
+      "플레이 중인 맵을 썸네일 큰 이미지로 표시",
+      "개인전 또는 팀전 표시, 랭크 게임에는 랭크 태그 추가",
+      "로비 대기실에 인원(12/50)과 시작까지 카운트다운 표시",
+      "공개, 비공개, 솔로 게임의 경과 시간 표시",
+      "리플레이: 저장된 게임의 맵, 모드, 플레이어와 '리플레이 보기' 버튼",
+      "친구용 '게임 관전' 버튼. 공개 개인전에서는 고스팅 방지를 위해 숨기며 비공개 로비의 비밀 정보는 포함하지 않음",
+      "매치를 검색 중일 때 표시",
+      "선택형 메뉴 활동: 상점, 리더보드, 클랜, 랭크, 통계, 프로필(기본값 꺼짐)"
     ],
     "ms-MY": [
-      "Lobi, permainan awam, persendirian dan mod penonton",
-      "Permainan solo dan ulangan, dengan peta, mod dan bilangan pemain",
-      "Kiraan detik lobi dan masa permainan secara langsung",
-      "Semakan menu pilihan: kedai, papan pendahulu, klan, statistik",
-      "Butang penonton dan ulangan untuk rakan"
+      "Menunjukkan peta yang dimainkan, dengan lakaran kecilnya sebagai imej besar",
+      "Setiap orang untuk diri sendiri atau pasukan, dengan tag Berpangkat untuk perlawanan berpangkat",
+      "Bilik menunggu lobi dengan bilangan pemain (12/50) dan kiraan detik sebelum bermula",
+      "Masa permainan berlalu dalam permainan awam, persendirian dan solo",
+      "Ulangan: peta, mod dan pemain permainan yang diarkibkan, dengan butang \"Tonton ulangan\"",
+      "Butang \"Tonton permainan\" untuk rakan, disembunyikan dalam permainan awam setiap-orang-untuk-diri-sendiri bagi mengelakkan ghosting dan tidak pernah mendedahkan rahsia lobi persendirian",
+      "Menunjukkan apabila anda mencari perlawanan",
+      "Aktiviti menu pilihan: kedai, papan pendahulu, klan, berpangkat, statistik dan profil (mati secara lalai)"
     ],
     "pl-PL": [
-      "Lobby, gry publiczne, prywatne i oglądanie",
-      "Gry solo i powtórki z mapą, trybem i liczbą graczy",
-      "Odliczanie lobby i czas gry na żywo",
-      "Opcjonalne przeglądanie menu: sklep, ranking, klany, statystyki",
-      "Przyciski oglądania i powtórki dla znajomych"
+      "Pokazuje mapę, na której grasz, z miniaturą jako dużym obrazem",
+      "Każdy na każdego lub drużyny, z oznaczeniem Rankingowa dla gier rankingowych",
+      "Poczekalnia lobby z liczbą graczy (12/50) i odliczaniem do startu",
+      "Czas trwania gry w grach publicznych, prywatnych i solo",
+      "Powtórki: mapa, tryb i gracze zarchiwizowanej gry oraz przycisk „Zobacz powtórkę”",
+      "Przycisk „Oglądaj grę” dla znajomych, ukryty w publicznych grach każdy na każdego, by zapobiec ghostingowi, i nigdy nie ujawniający sekretu prywatnego lobby",
+      "Pokazuje, kiedy szukasz meczu",
+      "Opcjonalna aktywność w menu: sklep, ranking, klany, gra rankingowa, statystyki i profile (domyślnie wyłączona)"
     ],
     "pt-BR": [
-      "Lobbies, partidas públicas, privadas e modo espectador",
-      "Partidas solo e replays, com mapa, modo e número de jogadores",
-      "Contagem regressiva do lobby e tempo de jogo ao vivo",
-      "Navegação opcional pelos menus: loja, ranking, clãs, estatísticas",
-      "Botões de espectador e replay para amigos"
+      "Mostra o mapa jogado, com a miniatura como imagem grande",
+      "Todos contra todos ou equipes, com a etiqueta Ranqueada em partidas ranqueadas",
+      "Sala de espera do lobby com número de jogadores (12/50) e contagem regressiva para o início",
+      "Tempo de jogo decorrido em partidas públicas, privadas e solo",
+      "Replays: mapa, modo e jogadores da partida arquivada, com botão \"Ver o replay\"",
+      "Botão \"Assistir à partida\" para amigos, oculto em todos contra todos públicos para evitar ghosting e sem nunca expor o segredo de um lobby privado",
+      "Mostra quando você está procurando uma partida",
+      "Atividade opcional nos menus: loja, ranking, clãs, ranqueado, estatísticas e perfis (desativada por padrão)"
     ],
     "tr-TR": [
-      "Lobiler, herkese açık ve özel oyunlar ile izleyicilik",
-      "Harita, mod ve oyuncu sayısıyla tek kişilik oyunlar ve tekrarlar",
-      "Canlı lobi geri sayımı ve oyun süresi",
-      "İsteğe bağlı menü gezintisi: mağaza, sıralama, klanlar, istatistikler",
-      "Arkadaşlar için izleyici ve tekrar düğmeleri"
+      "Oynadığın haritayı küçük resmiyle büyük görsel olarak gösterir",
+      "Herkes herkese veya takım modu, dereceli maçlarda Dereceli etiketiyle",
+      "Oyuncu sayısı (12/50) ve başlangıca geri sayımla lobi bekleme odası",
+      "Herkese açık, özel ve tek kişilik oyunlarda geçen oyun süresi",
+      "Tekrarlar: arşivlenmiş oyunun haritası, modu ve oyuncuları ile \"Tekrarı izle\" düğmesi",
+      "Arkadaşlar için \"Oyunu izle\" düğmesi; ghosting'i önlemek için herkese açık herkes-herkese oyunlarda gizlenir ve özel lobinin gizli anahtarını asla içermez",
+      "Maç aradığını gösterir",
+      "İsteğe bağlı menü etkinliği: mağaza, sıralama, klanlar, dereceli, istatistikler ve profiller (varsayılan olarak kapalı)"
     ]
   }
 }
