@@ -15,7 +15,7 @@ export default {
       "ms-MY": "Tunjukkan aktiviti semakan",
       "pl-PL": "Pokazuj przeglądanie",
       "pt-BR": "Mostrar navegação",
-      "tr-TR": "Gezinmeyi göster",
+      "tr-TR": "Gezinmeyi göster"
     },
     description: {
       "en-US": "Show what you are doing in the menus (lobbies, store, leaderboard, clans...) when you are not in a game.",
@@ -28,8 +28,8 @@ export default {
       "ms-MY": "Tunjukkan apa yang anda lakukan dalam menu (lobi, kedai, papan pendahulu, klan...) apabila tidak dalam permainan.",
       "pl-PL": "Pokazuj, co robisz w menu (lobby, sklep, ranking, klany...), gdy nie jesteś w grze.",
       "pt-BR": "Mostra o que você faz nos menus (lobbies, loja, ranking, clãs...) quando não está em uma partida.",
-      "tr-TR": "Oyunda değilken menülerde (lobiler, mağaza, sıralama, klanlar...) ne yaptığını gösterir.",
-    },
+      "tr-TR": "Oyunda değilken menülerde (lobiler, mağaza, sıralama, klanlar...) ne yaptığını gösterir."
+    }
   },
   shareProfile: {
     type: "boolean",
@@ -45,7 +45,7 @@ export default {
       "ms-MY": "Kongsi profil anda",
       "pl-PL": "Udostępniaj profil",
       "pt-BR": "Compartilhar seu perfil",
-      "tr-TR": "Profilini paylaş",
+      "tr-TR": "Profilini paylaş"
     },
     description: {
       "en-US": "Show a button linking to your OpenFront profile when available.",
@@ -58,8 +58,8 @@ export default {
       "ms-MY": "Paparkan butang ke profil OpenFront anda apabila tersedia.",
       "pl-PL": "Pokazuj przycisk do profilu OpenFront, jeśli jest dostępny.",
       "pt-BR": "Exibe um botão para seu perfil OpenFront quando disponível.",
-      "tr-TR": "Mevcut olduğunda OpenFront profiline bağlantı düğmesini gösterir.",
-    },
+      "tr-TR": "Mevcut olduğunda OpenFront profiline bağlantı düğmesini gösterir."
+    }
   },
   allowSpectate: {
     type: "boolean",
@@ -75,7 +75,7 @@ export default {
       "ms-MY": "Benarkan tontonan",
       "pl-PL": "Zezwalaj na oglądanie",
       "pt-BR": "Permitir que assistam",
-      "tr-TR": "İzlemeye izin ver",
+      "tr-TR": "İzlemeye izin ver"
     },
     description: {
       "en-US": "Show a button that lets friends open your game as spectators.",
@@ -88,7 +88,7 @@ export default {
       "ms-MY": "Paparkan butang supaya rakan boleh membuka permainan anda sebagai penonton.",
       "pl-PL": "Pokazuj przycisk umożliwiający znajomym dołączenie do gry jako widzowie.",
       "pt-BR": "Exibe um botão para que amigos abram sua partida como espectadores.",
-      "tr-TR": "Arkadaşlarının oyununu izleyici olarak açmasını sağlayan düğmeyi gösterir.",
-    },
-  },
+      "tr-TR": "Arkadaşlarının oyununu izleyici olarak açmasını sağlayan düğmeyi gösterir."
+    }
+  }
 } satisfies Record<string, PresenceSetting>
