@@ -40,3 +40,9 @@ export const getPlayerName = (): string | undefined => {
   if (value) knownPlayerName = value
   return knownPlayerName
 }
+
+// Menu pages are `.page-content` blocks; the one not hidden is the open page (the lobby list is the default).
+export const getVisiblePageId = (): string | undefined => {
+  if (window.location.pathname.startsWith("/player/")) return "page-profile"
+  return document.querySelector(".page-content:not(.hidden)")?.id || undefined
+}
