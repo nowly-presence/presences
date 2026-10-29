@@ -43,5 +43,11 @@
       "Compatible con anime, pel├¡culas y series",
       "Actividad de visualizaci├│n en tiempo real"
     ]
-  }
+  },
+  "contributors": [
+    {
+      "name": "Steellgold",
+      "github": "Steellgold"
+    }
+  ]
 }
