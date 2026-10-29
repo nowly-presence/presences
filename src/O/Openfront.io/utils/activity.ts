@@ -1,20 +1,29 @@
 const cdnBasePattern = /cdnBase\s*:\s*(["'])(.*?)\1/
+const thumbnailCache = new Map<string, string | null>()
 
-export const getMapThumbnailUrl = (map: string): string | undefined => {
-  const mapId = map.toLowerCase().replace(/[\s.()]+/g, "")
+export const normalizeMapId = (map: string): string => map.toLowerCase().replace(/[\s.()]+/g, "")
+
+export const getMapThumbnailUrl = (mapId: string): string | undefined => {
+  const cached = thumbnailCache.get(mapId)
+  if (cached !== undefined) return cached ?? undefined
+
   const assetKey = `maps/${mapId}/thumbnail.webp`
-
   for (const script of document.querySelectorAll("script:not([src])")) {
     const content = script.textContent || ""
+    if (!content.includes(assetKey)) continue
+
     const entry = Array.from(content.matchAll(/["']([^"']+)["']\s*:\s*(["'][^"']+["'])/g))
       .find((match) => match[1] === assetKey)
     if (!entry) continue
 
     const assetPath = entry[2].slice(1, -1)
     const cdnBase = content.match(cdnBasePattern)?.[2] || ""
-    return `${cdnBase.replace(/\/$/, "")}${assetPath}`
+    const url = `${cdnBase.replace(/\/$/, "")}${assetPath}`
+    thumbnailCache.set(mapId, url)
+    return url
   }
 
+  // Not cached on a miss: the inline config may not be parsed yet on early ticks.
   return undefined
 }
 
@@ -23,14 +32,11 @@ export const getProfileId = (): string | undefined => {
   return href?.match(/^\/player\/([^/?#]+)/)?.[1]
 }
 
+let knownPlayerName: string | undefined
+
 export const getPlayerName = (): string | undefined => {
-  const selectors = ['[data-testid="player-name"]', '[data-testid="username"]', ".player-name", '[class*="username"]']
-
-  for (const selector of selectors) {
-    const element = document.querySelector<HTMLElement>(selector)
-    const text = element?.getAttribute("aria-label") || element?.getAttribute("title") || element?.textContent
-    if (text?.trim()) return text.trim()
-  }
-
-  return undefined
+  // The menu (and its username field) is hidden once a game starts but stays in the DOM.
+  const value = document.querySelector<HTMLInputElement>("username-input input:not(#clan-tag-manual)")?.value?.trim()
+  if (value) knownPlayerName = value
+  return knownPlayerName
 }
