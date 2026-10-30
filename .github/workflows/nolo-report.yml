@@ -101,6 +101,8 @@ jobs:
             "$NOLO_DIR/pr" "$NOLO_DIR/assets.json"
           pnpm exec tsx scripts/validate-locales.ts \
             "$NOLO_DIR/pr" "$NOLO_DIR/locales.json"
+          pnpm exec tsx scripts/validate-aliases.ts \
+            "$NOLO_DIR/pr" "$NOLO_DIR/aliases.json"
 
       - name: Build professional report data
         run: |
@@ -109,6 +111,7 @@ jobs:
             --changes "$NOLO_DIR/changes.json" \
             --assets "$NOLO_DIR/assets.json" \
             --locales "$NOLO_DIR/locales.json" \
+            --aliases "$NOLO_DIR/aliases.json" \
             --pull-request "$PULL_REQUEST_NUMBER" \
             --head-ref "$HEAD_REF" \
             --head-repository "$HEAD_REPOSITORY" \
@@ -123,3 +126,12 @@ jobs:
         run: |
           pnpm exec tsx scripts/nolo/update-comment.ts \
             "$NOLO_DIR/report.json" "$NOLO_DIR/report.md"
+
+      # Runs after the report is published so the PR comment explains the failure.
+      - name: Fail on alias conflicts
+        run: |
+          if ! jq -e '.overall == "success"' "$NOLO_DIR/aliases.json" > /dev/null; then
+            echo "::error title=Alias conflict::A presence alias is invalid or already used. See the Nolo report comment for details."
+            jq '[.results[] | select(.status == "failure") | {path, errors}]' "$NOLO_DIR/aliases.json"
+            exit 1
+          fi

@@ -20,6 +20,17 @@
       "type": "string",
       "description": "Display name of the service/platform"
     },
+    "aliases": {
+      "type": "array",
+      "description": "Alternative library URL slugs that redirect to this presence (e.g. \"openfront\" for openfront.io). Lowercase, unique across all presences and different from the presence slug.",
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "maxLength": 80,
+        "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+      }
+    },
     "author": {
       "type": "object",
       "description": "Main author of the presence",

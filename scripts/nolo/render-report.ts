@@ -61,6 +61,7 @@ const renderPresence = (presence: NoloPresenceReport): string => {
   body += renderValidation("Metadata", presence.validations.metadata)
   body += renderValidation("Assets", presence.validations.assets)
   body += renderValidation("Locales", presence.validations.locales)
+  body += renderValidation("Aliases", presence.validations.aliases)
   body += "\n### Changed files\n\n"
   body += `${renderFiles(presence)}\n\n---\n\n`
   return body

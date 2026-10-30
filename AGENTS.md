@@ -39,7 +39,7 @@ src/{LETTER}/{Service Name}/
 - `{LETTER}` = first character of the name, uppercased.
 - `{Service Name}` = human folder name with spaces.
 - `slug` is derived automatically: lowercase, spaces → hyphens.
-- **Do not** put `slug` in `metadata.json`.
+- **Do not** put `slug` in `metadata.json`. To make other library URLs open the presence page (e.g. `/library/openfront` for `Openfront.io`), list them in `aliases`.
 
 ## Setting up
 
@@ -85,6 +85,7 @@ nowly list                     # List all presences
 | Field | Notes |
 |---|---|
 | `name` | Display name, e.g. `"Paramount+"`. |
+| `aliases` | Optional alternative library URL slugs that redirect to the presence page, e.g. `["openfront"]`. Lowercase letters, digits, dots or hyphens, max 10. Each must differ from the presence slug and from every other presence's slug and aliases; `nowly validate` (CLI 1.8.0+), the Nolo PR check and publishing reject conflicts. |
 | `author` | `{ "name": string, "github"?: string }`. |
 | `url` | Array of domains it matches. |
 | `regExp` | Optional stricter URL match. |
