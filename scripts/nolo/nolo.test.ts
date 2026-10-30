@@ -52,6 +52,7 @@ test("renderNoloReport produces a professional single-presence report", () => {
         metadata: { status: "success", summary: "Metadata is valid JSON.", errors: [], warnings: [] },
         assets: { status: "success", summary: "No issues found.", errors: [], warnings: [] },
         locales: { status: "success", summary: "No issues found.", errors: [], warnings: [] },
+        aliases: { status: "failure", summary: "1 issue(s) require attention.", errors: ['Alias "yt" is already an alias of "youtube"'], warnings: [] },
       },
     }],
   }
@@ -60,6 +61,8 @@ test("renderNoloReport produces a professional single-presence report", () => {
   assert.equal((body.match(/## Prime Video/g) ?? []).length, 1)
   assert.match(body, /Presences affected \| 1 presence/)
   assert.match(body, /No issues found\./)
+  assert.match(body, /\| Aliases \| Failed \|/)
+  assert.match(body, /\*\*Aliases error:\*\* Alias "yt" is already an alias of "youtube"/)
   assert.doesNotMatch(body, /YouTube|Fresh pixels|Beep boop/)
 })
 

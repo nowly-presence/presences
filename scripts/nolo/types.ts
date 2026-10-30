@@ -43,6 +43,7 @@ export type NoloPresenceReport = ChangedPresence & {
     metadata: NoloValidation
     assets: NoloValidation
     locales: NoloValidation
+    aliases: NoloValidation
   }
 }
 

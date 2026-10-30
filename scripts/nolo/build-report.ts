@@ -92,6 +92,7 @@ const main = (): void => {
   const changes = readJson<ChangedPresencesReport>(requiredArg("changes"))
   const assets = readJson<ValidatorOutput>(requiredArg("assets"))
   const locales = readJson<ValidatorOutput>(requiredArg("locales"))
+  const aliases = readJson<ValidatorOutput>(requiredArg("aliases"))
   const outputPath = requiredArg("output")
   const pullRequest = Number(requiredArg("pull-request"))
   const headRef = requiredArg("head-ref")
@@ -116,6 +117,7 @@ const main = (): void => {
         metadata,
         assets: validationFrom(assets, presence.id, removed, "Assets"),
         locales: validationFrom(locales, presence.id, removed, "Locales"),
+        aliases: validationFrom(aliases, presence.id, removed, "Aliases"),
       },
     }
   })
