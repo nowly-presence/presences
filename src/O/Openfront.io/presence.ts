@@ -1,5 +1,5 @@
 import { PresenceType } from "@nowly/sdk"
-import { getMapThumbnailUrl, getPlayerName, getProfileId, getVisiblePageId, normalizeMapId } from "./utils/activity"
+import { getMapThumbnailUrl, getPlayerName, getProfileId, getSpectatorUrl, getVisiblePageId, normalizeMapId } from "./utils/activity"
 import { getCurrentGame, type Game, type Tag } from "./utils/game"
 import type enUS from "./locales/en-US.json"
 
@@ -188,17 +188,12 @@ const getGameActivity = (game: Game, strings: Strings, settings: {
     activity.startTimestamp = game.startTimestamp
   }
 
-  // Only the game path is shared: the page URL can carry private lobby parameters (?lobby&s=...).
-  // Public free-for-all matches stay unspectatable, as in the game's own lobby sharing:
-  // a live link would allow ghosting and stream sniping.
-  const isPublicFfa = game.gameType === "Public" && game.gameMode !== "Team"
+  const spectatorUrl = settings.allowSpectate ? getSpectatorUrl(game) : undefined
 
-  if (game.kind === "multiplayer" && game.gameId && game.phase !== "finished" && settings.allowSpectate && !isPublicFfa) {
-    const spectatorUrl = new URL(window.location.pathname, window.location.origin)
-    spectatorUrl.searchParams.set("spectate", "")
+  if (spectatorUrl) {
     activity.buttons?.push({
       label: strings.spectate,
-      url: spectatorUrl.href
+      url: spectatorUrl
     })
   }
 

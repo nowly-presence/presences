@@ -1,5 +1,6 @@
 {
   "name": "Openfront.io",
+  "aliases": ["openfront"],
   "author": {
     "name": "Gaëtan H",
     "github": "steellgold"

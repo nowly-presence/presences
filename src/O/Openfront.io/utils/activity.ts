@@ -1,3 +1,5 @@
+import type { Game } from "./game"
+
 const cdnBasePattern = /cdnBase\s*:\s*(["'])(.*?)\1/
 const publicIdPrefix = "cached_public_id_"
 const publicIdPattern = /^[A-Za-z0-9_-]{4,64}$/
@@ -72,7 +74,18 @@ export const getPlayerName = (): string | undefined => {
 
 // Menu pages are `.page-content` blocks; the one not hidden is the open page (the lobby list is the default).
 export const getVisiblePageId = (): string | undefined => {
+  const modal = new URLSearchParams(window.location.hash.slice(1)).get("modal")
+  if (modal === "account-settings" || modal === "change-username") return "page-account"
+  if (modal === "subscription") return "page-item-store"
   if (window.location.pathname.startsWith("/player/")) return "page-profile"
 
   return document.querySelector(".page-content:not(.hidden)")?.id || undefined
+}
+
+export const getSpectatorUrl = (game: Game): string | undefined => {
+  if (game.kind !== "multiplayer" || !game.gameId || game.phase === "finished") return undefined
+  if (game.gameType !== "Private" && !(game.gameType === "Public" && game.gameMode === "Team")) return undefined
+  if (window.location.pathname.match(/(?:^|\/)game\/([a-zA-Z0-9]{8,10})\/?$/)?.[1] !== game.gameId) return undefined
+
+  return `${window.location.origin}/game/${encodeURIComponent(game.gameId)}?spectate`
 }

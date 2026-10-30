@@ -76,7 +76,9 @@ let failed:
       at: number
     }
   | undefined
-let spectatingGameId: string | undefined
+let spectatingGameId = new URLSearchParams(window.location.search).has("spectate")
+  ? window.location.pathname.match(gamePathPattern)?.[1]
+  : undefined
 
 const now = (): number => Date.now()
 
@@ -108,7 +110,7 @@ export const getMapDisplayName = (mapId: string | undefined, apiName?: string): 
 
 const getGameEndpoint = (gameId: string): string => {
   const encodedGameId = encodeURIComponent(gameId)
-  const resources = getSeenResources().map((entry) => entry.name)
+  const resources = getSeenResources().map((entry) => entry.name).reverse()
 
   const existsRequest = resources.find((url) => url.includes(`/api/game/${encodedGameId}/exists`))
 
@@ -382,7 +384,7 @@ const getInGame = async (log: (message: string) => void): Promise<Game> => {
   // Priority: the server's own name for the map, then what the menu showed, then the loaded files.
   const mapId = (info?.map ? getMapId(info.map) : undefined) ?? getRememberedMapId() ?? lastResource(loadedMapPattern)?.id
   const playing = current.kind !== "replay"
-  const finished = current.outcome !== undefined || window.location.search.includes("replay")
+  const finished = current.outcome !== undefined || new URLSearchParams(window.location.search).has("replay")
   const watchedFor = now() - current.startedAt * 1000
   const spectating =
     current.kind === "multiplayer" &&
@@ -434,7 +436,13 @@ const getLobby = async (pageId: string | undefined, log: (message: string) => vo
 export const getCurrentGame = async (pageId: string | undefined, log: (message: string) => void): Promise<Game | undefined> => {
   // The join flow rewrites ?spectate to ?live, so remember it for this game.
   const pathId = getPathGameId()
-  if (pathId && window.location.search.includes("spectate")) spectatingGameId = pathId
+  if (pathId !== spectatingGameId) spectatingGameId = undefined
+  if (pathId && new URLSearchParams(window.location.search).has("spectate")) spectatingGameId = pathId
+
+  if (session && pathId && session.gameId !== pathId) {
+    session = undefined
+    forgetMenuSelection()
+  }
 
   if (isInGame()) return getInGame(log)
 
