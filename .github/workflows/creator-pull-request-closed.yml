@@ -1,0 +1,29 @@
+name: Creator Pull Request Closed
+
+on:
+  pull_request_target:
+    types: [closed]
+
+permissions: {}
+
+jobs:
+  notify:
+    if: github.event.pull_request.merged == false && startsWith(github.event.pull_request.head.ref, 'creator/') && github.event.pull_request.user.login == 'nowly-nolo[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send the submission back to its author
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          CREATOR_WEBHOOK_SECRET: ${{ secrets.CREATOR_WEBHOOK_SECRET }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          slug="${HEAD_REF#creator/}"
+          slug="${slug%-*}"
+          body=$(jq -n --arg slug "$slug" --argjson pr "$PR_NUMBER" '{slug: $slug, pr: $pr}')
+          curl --fail --silent --show-error --request POST \
+            "$API_URL/presence-submissions/pull-request-closed" \
+            --header "Authorization: Bearer $CREATOR_WEBHOOK_SECRET" \
+            --header "Content-Type: application/json" \
+            --data "$body"
