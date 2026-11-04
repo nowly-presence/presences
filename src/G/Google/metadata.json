@@ -1,0 +1,117 @@
+{
+  "name": "Google",
+  "author": {
+    "name": "Gaëtan²",
+    "discord": "927843025567232050"
+  },
+  "url": [
+    "google.com"
+  ],
+  "color": "#ffffff",
+  "category": "tools",
+  "description": {
+    "fr-FR": "Recherchez des informations, explorez le Web et découvrez des contenus grâce au moteur de recherche Google.",
+    "en-US": "Search for information, explore the Web, and discover content with the Google search engine.",
+    "es-ES": "Busca información, explora la Web y descubre contenidos con el buscador Google.",
+    "de-DE": "Suchen Sie nach Informationen, erkunden Sie das Web und entdecken Sie Inhalte mit der Google-Suchmaschine.",
+    "pt-BR": "Pesquise informações, explore a Web e descubra conteúdos com o mecanismo de busca Google.",
+    "pl-PL": "Szukaj informacji, przeglądaj sieć i odkrywaj treści dzięki wyszukiwarce Google.",
+    "ja-JP": "Google 検索エンジンで情報を検索し、ウェブを探索し、コンテンツを見つけましょう。",
+    "ko-KR": "Google 검색 엔진을 통해 정보를 검색하고 웹을 탐색하며 콘텐츠를 발견하세요.",
+    "tr-TR": "Google arama motoruyla bilgi arayın, Web'i keşfedin ve içeriklere ulaşın.",
+    "ms-MY": "Cari maklumat, teroka Web dan temui kandungan dengan enjin carian Google.",
+    "el-GR": "Αναζητήστε πληροφορίες, περιηγηθείτε στο Web και ανακαλύψτε περιεχόμενο μέσω της μηχανής αναζήτησης Google."
+  },
+  "longDescription": {
+    "fr-FR": "Google est un moteur de recherche permettant de trouver rapidement des informations, des sites web, des images, des vidéos et bien plus encore. Grâce à ses technologies de recherche avancées, Google facilite l'accès à des milliards de pages web et propose des résultats adaptés aux requêtes des utilisateurs. Que ce soit pour effectuer des recherches, découvrir de nouveaux contenus, consulter l'actualité ou obtenir des réponses à des questions, Google accompagne les utilisateurs dans leur exploration quotidienne du Web.",
+    "en-US": "Google is a search engine that allows you to quickly find information, websites, images, videos, and much more. Thanks to its advanced search technologies, Google makes it easy to access billions of web pages and provides results tailored to user queries. Whether for searching, discovering new content, checking the news, or getting answers to questions, Google accompanies users in their daily exploration of the Web.",
+    "es-ES": "Google es un motor de búsqueda que permite encontrar rápidamente información, sitios web, imágenes, vídeos y mucho más. Gracias a sus avanzadas tecnologías de búsqueda, Google facilita el acceso a miles de millones de páginas web y ofrece resultados adaptados a las consultas de los usuarios. Ya sea para realizar búsquedas, descubrir nuevos contenidos, consultar noticias o encontrar respuestas, Google acompaña a los usuarios en su exploración diaria de la Web.",
+    "de-DE": "Google ist eine Suchmaschine, mit der Sie schnell Informationen, Websites, Bilder, Videos und vieles mehr finden können. Dank fortschrittlicher Suchtechnologien erleichtert Google den Zugang zu Milliarden von Webseiten und liefert Ergebnisse, die auf die Nutzeranfragen zugeschnitten sind. Ob für die Suche, das Entdecken neuer Inhalte, das Lesen von Nachrichten oder das Beantworten von Fragen – Google begleitet Nutzer bei ihrer täglichen Erkundung des Webs.",
+    "pt-BR": "O Google é um mecanismo de busca que permite encontrar rapidamente informações, sites, imagens, vídeos e muito mais. Graças às suas tecnologias de pesquisa avançadas, o Google facilita o acesso a bilhões de páginas da web e oferece resultados adaptados às solicitações dos usuários. Seja para realizar pesquisas, descobrir novos conteúdos, consultar notícias ou obter respostas para perguntas, o Google acompanha os usuários em sua exploração diária da Web.",
+    "pl-PL": "Google to wyszukiwarka, która pozwala szybko znajdować informacje, strony internetowe, obrazy, filmy i wiele więcej. Dzięki zaawansowanym technologiom wyszukiwania, Google ułatwia dostęp do miliardów stron internetowych i dostarcza wyniki dopasowane do zapytań użytkowników. Niezależnie od tego, czy chcesz czegoś poszukać, odkryć nowe treści, sprawdzić aktualności czy uzyskać odpowiedzi na pytania, Google wspiera użytkowników w ich codziennej eksploracji sieci.",
+    "ja-JP": "Google は、情報、ウェブサイト、画像、動画などを素早く見つけることができる検索エンジンです。高度な検索技術により、数十億ものウェブページへのアクセスを容易にし、ユーザーの検索クエリに合わせた結果を提供します。検索、新しいコンテンツの発見、ニュースの確認、質問への回答など、Google はユーザーの日常的なウェブ探索をサポートします。",
+    "ko-KR": "Google은 정보, 웹사이트, 이미지, 동영상 등을 빠르게 찾을 수 있는 검색 엔진입니다. 고급 검색 기술을 통해 Google은 수십억 개의 웹 페이지에 대한 접근을 용이하게 하며 사용자의 요청에 맞는 결과를 제공합니다. 검색, 새로운 콘텐츠 발견, 뉴스 확인 또는 질문에 대한 답변을 얻는 등 Google은 사용자의 일상적인 웹 탐색을 지원합니다.",
+    "tr-TR": "Google; bilgi, web siteleri, görseller, videolar ve çok daha fazlasını hızlıca bulmanızı sağlayan bir arama motorudur. Gelişmiş arama teknolojileri sayesinde Google, milyarlarca web sayfasına erişimi kolaylaştırır ve kullanıcılara isteklerine uygun sonuçlar sunar. İster araştırma yapmak, ister yeni içerikler keşfetmek, ister haberleri takip etmek veya sorulara yanıt bulmak için olsun; Google, kullanıcıların günlük Web keşiflerinde onlara eşlik eder.",
+    "ms-MY": "Google ialah enjin carian yang membolehkan anda mencari maklumat, laman web, imej, video dan banyak lagi dengan cepat. Melalui teknologi carian canggihnya, Google memudahkan akses kepada berbilion halaman web dan menawarkan keputusan yang relevan dengan pertanyaan pengguna. Sama ada untuk membuat carian, menemui kandungan baharu, menyemak berita atau mendapatkan jawapan kepada soalan, Google membantu pengguna dalam penerokaan Web harian mereka.",
+    "el-GR": "Η Google είναι μια μηχανή αναζήτησης που επιτρέπει την ταχεία εύρεση πληροφοριών, ιστοσελίδων, εικόνων, βίντεο και πολλά άλλα. Χάρη στις προηγμένες τεχνολογίες αναζήτησης της, η Google διευκολύνει την πρόσβαση σε δισεκατομμύρια σελίδες web και προσφέρει αποτελέσματα προσαρμοσμένα στις αναζητήσεις των χρηστών. Είτε πρόκειται για αναζήτηση, ανακάλυψη νέου περιεχομένου, ενημέρωση για τα νέα ή εύρεση απαντήσεων σε ερωτήσεις, η Google συνοδεύει τους χρήστες στην καθημερινή τους περιήγηση στο Web."
+  },
+  "features": {
+    "fr-FR": [
+      "Recherche de sites web et d'informations",
+      "Recherche d'images et de vidéos",
+      "Consultation des actualités",
+      "Suggestions et saisie semi-automatique",
+      "Réponses rapides et résultats enrichis"
+    ],
+    "en-US": [
+      "Search for websites and information",
+      "Search for images and videos",
+      "Browse news",
+      "Suggestions and autocomplete",
+      "Quick answers and rich results"
+    ],
+    "es-ES": [
+      "Búsqueda de sitios web e información",
+      "Búsqueda de imágenes y vídeos",
+      "Consulta de noticias",
+      "Sugerencias y completado automático",
+      "Respuestas rápidas y resultados enriquecidos"
+    ],
+    "de-DE": [
+      "Suche nach Websites und Informationen",
+      "Suche nach Bildern und Videos",
+      "Nachrichten lesen",
+      "Vorschläge und Autovervollständigung",
+      "Schnelle Antworten und erweiterte Ergebnisse"
+    ],
+    "pt-BR": [
+      "Busca de sites e informações",
+      "Busca de imagens e vídeos",
+      "Consulta de notícias",
+      "Sugestões e preenchimento automático",
+      "Respostas rápidas e resultados enriquecidos"
+    ],
+    "pl-PL": [
+      "Wyszukiwanie stron i informacji",
+      "Wyszukiwanie obrazów i filmów",
+      "Przeglądanie aktualności",
+      "Sugestie i autouzupełnianie",
+      "Szybkie odpowiedzi i bogate wyniki"
+    ],
+    "ja-JP": [
+      "ウェブサイトと情報の検索",
+      "画像と動画の検索",
+      "ニュースの閲覧",
+      "サジェストとオートコンプリート",
+      "素早い回答とリッチな結果"
+    ],
+    "ko-KR": [
+      "웹사이트 및 정보 검색",
+      "이미지 및 동영상 검색",
+      "뉴스 확인",
+      "제안 및 자동 완성",
+      "빠른 답변 및 풍부한 검색 결과"
+    ],
+    "tr-TR": [
+      "Web sitesi ve bilgi arama",
+      "Görsel ve video arama",
+      "Haberleri görüntüleme",
+      "Öneriler ve otomatik tamamlama",
+      "Hızlı yanıtlar ve zengin sonuçlar"
+    ],
+    "ms-MY": [
+      "Carian laman web dan maklumat",
+      "Carian imej dan video",
+      "Semak berita terkini",
+      "Cadangan dan kemasukan automatik",
+      "Jawapan pantas dan keputusan diperkaya"
+    ],
+    "el-GR": [
+      "Αναζήτηση ιστοσελίδων και πληροφοριών",
+      "Αναζήτηση εικόνων και βίντεο",
+      "Ενημέρωση για τα νέα",
+      "Προτάσεις και αυτόματη συμπλήρωση",
+      "Άμεσες απαντήσεις και εμπλουτισμένα αποτελέσματα"
+    ]
+  }
+}
