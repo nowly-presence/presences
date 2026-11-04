@@ -213,3 +213,20 @@ jobs:
             --pr "#$PR_NUMBER" \
             --pr-title "$PR_TITLE" \
             --author "$PR_AUTHOR"
+
+      - name: Mark the creator submission as published
+        if: startsWith(github.event.pull_request.head.ref, 'creator/') && github.event.pull_request.user.login == 'nowly-nolo[bot]'
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          CREATOR_WEBHOOK_SECRET: ${{ secrets.CREATOR_WEBHOOK_SECRET }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          COMMIT: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          set -euo pipefail
+          branch="${HEAD_REF#creator/}"
+          slug="${branch%-*}"
+          curl -fsS -X POST "$API_URL/presence-submissions/published" \
+            -H "Authorization: Bearer $CREATOR_WEBHOOK_SECRET" \
+            -H "Content-Type: application/json" \
+            -d "{\"slug\":\"$slug\",\"commit\":\"$COMMIT\",\"pr\":$PR_NUMBER}"
