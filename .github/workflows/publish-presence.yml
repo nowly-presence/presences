@@ -74,7 +74,7 @@ jobs:
             --input .nolo/changes.json
 
       - name: Credit PR author as contributor
-        if: steps.changed.outputs.slugs != ''
+        if: steps.changed.outputs.slugs != '' && github.event.pull_request.user.type != 'Bot' && !endsWith(github.event.pull_request.user.login, '[bot]')
         env:
           PR_LOGIN: ${{ github.event.pull_request.user.login }}
           CHANGED_SLUGS: ${{ steps.changed.outputs.slugs }}
