@@ -90,11 +90,15 @@ This repository contains the website-specific presence definitions used by [Nowl
       <b>GitHub</b>
     </td>
     <td align="center">
-      <img src="https://cdn.nowly.me/presences/grok/assets/logo.png" width="48" height="48" alt="Grok"><br>
-      <b>Grok</b>
+      <img src="https://cdn.nowly.me/presences/google/assets/logo.png" width="48" height="48" alt="Google"><br>
+      <b>Google</b>
     </td>
   </tr>
   <tr>
+    <td align="center">
+      <img src="https://cdn.nowly.me/presences/grok/assets/logo.png" width="48" height="48" alt="Grok"><br>
+      <b>Grok</b>
+    </td>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/hbo-max/assets/logo.png" width="48" height="48" alt="HBO Max"><br>
       <b>HBO Max</b>
@@ -111,12 +115,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/naka/assets/logo.png" width="48" height="48" alt="Naka"><br>
       <b>Naka</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/netflix/assets/logo.png" width="48" height="48" alt="Netflix"><br>
       <b>Netflix</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/notion/assets/logo.png" width="48" height="48" alt="Notion"><br>
       <b>Notion</b>
@@ -133,12 +137,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/paramount-plus/assets/logo.png" width="48" height="48" alt="Paramount+"><br>
       <b>Paramount+</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/peacock/assets/logo.png" width="48" height="48" alt="Peacock"><br>
       <b>Peacock</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/perplexity/assets/logo.png" width="48" height="48" alt="Perplexity"><br>
       <b>Perplexity</b>
@@ -155,12 +159,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/product-hunt/assets/logo.png" width="48" height="48" alt="Product Hunt"><br>
       <b>Product Hunt</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/reddit/assets/logo.png" width="48" height="48" alt="Reddit"><br>
       <b>Reddit</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/roblox/assets/logo.png" width="48" height="48" alt="Roblox"><br>
       <b>Roblox</b>
@@ -177,12 +181,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/steam/assets/logo.png" width="48" height="48" alt="Steam"><br>
       <b>Steam</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/steamdb/assets/logo.png" width="48" height="48" alt="SteamDB"><br>
       <b>SteamDB</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/threads/assets/logo.png" width="48" height="48" alt="Threads"><br>
       <b>Threads</b>
@@ -199,12 +203,12 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/twitch/assets/logo.png" width="48" height="48" alt="Twitch"><br>
       <b>Twitch</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/vibe/assets/logo.png" width="48" height="48" alt="Vibe (Le Chat)"><br>
       <b>Vibe (Le Chat)</b>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/webtoon/assets/logo.png" width="48" height="48" alt="WEBTOON"><br>
       <b>WEBTOON</b>
@@ -221,6 +225,8 @@ This repository contains the website-specific presence definitions used by [Nowl
       <img src="https://cdn.nowly.me/presences/youtube/assets/logo.png" width="48" height="48" alt="YouTube"><br>
       <b>YouTube</b>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="https://cdn.nowly.me/presences/youtube-music/assets/logo.png" width="48" height="48" alt="YouTube Music"><br>
       <b>YouTube Music</b>
