@@ -1,0 +1,45 @@
+{
+  "name": "Google",
+  "author": {
+    "name": "Gaëtan²",
+    "discord": "927843025567232050"
+  },
+  "url": [
+    "google.com"
+  ],
+  "color": "#ffffff",
+  "category": "tools",
+  "description": {
+    "fr-FR": "Recherchez des informations, explorez le Web et découvrez des contenus grâce au moteur de recherche Google.",
+    "en-US": "Search for information, explore the Web and discover content with the Google search engine.",
+    "es-ES": "Busca información, explora la web y descubre contenido con el buscador Google."
+  },
+  "longDescription": {
+    "fr-FR": "Google est un moteur de recherche permettant de trouver rapidement des informations, des sites web, des images, des vidéos et bien plus encore. Grâce à ses technologies de recherche avancées, Google facilite l'accès à des milliards de pages web et propose des résultats adaptés aux requêtes des utilisateurs. Que ce soit pour effectuer des recherches, découvrir de nouveaux contenus, consulter l'actualité ou obtenir des réponses à des questions, Google accompagne les utilisateurs dans leur exploration quotidienne du Web.",
+    "en-US": "Google is a search engine that allows you to quickly find information, websites, images, videos, and much more. Thanks to its advanced search technologies, Google makes it easy to access billions of web pages and provides results tailored to user queries. Whether searching, discovering new content, checking the news, or getting answers to questions, Google supports users in their daily exploration of the Web.",
+    "es-ES": "Google es un motor de búsqueda que permite encontrar rápidamente información, sitios web, imágenes, vídeos y mucho más. Gracias a sus tecnologías de búsqueda avanzadas, Google facilita el acceso a miles de millones de páginas web y ofrece resultados adaptados a las consultas de los usuarios. Ya sea para realizar búsquedas, descubrir nuevo contenido, consultar noticias o resolver dudas, Google acompaña a los usuarios en su exploración diaria de la web."
+  },
+  "features": {
+    "fr-FR": [
+      "Recherche de sites web et d'informations",
+      "Recherche d'images et de vidéos",
+      "Consultation des actualités",
+      "Suggestions et saisie semi-automatique",
+      "Réponses rapides et résultats enrichis"
+    ],
+    "en-US": [
+      "Search for websites and information",
+      "Search for images and videos",
+      "Browse news",
+      "Suggestions and autocomplete",
+      "Quick answers and rich results"
+    ],
+    "es-ES": [
+      "Búsqueda de sitios web e información",
+      "Búsqueda de imágenes y vídeos",
+      "Consulta de noticias",
+      "Sugerencias y autocompletado",
+      "Respuestas rápidas y resultados enriquecidos"
+    ]
+  }
+}
