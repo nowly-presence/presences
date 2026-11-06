@@ -163,7 +163,7 @@ presence.on("UpdateData", async (ctx) => {
         smallImageKey: track.playing ? "play" : "pause",
         smallImageText: track.playing ? strings.playing : strings.paused,
         type: PresenceType.Listening,
-        ...createProgressTimestamps(video, track),
+        ...createProgressTimestamps(playerBar, video, track),
       }
 
       if (!privacy) {
