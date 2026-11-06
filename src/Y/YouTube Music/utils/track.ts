@@ -114,25 +114,72 @@ const findTrackUrl = (playerBar: Element | null): string => {
     ?? currentTrackUrl()
 }
 
+const SECONDS_PER_MINUTE = 60
+const PROGRESS_TOLERANCE_SECONDS = 2
+const TIME_INFO_SELECTOR = ".time-info"
+const PROGRESS_BAR_SELECTOR = "#progress-bar"
+
+type PlaybackProgress = {
+  currentTime: number
+  duration: number
+}
+
+const parseClock = (value: string): number | undefined => {
+  const parts = value.trim().split(":").map(Number)
+  if (parts.length < 2 || parts.length > 3 || parts.some(part => !Number.isFinite(part) || part < 0)) return undefined
+  return parts.reduce((total, part) => total * SECONDS_PER_MINUTE + part, 0)
+}
+
+const readPlayerBarProgress = (playerBar: Element | null): PlaybackProgress | undefined => {
+  const scope = playerBar ?? document
+  const progressBar = scope.querySelector(PROGRESS_BAR_SELECTOR)
+  const sliderTime = Number(progressBar?.getAttribute("aria-valuenow") ?? progressBar?.getAttribute("value"))
+  const sliderDuration = Number(progressBar?.getAttribute("aria-valuemax") ?? progressBar?.getAttribute("max"))
+  if (progressBar && Number.isFinite(sliderTime) && Number.isFinite(sliderDuration) && sliderDuration > 0) {
+    return { currentTime: sliderTime, duration: sliderDuration }
+  }
+
+  const clocks = scope.querySelector(TIME_INFO_SELECTOR)?.textContent?.split("/").map(part => parseClock(part))
+  if (clocks?.length === 2 && clocks[0] !== undefined && clocks[1] !== undefined && clocks[1] > 0) {
+    return { currentTime: clocks[0], duration: clocks[1] }
+  }
+
+  return undefined
+}
+
+const readVideoProgress = (video: HTMLVideoElement | null): PlaybackProgress | undefined => {
+  if (!video || !Number.isFinite(video.currentTime) || !Number.isFinite(video.duration) || video.duration <= 0) return undefined
+  return { currentTime: video.currentTime, duration: video.duration }
+}
+
+const resolveProgress = (
+  playerBar: Element | null,
+  video: HTMLVideoElement | null,
+): PlaybackProgress | undefined => {
+  const interfaceProgress = readPlayerBarProgress(playerBar)
+  const videoProgress = readVideoProgress(video)
+  if (!interfaceProgress) return videoProgress
+  if (!videoProgress) return interfaceProgress
+
+  const sameTrack = Math.abs(videoProgress.duration - interfaceProgress.duration) <= PROGRESS_TOLERANCE_SECONDS
+  return sameTrack ? videoProgress : interfaceProgress
+}
+
 export const createProgressTimestamps = (
+  playerBar: Element | null,
   video: HTMLVideoElement | null,
   track: TrackInfo,
 ): Partial<Pick<PresenceData, "startTimestamp" | "endTimestamp">> => {
   if (!track.playing) return {}
 
-  const currentTime = Number.isFinite(video?.currentTime)
-    ? video?.currentTime
-    : track.currentTime
-  const duration = Number.isFinite(video?.duration)
-    ? video?.duration
-    : track.duration
+  const progress = resolveProgress(playerBar, video)
+  if (!progress) return {}
 
-  if (!Number.isFinite(currentTime) || !Number.isFinite(duration) || (duration ?? 0) <= 0) return {}
-
+  const currentTime = Math.min(progress.currentTime, progress.duration)
   const now = Math.floor(Date.now() / 1000)
   return {
-    startTimestamp: now - Math.floor(currentTime ?? 0),
-    endTimestamp: now + Math.max(0, Math.floor((duration ?? 0) - (currentTime ?? 0))),
+    startTimestamp: now - Math.floor(currentTime),
+    endTimestamp: now + Math.max(0, Math.floor(progress.duration - currentTime)),
   }
 }
 
