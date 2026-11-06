@@ -118,5 +118,11 @@
       "Canlı yayınları, prömiyerleri ve Playables'ı destekler",
       "Video küçük resmini gösterir"
     ]
-  }
+  },
+  "contributors": [
+    {
+      "name": "q-kimi",
+      "github": "q-kimi"
+    }
+  ]
 }
