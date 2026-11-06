@@ -36,7 +36,7 @@ presence.on("UpdateData", async (ctx) => {
       detailsUrl: `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`,
       stateUrl: uploader ? findUploaderUrl() : undefined,
       ...(uploader ? { state: uploader } : {}),
-      largeImageKey: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+      largeImageKey: `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`,
       largeImageText: title,
       ...(ctx.settings.showPlaybackState !== false ? {
         smallImageKey: isPlaying ? "play" : "pause",
