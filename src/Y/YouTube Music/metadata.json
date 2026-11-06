@@ -114,5 +114,11 @@
       "Albüm kapağını gösterir",
       "İsteğe bağlı gezinme etkinliği"
     ]
-  }
+  },
+  "contributors": [
+    {
+      "name": "q-kimi",
+      "github": "q-kimi"
+    }
+  ]
 }
