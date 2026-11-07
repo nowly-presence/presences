@@ -45,24 +45,28 @@ export const getVideoId = (href: string): string | null => {
   return match?.[1] ?? null
 }
 
-let cache: { url: string; data?: NetflixMetadata } | null = null
+const RETRY_DELAY_MS = 15_000
+
+let cache: { url: string; data?: NetflixMetadata; failedAt?: number } | null = null
 let pending: Promise<void> | null = null
 
 // Fetch once per URL, serialized so rapid UpdateData ticks don't spam the API.
 export const fetchMetadata = async (id: string): Promise<NetflixMetadata | undefined> => {
   const url = document.location.href
 
-  if (cache?.url === url) return cache.data
+  if (cache?.url === url && (cache.data || (cache.failedAt && Date.now() - cache.failedAt < RETRY_DELAY_MS))) return cache.data
 
   if (!pending) {
     cache = { url }
     pending = fetch(`${METADATA_ENDPOINT}${id}`)
       .then(res => (res.ok ? res.json() : undefined))
       .then((data: NetflixMetadata | undefined) => {
-        if (cache?.url === url) cache.data = data
+        if (cache?.url !== url) return
+        if (data?.video) cache.data = data
+        else cache.failedAt = Date.now()
       })
       .catch(() => {
-        // Network/auth failure - caller falls back to the logo + basic activity.
+        if (cache?.url === url) cache.failedAt = Date.now()
       })
       .finally(() => {
         pending = null
@@ -78,10 +82,22 @@ export const clearMetadata = (): void => {
 }
 
 // Discord can't hotlink Netflix's boxart CDN directly, so route it through the proxy.
+// Several boxart sizes are listed; try the ones closest to the card size and
+// fall back to the next candidate when the proxy rejects one.
+const TARGET_BOXART_WIDTH = 480
+const MAX_BOXART_ATTEMPTS = 3
+
 export const getBoxart = async (video: NetflixVideo | undefined): Promise<string | undefined> => {
-  const url = video?.boxart?.[0]?.url
-  if (!url?.startsWith("https://")) return undefined
-  return createCachedImageProxyUrl("netflix", url)
+  const candidates = (video?.boxart ?? [])
+    .filter(art => typeof art?.url === "string" && art.url.startsWith("https://"))
+    .sort((a, b) => Math.abs((a.w || 0) - TARGET_BOXART_WIDTH) - Math.abs((b.w || 0) - TARGET_BOXART_WIDTH))
+    .slice(0, MAX_BOXART_ATTEMPTS)
+
+  for (const art of candidates) {
+    const proxied = await createCachedImageProxyUrl("netflix", art.url)
+    if (proxied) return proxied
+  }
+  return undefined
 }
 
 export const findCurrentEpisode = (
