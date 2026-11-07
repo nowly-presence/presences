@@ -3,6 +3,7 @@ import { handleBrowsingActivity } from "./utils/browsing"
 import { Category } from "./utils/categories"
 import { findTitle, findUploader, findUploaderUrl } from "./utils/channel"
 import { $, findVideo, text } from "./utils/dom"
+import { getLiveStartTimestamp, isLiveStream, resetLiveSession } from "./utils/live"
 import type enUS from "./locales/en-US.json"
 
 const presence = new Presence()
@@ -29,6 +30,9 @@ presence.on("UpdateData", async (ctx) => {
 
     const title = findTitle()
     const uploader = findUploader(videoId)
+    const isLive = isLiveStream(video)
+    const liveStart = isLive ? getLiveStartTimestamp(videoId, isPlaying) : undefined
+    if (!isLive) resetLiveSession()
 
     await presence.setActivity({
       name: ctx.settings.showMediaTitle ? title : undefined,
@@ -42,7 +46,9 @@ presence.on("UpdateData", async (ctx) => {
         smallImageKey: isPlaying ? "play" : "pause",
         smallImageText: isPlaying ? strings.playing : strings.paused,
       } : {}),
-      ...createMediaTimestamps(video),
+      ...(isLive
+        ? liveStart ? { startTimestamp: liveStart } : {}
+        : createMediaTimestamps(video)),
       type: PresenceType.Watching,
       statusDisplayType: ctx.settings.statusDisplayType === "details" ? 2 : ctx.settings.statusDisplayType === "state" && uploader ? 1 : 0,
       buttons: [{ label: strings.watchVideo, url: href.split("&")[0] }],
