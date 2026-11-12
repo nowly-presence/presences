@@ -1,5 +1,5 @@
 import { createMediaTimestamps, PresenceType, type PresenceData } from "@nowly/sdk"
-import { getMediaElement, getMediaSessionTrack, toDiscordImage } from "./utils/track"
+import { getMediaElement, getMediaSessionTrack, getPlaybackProgress, toDiscordImage } from "./utils/track"
 import type enUS from "./locales/en-US.json"
 
 const settings = Presence.Settings({
@@ -147,7 +147,8 @@ presence.on("UpdateData", async (ctx) => {
   const track = getMediaSessionTrack(document.location.href.split("?")[0] ?? document.location.href)
 
   if (track) {
-    const playing = media ? !media.paused : track.playing
+    const progress = getPlaybackProgress(media)
+    const playing = media && media.readyState > 0 ? !media.paused : track.playing
     const mediaTitleInHeader = !privacy && isEnabled(ctx.settings.showMediaTitle)
     const data: PresenceData = {
       name: mediaTitleInHeader ? track.title : undefined,
@@ -162,7 +163,7 @@ presence.on("UpdateData", async (ctx) => {
       type: PresenceType.Listening,
     }
 
-    if (playing && media) Object.assign(data, createMediaTimestamps(media))
+    if (playing && progress) Object.assign(data, createMediaTimestamps({ ...progress, paused: false }))
 
     if (!privacy && showButtons) {
       data.buttons = [{ label: strings.listen, url: track.url }]

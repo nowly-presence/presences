@@ -23,6 +23,34 @@ export const getMediaElement = (): HTMLMediaElement | undefined => {
   return nodes[0]
 }
 
+const SECONDS_PER_MINUTE = 60
+const SECONDS_PER_HOUR = 3600
+const SPOTIFY_PLAYBACK_POSITION_SELECTOR = "[data-testid='playback-position']"
+const SPOTIFY_PLAYBACK_DURATION_SELECTOR = "[data-testid='playback-duration']"
+
+export type PlaybackProgress = {
+  currentTime: number
+  duration: number
+}
+
+const parseClock = (text: string | null | undefined): number | undefined => {
+  const match = text?.trim().match(/^(?:(\d+):)?(\d{1,2}):(\d{2})$/)
+  if (!match) return undefined
+  const [, hours, minutes, seconds] = match
+  return Number(hours ?? 0) * SECONDS_PER_HOUR + Number(minutes) * SECONDS_PER_MINUTE + Number(seconds)
+}
+
+export const getPlaybackProgress = (media: HTMLMediaElement | undefined): PlaybackProgress | undefined => {
+  if (media && Number.isFinite(media.duration) && media.duration > 0) {
+    return { currentTime: media.currentTime, duration: media.duration }
+  }
+
+  const currentTime = parseClock(document.querySelector(SPOTIFY_PLAYBACK_POSITION_SELECTOR)?.textContent)
+  const duration = parseClock(document.querySelector(SPOTIFY_PLAYBACK_DURATION_SELECTOR)?.textContent)
+  if (currentTime === undefined || duration === undefined || duration <= 0 || currentTime > duration) return undefined
+  return { currentTime, duration }
+}
+
 export const getMediaSessionTrack = (fallbackUrl: string): TrackInfo | undefined => {
   const meta = navigator.mediaSession?.metadata
   if (!meta) return undefined
