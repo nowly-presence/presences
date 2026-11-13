@@ -5,9 +5,10 @@
     "github": "steellgold"
   },
   "url": [
-    "play.hbomax.com"
+    "play.hbomax.com",
+    "www.hbomax.com"
   ],
-  "regExp": "^https?://play\\.hbomax\\.com/",
+  "regExp": "^https?://(play|www)\\.hbomax\\.com/",
   "color": "#0014A4",
   "category": "streaming",
   "description": {
