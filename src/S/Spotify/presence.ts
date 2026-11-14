@@ -148,7 +148,7 @@ presence.on("UpdateData", async (ctx) => {
 
   if (track) {
     const progress = getPlaybackProgress(media)
-    const playing = media && media.readyState > 0 ? !media.paused : track.playing
+    const playing = track.playing && !(media && media.readyState > 0 && media.paused)
     const mediaTitleInHeader = !privacy && isEnabled(ctx.settings.showMediaTitle)
     const data: PresenceData = {
       name: mediaTitleInHeader ? track.title : undefined,
