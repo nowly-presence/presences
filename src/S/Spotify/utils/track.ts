@@ -40,15 +40,20 @@ const parseClock = (text: string | null | undefined): number | undefined => {
   return Number(hours ?? 0) * SECONDS_PER_HOUR + Number(minutes) * SECONDS_PER_MINUTE + Number(seconds)
 }
 
-export const getPlaybackProgress = (media: HTMLMediaElement | undefined): PlaybackProgress | undefined => {
-  if (media && Number.isFinite(media.duration) && media.duration > 0) {
-    return { currentTime: media.currentTime, duration: media.duration }
-  }
-
+const getClockProgress = (): PlaybackProgress | undefined => {
   const currentTime = parseClock(document.querySelector(SPOTIFY_PLAYBACK_POSITION_SELECTOR)?.textContent)
   const duration = parseClock(document.querySelector(SPOTIFY_PLAYBACK_DURATION_SELECTOR)?.textContent)
   if (currentTime === undefined || duration === undefined || duration <= 0 || currentTime > duration) return undefined
   return { currentTime, duration }
+}
+
+export const getPlaybackProgress = (media: HTMLMediaElement | undefined): PlaybackProgress | undefined => {
+  const clock = getClockProgress()
+  if (clock) return clock
+  if (media && Number.isFinite(media.duration) && media.duration > 0 && media.currentTime <= media.duration) {
+    return { currentTime: media.currentTime, duration: media.duration }
+  }
+  return undefined
 }
 
 export const getMediaSessionTrack = (fallbackUrl: string): TrackInfo | undefined => {
